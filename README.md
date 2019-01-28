@@ -43,3 +43,23 @@ Change `/report` to also display sales by coffee.
 
 #### further
 Change `/report` to also display sales by origin.
+
+
+rails new coffee-tracker -d postgresql
+comment out line-20 in Gemfile
+
+Models
+- coffee (name, roast, origin)
+- origin (location, phone)
+- roast 
+
+Association
+- Origin has_many Coffee
+- Roast has_many Coffee
+- Coffee belongs_to an Origin and a Roast
+
+Views
+- parks#new
+- parks#show
+
+
