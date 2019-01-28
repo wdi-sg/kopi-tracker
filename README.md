@@ -56,6 +56,7 @@ touch app/models/origin.rb
 rails console
 touch app/controllers/origins_controller.rb
 touch app/controllers/coffees_controller.rb
+rake db:seed
 
 powwow = Origin.new(name: "Pow Wow", location: "Pow Wow Drive", phone: "999")
 powwow.save
