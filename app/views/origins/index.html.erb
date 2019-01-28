@@ -1,0 +1,18 @@
+<h1>Listing origins</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+      <td><%= origin.location %></td>
+      <td><%= origin.phone %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add new origin', new_origin_path %>
