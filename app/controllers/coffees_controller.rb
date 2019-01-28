@@ -1,9 +1,9 @@
 class CoffeesController < ApplicationController
   def index
     # @coffees = Coffee.all
-    if params.has_key?(:origin_id)
+    if params.has_key?(:coffee_id)
       # get all the rangers for a specific park
-      @coffees = Coffee.where(origin_id: params[:origin_id] )
+      @coffees = Coffee.where(coffee_id: params[:coffee_id] )
     else
       # get all rangers
       @coffees = Coffee.all
@@ -25,7 +25,7 @@ class CoffeesController < ApplicationController
   def create
     @coffee = Coffee.new(coffee_params)
     @coffee.save
-    redirect_to root_path
+    redirect_to action: 'index', status: 303
   end
 
   def update

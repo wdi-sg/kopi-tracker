@@ -22,4 +22,9 @@ Rails.application.routes.draw do
 	get '/origins/:origin_id/coffees' => 'coffees#index', as: 'origin_coffees'
 	get '/origins/:origin_id/coffees/new' => 'coffees#create', as: 'new_origin_coffee'
 	post '/origins/:origin_id/coffees' => 'coffees#create'
+
+	get '/orders' => 'orders#index', as: 'orders'
+	get '/orders/new' => 'orders#new', as: 'new_order'
+	post '/orders' => 'orders#create'
+
 end

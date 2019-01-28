@@ -18,7 +18,7 @@ class OriginsController < ApplicationController
     @origin = Origin.new(origin_params)
 
     @origin.save
-    redirect_to root_path
+    redirect_to action: 'index', status: 303
   end
 
   def update
@@ -37,6 +37,6 @@ class OriginsController < ApplicationController
 
   private
   def origin_params
-    params.require(:origin).permit(:name, :location, :phone)
+    params.require(:origin).permit(:weight, :location, :phone)
   end
 end
