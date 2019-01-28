@@ -47,6 +47,21 @@ Change `/report` to also display sales by origin.
 
 rails new coffee-tracker -d postgresql
 comment out line-20 in Gemfile
+rails generate migration coffees
+rails generate migration origins
+rails db:create
+rails db:migrate
+touch app/models/coffee.rb
+touch app/models/origin.rb
+rails console
+touch app/controllers/origins_controller.rb
+touch app/controllers/coffees_controller.rb
+
+powwow = Origin.new(name: "Pow Wow", location: "Pow Wow Drive", phone: "999")
+powwow.save
+
+puddlemud = Coffee.new(name: "Puddlemud", roast: "Light", origin: powwow)
+puddlemud.save
 
 Models
 - coffee (name, roast, origin)
