@@ -1,0 +1,20 @@
+<h1>Listing all Origns</h1>
+
+<table>
+  <tr>
+    <th>Orign ID</th>
+    <th>Location</th>
+    <th>Phone Number</th>
+  </tr>
+<br>
+
+    <% @origns.each do |orign| %>
+    <tr>
+      <td><%= orign.id %></td>
+      <td><%= orign.location %></td>
+      <td><%= orign.phone %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New cup', new_cup_path %>
+<%= link_to 'New orign', new_orign_path %>
