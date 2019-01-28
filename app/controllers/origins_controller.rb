@@ -18,7 +18,6 @@ class OriginsController < ApplicationController
     @origin = Origin.new(origin_params)
 
     @origin.save
-    redirect_to action: 'index', status: 303
   end
 
   def update

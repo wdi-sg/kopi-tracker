@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   def index
     # @orders = order.all
-    if params.has_key?(:order_id)
+    if params.has_key?(:id)
       # get all the rangers for a specific park
-      @orders = Order.where(order_id: params[:order_id] )
+      @orders = Order.where(id: params[:id] )
     else
       # get all rangers
       @orders = Order.all
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
-    redirect_to root_path
+    redirect_to action: "index", id: @order.id
   end
 
   private

@@ -21,4 +21,14 @@
   <% end %>
 </table>
 
+<%
+sum = 0 
+@orders.each do |order|
+  sale = order.weight*order.coffee.price 
+  sum = sum + sale 
+end 
+%>
+
+<h1> Total sales: $<%= sum %> </h1>
+
 <%= link_to 'New order', new_order_path %>

@@ -25,7 +25,7 @@ class CoffeesController < ApplicationController
   def create
     @coffee = Coffee.new(coffee_params)
     @coffee.save
-    redirect_to action: 'index', status: 303
+    redirect_to root_path
   end
 
   def update

@@ -26,5 +26,6 @@ Rails.application.routes.draw do
 	get '/orders' => 'orders#index', as: 'orders'
 	get '/orders/new' => 'orders#new', as: 'new_order'
 	post '/orders' => 'orders#create'
+	get '/orders/:id' => 'orders#index' 
 
 end
