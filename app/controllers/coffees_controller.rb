@@ -23,11 +23,9 @@ class CoffeesController < ApplicationController
   end
 
   def create
-    @origins = Origin.all
-
     @coffee = Coffee.new(coffee_params)
     @coffee.save
-    redirect_to @coffee
+    redirect_to root_path
   end
 
   def update
@@ -46,6 +44,6 @@ class CoffeesController < ApplicationController
 
   private
   def coffee_params
-    params.require(:coffee).permit(:name, :roast, :origin)
+    params.require(:coffee).permit(:name, :roast, :origin_id, :price)
   end
 end

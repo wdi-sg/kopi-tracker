@@ -18,7 +18,7 @@ class OriginsController < ApplicationController
     @origin = Origin.new(origin_params)
 
     @origin.save
-    redirect_to @origin
+    redirect_to root_path
   end
 
   def update
@@ -37,6 +37,6 @@ class OriginsController < ApplicationController
 
   private
   def origin_params
-    params.require(:origin).permit(:name, :roast, :origin)
+    params.require(:origin).permit(:name, :location, :phone)
   end
 end
