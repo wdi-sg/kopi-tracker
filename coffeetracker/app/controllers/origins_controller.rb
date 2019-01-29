@@ -1,4 +1,9 @@
 class OriginsController < ApplicationController
+
+    def index
+        @origins = Origin.all
+    end
+
     def new
     end
 
@@ -13,12 +18,8 @@ class OriginsController < ApplicationController
         @origin = Origin.find(params[:id])
     end
 
-    def index
-        @origin = Origin.all
-    end
-
     private
     def origin_params
-    params.require(:origin).permit(:location, :phone)
+    params.require(:origin).permit(:location, :phone, :coffee_ids => [])
     end
 end

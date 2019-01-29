@@ -1,3 +1,3 @@
-class Ranger < ActiveRecord::Base
+class Coffee < ActiveRecord::Base
   belongs_to :origin
 end
