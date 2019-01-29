@@ -1,0 +1,23 @@
+<h1>Coffee Index Page </h1>
+<%= link_to 'New koffee', new_koffee_path %>
+<table>
+  <tr>
+    <th>Koffee Name</th>
+    <th>Roast Type </th>
+   
+    <th></th>
+  </tr>
+
+  <% @koffees.each do |koffee| %>
+    <tr>
+      <td><%= koffee.name %></td>
+
+
+      <td><%= link_to 'Show', koffee_path(koffee) %></td><br />
+      <td><%= link_to 'Edit', edit_koffee_path(koffee) %></td><br />
+      <td><%= link_to 'Destroy', koffee_path(koffee),
+        method: :delete,
+        data: { confirm: 'This will delete the koffee. Are you sure?' } %></td><br />
+    </tr>
+  <% end %>
+</table>

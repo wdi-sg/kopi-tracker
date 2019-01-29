@@ -1,0 +1,25 @@
+<%= form_with scope: :koffee, url: koffees_path, local: true do |form| %>
+
+  <%= form.collection_select :origin_id, @origins, :id, :name%>
+
+<h1> Adding a new Coffee </h1>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+    <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+    <p>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

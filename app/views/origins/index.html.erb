@@ -1,0 +1,23 @@
+<h1>Origins Index Page </h1>
+<%= link_to 'New origin', new_origin_path %>
+<table>
+  <tr>
+    
+    <th>Origin location</th>
+    <th>Origin phone</th>
+    <th></th>
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+      <td><%= origin.location %></td>
+      <td><%= origin.phone %></td>
+
+      <td><%= link_to 'Show', origin_path(origin) %></td><br />
+      <td><%= link_to 'Edit', edit_origin_path(origin) %></td><br />
+      <td><%= link_to 'Destroy', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'This will delete the origin location. Are you sure?' } %></td><br />
+    </tr>
+  <% end %>
+</table>
