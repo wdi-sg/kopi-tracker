@@ -1,0 +1,27 @@
+<h1>Listing all Customers</h1>
+
+<table>
+  <tr>
+    <th>Customer ID</th>
+    <th>Name</th>
+    <th>Phone number</th>
+    <th>Cups</th>
+    <th>Instructions</th>
+  </tr>
+<br>
+
+   <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.phone %></td>
+      <td><% customer.cups.each do |cup| %>
+      	<%= cup.name %>
+      <% end %></td>
+      <td><%= link_to 'Show', customer_path(customer) %>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Home', root_path %>
+<%= link_to 'New cup', new_cup_path %>
+<%= link_to 'New customer', new_customer_path %>

@@ -5,18 +5,23 @@
     <th>Cup ID</th>
     <th>Name</th>
     <th>Roast</th>
-    <th>Orign ID</th>
+    <th>Customers</th>
+    <th>Instructions</th>
   </tr>
 <br>
 
-    <% @cups.each do |cup| %>
+   <% @cups.each do |cup| %>
     <tr>
       <td><%= cup.id %></td>
       <td><%= cup.name %></td>
       <td><%= cup.roast %></td>
-      <td><%= cup.orign_id %></td>
+      <td><% cup.customers.each do |customer| %>
+      	<%= customer.name %>
+      <% end %></td>
+      <td><%= link_to 'Show', cup_path(cup) %>
     </tr>
   <% end %>
 </table>
+<%= link_to 'Home', root_path %>
 <%= link_to 'New cup', new_cup_path %>
-<%= link_to 'New orign', new_orign_path %>
+<%= link_to 'New customer', new_customer_path %>

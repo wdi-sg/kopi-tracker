@@ -3,7 +3,6 @@ class Cups < ActiveRecord::Migration[5.2]
     create_table :cups do |t|
       t.string :name
       t.text :roast
-      t.references :orign
       t.timestamps
     end
   end

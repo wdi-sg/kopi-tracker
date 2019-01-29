@@ -11,34 +11,33 @@ class CupsController < ApplicationController
   #   end
   # end
 
+  def home
+    @cups = Cup.all
+    @customers = Customer.all
+  end
+
   def index
     @cups = Cup.all
   end
 
   def new
-    @cup = Cup.all
+    @customers = Customer.all
   end
 
   def create
     @cup = Cup.new(cup_params)
 
     @cup.save
-    redirect_to @cup
+    redirect_to @cups_path
   end
 
   def show
-    # deal with the case that we are trying to get a ranger for a park that doesn't exist
-
     @cup = Cup.find(params[:id])
-
-    if params[:orign_id].to_i != @cup.orign.id
-      # do something
-    end
   end
 
 private
 
-  def ranger_params
-    params.require(:cup).permit(:name, :roast, :orign_id)
+  def cup_params
+    params.require(:cup).permit(:name, :roast, :customer_ids => [])
   end
 end

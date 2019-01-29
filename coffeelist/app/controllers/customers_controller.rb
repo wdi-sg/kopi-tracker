@@ -1,4 +1,4 @@
-class OrignsController < ApplicationController
+class CustomersController < ApplicationController
 
   # def index
   #   # test to see if we are at /parks/:id/rangers or /rangers
@@ -12,27 +12,29 @@ class OrignsController < ApplicationController
   # end
 
   def index
-    @origns = Orign.all
+    @customers = Customer.all
+    @cups = Cup.all
   end
 
   def new
+    @cups = Cup.all
   end
 
   def create
-    @orgin = Orign.new(park_params)
+    @customer = Customer.new(customer_params)
 
-    @orign.save
-    redirect_to @orgin
+    @customer.save
+    redirect_to customers_path
   end
 
   def show
-    @orign = Orign.find(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
 private
 
-  def park_params
-    params.require(:orign).permit(:location, :phone)
+  def customer_params
+    params.require(:customer).permit(:name, :phone, :cup_ids => [])
   end
 
 end
