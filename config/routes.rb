@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get '/farms/:farm_id/coffees' => 'coffees#index', as: 'farm_coffees'
   get '/farms/:farm_id/coffees/new' => 'coffees#create', as: 'new_farm_coffee'
   post '/farms/:farm_id/coffees' => 'coffees#create'
+
+  get '/customers' => 'customers#index', as: 'customers'
 end
