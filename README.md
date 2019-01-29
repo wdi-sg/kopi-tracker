@@ -79,3 +79,26 @@ Views
 - parks#show
 
 
+You are expanding the app to track which customers buy wich coffees.
+Create a customer model.
+A customer can stock many coffees.
+A coffee can be carried by many customers.
+
+customer-coffee many-to-many
+#set database
+customer - name
+coffee_customer - references to coffee and customer
+
+For a given coffee (kopi), /kopi/:id display all the customers who carry that coffeee.
+#set controller and view
+
+For a given customer /customer/:id display all the coffees they stock.
+#set controller and view
+
+further
+Sort the customers by the number of coffees they carry, ascending and descending.
+
+Note: The option of ascending and descending sorting should be noted in the query parameter of the request: /kopi/1?sort=asc
+
+further
+Sort the coffees by "popularity"- by the number of shops that carry that coffee.

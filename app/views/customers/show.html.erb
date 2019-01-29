@@ -1,0 +1,24 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+    <tr>
+      <td><%= @customer.id %></td>
+      <td><%= @customer.name %></td>
+      <td><%= link_to 'Destroy', customer_path(@customer),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+</table>
+
+<h1>Coffees</h1>
+<% @customer.coffees.each do |coffee| %>
+  <p><%= coffee.name %>. $<%= coffee.price %>/kg</p>
+<% end %>
+
+
+<%= link_to 'New customer', new_customer_path %>

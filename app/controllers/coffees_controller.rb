@@ -1,16 +1,17 @@
 class CoffeesController < ApplicationController
   def index
     # @coffees = Coffee.all
-    if params.has_key?(:coffee_id)
-      # get all the rangers for a specific park
-      @coffees = Coffee.where(coffee_id: params[:coffee_id] )
-    else
+    # if params.has_key?(:id)
+    #   # get all the rangers for a specific park
+    #   @coffees = Coffee.where(id: params[:id] )
+    # else
       # get all rangers
       @coffees = Coffee.all
-    end
+    # end
   end
 
   def show
+     # @coffees = Coffee.where(id: params[:id] )
     @coffee = Coffee.find(params[:id])
   end
 

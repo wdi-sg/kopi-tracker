@@ -5,7 +5,7 @@
     <th>Name</th>
     <th>Roast</th>
     <th>Origin</th>
-    <th>Price($/kg)</th>
+    <th>Price(/kg)</th>
     <th></th>
   </tr>
 
@@ -14,7 +14,7 @@
       <td><%= coffee.name %></td>
       <td><%= coffee.roast %></td>
       <td><%= coffee.origin.name %></td>
-      <td><%= coffee.price %></td>
+      <td>$<%= coffee.price %></td>
       <td><%= link_to 'Show', coffee_path(coffee) %></td>
       <td><%= link_to 'Edit', edit_coffee_path(coffee) %></td>
       <td><%= link_to 'Destroy', coffee_path(coffee),
