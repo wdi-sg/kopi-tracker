@@ -1,0 +1,16 @@
+<h1>CUSTOMER INDEX</h1>
+
+<table>
+    <tr>
+      <th><%= sortable "name"%></th>
+    </tr>
+    
+  
+    <% @customer.each do |customer| %>
+      <tr>
+        <td><%=link_to customer.name, customer_path(customer) %></td>
+        <td><%=link_to customer.coffeelist[0].name, coffeelist_path(customer.coffeelist[0].id) %></td>
+      </tr>
+    <% end %>
+    
+  </table>

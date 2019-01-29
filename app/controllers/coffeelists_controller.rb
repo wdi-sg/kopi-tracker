@@ -3,6 +3,8 @@ class CoffeelistsController < ApplicationController
 
     def index
         @coffee = Coffeelist.order("#{sort_column} #{sort_direction}")
+        
+        # @origin = Origin.order("#{banana} #{sort_direction}")
     end
 
     def show
@@ -11,12 +13,16 @@ class CoffeelistsController < ApplicationController
 
     private
     def sortable_columns
-        ['name', 'roastedness', 'origin', 'order(kg)']
+        ['name', 'roast_id', 'origin_id', 'order_id']
     end
 
     def sort_column
         sortable_columns.include?(params[:sort]) ? params[:sort] : 'name'
     end
+
+    # def banana
+    #     sortable_columns.include?(params[:sort]) ? params[:sort] : 'name'
+    # end
 
     def sort_direction
         %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'

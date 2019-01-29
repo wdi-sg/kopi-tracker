@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :origins
   resources :roasts, only: [:show]
+  resources :customers
 
 end

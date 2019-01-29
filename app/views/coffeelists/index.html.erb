@@ -1,22 +1,31 @@
 <h1>SUPER INDEX</h1>
 
 <table>
-    <tr>
-      <th><%= sortable "name" %></th>
-      <th><%= sortable "roastedness" %></th>
-      <th><%= sortable "origin" %></th>
-      <th><%= sortable "order(kg)" %></th>
-      <th><%= sortable "roast_id" %></th>
-    </tr>
+  <tr>
+    <th><%= sortable "name"%></th>
+    <th><%= sortable "roast_id" %></th>
+    <th><%= sortable "origin_id" %></th>
+    <th><%= sortable "order_id" %></th>
+    <th><%= sortable "roast_id" %></th>
+  </tr>
   
-    <% @coffee.each do |coffee| %>
-      <tr>
-        <td><%=link_to coffee.name, coffeelist_path(coffee) %></td>
-        <td><%=link_to coffee.roast.name, roast_path(coffee.roast_id)%></td>
-        <td><%=link_to coffee.origin.location, origin_path(coffee.origin_id) %></td>
-        <td><%= coffee.order.weight %></td>
-        <td><%= coffee.roast_id %></td>
-      </tr>
-    <% end %>
-</table>
 
+  <% @coffee.each do |coffee| %>
+    <tr>
+      <td><%=link_to coffee.name, coffeelist_path(coffee) %></td>
+      <td><%=link_to coffee.roast.name, roast_path(coffee.roast_id)%></td>
+      <td><%=link_to coffee.origin.location, origin_path(coffee.origin_id) %></td>
+      <td><%= coffee.order.weight %></td>
+      <td><%= coffee.roast_id %></td>
+    </tr>
+  <% end %>
+  
+</table>
+<br><br><br>
+
+
+<td><%=link_to 'Customer Index', customers_path %></td>
+
+<% customer.coffeelist.each do |x| %>
+<p><%= x.name %></p>
+<% end %>

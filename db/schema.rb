@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_210945) do
+ActiveRecord::Schema.define(version: 2019_01_29_082611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 2019_01_28_210945) do
     t.index ["order_id"], name: "index_coffeelists_on_order_id"
     t.index ["origin_id"], name: "index_coffeelists_on_origin_id"
     t.index ["roast_id"], name: "index_coffeelists_on_roast_id"
+  end
+
+  create_table "coffeelists_customers", force: :cascade do |t|
+    t.bigint "coffeelist_id"
+    t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffeelist_id"], name: "index_coffeelists_customers_on_coffeelist_id"
+    t.index ["customer_id"], name: "index_coffeelists_customers_on_customer_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
