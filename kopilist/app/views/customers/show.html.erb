@@ -1,0 +1,17 @@
+<p>
+  <strong>Name: </strong>
+  <%= @customer.name %>
+  <br>
+  <br>
+  <br>
+  <strong>Stocks:</strong>
+</p>
+
+<% @customer.koopis.each do |koopi| %>
+    <p><%= koopi.name %></p>
+<% end %>
+  <br>
+  <br>
+
+<%= link_to 'Back', customers_path %>
+<%= link_to 'Edit', edit_customer_path(@customer) %>

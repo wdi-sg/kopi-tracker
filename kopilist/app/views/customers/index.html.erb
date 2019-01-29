@@ -1,0 +1,14 @@
+<h1>All Customers</h1>
+
+<%= link_to 'Add a new customer', new_customer_path(@customer) %>
+<br>
+<br>
+
+ <% @customers.each do |customer| %>
+    <h3><%= customer.id %>. <%= customer.name %></h3>
+        <%= link_to 'Show', customer_path(customer) %>
+        <%= link_to 'Edit', edit_customer_path(customer) %>
+        <%= link_to 'Destroy', customer_path(customer),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+<% end %>

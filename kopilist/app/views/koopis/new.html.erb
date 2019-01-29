@@ -1,0 +1,20 @@
+<%= form_with scope: :koopi, url: koopis_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :Name_of_koopi %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>Origin : <%= form.collection_select :origin_id, @origins, :id, :location %></p>
+
+  <p>Roast : <%= form.collection_select :roast_id, @roasts, :id, :name %></p>
+
+  <p>
+    <%= form.label :Price_of_koopi_per_pound %><br>
+    <%= form.text_area :price %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
