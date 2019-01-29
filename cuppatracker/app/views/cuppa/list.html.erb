@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Tracker</title>
+</head>
+<body>
+  <h2><%= link_to "Add New Coffee", {:action => "new"} %></h2>
+  <h1>Coffee List: </h1>
+  <% @cuppas.each do |cuppa| %>
+    <ul>
+      <li><strong><%= link_to cuppa.name, {:action => "show", :id => cuppa.id} %></strong></li>
+    </ul>
+  <% end %>
+
+</body>
+</html>

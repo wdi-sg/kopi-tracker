@@ -1,0 +1,13 @@
+<h1>Add <!-- new cuppa</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "name">Name:</label>:
+<%= text_field 'cuppas', 'name' %></p>
+
+<p><label for = "cuppa_roast">Roastedness:</label>:
+<%= collection_select(:roasts, @roasts, :id, :roastedness, prompt: true) %></p>
+
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %> -->
