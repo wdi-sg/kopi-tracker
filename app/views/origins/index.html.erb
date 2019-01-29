@@ -1,18 +1,64 @@
-<h1>Listing origins</h1>
+<%= link_to 'Add new origin', new_origin_path %>
+<%= link_to 'Add new coffee', new_coffee_path %>
+<%= link_to 'Add new customer', new_customer_path %></br>
+
+<h3>Listing of origins</h3>
 
 <table>
   <tr>
+  	<th> ID</th>
     <th>Location</th>
     <th>Phone</th>
+    <th>Coffees Link</th>
     <th></th>
   </tr>
 
   <% @origins.each do |origin| %>
     <tr>
+    	<td><%= origin.id %></td>
       <td><%= origin.location %></td>
       <td><%= origin.phone %></td>
+      <td><%= link_to 'List of coffees', origin_coffees_path(origin) %></td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to 'Add new origin', new_origin_path %>
+<h3>Listing of coffees</h3>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th>Customer List</th>
+  </tr>
+
+  <% @coffees.each do |coffee| %>
+    <tr>
+    	<td><%= coffee.id %></td>
+      <td><%= coffee.name %></td>
+      <td><%= coffee.roast %></td>
+      <td><%= coffee.origin.location %></td>
+      <td><%= link_to 'List of customers', coffee_customers_path(coffee) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Listing of customers</h3>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+    <th>Coffee List</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+    	<td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+      <td><%= link_to 'List of coffees', customer_coffees_path(customer) %></td>
+    </tr>
+  <% end %>
+</table>

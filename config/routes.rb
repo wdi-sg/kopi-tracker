@@ -18,9 +18,17 @@ Rails.application.routes.draw do
   patch '/coffees/:id' => 'coffees#update'
   delete '/coffees/:id' => 'coffees#destroy'
 
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show' , as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
 
-  get '/origins/:origin_id/coffees' => 'coffees#index', as: 'orgin_coffees'
-  get '/origins/:origin_id/coffees/new' => 'coffees#create', as: 'new_origin_coffee'
-  post '/origins/:origin_id/coffees' => 'coffees#create'
+
+  get '/origins/:origin_id/coffees' => 'coffees#index', as: 'origin_coffees'
+  get '/customers/:customer_id/coffees' => 'coffees#index', as: 'customer_coffees'
+  get '/coffees/:coffee_id/customers' => 'customers#index', as: 'coffee_customers'
 
 end

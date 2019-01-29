@@ -2,6 +2,8 @@ class OriginsController < ApplicationController
 
   def index
     @origins = Origin.all
+    @coffees = Coffee.all
+    @customers = Customer.all
   end
 
   def new
