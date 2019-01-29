@@ -1,0 +1,2 @@
+module CoffeelistsHelper
+end
