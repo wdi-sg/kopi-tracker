@@ -1,6 +1,8 @@
 class CoffeesController < ApplicationController
+
     def new
         @farms = Farm.all
+        @roasts = Roast.all
     end
     
     def create
@@ -8,6 +10,10 @@ class CoffeesController < ApplicationController
     
         @coffee.save
         redirect_to @coffee
+    end
+
+    def edit
+        @coffee = Coffee.find(params[:id])
     end
     
     def show

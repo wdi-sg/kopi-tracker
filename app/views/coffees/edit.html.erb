@@ -1,7 +1,8 @@
-<%= form_with scope: :coffee, url: coffees_path, local: true do |form| %>
+<%= form_with scope: :coffee, model: @coffee, local: true do |form| %>
 
   <%= form.collection_select :farm_id, @farms, :id, :location %>
   <%= form.collection_select :roast_id, @roasts, :id, :name %>
+
   <p>
     <%= form.label :name %><br>
     <%= form.text_area :name %>

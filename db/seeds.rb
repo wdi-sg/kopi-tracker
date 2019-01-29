@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+roasts = ['Cinnamon', 'Light', 'City/Medium', 'Full City', 'Dark', 'French', 'Italian']
+roasts.length.times do |roast|
+    Roast.create(name: roasts[roast])
+end
+

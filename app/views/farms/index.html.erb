@@ -1,15 +1,25 @@
 
-<table>
+<table class="table">
     <tr>
         <th>Farm</th>
         <th>Location</th>
         <th>Phone</th>
+        <th>Coffees</th>
     </tr>
     <% @farm.each do |farm| %>
         <tr>
             <td><%= farm.id %></td>
             <td><%= farm.location %></td>
             <td><%= farm.phone %></td>
+            <td>
+                <% farm.coffee.each_with_index do |coffee, index| %>
+                    <% if index == farm.coffee.length - 1 %>
+                        <%= coffee.name %>
+                    <% else %>
+                        <%= coffee.name %>, 
+                    <% end %>
+                <% end %>
+            </td>
         </tr>
     <%end %>
 
