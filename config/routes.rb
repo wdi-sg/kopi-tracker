@@ -19,8 +19,17 @@ Rails.application.routes.draw do
   delete '/koffees/:id' => 'koffees#destroy'
 
 
-  # get '/parks/:park_id/rangers' => 'rangers#index', as: 'park_rangers'
-  # get '/parks/:park_id/rangers/new' => 'rangers#create', as: 'new_park_ranger'
-  # post '/parks/:park_id/rangers' => 'rangers#create'
+  get '/origins/:origin_id/koffees' => 'koffees#index', as: 'origin_koffees'
+  get '/origins/:origin_id/koffees/new' => 'koffees#create', as: 'new_origin_koffee'
+  post '/origins/:origin_id/koffees' => 'koffees#create'
+
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show', as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

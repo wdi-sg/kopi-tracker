@@ -1,0 +1,20 @@
+<h1> Adding a new Customer </h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+  <%= form.collection_select :koffee_id, @koffees, :id, :name%>
+
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Back', customers_path %> 

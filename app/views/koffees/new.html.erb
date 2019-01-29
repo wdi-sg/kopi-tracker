@@ -1,8 +1,9 @@
+<h1> Adding a new Coffee </h1>
+
 <%= form_with scope: :koffee, url: koffees_path, local: true do |form| %>
 
-  <%= form.collection_select :origin_id, @origins, :id, :name%>
+  <%= form.collection_select :origin_id, @origins, :id, :location%>
 
-<h1> Adding a new Coffee </h1>
 
   <p>
     <%= form.label :name %><br>
@@ -12,11 +13,6 @@
     <p>
     <%= form.label :roast %><br>
     <%= form.text_area :roast %>
-  </p>
-
-    <p>
-    <%= form.label :location %><br>
-    <%= form.text_area :location %>
   </p>
 
   <p>

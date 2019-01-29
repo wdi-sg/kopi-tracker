@@ -11,24 +11,25 @@ class KoffeesController < ApplicationController
   end
 end
 
-
   def new
-    @origins = Koffee.all
+    @origins = Origin.all  #When adding new coffees, link all the origins 
   end
 
   def create
     @koffee = Koffee.new(koffee_params)
 
     @koffee.save
-    redirect_to root_path
+    redirect_to @koffee
   end
 
   def show
     @koffee = Koffee.find(params[:id])
+    redirect_to @koffee
   end
 
   def edit
     @koffee = Koffee.find(params[:id])
+    redirect_to @koffee
   end
 
   def update
@@ -46,6 +47,6 @@ end
 private
 
   def koffee_params
-    params.require(:koffee).permit(:name, :roast, :origin_id)
+    params.require(:koffee).permit(:name, :roast, :origin_id, :customer_id => [])
   end
 end
