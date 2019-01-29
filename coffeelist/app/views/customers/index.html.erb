@@ -10,6 +10,11 @@
   </tr>
 <br>
 
+<%= form_tag("/customers", method: "get") do %>
+	<%= select_tag(:customer, options_for_select([['Name ascending', 1], ['Name descending', 2], ['Number of cups ascending', 3], ['Number of cups descending', 4]])) %>
+	<%= submit_tag("Sort") %>
+<% end %>
+
    <% @customers.each do |customer| %>
     <tr>
       <td><%= customer.id %></td>

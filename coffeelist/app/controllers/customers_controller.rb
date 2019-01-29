@@ -14,6 +14,15 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
     @cups = Cup.all
+    if params[:customer] == '1'
+      @customers = Customer.all.order("name asc")
+    elsif params[:customer] == '2'
+      @customers = Customer.all.order("name desc")
+    elsif params[:customer] == '3'
+      @customers = Customer.all.sort_by(&:length)
+    elsif params[:customer] == '4'
+      @customers = Customer.all.sort_by(&:length)
+    end
   end
 
   def new
