@@ -1,0 +1,18 @@
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Name</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td><%= customer.id %></td>
+      <td><% customer.cups.each do |cup| %>
+      <%= cup.name %>
+      <% end %></td>
+    </tr>
+  <% end %>
+</table>

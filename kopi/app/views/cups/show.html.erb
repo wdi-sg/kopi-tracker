@@ -1,0 +1,18 @@
+<p>
+  <strong>Coffee name:</strong>
+  <%= @cup.name %>
+</p>
+
+<p>
+  <strong>Roastedness:</strong>
+  <%= @cup.roastedness %>
+</p>
+
+<p>
+	<strong>List of customers who carry this coffee: </strong>
+	<ul>
+  <% @cup.customers.each do |customer| %>
+  	<li><%= customer.name %></li>
+  <% end %>
+</ul>
+ </p>
