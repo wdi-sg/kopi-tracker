@@ -1,5 +1,7 @@
 class CoffeesController < ApplicationController
 
+    before_action :authenticate_user!, :except => [ :show, :index ]
+
     def new
         @farms = Farm.all
         @roasts = Roast.all
@@ -14,6 +16,14 @@ class CoffeesController < ApplicationController
 
     def edit
         @coffee = Coffee.find(params[:id])
+        @roasts = Roast.all
+        @farms = Farm.all
+    end
+
+    def update
+        @coffee = Coffee.find(params[:id])
+        @coffee.update(coffee_params)
+        redirect_to @coffee
     end
     
     def show
@@ -28,6 +38,6 @@ class CoffeesController < ApplicationController
     
     private
     def coffee_params
-        params.require(:coffee).permit(:name, :farm_id)
+        params.require(:coffee).permit(:name, :roast, :farm_id)
     end
 end
