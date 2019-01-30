@@ -1,5 +1,7 @@
 class KoopisController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def new
     @origins = Origin.all
     @roasts = Roast.all
@@ -8,6 +10,7 @@ class KoopisController < ApplicationController
 
   def create
     @koopi = Koopi.new(koopi_params)
+    @koopi.user_id = current_user.id
     @koopi.save
     redirect_to koopis_path
   end
@@ -35,6 +38,6 @@ class KoopisController < ApplicationController
 private
 
   def koopi_params
-    params.require(:koopi).permit(:name, :origin_id, :roast_id, :price, :customer_ids => [])
+    params.require(:koopi).permit(:name, :origin_id, :roast_id, :price, :user_id, :customer_ids => [])
   end
 end

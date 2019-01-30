@@ -1,15 +1,16 @@
-class CustomersController < ApplicationController
+class UsersController < ApplicationController
 
   before_action :authenticate_user!, :except => [ :show, :index ]
 
   def new
     @koopis = Koopi.all
+
+    @song = Song.new(song_params)
   end
 
 
   def create
     @customer = Customer.new(customer_params)
-    @koopi.user_id = current_user.id
     @customer.save
     redirect_to customers_path
   end

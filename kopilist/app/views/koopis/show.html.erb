@@ -20,4 +20,6 @@
 </p>
 
 <%= link_to 'Back', root_path %>
-<%= link_to 'Edit', edit_koopi_path(@koopi) %>
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_koopi_path(@koopi) %>
+<% end %>

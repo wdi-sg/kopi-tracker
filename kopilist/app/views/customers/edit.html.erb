@@ -1,0 +1,14 @@
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+  <p>
+    <%= form.label :Name_of_customer %><br>
+    <%= form.text_area :name %>
+  </p>
+
+   <%= form.collection_check_boxes :koopi_ids, @koopis, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
