@@ -1,0 +1,14 @@
+<p>Create New Coffee</p>
+
+<%= form_with scope: :cup, url: cups_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cups_path %>

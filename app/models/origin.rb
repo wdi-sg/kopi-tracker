@@ -1,3 +1,3 @@
 class Origin < ActiveRecord::Base
-    has_many :cup
+    has_and_belongs_to_many :cups
 end
