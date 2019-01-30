@@ -1,0 +1,18 @@
+<h1>Coffee</h1>
+
+<% @cups.each do |cup| %>
+<h2><%= link_to cup.name, cup_path(cup) %></h2>
+
+<% cup.customers.each do |customer| %>
+<p><%= customer.name %></p>
+<% end %>
+<% end %>
+
+<% if user_signed_in? %>
+<%= link_to 'New Coffee', new_cup_path %>
+<% else %>
+<%= link_to 'New Coffee', new_user_session_url %>
+<% end %>
+
+<%= link_to 'Log in', new_user_session_url %>
+<%= link_to 'Log out', destroy_user_session_url, method: :delete %>

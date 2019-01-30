@@ -1,0 +1,10 @@
+<h1>Coffee Farm</h1>
+
+<% @cups.each do |cup| %>
+<h2><%= cup.location %></h2>
+<p><%= cup.phone %></p>
+
+<% cup.customers.each do |customer| %>
+<p><%= customer.name %></p>
+<% end %>
+<% end %>
