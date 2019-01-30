@@ -10,6 +10,7 @@ class CupsController < ApplicationController
   #     @rangers = Ranger.all
   #   end
   # end
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
   def home
     @cups = Cup.all

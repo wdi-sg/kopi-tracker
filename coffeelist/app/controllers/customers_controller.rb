@@ -10,6 +10,7 @@ class CustomersController < ApplicationController
   #     @rangers = Ranger.all
   #   end
   # end
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
     @customers = Customer.all
@@ -19,7 +20,9 @@ class CustomersController < ApplicationController
     elsif params[:customer] == '2'
       @customers = Customer.all.order("name desc")
     elsif params[:customer] == '3'
-      @customers = Customer.all.sort_by(&:length)
+      @customers = Customer.all.each do |customer|
+        customer.sort_by{ |x,y| x.cups.length <=> y.cups.length }
+      end
     elsif params[:customer] == '4'
       @customers = Customer.all.sort_by(&:length)
     end

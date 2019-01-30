@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'cups#home'
   get '/cups' => 'cups#index', as: 'cups'
   get '/cups/new' => 'cups#new', as: 'new_cup'
