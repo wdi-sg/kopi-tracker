@@ -1,0 +1,21 @@
+<h3>Listing of coffees</h3>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+  </tr>
+
+  <% @coffees.each do |coffee| %>
+    <tr>
+    	<td><%= coffee.id %></td>
+      <td><%= coffee.name %></td>
+      <td><%= coffee.roast %></td>
+      <td><%= coffee.origin.location %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>

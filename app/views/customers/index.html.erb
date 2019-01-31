@@ -1,0 +1,17 @@
+<h3>Listing of customers</h3>
+
+<table>
+  <tr>
+  	<th>ID</th>
+    <th>Name</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+    	<td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>

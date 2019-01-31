@@ -1,0 +1,17 @@
+<h3> Add New Origin</h3>
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :phone %><br>
+    <%= form.text_field :phone %>
+  </p>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
