@@ -5,7 +5,7 @@ You are working at a kopi roastery. Create a rails app that tracks kopis.
 
 ![](https://media.giphy.com/media/l3vQXT6nQkKK7LkVG/giphy.gif)
 
-Each individual `kopi` has a `name` and roastedness (`roast`), and is associtaed with an `origin` (farm where it comes from).
+Each individual `kopi` has a `name` and roastedness (`roast`), and is associated with an `origin` (farm where it comes from).
 
 A kopi farm (`origin`) has a `location`, `phone` number and is associated with many kopis.
 
