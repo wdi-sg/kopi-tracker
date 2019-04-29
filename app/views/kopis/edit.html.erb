@@ -1,0 +1,28 @@
+<h1>Edit kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+  <p>
+    <%= form.label :name, 'Kopi Name' %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :price_per_pound, 'Price Per Pound' %><br>
+    <%= form.number_field :price_per_pound %>
+  </p>
+
+  <p>
+ 		<%= form.collection_select :roast_id, @roasts, :id, :name %>
+  </p>
+
+  <p>
+  	<%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>

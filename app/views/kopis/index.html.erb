@@ -1,0 +1,64 @@
+<h1>Listing kopi</h1>
+
+<table class="table">
+	<thead>
+	  <tr>
+	  	<th scope="col">S/N</th>
+	    <th scope="col">Name</th>
+	    <th scope="col">Origin Name</th>
+	    <th scope="col">Origin Location</th>
+	    <th scope="col">Roast</th>
+	    <th scope="col">Price Per Pound</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+    <% @kopis.each_with_index do |kopi, index| %>
+      <tr>
+      	<td>
+        	<%= index + 1 %>
+        </td>
+        <td>
+        	<%= kopi.name %>
+        </td>
+
+        <td>
+        	<%= kopi.origin.name %>
+        </td>
+
+        <td>
+        	<%= kopi.origin.location %>
+        </td>
+
+        <td>
+        	<%= kopi.roast.name %>
+        </td>
+
+        <td>
+        	<%= "$" + kopi.price_per_pound.to_s %>
+        </td>
+
+    		<td>
+    			<%= link_to 'Show', kopi_path(kopi) %>
+    		</td>
+
+    		<td>
+    			<%= link_to 'Edit', edit_kopi_path(kopi) %>
+    		</td>
+
+    		<td>
+      			<%= link_to 'Destroy', kopi_path(kopi),
+        			method: :delete,
+        			data: { confirm: 'Are you sure you want to delete the kopi?' } %>
+    		</td>
+      </tr>
+    <% end %>
+
+	</tbody>
+</table>
+
+<br/>
+<%= link_to 'Add new kopi', new_kopi_path, class: 'btn btn-primary' %>

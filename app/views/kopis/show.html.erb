@@ -1,0 +1,32 @@
+<h1>Show kopi</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+	<strong>Price Per Pound:</strong>
+	<br>
+  <%= "$" + kopi.price_per_pound.to_s %>
+</p>
+
+<p>
+  <strong>Origin Name:</strong>
+  <br>
+  <%= @kopi.origin.name %>
+</p>
+
+<p>
+  <strong>Origin Location:</strong>
+  <br>
+  <%= @kopi.origin.location %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<%= link_to 'Edit', edit_kopi_path(@kopi), class: 'btn btn-primary' %>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
