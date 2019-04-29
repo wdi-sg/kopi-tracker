@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # index (displays all entries)
   root 'kopis#index'
-  get '/kopis' => 'kopis#index'
+  get '/kopis' => 'kopis#index', as: 'kopis'
 
   # new (displays a form to create a new kopi)
   get '/kopis/new' => 'kopis#new', as: 'new_kopi'
@@ -22,5 +22,18 @@ Rails.application.routes.draw do
 
   # destroy (deletes a specific kopi from the database)
   delete '/kopis/:id' => 'kopis#destroy'
+
+
+  get '/origins' => 'origins#index', as: 'origins'
+  get '/origins/new' => 'origins#new', as: 'new_origin'
+  post '/origins' => 'origins#create'
+  get '/origins/:id' => 'origins#show' , as: 'origin'
+  get '/origins/:id/edit' => 'origins#edit', as: 'edit_origin'
+  patch '/origins/:id' => 'origins#update'
+  delete '/origins/:id' => 'origins#destroy'
+
+  get '/kopis/:kopi_id/origins' => 'origins#index', as: 'kopi_origins'
+  get '/kopis/:kopi_id/origins/new' => 'origins#new', as: 'new_kopi_origin'
+  post '/kopis/:kopi_id/origins' => 'origins#create'
 
 end

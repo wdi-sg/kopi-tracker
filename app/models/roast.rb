@@ -1,4 +1,3 @@
-class Kopi < ActiveRecord::Base
+class Roast < ActiveRecord::Base
   # AR classes are singular and capitalized by convention
-  has_many :origin
 end

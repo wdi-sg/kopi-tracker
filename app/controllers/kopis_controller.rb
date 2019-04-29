@@ -3,15 +3,7 @@ class KopisController < ApplicationController
     @kopis = Kopi.all
   end
 
-  def show
-    @kopi = Kopi.find(params[:id])
-  end
-
   def new
-  end
-
-  def edit
-    @kopi = Kopi.find(params[:id])
   end
 
   def create
@@ -21,19 +13,27 @@ class KopisController < ApplicationController
     redirect_to @kopi
   end
 
-  def update
+  def show
     @kopi = Kopi.find(params[:id])
-
-    @kopi.update(kopi_params)
-    redirect_to @kopi
   end
 
-  def destroy
-    @kopi = Kopi.find(params[:id])
-    @kopi.destroy
+  # def edit
+  #   @kopi = Kopi.find(params[:id])
+  # end
 
-    redirect_to root_path
-  end
+  # def update
+  #   @kopi = Kopi.find(params[:id])
+
+  #   @kopi.update(kopi_params)
+  #   redirect_to @kopi
+  # end
+
+  # def destroy
+  #   @kopi = Kopi.find(params[:id])
+  #   @kopi.destroy
+
+  #   redirect_to root_path
+  # end
 
   private
     def kopi_params
