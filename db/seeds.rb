@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-roast_one = Roast.create([])
+roast = Roast.create([{ roast_type: 'cinnamon', description: 'sweet'}, {roast_type: 'light', description: 'calming'}, {roast_type: 'city', description: 'paceful'}, {roast_type: 'full city', description: 'heavy'}, {roast_type: 'dark', description: 'aromatic'}, {roast_type: 'french', description: 'magnificent'}, {roast_type: 'italian', description: 'the best'}])

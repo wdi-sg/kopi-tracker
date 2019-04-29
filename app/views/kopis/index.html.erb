@@ -1,1 +1,17 @@
-<h1>Kopi#index</h1>
+<h1>Kopi</h1>
+
+<%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'New Roast Type', new_roast_path %>
+<%= link_to 'New Origin', new_origin_path %>
+
+<%= @kopis.each do |result| %>
+	<h4>Name: <%= result.name %></h4>
+	<h5>Type of Roast: <%= @roasts[result.roast_id].roast_type %></h5>
+	<h5>Place of Origin: <%= @origins[result.origin_id].location %></h5>
+
+	<div>
+		<%= link_to 'Edit', edit_kopi_path(result) %>
+		<%= link_to 'Show', kopi_path(result) %>
+	</div>
+
+<% end %>
