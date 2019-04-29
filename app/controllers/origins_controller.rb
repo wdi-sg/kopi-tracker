@@ -8,12 +8,13 @@ class OriginsController < ApplicationController
 
     @origin.save
     redirect_to @origin
+  end
 
-    def show
-      @origin = Origin.find(params[:id])
-    end
+  def show
+    @origin = Origin.find(params[:id])
+  end
 
-    private
+  private
 
     def origin_params
       params.require(:origin).permit(:name, :loation, :phone)
