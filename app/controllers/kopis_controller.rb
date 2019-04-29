@@ -5,16 +5,16 @@ class KopisController < ApplicationController
   end
 
    def create
-    @kopi = Kopi.new(kopi_params)
+      @kopi = Kopi.new(kopi_params)
 
-    @kopi.save
-    redirect_to @kopi
-  end
+      @kopi.save
+      redirect_to @kopi
+    end
 
     def show
-    # deal with the case that we are trying to get a ranger for a park that doesn't exist
+    # deal with the scenario that we are trying to get a ranger in a park that doesn't exist
 
-    @kopi = Kopi.find(params[:id])
+      @kopi = Kopi.find(params[:id])
 
       if params[:origin_id].to_i != @kopi.origin.id
         # do something
