@@ -1,0 +1,2 @@
+class Kopi < ApplicationRecord
+end
