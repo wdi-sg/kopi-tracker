@@ -10,4 +10,16 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   post '/kopis' => 'kopis#create'
   delete '/kopis/:id' => 'kopis#destroy'
+
+  # routing for orders #
+  get 'orders' => 'kopis#index'
+
+  get '/orders/new' => 'orders#new', as: 'new_order'
+  get '/orders/:id' => 'orders#show' , as: 'order'
+  get '/orders/:id/edit' => 'orders#edit', as: 'edit_order'
+
+  patch '/orders/:id' => 'orders#update'
+  post '/orders' => 'orders#create'
+  delete '/orders/:id' => 'orders#destroy'
+
 end

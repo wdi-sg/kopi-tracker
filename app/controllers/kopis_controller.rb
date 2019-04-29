@@ -13,7 +13,6 @@ class KopisController < ApplicationController
   end
 
   def create
-    p post_params
     @kopi = Kopi.new(post_params)
 
     @kopi.save
