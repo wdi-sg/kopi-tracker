@@ -1,7 +1,12 @@
-<h1>Gold Ground Roastery</h1>
+<div class="pageWrapper">
+	<% @kopis.each do |kopi| %>
+		<div class="postBox">
+			<h4><%= kopi.name %></h4>
+			<div class="navButtons">
+				<%= link_to 'View', kopi_path(kopi) %>
+				<%= link_to 'Edit', edit_kopi_path(kopi) %>
 
-<h2>Coffee Selection</h2>
-
-<% @kopis.each do |kopi| %>
-	<p><%= kopi.name %></p>
-<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

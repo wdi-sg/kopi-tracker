@@ -1,22 +1,31 @@
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+<div class="pageWrapper">
 
-	<p>
-		<%= form.label :name, 'Kopi Name:' %>
-		<%= form.text_field :name %>
-	</p>
+	<h2>New Coffee</h2>
 
-	<% if params.has_key?(:origin_id) %>
-		<%= form.hidden_field :origin_id, value: params[:origin_id] %><br>
+	<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-	<% else %>
-		<span>Origin:</span>
-		<%= form.collection_select :origin_id, @origins, :id, :location %><br>
+		<p>
+			<%= form.label :name, 'Coffee Name:' %>
+			<%= form.text_field :name %>
+		</p>
+
+		<% if params.has_key?(:origin_id) %>
+			<%= form.hidden_field :origin_id, value: params[:origin_id] %>
+
+		<% else %>
+			<p>
+				Origin:
+				<%= form.collection_select :origin_id, @origins, :id, :location %>
+			</p>
+		<% end %>
+		<p>
+			Roast Type:
+			<%= form.collection_select :roast_id, @roasts, :id, :roast %>
+		</p>
+
+		<p>
+			<%= form.submit 'Save', :class => 'actionButton' %>
+			<%= link_to 'Cancel', :back, :class => 'actionButton'%>
+		</p>
 	<% end %>
-
-	<span>Roast Type:</span>
-	<%= form.collection_select :roast_id, @roasts, :id, :roast %><br>
-
-	<p>
-		<%= form.submit %>
-	</p>
-<% end %>
+</div>
