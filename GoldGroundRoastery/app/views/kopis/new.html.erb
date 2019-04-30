@@ -1,7 +1,7 @@
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
 	<p>
-		<%= form.label :name %><br>
+		<%= form.label :name, 'Kopi Name:' %>
 		<%= form.text_field :name %>
 	</p>
 
@@ -9,9 +9,11 @@
 		<%= form.hidden_field :origin_id, value: params[:origin_id] %><br>
 
 	<% else %>
+		<span>Origin:</span>
 		<%= form.collection_select :origin_id, @origins, :id, :location %><br>
 	<% end %>
 
+	<span>Roast Type:</span>
 	<%= form.collection_select :roast_id, @roasts, :id, :roast %><br>
 
 	<p>
