@@ -1,1 +1,51 @@
-edit.html.erb
+<h1>Edit Existing Order #: <%= @order.id %></h1>
+
+<%= form_with scope: :order, model: @order, local: true do |form| %>
+  <p>
+  	Change Kopi for your Order:<br>
+ 		<%= form.collection_select :kopi_id, @kopis, :id, :name %>
+  </p>
+
+  <p>
+    Change how much Kopi you want for your Order (in pound):<br>
+    <%= form.number_field :weight %>
+  </p>
+
+	<p>
+		<h2>Kopi Price Schedule:</h2>
+		<table class="table">
+			<thead>
+			  <tr>
+			    <th scope="col">Kopi</th>
+			    <th scope="col">Roastedness</th>
+			    <th scope="col">Price Per Pound</th>
+			  </tr>
+			</thead>
+
+			<tbody class="table-striped">
+		    <% @kopis.each_with_index do |kopi, index| %>
+		      <tr>
+		        <td>
+		        	<%= kopi.name %>
+		        </td>
+
+		        <td>
+		        	<%= kopi.roast.name %>
+		        </td>
+
+		        <td>
+		        	<%= "$" + kopi.price_per_pound.to_s %>
+		        </td>
+		      </tr>
+		    <% end %>
+			</tbody>
+		</table>
+	</p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>

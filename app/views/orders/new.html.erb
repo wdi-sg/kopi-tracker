@@ -1,19 +1,53 @@
-<h1>Add new order</h1>
+<h1>Add new Order</h1>
 
 <%= form_with scope: :order, url: orders_path, local: true do |form| %>
   <p>
-    <%= form.label :weight, 'Order weight' %><br>
-    <%= form.number_field :weight %>
+  	Which Kopi do you want to order:<br>
+ 		<%= form.collection_select :kopi_id, @kopis, :id, :name %>
   </p>
 
   <p>
- 		<%= form.collection_select :kopi_id, @kopis, :id, :name %>
+    How much Kopi do you want to order (in pound):<br>
+    <%= form.number_field :weight %>
   </p>
+
+	<p>
+		<h2>Kopi Price Schedule:</h2>
+		<table class="table">
+			<thead>
+			  <tr>
+			    <th scope="col">Kopi</th>
+			    <th scope="col">Roastedness</th>
+			    <th scope="col">Price Per Pound</th>
+			  </tr>
+			</thead>
+
+			<tbody class="table-striped">
+		    <% @kopis.each_with_index do |kopi, index| %>
+		      <tr>
+		        <td>
+		        	<%= kopi.name %>
+		        </td>
+
+		        <td>
+		        	<%= kopi.roast.name %>
+		        </td>
+
+		        <td>
+		        	<%= "$" + kopi.price_per_pound.to_s %>
+		        </td>
+		      </tr>
+		    <% end %>
+			</tbody>
+		</table>
+	</p>
 
   <p>
     <%= form.submit %>
   </p>
 <% end %>
+
+
 
 <br/>
 <%= link_to 'Back', root_path, class: 'btn btn-primary' %>

@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
   def index
-    @orders = order.all
+    @orders = Order.all
   end
 
   def show
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -12,27 +12,26 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = order.new(post_params)
+    @order = Order.new(post_params)
 
     @order.save
     redirect_to @order
   end
 
   def edit
-    @order = order.find(params[:id])
-    @roasts = Roast.all
-    @origins = Origin.all
+    @order = Order.find(params[:id])
+    @kopis = Kopi.all
   end
 
   def update
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
 
     @order.update(post_params)
     redirect_to @order
   end
 
   def destroy
-    @order = order.find(params[:id])
+    @order = Order.find(params[:id])
 
     @order.destroy
     redirect_to root_path
