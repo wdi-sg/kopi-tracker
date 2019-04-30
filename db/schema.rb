@@ -17,19 +17,19 @@ ActiveRecord::Schema.define(version: 2019_04_29_161741) do
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.string "roast"
-    t.string "origin"
+    t.bigint "roast_id"
+    t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
   create_table "origins", force: :cascade do |t|
     t.string "location"
     t.string "phone"
-    t.bigint "kopi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kopi_id"], name: "index_origins_on_kopi_id"
   end
 
   create_table "roasts", force: :cascade do |t|
