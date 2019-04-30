@@ -1,0 +1,22 @@
+<div class="pageWrapper">
+
+	<h2>New Coffee Origin</h2>
+
+	<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+		<p>
+			<%= form.label :location, 'Origin Location:' %>
+			<%= form.text_field :location %>
+		</p>
+
+		<p>
+			<%= form.label :phone, 'Contact Number:' %>
+			<%= form.text_field :phone %>
+		</p>
+
+		<p>
+			<%= form.submit 'Save', :class => 'actionButton' %>
+			<%= link_to 'Cancel', :back, :class => 'actionButton'%>
+		</p>
+	<% end %>
+</div>
