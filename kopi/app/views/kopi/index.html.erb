@@ -1,0 +1,21 @@
+<h1>Listing coffees</h1>
+
+<%= link_to 'New kopi', new_article_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @kopi.each do |article| %>
+    <tr>
+      <td><%= kopi.kopi_name %></td>
+      <td><%= kopi.roast %></td>
+      <td><%= kopi.origin %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
