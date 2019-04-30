@@ -1,0 +1,10 @@
+<h1>Origins</h1>
+
+<p><%= link_to 'New Origin', new_origin_path %></p>
+
+<% @origins.each do |origin| %>
+<ul>
+	<li><%= link_to origin.location, origin_path(origin) %></li>
+</ul>
+
+<% end %>
