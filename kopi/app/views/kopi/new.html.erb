@@ -1,0 +1,22 @@
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <p>
+    <%= form.label :kopi_name %><br>
+    <%= form.text_field :kopi_name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+  <p>
+    <%= form.label :origin %><br>
+    <%= form.text_area :origin %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
