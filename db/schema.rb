@@ -10,33 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_30_015532) do
+ActiveRecord::Schema.define(version: 2019_04_30_053506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.bigint "roastednesss_id"
-    t.bigint "origins_id"
+    t.bigint "roastedness_id"
+    t.bigint "origin_id"
     t.integer "price_per_pound"
-    t.index ["origins_id"], name: "index_kopis_on_origins_id"
-    t.index ["roastednesss_id"], name: "index_kopis_on_roastednesss_id"
+    t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roastedness_id"], name: "index_kopis_on_roastedness_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "kopis_id"
+    t.bigint "kopi_id"
     t.integer "weight"
-    t.index ["kopis_id"], name: "index_orders_on_kopis_id"
+    t.index ["kopi_id"], name: "index_orders_on_kopi_id"
   end
 
   create_table "origins", force: :cascade do |t|
     t.string "location"
-    t.bigint "phone_number_id"
-    t.index ["phone_number_id"], name: "index_origins_on_phone_number_id"
+    t.string "phone_number"
   end
 
-  create_table "roastednesss", force: :cascade do |t|
+  create_table "roastednesses", force: :cascade do |t|
     t.string "name"
   end
 

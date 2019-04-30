@@ -1,7 +1,0 @@
-class Roastednesss < ActiveRecord::Migration[5.2]
-  def change
-    create_table :roastednesss do |t|
-      t.string :name
-    end
-  end
-end

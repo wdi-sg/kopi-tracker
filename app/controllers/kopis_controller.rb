@@ -2,18 +2,24 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all
+
   end
 
   def new
+
+    @roastednesses = Roastedness.all
+    @origins = Origin.all
   end
 
   def create
+
+
     @kopi = Kopi.new(kopi_params)
 
     if @kopi.save
-      redirect_to @kopi
+      render plain: 'ok this works FINALLY'
     else
-      render 'new'
+      render plain: 'um...'
     end
   end
 
@@ -24,7 +30,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :price_per_pound, :roastedness, :origin)
+    params.require(:kopi).permit(:name, :price_per_pound, :origin_id, :roastedness_id)
   end
 
 end
