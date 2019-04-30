@@ -44,6 +44,10 @@ class KopisController < ApplicationController
   end
 
   def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+
+    redirect_to kopis_path
   end
 
 private

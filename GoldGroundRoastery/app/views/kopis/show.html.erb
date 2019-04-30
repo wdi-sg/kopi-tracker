@@ -9,6 +9,9 @@
 	<div class="navButtons">
 		<p>
 			<%= link_to 'Edit', edit_kopi_path(@kopi), :class => 'actionButton' %>
+			<%= link_to 'Delete', kopi_path(@kopi),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, :class => 'actionButton' %>
 			<%= link_to 'Back', kopis_path, :class => 'actionButton' %>
 		</p>
 	</div>
