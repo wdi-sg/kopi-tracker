@@ -1,0 +1,32 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+
+
+  <!-- roastedness dropdown -->
+  <!-- origin dropdown-->
+
+  <p>
+	<%= form.label :name %><br>
+	<%= form.text_area :name %>
+  </p>
+
+  <p>
+	<%= form.label :price_per_pound %><br>
+	<%= form.text_area :price_per_pound %>
+  </p>
+
+  <p>
+  <%= form.label :roastedness %><br>
+	<%= form.text_area :roastedness %>
+	</p>
+
+	<p>
+  <%= form.label :origin %><br>
+	<%= form.text_area :origin %>
+	</p>
+
+
+  <p>
+	<%= form.submit %>
+  </p>
+<% end %>
