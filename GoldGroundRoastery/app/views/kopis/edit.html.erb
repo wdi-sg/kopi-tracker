@@ -1,0 +1,32 @@
+<div class="pageWrapper">
+
+	<h2>Edit <%= @kopi.name.capitalize %> Coffee</h2>
+
+	<%= form_with(model: @kopi, local: true) do |form| %>
+
+		<p>
+			<%= form.label :name, 'Coffee Name:' %>
+			<%= form.text_field :name %>
+		</p>
+
+		<% if params.has_key?(:origin_id) %>
+			<%= form.hidden_field :origin_id, value: params[:origin_id] %>
+
+		<% else %>
+			<p>
+				Origin:
+				<%= form.collection_select :origin_id, @origins, :id, :location %>
+			</p>
+		<% end %>
+		<p>
+			Roast Type:
+			<%= form.collection_select :roast_id, @roasts, :id, :roast %>
+		</p>
+
+		<p>
+			<%= form.submit 'Save', :class => 'actionButton' %>
+			<%= link_to 'Cancel', :back, :class => 'actionButton'%>
+		</p>
+	<% end %>
+
+</div>

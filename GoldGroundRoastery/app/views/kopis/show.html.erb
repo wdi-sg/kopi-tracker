@@ -1,5 +1,15 @@
-<h1><%= @kopi.name.capitalize %> Coffee</h1>
+<div class="pageWrapper">
+	<h2><%= @kopi.name.capitalize %> Coffee</h2>
 
-<p> Origin: <%= @kopi.origin.location %></p>
+	<p>Origin: <%= @kopi.origin.location %></p>
 
-<p>Roast type: <%= @kopi.roast.roast %></p>
+	<p>Roast type: <%= @kopi.roast.roast %></p>
+	<br>
+
+	<div class="navButtons">
+		<p>
+			<%= link_to 'Edit', edit_kopi_path(@kopi), :class => 'actionButton' %>
+			<%= link_to 'Back', kopis_path, :class => 'actionButton' %>
+		</p>
+	</div>
+</div>

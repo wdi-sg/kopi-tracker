@@ -23,6 +23,12 @@ class KopisController < ApplicationController
     @roasts = Roast.all
   end
 
+  def edit
+    @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
+    @roasts = Roast.all
+  end
+
   def create
     @kopi = Kopi.new(kopi_params)
 
@@ -30,10 +36,11 @@ class KopisController < ApplicationController
     redirect_to @kopi
   end
 
-  def edit
-  end
-
   def update
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.update(kopi_params)
+    redirect_to @kopi
   end
 
   def destroy
