@@ -1,6 +1,12 @@
 <h1>Kopi Listing</h1>
 
-<table class="table">
+<%= link_to 'Sort By Popularity (Ascending)', "#{root_path}?sort=asc", class: 'btn btn-success'  %>
+<%= link_to 'Sort By Popularity (Descending)', "#{root_path}?sort=desc", class: 'btn btn-success'  %>
+
+<br>
+<br>
+
+<table class="table table-striped">
 	<thead>
 	  <tr>
 	  	<th scope="col">S/N</th>
@@ -9,13 +15,14 @@
 	    <th scope="col">Origin Location</th>
 	    <th scope="col">Roast</th>
 	    <th scope="col">Price Per Pound</th>
+	   	<th scope="col"># of Customers</th>
 			<th scope="col"></th>
 			<th scope="col"></th>
 			<th scope="col"></th>
 	  </tr>
 	</thead>
 
-	<tbody class="table-striped">
+	<tbody>
     <% @kopis.each_with_index do |kopi, index| %>
       <tr>
       	<td>
@@ -41,6 +48,10 @@
         	<%= "$" + kopi.price_per_pound.to_s %>
         </td>
 
+        <td>
+        	<%= kopi.customers.length %>
+        </td>
+
     		<td>
     			<%= link_to 'Show', kopi_path(kopi) %>
     		</td>
@@ -63,3 +74,4 @@
 <br/>
 <%= link_to 'Add new kopi', new_kopi_path, class: 'btn btn-primary' %>
 <%= link_to 'Add new kopi order', new_order_path, class: 'btn btn-success' %>
+<%= link_to 'Add new customer', new_customer_path, class: 'btn btn-info' %>

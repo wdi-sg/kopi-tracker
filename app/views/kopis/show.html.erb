@@ -8,7 +8,7 @@
 <p>
 	<strong>Price Per Pound:</strong>
 	<br>
-  <%= "$" + kopi.price_per_pound.to_s %>
+  <%= "$" + @kopi.price_per_pound.to_s %>
 </p>
 
 <p>
@@ -26,6 +26,13 @@
 <p>
   <strong>Roast:</strong>
   <%= @kopi.roast.name %>
+</p>
+
+<p>
+	<strong>Customers:</strong>
+	<% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_kopi_path(@kopi), class: 'btn btn-primary' %>

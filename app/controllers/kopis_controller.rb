@@ -1,6 +1,14 @@
 class KopisController < ApplicationController
   def index
-    @kopis = Kopi.all
+    if request.query_parameters[:sort] == "desc"
+      @kopis = Kopi.joins(:customers)
+                   .group("kopis.id")
+                   .order("count(customers.id) desc")
+    else
+      @kopis = Kopi.joins(:customers)
+                   .group("kopis.id")
+                   .order("count(customers.id) asc")
+    end
   end
 
   def show
@@ -32,14 +40,12 @@ class KopisController < ApplicationController
     redirect_to @kopi
   end
 
-
   def destroy
     @kopi = Kopi.find(params[:id])
 
     @kopi.destroy
     redirect_to root_path
   end
-
 
 private
   def post_params
