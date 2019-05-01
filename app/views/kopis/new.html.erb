@@ -2,15 +2,17 @@
 
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
   <p>
-    <%= form.label :name %><br>
+    <%= form.label "Kopi Name:" %><br>
     <%= form.text_field :name %>
   </p>
 
   <p>
+  	<%= form.label "Roastedness:" %><br>
   	<%= form.collection_select :roast_id, @roasts, :id, :roastedness %>
   </p>
 
   <p>
+  	<%= form.label "Origin:" %><br>
   	<%= form.collection_select :origin_id, @origins, :id, :location %>
   </p>
 

@@ -1,27 +1,32 @@
-<h1>Listing Kopis</h1>
+<h1>Kopi Listing</h1>
 
 <%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'New Origin', new_origin_path %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Roast</th>
-    <th>Origin</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>Name</th>
+	    <th>Roast</th>
+	    <th>Origin</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	</thead>
 
-  <% @kopis.each do |kopi| %>
-    <tr>
-      <td><%= kopi.name %></td>
-      <td><%= kopi.roast %></td>
-      <td><%= kopi.origin %></td>
-      <td><%= link_to 'Show', kopi_path(kopi) %></td>
-      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-      <td><%= link_to 'Destroy', kopi_path(kopi),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+	<tbody class="table-striped">
+	  <% @kopis.each do |kopi| %>
+	    <tr>
+	      <td><%= kopi.name %></td>
+	      <td><%= kopi.roast.roastedness %></td>
+	      <td><%= kopi.origin.location %></td>
+	      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+	      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+	      <td><%= link_to 'Destroy', kopi_path(kopi),
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %></td>
+	    </tr>
+	  <% end %>
+	</tbody>
 </table>

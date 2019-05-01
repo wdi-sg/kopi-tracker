@@ -1,18 +1,17 @@
 class OriginsController < ApplicationController
 
   def index
-    # test to see if we are at /kopis/:id/origins or /origins
-    if params.has_key?(:kopi_id)
-      # get all the origins for a specific kopi
-      @origins = Origin.where(kopi_id: params[:kopi_id] )
-    else
-      # get all origins
-      @origins = Origin.all
-    end
+    @origin = Origin.all
+  end
+
+  def show
+    @origin = Origin.find(params[:id])
   end
 
   def new
-    @kopis = Kopi.all
+  end
+
+  def edit
   end
 
   def create
@@ -22,19 +21,15 @@ class OriginsController < ApplicationController
     redirect_to @origin
   end
 
-  def show
-    # deal with the case that we are trying to get a origin for a kopi that doesn't exist
+  def update
+  end
 
-    @origin = Origin.find(params[:id])
-
-    if params[:kopi_id].to_i != @origin.kopi.id
-      # do something
-    end
+  def destroy
   end
 
 private
-
   def origin_params
-    params.require(:origin).permit(:location, :phone, :kopi_id)
+    params.require(:origin).permit(:location, :phone)
   end
+
 end

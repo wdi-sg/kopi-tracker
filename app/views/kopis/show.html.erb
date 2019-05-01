@@ -1,3 +1,5 @@
+<h1>Kopi <%=@kopi.name%></h1>
+
 <p>
   <strong>Name:</strong>
   <%= @kopi.name %>
@@ -5,16 +7,12 @@
 
 <p>
   <strong>Roast:</strong>
-  <%= @kopi.roast %>
+  <%= @kopi.roast.roastedness %>
 </p>
 
 <p>
   <strong>Origin:</strong>
-  <%= @kopi.origin %>
+  <%= @kopi.origin.location %>
 </p>
-
-<!--<% @kopi.origins.each do |origin| %>
-  <%= origin %>
-<% end %>-->
 
 <%= link_to 'Back', root_path %>

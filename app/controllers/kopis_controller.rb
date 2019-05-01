@@ -19,23 +19,25 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
   end
 
-  # def edit
-  #   @kopi = Kopi.find(params[:id])
-  # end
+  def edit
+    @kopi = Kopi.find(params[:id])
+    @roasts = Roast.all
+    @origins = Origin.all
+  end
 
-  # def update
-  #   @kopi = Kopi.find(params[:id])
+  def update
+    @kopi = Kopi.find(params[:id])
 
-  #   @kopi.update(kopi_params)
-  #   redirect_to @kopi
-  # end
+    @kopi.update(kopi_params)
+    redirect_to @kopi
+  end
 
-  # def destroy
-  #   @kopi = Kopi.find(params[:id])
-  #   @kopi.destroy
+  def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
 
-  #   redirect_to root_path
-  # end
+    redirect_to root_path
+  end
 
   private
     def kopi_params
