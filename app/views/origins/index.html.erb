@@ -1,15 +1,7 @@
-<h1>Origins#index</h1>
-<p>Find me in app/views/origins/index.html.erb</p>
-
+<h1>Kopi Farm!</h1>
 
 <% @origins.each do |origin| %>
-<h1> <%= origin.location %> </h1>
-<h1> <%= origin.phone %> </h1>
-<h1> <%= link_to 'TEST', "/origins/#{origin.id}" %> </h1>
-<% end %>
-
-<% @kopis.each do |kopi| %>
-	<h2> <%= kopi.name %> </h2>
-	<h2> <%= kopi.roast %> </h2>
-	<h2> <%= kopi.origin_id %> </h2>
+<h1> Farm: <%= origin.location %> </h1>
+<h1> Contact: <%= origin.phone %> </h1>
+<h1> <%= link_to 'Farm Page', "/origins/#{origin.id}" %> </h1>
 <% end %>
