@@ -1,0 +1,16 @@
+<div class="stuff">
+<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+
+	<%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+	<p>
+		<%= form.label :weight_kg %><br>
+		<%= form.text_field :weight_kg %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+</div>
+<%= link_to 'Back', root_path %>

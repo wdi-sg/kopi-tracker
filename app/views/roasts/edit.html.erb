@@ -1,0 +1,22 @@
+<h1>Edit Roast</h1>
+
+<%= form_with scope: :roast, model: @roast, local: true do |form| %>
+
+
+  <p>
+    <%= form.label :roast_type %><br>
+    <%= form.text_field :roast_type %>
+  </p>
+
+   <p>
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

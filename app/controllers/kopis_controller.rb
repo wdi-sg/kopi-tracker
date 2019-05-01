@@ -1,26 +1,8 @@
 class KopisController < ApplicationController
+
   def index
-    puts "inside indeX!"
-    if params.has_key?(:roast_id)
-      num = :roast_id
-
-      @roasts = Roast.find(params[:roast_id]).roast_type
-      # puts @roasts
-      @kopis = Kopi.where(roast_id: params[:roast_id])
-      # puts @kopis
-    else
-
     @kopis = Kopi.all
 
-    @origins = Origin.all
-    puts "WHERE"
-    puts @kopis[1].origin_id
-    puts @origins[2].location
-    @roasts = Roast.all
-
-
-    # puts @kopis
-    end
   end
 
   def new
@@ -30,8 +12,7 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
-    puts 'HELLO'
-    puts @kopi.name
+
     @kopi.save
     redirect_to @kopi
   end
@@ -49,6 +30,13 @@ class KopisController < ApplicationController
     redirect_to @kopi
   end
 
+  def destroy
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.destroy
+    redirect_to root_path
+  end
+
   def show
     @kopi = Kopi.find(params[:id])
     roast_id = @kopi.roast_id
@@ -60,7 +48,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :origin_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id, :price_per_kilo)
   end
 
 end
