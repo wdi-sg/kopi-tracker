@@ -2,7 +2,7 @@
 
 You have decided to add functionality for the general public.
 
-Add users using devise.
+Add users using devise. ✅
 
 #### further
 

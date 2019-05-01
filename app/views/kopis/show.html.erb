@@ -1,0 +1,14 @@
+<p>
+  <h2> Name: </h2>
+  <%= @kopi.name %>
+</p>
+
+	<h2> Customers who bought <%= @kopi.name %>: </h2>
+	<% @kopi.customers.each do |customer| %>
+	  <ul>
+			<li><%= customer.name %></li>
+	  </ul>
+  <% end %>
+
+
+<%= link_to 'Back', kopis_path %>
