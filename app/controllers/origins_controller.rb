@@ -1,4 +1,5 @@
 class OriginsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_origin, only: [:show, :edit, :update, :destroy]
 
   # GET /origins
@@ -25,6 +26,7 @@ class OriginsController < ApplicationController
   # POST /origins.json
   def create
     @origin = Origin.new(origin_params)
+    @origin.user = current_user
 
     respond_to do |format|
       if @origin.save

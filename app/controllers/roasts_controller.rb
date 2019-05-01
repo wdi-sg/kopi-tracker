@@ -1,10 +1,12 @@
 class RoastsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_roast, only: [:show, :edit, :update, :destroy]
 
   # GET /roasts
   # GET /roasts.json
   def index
-    @roasts = Roast.all
+    @roasts = Roast.find(current_user.id)
+    p @roasts
   end
 
   # GET /roasts/1
@@ -25,6 +27,7 @@ class RoastsController < ApplicationController
   # POST /roasts.json
   def create
     @roast = Roast.new(roast_params)
+    @roast.user = current_user
 
     respond_to do |format|
       if @roast.save

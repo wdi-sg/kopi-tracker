@@ -1,10 +1,26 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
 
   # GET /kopis
   # GET /kopis.json
   def index
-    @kopis = Kopi.all
+
+    Kopi.all.each do |kopi|
+      kopi.update(:shop_count => kopi.customers.count)
+    end
+
+    if request.query_parameters[:sort] === "desc"
+      @kopis = Kopi.order(shop_count: :desc)
+
+    elsif request.query_parameters[:sort] === "asc"
+      @kopis = Kopi.order(shop_count: :asc)
+
+    else
+      @kopis = Kopi.all
+
+    end
   end
 
   # GET /kopis/1
@@ -29,6 +45,9 @@ class KopisController < ApplicationController
   # POST /kopis.json
   def create
     @kopi = Kopi.new(kopi_params)
+    count = @kopi.customers.count
+    p count
+    @kopi.user = current_user
 
     respond_to do |format|
       if @kopi.save
