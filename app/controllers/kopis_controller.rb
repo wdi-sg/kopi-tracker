@@ -1,4 +1,7 @@
 class KopisController < ApplicationController
+
+before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @kopis = Kopi.all.order(params[:sort])
     @customers = Customer.all
