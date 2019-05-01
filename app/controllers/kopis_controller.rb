@@ -1,12 +1,13 @@
 class KopisController < ApplicationController
   def index
-    @kopis = Kopi.order(params[:sort])
+    @kopis = Kopi.all.order(params[:sort])
+    @customers = Customer.all
   end
 
   def new
     @roasts = Roast.all
     @origins = Origin.all
-    @customers = Customers.all
+    @customers = Customer.all
   end
 
   def create
@@ -42,7 +43,7 @@ class KopisController < ApplicationController
 
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id, :customer_ids => [])
     end
 
 end

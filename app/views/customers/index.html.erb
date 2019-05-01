@@ -1,0 +1,21 @@
+<h1>Customer Listing</h1>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th><%= link_to "Name", :sort => "name" %></th>
+	    <th></th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+	  <% @customers.each do |customer| %>
+	    <tr>
+	      <td><%= customer.name %></td>
+	      <td><%= link_to 'Show', customer_path(customer), class:"btn btn-outline-info" %></td>
+	    </tr>
+	  <% end %>
+	</tbody>
+</table>
+
+ <%= link_to 'Back', root_path, class:'btn btn-primary' %>

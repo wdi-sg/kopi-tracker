@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'kopis#index'
 
-  resources :kopis, :roasts, :origins, :customers,
+  resources :kopis, :roasts, :origins, :customers
 
   # get '/kopis' => 'kopis#index', as: 'kopis'
   # get '/kopis/new' => 'kopis#new', as: 'new_kopi'
