@@ -1,6 +1,6 @@
 class KopisController < ApplicationController
   def index
-    @kopis = Kopi.all
+    @kopis = Kopi.order(params[:sort])
   end
 
   def new
