@@ -1,0 +1,14 @@
+<p>
+  <h2> Name: </h2>
+  <%= @customer.name %>
+</p>
+
+	<h2> Kopis bought: </h2>
+	<% @customer.kopis.each do |kopi| %>
+	  <ul>
+			<li><%= kopi.name %></li>
+	  </ul>
+  <% end %>
+
+
+<%= link_to 'Back', customers_path %>

@@ -12,9 +12,9 @@ A customer can stock many kopis.
 
 A kopi can be carried by many customers.
 
-For a given kopi, `/kopi/:id` display all the customers who carry that kopi.
+For a given kopi, `/kopi/:id` display all the customers who carry that kopi. ✅
 
-For a given customer `/customer/:id` display all the kopis they stock.
+For a given customer `/customer/:id` display all the kopis they stock. ✅
 
 #### further
 Sort the customers by the number of kopis they carry, ascending and descending.
@@ -23,4 +23,3 @@ Note: The option of ascending and descending sorting should be noted in the quer
 
 #### further
 Sort the kopis by "popularity"- by the number of shops that carry that kopi.
-

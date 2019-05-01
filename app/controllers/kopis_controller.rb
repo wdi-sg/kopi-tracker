@@ -17,9 +17,9 @@ class KopisController < ApplicationController
     @kopi = Kopi.new(kopi_params)
 
     if @kopi.save
-      render plain: 'ok this works FINALLY'
+      redirect_to root_path
     else
-      render plain: 'um...'
+      render plain: 'kopi not added'
     end
   end
 
