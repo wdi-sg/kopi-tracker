@@ -1,7 +1,7 @@
 <h1>Kopi Listing</h1>
 
-<%= link_to 'New Kopi', new_kopi_path %>
-<%= link_to 'New Origin', new_origin_path %>
+<%= link_to 'New Kopi', new_kopi_path, class:"btn btn-secondary" %>
+<%= link_to 'New Origin', new_origin_path, class:"btn btn-secondary" %>
 
 <table class="table">
 	<thead>
@@ -21,9 +21,9 @@
 	      <td><%= kopi.name %></td>
 	      <td><%= kopi.roast.roastedness %></td>
 	      <td><%= kopi.origin.location %></td>
-	      <td><%= link_to 'Show', kopi_path(kopi) %></td>
-	      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-	      <td><%= link_to 'Destroy', kopi_path(kopi),
+	      <td><%= link_to 'Show', kopi_path(kopi), class:"btn btn-outline-info" %></td>
+	      <td><%= link_to 'Edit', edit_kopi_path(kopi), class:"btn btn-outline-primary" %></td>
+	      <td><%= link_to 'Destroy', kopi_path(kopi), class:"btn btn-outline-danger",
 	        method: :delete,
 	        data: { confirm: 'Are you sure?' } %></td>
 	    </tr>
