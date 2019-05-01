@@ -33,4 +33,16 @@ Rails.application.routes.draw do
   patch '/customers/:id' => 'customers#update'
   post '/customers' => 'customers#create'
   delete '/customers/:id' => 'customers#destroy'
+
+  # routing for users kopi bookmark#
+  get '/kopi_bookmarks/' => 'bookmarks#show_kopi' , as: 'kopi_bookmark'
+
+  get '/kopi_bookmarks/edit' => 'bookmarks#edit_kopi', as: 'edit_kopi_bookmark'
+  patch '/kopi_bookmarks/' => 'bookmarks#update_kopi'
+
+  # routing for users roast bookmark#
+  get '/roast_bookmarks/' => 'bookmarks#show_roast' , as: 'roast_bookmark'
+
+  get '/roast_bookmarks/edit' => 'bookmarks#edit_roast', as: 'edit_roast_bookmark'
+  patch '/roast_bookmarks/' => 'bookmarks#update_roast'
 end

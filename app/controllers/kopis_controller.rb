@@ -3,11 +3,11 @@ class KopisController < ApplicationController
     if request.query_parameters[:sort] == "desc"
       @kopis = Kopi.joins(:customers)
                    .group("kopis.id")
-                   .order("count(customers.id) desc")
+                   .order("count(customers) desc")
     else
       @kopis = Kopi.joins(:customers)
                    .group("kopis.id")
-                   .order("count(customers.id) asc")
+                   .order("count(customers) asc")
     end
   end
 

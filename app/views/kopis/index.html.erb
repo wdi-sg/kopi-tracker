@@ -75,3 +75,22 @@
 <%= link_to 'Add new kopi', new_kopi_path, class: 'btn btn-primary' %>
 <%= link_to 'Add new kopi order', new_order_path, class: 'btn btn-success' %>
 <%= link_to 'Add new customer', new_customer_path, class: 'btn btn-info' %>
+
+<br/>
+<br/>
+
+<% if user_signed_in? == true %>
+	<h1>Welcome - <%= current_user.email %></h1>
+	<%= link_to 'Show Roast Bookmark', roast_bookmark_path, class: 'btn btn-info' %>
+	<%= link_to 'Edit Roast Bookmark', edit_roast_bookmark_path, class: 'btn btn-success' %>
+	<br/>
+	<br/>
+	<%= link_to 'Show Kopi Bookmark', kopi_bookmark_path, class: 'btn btn-info' %>
+	<%= link_to 'Edit Kopi Bookmark', edit_kopi_bookmark_path, class: 'btn btn-success' %>
+	<br/>
+	<br/>
+	<%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: 'btn btn-danger' %>
+<% else %>
+	<h1>User</h1>
+	<%= link_to 'Log In', new_user_session_url, class: 'btn btn-secondary'%>
+<% end %>
