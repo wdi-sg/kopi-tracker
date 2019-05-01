@@ -1,16 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Price (per pound):</strong>
+  <%= @kopi.price %>
+</p>
+
 <p>
   <strong>Roast Type:</strong>
-  <%= @roast.name %>
+  <%= @kopi.roast.name %>
 </p>
 
 <p>
   <strong>Origin:</strong>
-  <%= @origin.location %>
+  <%= @kopi.origin.name %>
 </p>
 
-<p>
-  <strong>Kopi Bean:</strong>
-  <%= @kopi.name %>
-</p>
-
-<a href=<%= origins_url %>>Home</a>
+<%= link_to 'Edit', edit_kopi_path(@kopi) %> |
+<%= link_to 'Back', kopis_path %>

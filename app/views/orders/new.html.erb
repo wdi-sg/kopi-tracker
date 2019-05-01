@@ -1,0 +1,21 @@
+<h1>New Order</h1>
+
+<%= render 'form', order: @order %>
+
+<%= link_to 'Back', orders_path %>
+
+<br>
+<br>
+
+<table>
+	<tr>
+		<th>Kopi Bean</th>
+		<th>Price (per pound)</th>
+	</tr>
+	<% @kopis.each do |kopi| %>
+		<tr>
+			<td><%= kopi.name %></td>
+			<td>$<%= kopi.price %></td>
+		</tr>
+		<% end %>
+</table>

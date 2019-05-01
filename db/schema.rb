@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_091504) do
+ActiveRecord::Schema.define(version: 2019_05_01_063659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,21 @@ ActiveRecord::Schema.define(version: 2019_04_29_091504) do
     t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "price"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
     t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "kopi_id"
+    t.integer "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kopi_id"], name: "index_orders_on_kopi_id"
+  end
+
   create_table "origins", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.string "phone"
     t.datetime "created_at", null: false
@@ -38,4 +48,5 @@ ActiveRecord::Schema.define(version: 2019_04_29_091504) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "orders", "kopis"
 end

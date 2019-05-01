@@ -1,11 +1,5 @@
-<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+<h1>New Roast</h1>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
+<%= render 'form', roast: @roast %>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= link_to 'Back', roasts_path %>

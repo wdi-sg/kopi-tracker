@@ -1,1392 +1,1501 @@
-  [1m[35m (464.1ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (522.4ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
-  [1m[35m (358.3ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_test" ENCODING = 'unicode'[0m
+  [1m[35m (420.4ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_test" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
-  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
   ↳ bin/rails:9
-  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
   ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
   ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-Migrating to Roasts (20190429091011)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Migrating to CreateRoasts (20190430122931)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
   [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20190429091011_roasts.rb:3
-  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190429091011"]]
+  ↳ db/migrate/20190430122931_create_roasts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190430122931"]]
   ↳ bin/rails:9
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   ↳ bin/rails:9
-Migrating to Kopis (20190429091210)
+Migrating to CreateOrigins (20190430123444)
   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
-  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast_id" bigint, "origin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20190429091210_kopis.rb:3
-  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_roast_id" ON "kopis"  ("roast_id")[0m
-  ↳ db/migrate/20190429091210_kopis.rb:3
-  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_origin_id" ON "kopis"  ("origin_id")[0m
-  ↳ db/migrate/20190429091210_kopis.rb:3
-  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190429091210"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "name" character varying, "location" character varying, "phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190430123444_create_origins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190430123444"]]
   ↳ bin/rails:9
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   ↳ bin/rails:9
-Migrating to Origins (20190429091504)
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "location" character varying, "phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20190429091504_origins.rb:3
-  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190429091504"]]
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-29 09:17:02.114074"], ["updated_at", "2019-04-29 09:17:02.114074"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-30 12:35:56.231373"], ["updated_at", "2019-04-30 12:35:56.231373"]]
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
   ↳ bin/rails:9
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mRoast Create (1.2ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cinnamon"], ["created_at", "2019-04-29 09:36:28.110680"], ["updated_at", "2019-04-29 09:36:28.110680"]]
-  ↳ db/seeds.rb:10
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-04-29 09:36:28.115315"], ["updated_at", "2019-04-29 09:36:28.115315"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medium"], ["created_at", "2019-04-29 09:36:28.118248"], ["updated_at", "2019-04-29 09:36:28.118248"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-04-29 09:36:28.123499"], ["updated_at", "2019-04-29 09:36:28.123499"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:14
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-04-29 09:36:28.126391"], ["updated_at", "2019-04-29 09:36:28.126391"]]
-  ↳ db/seeds.rb:14
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:14
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:15
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-04-29 09:36:28.129301"], ["updated_at", "2019-04-29 09:36:28.129301"]]
-  ↳ db/seeds.rb:15
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:16
-  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-04-29 09:36:28.132216"], ["updated_at", "2019-04-29 09:36:28.132216"]]
-  ↳ db/seeds.rb:16
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:16
-Started GET "/" for ::1 at 2019-04-29 18:15:15 +0800
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/origins/new" for ::1 at 2019-04-30 20:36:25 +0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/_form.html.erb (34.3ms)
+  Rendered origins/new.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 405ms (Views: 374.5ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/origins" for ::1 at 2019-04-30 20:36:49 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i7DoAd84cYDWCRbmg9fZsrYE36jGwY7qfe663Y7sFy/cXsDBKKznMkpx/rSPFjVlrUP4b69xuYgyBmt9ryb1Dw==", "origin"=>{"name"=>"Ah Pek Kopi", "location"=>"Singapore", "phone"=>"9134567"}, "commit"=>"Create Origin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:30
+  [1m[36mOrigin Create (1.3ms)[0m  [1m[32mINSERT INTO "origins" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ah Pek Kopi"], ["location", "Singapore"], ["phone", "9134567"], ["created_at", "2019-04-30 12:36:49.232183"], ["updated_at", "2019-04-30 12:36:49.232183"]]
+  ↳ app/controllers/origins_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:30
+Redirected to http://localhost:3000/origins/1
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/origins/1" for ::1 at 2019-04-30 20:36:49 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:67
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 21.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/origins" for ::1 at 2019-04-30 20:36:53 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:16
+  Rendered origins/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roasts" for ::1 at 2019-04-30 20:37:00 +0800
 Processing by RoastsController#index as HTML
   Rendering roasts/index.html.erb within layouts/application
-  Rendered roasts/index.html.erb within layouts/application (5.4ms)
-Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+  [1m[36mRoast Load (1.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 67ms (Views: 55.8ms | ActiveRecord: 6.4ms)
 
 
-  
-ActionView::Template::Error (undefined method `each' for nil:NilClass):
-    1: <% @roasts.each do |roast| %>
-    2: <ul>
-    3: 	<li><%= link_to roast.name, roast_path(roast) %></li>
-    4: </ul>
-  
-app/views/roasts/index.html.erb:1:in `_app_views_roasts_index_html_erb___445107276640244033_70165881822700'
-Started GET "/roasts/new" for ::1 at 2019-04-29 18:15:31 +0800
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:37:01 +0800
 Processing by RoastsController#new as HTML
   Rendering roasts/new.html.erb within layouts/application
-  Rendered roasts/new.html.erb within layouts/application (18.4ms)
-Completed 200 OK in 327ms (Views: 323.1ms | ActiveRecord: 0.0ms)
+  Rendered roasts/_form.html.erb (2.6ms)
+  Rendered roasts/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 30.6ms | ActiveRecord: 7.2ms)
 
 
-Started GET "/roasts" for ::1 at 2019-04-29 18:16:55 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  Rendered roasts/index.html.erb within layouts/application (2.7ms)
-Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+Started POST "/roasts" for ::1 at 2019-04-30 20:37:41 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"neN9sxqJ7oIa3ckThchQTeq7ARiown/gzi9oBIuUK8fKDVVz7R14MIalIUGJCbya8fwm38FySIKBx7mkql7J5w==", "roast"=>{"name"=>"Cinnamon"}, "commit"=>"Create Roast"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (1.1ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cinnamon"], ["created_at", "2019-04-30 12:37:41.538945"], ["updated_at", "2019-04-30 12:37:41.538945"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/1
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
 
 
-  
-ActionView::Template::Error (undefined method `each' for nil:NilClass):
-    1: <% @roasts.each do |roast| %>
-    2: <ul>
-    3: 	<li><%= link_to roast.name, roast_path(roast) %></li>
-    4: </ul>
-  
-app/views/roasts/index.html.erb:1:in `_app_views_roasts_index_html_erb___445107276640244033_70165885116060'
-Started GET "/" for ::1 at 2019-04-29 18:19:27 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (15.0ms)
-Completed 200 OK in 39ms (Views: 23.0ms | ActiveRecord: 8.8ms)
-
-
-Started GET "/roasts/1" for ::1 at 2019-04-29 18:19:29 +0800
+Started GET "/roasts/1" for ::1 at 2019-04-30 20:37:41 +0800
 Processing by RoastsController#show as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/roasts_controller.rb:17
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
   Rendering roasts/show.html.erb within layouts/application
-  Rendered roasts/show.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 29ms (Views: 19.4ms | ActiveRecord: 1.6ms)
+  Rendered roasts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/roasts" for ::1 at 2019-04-29 18:19:31 +0800
+Started GET "/roasts" for ::1 at 2019-04-30 20:37:44 +0800
 Processing by RoastsController#index as HTML
   Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 0.5ms)
 
 
-Started GET "/roasts/2" for ::1 at 2019-04-29 18:19:32 +0800
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:45:46 +0800
+Processing by RoastsController#new as HTML
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/_form.html.erb (2.9ms)
+  Rendered roasts/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/roasts" for ::1 at 2019-04-30 20:45:49 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KQkDHs+bKf81ByuBwIhnRnJDC1Ntm05w14XwAP+zKTt+5yveOA+/Tal/w9PMSYuRaQQslAQreRKYbSGg3nnLGw==", "roast"=>{"name"=>"Light"}, "commit"=>"Create Roast"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (2.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-04-30 12:45:49.501422"], ["updated_at", "2019-04-30 12:45:49.501422"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/2
+Completed 302 Found in 10ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/roasts/2" for ::1 at 2019-04-30 20:45:49 +0800
 Processing by RoastsController#show as HTML
   Parameters: {"id"=>"2"}
   [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/roasts_controller.rb:17
+  ↳ app/controllers/roasts_controller.rb:67
   Rendering roasts/show.html.erb within layouts/application
-  Rendered roasts/show.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+  Rendered roasts/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/roasts" for ::1 at 2019-04-29 18:19:33 +0800
+Started GET "/roasts" for ::1 at 2019-04-30 20:45:50 +0800
 Processing by RoastsController#index as HTML
   Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 0.4ms)
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/roasts/3" for ::1 at 2019-04-29 18:19:34 +0800
-Processing by RoastsController#show as HTML
-  Parameters: {"id"=>"3"}
-  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ app/controllers/roasts_controller.rb:17
-  Rendering roasts/show.html.erb within layouts/application
-  Rendered roasts/show.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.7ms)
-
-
-Started GET "/roasts" for ::1 at 2019-04-29 18:19:35 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (2.5ms)
-Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/roasts" for ::1 at 2019-04-29 18:23:27 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/roasts" for ::1 at 2019-04-29 18:23:28 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:1
-  Rendered roasts/index.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/roasts" for ::1 at 2019-04-29 18:23:47 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  Rendered roasts/index.html.erb within layouts/application (142.9ms)
-Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined method `to' for #<#<Class:0x00007fa18868a980>:0x00007fa18943ed60>
-Did you mean?  t):
-    1: <h1>Roasts</h1>
-    2: 
-    3: <%= link to 'New Roast', new_roasts_path %>
-    4: 
-    5: <% @roasts.each do |roast| %>
-    6: <ul>
-  
-app/views/roasts/index.html.erb:3:in `_app_views_roasts_index_html_erb___445107276640244033_70165884697440'
-Started GET "/roasts" for ::1 at 2019-04-29 18:25:01 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  Rendered roasts/index.html.erb within layouts/application (134.8ms)
-Completed 500 Internal Server Error in 146ms (ActiveRecord: 8.4ms)
-
-
-  
-ActionView::Template::Error (undefined method `to' for #<#<Class:0x00007fa18ca0d298>:0x00007fa18942b800>
-Did you mean?  t):
-    1: <h1>Roasts</h1>
-    2: 
-    3: <p><%= link to 'New Roast', new_roast_path %></p>
-    4: 
-    5: <% @roasts.each do |roast| %>
-    6: <ul>
-  
-app/views/roasts/index.html.erb:3:in `_app_views_roasts_index_html_erb___445107276640244033_70165912907120'
-Started GET "/" for ::1 at 2019-04-29 18:25:04 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-  Rendered roasts/index.html.erb within layouts/application (131.9ms)
-Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined method `to' for #<#<Class:0x00007fa18ca0d298>:0x00007fa188504660>
-Did you mean?  t):
-    1: <h1>Roasts</h1>
-    2: 
-    3: <p><%= link to 'New Roast', new_roast_path %></p>
-    4: 
-    5: <% @roasts.each do |roast| %>
-    6: <ul>
-  
-app/views/roasts/index.html.erb:3:in `_app_views_roasts_index_html_erb___445107276640244033_70165876713740'
-Started GET "/" for ::1 at 2019-04-29 18:25:27 +0800
-Processing by RoastsController#index as HTML
-  Rendering roasts/index.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:5
-  Rendered roasts/index.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/roasts/new" for ::1 at 2019-04-29 18:25:29 +0800
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:45:51 +0800
 Processing by RoastsController#new as HTML
   Rendering roasts/new.html.erb within layouts/application
-  Rendered roasts/new.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+  Rendered roasts/_form.html.erb (2.6ms)
+  Rendered roasts/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 0.0ms)
 
 
-Started POST "/roasts" for ::1 at 2019-04-29 18:25:34 +0800
+Started POST "/roasts" for ::1 at 2019-04-30 20:45:54 +0800
 Processing by RoastsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G0ZB7LOqqMRsuaaQGjsmC6zA69mVUUFNhFvQExkVeIa/XCOAEqC55PWEbt8E5if2o+coVmtm+4S4TIwUvzvvqw==", "roast"=>{"name"=>"Test"}, "commit"=>"Save Roast"}
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/roasts_controller.rb:12
-  [1m[36mRoast Create (1.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test"], ["created_at", "2019-04-29 10:25:34.073971"], ["updated_at", "2019-04-29 10:25:34.073971"]]
-  ↳ app/controllers/roasts_controller.rb:12
-  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/roasts_controller.rb:12
-Redirected to http://localhost:3000/roasts/8
-Completed 302 Found in 9ms (ActiveRecord: 2.4ms)
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yeSQPCg3HtJ7WtXk4CrZYTF3XGYqEydDKttVFyPSGJKeCrj836OIYOciPbbs6zW2KjB7oUOjECFlM4S3Ahj6sg==", "roast"=>{"name"=>"Medium"}, "commit"=>"Create Roast"}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (1.6ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medium"], ["created_at", "2019-04-30 12:45:54.970364"], ["updated_at", "2019-04-30 12:45:54.970364"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/3
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms)
 
 
-Started GET "/roasts/8" for ::1 at 2019-04-29 18:25:34 +0800
+Started GET "/roasts/3" for ::1 at 2019-04-30 20:45:54 +0800
 Processing by RoastsController#show as HTML
-  Parameters: {"id"=>"8"}
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
-  ↳ app/controllers/roasts_controller.rb:17
+  Parameters: {"id"=>"3"}
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
   Rendering roasts/show.html.erb within layouts/application
-  Rendered roasts/show.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+  Rendered roasts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.5ms)
 
 
-Started GET "/roasts" for ::1 at 2019-04-29 18:25:34 +0800
+Started GET "/roasts" for ::1 at 2019-04-30 20:45:58 +0800
+Processing by RoastsController#index as HTML
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:45:59 +0800
+Processing by RoastsController#new as HTML
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/_form.html.erb (2.0ms)
+  Rendered roasts/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/roasts" for ::1 at 2019-04-30 20:46:03 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TldgAK2FVdZ9hfziFApi2KCHnTgE3U3pISWmjG9CjFgZuUjAWhHDZOH9FLAYy44Pu8C6/21teotuzXcsTohueA==", "roast"=>{"name"=>"Full City"}, "commit"=>"Create Roast"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (1.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-04-30 12:46:03.085717"], ["updated_at", "2019-04-30 12:46:03.085717"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/4
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/roasts/4" for ::1 at 2019-04-30 20:46:03 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
+  Rendering roasts/show.html.erb within layouts/application
+  Rendered roasts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/roasts" for ::1 at 2019-04-30 20:46:04 +0800
 Processing by RoastsController#index as HTML
   Rendering roasts/index.html.erb within layouts/application
   [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/roasts/index.html.erb:5
-  Rendered roasts/index.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.6ms)
 
 
-Started GET "/roasts/1" for ::1 at 2019-04-29 18:26:15 +0800
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:46:12 +0800
+Processing by RoastsController#new as HTML
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/_form.html.erb (2.2ms)
+  Rendered roasts/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/roasts" for ::1 at 2019-04-30 20:46:14 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"taC+zSLUuVUfICiLcZ62ATKEbrl8E8zzceIqwRTteQriTpYN1UAv54NYwNl9X1rWKcNJfhWj+5E+CvthNSebKg==", "roast"=>{"name"=>"Dark"}, "commit"=>"Create Roast"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (0.9ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-04-30 12:46:14.968474"], ["updated_at", "2019-04-30 12:46:14.968474"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/5
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/roasts/5" for ::1 at 2019-04-30 20:46:14 +0800
 Processing by RoastsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/roasts_controller.rb:17
+  Parameters: {"id"=>"5"}
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
+  Rendering roasts/show.html.erb within layouts/application
+  Rendered roasts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roasts" for ::1 at 2019-04-30 20:46:16 +0800
+Processing by RoastsController#index as HTML
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:46:17 +0800
+Processing by RoastsController#new as HTML
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/_form.html.erb (2.3ms)
+  Rendered roasts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 41ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/roasts" for ::1 at 2019-04-30 20:46:22 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUIOu6B3FGfHnIp3JZieJxaezlvnB8XJFZvE/Vbwed8erCZ7V+OC1VvkYiUpWXLwDdnpnI638qtacxVddzqb/w==", "roast"=>{"name"=>"French"}, "commit"=>"Create Roast"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (1.2ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-04-30 12:46:22.079041"], ["updated_at", "2019-04-30 12:46:22.079041"]]
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/6
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/roasts/6" for ::1 at 2019-04-30 20:46:22 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
   Rendering roasts/show.html.erb within layouts/application
   Rendered roasts/show.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 42ms (Views: 36.5ms | ActiveRecord: 0.6ms)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/origins/new" for ::1 at 2019-04-29 18:39:46 +0800
-Processing by OriginsController#new as HTML
-  Rendering origins/new.html.erb within layouts/application
-  Rendered origins/new.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+Started GET "/roasts" for ::1 at 2019-04-30 20:46:23 +0800
+Processing by RoastsController#index as HTML
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.4ms)
 
 
-Started POST "/origins" for ::1 at 2019-04-29 18:41:11 +0800
-Processing by OriginsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRWQJ845ncgo+cSKWbPPZfUV8YswrQw2Jtr/oyhNPFP9D/JLbzOM6LHEDMVHbs6Y+jIyBM6atv8azaOkjmOrfg==", "origin"=>{"location"=>"Ah Pek Kopi", "phone"=>"91234567"}, "commit"=>"Save Origin"}
-Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+Started GET "/roasts/new" for ::1 at 2019-04-30 20:46:24 +0800
+Processing by RoastsController#new as HTML
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/_form.html.erb (2.2ms)
+  Rendered roasts/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.0ms)
 
 
-  
-LoadError (Unable to autoload constant Origin, expected /Users/herda/sei1/assignments/kopi_tracker/app/models/origin.rb to define it):
-  
-app/controllers/concerns/origins_controller.rb:11:in `create'
-Started GET "/origins" for ::1 at 2019-04-29 19:08:07 +0800
-Processing by OriginsController#index as HTML
-Completed 406 Not Acceptable in 105ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (OriginsController#index is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
-activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
-activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
-actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
-actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/origins/new" for ::1 at 2019-04-29 19:08:11 +0800
-Processing by OriginsController#new as HTML
-  Rendering origins/new.html.erb within layouts/application
-  Rendered origins/new.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/origins" for ::1 at 2019-04-29 19:09:04 +0800
-Processing by OriginsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iLXlM8J+nCu9IbXuuRx6SAT1hvwO0ulw/Sj41/jQNigsr4dfY3SNCyQcfaGnwXu1C9JFc/DlU7nBP6TQXv6hBQ==", "origin"=>{"location"=>"Ah Pek Kopi", "phone"=>"91234567"}, "commit"=>"Save Origin"}
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/concerns/origins_controller.rb:13
-  [1m[36mOrigin Create (6.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Ah Pek Kopi"], ["phone", "91234567"], ["created_at", "2019-04-29 11:09:04.562055"], ["updated_at", "2019-04-29 11:09:04.562055"]]
-  ↳ app/controllers/concerns/origins_controller.rb:13
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/concerns/origins_controller.rb:13
-Redirected to http://localhost:3000/origins/1
-Completed 302 Found in 35ms (ActiveRecord: 25.1ms)
-
-
-Started GET "/origins/1" for ::1 at 2019-04-29 19:09:04 +0800
-Processing by OriginsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/concerns/origins_controller.rb:18
-  Rendering origins/show.html.erb within layouts/application
-  Rendered origins/show.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/origins" for ::1 at 2019-04-29 19:09:31 +0800
-Processing by OriginsController#index as HTML
-Completed 406 Not Acceptable in 108ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (OriginsController#index is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
-activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
-activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
-actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
-actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/origins" for ::1 at 2019-04-29 19:12:07 +0800
-Processing by OriginsController#index as HTML
-  Rendering origins/index.html.erb within layouts/application
-  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/origins/index.html.erb:5
-  Rendered origins/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/origins/1" for ::1 at 2019-04-29 19:12:10 +0800
-Processing by OriginsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mOrigin Load (5.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/concerns/origins_controller.rb:18
-  Rendering origins/show.html.erb within layouts/application
-  Rendered origins/show.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 28ms (Views: 18.6ms | ActiveRecord: 5.2ms)
-
-
-Started GET "/origins" for ::1 at 2019-04-29 19:12:11 +0800
-Processing by OriginsController#index as HTML
-  Rendering origins/index.html.erb within layouts/application
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/origins/index.html.erb:5
-  Rendered origins/index.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/origins/new" for ::1 at 2019-04-29 19:12:12 +0800
-Processing by OriginsController#new as HTML
-  Rendering origins/new.html.erb within layouts/application
-  Rendered origins/new.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:21:20 +0800
-  
-ActionController::RoutingError (uninitialized constant KopisController):
-  
-bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
-bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
-bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
-bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
-activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:27:07 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (4.9ms)
-Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @kopis, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb___1555561840287732578_70165876788880'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb___1555561840287732578_70165876788880'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:33:47 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (3.8ms)
-Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @kopis, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb___1555561840287732578_70165923103020'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb___1555561840287732578_70165923103020'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:39:58 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (3.4ms)
-Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb___1555561840287732578_70165914061720'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb___1555561840287732578_70165914061720'
-  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mRoast Create (1.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cinnamon"], ["created_at", "2019-04-29 11:42:36.971175"], ["updated_at", "2019-04-29 11:42:36.971175"]]
-  ↳ db/seeds.rb:10
+Started POST "/roasts" for ::1 at 2019-04-30 20:46:27 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AsIuKEYTBAlvxiQOPwfBt5gbZFpvH3seNhR7RBQVYEZVLAbosYeSu/O+zFwzxi1gg1xDnQavTHx5/KrkNd+CZg==", "roast"=>{"name"=>"Italian"}, "commit"=>"Create Roast"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:30
+  [1m[36mRoast Create (0.9ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-04-30 12:46:27.905492"], ["updated_at", "2019-04-30 12:46:27.905492"]]
+  ↳ app/controllers/roasts_controller.rb:30
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
+  ↳ app/controllers/roasts_controller.rb:30
+Redirected to http://localhost:3000/roasts/7
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/roasts/7" for ::1 at 2019-04-30 20:46:27 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:67
+  Rendering roasts/show.html.erb within layouts/application
+  Rendered roasts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/roasts" for ::1 at 2019-04-30 20:46:29 +0800
+Processing by RoastsController#index as HTML
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:14
+  Rendered roasts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-04-30 20:54:06 +0800
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKopis (20190430125233)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-04-29 11:42:36.976383"], ["updated_at", "2019-04-29 11:42:36.976383"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Medium"], ["created_at", "2019-04-29 11:42:36.979154"], ["updated_at", "2019-04-29 11:42:36.979154"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-04-29 11:42:36.981577"], ["updated_at", "2019-04-29 11:42:36.981577"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:14
-  [1m[36mRoast Create (0.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-04-29 11:42:36.984033"], ["updated_at", "2019-04-29 11:42:36.984033"]]
-  ↳ db/seeds.rb:14
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:14
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+Started GET "/kopis/new" for ::1 at 2019-04-30 20:54:28 +0800
+Started GET "/kopis/new" for ::1 at 2019-04-30 20:54:28 +0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKopis (20190430125233)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:15
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-04-29 11:42:36.987272"], ["updated_at", "2019-04-29 11:42:36.987272"]]
-  ↳ db/seeds.rb:15
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:16
-  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-04-29 11:42:36.990170"], ["updated_at", "2019-04-29 11:42:36.990170"]]
-  ↳ db/seeds.rb:16
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:16
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:43:34 +0800
-  [1m[35m (10.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateKopis (20190430125233)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast_id" bigint, "origin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190430125233_create_kopis.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_roast_id" ON "kopis"  ("roast_id")[0m
+  ↳ db/migrate/20190430125233_create_kopis.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_origin_id" ON "kopis"  ("origin_id")[0m
+  ↳ db/migrate/20190430125233_create_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190430125233"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/kopis/new" for ::1 at 2019-04-30 20:55:48 +0800
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
 Processing by KopisController#new as HTML
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:43:34 +0800
   Rendering kopis/new.html.erb within layouts/application
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (8.2ms)
-Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+  Rendered kopis/_form.html.erb (18.6ms)
+  Rendered kopis/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 283ms (Views: 248.4ms | ActiveRecord: 9.2ms)
 
 
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb__3599138113380835436_70281778934560'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__3599138113380835436_70281778934560'
-  Rendered kopis/new.html.erb within layouts/application (25.5ms)
-Completed 500 Internal Server Error in 132ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb__3599138113380835436_70281778934560'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__3599138113380835436_70281778934560'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:46:12 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (5.1ms)
-Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 	<% p @roasts %>
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb__3599138113380835436_70281777108180'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__3599138113380835436_70281777108180'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:46:24 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  Rendered kopis/new.html.erb within layouts/application (5.9ms)
-Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    1: <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    2: 
-    3: 	<%= p @roasts %>
-    4:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    5: 
-    6:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    7: 
-  
-app/views/kopis/new.html.erb:4:in `block in _app_views_kopis_new_html_erb__3599138113380835436_70281776143920'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__3599138113380835436_70281776143920'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:52:21 +0800
-  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/kopis/new" for ::1 at 2019-04-30 20:57:37 +0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
 Processing by KopisController#new as HTML
-Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/_form.html.erb (17.3ms)
+  Rendered kopis/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 281ms (Views: 245.8ms | ActiveRecord: 9.8ms)
 
 
-  
-NameError (uninitialized constant KopisController::Route):
-  
-app/controllers/kopis_controller.rb:16:in `new'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:54:10 +0800
+Started GET "/kopis/new" for ::1 at 2019-05-01 14:15:27 +0800
 Processing by KopisController#new as HTML
   Rendering kopis/new.html.erb within layouts/application
-  [1m[36mRoast Load (17.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
-  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (59.7ms)
-Completed 500 Internal Server Error in 76ms (ActiveRecord: 36.1ms)
+  Rendered kopis/_form.html.erb (52.3ms)
+  Rendered kopis/new.html.erb within layouts/application (62.0ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
 
 
   
-ActionView::Template::Error (undefined method `name' for #<Origin:0x00007fea530c9f78>):
-    2: 
-    3:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    4: 
-    5:   <%= form.collection_select :origin_id, @origins, :id, :name %>
-    6: 
-    7:   <p>
-    8:     <%= form.label :name %><br>
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    17:   </div>
+    18: 
+    19:   <div class="field">
+    20:   	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+    21:   </div>
+    22: 
+    23:   <div class="field">
   
-app/views/kopis/new.html.erb:5:in `block in _app_views_kopis_new_html_erb__3450856254556862220_70322200545400'
-app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__3450856254556862220_70322200545400'
-Started GET "/kopis/new" for ::1 at 2019-04-29 19:54:35 +0800
+app/views/kopis/_form.html.erb:20:in `block in _app_views_kopis__form_html_erb__4125860882273376327_70169877777760'
+app/views/kopis/_form.html.erb:1:in `_app_views_kopis__form_html_erb__4125860882273376327_70169877777760'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb___59988661935898965_70169914335900'
+Started GET "/kopis/new" for ::1 at 2019-05-01 14:17:13 +0800
 Processing by KopisController#new as HTML
   Rendering kopis/new.html.erb within layouts/application
-  [1m[36mRoast Load (12.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
-  [1m[36mOrigin Load (1.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (33.1ms)
-Completed 200 OK in 363ms (Views: 346.1ms | ActiveRecord: 13.8ms)
+  [1m[36mRoast Load (2.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:20
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:24
+  Rendered kopis/_form.html.erb (32.0ms)
+  Rendered kopis/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 136ms (Views: 72.7ms | ActiveRecord: 33.3ms)
 
 
-Started POST "/kopis" for ::1 at 2019-04-29 20:00:22 +0800
+Started POST "/kopis" for ::1 at 2019-05-01 14:17:54 +0800
 Processing by KopisController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0J4DSh2tEeDlT8WQgQr3pIfFRsS7Aj7NDTTvKXTzHGN0hGEmvKcAwHxyDd+f1/ZZiOKFS0U1hAQxI7Mu0t2LTg==", "kopi"=>{"roast_id"=>"9", "origin_id"=>"1", "name"=>"Kopi 1"}, "commit"=>"Save Kopi"}
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YNl4i1SqSG5eSk1FVWfnYjNrnABVJoHPl3Azwz1UZ+g3N1BLoz7e3MIypRdZpgu1KCy7xzyWtq3YmOJjHJ6FyA==", "kopi"=>{"name"=>"Lelok Kopi Bean", "roast_id"=>"2", "origin_id"=>"1"}, "commit"=>"Create Kopi"}
+Unpermitted parameters: :roast_id, :origin_id
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mKopi Create (2.8ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kopi 1"], ["roast_id", 9], ["origin_id", 1], ["created_at", "2019-04-29 12:00:22.345599"], ["updated_at", "2019-04-29 12:00:22.345599"]]
-  ↳ app/controllers/kopis_controller.rb:23
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/_form.html.erb (5.9ms)
+  Rendered kopis/new.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    17:   </div>
+    18: 
+    19:   <div class="field">
+    20:   	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+    21:   </div>
+    22: 
+    23:   <div class="field">
+  
+app/views/kopis/_form.html.erb:20:in `block in _app_views_kopis__form_html_erb__4125860882273376327_70169911391820'
+app/views/kopis/_form.html.erb:1:in `_app_views_kopis__form_html_erb__4125860882273376327_70169911391820'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb___59988661935898965_70169911320940'
+app/controllers/kopis_controller.rb:36:in `block (2 levels) in create'
+app/controllers/kopis_controller.rb:31:in `create'
+Started GET "/kopis/new" for ::1 at 2019-05-01 14:18:47 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:20
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:24
+  Rendered kopis/_form.html.erb (22.4ms)
+  Rendered kopis/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 67ms (Views: 35.9ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/kopis" for ::1 at 2019-05-01 14:20:01 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JPexXwTlcQq/vzzQuicbe9EsclO9PhjKf+DactVxJ7lzGZmf83HnuCPH1IK25vesymtVlNSOL6gwCAvS9LvFmQ==", "kopi"=>{"name"=>"Lelok Kopi Bean", "roast_id"=>"2", "origin_id"=>"1"}, "commit"=>"Create Kopi"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (9.4ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lelok Kopi Bean"], ["roast_id", 2], ["origin_id", 1], ["created_at", "2019-05-01 06:20:01.907202"], ["updated_at", "2019-05-01 06:20:01.907202"]]
+  ↳ app/controllers/kopis_controller.rb:32
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/kopis_controller.rb:23
+  ↳ app/controllers/kopis_controller.rb:32
 Redirected to http://localhost:3000/kopis/1
-Completed 302 Found in 69ms (ActiveRecord: 29.1ms)
+Completed 302 Found in 40ms (ActiveRecord: 11.7ms)
 
 
-Started GET "/kopis/1" for ::1 at 2019-04-29 20:00:22 +0800
+Started GET "/kopis/1" for ::1 at 2019-05-01 14:20:01 +0800
 Processing by KopisController#show as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mKopi Load (1.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:30
-Completed 406 Not Acceptable in 105ms (ActiveRecord: 1.5ms)
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
 
 
   
-ActionController::UnknownFormat (KopisController#show is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+ActionView::Template::Error (undefined method `references' for #<Kopi:0x00007fa369263568>):
+     7: 
+     8: <p>
+     9:   <strong>References:</strong>
+    10:   <%= @kopi.references %>
+    11: </p>
+    12: 
+    13: <p>
   
-actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
-activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
-activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
-actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
-actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/kopis/new" for ::1 at 2019-04-29 23:13:43 +0800
+app/views/kopis/show.html.erb:10:in `_app_views_kopis_show_html_erb__3002340061094520296_70169910247880'
+Started GET "/kopis/1" for ::1 at 2019-05-01 14:23:26 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:10
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:15
+  Rendered kopis/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 29.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 14:23:33 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `references' for #<Kopi:0x00007fa36a9588e0>):
+    16:     <% @kopis.each do |kopi| %>
+    17:       <tr>
+    18:         <td><%= kopi.name %></td>
+    19:         <td><%= kopi.references %></td>
+    20:         <td><%= kopi.references %></td>
+    21:         <td><%= link_to 'Show', kopi %></td>
+    22:         <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+  
+app/views/kopis/index.html.erb:19:in `block in _app_views_kopis_index_html_erb__2186999105028518442_70169882178820'
+app/views/kopis/index.html.erb:16:in `_app_views_kopis_index_html_erb__2186999105028518442_70169882178820'
+Started GET "/kopis" for ::1 at 2019-05-01 14:24:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kopis/1" for ::1 at 2019-05-01 14:24:34 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:10
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:15
+  Rendered kopis/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 31.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 14:24:35 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 14:24:37 +0800
 Processing by KopisController#new as HTML
   Rendering kopis/new.html.erb within layouts/application
-  [1m[36mRoast Load (1.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
-  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (6.7ms)
-Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 1.8ms)
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:21
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  Rendered kopis/_form.html.erb (6.2ms)
+  Rendered kopis/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 0.8ms)
 
 
-Started POST "/kopis" for ::1 at 2019-04-29 23:13:54 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddPriceToKopi (20190501062923)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "kopis" ADD "price" float[0m
+  ↳ db/migrate/20190501062923_add_price_to_kopi.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190501062923"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20190501063659)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "kopi_id" bigint, "weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_75cbfaec5f"
+FOREIGN KEY ("kopi_id")
+  REFERENCES "kopis" ("id")
+)[0m
+  ↳ db/migrate/20190501063659_create_orders.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_orders_on_kopi_id" ON "orders"  ("kopi_id")[0m
+  ↳ db/migrate/20190501063659_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190501063659"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-05-01 14:38:13 +0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/nw" for ::1 at 2019-05-01 14:41:45 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"nw"}
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:67
+Completed 404 Not Found in 20ms (ActiveRecord: 10.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=nw):
+  
+app/controllers/orders_controller.rb:67:in `set_order'
+Started GET "/orders/new" for ::1 at 2019-05-01 14:41:48 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (18.2ms)
+  Rendered orders/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 280ms (Views: 270.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:46:18 +0800
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/herda/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (27.2ms)
+  Rendered orders/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 430ms (Views: 396.8ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:47:04 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (4.1ms)
+  Rendered orders/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:50:28 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (6.7ms)
+  Rendered orders/new.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 31.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :kopi_id %>
+    16:     <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
+  
+app/views/orders/_form.html.erb:16:in `block in _app_views_orders__form_html_erb___3117584138666324073_70322722472420'
+app/views/orders/_form.html.erb:1:in `_app_views_orders__form_html_erb___3117584138666324073_70322722472420'
+app/views/orders/new.html.erb:3:in `_app_views_orders_new_html_erb__2233940005907544552_70322722391180'
+Started GET "/orders/new" for ::1 at 2019-05-01 15:51:11 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (13.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (35.5ms)
+  Rendered orders/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 74ms (Views: 30.5ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:53:38 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (4.4ms)
+  Rendered orders/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:53:41 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (4.3ms)
+  Rendered orders/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:54:05 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (4.3ms)
+  Rendered orders/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:54:08 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (4.8ms)
+  Rendered orders/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:54:41 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/herda/sei1/unit-3/rails/kopi-tracker/kopi-tracker/app/views/orders/new.html.erb:23: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/orders/new.html.erb:23: syntax error, unexpected end-of-input, expecting end
+Started GET "/orders/new" for ::1 at 2019-05-01 15:54:53 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (4.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (8.4ms)
+  Rendered orders/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 34ms (Views: 27.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:55:41 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (3.4ms)
+  Rendered orders/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 15:55:59 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (3.2ms)
+  Rendered orders/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:56:17 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (1.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:21
+  [1m[36mOrigin Load (12.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  Rendered kopis/_form.html.erb (42.5ms)
+  Rendered kopis/new.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 70ms (Views: 37.8ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:57:25 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  [1m[36mOrigin Load (11.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (20.2ms)
+  Rendered kopis/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 51ms (Views: 37.6ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/kopis" for ::1 at 2019-05-01 15:57:31 +0800
 Processing by KopisController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Gi09m/NpKQWOxWnJgxzVpe82BVxp5+bpfsdF49SvcpUctaazse1hI8G3eg40XKrmJsbmo+QJVKZ7EEQKXwq5w==", "kopi"=>{"roast_id"=>"10", "origin_id"=>"1", "name"=>"Coffee bean 2"}, "commit"=>"Save Kopi"}
-  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mKopi Create (1.9ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Coffee bean 2"], ["roast_id", 10], ["origin_id", 1], ["created_at", "2019-04-29 15:13:54.038331"], ["updated_at", "2019-04-29 15:13:54.038331"]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/kopis_controller.rb:23
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dn7NuORP90LgWmGsXbiYcv6QBA3dE20nT0LejpQdI8YhkOV4E9th8Hwiif5ReXSl5dcjyrSjWkUAqg8utdfB5g==", "kopi"=>{"name"=>"", "price"=>"asdasdasdadasda", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Create Kopi"}
+Unpermitted parameter: :price
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (0.8ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", ""], ["roast_id", 1], ["origin_id", 1], ["created_at", "2019-05-01 07:57:31.773365"], ["updated_at", "2019-05-01 07:57:31.773365"]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:32
 Redirected to http://localhost:3000/kopis/2
-Completed 302 Found in 16ms (ActiveRecord: 5.0ms)
+Completed 302 Found in 31ms (ActiveRecord: 6.8ms)
 
 
-Started GET "/kopis/2" for ::1 at 2019-04-29 23:13:54 +0800
+Started GET "/kopis/2" for ::1 at 2019-05-01 15:57:31 +0800
 Processing by KopisController#show as HTML
   Parameters: {"id"=>"2"}
-  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:30
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
   Rendering kopis/show.html.erb within layouts/application
-  Rendered kopis/show.html.erb within layouts/application (4.0ms)
-Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:10
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:15
+  Rendered kopis/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 1.7ms)
 
 
-  
-ActionView::Template::Error (undefined method `name' for nil:NilClass):
-    1: <p>
-    2:   <strong>Roast Type:</strong>
-    3:   <%= @roast.name %>
-    4: </p>
-    5: 
-    6: <p>
-  
-app/views/kopis/show.html.erb:3:in `_app_views_kopis_show_html_erb___2676079533314579428_70322165884380'
-Started GET "/kopis/new" for ::1 at 2019-04-29 23:14:44 +0800
+Started GET "/kopis" for ::1 at 2019-05-01 15:57:34 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/kopis/2" for ::1 at 2019-05-01 15:57:37 +0800
+Processing by KopisController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ARxFsjBFJFrfmusPvvhDCiRPNnB1ia+FvNVRuxor9iZW8m1yx9Gy6EPiA12yOa/dPwgRtxw5mOfzPYAbO+EUBg==", "id"=>"2"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:59
+  [1m[36mKopi Destroy (3.6ms)[0m  [1m[31mDELETE FROM "kopis" WHERE "kopis"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/kopis_controller.rb:59
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:59
+Redirected to http://localhost:3000/kopis
+Completed 302 Found in 8ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 15:57:37 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:57:39 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (6.7ms)
+  Rendered kopis/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:58:40 +0800
 Processing by KopisController#new as HTML
   Rendering kopis/new.html.erb within layouts/application
   [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
+  ↳ app/views/kopis/_form.html.erb:26
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (7.1ms)
+  Rendered kopis/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 15:58:46 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (13.1ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 63ms (Views: 47.9ms | ActiveRecord: 14.1ms)
+
+
+Started DELETE "/kopis/1" for ::1 at 2019-05-01 15:58:48 +0800
+Processing by KopisController#destroy as HTML
+  Parameters: {"authenticity_token"=>"leaHORqenfLxhcgEfgwumO3B0SM4i13lh+SsBAVJLtPCCK/57QoLQG39IFZyzcJP9ob25FE7aofIDH2kJIPM8w==", "id"=>"1"}
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:59
+  [1m[36mKopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "kopis" WHERE "kopis"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/kopis_controller.rb:59
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:59
+Redirected to http://localhost:3000/kopis
+Completed 302 Found in 5ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 15:58:48 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:58:49 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (13.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:26
   [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (32.0ms)
-Completed 200 OK in 56ms (Views: 29.5ms | ActiveRecord: 18.4ms)
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (19.2ms)
+  Rendered kopis/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 45ms (Views: 29.4ms | ActiveRecord: 13.8ms)
 
 
-Started POST "/kopis" for ::1 at 2019-04-29 23:14:51 +0800
+Started GET "/kopis/new" for ::1 at 2019-05-01 15:59:15 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (8.1ms)
+  Rendered kopis/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/kopis" for ::1 at 2019-05-01 15:59:30 +0800
 Processing by KopisController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Scvsd0BBOsh1SoBxM10VISZahMeCiiM/G9BPdewS31Pt0Y4b4Usr6Ox3SD4tgBTcKX1HSHy9mfYnxxNySjxIfg==", "kopi"=>{"roast_id"=>"11", "origin_id"=>"1", "name"=>"medium"}, "commit"=>"Save Kopi"}
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mKopi Create (1.1ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "medium"], ["roast_id", 11], ["origin_id", 1], ["created_at", "2019-04-29 15:14:51.835495"], ["updated_at", "2019-04-29 15:14:51.835495"]]
-  ↳ app/controllers/kopis_controller.rb:23
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nfz7++f7uvwNaiW/hr0dZ/WLCD1CnUnV+jQVPlv5gFFiEtM7EG8sTpESze2KfPGw7swv+istfre13MSeejNicQ==", "kopi"=>{"name"=>"Lelok Kopi Bean", "price"=>"10.00", "roast_id"=>"2", "origin_id"=>"1"}, "commit"=>"Create Kopi"}
+Unpermitted parameter: :price
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (1.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lelok Kopi Bean"], ["roast_id", 2], ["origin_id", 1], ["created_at", "2019-05-01 07:59:30.048197"], ["updated_at", "2019-05-01 07:59:30.048197"]]
+  ↳ app/controllers/kopis_controller.rb:32
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/kopis_controller.rb:23
+  ↳ app/controllers/kopis_controller.rb:32
 Redirected to http://localhost:3000/kopis/3
-Completed 302 Found in 31ms (ActiveRecord: 11.8ms)
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
 
 
-Started GET "/kopis/3" for ::1 at 2019-04-29 23:14:51 +0800
+Started GET "/kopis/3" for ::1 at 2019-05-01 15:59:30 +0800
 Processing by KopisController#show as HTML
   Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (12.1ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:15
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:20
+  Rendered kopis/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 18.9ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/kopis" for ::1 at 2019-05-01 16:00:20 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 78ms (Views: 44.5ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/kopis/3/edit" for ::1 at 2019-05-01 16:00:22 +0800
+Processing by KopisController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/edit.html.erb within layouts/application
+  Rendered kopis/_form.html.erb (3.1ms)
+  Rendered kopis/edit.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    23: 
+    24:   <div class="field">
+    25:   	<%= form.label "Roast Type" %>
+    26:   	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+    27:   </div>
+    28: 
+    29:   <div class="field">
+  
+app/views/kopis/_form.html.erb:26:in `block in _app_views_kopis__form_html_erb___905628862092321472_70322752726880'
+app/views/kopis/_form.html.erb:1:in `_app_views_kopis__form_html_erb___905628862092321472_70322752726880'
+app/views/kopis/edit.html.erb:3:in `_app_views_kopis_edit_html_erb__341255667022423710_70322752637300'
+Started GET "/kopis/3/edit" for ::1 at 2019-05-01 16:00:43 +0800
+Processing by KopisController#edit as HTML
+  Parameters: {"id"=>"3"}
   [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:30
-  Rendering kopis/show.html.erb within layouts/application
-  Rendered kopis/show.html.erb within layouts/application (3.6ms)
-Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+  ↳ app/controllers/kopis_controller.rb:69
+  Rendering kopis/edit.html.erb within layouts/application
+  Rendered kopis/_form.html.erb (3.4ms)
+  Rendered kopis/edit.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
 
 
   
-ActionView::Template::Error (undefined method `name' for nil:NilClass):
-    1: <p>
-    2:   <strong>Roast Type:</strong>
-    3:   <%= @roast.name %>
-    4: </p>
-    5: 
-    6: <p>
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    23: 
+    24:   <div class="field">
+    25:   	<%= form.label "Roast Type" %>
+    26:   	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+    27:   </div>
+    28: 
+    29:   <div class="field">
   
-app/views/kopis/show.html.erb:3:in `_app_views_kopis_show_html_erb___2676079533314579428_70322165315900'
-Started GET "/kopis/new" for ::1 at 2019-04-29 23:17:08 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
-  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (22.0ms)
-Completed 200 OK in 44ms (Views: 26.2ms | ActiveRecord: 11.2ms)
+app/views/kopis/_form.html.erb:26:in `block in _app_views_kopis__form_html_erb___905628862092321472_70322763143780'
+app/views/kopis/_form.html.erb:1:in `_app_views_kopis__form_html_erb___905628862092321472_70322763143780'
+app/views/kopis/edit.html.erb:3:in `_app_views_kopis_edit_html_erb__341255667022423710_70322736222360'
+Started GET "/kopis/3/edit" for ::1 at 2019-05-01 16:05:22 +0800
+Processing by KopisController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:71
+  Rendering kopis/edit.html.erb within layouts/application
+  [1m[36mRoast Load (10.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:26
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:31
+  Rendered kopis/_form.html.erb (37.6ms)
+  Rendered kopis/edit.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 78ms (Views: 34.3ms | ActiveRecord: 30.3ms)
 
 
-Started POST "/kopis" for ::1 at 2019-04-29 23:17:15 +0800
-Processing by KopisController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AAjBFxBhSKZJXjYkQBZ0NqJI01UwXGB49KfCikVOVKqkEqN7sWtZhtBj/mtey3XLrW8Q2s5r2rHIsJ6N42DDhw==", "kopi"=>{"roast_id"=>"12", "origin_id"=>"1", "name"=>"full city"}, "commit"=>"Save Kopi"}
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mKopi Create (0.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "full city"], ["roast_id", 12], ["origin_id", 1], ["created_at", "2019-04-29 15:17:15.806305"], ["updated_at", "2019-04-29 15:17:15.806305"]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/kopis_controller.rb:23
-Redirected to http://localhost:3000/kopis/4
-Completed 302 Found in 33ms (ActiveRecord: 10.0ms)
-
-
-Started GET "/kopis/4" for ::1 at 2019-04-29 23:17:15 +0800
-Processing by KopisController#show as HTML
-  Parameters: {"id"=>"4"}
-  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:30
-  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:31
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:32
-  Rendering kopis/show.html.erb within layouts/application
-  Rendered kopis/show.html.erb within layouts/application (6.6ms)
-Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.1ms)
-
-
-  
-ActionView::Template::Error (undefined method `bean' for #<Kopi:0x00007fea4f5030c0>):
-    10: 
-    11: <p>
-    12:   <strong>Kopi Bean:</strong>
-    13:   <%= @kopi.bean %>
-    14: </p>
-    15: 
-    16: <a href=<%= origins_url %>>Home</a>
-  
-app/views/kopis/show.html.erb:13:in `_app_views_kopis_show_html_erb___2676079533314579428_70322200941080'
-Started GET "/kopis/new" for ::1 at 2019-04-29 23:17:28 +0800
-Processing by KopisController#new as HTML
-  Rendering kopis/new.html.erb within layouts/application
-  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
-  ↳ app/views/kopis/new.html.erb:3
-  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/kopis/new.html.erb:5
-  Rendered kopis/new.html.erb within layouts/application (4.2ms)
-Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/kopis" for ::1 at 2019-04-29 23:17:54 +0800
-Processing by KopisController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uZJ6U6PYcnGkb9Drsq77Mj4pKdv76umCss2SvI0YQZwdiBg/AtJjUT1SGKSsc/rPMQ7qVAXdU0uO2s67KzbWsQ==", "kopi"=>{"roast_id"=>"13", "origin_id"=>"1", "name"=>"dark coffee bean"}, "commit"=>"Save Kopi"}
+Started PATCH "/kopis/3" for ::1 at 2019-05-01 16:05:29 +0800
+Processing by KopisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0205aqC/EiPBoMnyCQ8hlnbYbV5ZOXIr+5fvEjizgzOEgxGqVyuEkV3YIaAFzs1BbZ9KmTCJRUm0fz6yGXlhEw==", "kopi"=>{"name"=>"Lelok Kopi Bean", "price"=>"10.00", "roast_id"=>"2", "origin_id"=>"1"}, "commit"=>"Update Kopi", "id"=>"3"}
+  [1m[36mKopi Load (3.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:71
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[36mKopi Create (3.6ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "dark coffee bean"], ["roast_id", 13], ["origin_id", 1], ["created_at", "2019-04-29 15:17:54.408683"], ["updated_at", "2019-04-29 15:17:54.408683"]]
-  ↳ app/controllers/kopis_controller.rb:23
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/kopis_controller.rb:23
-Redirected to http://localhost:3000/kopis/5
-Completed 302 Found in 14ms (ActiveRecord: 5.5ms)
+  ↳ app/controllers/kopis_controller.rb:48
+  [1m[36mRoast Load (10.8ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:48
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:48
+  [1m[36mKopi Update (1.3ms)[0m  [1m[33mUPDATE "kopis" SET "price" = $1, "updated_at" = $2 WHERE "kopis"."id" = $3[0m  [["price", 10.0], ["updated_at", "2019-05-01 08:05:29.385664"], ["id", 3]]
+  ↳ app/controllers/kopis_controller.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:48
+Redirected to http://localhost:3000/kopis/3
+Completed 302 Found in 26ms (ActiveRecord: 16.5ms)
 
 
-Started GET "/kopis/5" for ::1 at 2019-04-29 23:17:54 +0800
+Started GET "/kopis/3" for ::1 at 2019-05-01 16:05:29 +0800
 Processing by KopisController#show as HTML
-  Parameters: {"id"=>"5"}
-  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:30
-  [1m[36mRoast Load (1.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:31
-  [1m[36mOrigin Load (1.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/kopis_controller.rb:32
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:71
   Rendering kopis/show.html.erb within layouts/application
-  Rendered kopis/show.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 2.9ms)
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:15
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:20
+  Rendered kopis/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 40ms (Views: 22.9ms | ActiveRecord: 1.3ms)
 
 
-Started GET "/origins" for ::1 at 2019-04-29 23:18:01 +0800
-Processing by OriginsController#index as HTML
-  Rendering origins/index.html.erb within layouts/application
-  [1m[36mOrigin Load (1.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/origins/index.html.erb:5
-  Rendered origins/index.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 1.4ms)
+Started GET "/kopis" for ::1 at 2019-05-01 16:05:31 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 1.5ms)
 
 
-Started GET "/origins/1" for ::1 at 2019-04-29 23:18:03 +0800
-Processing by OriginsController#show as HTML
+Started GET "/kopis" for ::1 at 2019-05-01 16:06:28 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:17
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mOrigin Load (1.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  Rendered kopis/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-05-01 16:06:34 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (12.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (16.7ms)
+  Rendered orders/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 53ms (Views: 24.2ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/orders" for ::1 at 2019-05-01 16:09:19 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m3U5hJ1dzCenQHn4oBVxCoHxiQRJIuIYnutK7LYkYjLMmxFEaslalTs4kaqs1J3dmrauwyCS1XrRA5tMl+6AEg==", "order"=>{"kopi_id"=>"3", "weight"=>"2"}, "commit"=>"Create Order"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:31
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:31
+  [1m[36mOrder Create (17.5ms)[0m  [1m[32mINSERT INTO "orders" ("kopi_id", "weight", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["kopi_id", 3], ["weight", 2], ["created_at", "2019-05-01 08:09:19.977228"], ["updated_at", "2019-05-01 08:09:19.977228"]]
+  ↳ app/controllers/orders_controller.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:31
+Redirected to http://localhost:3000/orders/1
+Completed 302 Found in 29ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/orders/1" for ::1 at 2019-05-01 16:09:20 +0800
+Processing by OrdersController#show as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/origins_controller.rb:18
-  Rendering origins/show.html.erb within layouts/application
-  Rendered origins/show.html.erb within layouts/application (0.6ms)
-Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 0.8ms)
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:68
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 64ms (Views: 48.0ms | ActiveRecord: 1.1ms)
 
 
-Started GET "/origins" for ::1 at 2019-04-29 23:18:04 +0800
-Processing by OriginsController#index as HTML
-  Rendering origins/index.html.erb within layouts/application
-  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
-  ↳ app/views/origins/index.html.erb:5
-  Rendered origins/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 0.4ms)
+Started GET "/orders/1" for ::1 at 2019-05-01 16:09:33 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:68
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.8ms)
 
 
-Started GET "/kopis" for ::1 at 2019-04-29 23:22:54 +0800
-Processing by KopisController#index as HTML
-Completed 406 Not Acceptable in 109ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::UnknownFormat (KopisController#index is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
-  
-actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
-activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
-activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
-actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
-actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/kopis" for ::1 at 2019-04-29 23:25:13 +0800
-Processing by KopisController#index as HTML
-  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ app/controllers/kopis_controller.rb:13
-Completed 406 Not Acceptable in 107ms (ActiveRecord: 7.8ms)
+Started GET "/orders/1" for ::1 at 2019-05-01 16:11:18 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:68
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (107.9ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.8ms)
 
 
   
-ActionController::UnknownFormat (KopisController#index is missing a template for this request format and variant.
-
-request.formats: ["text/html"]
-request.variant: []
-
-NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+ActionView::Template::Error (undefined local variable or method `order' for #<#<Class:0x00007fea9804b2f0>:0x00007fea9686a2a8>):
+    12: 
+    13: <p>
+    14:   <strong>Total Price:</strong>
+    15:   $<%= @order.kopi.price * order.weight %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_order_path(@order) %> |
   
-actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
-actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
-activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
-activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
-actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
-activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
-actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
-actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
-actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/kopis" for ::1 at 2019-04-29 23:26:15 +0800
-Processing by KopisController#index as HTML
-  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+app/views/orders/show.html.erb:15:in `_app_views_orders_show_html_erb___3572606060452789089_70322762243140'
+Started GET "/orders/1" for ::1 at 2019-05-01 16:11:41 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (20.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:68
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:5
+  Rendered orders/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 56ms (Views: 30.4ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/orders" for ::1 at 2019-05-01 16:11:46 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:16
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/orders" for ::1 at 2019-05-01 16:12:10 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:16
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/orders" for ::1 at 2019-05-01 16:12:18 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:16
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders" for ::1 at 2019-05-01 16:12:31 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:16
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/orders/1/edit" for ::1 at 2019-05-01 16:13:14 +0800
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:68
+  Rendering orders/edit.html.erb within layouts/application
+  Rendered orders/_form.html.erb (2.0ms)
+  Rendered orders/edit.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
 
 
   
-  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-NoMethodError (undefined method `roast_id' for #<Kopi::ActiveRecord_Relation:0x00007fea5348d330>):
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :kopi_id %>
+    16:     <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
   
-app/controllers/kopis_controller.rb:13:in `index'
-Started GET "/kopis" for ::1 at 2019-04-29 23:29:17 +0800
-Processing by KopisController#index as HTML
-  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+app/views/orders/_form.html.erb:16:in `block in _app_views_orders__form_html_erb___3117584138666324073_70322734287820'
+app/views/orders/_form.html.erb:1:in `_app_views_orders__form_html_erb___3117584138666324073_70322734287820'
+app/views/orders/edit.html.erb:3:in `_app_views_orders_edit_html_erb__1536950706805904774_70322734203020'
+Started GET "/orders/1/edit" for ::1 at 2019-05-01 16:13:42 +0800
+Processing by OrdersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:69
+  Rendering orders/edit.html.erb within layouts/application
+  [1m[36mKopi Load (13.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/_form.html.erb:16
+  Rendered orders/_form.html.erb (36.1ms)
+  Rendered orders/edit.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 93ms (Views: 53.5ms | ActiveRecord: 29.5ms)
 
 
-  
-  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
-  ↳ /Users/herda/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-NoMethodError (undefined method `roast_id' for #<Kopi::ActiveRecord_Relation:0x00007fea50cfe5f8>):
-  
-app/controllers/kopis_controller.rb:13:in `index'
+Started GET "/orders" for ::1 at 2019-05-01 16:13:48 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (19.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:16
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 52ms (Views: 30.5ms | ActiveRecord: 19.8ms)
+
+

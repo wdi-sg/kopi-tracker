@@ -1,0 +1,37 @@
+<%= form_with(model: kopi, local: true) do |form| %>
+  <% if kopi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kopi.errors.count, "error") %> prohibited this kopi from being saved:</h2>
+
+      <ul>
+      <% kopi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Price (per pound)" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+  	<%= form.label "Roast Type" %>
+  	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+  </div>
+
+  <div class="field">
+  	<%= form.label "Origin" %>
+  	<%= form.collection_select :origin_id, @origins, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
