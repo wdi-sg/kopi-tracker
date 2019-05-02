@@ -1,7 +1,17 @@
 class CustomersController < ApplicationController
 
   def index
-    @customers = Customer.all.order(params[:sort])
+
+    if request.query_parameters[:sort] === "desc"
+      @customers = Customer.order(name: :desc)
+
+    elsif request.query_parameters[:sort] === "asc"
+      @customers = Customer.order(name: :asc)
+
+    else
+      @customers = Customer.all.order(params[:sort])
+
+    end
   end
 
   def new

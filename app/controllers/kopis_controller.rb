@@ -3,8 +3,18 @@ class KopisController < ApplicationController
 before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
-    @kopis = Kopi.all.order(params[:sort])
     @customers = Customer.all
+
+    if request.query_parameters[:sort] === "desc"
+      @kopis = Kopi.order(name: :desc)
+
+    elsif request.query_parameters[:sort] === "asc"
+      @kopis = Kopi.order(name: :asc)
+
+    else
+      @kopis = Kopi.all.order(params[:sort])
+
+    end
   end
 
   def new

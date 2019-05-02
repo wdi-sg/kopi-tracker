@@ -1,8 +1,22 @@
 <h1>Kopi Listing</h1>
 
+<div>
 <%= link_to 'New Kopi', new_kopi_path, class:"btn btn-secondary" %>
 <%= link_to 'New Origin', new_origin_path, class:"btn btn-secondary" %>
-<%= link_to 'View Customers', customers_path, class:"btn btn-secondary" %>
+<%= link_to 'View Customers', customers_path, class:"btn btn-primary" %>
+</div>
+
+<div>
+<form method="GET" action="/kopis">
+	<label>Sort By Name</label>
+	<select name="sort">
+		<option value="asc">Ascending</option>
+		<option value="desc">Descending</option>
+	</select>
+
+	<button type="submit">Sort</button>
+</form>
+</div>
 
 <table class="table">
 	<thead>
