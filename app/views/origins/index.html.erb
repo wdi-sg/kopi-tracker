@@ -1,1 +1,37 @@
-<h1>hello world. This is Kopi Tracker: Origins</h1>
+
+<div class="jumbotron">
+  <h1 class="display-4">Kopi Opi</h1>
+  <p class="lead">Get your finest and freshest coffee here!</p>
+  <hr class="my-4">
+  <p>Yes, even coffee that is shit out of civet cats! </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+
+<p>Songs</p>
+	<div class="container">
+  	<div class="row">
+    	<table class="table table-striped">
+      	<thead>
+        	<tr>
+          	<th scope="col">#</th>
+          	<th scope="col">name</th>
+          	<th scope="col">roast</th>
+						<th scope="col">origin</th>
+						<th scope="col">created</th>
+        	</tr>
+      	</thead>
+      <tbody>
+				<% @kopis.each do |kopi| %>
+  				<tr>
+						<td><%= kopi.id %></td>
+          	<td class = "kopi-name"><%= kopi.name %></td>
+						<td><%= kopi.roast %></td>
+						<td><%= kopi.origin_id %></td>
+          	<td><%= kopi.created_at.strftime('%d.%m.%Y') %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

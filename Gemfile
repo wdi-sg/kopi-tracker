@@ -23,6 +23,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'bootstrap', '~> 4.1.0'
+gem 'jquery-turbolinks'
+
+gem 'jquery-rails'
+
+gem 'devise'
+#installing devise gem so that can do user obboarding quickly
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
