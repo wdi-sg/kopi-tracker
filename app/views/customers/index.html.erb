@@ -1,0 +1,34 @@
+<h1>Customers</h1>
+
+<%= link_to 'New Customer', new_customer_path, class: 'btn btn-success' %>
+<%= link_to 'Roast Index', roasts_path, class: 'btn btn-success' %>
+<%= link_to 'Farm Index', farms_path, class: 'btn btn-success' %>
+<%= link_to 'Kopi Index', kopis_path, class: 'btn btn-success' %>
+<%= link_to 'Order Index', orders_path, class: 'btn btn-success' %>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col">No. of Kopi</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @customers.each do |customer| %>
+ 	<tr>
+		<h5>
+ 			<td><%= customer.name %></td>
+	 		<td><%= customer.kopis.count %></td>
+			<td><%= link_to 'Show', customer_path(customer) %></td>
+			<td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+			<td><%= link_to 'Delete', customer_path(customer),
+			method: :delete,
+			data: { confirm: 'Are you sure?' }
+			%></td>
+		</h5>
+	</tr>
+<% end %>
+</tbody>
+</table>

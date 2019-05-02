@@ -1,0 +1,28 @@
+<p>
+  <strong>Kopi Name:</strong>
+  <%= @kopi.first.name %>
+</p>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @kopi.each do |kopi| %>
+ 	<% kopi.customers.each do |customer| %>
+ 		<tr>
+ 			<h5>
+	 		<td><%= customer.name %></td>
+			<td><%= link_to 'Show Customer', customer_path(customer) %></td>
+			</h5>
+		</tr>
+	<% end %>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to 'Back', kopis_path, class: 'btn btn-success' %>

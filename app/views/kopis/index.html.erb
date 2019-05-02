@@ -1,0 +1,39 @@
+<h1>Kopis</h1>
+
+<%= link_to 'New Kopi', new_kopi_path, class: 'btn btn-success' %>
+<%= link_to 'Roast Index', roasts_path, class: 'btn btn-success' %>
+<%= link_to 'Farm Index', farms_path, class: 'btn btn-success' %>
+<%= link_to 'Order Index', orders_path, class: 'btn btn-success' %>
+<%= link_to 'Customer Index', customers_path, class: 'btn btn-success' %>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Name</th>
+		<th scope="col">Roast</th>
+		<th scope="col">Farm</th>
+		<th scope="col">Price per lbs</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @kopis.each do |kopi| %>
+ 	<tr>
+ 		<h5>
+ 		<td><%= kopi.name %></td>
+ 		<td><%= kopi.roast.roast.capitalize %></td>
+ 		<td><%= kopi.farm.origin %></td>
+ 		<td><%= sprintf('%.2f', kopi.price_per_pound.to_f) %></td>
+		<td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+		<td><%= link_to 'Delete', kopi_path(kopi),
+		method: :delete,
+		data: { confirm: 'Are you sure?' }
+		%></td>
+		<td><%= link_to 'Show customer', kopi_path(kopi) %></td>
+		</h5>
+		
+	</tr>
+<% end %>
+</tbody>
+</table>
