@@ -1,11 +1,11 @@
 class KopisController < ApplicationController
   def index
     if request.query_parameters[:sort] == "desc"
-      @kopis = Kopi.joins(:customers)
+      @kopis = Kopi.left_outer_joins(:customers)
                    .group("kopis.id")
                    .order("count(customers) desc")
     else
-      @kopis = Kopi.joins(:customers)
+      @kopis = Kopi.left_outer_joins(:customers)
                    .group("kopis.id")
                    .order("count(customers) asc")
     end
@@ -23,8 +23,14 @@ class KopisController < ApplicationController
   def create
     @kopi = Kopi.new(post_params)
 
-    @kopi.save
-    redirect_to @kopi
+    if @kopi.save == true
+      redirect_to @kopi
+    else
+      @roasts = Roast.all
+      @origins = Origin.all
+      render 'new'
+    end
+
   end
 
   def edit

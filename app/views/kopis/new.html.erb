@@ -1,9 +1,18 @@
+
+<p class="error">
+  <%= show_errors(@kopi, :name) %>
+</p>
+
 <h1>Add new Kopi</h1>
 
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
   <p>
     <%= form.label :name, 'Kopi Name' %><br>
-    <%= form.text_field :name %>
+    <% if params[:kopi] != nil %>
+    	<%= form.text_field :name, :value => params[:kopi][:name]%>
+    <% else %>
+    	<%= form.text_field :name %>
+    <% end %>
   </p>
 
   <p>

@@ -1,11 +1,11 @@
 class CustomersController < ApplicationController
   def index
     if request.query_parameters[:sort] == "desc"
-      @customers = Customer.joins(:kopis)
+      @customers = Customer.left_outer_joins(:kopis)
                    .group("customers.id")
                    .order("count(kopis.id) desc")
     else
-      @customers = Customer.joins(:kopis)
+      @customers = Customer.left_outer_joins(:kopis)
                    .group("customers.id")
                    .order("count(kopis.id) asc")
     end
