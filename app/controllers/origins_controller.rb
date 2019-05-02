@@ -9,7 +9,7 @@ class OriginsController < ApplicationController
   end
 
   def edit
-
+     @origin = Origin.find(params[:id])
   end
 
   def create
