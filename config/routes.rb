@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   root 'origins#index'
 
   get '/origins/:id/' => 'origins#show'
-
+  get '/kopi/:id' => 'kopis#show'
+  get '/customer/:id' => 'customers#show'
 end
