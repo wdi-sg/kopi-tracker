@@ -1,3 +1,3 @@
 class Order < ActiveRecord::Base
-  has_one :kopi
+  belongs_to :kopi
 end

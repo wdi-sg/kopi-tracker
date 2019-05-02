@@ -44,7 +44,7 @@ class OriginsController < ApplicationController
 private
 
   def origin_params
-    params.require(:origin).permit(:location, :phone)
+    params.require(:origin).permit(:name, :location, :phone)
   end
 
 end

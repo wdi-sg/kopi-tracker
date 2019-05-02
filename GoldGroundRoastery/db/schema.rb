@@ -19,10 +19,9 @@ ActiveRecord::Schema.define(version: 2019_04_29_102425) do
     t.string "name"
     t.bigint "roast_id"
     t.bigint "origin_id"
-    t.bigint "order_id"
+    t.decimal "price_per_pound"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_kopis_on_order_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
     t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
@@ -34,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_04_29_102425) do
   end
 
   create_table "origins", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.string "phone"
     t.datetime "created_at", null: false
