@@ -1,3 +1,3 @@
 class Origin < ActiveRecord::Base
-	has_many :coffee
+	has_many :kopi
 end

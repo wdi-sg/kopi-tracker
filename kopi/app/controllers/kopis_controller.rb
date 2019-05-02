@@ -1,5 +1,6 @@
 class KopisController < ApplicationController
 	def index
+		
 	end
 
 	def new
@@ -9,6 +10,10 @@ class KopisController < ApplicationController
 	end
 
 	def create
+		@kopi = Kopi.new(coffee_params)
+		@kopi.save
+		redirect_to @kopi
+
 	end
 
 	def show

@@ -1,6 +1,6 @@
-class Coffees < ActiveRecord::Migration[5.2]
+class Kopis < ActiveRecord::Migration[5.2]
   def change
-  	create_table :coffees do |t|
+  	create_table :kopis do |t|
   	t.string :name
   	t.references :origin
   	t.references :seed

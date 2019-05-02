@@ -1,0 +1,15 @@
+<h1>Listing seeds</h1>
+
+<table>
+  <tr>
+    <th>Seed</th>
+    <th></th>
+  </tr>
+
+  <% @seeds.each do |seed| %>
+    <tr>
+      <td><%= seed.name %></td>
+      <td><%= link_to 'Show', seed_path(seed) %></td>
+    </tr>
+  <% end %>
+</table>
