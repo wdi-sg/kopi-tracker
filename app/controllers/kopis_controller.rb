@@ -1,5 +1,9 @@
 class KopisController < ApplicationController
 
+  def index
+    @kopis = Kopi.all
+  end
+
   def new
     @origins = Origin.all
     @origin_id = Origin
