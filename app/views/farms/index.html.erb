@@ -1,0 +1,38 @@
+<h1>Farms</h1>
+
+<%= link_to 'New farm', new_farm_path, class: 'btn btn-success' %>
+<%= link_to 'Roast Index', roasts_path, class: 'btn btn-success' %>
+<%= link_to 'Kopi Index', kopis_path, class: 'btn btn-success' %>
+<%= link_to 'Order Index', orders_path, class: 'btn btn-success' %>
+<%= link_to 'Customer Index', customers_path, class: 'btn btn-success' %>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Farm</th>
+		<th scope="col">Location</th>
+		<th scope="col">Phone</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @farms.each do |farm| %>
+ 	<tr>
+ 		<h5>
+ 		<td><%= farm.origin %></td>
+ 		<td><%= farm.location %></td>
+ 		<td><%= farm.phone %></td>
+		<td><%= link_to 'Show', farm_path(farm) %></td>
+		<td><%= link_to 'Edit', edit_farm_path(farm) %></td>
+		<td><%= link_to 'Delete', farm_path(farm),
+		method: :delete,
+		data: { confirm: 'Are you sure?' }
+		%></td>
+		<td><%= link_to 'Farm \'s Kopi', farm_kopis_path(farm) %></td>
+		</h5>
+		
+	</tr>
+<% end %>
+</tbody>
+</table>

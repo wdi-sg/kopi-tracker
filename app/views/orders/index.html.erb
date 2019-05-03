@@ -1,0 +1,41 @@
+<h1>Orders</h1>
+
+<%= link_to 'New order', new_order_path, class: 'btn btn-success' %>
+<%= link_to 'Roast Index', roasts_path, class: 'btn btn-success' %>
+<%= link_to 'Farm Index', farms_path, class: 'btn btn-success' %>
+<%= link_to 'Kopi Index', kopis_path, class: 'btn btn-success' %>
+<%= link_to 'Customer Index', customers_path, class: 'btn btn-success' %>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Order Id</th>
+		<th scope="col">Kopi</th>
+		<th scope="col">Price per lb</th>
+		<th scope="col">Weight</th>
+		<th scope="col">Total price</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @orders.each do |order| %>
+ 	<tr>
+ 		<h5>
+ 		<td><%= order.id %></td>
+ 		<td><%= order.kopi.name %></td>
+ 		<td><%= order.kopi.price_per_pound %></td>
+ 		<td><%= order.weight %></td>
+ 		<td><%= sprintf('%.2f', order.weight*order.kopi.price_per_pound) %></td>
+		<td><%= link_to 'Show', order_path(order) %></td>
+		<td><%= link_to 'Edit', edit_order_path(order) %></td>
+		<td><%= link_to 'Delete', order_path(order),
+		method: :delete,
+		data: { confirm: 'Are you sure?' }
+		%></td>
+		</h5>
+		
+	</tr>
+<% end %>
+</tbody>
+</table>

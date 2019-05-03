@@ -1,0 +1,26 @@
+<p>
+  <strong>Order:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Kopi:</strong>
+  <%= @order.kopi.name %>
+</p>
+
+<p>
+  <strong>Price per pound:</strong>
+  <%= @order.kopi.price_per_pound %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @order.weight %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= sprintf('%.2f', @order.weight*@order.kopi.price_per_pound) %>
+</p>
+
+<%= link_to 'Back', orders_path, class: 'btn btn-success' %>

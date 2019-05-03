@@ -1,0 +1,34 @@
+<h1>Roasts</h1>
+
+<%= link_to 'New roast', new_roast_path, class: 'btn btn-success' %>
+<%= link_to 'Farm Index', farms_path, class: 'btn btn-success' %>
+<%= link_to 'Kopi Index', kopis_path, class: 'btn btn-success' %>
+<%= link_to 'Order Index', orders_path, class: 'btn btn-success' %>
+<%= link_to 'Customer Index', customers_path, class: 'btn btn-success' %>
+
+<table class="table table-bordered">
+<thead class="thead-dark">
+	<tr>
+		<th scope="col">Roast</th>
+		<th scope="col" style="text-align: center" colspan="4">Actions</th>
+	</tr>
+</th>
+</thead>
+<tbody>
+<% @roasts.each do |roast| %>
+ 	<tr>
+ 		<h5>
+ 		<td><%= roast.roast.capitalize %></td>
+		<td><%= link_to 'Show', roast_path(roast) %></td>
+		<td><%= link_to 'Edit', edit_roast_path(roast) %></td>
+		<td><%= link_to 'Delete', roast_path(roast),
+		method: :delete,
+		data: { confirm: 'Are you sure?' }
+		%></td>
+		<td><%= link_to 'Roast \'s Kopi', roast_kopis_path(roast) %></td>
+		</h5>
+		
+	</tr>
+<% end %>
+</tbody>
+</table>

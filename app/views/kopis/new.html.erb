@@ -1,0 +1,41 @@
+<h1>New Kopi</h1>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  
+  <p>
+    <%= form.label :name %><br/>
+    <%= form.text_field :name %>
+  </p>
+
+  <% if params.has_key?(:roast_id) %>
+    <%= form.hidden_field :roast_id, value: params[:roast_id] %>
+  <% elsif params.has_key?(:farm_id) %>
+    <%= form.hidden_field :farm_id, value: params[:farm_id] %>
+  <% else %>
+  <p>
+    <%= form.label "Roast" %><br/>
+    <%= form.collection_select :roast_id, @roasts, :id, :roast %>
+  </p>
+  <% end %>
+
+  <% if params.has_key?(:farm_id) %>
+    <%= form.hidden_field :farm_id, value: params[:farm_id] %>
+  <% else %>
+  <p>
+    <%= form.label "Farm" %><br/>
+    <%= form.collection_select :farm_id, @farms, :id, :origin %>
+  </p>
+  <% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<% if params.has_key?(:roast_id) %>
+  <%= link_to 'Back', roast_kopis_path, class: 'btn btn-success' %>
+<% elsif params.has_key?(:farm_id) %>
+  <%= link_to 'Back', farm_kopis_path, class: 'btn btn-success' %>
+<% else %>
+  <%= link_to 'Back', kopis_path, class: 'btn btn-success' %>
+<% end %>
