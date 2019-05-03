@@ -2,6 +2,7 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
+    @origin_id = Origin
   end
 
    def create

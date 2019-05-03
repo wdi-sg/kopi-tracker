@@ -2,6 +2,7 @@ class OriginsController < ApplicationController
 
   def index
     @kopis = Kopi.all
+    @origins = Origin.all
   end
 
   def new
