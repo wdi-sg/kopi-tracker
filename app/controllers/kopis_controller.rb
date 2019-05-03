@@ -1,5 +1,7 @@
 class KopisController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @kopis = Kopi.all
 
@@ -13,8 +15,13 @@ class KopisController < ApplicationController
   def create
     @kopi = Kopi.new(kopi_params)
 
-    @kopi.save
-    redirect_to @kopi
+    if @kopi.save
+      redirect_to @kopi
+    else
+      @roasts = Roast.all
+      @origins = Origin.all
+      render 'new'
+    end
   end
 
   def edit

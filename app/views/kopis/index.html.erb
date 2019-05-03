@@ -1,5 +1,11 @@
-<h1 class="mx-3">Kopi</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Kopi</h1>
+    <p class="lead">Get a cuppa</p>
+  </div>
+</div>
 
+<% if user_signed_in? %>
 <ul class="list-unstyled mx-3">
 	<li class="list-inline-item">
 		<%= link_to 'New Kopi', new_kopi_path, class: 'btn btn-primary my-1' %>
@@ -70,6 +76,14 @@
 	</tbody>
 </table>
 
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>
 
+<% else %>
 
+<p>
+<%= link_to 'log in', new_user_session_url %>
+</p>
+<% end %>
 <br/>
