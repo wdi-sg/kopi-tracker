@@ -5,6 +5,14 @@
     <%= form.label :roast %><br/>
     <%= form.text_field :roast %>
   </p>
+
+  <%= @roast.errors.messages[:roast][0] %>
+
+  <p class="error">
+  	Helper method<br/>
+    <%= show_errors(@roast, :roast) %>
+  </p>
+
   <p>
     <%= form.submit %>
   </p>

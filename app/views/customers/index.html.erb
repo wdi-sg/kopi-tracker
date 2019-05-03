@@ -6,6 +6,21 @@
 <%= link_to 'Kopi Index', kopis_path, class: 'btn btn-success' %>
 <%= link_to 'Order Index', orders_path, class: 'btn btn-success' %>
 
+<form method="GET" action="/customers">
+	<label>Sort by:</label>
+	<select name="sort" >
+		<option value="">Please choose one</option>
+		<option value="name">Name</option>
+		<option value="number of kopi">No. of Kopi</option>
+	</select>
+	<label>Order:</label>
+	<select name="order" onchange="this.form.submit()">
+		<option value="">Please choose one</option>
+		<option value="asc">Ascending</option>
+		<option value="desc">Descending</option>
+	</select>
+</form>
+
 <table class="table table-bordered">
 <thead class="thead-dark">
 	<tr>

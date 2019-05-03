@@ -10,8 +10,14 @@ class RoastsController < ApplicationController
   def create
     @roast = Roast.new(roast_params)
 
-    @roast.save
-    redirect_to @roast
+    if @roast.save
+      redirect '/'
+    else
+      render 'new'
+    end
+
+    # @roast.save
+    # redirect_to @roast
   end
 
   def show

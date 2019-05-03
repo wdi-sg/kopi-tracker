@@ -7,6 +7,18 @@ class KopisController < ApplicationController
       @kopis = Kopi.where(roast_id: params[:roast_id])
     elsif params.has_key?(:farm_id) 
       @kopis = Kopi.where(farm_id: params[:farm_id])
+    elsif request.query_parameters[:sort] == "number of customers" && request.query_parameters[:order] == "desc"
+        @kopis = Kopi.joins(:customers)
+                     .group("kopis.id")
+                     .order("count(customers.id) desc")
+    elsif request.query_parameters[:sort] == "number of customers" && request.query_parameters[:order] == "asc"
+        @kopis = Kopi.joins(:customers)
+                     .group("kopis.id")
+                     .order("count(customers.id) asc")
+    elsif request.query_parameters[:sort] == "name" && request.query_parameters[:order] == "desc"
+        @kopis = Kopi.order(name: :desc)
+    elsif request.query_parameters[:sort] == "name" && request.query_parameters[:order] == "asc"
+        @kopis = Kopi.order(name: :asc)
     else
       @kopis = Kopi.all
     end

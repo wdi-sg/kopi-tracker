@@ -1,7 +1,21 @@
 class CustomersController < ApplicationController
 
   def index
-    @customers = Customer.all
+    if request.query_parameters[:sort] == "number of kopi" && request.query_parameters[:order] == "desc"
+        @customers = Customer.joins(:kopis)
+                     .group("customers.id")
+                     .order("count(kopis.id) desc")
+    elsif request.query_parameters[:sort] == "number of kopi" && request.query_parameters[:order] == "asc"
+        @customers = Customer.joins(:kopis)
+                     .group("customers.id")
+                     .order("count(kopis.id) asc")
+    elsif request.query_parameters[:sort] == "name" && request.query_parameters[:order] == "desc"
+        @customers = Customer.order(name: :desc)
+    elsif request.query_parameters[:sort] == "name" && request.query_parameters[:order] == "asc"
+        @customers = Customer.order(name: :asc)
+    else
+      @customers = Customer.all
+    end
   end
 
   def new
