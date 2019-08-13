@@ -1,0 +1,25 @@
+<h1>Edit Origin</h1>
+
+<%= form_with scope: :origin, model: @origin, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+
+  <p>
+    <%= form.label :phone %><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<p><%= link_to 'Destroy', delete_origin_path,
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+
+<%= link_to 'Back', root_path %>
