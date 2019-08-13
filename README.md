@@ -1,45 +1,24 @@
-# kopi-tracker
+# README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-You are working at a kopi roastery. Create a rails app that tracks kopis.
+Things you may want to cover:
 
-![](https://media.giphy.com/media/l3vQXT6nQkKK7LkVG/giphy.gif)
+* Ruby version
 
-Each individual `kopi` has a `name` and roastedness (`roast`), and is associtaed with an `origin` (farm where it comes from).
+* System dependencies
 
-A kopi farm (`origin`) has a `location`, `phone` number and is associated with many kopis.
+* Configuration
 
-#### further
-Migrate your app to track roastedness in a separate table. Use the [`seed.rb`](https://edgeguides.rubyonrails.org/active_record_migrations.html#migrations-and-seed-data) file to put the 7 kinds of roast into the DB. 
+* Database creation
 
-![roasts](https://cdn6.bigcommerce.com/s-s60y10i2/product_images/uploaded_images/roast-comparison-chart.jpg?t=1469215177)
+* Database initialization
 
-Each kopi will have a roast.
+* How to run the test suite
 
-A roast will have many kopis.
+* Services (job queues, cache servers, search engines, etc.)
 
-Using your models will look something like this:
+* Deployment instructions
 
-```
-# get all kopis that are dark roast
-Roast.find_by(name: "Italian").kopis
-```
-
-#### further 
-Change your db model to include an order for a kopi. Change your kopi table to track price per pound. Add an `order` model. A kopi order has a `weight`. It is associated with a kopi.
-
-#### further
-For the routes `/orders` and `/orders/:id` include the total price of each order. (weight * price per pound)
-
-#### further
-Create a `/report` route that will display sales data.
-
-In order to have data to display you should add more kopis and orders into your database from a seed file.
-
-`/report` should display the total sales for that day. 
-
-#### further
-Change `/report` to also display sales by kopi.
-
-#### further
-Change `/report` to also display sales by origin.
+* ...

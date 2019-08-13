@@ -1,0 +1,25 @@
+<h1>KOPI LIST</h1>
+
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>ROAST</th>
+    <th>ORIGIN</th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.roast %></td>
+      <td><%= kopi.origin.location %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path %>
+<% end %>
+
+<%= link_to 'log in', new_user_session_url %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
