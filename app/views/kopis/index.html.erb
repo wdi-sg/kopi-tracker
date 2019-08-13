@@ -1,0 +1,43 @@
+<h1>List of Kopis</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Origin</th>
+      <th>Roast</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<%= @kopis.each_with_index do |kopi, index| %>
+
+  <tr>
+    <td>
+      <%= index + 1 %>
+    </td>
+    <td>
+      <%= kopi.name %>
+    </td>
+    <td>
+      <%= kopi.origin %>
+    </td>
+
+        <td>
+          <%= link_to "Show", kopi_path(kopi) %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_kopi_path(kopi) %>
+        </td>
+
+        <td>
+          <%= link_to "Destroy", kopi_path(kopi),
+              method: :delete,
+              data: { confirm: "Are you sure you wanna delete the kopi?" } %>
+        </td>
+
+  </tr>
+  <% end %>
+  </tbody>
+</table>
