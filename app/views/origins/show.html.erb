@@ -16,6 +16,17 @@
   <%= @origin.phone %>
 </p>
 
+
+<ul>
+
+<% @origin.kopi.each do |kopi| %>
+  <li>
+    <%=kopi.name %><br/>
+    <%=kopi.roast %>
+  </li>
+<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_origin_path(@origin) %>
 <%= link_to 'Delete', origin_path(@origin),
     method: :delete,

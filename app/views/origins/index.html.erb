@@ -6,6 +6,15 @@
       <p><%= origin.location %></p>
       <p><%= origin.phone %></p>
       <!-- to add the list of kopi here -->
+
+      <ul>
+      <% origin.kopi.each do |kopi| %>
+        <li>
+          <%=kopi.name %>
+        </li>
+      <% end %>
+      </ul>
+
       <p><%= link_to 'Show', origin_path(origin) %></p>
       <p><%= link_to 'Edit', edit_origin_path(origin) %></p>
       <p><%= link_to 'Destroy', origin_path(origin),
