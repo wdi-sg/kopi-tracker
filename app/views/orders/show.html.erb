@@ -1,0 +1,21 @@
+<h2>Order Created!</h2>
+
+<p>
+    Order ID: <%= @order.id %>
+</p>
+
+<p>
+    Order Weight: <%= @order.weight %>
+</p>
+
+<p>
+    Kopi Name: <%= @order.kopi.name %>
+</p>
+
+<p>
+    Kopi Unit Price: $<%= @order.kopi.price %>
+</p>
+
+<p>
+    Total: $<%= (@order.kopi.price * @order.weight).round(2) %>
+</p>
