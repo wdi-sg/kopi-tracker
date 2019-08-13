@@ -1,3 +1,3 @@
 class Roast < ApplicationRecord
-    has_many :kopi
+    has_many :kopi, dependent: :destroy
 end
