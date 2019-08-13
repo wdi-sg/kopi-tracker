@@ -1,0 +1,12 @@
+<h1>All orders displayed here</h1>
+<%= link_to "New Order", new_order_path %>
+<ul>
+  <% @orders.each do |order|%>
+  <li>
+    <p>Order ID:<%= order.id %></p>
+    <p>Order Name: <%= @kopis.find(order.kopi_id).name %></p>
+    <p>Order Weight: <%= order.weight %></p>
+    <p>Order Price: $<%= order.price %></p>
+    </li>
+  <% end %>
+</ul>

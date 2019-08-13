@@ -1,0 +1,38 @@
+<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+  <p>
+    <%= form.label "Select Coffee" %><br>
+    <%= form.collection_select :kopi_id, @kopis, :id, :name%>
+  </p>
+  <p>
+    <%= form.label "Select Weight" %><br>
+    <%= form.text_field :weight, :onkeyup => "getPrice()" %>
+  </p>
+
+  <p>
+    <%= form.label "Total Price" %><br>
+    <%= form.hidden_field :price, value:"0"  %>
+    <p id='price'></p>
+  </p>
+
+  <p>
+    <%= form.submit "Submit Order"%>
+  </p>
+<% end %>
+
+<script>
+
+function getPrice(){
+
+  Rails.ajax({
+  url: "/kopi",
+  type: "get",
+  data: document.querySelector("#order_kopi_id").value,
+  success: function(data) {
+    document.querySelector("#price").innerHTML = "$"+ parseInt(data.priceperpound) * document.querySelector("#order_weight").value
+    document.querySelector("#order_price").value = parseInt(data.priceperpound) * document.querySelector("#order_weight").value
+  },
+  error: function(data) {}
+})
+}
+
+</script>
