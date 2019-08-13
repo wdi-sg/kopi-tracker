@@ -24,9 +24,14 @@ class KopisController < ApplicationController
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def update
+    @origins = Origin.all
+    @roasts = Roast.all
+
     @kopi = Kopi.find(params[:id])
 
     @kopi.update(kopi_params)
@@ -34,8 +39,13 @@ class KopisController < ApplicationController
     redirect_to @kopi
   end
 
+  def destroy
+    @kopi = Kopi.find(params[:id])
 
+    @kopi.destroy
 
+    redirect_to root_path
+  end
 
 
 
@@ -43,7 +53,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :origin_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id, :price_per_pound)
   end
 
 end

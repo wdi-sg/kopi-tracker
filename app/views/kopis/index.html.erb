@@ -1,3 +1,7 @@
+<a href=<%= kopis_path %>>Home</a>
+<a href=<%= orders_path %>>Orders</a>
+
+<h1> My Kopi Table </h1>
 
 <table>
 	<tr>
@@ -5,6 +9,8 @@
 		<th>Kopi Origin</th>
 		<th>Origin Location</th>
 		<th>Kopi Roast</th>
+		<th>Current Price Per Pound</th>
+		<th colspan="3">Action</th>
 	</tr>
 	<% @kopis.each do |kopi| %>
 	<tr>
@@ -12,6 +18,15 @@
 		<td><%= kopi.origin.name %></td>
 		<td><%= kopi.origin.location %></td>
 		<td><%= kopi.roast.name %></td>
+		<td><%= kopi.price_per_pound %> cents</td>
+		<td><a><%= link_to 'View', kopi_path(kopi) %></a></td>
+		<td><a><%= link_to 'Edit', edit_kopi_path(kopi) %></a></td>
+		<td><a><%= link_to 'Delete', kopi_path(kopi),
+			        method: :delete,
+			        data: { confirm: 'Are you sure?' } %></a></td>
 	</tr>
 	<% end %>
 </table>
+
+
+<a class="float-right" href=<%= new_kopi_path %>>Add New Kopi</a>
