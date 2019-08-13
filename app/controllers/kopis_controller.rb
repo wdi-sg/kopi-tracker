@@ -1,6 +1,12 @@
 class KopisController < ApplicationController
   def index
-    @kopis = Kopi.all
+    @roasts = Roast.all
+    if request.query_parameters[:roastedness]
+      roastedness = request.query_parameters[:roastedness]
+      @kopis = Roast.find_by(id: roastedness).kopi
+    else
+      @kopis = Kopi.all
+    end
 
   end
 

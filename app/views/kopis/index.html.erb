@@ -1,5 +1,10 @@
 <h2>Kopi</h2>
 
+<%= form_tag(kopis_path, {method: "get", enforce_utf8: false}) do %>
+  <%= select_tag(:roastedness,options_from_collection_for_select(@roasts, 'id', 'name',),:include_blank => 'Roasted level', :onchange=>'this.form.submit();' ) %>
+
+<%end%>
+
 <% @kopis.each do |kopi| %>
   <p><%=link_to kopi.name, kopi_path(kopi) %></p>
 <% end %>
