@@ -1,0 +1,7 @@
+<h2>Kopi</h2>
+
+<% @kopis.each do |kopi| %>
+  <p><%=link_to kopi.name, kopi_path(kopi) %></p>
+<% end %>
+
+<%= link_to "add new kopi", new_kopi_path %>
