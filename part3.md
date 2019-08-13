@@ -1,40 +1,24 @@
-## Part 3 Many-to-Many
+## Part 3
 
-Your roastery has blown up on instagram and you are expanding.
+You have decided to add functionality for the general public.
 
-Your app already tracks what you buy and roast, and the kopis you produce.
-
-You are expanding the app to track which customers buy which kopis.
-
-Create a customer model.
-
-A customer can stock many kopis.
-
-A kopi can be carried by many customers.
-
-For a given kopi, `/kopi/:id` display all the customers who carry that kopi.
-
-For a given customer `/customer/:id` display all the kopis they stock.
-
-Note: (the customer model is not login)
+Add users using devise.
 
 #### further
-Add the ability for customers to log in.
 
-Make changes to add devise to the customers model. (Don't integrate the customer and the user model- we'll leave the user model just for the general public)
+Add a new model for users to "bookmark" your kopis.
 
-#### further
-Sort the customers by the number of kopis they carry, ascending and descending.
-
-Note: The option of ascending and descending sorting should be noted in the query parameter of the request: `/kopi/1?sort=asc`
+(This is a many-to-many relationship- users has many kopis, kopis has many users)
 
 #### further
-Sort the kopis by "popularity"- by the number of shops that carry that kopi.
+Add the ability to favorite roasts as well.
 
+On the user's logged in home page (`/`) show them all the roasts they've favorited and the kopis that have that roast.
 
+#### further
+Add a 2nd user model for customer (replace the old customer model with a devise model named customer).
 
+Let the customers log in and order kopis from you.
 
-
-
-
-
+#### further
+Restrict the users who can favorite (the general public) from ordering kopis (your wholesale buyers).
