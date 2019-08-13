@@ -1,0 +1,17 @@
+
+<table>
+	<tr>
+		<th>Kopi Name</th>
+		<th>Kopi Origin</th>
+		<th>Origin Location</th>
+		<th>Kopi Roast</th>
+	</tr>
+	<% @kopis.each do |kopi| %>
+	<tr>
+		<td><%= kopi.name %></td>
+		<td><%= kopi.origin.name %></td>
+		<td><%= kopi.origin.location %></td>
+		<td><%= kopi.roast.name %></td>
+	</tr>
+	<% end %>
+</table>
