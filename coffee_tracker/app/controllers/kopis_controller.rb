@@ -18,6 +18,12 @@ class KopisController < ApplicationController
     @roasts = Roast.all
   end
 
+  def edit
+    @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
+    @roasts = Roast.all
+  end
+
   def create
 
     @kopi = Kopi.new(kopi_params)
@@ -46,6 +52,22 @@ class KopisController < ApplicationController
     if params[:origin_id].to_i != @kopi.origin.id
       # do something
     end
+  end
+
+ def update
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.update(kopi_params)
+
+    redirect_to @kopi
+  end
+
+
+  def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+
+    redirect_to root_path
   end
 
 private
