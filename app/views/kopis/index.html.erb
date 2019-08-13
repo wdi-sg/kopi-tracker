@@ -1,0 +1,16 @@
+<h1>Listing kopis</h1>
+
+  <% @kopis.each do |kopi| %>
+
+      <h2><%= kopi.name %></h2>
+      <p><%= kopi.roast %></p>
+      <p><%= kopi.origin.name %></p>
+      <p><%= link_to 'Show', kopi_path(kopi) %></p>
+      <p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
+      <p><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+
+
+<%= link_to 'Create New', new_kopi_path %>

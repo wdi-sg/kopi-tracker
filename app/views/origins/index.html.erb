@@ -1,0 +1,17 @@
+<h1>Listing origins</h1>
+
+  <% @origins.each do |origin| %>
+
+      <h2><%= origin.name %></h2>
+      <p><%= origin.location %></p>
+      <p><%= origin.phone %></p>
+      <!-- to add the list of kopi here -->
+      <p><%= link_to 'Show', origin_path(origin) %></p>
+      <p><%= link_to 'Edit', edit_origin_path(origin) %></p>
+      <p><%= link_to 'Destroy', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+
+
+<%= link_to 'Create New', new_origin_path %>

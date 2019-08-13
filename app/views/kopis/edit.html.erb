@@ -1,0 +1,22 @@
+<h1>Edit kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+   <!-- to add the origin selection later -->
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>
