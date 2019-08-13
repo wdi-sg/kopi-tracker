@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Origin</th>
     <th>Roast</th>
+    <th>Price per Pound</th>
     <th></th>
   </tr>
 
@@ -13,6 +14,7 @@
         <td><%= kopi.name %></td>
         <td><%= kopi.origin.location %></td>
         <td><%= kopi.roast.name %></td>
+        <td><%= kopi.price_per_pound %></td>
         <td><%= link_to 'Show', kopi_path(kopi) %></td>
         <td><%= link_to 'Edit', edit_kopi_path(kopi) %>
         <td><%= link_to 'Destroy', kopi_path(kopi),
@@ -23,4 +25,5 @@
 </table>
 
 <%= link_to 'New kopi', new_kopi_path %><br/><br/>
-<%= link_to 'To Origins', root_path %>
+<%= link_to 'To Origins', root_path %><br/>
+<%= link_to 'To Orders', orders_path %>

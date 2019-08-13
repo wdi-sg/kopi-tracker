@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root "origins#index"
   resources :origins
   resources :kopis
+  resources :orders
+  get '/report' => 'reports#index', as: 'report'
 
 end
