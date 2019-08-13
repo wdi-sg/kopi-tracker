@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   root 'kopis#index'
 
   resources :kopis
+  resources :origins
+
+  get 'origins/:origin_id/new' => 'kopis#new', as: 'new_origin_kopi'
 
 end

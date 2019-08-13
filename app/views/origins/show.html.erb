@@ -1,0 +1,11 @@
+<h2><%= @origin.name %></h2>
+<ul>
+  <% @kopis.each do |kopi| %>
+    <li><%= link_to kopi.name, kopi_path(kopi) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit Origin", edit_origin_path %>
+<%= link_to "Delete Origin", origin_path(@origin), method: :delete %><br><br>
+<%= link_to "Add Kopi", new_origin_kopi_path(@origin) %>
+<%= link_to "Back to Origins", origins_path %>

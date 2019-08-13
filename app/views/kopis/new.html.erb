@@ -9,7 +9,8 @@
 
   <%= form.collection_select :roast_id, @roasts, :id, :name %>
 
-  <%= form.collection_select :origin_id, @origins, :id, :name %>
+  <%= form.collection_select :origin_id, @origins, :id, :name, options=
+      {:prompt => false} %>
   <p>
     <%= form.submit %>
   </p>

@@ -13,13 +13,19 @@ class KopisController < ApplicationController
   def new
     @roasts = Roast.all
     @origins = Origin.all
+
+    if params.has_key?(:origin_id)
+      @kopi = Kopi.new
+      @kopi.origin_id = params[:origin_id]
+    end
+
   end
 
   def create
     @kopi = Kopi.new(kopi_params)
     @kopi.save
 
-    redirect_to root_path
+    redirect_to kopi_path(@kopi)
   end
 
   def show

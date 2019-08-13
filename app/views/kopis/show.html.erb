@@ -1,5 +1,6 @@
-<h2><%= @kopi.name %></h2>
+<h2><%= @kopi.name  %></h2>
 
+<p>Origin: <%= link_to @kopi.origin.name, origin_path(@kopi.origin) %></p>
 <%= link_to "Edit Kopi", edit_kopi_path %>
 <%= link_to "Delete Kopi", kopi_path(@kopi), method: :delete %><br><br>
 <%= link_to "Back to Kopis", kopis_path %>
