@@ -3,7 +3,6 @@ class CreateOrigins < ActiveRecord::Migration[5.2]
     create_table :origins do |t|
         t.text :location
         t.text :phone
-        t.references :kopi
         t.timestamps
     end
   end
