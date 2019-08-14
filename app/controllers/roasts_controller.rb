@@ -1,0 +1,2 @@
+class RoastsController < ApplicationController
+end
