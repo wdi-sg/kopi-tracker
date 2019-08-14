@@ -1,7 +1,9 @@
 class KopisController < ApplicationController
 
     def new
-        @kopi = Kopi.new
+        #@kopi = Kopi.new
+        @origins = Origin.all
+        @roasts = Roast.all
     end
 
   def create
@@ -24,6 +26,6 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id)
   end
 end
