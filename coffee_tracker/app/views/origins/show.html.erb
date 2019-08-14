@@ -3,3 +3,11 @@
 <%= @origin.location.upcase %>
 
 <h3> Kopi that came from this origin:</h3>
+<ul>
+<% @origin.kopi.each do |kopi| %>
+<li>
+	<%= kopi.name.capitalize %>
+</li>
+<%end%>
+
+</ul>

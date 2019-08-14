@@ -2182,3 +2182,27 @@ Processing by KopisController#index as HTML
 Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/origins/1" for ::1 at 2019-08-14 00:31:14 +0800
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/admin/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 231ms (Views: 212.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/origins/1" for ::1 at 2019-08-14 00:32:55 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 1]]
+  ↳ app/views/origins/show.html.erb:7
+  Rendered origins/show.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 52ms (Views: 45.0ms | ActiveRecord: 5.7ms)
+
+
