@@ -1,14 +1,49 @@
-<h2><%= @origin.name %></h2>
-<ul>
-  <% @kopis.each do |kopi| %>
-    <li><%= link_to kopi.name, kopi_path(kopi) %></li>
-  <% end %>
-</ul>
+<div class="container">
 
-<% if current_user.admin?  %>
-  <%= link_to "Edit Origin", edit_origin_path %>
-  <%= link_to "Delete Origin", origin_path(@origin), method: :delete %><br><br>
-<% end %>
-<%= link_to "Add Kopi", new_origin_kopi_path(@origin) %>
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Origins', origins_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to @origin.name, kopi_path(@origin) %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+   <div class="col-8">
+    <h2><%= @origin.name %></h2>
 
-<%= link_to "Back to Origins", origins_path %>
+     <table class="table">
+       <thead>
+       <th>Kopi</th>
+       <th>Roast</th>
+       <th>Price per Pound</th>
+       <th></th>
+       </thead>
+       <tbody>
+         <% @kopis.each do |kopi| %>
+           <tr>
+             <td><%= link_to kopi.name, kopi_path(kopi) %></td>
+             <td><%= link_to kopi.roast.name, roast_path(kopi.roast) %></td>
+             <td>$<%= kopi.price %></td>
+           </tr>
+         <% end %>
+       </tbody>
+     </table>
+   </div>
+    <div class="col-4">
+      <% if user_signed_in? %>
+        <% if current_user.admin?  %>
+          <%= link_to "Edit Origin", edit_origin_path, class:"btn btn-primary mb-3" %>
+          <%= link_to "Delete Origin", origin_path(@origin), method: :delete, class:"btn btn-danger mb-3" %>
+        <% end %>
+        <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class:"btn btn-secondary mb-3" %>
+      <% else%>
+        <%= link_to 'Log In', new_user_session_url,class:"btn btn-secondary mb-3" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

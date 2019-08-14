@@ -1,5 +1,5 @@
 class KopisController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [ :show, :index ]
   def index
     @roasts = Roast.all
     if request.query_parameters[:roastedness]
@@ -36,6 +36,7 @@ class KopisController < ApplicationController
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @kopi.user = current_user
     @roasts = Roast.all
     @origins = Origin.all
   end

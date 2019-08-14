@@ -1,17 +1,55 @@
-<h2>Kopis</h2>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to 'Kopis', kopis_path %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>Kopis</h2>
 
-<%= form_tag(kopis_path, {method: "get", enforce_utf8: false}) do %>
-  <%= select_tag(:roastedness,options_from_collection_for_select(@roasts, 'id', 'name',),:include_blank => 'Roasted level', :onchange=>'this.form.submit();' ) %>
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Roast</th>
+          <th>Price per Pound</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @kopis.each do |kopi| %>
+            <tr>
+              <td><%= link_to kopi.name, kopi_path(kopi) %> </td>
+              <td><%= link_to kopi.origin.name, origin_path(kopi) %> </td>
+              <td><%= link_to kopi.roast.roastedness, roast_path(kopi.roast) %> </td>
+              <td>$<%= kopi.price %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<%end%>
+    </div>
+    <div class="col-4">
+      <%= form_tag(kopis_path, {method: "get", enforce_utf8: false}) do %>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Filter by</label>
+          </div>
+          <%= select_tag(:roastedness,options_from_collection_for_select(@roasts, 'id', 'name',),:include_blank => 'Roasted level', :onchange=>'this.form.submit();', :class =>"custom-select" ) %>
+        </div>
+      <%end%>
+      <% if user_signed_in? %>
+        <%= link_to "Add New Kopi", new_kopi_path, class:"btn btn-primary mb-3" %>
+        <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class:"btn btn-secondary mb-3" %>
+      <% else%>
+        <%= link_to 'Log In', new_user_session_url,class:"btn btn-secondary mb-3" %>
+      <% end %>
+    </div>
+  </div>
 
-<% @kopis.each do |kopi| %>
-  <p><%=link_to kopi.name, kopi_path(kopi) %></p>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= link_to "add new kopi", new_kopi_path %>
-  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-<% else%>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
+</div>
