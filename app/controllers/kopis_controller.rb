@@ -1,5 +1,7 @@
 class KopisController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     # test to see if we are at /origins/:id/kopis or /kopis
     if params.has_key?(:origin_id)
@@ -19,8 +21,13 @@ class KopisController < ApplicationController
   def create
     @kopi = Kopi.new(kopi_params)
 
-    @kopi.save
+    @kopi.user = current_user
+
+    if @kopi.save
     redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
   def show
