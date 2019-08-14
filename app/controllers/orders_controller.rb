@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-    def index
-        @orders = Order.all
-    end
+    before_action :authenticate_user!
+
+
 
     def new
         @kopis = Kopi.all

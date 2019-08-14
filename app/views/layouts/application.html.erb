@@ -10,8 +10,23 @@
   </head>
 
   <body>
-    <a href="/">All Kopis List</a>|<a href="/kopis/new">New Kopi Form</a>|<a href="/kopis/roasts">List Roast -- Kopis</a>|<a href="/kopis/farms">List Farms -- Kopis</a>|<a href="/orders/new">New Order</a>
+      <p>
+      <% if user_signed_in? %>
+      login id : <%= current_user.email %>
+      <% end %>
+      </p>
 
+    <a href="/">All Kopis List</a> | <a href="/kopis/roasts">List Roast -- Kopis</a> | <a href="/kopis/farms">List Farms -- Kopis</a>
+    <% if !user_signed_in? %>
+    <a href="/users/sign_in">Sign In</a>
+    <% end %>
+    <% if user_signed_in? %>
+    | <a href="/kopis/new">New Kopi Form</a> | <a href="/orders/new">New Order</a>
+        <% if current_user.admin? %>
+             | <a href="/roasts">Roast Menu</a>
+        <% end %>
+    | <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
