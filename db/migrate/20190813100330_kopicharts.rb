@@ -1,4 +1,5 @@
-class Kopicharts < ActiveRecord::Migration[5.2]
+class Kopichart < ActiveRecord::Migration[5.2]
+
   def change
 
     create_table :kopicharts do |t|

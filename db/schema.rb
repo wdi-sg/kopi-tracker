@@ -10,17 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_100330) do
+ActiveRecord::Schema.define(version: 2019_08_13_102333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopicharts", force: :cascade do |t|
-    t.string "name"
-    t.string "roast"
-    t.string "origin"
+    t.string "kopi_name"
+    t.bigint "roast_name_id"
+    t.bigint "origin_name_id"
+    t.string "price_pergram"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_name_id"], name: "index_kopicharts_on_origin_name_id"
+    t.index ["roast_name_id"], name: "index_kopicharts_on_roast_name_id"
+  end
+
+  create_table "origins", force: :cascade do |t|
+    t.string "origin_name"
+    t.string "location"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roasts", force: :cascade do |t|
+    t.string "roast_name"
+    t.string "level"
+    t.bigint "kopi_name_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kopi_name_id"], name: "index_roasts_on_kopi_name_id"
   end
 
 end
