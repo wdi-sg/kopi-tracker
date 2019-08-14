@@ -1,7 +1,8 @@
-<h1>Sales by Kopi</h1>
+<h1>Today's sales by Kopi</h1>
 <ul>
-    <% @orders.each do |order|%>
-        <li><%=order.kopi.name%> : S$<%=order.weight*order.kopi.price_per_pound%></li>
+    <% @kopis.each do |kopi|%>
+        <% price = kopi.order.select{|x|x.created_at.in_time_zone('Singapore')>Time.now.strftime("%d")}.map{|x|kopi.price_per_pound*x.weight}.sum%>
+        <li><%=kopi.name%> : S$<%=price%></li>
     <%end%>
 
 </ul>

@@ -1,6 +1,15 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user!, :except => [ :show, :index ]
     def index
-        @orders = Order.all
+        if current_user.try(:admin?)
+            @orders = Order.all.order(:id)
+        elsif user_signed_in?
+            @orders = Order.all.order(:id).where(user_id: current_user.id)
+        else
+            @orders = nil
+
+        end
+
 
     end
 
@@ -11,7 +20,7 @@ class OrdersController < ApplicationController
 
     def create
         @order = Order.new(order_params)
-
+        @order.user_id = current_user.id
         if @order.save
             redirect_to @order
         else
@@ -48,6 +57,6 @@ class OrdersController < ApplicationController
     end
     private
       def order_params
-        params.require(:order).permit(:weight, :kopi_id)
+        params.require(:order).permit(:weight, :kopi_id,:user_id)
       end
 end

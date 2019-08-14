@@ -17,7 +17,9 @@
   <strong>Price per Pound:</strong>
   <%= @kopi.price_per_pound %>
 </p>
-
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_kopi_path(@kopi) %><br/>
+<% end %>
+
 <%= link_to 'Back to Kopis Index', kopis_path %><br/>
-<%= link_to 'Back to Origins Index', root_path %>
+<%= link_to 'Back to Origins Index', origins_path %>

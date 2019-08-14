@@ -1,0 +1,26 @@
+<h1>All roasts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+  <% @roasts.each do |roast| %>
+    <tr>
+        <td><%= roast.name %></td>
+        <td><%= link_to 'Show', roast_path(roast) %></td>
+        <td><%= link_to 'Edit', edit_roast_path(roast) %>
+        <td><%= link_to 'Destroy', roast_path(roast),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<% if current_user.try(:admin?) %>
+<%= link_to 'New roast', new_roast_path %><br/><br/>
+<% end %>
+
+<%= link_to 'To Origins', origins_path %><br/>
+<%= link_to 'To Kopis', kopis_path %><br/>
+<%= link_to 'To Orders', orders_path %>
