@@ -1,0 +1,28 @@
+<h1>Edit coffee details</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast_id %><br>
+    <%= form.text_area :roast_id %>
+  </p>
+
+  <p>
+    <%= form.label :origin_id %><br>
+    <%= form.text_area :origin_id%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>
+<%= link_to 'Delete', kopi_path, method: :delete, data: { confirm: 'Confirm delete?'} %>
+<%= link_to 'Log out', destroy_user_session_url, method: :delete %>

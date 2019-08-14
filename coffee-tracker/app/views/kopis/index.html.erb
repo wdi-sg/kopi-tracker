@@ -9,9 +9,20 @@
 
 	<% @kopis.each do |kopi| %>
 		<tr>
-			<td><%= kopi.name %></td>
+			<td><%= link_to kopi.name, kopi_path(kopi) %></td>
 			<td><%= kopi.roast_id %></td>
 			<td><%= kopi.origin_id %></td>
 		</tr>
 	<% end %>
-</table>
+</table><br>
+
+<%= link_to 'Origins', origins_path %>
+<%= link_to 'Roasts', roasts_path %><br>
+
+
+<% if user_signed_in? %>
+	<%= link_to 'Add New Kopi', new_kopi_path %>
+	<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'Log in', new_user_session_url %>
+<% end %>

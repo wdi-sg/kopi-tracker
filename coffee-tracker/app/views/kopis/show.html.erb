@@ -1,10 +1,16 @@
-<h1>Types of Coffee</h1><br>
+<h1>About the Coffee</h1><br>
 
-<p>Coffee name:<%= @kopi.name %>
-</p><br>
+<ul>
+	<li>Coffee name: <%= @kopi.name %></li>
+	<li>Roast level: <%= @kopi.roast.name%></li>
+	<li>Origin: <%= @kopi.origin.name%></li>
+</ul>
 
-<p>Roast level:<%= @kopi.roast_id %>
-</p><br>
+<%= link_to 'Back', root_path %><br>
 
-<p>Origins: <%= @kopi.origin_id %>
-</p>
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_kopi_path %>
+	<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'Log in', new_user_session_url %>
+<% end %>
