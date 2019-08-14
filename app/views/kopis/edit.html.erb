@@ -18,11 +18,14 @@
 
   <p>
     <%= form.label :roast %><br>
-    <%= form.text_area :roast %>
+    <%= form.collection_radio_buttons :roast_id, @roasts, :id, :name %>
   </p>
 
+  <p>
+  <%= form.label :origin %><br>
   <%= form.collection_radio_buttons :origin_id, @origins, :id, :name %>
-   <!-- to add the origin selection later -->
+  </p>
+
   <p>
     <%= form.submit %>
   </p>

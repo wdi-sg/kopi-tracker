@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_073847) do
+ActiveRecord::Schema.define(version: 2019_08_14_075810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.string "roast"
     t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "roast_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
     t.index ["user_id"], name: "index_kopis_on_user_id"
   end
 
@@ -52,5 +53,6 @@ ActiveRecord::Schema.define(version: 2019_08_14_073847) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kopis", "roasts"
   add_foreign_key "kopis", "users"
 end

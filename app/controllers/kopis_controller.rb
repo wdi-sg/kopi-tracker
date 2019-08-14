@@ -22,12 +22,14 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def edit
     #this is like the select * from kopi model
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def create
