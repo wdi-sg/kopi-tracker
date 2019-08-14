@@ -1,4 +1,5 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!
   def index
     @roasts = Roast.all
     if request.query_parameters[:roastedness]
@@ -23,6 +24,7 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
+    @kopi.user = current_user
     @kopi.save
 
     redirect_to kopi_path(@kopi)
@@ -53,6 +55,6 @@ class KopisController < ApplicationController
 
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id, :price)
     end
 end

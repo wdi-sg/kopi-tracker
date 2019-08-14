@@ -9,4 +9,9 @@
   <p><%=link_to kopi.name, kopi_path(kopi) %></p>
 <% end %>
 
-<%= link_to "add new kopi", new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to "add new kopi", new_kopi_path %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else%>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
