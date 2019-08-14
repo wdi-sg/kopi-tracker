@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+<h3><%= current_user.email %></h3>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+
+<h1>Listing kopis</h1>
+
+  <% @roasts.each do |roast| %>
+
+      <h2>Roast Name: <%= roast.name %></h2>
+
+      <p><%= link_to 'Show', roast_path(roast) %></p>
+      <p><%= link_to 'Edit', edit_roast_path(roast) %></p>
+      <p><%= link_to 'Destroy', roast_path(roast),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+
+<%= link_to 'Create New Roast', new_roast_path %>
