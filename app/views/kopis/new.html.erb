@@ -1,0 +1,72 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+  <%= form.collection_select :farm_id, @farms, :id, :name %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+  <p>
+    <%= form.label :farm %><br>
+    <%= form.text_area :farm %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+<%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
+
+  <%= form.collection_select :park_id, @parks, :id, :name %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+
+  ////////
+  <h1>Create a new kopi</h1>
+
+<% @farms.each do |farm| %>
+  <p><%= farm.name %></p>
+<% end %>
+
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <%= form.collection_select :farm_id, @farm, :id, :name %>
+
+  <% #loop over every park and create an option for each park %>
+
+<!--  <select name="park">
+    <option value="1">yellowstone</option>
+    <option value="2">bukit timah</option>
+  </select>
+
+ -->
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
