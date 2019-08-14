@@ -1,5 +1,8 @@
 class KopisController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :index ]
+
+
   def index
     @kopis = Kopi.all
   end

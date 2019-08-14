@@ -1,7 +1,18 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
-    @orders = Order.all
+    if current_user.id == 2
+      @orders = Order.all
+      p "USER IS ADMIN!!!!!"
+    else
+      @orders = Order.all.where(user_id: current_user.id)
+      p @orders
+      p "USER ID ISSS"
+      p current_user.id
+      p "USER IS NORMAL USER!!!"
+    end
   end
 
   def new
@@ -11,8 +22,9 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    @order.save
+    @order.user = current_user
 
+    @order.save
     # redirect_to @order
     redirect_to orders_path
   end

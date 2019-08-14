@@ -1,29 +1,41 @@
-<h1>Create New Kopi</h1>
+<% if user_signed_in? %>
+
+	<% if current_user.admin? %>
+
+		<h1>Create New Kopi</h1>
 
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+		<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-	<p>
-    <%= form.label :name %><br>
-    <%= form.text_area :name %>
-  </p>
+			<p>
+		    <%= form.label :name %><br>
+		    <%= form.text_area :name %>
+		  </p>
 
-  <%= form.label :roast %><br>
-  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+		  <%= form.label :roast %><br>
+		  <%= form.collection_select :roast_id, @roasts, :id, :name %>
 
-  <%= form.label :origin %><br>
-  <%= form.collection_select :origin_id, @origins, :id, :name %>
+		  <%= form.label :origin %><br>
+		  <%= form.collection_select :origin_id, @origins, :id, :name %>
 
-  <p>
-    <%= form.label :price_per_pound %><br>
-    <%= form.number_field :price_per_pound, step: 0.01 %>
-  </p>
+		  <p>
+		    <%= form.label :price_per_pound %><br>
+		    <%= form.number_field :price_per_pound, step: 0.01 %>
+		  </p>
 
 
-  <p>
-    <%= form.submit %>
-  </p>
+		  <p>
+		    <%= form.submit %>
+		  </p>
+
+		<% end %>
+
+		<%= link_to 'Back', root_path %>
+
+	<% else %>
+		<p>No Permission</p>
+		<%= link_to 'HOME', root_path %>
+
+	<% end %>
 
 <% end %>
-
-<%= link_to 'Back', root_path %>

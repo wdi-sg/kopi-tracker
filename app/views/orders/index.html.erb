@@ -1,12 +1,18 @@
-<a href=<%= kopis_path %>>Home</a>
-<a href=<%= orders_path %>>Orders</a>
-<a href=<%= reports_path %>>Report</a>
+<% if user_signed_in? %>
+	<a href=<%= kopis_path %>>Home</a>
+	<a href=<%= orders_path %>>Orders</a>
 
-<h1> My Kopi Orders </h1>
+	<% if current_user.admin? %>
+		<a href=<%= reports_path %>>Report</a>
+	<% end %>
+	<%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
+
+
+<h1> Kopi Orders </h1>
 
 <table>
 	<tr>
-		<th>Order Number</th>
+		<th>Order Reference</th>
 		<th>Kopi Ordered</th>
 		<th>Price Per Pound</th>
 		<th>Weight Ordered (Pounds)</th>
@@ -21,13 +27,20 @@
 		<td><%= order.weight %></td>
 		<td>$<%= (order.weight * order.kopi.price_per_pound / 100) %></td>
 		<td><a><%= link_to 'View', order_path(order) %></a></td>
-		<td><a><%= link_to 'Edit', edit_order_path(order) %></a></td>
-		<td><a><%= link_to 'Delete', order_path(order),
-			        method: :delete,
-			        data: { confirm: 'Are you sure?' } %></a></td>
+		<% if current_user.admin? %>
+			<td><a><%= link_to 'Edit', edit_order_path(order) %></a></td>
+			<td><a><%= link_to 'Delete', order_path(order),
+				        method: :delete,
+				        data: { confirm: 'Are you sure?' } %></a></td>
+		<% end %>
 	</tr>
 	<% end %>
 </table>
 
 
 <a class="float-right" href=<%= new_order_path %>>New Order</a>
+
+
+<% else %>
+	<%= link_to 'Sign In', new_user_session_url %>
+<% end %>
