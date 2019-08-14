@@ -5,4 +5,6 @@
   <p><%=link_to origin.name, origin_path(origin) %></p>
 <% end %>
 
-<%= link_to "add new origin", new_origin_path %>
+<% if current_user.admin?  %>
+  <%= link_to "add new origin", new_origin_path %>
+<% end %>

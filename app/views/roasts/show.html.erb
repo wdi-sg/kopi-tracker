@@ -1,0 +1,14 @@
+<h2><%= @roast.name %></h2>
+<ul>
+  <% @kopis.each do |kopi| %>
+    <li><%= link_to kopi.name, kopi_path(kopi) %></li>
+  <% end %>
+</ul>
+
+<% if current_user.admin?  %>
+  <%= link_to "Edit Roast", edit_roast_path %>
+  <%= link_to "Delete Roast", roast_path(@roast), method: :delete %><br><br>
+<% end %>
+<%= link_to "Add Roast", new_roast_path(@roast) %>
+
+<%= link_to "Back to Roasts", roasts_path %>

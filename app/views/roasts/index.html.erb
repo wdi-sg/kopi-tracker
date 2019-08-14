@@ -1,0 +1,10 @@
+<h2>Roasts</h2>
+
+
+<% @roasts.each do |roast| %>
+  <p><%=link_to roast.name, roast_path(roast) %></p>
+<% end %>
+
+<%# if current_user.admin?  %>
+  <%= link_to "add new roast", new_roast_path %>
+<%# end %>

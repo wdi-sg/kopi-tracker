@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'kopis#index'
 
   resources :kopis
+  resources :roasts
   resources :origins
   resources :orders
 
