@@ -1,0 +1,17 @@
+<h1>Types of Coffee</h1><br>
+
+<table>
+	<tr>
+		<th>Name of Coffee</th>
+		<th>Roast Level</th>
+		<th>Origin</th>
+	</tr>
+
+	<% @kopis.each do |kopi| %>
+		<tr>
+			<td><%= kopi.name %></td>
+			<td><%= kopi.roast_id %></td>
+			<td><%= kopi.origin_id %></td>
+		</tr>
+	<% end %>
+</table>
