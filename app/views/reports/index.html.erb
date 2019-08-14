@@ -3,9 +3,19 @@
 <a href=<%= reports_path %>>Report</a>
 
 
+
 <% @total = @orders.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).map{|order|order.weight*order.kopi.price_per_pound/100}.sum %>
 
 
 <h1>Total Sales For Today: $<%= @total %> </h1>
 
 <h1>Sales by Kopi</h1>
+
+<ul>
+    <% @kopiGroups.each do |group|%>
+    <li>
+    	<%= group.kopi.name %>:  $<%= group.weight*group.kopi.price_per_pound/100 %>
+    </li>
+    <%end%>
+
+</ul>
