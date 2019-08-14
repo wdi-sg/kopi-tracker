@@ -2,6 +2,12 @@
 <p>Name:
 	<%=  @origin.name %>
 </p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @origin.phone %>
+</p>
+
 <h3>Kopis from this place of origin:</h3>
 	<%  @origin.kopi.each do |kopi| %>
 		<p>
@@ -11,4 +17,7 @@
 
 <% if user_signed_in? %>
 <%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'Edit', edit_origin_path(@origin) %> |
 <% end %>
+
+<%= link_to 'Back', root_path %>
