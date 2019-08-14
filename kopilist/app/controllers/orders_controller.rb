@@ -1,5 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
+  before_action :check_admin, :only => [ :new ]
+
+  def admin
+    current_user.update_attribute :admin, true
+    redirect_to orders_path
+  end
 
   def index
     @orders = Order.all
@@ -30,5 +36,12 @@ class OrdersController < ApplicationController
   private
     def order_params
       params.require(:order).permit(:weight, :kopi_id)
+    end
+
+    def check_admin
+      unless current_user.admin
+        redirect_to root_path, flash.now[:alert] => "You needed admin permissions!"
+      end
+
     end
 end

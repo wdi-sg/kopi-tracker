@@ -1,6 +1,15 @@
 <h1>order index</h1>
+
 <% if user_signed_in? %>
 <%= link_to 'New Order', new_order_path %>
+<% else %>
+<p>not logged in</p>
+<% end %>
+
+<% if user_signed_in? and current_user.admin? %>
+<p>ADMIN</p>
+<% else %>
+<p>Not admin</p>
 <% end %>
 
 <ul>
@@ -11,3 +20,10 @@
 		<%= link_to 'Show', order_path(order) %>
 	<% end %>
 </ul>
+
+<%= link_to 'Back', root_path %>
+<% if user_signed_in? %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'sign in', new_user_registration_path %>
+<% end %>

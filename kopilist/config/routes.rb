@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'kopis#index'
   resources :kopis
   resources :orders
+  get '/admin' => 'orders#admin'
 end
 
 # console to call all kopis that are dark
