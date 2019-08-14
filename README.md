@@ -3,6 +3,12 @@
 
 You are working at a kopi roastery. Create a rails app that tracks kopis.
 
+Use this rails new command so that you can create and app inside this repo:
+
+```bash
+rails new . -d postgresql --skip-turbolinks --skip--coffee --skip-git
+```
+
 ![](https://media.giphy.com/media/l3vQXT6nQkKK7LkVG/giphy.gif)
 
 Each individual `kopi` has a `name` and roastedness (`roast`), and is associtaed with an `origin` (farm where it comes from).
