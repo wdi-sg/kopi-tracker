@@ -1,5 +1,17 @@
 <h1>All orders displayed here</h1>
+
+
+<% if user_signed_in? %>
 <%= link_to "New Order", new_order_path %>
+<%= link_to "Create New Kopi", kopi_new_path %>
+<%= link_to "Go to reports", reports_path %>
+<%= link_to "Log out", destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to "Sign up", new_user_session_path %>
+<% end %>
+
+
+
 <ul>
   <% @orders.each do |order|%>
   <li>
@@ -7,6 +19,7 @@
     <p>Order Name: <%= @kopis.find(order.kopi_id).name %></p>
     <p>Order Weight: <%= order.weight %></p>
     <p>Order Price: $<%= order.price %></p>
+    <p><%= link_to "Go to order", order_path(order) %></p>
     </li>
   <% end %>
 </ul>

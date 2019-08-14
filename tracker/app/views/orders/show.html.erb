@@ -5,6 +5,7 @@
 <%= @kopis.find(@order.kopi_id).name %>
 <h1>Order Price</h1>
 <%= @order.price %>
-
 <h1>Kopi Farm</h1>
 <%= @farms.find(@kopis.find(@order.kopi_id).farm_id).name %>
+
+<p><%= link_to "Back to main", orders_path %></p>

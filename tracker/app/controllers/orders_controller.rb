@@ -3,6 +3,8 @@ class OrdersController < ApplicationController
     @orders = Order.all
     @kopis = Kopi.all
   end
+  before_action :authenticate_user!, :except => [ :index ]
+
   def new
     @kopis = Kopi.all
   end
