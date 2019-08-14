@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :kopis
   resources :orders
 
+  get '/report' => 'reports#index', as: 'reports'
+
 end
