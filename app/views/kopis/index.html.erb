@@ -1,1 +1,48 @@
-<h1>hello</h1>
+<% if user_signed_in? %>
+<h3>Welcome:<%= current_user.email %></h3>
+<h2><%= @message %></h2>
+ <% else%>
+    
+  <% end %>
+<h1>All Kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Farm</th>
+    <th>Roast</th>
+    <th>Price per Pound</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+
+
+    <tr>
+        <td><%= kopi.name %></td>
+        <td><%= kopi.farm.location %></td>
+        <td><%= kopi.roast.name %></td>
+        <td><%= kopi.price %></td>
+        <td><%= link_to 'Show', kopi_path(kopi) %></td>
+        <td><%= link_to 'Edit', edit_kopi_path(kopi) %>
+        <td><%= link_to 'Destroy', kopi_path(kopi),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+ <% if user_signed_in? %>
+    <%= link_to 'New kopi', new_kopi_path %><br/><br/>
+
+    <%= link_to 'To Orders', orders_path %><br/><br/>
+    <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+  <% else%>
+    <h1>UR NOT LOGGED IN</h1>
+    <%= link_to 'To Farms', farms_path %><br/><br/>
+    <%= link_to 'log in', new_user_session_url %><br/>
+    <%= link_to 'Sign up', new_user_registration_path %><br/>
+
+  <% end %>
+

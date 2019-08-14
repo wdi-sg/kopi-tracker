@@ -1,0 +1,32 @@
+
+<% if user_signed_in? %>
+<h3>Welcome:<%= current_user.email %></h3>
+<h2><%= @message %></h2>
+ <% else%>
+    
+  <% end %>
+
+<h1>Kopi</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name%>
+</p>
+
+
+<p>
+  <strong>Location:</strong>
+  <%= @kopi.farm.location %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+
+<p>
+  <strong>Price:</strong>
+  <%= @kopi.price %>
+</p>
+
+<%= link_to 'Back', kopis_path %>
