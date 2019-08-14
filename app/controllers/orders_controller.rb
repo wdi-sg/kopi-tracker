@@ -9,18 +9,20 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @farms = Farm.all
-    @roasts = Roast.all
+    @kopis = Kopi.all
   end
 
   def edit
     @order = Order.find(params[:id])
-    @farms = Farm.all
-    @roasts = Roast.all
+    @kopis = Kopi.all
   end
 
   def create
-    @order = Order.new(kopi_params)
+    @order = Order.new(order_params)
+    @kopi = Kopi.find(@order.kopi_id)
+    puts @kopi
+    puts @order
+    @order.sale = @kopi.pricePerPound * @order.weight
 
     @order.save
     redirect_to @order
@@ -44,5 +46,5 @@ end
 
 private
   def order_params
-    params.require(:order).permit(:name, :farm_id, :roast_id)
+    params.require(:order).permit(:id, :weight, :sale, :kopi_id)
   end

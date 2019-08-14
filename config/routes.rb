@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root "kopis#index"
   resources :kopis
   resources :farms
-  resources :order
+  resources :orders
 end
