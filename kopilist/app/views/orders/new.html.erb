@@ -1,0 +1,30 @@
+<h1>new order</h1>
+
+<%= form_with scope: :order, url: orders_path, local: true do |f| %>
+
+	<%= f.collection_select :kopi_id, @kopis, :id, :name %>
+
+	<p>
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </p>
+
+
+  <p>
+  	<%= f.submit %>
+  </p>
+
+  <!-- <p>
+    <%= f.label :roast %><br>
+    <%= f.text_field :roast %>
+  </p>
+
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_field :origin %>
+  </p> -->
+
+
+
+<% end %>
+<%= link_to 'Orders', orders_path %>

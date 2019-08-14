@@ -7,7 +7,12 @@
 			<p><%= kopi.name %></p>
 			<p><%= kopi.roast.name %></p>
 			<p><%= kopi.origin.location %></p>
+			<p><%= kopi.price %></p>
 		</li>
+		<%= link_to 'Show', kopi_path(kopi) %>
+		<% if user_signed_in? %>
+			<%= link_to 'Edit', edit_kopi_path(kopi) %>
+		<% end %>
 
 	<% end %>
 </ul>
