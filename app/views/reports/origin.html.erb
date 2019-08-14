@@ -1,0 +1,10 @@
+<h1>Sales by Location</h1>
+<ul>
+    <% @origins.each do |origin|%>
+
+        <% testing = @orders.select{|x|x.kopi.origin_id == origin.id}.map{|x|x.weight*x.kopi.price_per_pound}.sum%>
+
+        <li><%=origin.location%>: S$<%=testing%></li>
+    <%end%>
+
+</ul>

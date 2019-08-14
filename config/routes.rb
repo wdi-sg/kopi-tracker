@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :kopis
   resources :orders
   get '/report' => 'reports#index', as: 'report'
+  get '/report/by_kopi' => 'reports#kopi'
+  get '/report/by_origin' => 'reports#origin'
 
 end

@@ -1,5 +1,7 @@
 <h1>Sales Report</h1>
-
+<a href="/report/by_kopi">By Kopi</a>
+<a href="/report/by_origin">By Origin</a>
+<br/>
 <% total = @filtered_orders.map{|x|x.weight*x.kopi.price_per_pound}.sum%>
 
 <p>Total Sales for today: S$<%= total%></p>

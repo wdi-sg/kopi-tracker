@@ -1,0 +1,7 @@
+<h1>Sales by Kopi</h1>
+<ul>
+    <% @orders.each do |order|%>
+        <li><%=order.kopi.name%> : S$<%=order.weight*order.kopi.price_per_pound%></li>
+    <%end%>
+
+</ul>
