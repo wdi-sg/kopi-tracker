@@ -3,11 +3,16 @@
 <%= link_to 'New Origin', new_origin_path %>
 <%= link_to 'log out', destroy_user_session_url, method: :delete %>
 <h1>Hello Welcome, <%= current_user.email %>!</h1>
-<h2>Kopi:</h2>
+<h2>Kopi List:</h2>
 <ul>
 <% @kopis.each do |kopi| %>
-  <li><%= kopi.name %></li>
-<% end %>
+  <li><b>Name:</b> <%= kopi.name.capitalize %><br><br>
+  		<b>Roast:</b> <%= kopi.roast.name %><br><br>
+  		<b>Origin:</b> <%= kopi.origin.location.upcase %><br><br>
+  		<b>Phone:</b> <%= kopi.origin.phone %><br><br>
+  		<% end %>
+  </li>
+
 </ul>
 
 

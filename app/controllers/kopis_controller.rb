@@ -11,16 +11,23 @@ before_action :authenticate_user!, :except => [ :show, :index ]
     end
 
   def create
-
-    # @kopi = Kopi.new(kopi_params)
-    # @kopi.save
-    # redirect_to @kopi
+    @kopi = Kopi.new(kopi_params)
+    @kopi.user = current_user
     if @kopi.save
-           redirect_to @kopi
-       else
-           render ‘new’
-       end
+      redirect_to @kopi
+    else
+      render 'new'
+    end
+  end
 
+  def update
+    @kopi = Kopi.find(params[:id])
+
+    if @kopi.update(article_params)
+      redirect_to @kopi
+    else
+      render 'edit'
+    end
   end
 
   def show
@@ -31,17 +38,6 @@ before_action :authenticate_user!, :except => [ :show, :index ]
     # if params[:origin_id].to_i != @kopi.origin.id
     #   # do something
     # end
-  end
-
-  def add
-    @kopi = Kopi.new(kopi_params)
-    @kopi.origin_id = params[:origin_id]
-    @kopi.save
-
-    render plain: ("added")
-
-    #if you want to just add params, can also do it by the hidden input way <input type="hidden" name="kopi[origin_id]" value=<%= @origins.id %>>
-
   end
 
 private
