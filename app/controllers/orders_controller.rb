@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @orders = Order.all
   end
@@ -19,6 +21,9 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+
+    @order.user = current_user
+
     @kopi = Kopi.find(@order.kopi_id)
     puts @kopi
     puts @order

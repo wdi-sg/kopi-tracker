@@ -24,3 +24,10 @@ Farm.create(name: "High Up in the Sky", location: "Skyland", phone: "9810 0087 0
 Farm.create(name: "Hidden Gem", location: "Sri Lanka", phone: "9810 0092 0123")
 Farm.create(name: "Tall Mountain", location: "USA", phone: "9938 0292 1092")
 p "SEEDED FARM DATA"
+##################################
+Order.destroy_all
+Order.create(kopi_id: "1", sale: "51.8")
+Order.create(kopi_id: "2", sale: "282.8")
+Order.create(kopi_id: "3", sale: "157.5")
+Order.create(kopi_id: "4", sale: "38.4")
+p "SEEDED ORDER DATA"
