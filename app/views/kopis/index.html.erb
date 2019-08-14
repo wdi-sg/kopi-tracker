@@ -1,0 +1,7 @@
+<% @kopis.each do|t| %>
+	<p>Name: <%= t.name %></p>
+	<p>Roastedness: <%= t.roastedness %></p>
+	<p>Source: <%= t.farm.location %></p>
+<% end %>
+
+<%= link_to 'Add New Kopi', new_kopi_path %>
