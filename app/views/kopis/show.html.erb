@@ -1,0 +1,23 @@
+<p>
+  <strong>Kopi ID:</strong>
+  <%= @kopi.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast %>
+</p>
+
+<p>
+  <strong>Origins:</strong>
+  <% @kopi.origins.each do |origin| %>
+  	<%= origin.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', kopi_path %>
