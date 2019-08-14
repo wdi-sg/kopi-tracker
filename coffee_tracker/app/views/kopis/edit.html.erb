@@ -1,0 +1,28 @@
+<h1>Edit Kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+  <p>
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+  </p>
+
+  <p>
+	<%= form.collection_select :roast_id, @roasts, :id, :name %>
+  </p>
+
+  <p>
+  <%= form.collection_select :origin_id, @origins, :id, :location %>
+  <p>
+
+  <p>
+	<%= form.submit %>
+  </p>
+
+<% end %>
+
+<p><%= link_to 'Destroy', @destroy_path,
+		method: :delete,
+		data: { confirm: 'Are you sure?' } %></p>
+
+<%= link_to 'Back', root_path %>

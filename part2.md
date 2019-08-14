@@ -1,21 +1,26 @@
-## Part 2
+## Part 2 - Many-to-Many
 
-You have decided to add functionality for your employees to log in and interact with your app.
+Your roastery has blown up on instagram and you are expanding.
 
-Add users using devise.
+Your app already tracks what you buy and roast, and the kopis you produce.
 
-Users can create kopis.
+You are expanding the app to track which customers buy which kopis.
+
+Create a customer model.
+
+A customer can stock many kopis.
+
+A kopi can be carried by many customers.
+
+For a given kopi, `/kopi/:id` display all the customers who carry that kopi.
+
+For a given customer `/customer/:id` display all the kopis they stock.
 
 #### further
-Use an admin attrbute in the table to create "admin" users.
+Sort the customers by the number of kopis they carry, ascending and descending.
 
-See here: [https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role#option-2-adding-an-admin-attribute](https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role#option-2-adding-an-admin-attribute)
-
-Admins can edit, add and and change roasts.
-
-Regular users can only add coffees.
+Note: The option of ascending and descending sorting should be noted in the query parameter of the request: `/kopi/1?sort=asc`
 
 #### further
-Open the app to your customers who are ordering the coffee. Logged in users can order kopis.
-
+Sort the kopis by "popularity"- by the number of shops that carry that kopi.
 
