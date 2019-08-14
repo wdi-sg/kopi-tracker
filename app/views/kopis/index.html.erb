@@ -1,1 +1,23 @@
-<h1>yo! index page</h1>
+<h1>All Our Kopis listings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price Per Pound</th>
+    <th>Origin Farm</th>
+    <th>Roasts</th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.pricePerPound %></td>
+      <td><%= kopi.farm.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add New Kopi', new_kopi_path %>

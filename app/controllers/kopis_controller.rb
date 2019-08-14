@@ -2,6 +2,8 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all
+    @farms = Farm.all
+    @roasts = Roast.all
   end
 
   def show
@@ -44,5 +46,5 @@ end
 
 private
   def kopi_params
-    params.require(:kopi).permit(:name, :farm_id, :roast_id)
+    params.require(:kopi).permit(:name, :farm_id, :roast_id, :pricePerPound)
   end
