@@ -3,7 +3,7 @@
 
 You are working at a kopi roastery. Create a rails app that tracks kopis.
 
-Use this rails new command so that you can create and app inside this repo:
+Use this rails new command so that you can create an app inside this repo: (you must already be cd'd inside this repo)
 
 ```bash
 rails new . -d postgresql --skip-turbolinks --skip--coffee --skip-git
