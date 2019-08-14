@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+# create Roast seed
+Roast.destroy_all
+Roast.create(name: "Cinnamon")
+Roast.create(name: "Light")
+Roast.create(name: "City/Medium")
+Roast.create(name: "Full City")
+Roast.create(name: "Dark")
+Roast.create(name: "French")
+Roast.create(name: "Italian")
+
+p "SEEDED ROAST DATA"

@@ -1,4 +1,5 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
     # test to see if we are at /origins/:id/kopis or /kopis
@@ -34,6 +35,8 @@ class KopisController < ApplicationController
 
     #this is the link to the models kopi
     @kopi = Kopi.new(kopi_params)
+
+    @kopi.user = current_user
 
     @kopi.save
     redirect_to @kopi
