@@ -10,20 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_102333) do
+ActiveRecord::Schema.define(version: 2019_08_14_085216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kopicharts", force: :cascade do |t|
+  create_table "charts", force: :cascade do |t|
     t.string "kopi_name"
-    t.bigint "roast_name_id"
-    t.bigint "origin_name_id"
-    t.string "price_pergram"
+    t.bigint "roast_id"
+    t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["origin_name_id"], name: "index_kopicharts_on_origin_name_id"
-    t.index ["roast_name_id"], name: "index_kopicharts_on_roast_name_id"
+    t.index ["origin_id"], name: "index_charts_on_origin_id"
+    t.index ["roast_id"], name: "index_charts_on_roast_id"
   end
 
   create_table "origins", force: :cascade do |t|
@@ -37,10 +36,10 @@ ActiveRecord::Schema.define(version: 2019_08_13_102333) do
   create_table "roasts", force: :cascade do |t|
     t.string "roast_name"
     t.string "level"
-    t.bigint "kopi_name_id"
+    t.bigint "kopi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kopi_name_id"], name: "index_roasts_on_kopi_name_id"
+    t.index ["kopi_id"], name: "index_roasts_on_kopi_id"
   end
 
 end
