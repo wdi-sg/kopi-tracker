@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_131018) do
+ActiveRecord::Schema.define(version: 2019_08_14_134246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2019_08_13_131018) do
     t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
     t.index ["roast_id"], name: "index_kopis_on_roast_id"
+    t.index ["user_id"], name: "index_kopis_on_user_id"
   end
 
   create_table "origins", force: :cascade do |t|
@@ -30,12 +32,33 @@ ActiveRecord::Schema.define(version: 2019_08_13_131018) do
     t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_origins_on_user_id"
   end
 
   create_table "roasts", force: :cascade do |t|
     t.string "name"
+    t.string "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_roasts_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.boolean "admin", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "kopis", "users"
+  add_foreign_key "origins", "users"
+  add_foreign_key "roasts", "users"
 end

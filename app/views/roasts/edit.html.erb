@@ -1,0 +1,13 @@
+<%= form_with scope: :post, model: @roast, local: true do |form| %>
+
+    <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :input_html => { :value => @roast.name }%>
+  </p>
+
+    <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+ <a href=<%= roasts_url %>>Home</a>

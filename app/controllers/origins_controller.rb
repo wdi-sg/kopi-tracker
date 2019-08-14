@@ -1,7 +1,15 @@
 class OriginsController < ApplicationController
 
   def index
+
+    if user_session
+        puts current_user.id
+        user_session["song_cart"] = "Single Ladies"
+        puts user_session
+    end
+
     @origins = Origin.all
+
   end
 
   def new
