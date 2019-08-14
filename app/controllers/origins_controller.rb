@@ -1,14 +1,19 @@
 class OriginsController < ApplicationController
-
+before_action :authenticate_user!, :except => [ :show, :index ]
   def new
     @origin = Origin.new
   end
 
   def create
-    @origin = Origin.new(origin_params)
+    # @origin = Origin.new(origin_params)
 
-    @origin.save
-    redirect_to @origin
+    # @origin.save
+    # redirect_to @origin
+    if @origin.save
+           redirect_to @origin
+       else
+           render ‘new’
+       end
   end
 
   def show

@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'New Origin', new_origin_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<h1>Hello Welcome, <%= current_user.email %>!</h1>
+<h2>Kopi:</h2>
+<ul>
+<% @kopis.each do |kopi| %>
+  <li><%= kopi.name %></li>
+<% end %>
+</ul>
+
+
+<% else%>
+
+<h1>UR NOT LOGGED IN</h1>
+<%= link_to 'log in', new_user_session_url %>
+
+<% end %>
