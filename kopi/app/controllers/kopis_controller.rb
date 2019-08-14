@@ -1,10 +1,16 @@
 class KopisController < ApplicationController
 
-  def new
+  def index
+    @kopis = Kopi.all
+  end
 
+  def new
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   def create
+    # render plain: params[:post].inspect
     @kopi = Kopi.new(kopi_params)
 
     @kopi.save
