@@ -1,0 +1,15 @@
+<h2>Edit Order</h2>
+
+<%= form_with scope: :order, model: @order, local: true do |form| %>
+
+  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+  <p>
+    <%= form.label :weight %><br>
+    <%= form.number_field :weight %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

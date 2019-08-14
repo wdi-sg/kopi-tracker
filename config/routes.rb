@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :kopis
   resources :origins
+  resources :orders
 
   get 'origins/:origin_id/new' => 'kopis#new', as: 'new_origin_kopi'
 
