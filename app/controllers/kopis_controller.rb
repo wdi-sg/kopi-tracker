@@ -34,11 +34,10 @@ class KopisController < ApplicationController
 
   def create
     # render plain: params[:kopi].inspect
-
     #this is the link to the models kopi
     @kopi = Kopi.new(kopi_params)
 
-    @kopi.user = current_user
+    @kopi.user_id = current_user.id
 
     @kopi.save
     redirect_to @kopi
@@ -48,9 +47,9 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
 
     @kopi.update(kopi_params)
-    redirect_to '/kopis/'+ (@kopi.id).to_s
+    # redirect_to '/kopis/'+ (@kopi.id).to_s
     #alternatively
-    # redirect_to @kopi
+    redirect_to @kopi
   end
 
   def destroy
@@ -62,6 +61,6 @@ class KopisController < ApplicationController
 
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin_id)
+      params.require(:kopi).permit(:name, :user_id, :roast_id, :origin_id)
     end
 end

@@ -29,9 +29,7 @@ class OriginsController < ApplicationController
     @origin = Origin.find(params[:id])
 
     @origin.update(origin_params)
-    redirect_to '/origin/'+@origin.id
-    #alternatively
-    # redirect_to @origin
+    redirect_to @origin
   end
 
   def destroy

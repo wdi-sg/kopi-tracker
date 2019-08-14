@@ -43,6 +43,6 @@ class RoastsController < ApplicationController
 
   private
     def roast_params
-      params.require(:roast).permit(:name, :location, :phone)
+      params.require(:roast).permit(:name)
     end
 end
