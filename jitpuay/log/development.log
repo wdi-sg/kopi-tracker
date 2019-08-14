@@ -1,0 +1,66 @@
+  [1m[35m (4425.4ms)[0m  [1m[35mCREATE DATABASE "jitpuay_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2803.0ms)[0m  [1m[35mCREATE DATABASE "jitpuay_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (44.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (26.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7969833790371877200)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Farms (20190814113554)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (35.0ms)[0m  [1m[35mCREATE TABLE "farms" ("id" bigserial primary key, "location" character varying, "phone_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190814113554_farms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190814113554"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to Kopis (20190814115658)
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast" character varying, "farm_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190814115658_kopis.rb:3
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_farm_id" ON "kopis"  ("farm_id")[0m
+  ↳ db/migrate/20190814115658_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190814115658"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-14 12:11:52.484109"], ["updated_at", "2019-08-14 12:11:52.484109"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7969833790371877200)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFarm Create (2.0ms)[0m  [1m[32mINSERT INTO "farms" ("location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "utown"], ["phone_number", "86758584"], ["created_at", "2019-08-14 12:26:31.754390"], ["updated_at", "2019-08-14 12:26:31.754390"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFarm Create (0.6ms)[0m  [1m[32mINSERT INTO "farms" ("location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "chinatown"], ["phone_number", "86876544"], ["created_at", "2019-08-14 12:26:31.800632"], ["updated_at", "2019-08-14 12:26:31.800632"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFarm Create (0.9ms)[0m  [1m[32mINSERT INTO "farms" ("location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "dover"], ["phone_number", "86879944"], ["created_at", "2019-08-14 12:26:31.816925"], ["updated_at", "2019-08-14 12:26:31.816925"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKopi Create (3.3ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "farm_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "robusta"], ["roast", "light"], ["farm_id", 1], ["created_at", "2019-08-14 12:26:32.021428"], ["updated_at", "2019-08-14 12:26:32.021428"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKopi Create (0.6ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "farm_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "oaklook"], ["roast", "dark"], ["farm_id", 1], ["created_at", "2019-08-14 12:26:32.044754"], ["updated_at", "2019-08-14 12:26:32.044754"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKopi Create (0.8ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "farm_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "mystery"], ["roast", "French"], ["farm_id", 3], ["created_at", "2019-08-14 12:26:35.363252"], ["updated_at", "2019-08-14 12:26:35.363252"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFarm Load (1.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFarm Load (2.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
