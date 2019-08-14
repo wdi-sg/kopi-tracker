@@ -1,0 +1,20 @@
+<h2>Reports</h2>
+
+
+<h4>Total Sales of the Day</h4>
+<p>Number of orders: <%= @total_orders %></p>
+<p>Total sales: $<%= @total_sales %></p>
+
+<h4>Sales by Kopi</h4>
+<ul>
+  <% @kopis.each do |kopi| %>
+    <li><%= link_to kopi.name, reports_kopi_path(kopi) %></li>
+  <% end %>
+</ul>
+
+<h4>Sales by Origin</h4>
+<ul>
+  <% @origins.each do |origin| %>
+    <li><%= link_to origin.name, reports_origin_path(origin) %></li>
+  <% end %>
+</ul>
