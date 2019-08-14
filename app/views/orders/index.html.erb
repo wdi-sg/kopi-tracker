@@ -1,0 +1,31 @@
+<h1 class=" mt-4 text-center">Listing Orders</h1>
+
+
+<table class="table table-bordered mt-3 container text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Order ID#</th>
+      <th scope="col">Kopi Name</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Price per kg</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Total Cost</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <th scope="row"><%= order.id %></th>
+      <td><%= link_to order.kopi.name, kopi_path(order.kopi) %></td>
+      <td><%= link_to order.kopi.origin.name, origin_path(order.kopi.origin) %></td>
+      <td>$<%= order.kopi.price %></td>
+      <td><%= order.weight %></td>
+      <td>$<%= order.total_price.round(2) %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %> <%= link_to 'Destroy', order_path(order),
+        method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
