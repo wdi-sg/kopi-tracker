@@ -3,12 +3,16 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
+    <th>Number of Kopis</th>
   </tr>
 
+    <%= form_tag(customers_path, method: "get") do %>
+        <%= select_tag(:sort, options_for_select(["Sort By Number of Kopis",['Asc','asc'],['Desc','desc']]), :onchange=>'this.form.submit();',class:"form-control" ) %>
+    <%end%>
   <% @customers.each do |customer| %>
     <tr>
         <td><%= link_to customer.name, customer_path(customer) %></td>
+        <td style="text-align:center;"><%= customer.kopis.length%></td>
         <td><%= link_to 'Show', customer_path(customer) %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %>
         <td><%= link_to 'Destroy', customer_path(customer),

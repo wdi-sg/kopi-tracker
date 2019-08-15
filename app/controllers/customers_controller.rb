@@ -1,6 +1,15 @@
 class CustomersController < ApplicationController
     def index
-        @customers = Customer.all
+        if params.has_key?(:sort)
+            if(params[:sort] == "asc" )
+                @customers = Customer.all.joins(:customers_kopis).group(:customer_id,:id).order('count asc').select("customers.id,customers.name,customer_id,count(customer_id) as count")
+            else
+                @customers = Customer.all.joins(:customers_kopis).group(:customer_id,:id).order('count desc').select("customers.id,customers.name,customer_id,count(customer_id) as count")
+            end
+        else
+            @customers = Customer.all
+            p @customers
+        end
     end
 
     def new
