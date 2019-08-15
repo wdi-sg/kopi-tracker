@@ -2585,3 +2585,114 @@ Processing by FarmsController#index as HTML
 Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.5ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190815152338)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190815152338_devise_create_users.rb:5
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190815152338_devise_create_users.rb:39
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190815152338_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190815152338"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddUserToKopis (20190815152425)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "kopis" ADD "user_id" bigint[0m
+  ↳ db/migrate/20190815152425_add_user_to_kopis.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_user_id" ON "kopis"  ("user_id")[0m
+  ↳ db/migrate/20190815152425_add_user_to_kopis.rb:3
+  [1m[35m (11.0ms)[0m  [1m[35mALTER TABLE "kopis" ADD CONSTRAINT "fk_rails_7d7df93f94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20190815152425_add_user_to_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190815152425"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/kopis" for ::1 at 2019-08-15 23:26:50 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hilmijohari/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:15
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  Rendered kopis/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 204ms (Views: 192.1ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/kopis" for ::1 at 2019-08-15 23:26:54 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:15
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  Rendered kopis/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-15 23:26:56 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:14
+  Rendered farms/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kopis" for ::1 at 2019-08-15 23:26:57 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:15
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  Rendered kopis/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+
+

@@ -1,4 +1,5 @@
 class KopisController < ApplicationController
+before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
     # test to see if we are at /farms/:id/kopis or /kopis
