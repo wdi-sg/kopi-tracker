@@ -1,0 +1,10 @@
+<h1>List of customer's stocks</h1>
+<h3><%= @customer.name %></h3>
+<ul><% @customer.kopis.each do |kopi| %>
+		<li><%= kopi.name %></li>
+	<% end %>
+	</ul>
+
+</p>
+
+<%= link_to 'Back', root_path %><br>

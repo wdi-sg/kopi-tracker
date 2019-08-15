@@ -5,6 +5,13 @@
 	<li>Roast level: <%= @kopi.roast.name%></li>
 	<li>Origin: <%= @kopi.origin.name%></li>
 </ul>
+<p>Customers:
+	<ul><% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
+	</ul>
+
+</p>
 
 <%= link_to 'Back', root_path %><br>
 

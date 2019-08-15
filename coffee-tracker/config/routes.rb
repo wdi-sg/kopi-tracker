@@ -16,8 +16,13 @@ Rails.application.routes.draw do
   get '/origins' => 'origins#index', as: 'origins'
 
   get '/orders' => 'orders#index', as: 'orders'
-  get '/orders/:id' => 'orders#show', as: 'order'
   get '/orders/new' => 'orders#new', as: 'new_order'
   post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show', as: 'order'
+
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show', as: 'customer'
 
 end

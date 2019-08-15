@@ -1,3 +1,3 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   belongs_to :kopi
 end

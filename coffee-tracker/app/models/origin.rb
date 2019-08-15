@@ -1,3 +1,3 @@
-class Origin < ActiveRecord::Base
+class Origin < ApplicationRecord
   has_many :kopi
 end
