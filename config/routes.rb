@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :farms
   resources :orders
   resources :reports
+  resources :customers
   root to: 'kopis#index'
 end

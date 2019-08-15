@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @user = current_user
   end
 
   def show
@@ -25,8 +26,6 @@ class OrdersController < ApplicationController
     @order.user = current_user
 
     @kopi = Kopi.find(@order.kopi_id)
-    puts @kopi
-    puts @order
     @order.sale = @kopi.pricePerPound * @order.weight
 
     @order.save
@@ -51,5 +50,5 @@ end
 
 private
   def order_params
-    params.require(:order).permit(:id, :weight, :sale, :kopi_id)
+    params.require(:order).permit(:weight, :kopi_id)
   end

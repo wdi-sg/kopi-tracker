@@ -3,9 +3,14 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
-    @kopis = Kopi.all
-    @farms = Farm.all
-    @roasts = Roast.all
+    if params.has_key?(:customer_id)
+      @kopis = Customer.find(params[:customer_id]).kopis
+    else
+      @kopis = Kopi.all
+      @farms = Farm.all
+      @roasts = Roast.all
+      @user = current_user
+    end
   end
 
   def show
@@ -50,5 +55,5 @@ end
 
 private
   def kopi_params
-    params.require(:kopi).permit(:name, :farm_id, :roast_id, :pricePerPound)
+    params.require(:kopi).permit(:name, :farm_id, :roast_id, :pricePerPound, :customer_ids => [])
   end

@@ -1,0 +1,16 @@
+<h1>Show Customer Page</h1>
+
+<p><strong>Customer Name</strong></p>
+<p><%= @customer.name %></p>
+
+<p><strong>Kopi Stock</strong></p>
+<ul>
+	<% @customer.kopis.each do |kopi| %>
+		<li><%= kopi.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Customer Index', customers_path %>
+<%= link_to "Edit", edit_customer_path %>
+
+<%= link_to "Delete", @customer, :confirm => "Are you sure?", :method => :delete %>
