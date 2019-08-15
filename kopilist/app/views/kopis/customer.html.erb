@@ -1,0 +1,15 @@
+<p>Kopis stocked by <%= @customer.email  %></p>
+
+
+<ul>
+	<%= @kopis.each do |kopi| %>
+		<li>
+			<p>Kopi: <%= kopi.name %></p>
+			<p>Roast: <%= kopi.roast.name %></p>
+			<p>Origin: <%= kopi.origin.location %></p>
+			<p>Price per 100g: $<%= kopi.price %></p>
+		</li>
+	<% end %>
+</ul>
+
+<%= link_to 'Back', root_path %>

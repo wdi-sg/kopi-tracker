@@ -1,0 +1,23 @@
+<h1>new stock</h1>
+
+<%= form_with scope: :kopi, url: create_stock_path, local: true do |f| %>
+	<%= f.collection_check_boxes :kopi_id, @kopis, :id, :name, include_hidden: false%>
+
+  <p>
+  	<%= f.submit %>
+  </p>
+
+  <!-- <p>
+    <%= f.label :roast %><br>
+    <%= f.text_field :roast %>
+  </p>
+
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_field :origin %>
+  </p> -->
+
+
+
+<% end %>
+<%= link_to 'Back', root_path %>

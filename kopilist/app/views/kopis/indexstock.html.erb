@@ -1,0 +1,25 @@
+<p>Customers who bought <%= @kopi.name  %></p>
+
+<%= form_tag(stock_path, method: "get") do %>
+	<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
+<%= submit_tag "Sort" %>
+<% end %>
+
+
+<ul>
+	<%= @customers.each do |customer| %>
+		<li>
+			<p>Customer email: <%= customer.email %></p>
+		</li>
+
+
+	<% end %>
+</ul>
+
+
+<% if customer_signed_in? %>
+	<%= link_to 'New Stock', new_stock_path  %>
+	<%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'customer log in', new_customer_session_url %>
+<% end %>

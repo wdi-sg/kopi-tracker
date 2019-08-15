@@ -3,6 +3,7 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all
+    @customer = Customer.find(current_customer.id)
   end
 
   def show
@@ -44,9 +45,46 @@ class KopisController < ApplicationController
   def destroy
   end
 
+  def indexstock
+    puts params[:sort_order]
+    @order = params[:sort_order]
+
+    @kopi = Kopi.find(params[:id])
+    @customers = @kopi.customers.group(:id).order("count(*) #{@order}")
+    # puts @customers[0].email
+  end
+
+  def newstock
+    @kopis = Kopi.all
+  end
+
+
+  def createstock
+    @customer = Customer.find(current_customer.id)
+    # puts params[:kopi][:kopi_id]
+    @kopi_ids = params[:kopi][:kopi_id]
+
+    @kopi_ids.each do |kopi_id|
+      @kopi = Kopi.find(kopi_id)
+       @customer.kopis << @kopi
+    end
+
+    redirect_to stock_path(@customer)
+  end
+
+  def customer
+    @customer = Customer.find(params[:id])
+    @kopis = @customer.kopis
+    # puts @kopis[0].name
+  end
+
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin, :price)
+      params.require(:kopi).permit(:name, :roast, :origin, :price, :kopi_id => [])
     end
+
+    # def kopi_id_params
+    #   params.require(:kopi_id).permit(:kopi_id)
+    # end
 
 end

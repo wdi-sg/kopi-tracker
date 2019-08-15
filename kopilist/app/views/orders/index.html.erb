@@ -1,15 +1,17 @@
 <h1>order index</h1>
 
 <% if user_signed_in? %>
+<p>user logged in</p>
 <%= link_to 'New Order', new_order_path %>
 <% else %>
-<p>not logged in</p>
+<p>user not logged in</p>
 <% end %>
 
-<% if user_signed_in? and current_user.admin? %>
-<p>ADMIN</p>
+<% if customer_signed_in? %>
+<p>customer logged in</p>
+<%= link_to 'New Order', new_order_path %>
 <% else %>
-<p>Not admin</p>
+<p>customer not logged in</p>
 <% end %>
 
 <ul>
@@ -32,7 +34,13 @@
 
 <%= link_to 'Back', root_path %>
 <% if user_signed_in? %>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'user log out', destroy_user_session_url, method: :delete %>
 <% else %>
-<%= link_to 'sign in', new_user_registration_path %>
+<%= link_to 'user sign in', new_user_registration_path %>
+<% end %>
+
+<% if customer_signed_in? %>
+<%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<% else %>
+<%= link_to 'customer sign in', new_customer_registration_path %>
 <% end %>
