@@ -3,8 +3,15 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
+    @kopis = Kopi.all
+    if params.has_key?(:sort)
+      if(params[:sort] == "asc" )
+          @kopis = @kopis.sort { |a,b| a.customers.length <=> b.customers.length}
+      else
+          @kopis = @kopis.sort { |a,b| b.customers.length <=> a.customers.length}
+      end
+    elsif params.has_key?(:origin_id)
     # test to see if we are at /origins/:id/kopis or /kopis
-    if params.has_key?(:origin_id)
       # get all the kopis for a specific origin
       @kopis = Kopi.where(origin_id: params[:origin_id] )
     else
