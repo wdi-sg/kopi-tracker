@@ -1,5 +1,15 @@
 <html>
+<% if user_signed_in? %>
+<h3><%= current_user.email %></h3>
 <%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'Farms', farms_path %>
+<% else %>
+<h1>You're not logged in</h1>
+<%= link_to 'log in', new_user_session_url %>
+<%= link_to 'Farms', farms_path %>
+<% end %>
+
 
 <% @kopis.each do |coffee| %>
     <p>
