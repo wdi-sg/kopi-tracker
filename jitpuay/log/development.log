@@ -1315,3 +1315,617 @@ Processing by FarmsController#index as HTML
 Completed 200 OK in 70ms (Views: 58.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/farms/1" for ::1 at 2019-08-16 02:39:14 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/yoda14/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (1.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 517ms (Views: 472.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/farms/1" for ::1 at 2019-08-16 02:40:18 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (1.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (530.1ms)
+Completed 500 Internal Server Error in 564ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete_farm_path' for #<#<Class:0x00007fffc2d17760>:0x00007fa13801ecb8>
+Did you mean?  edit_farm_path):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', delete_farm_path %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165203057280'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:41:00 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/mnt/c/Users/y0da1/Documents/Projects/aEighthWeek/kopi-tracker/jitpuay/app/views/farms/show.html.erb:13: syntax error, unexpected tIVAR, expecting do or '{' or '('
+...'Delete', delete_farm_path@farm );@output_buffer.safe_append...
+...                          ^~~~~):
+  
+app/views/farms/show.html.erb:13: syntax error, unexpected tIVAR, expecting do or '{' or '('
+Started GET "/farms/1" for ::1 at 2019-08-16 02:41:20 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (198.8ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `delete_farm_path' for #<#<Class:0x00007fffc2d17760>:0x00007fa145c17170>
+Did you mean?  edit_farm_path):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', delete_farm_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165318384860'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:42:02 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (196.2ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_farm_path' for #<#<Class:0x00007fffc2d17760>:0x00007fa138d1a318>):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', destroy_farm_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165209863600'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:48:18 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (264.9ms)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_farms_path' for #<#<Class:0x00007fffc2d17760>:0x00007fa13acded98>):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', destroy_farms_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165226519280'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:48:55 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.9ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (190.4ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `farms_delete_path' for #<#<Class:0x00007fffc2d17760>:0x00007fa145b21900>
+Did you mean?  farms_path):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', farms_delete_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165317882020'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:49:26 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (213.5ms)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 10.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `farms_delete_path' for #<#<Class:0x00007fa138034d60>:0x00007fa1380431d0>
+Did you mean?  farms_path):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', farms_delete_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165203102380'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:49:47 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (175.9ms)
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `delete_farms_path' for #<#<Class:0x00007fa138034d60>:0x00007fa1384b62a8>
+Did you mean?  edit_farm_path):
+    10: </p>
+    11: 
+    12: <%= link_to 'Back', farms_path %>
+    13: <%= link_to 'Delete', delete_farms_path(@farm) %>
+    14: </html>
+  
+app/views/farms/show.html.erb:13:in `_app_views_farms_show_html_erb__3041550837910957297_70165205464440'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:52:21 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 6.4ms)
+
+
+  
+SyntaxError (/mnt/c/Users/y0da1/Documents/Projects/aEighthWeek/kopi-tracker/jitpuay/app/views/farms/show.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ete', delete_farms_(@farm)_path );@output_buffer.safe_append...
+...                          ^~~~~):
+  
+app/views/farms/show.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/farms/1" for ::1 at 2019-08-16 02:55:37 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 91ms (Views: 61.0ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:55:40 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 73ms (Views: 63.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/1" for ::1 at 2019-08-16 02:55:50 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 83ms (Views: 63.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:55:52 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 88ms (Views: 67.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/new" for ::1 at 2019-08-16 02:55:54 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 99ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2019-08-16 02:56:16 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M5D4RwvqeCBS+PqZllP971lpY36PN+UUfSuO9nU+OE78ffpt0BTMHFdQS+SJmuCjvshWXOjyMo/wYFTbo+hJqw==", "farm"=>{"location"=>"Boring", "phone_number"=>"12345678"}, "commit"=>"Save Farm"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:13
+  [1m[36mFarm Create (1.4ms)[0m  [1m[32mINSERT INTO "farms" ("location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Boring"], ["phone_number", "12345678"], ["created_at", "2019-08-15 18:56:16.418226"], ["updated_at", "2019-08-15 18:56:16.418226"]]
+  ↳ app/controllers/farms_controller.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:13
+Redirected to http://localhost:3000/farms/6
+Completed 302 Found in 21ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:56:16 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.9ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 112ms (Views: 94.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:56:17 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 91ms (Views: 67.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:56:22 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 72ms (Views: 57.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:56:23 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 75ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:56:24 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 97ms (Views: 69.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:56:57 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 83ms (Views: 70.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:57:05 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 105ms (Views: 87.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:57:07 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 74ms (Views: 58.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:57:10 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 96ms (Views: 82.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:57:13 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 75ms (Views: 64.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:58:01 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/mnt/c/Users/y0da1/Documents/Projects/aEighthWeek/kopi-tracker/jitpuay/app/views/farms/show.html.erb:13: syntax error, unexpected ':', expecting ')'
+...ete', delete_farm_path(@farm) :method => :delete );@output_b...
+...                              ^):
+  
+app/views/farms/show.html.erb:13: syntax error, unexpected ':', expecting ')'
+Started GET "/farms/6" for ::1 at 2019-08-16 02:58:29 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 6.4ms)
+
+
+  
+SyntaxError (/mnt/c/Users/y0da1/Documents/Projects/aEighthWeek/kopi-tracker/jitpuay/app/views/farms/show.html.erb:13: syntax error, unexpected ':', expecting ')'
+...ete', delete_farm_path(@farm) :method => :delete );@output_b...
+...                              ^):
+  
+app/views/farms/show.html.erb:13: syntax error, unexpected ':', expecting ')'
+Started GET "/farms/6" for ::1 at 2019-08-16 02:58:43 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 91ms (Views: 71.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 02:58:45 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (8.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 106ms (Views: 81.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:58:48 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 74ms (Views: 66.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:58:50 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 85ms (Views: 71.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 02:58:53 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 75ms (Views: 62.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 03:06:23 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (1.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 55.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/farms/6" for ::1 at 2019-08-16 03:08:45 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 85ms (Views: 56.4ms | ActiveRecord: 12.0ms)
+
+
+Started DELETE "/farms/6" for ::1 at 2019-08-16 03:08:47 +0800
+Processing by FarmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Peik8pAqZS3r/TaWw2eg5PhJiFF35n7k4ywYo6I2MnryBabYS9TREe5Vh+vcrr2oH+i9cxAjqX9uZ8KOdOBDnw==", "id"=>"6"}
+  [1m[36mFarm Load (1.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:22
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:23
+  [1m[36mFarm Destroy (3.7ms)[0m  [1m[31mDELETE FROM "farms" WHERE "farms"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/farms_controller.rb:23
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:23
+Redirected to http://localhost:3000/farms
+Completed 302 Found in 52ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 03:08:47 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (1.1ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 81ms (Views: 66.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/farms/new" for ::1 at 2019-08-16 03:08:51 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2019-08-16 03:09:01 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJc5Xf8tEdJs1bRuv05b8ogQe3lMXeBqv+NQ5rkAuwCXejt3JNOl7ml9BROgh0a+b7FOWyuYN/EyqIrLb9bK5Q==", "farm"=>{"location"=>"blah blah", "phone_number"=>"4567890567"}, "commit"=>"Save Farm"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:13
+  [1m[36mFarm Create (1.0ms)[0m  [1m[32mINSERT INTO "farms" ("location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "blah blah"], ["phone_number", "4567890567"], ["created_at", "2019-08-15 19:09:01.524942"], ["updated_at", "2019-08-15 19:09:01.524942"]]
+  ↳ app/controllers/farms_controller.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:13
+Redirected to http://localhost:3000/farms/7
+Completed 302 Found in 26ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/farms/7" for ::1 at 2019-08-16 03:09:01 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:18
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 56.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/farms/7" for ::1 at 2019-08-16 03:09:04 +0800
+Processing by FarmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cVXBhPa81ShZK15NrabwA5iXunkUBNVprlPYgDvx8v6+uMOuLUJhFFyD7zCyb+1PfzaPW3PBAvIjGAKt7SeDGw==", "id"=>"7"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:23
+  [1m[36mFarm Destroy (0.6ms)[0m  [1m[31mDELETE FROM "farms" WHERE "farms"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/farms_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:23
+Redirected to http://localhost:3000/farms
+Completed 302 Found in 10ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/farms" for ::1 at 2019-08-16 03:09:04 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:4
+  Rendered farms/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 84ms (Views: 77.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/kopis" for ::1 at 2019-08-16 03:11:07 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:4
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  Rendered kopis/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 125ms (Views: 99.1ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-08-16 03:11:15 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  Rendered kopis/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 78ms (Views: 63.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/kopis" for ::1 at 2019-08-16 03:11:31 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fp0Zjc/WIzq4ogVd0GzG2ABrf/f2Ul2ioWA77sZbkKGxcBunFCiXBr0KtCDPpduU58pK1ZGXijksK+HDEI3hRA==", "kopi"=>{"farm_id"=>"2", "name"=>"Duck sauce", "roast"=>"Anything lor"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Create (2.2ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "farm_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Duck sauce"], ["roast", "Anything lor"], ["farm_id", 2], ["created_at", "2019-08-15 19:11:31.648712"], ["updated_at", "2019-08-15 19:11:31.648712"]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:14
+Redirected to http://localhost:3000/kopis/9
+Completed 302 Found in 32ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/kopis/9" for ::1 at 2019-08-16 03:11:31 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:21
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:23
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 71ms (Views: 57.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/kopis/9" for ::1 at 2019-08-16 03:11:34 +0800
+Processing by KopisController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8ncD74y1Xa5jOT9errtZgncOfxIpXWVUB+/EJFxXDB89mgHFV0vpkmaRjiOxckTOkK9KME6Yss+KpB4JioF9+g==", "id"=>"9"}
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:30
+  [1m[36mKopi Destroy (0.7ms)[0m  [1m[31mDELETE FROM "kopis" WHERE "kopis"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/kopis_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:30
+Redirected to http://localhost:3000/kopis
+Completed 302 Found in 18ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/kopis" for ::1 at 2019-08-16 03:11:34 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:4
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:9
+  Rendered kopis/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 83ms (Views: 74.2ms | ActiveRecord: 2.4ms)
+
+

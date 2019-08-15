@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/farms/:id' => 'farms#show' , as: 'farm'
   get '/farms/:id/edit' => 'farms#edit', as: 'edit_farm'
   patch '/farms/:id' => 'farms#update'
-  delete '/farms/:id' => 'farms#destroy'
+  delete '/farms/:id' => 'farms#destroy', as: 'delete_farm'
 
 
   get '/kopis' => 'kopis#index', as: 'kopis'
