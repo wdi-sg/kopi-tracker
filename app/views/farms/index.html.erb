@@ -1,7 +1,30 @@
-<% @farm.each do|t| %>
-	<p>Source: <%= t.location %></p>
-	<p>Phone Number: <%= t.phone_number %></p>
-<% end %>
+<h1>Listing All Origins</h1>
+
+<div class="container">
+	 <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Location</th>
+          <th scope="col">Phone Number</th>
+        </tr>
+      </thead>
+
+      <tbody>
+	      <% @farm.each do|t| %>
+	        <tr>
+	      		<td><%= t.location %></td>
+	      		<td><%= t.phone_number %></td>
+	    		</tr>
+		  	<% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
 
 
 <%= link_to 'Add New Farm', new_farm_path %>
+
+<%= link_to 'View All Kopis', kopis_path %>

@@ -11,17 +11,6 @@ class KopisController < ApplicationController
     end
   end
 
-  def new
-    @farms = Farm.all
-  end
-
-  def create
-    @kopi = Kopi.new(kopi_params)
-
-    @kopi.save
-    redirect_to @Kopi
-  end
-
   def show
 
     @kopi = Kopi.find(params[:id])
@@ -31,9 +20,39 @@ class KopisController < ApplicationController
     end
   end
 
+  def new
+    @farms = Farm.all
+  end
+
+  def create
+    @kopi = Kopi.new(kopi_params)
+
+    @kopi.save
+    redirect_to @kopi
+  end
+
+  def edit
+    @kopi = Kopi.find(params[:id])
+  end
+
+  def update
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.update(kopi_params)
+    redirect_to @kopi
+  end
+
+  def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+
+    redirect_to root_path
+  end
+
+
 private
 
-  def ranger_params
-    params.require(:ranger).permit(:name, :park_id)
+  def kopi_params
+    params.require(:kopi).permit(:name, :roastedness, :farm_id)
   end
 end

@@ -1,9 +1,9 @@
-<h1>Adding New Kopi</h1>
 
+<h1>Edit Kopi</h1>
+<h1>Edit Kopi</h1>
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
 
-  <%= form.collection_select :farm_id, @farms, :id, :location %>
 
   <p>
     <%= form.label :name %><br>
@@ -19,3 +19,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', root_path %>

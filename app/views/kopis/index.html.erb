@@ -1,7 +1,30 @@
-<% @kopis.each do|t| %>
-	<p>Name: <%= t.name %></p>
-	<p>Roastedness: <%= t.roastedness %></p>
-	<p>Source: <%= t.farm.location %></p>
-<% end %>
+<h1>Listing All Kopis</h1>
+
+<div class="container">
+	 <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Roastedness</th>
+          <th scope="col">Origin</th>
+        </tr>
+      </thead>
+
+      <tbody>
+	      <% @kopis.each do|t| %>
+	        <tr>
+	      		<td><%= t.name %></td>
+						<td><%= t.roastedness %></td>
+						<td><%= t.farm.location %></td>
+	    		</tr>
+		  	<% end %>
+      </tbody>
+
+    </table>
+  </div>
+</div>
 
 <%= link_to 'Add New Kopi', new_kopi_path %>
+
+<%= link_to 'View All Farms', farms_path %>

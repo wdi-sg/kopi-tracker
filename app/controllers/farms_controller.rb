@@ -6,7 +6,12 @@ class FarmsController < ApplicationController
 
   end
 
+  def show
+    @farm = Farm.find(params[:id])
+  end
+
   def new
+    @kopis = Kopi.all
   end
 
   def create
@@ -16,9 +21,25 @@ class FarmsController < ApplicationController
     redirect_to @farm
   end
 
-  def show
+  def edit
     @farm = Farm.find(params[:id])
   end
+
+  def update
+    @farm = Farm.find(params[:id])
+
+    @farm.update(farm_params)
+    redirect_to @farm
+  end
+
+  def destroy
+    @farm = Farm.find(params[:id])
+    @farm.destroy
+
+    redirect_to root_path
+  end
+
+
 
 private
 
