@@ -1,6 +1,8 @@
 
 class KopisController < ApplicationController
 
+before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     # test to see if we are at /origins/:id/kopis or /kopis
     if params.has_key?(:origin_id)
@@ -49,9 +51,9 @@ class KopisController < ApplicationController
 
     @kopi = Kopi.find(params[:id])
 
-    if params[:origin_id].to_i != @kopi.origin.id
-      # do something
-    end
+    # if params[:origin_id].to_i != @kopi.origin.id
+    #   # do something
+    # end
   end
 
  def update

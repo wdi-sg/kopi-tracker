@@ -3,7 +3,11 @@
 <ul>
 <% @origins.each do |origin| %>
 <li>
+	<a href = <%= origin_path(origin) %>>
 	<%= origin.location.capitalize %>
+</a>
 </li>
 <%end%>
 </ul>
+<p><%= link_to 'Add New Origin', new_origin_path %></p>
+<p><%= link_to 'Home', root_path %></p>

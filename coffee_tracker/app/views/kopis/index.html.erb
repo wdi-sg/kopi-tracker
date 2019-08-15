@@ -3,7 +3,13 @@
 <ul>
 <% @kopis.each do |kopi| %>
 <li>
+	<a href = <%= kopi_path(kopi) %>>
 	<%= kopi.name.capitalize %>
+</a>
 </li>
 <%end%>
 </ul>
+
+
+<p><%= link_to 'Add New Kopi', new_kopi_path %></p>
+<p><%= link_to 'Home', root_path %></p>

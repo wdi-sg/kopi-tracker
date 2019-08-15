@@ -1,0 +1,27 @@
+<h1><%= @roasts.name.upcase %></h1>
+
+<img src = "https://camo.githubusercontent.com/3cc901ab8bd1f3df747b1f904b5b180bb8c2f9d3/68747470733a2f2f63646e362e626967636f6d6d657263652e636f6d2f732d73363079313069322f70726f647563745f696d616765732f75706c6f616465645f696d616765732f726f6173742d636f6d70617269736f6e2d63686172742e6a70673f743d31343639323135313737">
+
+
+<% if @roasts.kopi.length == 0%>
+<h3>
+	No kopi has been added for <%= @roasts.name.upcase %> roast level yet. </h3>
+	<p><%= link_to 'Add New Kopi', new_kopi_path %></p>
+<% else %>
+
+<h3> Kopis that are of this roast:</h3>
+<ul>
+<% @roasts.kopi.each do |kopi| %>
+<li>
+	<a href = <%= kopi_path(kopi) %>>
+	<%= kopi.name.capitalize %>
+	</a>
+</li>
+<%end%>
+</ul>
+
+<%end%>
+
+
+
+<p><%= link_to 'Home', root_path %></p>

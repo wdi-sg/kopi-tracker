@@ -2,12 +2,20 @@
 
 <%= @origin.location.upcase %>
 
+<p><%= link_to 'Edit Origin', edit_origin_path %></p>
+
+
 <h3> Kopi that came from this origin:</h3>
 <ul>
 <% @origin.kopi.each do |kopi| %>
 <li>
+	<a href = <%= kopi_path(kopi) %>>
 	<%= kopi.name.capitalize %>
+	</a>
 </li>
 <%end%>
 
 </ul>
+
+<p><%= link_to 'Back to List of Origins', origins_path %></p>
+<p><%= link_to 'Home', root_path %></p>

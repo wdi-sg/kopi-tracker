@@ -1,5 +1,13 @@
 class OriginsController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :home, :show, :index ]
+
+  def home
+    @origins = Origin.all
+    @kopis = Kopi.all
+    @roasts = Roast.all
+  end
+
   def index
     @origins = Origin.all
   end
