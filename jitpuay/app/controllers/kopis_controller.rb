@@ -1,5 +1,9 @@
 class KopisController < ApplicationController
 
+  def index
+
+  end
+
   def new
     @farms = Farm.all
   end
