@@ -15,4 +15,9 @@ Rails.application.routes.draw do
 
   get '/origins' => 'origins#index', as: 'origins'
 
+  get '/orders' => 'orders#index', as: 'orders'
+  get '/orders/:id' => 'orders#show', as: 'order'
+  get '/orders/new' => 'orders#new', as: 'new_order'
+  post '/orders' => 'orders#create'
+
 end
