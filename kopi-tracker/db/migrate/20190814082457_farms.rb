@@ -1,6 +1,6 @@
-class KopiFarm < ActiveRecord::Migration[5.2]
+class Farms < ActiveRecord::Migration[5.2]
   def change
-    create_table :kopifarms do |t|
+    create_table :farms do |t|
     t.text :location
     t.text :phone
     t.timestamps

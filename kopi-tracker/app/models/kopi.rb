@@ -1,4 +1,4 @@
 class Kopi < ActiveRecord::Base
-  belong_to :KopiFarm
+  belong_to :Farm
   belong_to :Roast
 end

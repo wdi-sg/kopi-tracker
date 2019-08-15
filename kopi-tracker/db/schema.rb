@@ -10,36 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_104051) do
+ActiveRecord::Schema.define(version: 2019_08_14_083125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kopifarms", force: :cascade do |t|
+  create_table "farms", force: :cascade do |t|
     t.text "location"
     t.text "phone"
-    t.bigint "kopi_id"
-    t.bigint "roast_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kopi_id"], name: "index_kopifarms_on_kopi_id"
-    t.index ["roast_id"], name: "index_kopifarms_on_roast_id"
   end
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.integer "roast"
-    t.bigint "kopifarm_id"
-    t.bigint "roast_id"
+    t.text "roast"
+    t.bigint "farms_id"
+    t.bigint "roasts_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kopifarm_id"], name: "index_kopis_on_kopifarm_id"
-    t.index ["roast_id"], name: "index_kopis_on_roast_id"
+    t.index ["farms_id"], name: "index_kopis_on_farms_id"
+    t.index ["roasts_id"], name: "index_kopis_on_roasts_id"
   end
 
   create_table "roasts", force: :cascade do |t|
     t.text "kopi"
-    t.text "kopifarm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
