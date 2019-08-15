@@ -1,0 +1,29 @@
+<h1>All Kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Origin</th>
+    <th>Roast</th>
+    <th>Price per Pound</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+        <td><%= kopi.name %></td>
+        <td><%= kopi.origin.location %></td>
+        <td><%= kopi.roast.name %></td>
+        <td><%= kopi.price_per_pound %></td>
+        <td><%= link_to 'Show', kopi_path(kopi) %></td>
+        <td><%= link_to 'Edit', edit_kopi_path(kopi) %>
+    </tr>
+  <% end %>
+</table>
+<% if user_signed_in? %>
+<%= link_to 'New kopi', new_kopi_path %><br/><br/>
+<% end %>
+
+<%= link_to 'To Origins', origins_path %><br/>
+<%= link_to 'To Roasts', roasts_path %><br/>
+<%= link_to 'To Orders', orders_path %>

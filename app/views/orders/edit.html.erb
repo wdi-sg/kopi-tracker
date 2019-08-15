@@ -1,0 +1,21 @@
+<h1>Edit order</h1>
+
+<%= form_with(model: @order, local: true) do |form| %>
+
+
+
+  <p>
+    <%= form.label :kopi %><br>
+    <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+  </p>
+  <p>
+    <%= form.label :weight %><br>
+    <%= form.text_field :weight %>
+  </p>
+   <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back to Order Index', orders_path %>

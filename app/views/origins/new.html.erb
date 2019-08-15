@@ -1,0 +1,19 @@
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+
+  <p>
+    <%= form.label :phone %><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'New origin', new_origin_path %>
+
+<%= link_to 'Back', origins_path %>

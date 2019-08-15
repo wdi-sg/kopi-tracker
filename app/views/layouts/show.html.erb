@@ -1,0 +1,26 @@
+<p>
+  <strong>Order number:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Kopi:</strong>
+  <%= @order.kopi.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @order.weight%>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  S$ <%= @order.weight * @order.kopi.price_per_pound%>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %><br/>
+
+<%= link_to 'Back to Orders Index', orders_path %><br/>
+<%= link_to 'Back to Origins Index', origins_path %><br/>
+<%= link_to 'Back to Kopis Index', kopis_path %>
