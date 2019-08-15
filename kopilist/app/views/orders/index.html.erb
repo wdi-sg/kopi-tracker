@@ -15,13 +15,16 @@
 <ul>
 	<%= @orders.each do |order| %>
 		<li>
-			<p><%= order.weight %></p>
+			<p>Order Weight: <%= order.weight %>g</p>
 		</li>
 		<li>
-			<p><%= order.kopi.name %></p>
+			<p>Kopi Ordered: <%= order.kopi.name %></p>
 		</li>
 		<li>
-			<p><%= order.user.email %></p>
+			<p>Email of customer: <%= order.user.email %></p>
+		</li>
+		<li>
+			<p>Price: $<%= order.weight * order.kopi.price / 100 %></p>
 		</li>
 		<%= link_to 'Show', order_path(order) %>
 	<% end %>

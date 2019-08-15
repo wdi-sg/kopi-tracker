@@ -5,10 +5,10 @@
 <ul>
 	<%= @kopis.each do |kopi| %>
 		<li>
-			<p><%= kopi.name %></p>
-			<p><%= kopi.roast.name %></p>
-			<p><%= kopi.origin.location %></p>
-			<p><%= kopi.price %></p>
+			<p>Kopi: <%= kopi.name %></p>
+			<p>Roast: <%= kopi.roast.name %></p>
+			<p>Origin: <%= kopi.origin.location %></p>
+			<p>Price per 100g: $<%= kopi.price %></p>
 		</li>
 		<%= link_to 'Show', kopi_path(kopi) %>
 		<% if user_signed_in? %>
