@@ -1,0 +1,13 @@
+<html>
+<%= link_to 'New Farm', new_farm_path %>
+
+<% @farms.each do |place| %>
+    <p>
+        <h3>Location: <%= place.location %></h3>
+        <ul>
+        <li><h4>This farm's contact is <%= place.phone_number %></h4>
+        </ul>
+    </p>
+    <br/>
+<%end %>
+</html>
