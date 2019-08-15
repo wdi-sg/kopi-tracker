@@ -11,6 +11,7 @@
 
   <body>
   	<% if user_signed_in? %>
+  	<p>Welcome <%= current_user.email %></p>
 		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 		<% else%>
 			<h1>YOU'RE NOT LOGGED IN</h1>
