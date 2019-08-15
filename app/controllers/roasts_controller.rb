@@ -28,7 +28,7 @@ class RoastsController < ApplicationController
     @roast = Roast.find(params[:id])
     @roast.update(roast_params)
     @roast.save
-    redirect_to roasts_path(@roast)
+    redirect_to roast_path(@roast)
   end
 
   def destroy
