@@ -1,0 +1,17 @@
+<h1> Edit customer</h1>
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+  <%# <%= form.collection_radio_buttons :kopi_id, @kopis, :id, :name %>
+  <%# <%= form.collection_check_boxes :kopi_id, @kopis, :id, :name %>
+
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

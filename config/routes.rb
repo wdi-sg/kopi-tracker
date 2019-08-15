@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
-    get '/roasts' => 'roasts#index', as: 'roasts'
+  get '/roasts' => 'roasts#index', as: 'roasts'
   get '/roasts/new' => 'roasts#new', as: 'new_roast'
   post '/roasts' => 'roasts#create'
   get '/roasts/:id' => 'roasts#show' , as: 'roast'
@@ -28,6 +28,13 @@ Rails.application.routes.draw do
   patch '/roasts/:id' => 'roasts#update'
   delete '/roasts/:id' => 'roasts#destroy'
 
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show' , as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
 
   get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
   get '/origins/:origin_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'

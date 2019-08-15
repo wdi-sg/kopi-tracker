@@ -1,0 +1,9 @@
+<h1>Customer info:</h1>
+<%= @customer.name %>
+</br>
+<h3>All kopis they have</h3>
+<ul>
+	<% @customer.kopis.each do |kopi| %>
+		<li><%= kopi.name %></li>
+	<% end %>
+</ul>

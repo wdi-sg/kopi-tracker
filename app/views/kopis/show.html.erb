@@ -12,3 +12,10 @@
   <strong>Roast:</strong>
   <%= @kopi.roast.name %>
 </p>
+
+<h3>All customers that have this kopi</h3>
+<ul>
+	<% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
+</ul>
