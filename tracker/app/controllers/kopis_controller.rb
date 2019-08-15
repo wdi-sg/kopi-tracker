@@ -17,6 +17,9 @@ class KopisController < ApplicationController
     puts @kopi
     redirect_to root_path
   end
+  def show
+    @kopi = Kopi.find(params[:id])
+  end
 
   private
   def kopi_params
