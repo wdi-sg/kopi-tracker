@@ -22,8 +22,16 @@ class CustomersController < ApplicationController
   end
 
   def index
+
+    if params.has_key?(:sort)
+      if(params[:sort] == "asc" )
+          @customers = Customer.all.joins(:customers_kopis).group(:customer_id,:id).order('count asc').select("customers.id,customers.name,customer_id,count(customer_id) as count")
+      else
+          @customers = Customer.all.joins(:customers_kopis).group(:customer_id,:id).order('count desc').select("customers.id,customers.name,customer_id,count(customer_id) as count")
+      end
+    elsif params.has_key?(:kopi_id)
     # if the request is from a nested route, get a subset of customers
-    if params.has_key?(:kopi_id)
+
       # get all the customers for a specific kopi
       # @customers = customer.kopis.where(kopi_ids: params[:kopi_id] )
       @customers = Kopi.find( params[:kopi_id] ).customers
