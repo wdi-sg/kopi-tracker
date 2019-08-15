@@ -21,23 +21,24 @@ class CustomersController < ApplicationController
 
   end
 
-  # def edit
-  #   @customer = Customer.find(params[:id])
-  # end
+  def edit
+    @customer = Customer.find(params[:id])
+    @kopis = Kopi.all
+  end
 
-  # def update
-  #   @customer = Customer.find(params[:id])
-  #   @customer.update(customer_params)
+  def update
+    @customer = Customer.find(params[:id])
+    @customer.update(customer_params)
 
-  #   redirect_to @customer
-  # end
+    redirect_to @customer
+  end
 
-  # def destroy
-  #   @kopi = Kopi.find(params[:id])
-  #   @kopi.destroy
+  def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
 
-  #   redirect_to root_path
-  # end
+    redirect_to customers_path
+  end
 
 private
 

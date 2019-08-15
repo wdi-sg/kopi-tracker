@@ -2,7 +2,8 @@
 
 <ol>
 	<% @orders.each do |order| %>
-			<li><%= @order.kopi.name %></li>
-			<li><%= @order.weight %></li>
+			<li><%= link_to order.kopi.name, order_path(order) %></li>
 	<% end %>
 </ol><br>
+
+<%= link_to 'New order', new_order_path %>

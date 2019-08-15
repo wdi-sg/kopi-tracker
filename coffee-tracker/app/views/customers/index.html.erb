@@ -2,8 +2,9 @@
 
 <ul>
 	<% @customers.each do |customer| %>
-		<li><%= customer.name %></li>
+		<li><%=link_to customer.name, customer_path(customer) %></li>
 	<% end %>
 </ul>
 
 <%= link_to 'Kopis', root_path %>
+<%= link_to 'New customer', new_customer_path %>

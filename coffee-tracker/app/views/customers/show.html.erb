@@ -1,4 +1,4 @@
-<h1>List of customer's stocks</h1>
+<h1>List of customer's coffee</h1>
 <h3><%= @customer.name %></h3>
 <ul><% @customer.kopis.each do |kopi| %>
 		<li><%= kopi.name %></li>
@@ -7,4 +7,5 @@
 
 </p>
 
-<%= link_to 'Back', root_path %><br>
+<%= link_to 'Edit', edit_customer_path %>
+<%= link_to 'Back', customers_path %>
