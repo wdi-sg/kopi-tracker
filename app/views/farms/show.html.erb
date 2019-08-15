@@ -1,0 +1,16 @@
+<h1>Farms#show</h1>
+<p>Find me in app/views/farms/show.html.erb</p>
+<div>
+	<%= @farm.location %>
+</div>
+<div>
+	<%= @farm.phone %>
+</div>
+<% @farm.kopis.each do |kopi| %>
+	<div>
+		<%= kopi.name %>
+	</div>
+	<div>
+		<%= kopi.roastedness %>
+	</div>
+<% end %>

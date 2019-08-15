@@ -1,0 +1,15 @@
+<h1>Farms#index</h1>
+<p>Find me in app/views/farms/index.html.erb</p>
+<% @farms.each do |farm| %>
+	<div>
+		<%=farm.location%>
+	</div>
+
+	<div>
+		<%=farm.phone%>
+	</div>
+
+	<div>
+		<%= link_to 'Show', farm_path(farm) %>
+	</div>
+<% end %>
