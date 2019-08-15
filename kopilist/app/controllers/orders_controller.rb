@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, :except => [ :show, :index ]
-  before_action :check_admin, :only => [ :new ]
+  # before_action :authenticate_user!, :except => [ :show, :index ]
+  # before_action :check_admin, :only => [ :new ]
 
   def admin
     current_user.update_attribute :admin, true
