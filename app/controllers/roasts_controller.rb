@@ -3,7 +3,7 @@ class RoastsController < ApplicationController
     before_action :authenticate_user!, :except => [ :show, :index ]
 
     def index
-        @roasts = Roast.all
+        @roasts = Roast.order(id: :asc)
     end
 
     def new
