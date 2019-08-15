@@ -26,4 +26,7 @@ Rails.application.routes.draw do
 
   resources :roasts
 
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/:id' => 'customers#show', as: 'customer'
+
 end

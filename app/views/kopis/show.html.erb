@@ -25,6 +25,14 @@
   <%= @kopi.origin.name %>
 </p>
 
+<p>
+  <strong>Customers:</strong>
+  <ul>
+    <% @kopi.customers.each do |customer| %>
+      <li><%= customer.name %></li>
+    <% end %>
+  </ul>
+</p>
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
 <%= link_to 'Delete', kopi_path(@kopi),
     method: :delete,

@@ -13,6 +13,12 @@
       <h2>Name: <%= kopi.name %></h2>
       <p>Roast: <%= kopi.roast.name %></p>
       <p>Origin: <%= kopi.origin.name %></p>
+      <p>Customer:</p>
+      <ul>
+        <% kopi.customers.each do |customer| %>
+          <li><%= customer.name %></li>
+        <% end %>
+      </ul>
       <p><%= link_to 'Show', kopi_path(kopi) %></p>
       <p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
       <p><%= link_to 'Destroy', kopi_path(kopi),
