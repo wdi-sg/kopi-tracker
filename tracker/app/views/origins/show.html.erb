@@ -1,0 +1,43 @@
+<h1>Origin Info</h1>
+
+<% if user_signed_in? %>
+		<p>
+			Country of origin: <strong><%= @origin.location %></strong><br>
+			Origin number: <strong><%= @origin.phone_number %></strong>
+		</p>
+		<%= button_to 'log out', destroy_user_session_url, method: :delete %>
+		<h3> Kopis that is from this origin </h3>
+		<%= link_to 'Add Kopi', new_kopi_path %>
+		<br>
+		<% @kopis.each do |kopi| %>
+
+			<p>Coffee name: <%= kopi.name %>
+			<p>Coffee roasted level: <%= kopi.roast.roastedness%></p>
+			<p><%= link_to 'Show', kopi_path(kopi) %></p>
+			<p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
+			<p><%= button_to 'Destroy', kopi_path(kopi),
+		              method: :delete,
+		              data: { confirm: 'Are you sure? REALLLY??????' } %>
+		  </p>
+			<br>
+		<% end %>
+
+<% else %>
+	<p>
+			Country of origin: <strong><%= @origin.location %></strong><br>
+			Origin number: <strong><%= @origin.phone_number %></strong>
+		</p>
+	<%= link_to 'log in', new_user_session_url %>
+	<br>
+	<h3> Kopis that is from this origin </h3>
+	<% @kopis.each do |kopi| %>
+			<p>Coffee name: <%= kopi.name %>
+			<p>Coffee roasted level: <%= kopi.roast.roastedness%></p>
+			<br>
+	<% end %>
+<% end %>
+
+
+
+
+<%= link_to 'Back', origins_path %>

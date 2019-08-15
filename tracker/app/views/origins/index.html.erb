@@ -1,0 +1,32 @@
+<h1> All the origin of kopis </h1>
+
+<% if user_signed_in? %>
+		<p><%= button_to 'log out', destroy_user_session_url, method: :delete %></p><br>
+		<p><%= link_to 'Add new origin', new_origin_path %></p>
+
+		<% @origin.each do |origin| %>
+
+			<p>
+				Location: <%= origin.location %><br>
+				Number: <%= origin.phone_number %>
+			</p>
+			<p><%= link_to 'Show', origin_path(origin) %></p>
+			<p><%= link_to 'Edit', edit_origin_path(origin) %></p>
+			<p><%= button_to 'Destroy', origin_path(origin),
+		              method: :delete,
+		              data: { confirm: 'Are you sure? REALLLY??????' } %>
+		  </p>
+
+		<% end %>
+
+<% else %>
+		<%= link_to 'log in', new_user_session_url %>
+		<% @origin.each do |origin| %>
+
+			<p>
+				Location: <%= origin.location %><br>
+				Number: <%= origin.phone_number %>
+			</p>
+			<p><%= link_to 'Show', origin_path(origin) %></p>
+		<% end %>
+<% end %>
