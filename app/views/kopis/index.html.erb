@@ -12,7 +12,7 @@
     </tr>
     <% @kopis.each do |kopi| %>
     <tr>
-        <td><%= kopi.name %></td>
+        <td><a href=<%= "kopis/"+kopi.id.to_s %>><%= kopi.name %></a></td>
         <td><%= kopi.farm.origin %></td>
         <td><%= kopi.farm.location %></td>
         <td><%= kopi.roast.name %></td>
@@ -33,7 +33,7 @@
     </tr>
     <% @orders.each do |order| %>
     <tr>
-        <td><a href=<%="/orders/"+order.id.to_s    %>><%= order.id %></a></td>
+        <td><a href=<%="orders/"+order.id.to_s    %>><%= order.id %></a></td>
         <td><%= order.weight %></td>
         <td><%= order.kopi.name %></td>
         <td>&nbsp&nbsp$<%= order.kopi.price %></td>
@@ -41,3 +41,12 @@
     </tr>
 <% end %>
 </table>
+
+<h2>DISPLAY ALL CUSTOMERS</h2>
+<p>Customer Name</p>
+
+<ul>
+<% @customers.each do |customer| %>
+    <a href=<%="customers/"+customer.id.to_s %>><li><%= customer.name %></li></a>
+<% end %>
+</ul>

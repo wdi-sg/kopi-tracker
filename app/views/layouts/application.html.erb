@@ -18,7 +18,7 @@
 
     <a href="/">All Kopis List</a> | <a href="/kopis/roasts">List Roast -- Kopis</a> | <a href="/kopis/farms">List Farms -- Kopis</a>
     <% if !user_signed_in? %>
-    <a href="/users/sign_in">Sign In</a>
+    | <a href="/users/sign_in">Sign In</a>
     <% end %>
     <% if user_signed_in? %>
     | <a href="/kopis/new">New Kopi Form</a> | <a href="/orders/new">New Order</a>
@@ -27,6 +27,9 @@
         <% end %>
     | <%= link_to 'Sign Out', destroy_user_session_url, method: :delete %>
     <% end %>
+    <p>
+    <a href="/customers/new">NEW Customer</a> | <a href="/stocks">ALL Stocks</a> | <a href="/stocks/new">New Stock Form</a> 
+    </p>
     <%= yield %>
   </body>
 </html>

@@ -5,6 +5,8 @@ class KopisController < ApplicationController
     def index
         @kopis = Kopi.all
         @orders = Order.all
+        @customers = Customer.all
+        p @customers.inspect
     end
 
     def new
@@ -20,14 +22,19 @@ class KopisController < ApplicationController
     end
 
     def show
-        @kopi = Kopi.find(params[:id])
+        @stocks = Stock.where(kopi_id: params[:id]).select(:customer_id).distinct
+        @customers = Customer.all
+        @kopiName = Kopi.find(params[:id]).name
+        p @stocks.inspect
+
     end
 
 
     def roasts_show
         @id = Roast.find(params[:id]).name
         @kopis = Roast.find(params[:id]).kopi
-        p @roasts.inspect
+        p ('**********************')
+        p @kopis.inspect
     end
 
     def roasts_select

@@ -1,0 +1,16 @@
+<h2> Stocks: Index</h2>
+
+<table>
+    <tr>
+        <th>Customer Name</th>
+        <th>Kopi Name</th>
+        <th>Stock Quantity</th>
+    </tr>
+    <% @stocks.each do |stock| %>
+    <tr>
+        <td><%= stock.customer.name %></td>
+        <td><%= stock.kopi.name %></td>
+        <td><%= stock.quantity %></td>
+    </tr>
+    <% end %>
+</table>

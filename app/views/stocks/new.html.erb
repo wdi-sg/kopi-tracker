@@ -1,0 +1,21 @@
+<h2>New Stocks Form</h2>
+
+<%= form_with scope: :stock, url: stocks_path, local: true do |form| %>
+
+<p>
+    <%= form.collection_select :customer_id, @customers, :id, :name %>
+</p>
+
+<p>
+    <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+</p>
+
+<p>
+    <%= form.label :quantity %><br>
+    <%= form.text_area :quantity %>
+</p>
+
+<p>
+    <%= form.submit %>
+</p>
+<% end %>
