@@ -9,7 +9,9 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-    @kopis = Kopi.all
+    puts @orders[0].kopi.name
+    # @kopis = Kopi.all
+    # @orders = Order.joins("INNER JOIN kopis ON kopis.id = orders.kopi_id")
   end
 
   def new
