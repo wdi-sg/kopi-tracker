@@ -1,5 +1,6 @@
+<div class="container">
 <% if user_signed_in? %>
-<h3>Welcome:<%= current_user.email %></h3>
+<h3>Welcome!<%= current_user.email %></h3>
 <h2><%= @message %></h2>
  <% else%>
     
@@ -32,17 +33,5 @@
   <% end %>
 </table>
 
-
- <% if user_signed_in? %>
-    <%= link_to 'New kopi', new_kopi_path %><br/><br/>
-
-    <%= link_to 'To Orders', orders_path %><br/><br/>
-    <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-  <% else%>
-    <h1>UR NOT LOGGED IN</h1>
-    <%= link_to 'To Farms', farms_path %><br/><br/>
-    <%= link_to 'log in', new_user_session_url %><br/>
-    <%= link_to 'Sign up', new_user_registration_path %><br/>
-
-  <% end %>
-
+</div>
+ 

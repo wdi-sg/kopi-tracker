@@ -1,10 +1,21 @@
 class RoastsController < ApplicationController
+	before_action :authenticate_admin!, :except => [ :show, :index ]
+	admins = User.all
+
 	def index
+		if current_user.try(:admin?)
+		   @message = "Hello, boss"
+
+	    else
+	      @message = "HELLO NOT LOGGED IN"
+
+	    end
 		@roasts= Roast.all
+
 	end
 
 	def new
-		@roast = Roast.all
+		
 	
 	end
 

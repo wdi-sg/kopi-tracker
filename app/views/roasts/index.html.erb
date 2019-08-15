@@ -1,0 +1,19 @@
+
+<p>Roast</p>
+<ul>
+<% @roasts.each do |roast| %>
+  <li><%= roast.name %></li>
+<% end %>
+</ul>
+
+<%if current_user.try(:admin?)%>
+  
+	<%= link_to 'New Roast', new_roast_path %>
+	<%= link_to 'Edit Roast', edit_roast_path %>
+	<%= link_to 'Delete Roast', delete_roast_path %>
+	<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+	<%= link_to 'Back', kopis_path %>
+
+
+
+  <% end %>

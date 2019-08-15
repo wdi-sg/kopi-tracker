@@ -10,6 +10,52 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" href="#">Kopi-Tracker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/kopis">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Action
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-title">Show All</div>
+          <%= link_to 'All Orders', orders_path %><br/>
+          <%= link_to 'All Farms', farms_path %><br/>
+          <%= link_to 'All Roasts', roasts_path %><br/>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-title">Add new</div>
+          <%= link_to 'New Kopi', new_kopi_path %><br/>
+          <%= link_to 'New Roast', new_roast_path %><br/>
+          <%= link_to 'New Order', new_order_path %><br/>
+          <%= link_to 'New Farm', new_farm_path %><br/>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <% if user_signed_in? %>
+        <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+        <% else%>
+        <%= link_to 'log in', new_user_session_url %>
+        <% end %>
+
+      </li>
+      
+    </ul>
+    
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

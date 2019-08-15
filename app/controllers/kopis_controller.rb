@@ -29,7 +29,7 @@ class KopisController < ApplicationController
 	def show
 		
 		@kopi = Kopi.find(params[:id])
-
+		@customers = @kopi.customers
 		if user_signed_in?
 	      @message = "HELLO"
 
@@ -40,7 +40,7 @@ class KopisController < ApplicationController
 
 		 respond_to do |format|
 	      format.html
-	      format.json { render json: @song }
+	      format.json { render json: @kopi}
 	    end
 	end
 
@@ -77,9 +77,9 @@ class KopisController < ApplicationController
 	private
 
 	  def kopi_params
-	    params.require(:kopi).permit(:name, :price, :roast_id, :farm_id, :user_id)
+	    params.require(:kopi).permit(:name, :price, :roast_id, :farm_id, :user_id, :customer_ids => [])
 	  end
 
-
+	  
 
 end
