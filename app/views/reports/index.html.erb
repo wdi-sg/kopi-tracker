@@ -1,4 +1,4 @@
-<h1 class=" mt-4 text-center">Listing Orders</h1>
+<h1 class=" mt-4 text-center">Sales Report</h1>
 
 
 <table class="table table-bordered mt-3 container text-center">
@@ -10,7 +10,6 @@
       <th scope="col">Current Price per kg</th>
       <th scope="col">Weight</th>
       <th scope="col">Total Cost (at Order Date)</th>
-      <th scope="col">Ordered By</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -23,7 +22,6 @@
       <td>$<%= order.kopi.price %></td>
       <td><%= order.weight %></td>
       <td>$<%= order.total_price.round(2) %></td>
-      <td><%= order.user.email %></td>
       <td><%= link_to 'Edit', edit_order_path(order) %> <%= link_to 'Destroy', order_path(order),
         method: :delete %></td>
     </tr>

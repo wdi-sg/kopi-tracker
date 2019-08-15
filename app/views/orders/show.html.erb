@@ -1,0 +1,15 @@
+<h1 class="mt-4 text-center"> Order #<%= @order.id %></h1>
+
+<div class="card mx-auto mt-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @order.kopi.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @order.kopi.roastedness.roast %></h6>
+    <p class="card-text">Origin: <%= link_to @order.kopi.origin.name, origin_path(@order.kopi.origin) %></p>
+    <p class="card-text">Current Price per kg: $<%= @order.kopi.price %></p>
+    <p class="card-text">Weight: $<%= @order.weight %></p>
+    <p class="card-text">Total Price at Order: $<%= @order.total_price %></p>
+    <%= link_to 'Edit', edit_order_path(@order) , :class => "card-link" %> 
+    <%= link_to 'Destroy', order_path(@order),
+        method: :delete, :class => "card-link"  %>
+  </div>
+</div>

@@ -14,12 +14,15 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href=<%= kopis_path %>> All Kopis</a>
+          <% if current_user.try(:admin?) %>
           <a class="dropdown-item" href=<%= new_kopi_path %>>Add Kopi</a>
+          <% end %>
         </div>
       </li>
        <li class="nav-item active">
         <a class="nav-link" href=<%= origins_path %>>Origin</a>
       </li>
+      <% if defined?(current_user.id) %>
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Orders
@@ -29,9 +32,27 @@
           <a class="dropdown-item" href=<%= new_order_path %>>Add Order</a>
         </div>
       </li>
+      <% end %>
+      <% if current_user.try(:admin?) %>
       <li class="nav-item active">
-        <a class="nav-link" href=<%= root_path %>>Report</a>
+        <a class="nav-link" href=<%= reports_path %>>Report</a>
       </li>
+      <% end %>
+      <% if defined?(current_user.id) %>
+      <li class="nav-item active">
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => "nav-link" %>
+      </li>
+      <% else %>
+      <li class="nav-item active">
+            <%= link_to 'Login', new_user_session_path, :class => "nav-link" %>
+      </li>
+      <% end %>
     </ul>
   </div>
 </nav>
+
+
+<form class="form-inline mt-3 justify-content-center">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>

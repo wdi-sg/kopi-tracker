@@ -9,7 +9,9 @@
       <th scope="col">Roast</th>
       <th scope="col">Origin</th>
       <th scope="col">Price per kg</th>
+      <% if current_user.try(:admin?) %>
       <th scope="col"></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -20,8 +22,10 @@
       <td><%= kopi.roastedness.roast %></td>
       <td><%= link_to kopi.origin.name, origin_path(kopi.origin) %></td>
       <td>$<%= kopi.price%></td>
+       <% if current_user.try(:admin?) %>
       <td><%= link_to 'Edit', edit_kopi_path(kopi) %> <%= link_to 'Destroy', kopi_path(kopi),
         method: :delete %></td>
+        <% end %>
     </tr>
   <% end %>
   </tbody>
