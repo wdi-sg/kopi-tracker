@@ -1,0 +1,15 @@
+<h1>Customer info </h1>
+
+<p>Name: <%= @customer.name %> </p>
+
+<p>
+List of Kopis liked by <%= @customer.name %>:
+<br>
+	<% @customer.kopis.each do |kopi| %>
+		<li><a href = <%= kopi_path (kopi.id) %>><%= kopi.name.capitalize %></a></li>
+	<% end %>
+</p>
+
+
+<p><%= link_to 'Back to List of Kopis', kopis_path %></p>
+<p><%= link_to 'Home', root_path %></p>

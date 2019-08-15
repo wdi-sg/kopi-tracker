@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :kopis
 
   get '/roasts/:id' => 'roasts#show', as: 'roast'
+   get '/customers/:id' => 'customers#show', as: 'customer'
+
 
 
 end

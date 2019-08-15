@@ -5,6 +5,12 @@
 Level of <%= @kopi.name.capitalize %>'s roastedness: <%= @kopi.roast.name %>
 </p>
 
+
+<p>Customers who like this kopi: </p>
+<% @kopi.customers.each do |customer| %>
+		<p><a href = <%= customer_path (customer.id) %>><%= customer.name.capitalize %></a></p>
+	<% end %>
+
 <p><%= link_to 'Edit Kopi', edit_kopi_path %></p>
 <p><%= link_to 'Back to List of Kopis', kopis_path %></p>
 <p><%= link_to 'Home', root_path %></p>
