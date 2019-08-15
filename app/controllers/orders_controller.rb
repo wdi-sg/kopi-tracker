@@ -8,10 +8,7 @@ class OrdersController < ApplicationController
       p "USER IS ADMIN!!!!!"
     else
       @orders = Order.all.where(user_id: current_user.id)
-      p @orders
-      p "USER ID ISSS"
-      p current_user.id
-      p "USER IS NORMAL USER!!!"
+      p "USER IS NORMAL USER!!!!!"
     end
   end
 

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :kopis
   resources :orders
 
+  get '/stockists' => 'stockists#index', as: 'stockists'
+  get '/kopis/:kopi_id/stockists' => 'stockists#index', as: 'kopi_stockists'
+
   get '/report' => 'reports#index', as: 'reports'
 
 end
