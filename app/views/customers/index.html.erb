@@ -1,0 +1,10 @@
+<h1>ALL Customers</h1>
+<% @customers.each do |customer| %>
+	<li> <b>Name:</b> <%= customer.name %><br>
+			   <b>Phone:</b> <%=customer.phone %><br><br>
+	</li>
+<% end %>
+
+<%= link_to 'Add New Customer', new_customer_path %><br>
+<%= link_to 'Add New Coffee', new_kopi_path %><br>
+<%= link_to 'Add New Origin', new_origin_path %>

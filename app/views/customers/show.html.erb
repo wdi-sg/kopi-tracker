@@ -1,0 +1,15 @@
+<h2>
+	Hello, <%= @customer.name %>
+</h2>
+<h3> Information:<br>
+	Phone: <%= @customer.phone %>
+ </h3>
+
+<h3>Coffee saved:</h3>
+<ul>
+	<% @customer.kopis.each do |kopi| %>
+		<li><%= kopi.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Back', customers_path %>
