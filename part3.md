@@ -1,3 +1,5 @@
+KEITH ADDED CAPITALISED TEXT
+
 ## Part 3 Many-to-Many
 
 Your roastery has blown up on instagram and you are expanding.
@@ -30,11 +32,3 @@ Note: The option of ascending and descending sorting should be noted in the quer
 
 #### further
 Sort the kopis by "popularity"- by the number of shops that carry that kopi.
-
-
-
-
-
-
-
-
