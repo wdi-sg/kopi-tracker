@@ -1,0 +1,10 @@
+<h1>Kopi Info</h1>
+
+<p>Name of Kopi: <%= @kopi.name %></p>
+<p>Kopi Origin: <%= @kopi.origin.location%></p>
+<p>Kopi roastedness: <%= @kopi.roast.roastedness %></p>
+<br>
+<p><%= link_to 'Edit', edit_kopi_path(@kopi.id) %></p>
+<p><%= button_to 'Destroy', kopi_path(@kopi.id), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<%= link_to 'Back', origin_path %>
