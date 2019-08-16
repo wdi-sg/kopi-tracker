@@ -4,6 +4,7 @@ class KopisController < ApplicationController
 
 
   def index
+    puts 'hooman'
     @kopis = Kopi.all
   end
 
