@@ -1,29 +1,61 @@
-<h1>All Kopis</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Origin</th>
-    <th>Roast</th>
-    <th>Price per Pound</th>
-    <th></th>
-  </tr>
+<div class="container">
+	<div class="row">
 
-  <% @kopis.each do |kopi| %>
-    <tr>
-        <td><%= kopi.name %></td>
-        <td><%= kopi.origin.location %></td>
-        <td><%= kopi.roast.name %></td>
-        <td><%= kopi.price_per_pound %></td>
-        <td><%= link_to 'Show', kopi_path(kopi) %></td>
-        <td><%= link_to 'Edit', edit_kopi_path(kopi) %>
-    </tr>
-  <% end %>
-</table>
-<% if user_signed_in? %>
-<%= link_to 'New kopi', new_kopi_path %><br/><br/>
-<% end %>
+		<div class="card w-100 flex-wrap mx-auto">
+			<div class="card-header ">
+			  <ul class="nav nav-tabs card-header-tabs justify-content-center">
+			  	<li class="nav-item">
+			    	<h3>
+			    		<%= link_to "Your Kofis", kopis_path(sort: "user"), :class => 'nav-link active' %>
+			    	</h3>
+					</li>
+			    <li class="nav-item">
+			    	<h3>
+			    		<%= link_to "All Kofis", kopis_path(sort: "all"), :class => 'nav-link active' %>
+			    	</h3>
+			    </li>
+			    <li class="nav-item">
+			    	<h3>
+			    		<%= link_to "By Kofi Name", kopis_path(sort: "name"), :class => 'nav-link active' %>
+			    	</h3>
+			    </li>
 
-<%= link_to 'To Origins', origins_path %><br/>
-<%= link_to 'To Roasts', roasts_path %><br/>
-<%= link_to 'To Orders', orders_path %>
+			    <li class="nav-item">
+			    	<h3>
+			    		<%= link_to "Oldest Kofi", kopis_path(sort: "oldest"), :class => 'nav-link active' %>
+			    	</h3>
+			    </li>
+			  </ul>
+			</div>
+			<div class="card-body">
+				<div class="card-deck flex-wrap">
+					<% @kopis.each do |kopi| %>
+						<div class="col-lg-4">
+							<div class="card border-secondary mb-3 mx-auto" >
+								<div class="card-header">
+									<%= kopi.name %>
+									<%= kopi.id %>
+								</div>
+								<div class="card-body">
+									<p class="card-text">
+										<%= kopi.origin.location %>
+										<%= kopi.roast.name %>
+										<%= kopi.price_per_pound %>
+									</p>
+								</div>
+								<div class="card-footer justify-content-between">
+									<%= link_to 'Show', kopi_path(kopi) %>
+									<%= link_to 'Edit', edit_kopi_path(kopi) %>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<%= paginate @kopis %>
+	</div>
+</div>

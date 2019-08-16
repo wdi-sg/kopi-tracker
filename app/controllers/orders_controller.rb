@@ -1,16 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
     def index
-        if current_user.try(:admin?)
-            @orders = Order.all.order(:id)
-        elsif user_signed_in?
-            @orders = Order.all.order(:id).where(user_id: current_user.id)
-        else
-            @orders = nil
-
-        end
-
-
+      @orders = Order.all
     end
 
     def new

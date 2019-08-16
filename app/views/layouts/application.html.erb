@@ -6,28 +6,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <link rel="stylesheet" type="text/css" href="kopis.scss">
+    <%= javascript_include_tag 'application' %>
 
   </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
 
-    </ul>
-    <%= link_to 'Sign In', new_user_session_url %>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-  </div>
-</nav>
 
   <body>
+  	<%= render 'navbar' %>
     <%= yield %>
   </body>
 </html>
