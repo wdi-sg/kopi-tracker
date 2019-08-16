@@ -16,7 +16,7 @@ For the your partner's repo that you will be working on:
 
 #### part 3
 Decide on something you want to add to this app.
-  - if the app ios complete, add CSS / bootstrap
+  - if the app is complete, add CSS / bootstrap
   - if the app is complete add an "about" page
   - implement one of the furthers
 
