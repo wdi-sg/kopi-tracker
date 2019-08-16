@@ -9,7 +9,8 @@ class KopisController < ApplicationController
       puts '------------GOT PARAMSSS'
       puts params[:sort_order]
       @order = params[:sort_order]
-      @kopis = Kopi.left_joins(:customers).group(:id).order("count(customers) #{@order}")
+      # @kopis = Kopi.left_joins(:customers).group(:id).order("count(customers) #{@order}")
+      @kopis = Kopi.all.sort_by { |kopi| kopi.customers.length }
     else
       puts '-----------NO SORT'
       @kopis = Kopi.all
