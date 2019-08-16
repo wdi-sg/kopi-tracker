@@ -30,8 +30,12 @@
 <p>customer logged in</p>
 <p><%= @customer.email %></p>
 <%= link_to 'Your stock', customer_path(@customer) %>
-<%= link_to 'Stock up!', new_stock_path %>
+<%= link_to 'Stock up!', new_stock_path %><%= form_tag(sort_customer_path, method: "get") do %>
+<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
+	<%= submit_tag "See customers sorted by stock size" %>
+<% end %>
 <%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<p>note to self: /kopi/:id to see who bought that kopi</p>
 <% else %>
 <p>customer not logged in</p>
 <%= link_to 'customer log in', new_customer_session_url %>

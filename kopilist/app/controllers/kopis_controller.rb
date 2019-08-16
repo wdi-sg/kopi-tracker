@@ -82,13 +82,13 @@ class KopisController < ApplicationController
   end
 
   def sortcustomer
-    # puts params[:sort_order]
-    # puts params[:id]
-    # @order = params[:sort_order]
+    puts params[:sort_order]
+    @order = params[:sort_order]
     # @customers = Customers.group(:id).order("count(kopis) #{@order}")
-    @test = Customer.find(2).kopis
-    puts @test
-    @customers = Customer.group(:id).order("count(*) #{@order}")
+
+    # @customers = Customer.group(:id).order("count(*) #{@order}")
+
+    @customers = Customer.left_joins(:kopis).group(:id).order("count(kopis) #{@order}")
   end
 
   private
