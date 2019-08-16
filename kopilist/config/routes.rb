@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get '/kopi/new' => 'kopis#newstock', as: 'new_stock'
   get '/kopi/:id' => 'kopis#indexstock', as: 'stock'
 
+  get '/customer/sort' => 'kopis#sortcustomer', as: 'sort_customer'
+
   get '/customer/:id' => 'kopis#customer', as: 'customer'
+
+
 end
 
 # console to call all kopis that are dark

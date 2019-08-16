@@ -1,9 +1,11 @@
 class KopisController < ApplicationController
   # before_action :authenticate_user!, :except => [ :show, :index ]
+  before_action :authenticate_customer!, :except => [ :show ]
+
 
   def index
     @kopis = Kopi.all
-    @customer = Customer.find(current_customer.id)
+     @customer = Customer.find(current_customer.id)
   end
 
   def show
@@ -46,11 +48,12 @@ class KopisController < ApplicationController
   end
 
   def indexstock
-    puts params[:sort_order]
-    @order = params[:sort_order]
+    # puts params[:sort_order]
+    # @order = params[:sort_order]
 
     @kopi = Kopi.find(params[:id])
-    @customers = @kopi.customers.group(:id).order("count(*) #{@order}")
+    # @customers = @kopi.customers.group(:id).order("count(*) #{@order}")
+    @customers = @kopi.customers
     # puts @customers[0].email
   end
 
@@ -76,6 +79,16 @@ class KopisController < ApplicationController
     @customer = Customer.find(params[:id])
     @kopis = @customer.kopis
     # puts @kopis[0].name
+  end
+
+  def sortcustomer
+    # puts params[:sort_order]
+    # puts params[:id]
+    # @order = params[:sort_order]
+    # @customers = Customers.group(:id).order("count(kopis) #{@order}")
+    @test = Customer.find(2).kopis
+    puts @test
+    @customers = Customer.group(:id).order("count(*) #{@order}")
   end
 
   private

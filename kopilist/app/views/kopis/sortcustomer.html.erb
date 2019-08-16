@@ -1,9 +1,6 @@
-<p>Customers who bought <%= @kopi.name  %></p>
+<p>Customers sorted by number of kopis carried</p>
 
-<%= form_tag(sort_customer_path, method: "get") do %>
-	<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
-<%= submit_tag "Sort by customer" %>
-<% end %>
+
 
 
 <ul>
