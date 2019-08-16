@@ -18,16 +18,33 @@
     <% @orders.each do |order| %>
     <tr>
       <th scope="row"><%= link_to order.id, order_path(order) %></th>
-      <td><%= link_to order.kopi.name, kopi_path(order.kopi) %></td>
-      <td><%= link_to order.kopi.origin.name, origin_path(order.kopi.origin) %></td>
-      <td>$<%= order.kopi.price %></td>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li><%= link_to kopi.name, kopi_path(kopi) %></li>
+      		<% end %>
+      	</ul>
+      </td>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li><%= link_to kopi.origin.name, origin_path(kopi.origin) %></li>
+      		<% end %>
+      	</ul>
+      </td>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li>$<%= kopi.price %></li>
+      		<% end %>
+      	</ul>
+      </td>
       <td><%= order.weight %></td>
-      <td>$<%= order.total_price.round(2) %></td>
-      <td><%= order.user.email %></td>
+      <td>$<%= order.total_price %></td>
+      <td><%= order.user.name %></td>
       <td><%= link_to 'Edit', edit_order_path(order) %> <%= link_to 'Destroy', order_path(order),
         method: :delete %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-

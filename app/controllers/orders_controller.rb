@@ -28,7 +28,13 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    @order.total_price = @order.kopi.price * @order.weight
+    total_price = 0.00
+
+    @order.kopi.each do |kopi|
+      total_price+=(kopi.price.to_f * @order.weight.to_f)
+    end
+
+    @order.total_price = total_price
 
     @order.user_id = current_user.id
 
@@ -61,6 +67,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:kopi_id, :weight)
+    params.require(:order).permit(:weight, :kopi_ids => [])
   end
 end

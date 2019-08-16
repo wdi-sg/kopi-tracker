@@ -1,4 +1,4 @@
 class Order < ActiveRecord::Base
-	belongs_to :kopi
+	has_and_belongs_to_many :kopi
 	belongs_to :user
 end
