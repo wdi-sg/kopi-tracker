@@ -1,0 +1,19 @@
+<h1>Kopi index page</h1>
+
+<table>
+  <tr>
+    <th>Kopi</th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+
+</br>
+
+<%= link_to 'New', new_customer_path %>
