@@ -2,6 +2,10 @@
 <%= link_to 'New Kopi', new_kopi_path %>
 <%= link_to 'Orders', orders_path %>
 
+<%= form_tag(root_path, method: "get") do %>
+	<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
+	<%= submit_tag "Sort" %>
+<% end %>
 
 <ul>
 	<%= @kopis.each do |kopi| %>

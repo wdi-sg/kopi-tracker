@@ -4,8 +4,19 @@ class KopisController < ApplicationController
 
 
   def index
-    @kopis = Kopi.all
-     @customer = Customer.find(current_customer.id)
+    @customer = Customer.find(current_customer.id)
+    if(params.has_key?(:sort_order))
+      puts '------------GOT PARAMSSS'
+      puts params[:sort_order]
+      @order = params[:sort_order]
+      @kopis = Kopi.left_joins(:customers).group(:id).order("count(customers) #{@order}")
+    else
+      puts '-----------NO SORT'
+      @kopis = Kopi.all
+    end
+
+
+
   end
 
   def show
@@ -69,7 +80,7 @@ class KopisController < ApplicationController
 
     @kopi_ids.each do |kopi_id|
       @kopi = Kopi.find(kopi_id)
-       @customer.kopis << @kopi
+      @customer.kopis << @kopi
     end
 
     redirect_to stock_path(@customer)
