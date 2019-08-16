@@ -1,0 +1,12 @@
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+    <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :input_html => { :value => @kopi.name }%>
+  </p>
+
+    <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+

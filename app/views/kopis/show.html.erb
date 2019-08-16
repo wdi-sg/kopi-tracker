@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Kopi Name:</strong>
   <%= @kopi.name %>
@@ -12,5 +14,22 @@
   <%= @origin.location %>
 </p>
 
+ <div><%= link_to 'Edit', edit_kopi_path(@kopi) %> | <%= link_to 'Destroy', kopi_path(@kopi), method: :delete, data: { confirm: 'Are you sure?' } %> </div>
 
-<a href=<%= origins_url %>>Home</a>
+<br/>
+<h4>Customers with this Kopi</h4>
+
+<%= form_tag(kopi_path, method: "GET") do %>
+    <%= select_tag(:sort, options_for_select(["Sort by",['Ascending','asc'],['Descending','desc']]), :onchange=>'this.form.submit();',class:"col-2 form-control" ) %>
+<% end %>
+
+<br/>
+
+<% @customers.each do |customer| %>
+<ul>
+    <li><%= link_to customer.name, customer_path(customer) %> <%= customer.kopis.count %></li>
+</ul>
+
+<% end %>
+
+

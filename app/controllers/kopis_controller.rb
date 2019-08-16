@@ -22,6 +22,7 @@ end
   end
 
   def edit
+    @kopi = Kopi.find(params[:id])
     @roasts = Roast.all
     @origins = Origin.all
   end
@@ -30,6 +31,25 @@ end
     @kopi = Kopi.find(params[:id])
     @roast = Roast.find(@kopi.roast_id)
     @origin = Origin.find(@kopi.origin_id)
+
+    @customers = Kopi.find( params[:id] ).customer
+
+    if params.has_key?(:sort)
+        if(params[:sort] == "desc" )
+        @customers = Kopi.find( params[:id] ).customer.order(created_at: :desc)
+
+        else
+            @customers = Kopi.find( params[:id] ).customer.order(created_at: :asc)
+        end
+
+    end
+  end
+
+  def update
+      @kopi = Kopi.find(params[:id])
+
+      @kopi.update(kopi_params)
+      redirect_to @kopi
   end
 
 private
