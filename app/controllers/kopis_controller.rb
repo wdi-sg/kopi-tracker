@@ -31,6 +31,10 @@ class KopisController < ApplicationController
 
   end
 
+  def doBananaStuff
+  end
+
+
   private
     def kopi_params
     params.require(:kopi).permit(:name, :origin_id, :roast_id)
