@@ -1,16 +1,6 @@
-class OriginsController < ActionController::Base
+class OriginsController < ApplicationController
   def index
     @origin = Origin.all
-  end
-
-  def new
-  end
-
-  def create
-    @origin = Origin.new(origin_params)
-
-    @origin.save
-    redirect_to @origin
   end
 
   def show
@@ -19,8 +9,18 @@ class OriginsController < ActionController::Base
     @kopis = @origin.kopi
   end
 
+  def new
+  end
+
   def edit
     @origin = Origin.find(params[:id])
+  end
+
+  def create
+    @origin = Origin.new(origin_params)
+
+    @origin.save
+    redirect_to @origin
   end
 
   def update

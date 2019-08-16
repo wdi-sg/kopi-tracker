@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :origins
   resources :kopis, except: [:new, :edit]
+  resources :customers
 
   get '/origins/:id/kopis/new' => 'kopis#new', as: 'new_kopi'
   get '/origins/:id/kopis/edit' => 'kopis#edit', as: 'edit_kopi'

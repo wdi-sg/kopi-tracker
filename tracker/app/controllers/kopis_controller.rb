@@ -1,4 +1,4 @@
-class KopisController < ActionController::Base
+class KopisController < ApplicationController
     def index
       @kopis = Kopi.all
     end
