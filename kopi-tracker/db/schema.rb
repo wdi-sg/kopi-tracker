@@ -24,17 +24,16 @@ ActiveRecord::Schema.define(version: 2019_08_14_083125) do
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.text "roast"
-    t.bigint "farms_id"
-    t.bigint "roasts_id"
+    t.bigint "farm_id"
+    t.bigint "roast_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["farms_id"], name: "index_kopis_on_farms_id"
-    t.index ["roasts_id"], name: "index_kopis_on_roasts_id"
+    t.index ["farm_id"], name: "index_kopis_on_farm_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
   create_table "roasts", force: :cascade do |t|
-    t.text "kopi"
+    t.text "roastedness"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
