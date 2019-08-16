@@ -1,0 +1,29 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="kopi-tracker">kopi-tracker</h1>
+<p>You are working at a kopi roastery. Create a rails app that tracks kopis.</p>
+<p><img alt="" src="https://media.giphy.com/media/l3vQXT6nQkKK7LkVG/giphy.gif" /></p>
+<p>Each individual <code>kopi</code> has a <code>name</code> and roastedness (<code>roast</code>), and is associtaed with an <code>origin</code> (farm where it comes from).</p>
+<p>A kopi farm (<code>origin</code>) has a <code>location</code>, <code>phone</code> number and is associated with many kopis.</p>
+<h4 id="further">further</h4>
+<p>Migrate your app to track roastedness in a separate table. Use the <a href="https://edgeguides.rubyonrails.org/active_record_migrations.html#migrations-and-seed-data"><code>seed.rb</code></a> file to put the 7 kinds of roast into the DB. </p>
+<p><img alt="roasts" src="https://cdn6.bigcommerce.com/s-s60y10i2/product_images/uploaded_images/roast-comparison-chart.jpg?t=1469215177" /></p>
+<p>Each kopi will have a roast.</p>
+<p>A roast will have many kopis.</p>
+<p>Using your models will look something like this:</p>
+<p>```</p>
+<h1 id="get-all-kopis-that-are-dark-roast">get all kopis that are dark roast</h1>
+<p>Roast.find_by(name: "Italian").kopis
+```</p>
+<h4 id="further_1">further</h4>
+<p>Change your db model to include an order for a kopi. Change your kopi table to track price per pound. Add an <code>order</code> model. A kopi order has a <code>weight</code>. It is associated with a kopi.</p>
+<h4 id="further_2">further</h4>
+<p>For the routes <code>/orders</code> and <code>/orders/:id</code> include the total price of each order. (weight * price per pound)</p>
+<h4 id="further_3">further</h4>
+<p>Create a <code>/report</code> route that will display sales data.</p>
+<p>In order to have data to display you should add more kopis and orders into your database from a seed file.</p>
+<p><code>/report</code> should display the total sales for that day. </p>
+<h4 id="further_4">further</h4>
+<p>Change <code>/report</code> to also display sales by kopi.</p>
+<h4 id="further_5">further</h4>
+<p>Change <code>/report</code> to also display sales by origin.</p>
+</body></html>

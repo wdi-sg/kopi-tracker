@@ -35,11 +35,11 @@ end
     @customers = Kopi.find( params[:id] ).customer
 
     if params.has_key?(:sort)
-        if(params[:sort] == "desc" )
-        @customers = Kopi.find( params[:id] ).customer.order(created_at: :desc)
+        if(params[:sort] == "asc" )
+        @customers = Kopi.find( params[:id] ).customer.sort_by { |customer| customer.kopis.length }
 
         else
-            @customers = Kopi.find( params[:id] ).customer.order(created_at: :asc)
+            @customers = Kopi.find( params[:id] ).customer.sort_by { |customer| customer.kopis.length }.reverse
         end
 
     end
