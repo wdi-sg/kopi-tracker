@@ -1,0 +1,16 @@
+<h1>What's Your Name!</h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
