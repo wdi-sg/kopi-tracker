@@ -12,7 +12,7 @@ For the your partner's repo that you will be working on:
 - make a pull request named "BANANA":
   - by clicking on the button on your partner's repo page
   - this should create a *new* pull request on the *GA* repo that was originally forked from
-  - once yu've confirmed this test, please clean up after yourself and clse this pull request
+  - once you've confirmed this test, please clean up after yourself and close this pull request
 
 #### part 3
 Decide on something you want to add to this app.
