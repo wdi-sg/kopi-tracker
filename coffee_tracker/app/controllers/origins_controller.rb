@@ -31,6 +31,8 @@ class OriginsController < ApplicationController
   end
 
   def update
+
+
     @origin = Origin.find(params[:id])
 
     @origin.update(origin_params)

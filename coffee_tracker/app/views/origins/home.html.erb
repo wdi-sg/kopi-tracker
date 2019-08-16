@@ -1,3 +1,10 @@
+<% if customer_signed_in? %>
+<% name = current_customer.email[/[^@]+/] %>
+<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+<h3>Hi, <%= name.capitalize %></h3>
+<p><a href = <%= customer_path (current_customer.id) %>>[PROFILE]</a></p>
+<% end %>
+
 <h1> <a href = <%= origins_path %>> List of Origins </a></h1>
 
 <ul>
@@ -17,11 +24,21 @@
 <h1> <a href = <%= kopis_path %>> List of Kopis </a></h1>
 <ul>
 <% @kopis.each do |kopi| %>
+
+<% if customer_signed_in? %>
 <li>
 	<a href = <%= kopi_path(kopi) %>>
 	<%= kopi.name.capitalize %>
 	</a>
 </li>
+
+<%else%>
+<li>
+	<a href = <%= kopi_path(kopi) %>>
+	<%= kopi.name.capitalize %>
+	</a>
+</li>
+<%end%>
 <%end%>
 </ul>
 <% if user_signed_in? %>
@@ -39,3 +56,9 @@
 </li>
 <%end%>
 </ul>
+
+<% if customer_signed_in? %>
+<p><%= link_to 'Log out', destroy_user_session_url, method: :delete %></p>
+<%else%>
+<%= link_to 'Log in', new_customer_session_url %>
+<% end %>

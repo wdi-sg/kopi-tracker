@@ -26,26 +26,6 @@ before_action :authenticate_user!, :except => [ :show, :index ]
     @roasts = Roast.all
   end
 
-  def create
-
-    @kopi = Kopi.new(kopi_params)
-    @kopi.save
-    redirect_to @kopi
-
-  end
-
-  def add
-    @kopi = Kopi.new(kopi_params)
-    @kopi.origin_id = params[:origin_id]
-    @kopi.save
-
-    render plain: ("added")
-
-    #if you want to just add params, can also do it by the hidden input way <input type="hidden" name="kopi[origin_id]" value=<%= @origins.id %>>
-
-  end
-
-
   def show
     # deal with the case that we are trying to get a kopi for a origin that doesn't exist
 

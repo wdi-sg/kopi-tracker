@@ -1,14 +1,25 @@
+<% if user_signed_in? %>
+<% name = current_user.email[/[^@]+/] %>
+<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+<h3>Logged in as: <%= name.capitalize %></h3>
+
+<button id="like" type="button" class="btn">Add to Likes</button>
+
+<% end %>
+
+
 <h1>Kopi info </h1>
 
 <%= @kopi.name %> - is originated from "<a href = <%=origin_path (@kopi.origin_id) %>><%= @kopi.origin.location %></a>"
 <p>
-Level of <%= @kopi.name.capitalize %>'s roastedness: <%= @kopi.roast.name %>
+Level of <%= @kopi.name.capitalize %>'s roastedness: <a href = <%= roast_path %>><%= @kopi.roast.name %></a>
 </p>
-
 
 <p>Customers who like this kopi: </p>
 <% @kopi.customers.each do |customer| %>
-		<p><a href = <%= customer_path (customer.id) %>><%= customer.name.capitalize %></a></p>
+	<% name = customer.email[/[^@]+/] %>
+	<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+		<p><a href = <%= customer_path (customer.id) %>><%= name.capitalize %></a></p>
 	<% end %>
 
 <p><%= link_to 'Edit Kopi', edit_kopi_path %></p>

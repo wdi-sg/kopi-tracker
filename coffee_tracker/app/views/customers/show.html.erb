@@ -1,9 +1,12 @@
+<% name = @customer.email[/[^@]+/] %>
+<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+
 <h1>Customer info </h1>
 
-<p>Name: <%= @customer.name %> </p>
+<p>Name: <%= name.capitalize %> </p>
 
 <p>
-List of Kopis liked by <%= @customer.name %>:
+List of Kopis liked by <%= name.capitalize %>:
 <br>
 	<% @customer.kopis.each do |kopi| %>
 		<li><a href = <%= kopi_path (kopi.id) %>><%= kopi.name.capitalize %></a></li>
