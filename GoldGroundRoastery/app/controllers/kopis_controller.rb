@@ -1,6 +1,7 @@
 class KopisController < ApplicationController
 
   def index
+    # some new stuff
     if params.has_key?(:origin_id)
       # get all the kopis for a specific park
       @kopis = Kopi.where(origin_id: params[:origin_id] )
