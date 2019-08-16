@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Location</th>
     <th>Phone</th>
     <th></th>
@@ -9,10 +10,11 @@
 
   <% @origins.each do |origin| %>
     <tr>
+          <td><%= origin.name %></td>
         <td><%= origin.location %></td>
         <td><%= origin.phone %></td>
         <td><%= link_to 'Show', origin_path(origin) %></td>
-        <td><%= link_to 'Edit', edit_origin_path(origin) %>
+        <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
         <td><%= link_to 'Destroy', origin_path(origin),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
@@ -21,6 +23,3 @@
 </table>
 
 <%= link_to 'New origin', new_origin_path %>
-<br/>
-<br/>
-<%= link_to 'Go to Kopis', kopis_path %>

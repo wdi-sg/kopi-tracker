@@ -1,4 +1,5 @@
 class OriginsController < ApplicationController
+
     def index
         @origins = Origin.all
     end
@@ -23,6 +24,8 @@ class OriginsController < ApplicationController
 
     def edit
         @origin = Origin.find(params[:id])
+        @origins = Origin.all
+        @roasts = Roast.all
     end
 
 
@@ -40,10 +43,11 @@ class OriginsController < ApplicationController
         @origin = Origin.find(params[:id])
         @origin.destroy
 
-        redirect_to origins_path
+        redirect_to @origin
     end
-    private
+
+private
       def origin_params
-        params.require(:origin).permit(:location, :phone)
+        params.require(:origin).permit(:name)
       end
 end

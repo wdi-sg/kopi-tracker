@@ -23,10 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: kopi-tracker_development
+  database: kopi-tracker_development\
   host: localhost
   user: postgres
-  password: 'passfoot'
+  password: passfoot
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -63,7 +63,7 @@ test:
   database: kopi-tracker_test
   host: localhost
   user: postgres
-  password: 'passfoot'
+  password: passfoot
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,6 +89,3 @@ production:
   database: kopi-tracker_production
   username: kopi-tracker
   password: <%= ENV['KOPI-TRACKER_DATABASE_PASSWORD'] %>
-  host: localhost
-  user: postgres
-  password: 'passfoot'

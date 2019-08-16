@@ -1,40 +1,16 @@
-<h1>Edit kopi</h1>
+<h2>Edit Kopi</h2>
 
-<%= form_with(model: @kopi, local: true) do |form| %>
-
-  <% if @kopi.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@kopi.errors.count, "error") %> prohibited
-        this kopi from being saved:
-      </h2>
-      <ul>
-        <% @kopi.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
 
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_area :name %>
   </p>
 
-  <p>
-    <%= form.label :location %><br>
-    <%= form.collection_select :origin_id, @origins, :id, :location %>
-  </p>
+  <%= form.collection_select :roast_id, @roasts, :id, :name %>
 
-  <p>
-    <%= form.label :roast %><br>
-    <%= form.collection_select :roast_id, @roasts, :id, :name %>
-  </p>
-
+  <%= form.collection_select :origin_id, @origins, :id, :name %>
   <p>
     <%= form.submit %>
   </p>
-
 <% end %>
-
-<%= link_to 'Back', kopis_path %>
