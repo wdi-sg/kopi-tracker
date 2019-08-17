@@ -1,10 +1,10 @@
 class KopisController < ApplicationController
   def index
-    @kopi = kopis.all
+    @kopis = Kopi.all()
   end
 
   def show
-    @kopi = kopi.find(params[:id])
+    @kopi = Kopi.find(params[:id])
   end
 
   def new
@@ -22,7 +22,7 @@ class KopisController < ApplicationController
       @origins = Origin.all
       render 'new'
     end
-
+end
     def edit
       @kopi = Kopi.find(params[:id])
       @roasts = Roast.all
