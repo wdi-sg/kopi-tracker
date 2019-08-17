@@ -1,9 +1,18 @@
 <% if user_signed_in? %>
-<% name = current_user.email[/[^@]+/] %>
-<% name.split(".").map {|n| n.capitalize }.join(" ") %>
-<h3>Logged in as: <%= name.capitalize %></h3>
+	<% name = current_user.email[/[^@]+/] %>
+	<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+	<h3>Logged in as: <%= name.capitalize %></h3>
+<% end %>
 
-<button id="like" type="button" class="btn">Add to Likes</button>
+<% if customer_signed_in? %>
+	<% name = current_customer.email[/[^@]+/] %>
+	<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+	<h3>Logged in as: <%= name.capitalize %></h3>
+	<% if current_customer.kopis.exists?(@kopi.id) %>
+		<%= link_to "Remove from likes", manage_customer_kopi_path(current_customer.id,@kopi), method: :post %>
+	<% else %>
+		<%= link_to "Add to likes", manage_customer_kopi_path(current_customer.id,@kopi), method: :post %>
+	<% end %>
 
 <% end %>
 

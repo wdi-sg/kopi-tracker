@@ -1,0 +1,15 @@
+
+<h1>List of customers</h1>
+
+
+<br>
+	<% @customers.each do |customer| %>
+		<% name = customer.email[/[^@]+/] %>
+		<% name.split(".").map {|n| n.capitalize }.join(" ") %>
+
+		<li><a href = <%= customer_path (customer) %>><%= name.capitalize %></a></li>
+	<% end %>
+</p>
+
+
+<p><%= link_to 'Home', root_path %></p>

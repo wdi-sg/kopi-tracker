@@ -1,16 +1,7 @@
 class CustomersController < ApplicationController
 
  def index
-    # if the request is from a nested route, get a subset of customers
-    if params.has_key?(:kopi_id)
-      # get all the customers for a specific kopi
-      @kopis = Kopi.find( params[:kopi_id])
-       @customers = Kopi.find( params[:kopi_id] ).customers
-
-    else
-      # get all customers
-      @customers = Customer.all
-    end
+    @customers = Customer.all
   end
 
 
@@ -30,5 +21,14 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-
+  def customer_kopi
+    @customer = Customer.find(params[:customer_id]);
+    @kopi = Kopi.find(params[:id]);
+    if @customer.kopis.exists?(@kopi.id)
+      @customer.kopis.delete(@kopi)
+    else
+      @customer.kopis << @kopi
+    end
+    redirect_to kopi_path(@kopi)
+  end
 end
