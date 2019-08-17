@@ -37,7 +37,15 @@ before_action :authenticate_user!, :except => [ :show, :index ]
     # end
   end
 
- def update
+  def create
+    @kopi = Kopi.new(kopi_params)
+
+    @kopi.save
+
+    redirect_to @kopi
+  end
+
+  def update
     @kopi = Kopi.find(params[:id])
 
     @kopi.update(kopi_params)
