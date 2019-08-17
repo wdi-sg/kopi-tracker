@@ -23,8 +23,14 @@
   </div>
 </div>
 
+<br/>
 
 
-<%= link_to 'Add New Farm', new_farm_path %>
-
-<%= link_to 'View All Kopis', kopis_path %>
+<li><%= link_to 'View All Kopis', kopis_path %></li>
+<%- if user_signed_in? %>
+  <li><%= link_to 'Add New Farm', new_farm_path %></li>
+  <li><%= link_to t('auth.sign_out'), destroy_user_session_path, method: 'delete' %></li>
+<% else %>
+  <li><%= link_to t('auth.sign_in'), new_user_session_path %></li>
+  <li><%= link_to t('auth.sign_up'), new_user_registration_path %></li>
+<% end %>

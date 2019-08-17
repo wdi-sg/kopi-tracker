@@ -25,11 +25,15 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-<%= link_to 'Add New Kopi', new_kopi_path %>
+<br/>
+
+<li><%= link_to 'View All Farms', farms_path %></li>
+
+<%- if user_signed_in? %>
+  <li><%= link_to 'Add New Kopi', new_kopi_path %></li>
+  <li><%= link_to t('auth.sign_out'), destroy_user_session_path, method: 'delete' %></li>
+
+<% else %>
+  <li><%= link_to t('auth.sign_in'), new_user_session_path %></li>
+  <li><%= link_to t('auth.sign_up'), new_user_registration_path %></li>
 <% end %>
-
-<%= link_to 'View All Farms', farms_path %>
-
-<%= link_to 'Log In', new_user_session_url %>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
