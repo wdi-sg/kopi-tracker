@@ -1,5 +1,8 @@
 class RoastsController < ApplicationController
 
+before_action :authenticate_user!
+
+
     def index
         @roasts = Roast.all
     end
