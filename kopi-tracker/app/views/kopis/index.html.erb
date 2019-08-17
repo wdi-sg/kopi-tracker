@@ -1,0 +1,15 @@
+<h1>All kopis</h1>
+
+<%= link_to 'Add new kopi', new_kopi_path %>
+<br>
+<h3> Kopis</h3>
+
+  <% @kopis.each do |kopi| %>
+
+	    <p>Name: <%= kopi.name %></p>
+	    <p>Farm: <%= kopi.farm.location %></p>
+	    <p>Roastedness: <%= kopi.roast.roastedness %></p>
+	    <p> <%= link_to 'Edit Kopi', edit_kopi_path(kopi) %> || <%= link_to 'Delete Kopi', kopi_path(kopi), method: :delete, data: {confirm: 'Are you sure you want to delete this kopi? '} %></p>
+	    <br>
+
+	<% end %>

@@ -1,0 +1,12 @@
+<h1> All farms </h1>
+
+<%= link_to 'Add new farm', new_farm_path %>
+
+<% @farms.each do |farm| %>
+
+	<p> Location: <%= farm.location %> </p>
+	<p> Phone Number: <%= farm.phone %></p>
+	<p> <%= link_to 'Edit farm', edit_farm_path(farm) %> || <%= link_to 'Delete farm', farm_path(farm), method: :delete, data: {confirm: 'Are you sure you want to delete this farm?'} %> </p>
+	<br>
+
+<% end %>

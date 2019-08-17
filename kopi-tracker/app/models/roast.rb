@@ -1,3 +1,3 @@
 class Roast < ActiveRecord::Base
-  has_many :Kopi
+  has_many :kopis
 end
