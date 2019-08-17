@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: kopi-tracker-production
+  database: kopi-tracker_development\
   host: localhost
   user: postgres
   password: passfoot
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kopi-tracker-test
+  database: kopi-tracker_test
   host: localhost
   user: postgres
   password: passfoot
@@ -86,12 +86,6 @@ test:
 #
 production:
   <<: *default
-<<<<<<< HEAD
   database: kopi-tracker-production
   username: postgres
   password: <%= ENV['KOPI-TRACKER_DATABASE_PASSWORD'] %>
-=======
-  database: kopi-tracker_production
-  username: kopi-tracker
-  password: <%= ENV['KOPI-TRACKER_DATABASE_PASSWORD'] %>
->>>>>>> eae57d9310e0991dac5567207fb9b17b6d0f474e
