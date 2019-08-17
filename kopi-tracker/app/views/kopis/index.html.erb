@@ -1,15 +1,32 @@
 <h1>All kopis</h1>
 
-<%= link_to 'Add new kopi', new_kopi_path %>
-<br>
-<h3> Kopis</h3>
+<% if user_signed_in? %>
+		<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+		<%= link_to 'Add new kopi', new_kopi_path %>
 
+		<% if current_user.admin? %>
+				<%= link_to 'Add new farm', new_farm_path %>
+				<%= link_to 'Add new roast', new_roast_path %>
+
+		<% end %>
+
+<% else %>
+		<%= link_to 'Sign in', new_user_session_path %>
+
+<% end %>
+<br>
+
+<h3> Kopis</h3>
+<%= link_to 'View all farms', farms_path %>
+<%= link_to 'View all roasts', roasts_path %>
   <% @kopis.each do |kopi| %>
 
 	    <p>Name: <%= kopi.name %></p>
 	    <p>Farm: <%= kopi.farm.location %></p>
 	    <p>Roastedness: <%= kopi.roast.roastedness %></p>
-	    <p> <%= link_to 'Edit Kopi', edit_kopi_path(kopi) %> || <%= link_to 'Delete Kopi', kopi_path(kopi), method: :delete, data: {confirm: 'Are you sure you want to delete this kopi? '} %></p>
+	    <% if user_signed_in? %>
+	    	<p> <%= link_to 'Edit Kopi', edit_kopi_path(kopi) %> || <%= link_to 'Delete Kopi', kopi_path(kopi), method: :delete, data: {confirm: 'Are you sure you want to delete this kopi? '} %></p>
+	    <% end %>
 	    <br>
 
 	<% end %>
