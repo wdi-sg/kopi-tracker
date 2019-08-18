@@ -2,6 +2,14 @@ class CustomersController < ApplicationController
 
   def index
     @customers = Customer.all
+
+    #sortby cannot work!
+    # if request.query_parameters[:sortby] == "asc"
+    #     @customers = @customers.sort_by { |customer| customer.kopis.count}
+    # elsif request.query_parameters[:sortby] == "desc"
+    #     @customers = @customers.sort_by { |customer| customer.kopis.count}.reverse
+    # end
+
   end
 
   def new
