@@ -1,3 +1,4 @@
 class Kopi < ActiveRecord::Base
-  belongs_to :park, required: false
+  belongs_to :origin
+  belongs_to :roast
 end
