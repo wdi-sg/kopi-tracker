@@ -2,12 +2,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'kopis#index'
-  get '/kopis/new' => 'kopis#new', as: 'new_kopi'
-  get '/kopi/:id' => 'kopis#show', as: 'kopi'
-  get '/kopi/:id/edit' => 'kopis#edit', as: 'edit_kopi'
-  patch 'kopis/:id' => 'kopis#update'
-  post '/kopis' => 'kopis#create'
-  delete '/kopis/:id' => 'kopis#destroy'
+
+  resources :kopis
+  resources :origins
+  resources :roasts
+
+  # get '/kopis/new' => 'kopis#new', as: 'new_kopi'
+  # get '/kopi/:id' => 'kopis#show', as: 'kopi'
+  # get '/kopi/:id/edit' => 'kopis#edit', as: 'edit_kopi'
+  # patch 'kopis/:id' => 'kopis#update'
+  # post '/kopis' => 'kopis#create'
+  # delete '/kopis/:id' => 'kopis#destroy'
 
 end
 
