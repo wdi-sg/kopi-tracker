@@ -1,0 +1,16 @@
+
+ <h1>Listing All Kopis Per Customer</h1>
+
+<table border="1">
+  <tr>
+    <td>Kopi Name</td>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+  <tr>  
+    <td><%= kopi.name %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', root_path %>

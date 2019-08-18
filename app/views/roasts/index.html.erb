@@ -1,0 +1,27 @@
+
+<% if user_signed_in? || admin_signed_in?%>
+  <%= link_to 'New Roast', new_roast_path %> |
+  <%= link_to 'Kopis', root_path %> |
+
+
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+ <h1>Listing All Roasts</h1>
+
+<table border="1">
+  <tr>
+    <td>Roast Name</td>
+    <td>SHOW</td>
+    <td>UPDATE</td>
+  </tr>
+
+  <% @roasts.each do |roast| %>
+  <tr>  
+    <td><%= roast.name %></td>
+    <td><%= link_to 'Show', roast_path(roast) %></td>
+    <td><%= link_to 'Update', edit_roast_path(roast) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>

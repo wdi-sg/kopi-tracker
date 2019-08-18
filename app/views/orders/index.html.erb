@@ -1,0 +1,21 @@
+
+ <h1>Listing All Orders</h1>
+
+<table border="1">
+  <tr>
+    <td>Kopi Name</td>
+    <td>Weight(pound)</td>
+    <td>Total price</td>
+    <td>Show</td>
+  </tr>
+
+  <% @orders.each do |order| %>
+  <tr>  
+    <td><%= order.kopi.name %></td>
+    
+    <td><%= order.weight_in_pound %></td>
+    <td><%= order.total_price %></td>
+    <td><%= link_to 'SHOW', order_path(order) %></td>
+  </tr>
+  <% end %>
+</table>
