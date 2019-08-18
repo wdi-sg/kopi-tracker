@@ -7,11 +7,18 @@
 		<% if current_user.admin? %>
 				<%= link_to 'Add new farm', new_farm_path %>
 				<%= link_to 'Add new roast', new_roast_path %>
+				<%= link_to 'View orders', orders_path %>
+
 
 		<% end %>
+<% elsif customer_signed_in? %>
+		<%= link_to 'Sign out', destroy_customer_session_path, method: :delete %>
+		<%= link_to 'Add new orders', new_order_path %>
+		<%= link_to 'Show all orders', order_path(current_customer.id) %>
 
 <% else %>
-		<%= link_to 'Sign in', new_user_session_path %>
+		<%= link_to 'User Sign in', new_user_session_path %>
+		<%= link_to 'Customer sign in', new_customer_session_path %>
 
 <% end %>
 <br>
@@ -25,7 +32,9 @@
 	    <p>Farm: <%= kopi.farm.location %></p>
 	    <p>Roastedness: <%= kopi.roast.roastedness %></p>
 	    <% if user_signed_in? %>
-	    	<p> <%= link_to 'Edit Kopi', edit_kopi_path(kopi) %> || <%= link_to 'Delete Kopi', kopi_path(kopi), method: :delete, data: {confirm: 'Are you sure you want to delete this kopi? '} %></p>
+	    		<% if current_user.id == kopi.user_id  || current_user.admin? %>
+	    				<p> <%= link_to 'Edit Kopi', edit_kopi_path(kopi) %> || <%= link_to 'Delete Kopi', kopi_path(kopi), method: :delete, data: {confirm: 'Are you sure you want to delete this kopi? '} %></p>
+	    		<% end %>
 	    <% end %>
 	    <br>
 

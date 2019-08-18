@@ -10,6 +10,7 @@ class KopisController < ApplicationController
     def new
       @roasts = Roast.all
       @farms = Farm.all
+      @id = current_user.id
     end
 
     def create
@@ -23,6 +24,7 @@ class KopisController < ApplicationController
       @kopi = Kopi.find(params[:id])
       @roasts = Roast.all
       @farms = Farm.all
+      @id = current_user.id
     end
 
     def update
@@ -42,6 +44,6 @@ class KopisController < ApplicationController
 
     private
       def kopi_params
-        params.require(:kopis).permit(:name, :farm_id, :roast_id)
+        params.require(:kopis).permit(:name, :farm_id, :roast_id, :user_id)
       end
 end
