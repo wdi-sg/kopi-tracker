@@ -1,5 +1,7 @@
 class KopisController < ApplicationController
 
+before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     if params.has_key?(:origin_id)
       @kopis = Kopi.where(origin_id: params[:origin_id] )

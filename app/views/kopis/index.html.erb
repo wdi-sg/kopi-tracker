@@ -19,5 +19,20 @@
   <% end %>
 </table>
 
-<%= link_to 'New kopi', new_kopi_path %>
+
+</br>
+<%= link_to 'Link to Roasts', roasts_path %>
+<%= link_to 'Link to Origins', origins_path %>
+
+<% if not user_signed_in? %>
+</br>
 <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+
+<% if user_signed_in? %>
+</br>
+</br>
+<%= link_to 'Add a new kopi', new_kopi_path %>
+<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+<% end %>
