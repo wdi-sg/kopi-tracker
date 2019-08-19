@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
     def index
       @orders = Order.all
-      @ids = @orders.ids
     end
 
     def show
