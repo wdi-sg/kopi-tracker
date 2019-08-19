@@ -1,0 +1,30 @@
+<h1>Types of Coffee</h1><br>
+
+<table>
+	<tr>
+		<th>Name of Coffee</th>
+		<th>Roast Level</th>
+		<th>Origin</th>
+	</tr>
+
+	<% @kopis.each do |kopi| %>
+		<tr>
+			<td><%= link_to kopi.name, kopi_path(kopi) %></td>
+			<td><%= kopi.roast_id %></td>
+			<td><%= kopi.origin_id %></td>
+		</tr>
+	<% end %>
+</table><br>
+
+<%= link_to 'Origins', origins_path %>
+<%= link_to 'Roasts', roasts_path %><br>
+<%= link_to 'Orders', orders_path %>
+<%= link_to 'Customers', customers_path%><br>
+
+
+<% if user_signed_in? %>
+	<%= link_to 'Add New Kopi', new_kopi_path %>
+	<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'Log in', new_user_session_url %>
+<% end %>

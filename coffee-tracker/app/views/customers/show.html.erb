@@ -1,0 +1,11 @@
+<h1>List of customer's coffee</h1>
+<h3><%= @customer.name %></h3>
+<ul><% @customer.kopis.each do |kopi| %>
+		<li><%= kopi.name %></li>
+	<% end %>
+	</ul>
+
+</p>
+
+<%= link_to 'Edit', edit_customer_path %>
+<%= link_to 'Back', customers_path %>

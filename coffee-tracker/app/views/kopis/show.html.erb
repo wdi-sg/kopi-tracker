@@ -1,0 +1,24 @@
+<h1>About the Coffee</h1><br>
+
+<ul>
+	<li>Coffee name: <%= @kopi.name %></li>
+	<li>Roast level: <%= @kopi.roast.name%></li>
+	<li>Origin: <%= @kopi.origin.name%></li>
+	<li>Price: $<%= @kopi.pound_price%> per pound</li>
+</ul>
+<p>Customers:
+	<ul><% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
+	</ul>
+
+</p>
+
+<%= link_to 'Back', root_path %><br>
+
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_kopi_path %>
+	<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'Log in', new_user_session_url %>
+<% end %>
