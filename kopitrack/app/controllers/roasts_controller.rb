@@ -4,10 +4,6 @@ class RoastsController < ApplicationController
     @roasts = Roast.all
   end
 
-  def new
-
-  end
-
 private
 
   def roast_params
