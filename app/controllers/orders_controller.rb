@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, :except => [ :show, :index ]
+  before_action :authenticate_user!
     def index
-      @orders = Order.all
+      @orders = Order.all.page(params[:page])
+      #@orders = Order.all.order_list(params[:sort], current_user.id).page(params[:page])
     end
 
     def new

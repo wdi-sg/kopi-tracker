@@ -2,8 +2,15 @@
 
 
 4.times do
-  User.create(email: Faker::Internet.email, password: 'password')
+  User.create(email: Faker::Internet.email, username: Faker::Name.first_name, password: 'password')
+end
 
+2.times do
+  User.create(email: Faker::Internet.email, username: Faker::Name.first_name, password: 'password', admin: true)
+end
+
+4.times do
+  Customer.create(email: Faker::Internet.email, username: Faker::Name.first_name, password: 'password')
 end
 
 roast_1 = Roast.create(name: 'Cinnamon')

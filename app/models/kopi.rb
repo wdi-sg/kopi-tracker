@@ -1,5 +1,5 @@
 class Kopi < ApplicationRecord
-  paginates_per 9
+  paginates_per 6
   belongs_to :origin
   belongs_to :roast
   belongs_to :user

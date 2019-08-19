@@ -1,0 +1,28 @@
+<div class="card my-4">
+
+	<div class="card-header">
+		<% if user_signed_in? %>
+			<h5 class="mb-0 text-dark"> Welcome <%= current_user.username %> </h5>
+		<% else %>
+			<h5 class="mb-0 text-dark"> Welcome <%= current_customer.username %> </h5>
+		<% end %>
+
+	</div>
+
+	<div class="card-body">
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				<%= link_to "Your Kofis", kopis_path(sort: "user"), :class => 'btn' %>
+				<%= link_to image_tag("plus.svg", :height => "20"), new_kopi_path %>
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Orders
+			</li>
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				Roasts
+			</li>
+		</ul>
+	</div>
+
+
+</div>

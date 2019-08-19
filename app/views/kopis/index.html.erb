@@ -1,61 +1,25 @@
 
-<div class="container">
+<% if user_signed_in? %>
+
+<div class="container-fluid">
 	<div class="row">
-
-		<div class="card w-100 flex-wrap mx-auto">
-			<div class="card-header ">
-			  <ul class="nav nav-tabs card-header-tabs justify-content-center">
-			  	<li class="nav-item">
-			    	<h3>
-			    		<%= link_to "Your Kofis", kopis_path(sort: "user"), :class => 'nav-link active' %>
-			    	</h3>
-					</li>
-			    <li class="nav-item">
-			    	<h3>
-			    		<%= link_to "All Kofis", kopis_path(sort: "all"), :class => 'nav-link active' %>
-			    	</h3>
-			    </li>
-			    <li class="nav-item">
-			    	<h3>
-			    		<%= link_to "By Kofi Name", kopis_path(sort: "name"), :class => 'nav-link active' %>
-			    	</h3>
-			    </li>
-
-			    <li class="nav-item">
-			    	<h3>
-			    		<%= link_to "Oldest Kofi", kopis_path(sort: "oldest"), :class => 'nav-link active' %>
-			    	</h3>
-			    </li>
-			  </ul>
-			</div>
-			<div class="card-body">
-				<div class="card-deck flex-wrap">
-					<% @kopis.each do |kopi| %>
-						<div class="col-lg-4">
-							<div class="card border-secondary mb-3 mx-auto" >
-								<div class="card-header">
-									<%= kopi.name %>
-									<%= kopi.id %>
-								</div>
-								<div class="card-body">
-									<p class="card-text">
-										<%= kopi.origin.location %>
-										<%= kopi.roast.name %>
-										<%= kopi.price_per_pound %>
-									</p>
-								</div>
-								<div class="card-footer justify-content-between">
-									<%= link_to 'Show', kopi_path(kopi) %>
-									<%= link_to 'Edit', edit_kopi_path(kopi) %>
-								</div>
-							</div>
-						</div>
-					<% end %>
-				</div>
-			</div>
+		<div class="col-lg-3">
+			<%= render 'navside'  %>
+		</div>
+		<div class="col-lg">
+			<%= render 'content' %>
 		</div>
 	</div>
-	<div class="row justify-content-center">
-		<%= paginate @kopis %>
+</div>
+
+<% else %>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg">
+			<%= render 'content' %>
+		</div>
 	</div>
 </div>
+
+<% end %>

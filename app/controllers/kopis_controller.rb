@@ -1,10 +1,13 @@
 class KopisController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [ :index ]
 
   def index
     # @kopis = Kopi.all.order_list(params[:sort]).page(params[:page])
-    @kopis = Kopi.all.order_list(params[:sort], current_user.id).page(params[:page])
-
+    if(params[:sort])
+      @kopis = Kopi.all.order_list(params[:sort], current_user.id).page(params[:page])
+    else
+      @kopis = Kopi.order(:id).page(params[:page])
+    end
     # @kopis = Kopi.order(:id).page(params[:page])
   end
 
