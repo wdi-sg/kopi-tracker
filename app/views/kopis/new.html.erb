@@ -1,0 +1,28 @@
+<div class ='container'>
+    <% if user_signed_in? %>
+<h3>Welcome:<%= current_user.email %></h3>
+<h2><%= @message %></h2>
+ <% else%>
+    
+  <% end %>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+  <%= form.collection_select :farm_id, @farms, :id, :location %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+
+ 
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>
+
+
