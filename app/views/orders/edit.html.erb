@@ -1,0 +1,18 @@
+<h1 class="display-4">Order Id: <%= @order.id %></h1>
+
+<%= form_with scope: :order, model: @order, local: true do |form| %>
+
+	<div class="form-group">
+		<%= form.label :kopi_id %><br>
+		<%= form.collection_select(:kopi_id, @kopis, :id, :name, {:include_blank => 'Select kopi...'}, {:class => "custom-select"}) %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :weight %><br>
+		<%= form.text_field(:weight, {:class => "form-control"}) %>
+	</div>
+
+	<div class="form-group">
+		<%= form.submit({:class => "btn btn-primary"}) %>
+	</div>
+<% end %>

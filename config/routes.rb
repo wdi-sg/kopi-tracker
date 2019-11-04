@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'kopis#home'
   get 'roasts/index' => 'roasts#index'
   get 'roasts/:id' => 'roasts#show', as: 'roast'
   resources :origins

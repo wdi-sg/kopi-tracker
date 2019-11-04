@@ -1,4 +1,7 @@
 class KopisController < ApplicationController
+  def home
+  end
+
   def index
     @kopis = Kopi.all
   end
