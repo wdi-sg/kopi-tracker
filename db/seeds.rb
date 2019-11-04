@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-jamaican = Origin.create(:location=>"Jamaica", :phone=> "41258108")
+# jamaican = Origin.create(:location=>"Jamaica", :phone=> "41258108")
 
-ethiopian = Origin.create(:location=>"Ethiopia", :phone=> "35235235")
+# ethiopian = Origin.create(:location=>"Ethiopia", :phone=> "35235235")
+
+cinnamon = Roast.create(:name=>"Cinnamon")
+light = Roast.create(:name=>"Light")
+medium = Roast.create(:name=>"City/Medium")
+full_city = Roast.create(:name=>"Full City")
+dark = Roast.create(:name=>"Dark")
+french = Roast.create(:name=>"French")
+italian = Roast.create(:name=>"Italian")

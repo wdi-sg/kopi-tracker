@@ -12,6 +12,7 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def edit
@@ -50,5 +51,5 @@ end
 
 private
   def kopi_params
-    params.require(:kopis).permit(:name, :roast, :origin_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id)
   end
