@@ -1,0 +1,254 @@
+  [1m[35m (2075.1ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (96.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Kopis (20191104095946)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (30.8ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast" text, "origin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191104095946_kopis.rb:3
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_origin_id" ON "kopis"  ("origin_id")[0m
+  ↳ db/migrate/20191104095946_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104095946"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to Origins (20191104100223)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "location" character varying, "phone" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191104100223_origins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104100223"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-04 10:03:48.154673"], ["updated_at", "2019-11-04 10:03:48.154673"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Roasts (20191104100750)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20191104100750_roasts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104100750"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (4.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRoast Create (1.8ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Cinnamon"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Light"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mRoast Create (0.8ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "City/Medium"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Full City"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Dark"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "French"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name") VALUES ($1) RETURNING "id"[0m  [["name", "Italian"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."name" = $1 LIMIT $2[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."name" = $1 LIMIT $2[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2019-11-04 18:30:03 +0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  Rendered origins/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1555ms (Views: 1553.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-04 18:37:53 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-04 18:42:21 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (179.2ms)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `textfield' for #<ActionView::Helpers::FormBuilder:0x00007f3140adf520>
+Did you mean?  text_field):
+    3: <%= form_for :origin do |f| %>
+    4:     <p>
+    5:     <%= f.label :location %> <br/>
+    6:     <%= f.textfield :location %>
+    7:     </p>
+    8: 
+    9:     <p>
+  
+app/views/origins/new.html.erb:6:in `block in _app_views_origins_new_html_erb___789929350226282550_69924819224200'
+app/views/origins/new.html.erb:3:in `_app_views_origins_new_html_erb___789929350226282550_69924819224200'
+Started GET "/origins/new" for ::1 at 2019-11-04 18:42:48 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-04 18:43:41 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-04 18:43:43 +0800
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for OriginsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/origins/new" for ::1 at 2019-11-04 18:44:48 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-04 18:44:50 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FFp9OzEfxqYW6EjKGjGQZM6+Rp0D4mPDRzdG+XhTeCGc3LH+a/cWb2ZoVnlG4wEBH6hxAbMHWUWE8liRiJy7bA==", "origin"=>{"location"=>"", "phone"=>""}, "commit"=>"Save Origin"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-04 18:44:54 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FFp9OzEfxqYW6EjKGjGQZM6+Rp0D4mPDRzdG+XhTeCGc3LH+a/cWb2ZoVnlG4wEBH6hxAbMHWUWE8liRiJy7bA==", "origin"=>{"location"=>"a", "phone"=>"a"}, "commit"=>"Save Origin"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-04 18:45:18 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-04 18:45:21 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BpLyjOMkxXJU0hYeoxDsMheFNjISWi5tNo3w66me4TmOFD5JucwVuyRSCK3/wn1XxpMBrqK/FOv1SO6DWVEidA==", "origin"=>{"location"=>"a", "phone"=>"b"}, "commit"=>"Save Origin"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
