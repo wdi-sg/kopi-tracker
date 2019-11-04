@@ -1,0 +1,20 @@
+<h3>Edit Origin</h3>
+
+<%= form_with scope: :origin, model: @origin, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+  </p>
+
+  <p>
+    <%= form.label :phone %><br>
+    <%= form.text_field :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', origins_path %>

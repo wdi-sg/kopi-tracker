@@ -1,0 +1,24 @@
+<h3>Add Kopi</h3>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_field :roast %>
+  </p>
+
+	<% if @origin_id.nil? %>
+		<%= form.collection_select :origin_id, @origins, :id, :location %>
+	<% else %>
+		<%= form.text_field :origin_id, value: @origin_id, hidden: true %>
+	<% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
