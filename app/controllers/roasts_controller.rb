@@ -1,10 +1,9 @@
 class RoastsController < ApplicationController
   def index
-  end
-
-  def new
+    @roasts = Roast.all
   end
 
   def show
+    @roast = Roast.find(params[:id])
   end
 end
