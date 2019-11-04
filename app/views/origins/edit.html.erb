@@ -1,0 +1,20 @@
+<h1>Edit Origin</h1>
+<%= form_for :origin, url: origin_path(@origin), method: :patch do |f| %>
+  <% if @origin.errors.any? %>
+    <% @origin.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location, {:class => "form-control"} %>
+  </p>
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.number_field :phone, {:class => "form-control"} %>
+  </p>
+
+  <p>
+  <%= f.submit({:class => "btn btn-primary"}) %>
+  </p>
+<% end %>

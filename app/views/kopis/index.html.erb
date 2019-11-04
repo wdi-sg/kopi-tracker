@@ -1,0 +1,12 @@
+<div class="card-columns d-inline-block">
+  <% @kopis.each do |kopi| %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h3 class="card-title"><%= kopi.name %></h3>
+        <p class="card-text" style="color: black;"><%= kopi.origin.location %></p>
+        <p class="card-text" style="color: black;"><%= kopi.origin.phone %></p>
+        <%= link_to "Read More", kopi_path(kopi), :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

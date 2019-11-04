@@ -1,0 +1,8 @@
+<h2><%= @roast.name %></h2>
+<hr>
+<%= link_to "Edit", edit_roast_path(@roast), :class => "btn btn-default"%>
+<%= link_to "Delete", roast_path(@roast),
+  method: :delete,
+  data: {confirm: "Are you sure?"},
+  :class => "btn btn-danger"%>
+<hr>

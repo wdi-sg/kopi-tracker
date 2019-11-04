@@ -1,0 +1,9 @@
+<h2><%= @origin.location %></h2>
+<p><%= @origin.phone %></p>
+<hr>
+<%= link_to "Edit", edit_origin_path(@origin), :class => "btn btn-default"%>
+<%= link_to "Delete", origin_path(@origin),
+  method: :delete,
+  data: {confirm: "Are you sure?"},
+  :class => "btn btn-danger"%>
+<hr>
