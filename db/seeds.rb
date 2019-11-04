@@ -1,0 +1,13 @@
+Roast.create(:roast_type => 'Cinnamon')
+Roast.create(:roast_type => 'Light')
+Roast.create(:roast_type => 'City/Medium')
+Roast.create(:roast_type => 'Full City')
+Roast.create(:roast_type => 'Dark')
+Roast.create(:roast_type => 'French')
+Roast.create(:roast_type => 'Italian')
+
+Origin.create(:location => 'Colombia', :phone_number => '7761819171')
+Origin.create(:location => 'Nicaragua', :phone_number => '436282726')
+Origin.create(:location => 'Venezuela', :phone_number => '986473621')
+Origin.create(:location => 'Sumatra', :phone_number => '3452728290')
+Origin.create(:location => 'Vietnam', :phone_number => '173382371')

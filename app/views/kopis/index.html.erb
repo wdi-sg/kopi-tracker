@@ -1,0 +1,6 @@
+<h1>Kopi Tracker</h1>
+<% @kopis.each do |kopi|%>
+<li><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
+<% end %>
+<br>
+<%= link_to 'Add a Kopi', new_kopi_path %>
