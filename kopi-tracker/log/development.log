@@ -1,0 +1,468 @@
+  [1m[35m (497.5ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (328.9ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_test" ENCODING = 'unicode'[0m
+  [1m[35m (35.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/mariadimitrijevic/.rbenv/versions/2.5.1/bin/rake:23)
+Started GET "/" for ::1 at 2019-11-05 00:16:16 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/kopis" for ::1 at 2019-11-05 00:16:52 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+Started GET "/kopis" for ::1 at 2019-11-05 00:17:35 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2019-11-05 00:17:53 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  
+SyntaxError (/Users/mariadimitrijevic/kopi-tracker/kopi-tracker/db/migrate/20191104135154_kopis.rb:9: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+db/migrate/20191104135154_kopis.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+db/migrate/20191104135154_kopis.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+db/migrate/20191104135154_kopis.rb:9: syntax error, unexpected end-of-input, expecting keyword_end
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+zeitwerk (2.2.1) lib/zeitwerk/kernel.rb:23:in `require'
+activerecord (6.0.0) lib/active_record/migration.rb:1010:in `load_migration'
+activerecord (6.0.0) lib/active_record/migration.rb:1006:in `migration'
+activerecord (6.0.0) lib/active_record/migration.rb:1001:in `disable_ddl_transaction'
+activerecord (6.0.0) lib/active_record/migration.rb:1369:in `use_transaction?'
+activerecord (6.0.0) lib/active_record/migration.rb:1361:in `ddl_transaction'
+activerecord (6.0.0) lib/active_record/migration.rb:1310:in `execute_migration_in_transaction'
+activerecord (6.0.0) lib/active_record/migration.rb:1282:in `block in migrate_without_lock'
+activerecord (6.0.0) lib/active_record/migration.rb:1281:in `each'
+activerecord (6.0.0) lib/active_record/migration.rb:1281:in `migrate_without_lock'
+activerecord (6.0.0) lib/active_record/migration.rb:1229:in `block in migrate'
+activerecord (6.0.0) lib/active_record/migration.rb:1382:in `with_advisory_lock'
+activerecord (6.0.0) lib/active_record/migration.rb:1229:in `migrate'
+activerecord (6.0.0) lib/active_record/migration.rb:1061:in `up'
+activerecord (6.0.0) lib/active_record/migration.rb:1036:in `migrate'
+activerecord (6.0.0) lib/active_record/tasks/database_tasks.rb:238:in `migrate'
+activerecord (6.0.0) lib/active_record/migration.rb:135:in `block in <class:PendingMigrationError>'
+activesupport (6.0.0) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2019-11-05 00:19:28 +0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast_id" bigint, "origin_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_roast_id" ON "kopis"  ("roast_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_origin_id" ON "kopis"  ("origin_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104135154"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Origins (20191104135208)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "location" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104135208"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Roasts (20191104142303)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104142303"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-04 16:19:28.337160"], ["updated_at", "2019-11-04 16:19:28.337160"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+Started GET "/kopis" for ::1 at 2019-11-05 00:19:28 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1322)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/mariadimitrijevic/kopi-tracker/kopi-tracker/public/packs
+[Webpacker] (node:64833) ExperimentalWarning: The fs.promises API is experimental
+
+Completed 200 OK in 5424ms (Views: 5416.1ms | ActiveRecord: 2.9ms | Allocations: 1532252)
+
+
+Started GET "/roasts" for ::1 at 2019-11-05 00:19:47 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/roasts"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/origins" for ::1 at 2019-11-05 00:20:00 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (4.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1194)
+Completed 200 OK in 36ms (Views: 21.2ms | ActiveRecord: 7.5ms | Allocations: 7557)
+
+
+Started GET "/kopis" for ::1 at 2019-11-05 00:20:10 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 662)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 5180)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (2.6ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Kenya"], ["phone", "12345678"], ["created_at", "2019-11-04 16:23:23.661652"], ["updated_at", "2019-11-04 16:23:23.661652"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Tanzania"], ["phone", "22222222"], ["created_at", "2019-11-04 16:23:23.670020"], ["updated_at", "2019-11-04 16:23:23.670020"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Hawaii"], ["phone", "33332222"], ["created_at", "2019-11-04 16:23:23.675224"], ["updated_at", "2019-11-04 16:23:23.675224"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Jamaica"], ["phone", "14443432"], ["created_at", "2019-11-04 16:23:23.680336"], ["updated_at", "2019-11-04 16:23:23.680336"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Indonesis"], ["phone", "34343434"], ["created_at", "2019-11-04 16:23:23.685606"], ["updated_at", "2019-11-04 16:23:23.685606"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Central America"], ["phone", "43243234"], ["created_at", "2019-11-04 16:23:23.691508"], ["updated_at", "2019-11-04 16:23:23.691508"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (2.0ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-11-04 16:23:23.709059"], ["updated_at", "2019-11-04 16:23:23.709059"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "City/Medium"], ["created_at", "2019-11-04 16:23:23.716912"], ["updated_at", "2019-11-04 16:23:23.716912"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-11-04 16:23:23.722142"], ["updated_at", "2019-11-04 16:23:23.722142"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-11-04 16:23:23.733933"], ["updated_at", "2019-11-04 16:23:23.733933"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-11-04 16:23:23.737094"], ["updated_at", "2019-11-04 16:23:23.737094"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (1.1ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-11-04 16:23:23.740278"], ["updated_at", "2019-11-04 16:23:23.740278"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/kopis" for ::1 at 2019-11-05 00:23:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 657)
+Completed 200 OK in 43ms (Views: 36.9ms | ActiveRecord: 0.7ms | Allocations: 5162)
+
+
+Started GET "/kopis" for ::1 at 2019-11-05 00:23:36 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 650)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 5149)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.6ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Kenya"], ["phone", "12345678"], ["created_at", "2019-11-04 16:29:34.079580"], ["updated_at", "2019-11-04 16:29:34.079580"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Tanzania"], ["phone", "22222222"], ["created_at", "2019-11-04 16:29:34.084509"], ["updated_at", "2019-11-04 16:29:34.084509"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Hawaii"], ["phone", "33332222"], ["created_at", "2019-11-04 16:29:34.088006"], ["updated_at", "2019-11-04 16:29:34.088006"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Jamaica"], ["phone", "14443432"], ["created_at", "2019-11-04 16:29:34.091736"], ["updated_at", "2019-11-04 16:29:34.091736"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Indonesis"], ["phone", "34343434"], ["created_at", "2019-11-04 16:29:34.095379"], ["updated_at", "2019-11-04 16:29:34.095379"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Central America"], ["phone", "43243234"], ["created_at", "2019-11-04 16:29:34.103358"], ["updated_at", "2019-11-04 16:29:34.103358"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-11-04 16:29:34.115580"], ["updated_at", "2019-11-04 16:29:34.115580"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "City/Medium"], ["created_at", "2019-11-04 16:29:34.119620"], ["updated_at", "2019-11-04 16:29:34.119620"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-11-04 16:29:34.123348"], ["updated_at", "2019-11-04 16:29:34.123348"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-11-04 16:29:34.127186"], ["updated_at", "2019-11-04 16:29:34.127186"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-11-04 16:29:34.130839"], ["updated_at", "2019-11-04 16:29:34.130839"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-11-04 16:29:34.134546"], ["updated_at", "2019-11-04 16:29:34.134546"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.7ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Kenya"], ["phone", "12345678"], ["created_at", "2019-11-04 16:45:23.769447"], ["updated_at", "2019-11-04 16:45:23.769447"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.4ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Tanzania"], ["phone", "22222222"], ["created_at", "2019-11-04 16:45:23.775193"], ["updated_at", "2019-11-04 16:45:23.775193"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Hawaii"], ["phone", "33332222"], ["created_at", "2019-11-04 16:45:23.779421"], ["updated_at", "2019-11-04 16:45:23.779421"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Jamaica"], ["phone", "14443432"], ["created_at", "2019-11-04 16:45:23.782592"], ["updated_at", "2019-11-04 16:45:23.782592"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.4ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Indonesia"], ["phone", "34343434"], ["created_at", "2019-11-04 16:45:23.786114"], ["updated_at", "2019-11-04 16:45:23.786114"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Create (0.3ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Central America"], ["phone", "43243234"], ["created_at", "2019-11-04 16:45:23.794641"], ["updated_at", "2019-11-04 16:45:23.794641"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.5ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2019-11-04 16:45:23.807393"], ["updated_at", "2019-11-04 16:45:23.807393"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "City/Medium"], ["created_at", "2019-11-04 16:45:23.811463"], ["updated_at", "2019-11-04 16:45:23.811463"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.2ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2019-11-04 16:45:23.814865"], ["updated_at", "2019-11-04 16:45:23.814865"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2019-11-04 16:45:23.818841"], ["updated_at", "2019-11-04 16:45:23.818841"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2019-11-04 16:45:23.822364"], ["updated_at", "2019-11-04 16:45:23.822364"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.2ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2019-11-04 16:45:23.825551"], ["updated_at", "2019-11-04 16:45:23.825551"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/kopis" for ::1 at 2019-11-05 00:46:22 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1894)
+Completed 200 OK in 1394ms (Views: 1385.4ms | ActiveRecord: 3.0ms | Allocations: 1527665)
+
+
+Started GET "/kopis" for ::1 at 2019-11-05 00:46:26 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:12
+  Rendered kopis/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 662)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 5174)
+
+

@@ -1,0 +1,27 @@
+<h1>Kopis List</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Roast</th>
+		<th>Origin</th>
+		<th></th>
+
+	</tr>
+
+	<% @kopi.each do |x| %>
+		<tr>
+			<td><%= x.name %></td>
+			<td><%= x.roast.name %></td>
+			<td><%= x.origin.location %></td>
+			<td><%= link_to 'Show', kopi_path(x) %></td>
+			<td><%= link_to 'Edit', edit_kopi_path(x) %></td>
+			<td><%= link_to 'Destroy', kopi_path(x),
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+
+<%= link_to 'New kopi', new_kopi_path %>
