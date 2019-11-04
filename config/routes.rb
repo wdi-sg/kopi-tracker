@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   # patch '/origins/:id' => 'origins#update'
   # delete '/origins/:id' => 'origins#destroy'
   resources :origins
+  resources :kopis
+
+
+
 end
