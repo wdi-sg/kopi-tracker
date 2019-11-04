@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <h1 class="display-4"><%= @kopi.name %></h1>
-  <p class="lead"><%= @kopi.roast.name %></p>
+  <p class="lead"><%= link_to @kopi.roast.name, roast_path(@kopi.roast) %></p>
   <hr class="my-4">
-  <p>This Kopi is from: <%= @kopi.origin.location %></p>
+  <p>This Kopi is from: <%= link_to @kopi.origin.location, origin_path(@kopi.origin) %></p>
   <p>Price per pound: <%= @kopi.price %></p>
 </div>
 
