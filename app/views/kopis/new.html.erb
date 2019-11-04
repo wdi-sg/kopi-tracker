@@ -7,10 +7,13 @@
     <%= form.text_field :name %>
   </p>
 
-   <%= form.collection_select :roast_id, @roasts, :id, :roast_type %>
+   <%= form.collection_select :roast_id, @roasts, :id, :roast_type %> <br> <br>
    <%= form.collection_select :origin_id, @origins, :id, :location %>
  
-
+<p>
+    <%= form.label :Price %><br>
+    <%= form.text_field :price %>
+  </p>
   <p>
     <%= form.submit %>
   </p>
