@@ -9,6 +9,7 @@
         <%= form.text_area :roast %>
     </p>
     
+    <%= form.collection_select :roast_id, @roasts, :id, :name %>
     <%= form.collection_select :origin_id, @origins, :id, :location %>
     
     <p>
