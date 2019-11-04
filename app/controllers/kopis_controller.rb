@@ -21,6 +21,8 @@ class KopisController < ApplicationController
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def update
@@ -36,6 +38,6 @@ class KopisController < ApplicationController
   end
 
   private def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :origin_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id, :price)
   end
 end
