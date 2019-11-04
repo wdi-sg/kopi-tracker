@@ -1,0 +1,23 @@
+<%= form_with scope: :kopi, url:  kopi_create_path, local: true do |form| %>
+  <p>
+    <%= form.label "Name of coffee" %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label "Price per pound" %><br>
+    <%= form.text_field :priceperpound %>
+  </p>
+  <p>
+    <%= form.label "Roastedness" %><br>
+    <%= form.collection_select :roastedness_id, @roasts, :id, :name%>
+  </p>
+  <p>
+    <%= form.label "Which Farm" %><br>
+    <%= form.collection_select :farm_id, @farms, :id, :name%>
+  </p>
+
+  <p>
+    <%= form.submit "Submit New Kopi" %>
+  </p>
+<% end %>
+<%= link_to "Back to main", orders_path %>
