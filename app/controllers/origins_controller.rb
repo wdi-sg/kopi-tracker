@@ -7,7 +7,7 @@ class OriginsController < ApplicationController
       end
   
     def new
-        @kopi = Kopi.all
+        @kopis = Kopi.all
     end
   
     def edit
@@ -40,4 +40,3 @@ class OriginsController < ApplicationController
   def origin_params
     params.require(:origin).permit(:location, :phone)
   end
-end

@@ -1,0 +1,26 @@
+<h1>Hello Ruby</h1>
+
+<h1>Listing origins</h1>
+
+<%= link_to 'New origin', new_origin_path %>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+        <td><%= origin.location %></td>
+        <td><%= origin.phone %></td>
+        <td><%= link_to 'Show', origin_path(origin) %></td>
+        <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+        <td><%= link_to 'Destroy', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>
