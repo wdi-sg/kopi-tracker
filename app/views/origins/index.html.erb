@@ -1,0 +1,24 @@
+<h1 class="display-4">Index of Origins</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Location</th>
+			<th scope="col">Phone Number</th>
+			<th scope="col">View</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @origins.each do |origin| %>
+			<tr>
+				<th scope="row"><%= origin.id %></th>
+				<td><%= origin.location %></td>
+				<td><%= origin.phone %></td>
+				<td><%= link_to 'Show', origin_path(origin) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to('New origin', new_origin_path, {:class => "btn btn-primary btn-lg"}) %>

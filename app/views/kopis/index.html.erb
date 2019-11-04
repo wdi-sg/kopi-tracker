@@ -1,0 +1,26 @@
+<h1 class="display-4">Index of Kopi</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Roast</th>
+			<th scope="col">Origin</th>
+			<th scope="col">View</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @kopis.each do |kopi| %>
+			<tr>
+				<th scope="row"><%= kopi.id %></th>
+				<td><%= kopi.name %></td>
+				<td><%= kopi.roast.name %></td>
+				<td><%= kopi.origin.location %></td>
+				<td><%= link_to 'Show', kopi_path(kopi) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to('New kopi', new_kopi_path, {:class => "btn btn-primary btn-lg"}) %>

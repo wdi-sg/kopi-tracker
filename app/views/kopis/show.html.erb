@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @kopi.name %></h1>
+  <p class="lead"><%= @kopi.roast.name %></p>
+  <hr class="my-4">
+  <p>This Kopi is from: <%= @kopi.origin.location %></p>
+</div>
+
+<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning btn-lg"}) %>
+<%= link_to('Destroy', kopi_path(@kopi), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
