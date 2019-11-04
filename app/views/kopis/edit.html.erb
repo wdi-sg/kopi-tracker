@@ -1,0 +1,25 @@
+<h1>Edit kopi entry</h1>
+
+<%= form_with scope: :kopis, model: @kopi, local: true do |form| %>
+
+ 	<p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_field :roast %>
+  </p>
+
+  <p>
+   <%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', '/kopis' %>
