@@ -1,0 +1,11 @@
+<h1>List of all Kopi origins</h1>
+
+<p>
+    <a href="/origins/new">Create New Origin</a>
+</p>
+
+<% @origins.each do |origin| %>
+    <ul>
+        <li><a href="/origins/<%= origin.id %>"><%= origin.location %></a></li>
+    </ul>
+<% end %>

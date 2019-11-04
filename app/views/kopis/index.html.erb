@@ -1,0 +1,12 @@
+<h1>List of Kopis</h1>
+
+<p>
+    <a href="/kopis/new">Create New Kopi</a>
+</p>
+
+
+<% @kopis.each do |kopi|  %>
+    <ul>
+        <li><a href="/kopis/<%= kopi.id %>" %><%= kopi.name %></a></li>
+    </ul>
+<% end %>
