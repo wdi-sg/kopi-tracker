@@ -6,6 +6,7 @@ class KopisController < ApplicationController
   def new
     @kopi = Kopi.new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def create

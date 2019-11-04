@@ -9,7 +9,7 @@
 
   <div class="form-group">
     <%= form.label :roast_id %><br>
-    <%= form.text_field(:roast_id, {:class => "form-control"}) %>
+    <%= form.collection_select(:roast_id, @roasts, :id, :name, {:include_blank => 'Select roast...'}, {:class => "custom-select"}) %>
   </div>
 
   <div class="form-group">
