@@ -1,0 +1,22 @@
+<h1>Add an Name and Roast to a Kopi</h2>
+
+<%= form_for :kopi, url: kopi_path do |f| %>
+    <p>
+    <%= f.label :name %> <br/>
+    <%= f.text_field :name %>
+    </p>
+
+    <p>
+    <%= f.label :roast %><br/>
+    <%= f.text_field :roast %>
+    </p>
+
+    <p>
+    <%= f.label :origin %><br/>
+    <%= f.text_field :origin %>
+    </p>
+
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>
