@@ -1,0 +1,305 @@
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 06:33:11 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 294ms (Views: 293.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 06:35:00 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopi" for ::1 at 2019-11-05 06:35:05 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/kopi"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/kopi/new" for ::1 at 2019-11-05 06:35:08 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (232.5ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles_path' for #<#<Class:0x00007f9814b31f88>:0x00007f9811f43548>
+Did you mean?  asset_path):
+    1: <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    2:     <p>
+    3:       <%= form.label :title %><br>
+    4:       <%= form.text_field :title %>
+  
+app/views/kopi/new.html.erb:1:in `_app_views_kopi_new_html_erb___3820705077938281243_70145556487860'
+Started GET "/" for ::1 at 2019-11-05 06:35:24 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 06:35:33 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 221ms (Views: 220.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for ::1 at 2019-11-05 06:35:36 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/kopi/new" for ::1 at 2019-11-05 06:35:43 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (224.2ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles_path' for #<#<Class:0x00007fd4c3dd6450>:0x00007fd4c7cf0938>
+Did you mean?  asset_path):
+    1: <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    2:     <p>
+    3:       <%= form.label :title %><br>
+    4:       <%= form.text_field :title %>
+  
+app/views/kopi/new.html.erb:1:in `_app_views_kopi_new_html_erb__2913496411792812248_70275931015340'
+Started GET "/kopi/new" for ::1 at 2019-11-05 06:36:17 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (242.8ms)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles_path' for #<#<Class:0x00007fd4c892b068>:0x00007fd4c7ef73d0>
+Did you mean?  asset_path):
+    1: <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    2:     <p>
+    3:       <%= form.label :title %><br>
+    4:       <%= form.text_field :title %>
+  
+app/views/kopi/new.html.erb:1:in `_app_views_kopi_new_html_erb__2913496411792812248_70275937427380'
+Started GET "/kopi/new" for ::1 at 2019-11-05 06:36:28 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (239.2ms)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles_path' for #<#<Class:0x00007fcd8085b9e8>:0x00007fcd80859558>
+Did you mean?  asset_path):
+    1: <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+    2:     <p>
+    3:       <%= form.label :title %><br>
+    4:       <%= form.text_field :title %>
+  
+app/views/kopi/new.html.erb:1:in `_app_views_kopi_new_html_erb__4297927858365248832_70260300612460'
+Started GET "/" for ::1 at 2019-11-05 06:36:45 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 224ms (Views: 222.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 06:37:38 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  Rendered kopi/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopi/new" for ::1 at 2019-11-05 06:37:50 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 240ms (Views: 239.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Kopi (20191104224147)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "kopi" ("id" bigserial primary key, "name" character varying, "roast" text, "origin" text)[0m
+  ↳ db/migrate/20191104224147_kopi.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104224147"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-04 22:43:58.266301"], ["updated_at", "2019-11-04 22:43:58.266301"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/kopi/new" for ::1 at 2019-11-05 07:20:54 +0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/13InchWong/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopi/new" for ::1 at 2019-11-05 07:21:24 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopi/new" for ::1 at 2019-11-05 07:21:55 +0800
+Processing by KopiController#new as HTML
+  Rendering kopi/new.html.erb within layouts/application
+  Rendered kopi/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/kopi/new" for ::1 at 2019-11-05 07:35:03 +0800
+  
+ArgumentError (Invalid route name, already in use: 'kopi' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:6:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-11-05 07:35:10 +0800
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopi/index.html.erb:11
+  Rendered kopi/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "kopis" does not exist
+LINE 1: SELECT "kopis".* FROM "kopis"
+                              ^
+: SELECT "kopis".* FROM "kopis"):
+     8:     <th></th>
+     9:   </tr>
+    10: 
+    11:   <% @kopi.each do |kopi| %>
+    12:     <tr>
+    13:       <td><%= kopi.name %></td>
+    14:       <td><%= kopi.roast %></td>
+  
+app/views/kopi/index.html.erb:11:in `_app_views_kopi_index_html_erb___2340368454128740815_70151462411260'
+Started GET "/" for ::1 at 2019-11-05 07:44:41 +0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/13InchWong/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopiController#index as HTML
+  Rendering kopi/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopi/index.html.erb:11
+  Rendered kopi/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "kopis" does not exist
+LINE 1: SELECT "kopis".* FROM "kopis"
+                              ^
+: SELECT "kopis".* FROM "kopis"):
+     8:     <th></th>
+     9:   </tr>
+    10: 
+    11:   <% @kopi.each do |kopi| %>
+    12:     <tr>
+    13:       <td><%= kopi.name %></td>
+    14:       <td><%= kopi.roast %></td>
+  
+app/views/kopi/index.html.erb:11:in `_app_views_kopi_index_html_erb___3046274749768307667_70341132243540'
