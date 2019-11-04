@@ -4,6 +4,7 @@ class KopisController < ApplicationController
     # test to see if we are at /origins/:id/kopis or /kopis
     if params.has_key?(:origin_id)
       # get all the kopis for a specific origin
+      @origin_id = params[:origin_id]
       @kopis = Kopi.where(origin_id: params[:origin_id] )
     else
       # get all kopis
@@ -16,6 +17,9 @@ class KopisController < ApplicationController
   end
 
   def new
+    if( params[:origin_id].present? )
+      @origin_id = params[:origin_id]
+    end
     @origins = Origin.all
   end
 

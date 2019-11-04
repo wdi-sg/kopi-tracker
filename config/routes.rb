@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
-
   get '/origins' => 'origins#index', as: 'origins'
   get '/origins/new' => 'origins#new', as: 'new_origin'
   post '/origins' => 'origins#create'
@@ -17,4 +16,8 @@ Rails.application.routes.draw do
   get '/origins/:id/edit' => 'origins#edit', as: 'edit_origin'
   patch '/origins/:id' => 'origins#update'
   delete '/origins/:id' => 'origins#destroy'
+
+  get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
+  get '/origins/:origin_id/kopis/new' => 'kopis#new', as: 'new_origin_kopi'
+  post '/origins/:origin_id/kopis' => 'kopis#create'
 end

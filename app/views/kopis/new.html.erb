@@ -22,3 +22,9 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+	<% if @origin_id.nil? %>
+		<%= link_to 'Back', root_path %>
+	<% else %>
+		<%= link_to 'Back', origin_kopis_path %>
+	<% end %>

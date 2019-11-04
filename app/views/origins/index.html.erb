@@ -2,13 +2,16 @@
 
 <table>
   <tr>
+  	<th>Kopis</th>
     <th>Location</th>
     <th>Phone</th>
     <th></th>
   </tr>
+  <%= link_to 'All Kopis', root_path %>&nbsp&nbsp
   <%= link_to 'New Origin', new_origin_path %>
 	<% @origins.each do |origin| %>
   <tr>
+    <td><%= link_to 'Kopis', origin_kopis_path(origin) %></td>
     <td><%= origin.location %></td>
     <td><%= origin.phone %></td>
 		<td><%= link_to 'Show', origin_path(origin) %></td>
