@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+australia = Origin.create(:location => 'Seattle', :phone => '+1 206')
+singapore = Origin.create(:location => 'Singapore', :phone => '+65')
+
+realgood = Kopi.create(:name => "Real Good Coffee Co ", :roast => "Light Roast", :origin => Seattle)
