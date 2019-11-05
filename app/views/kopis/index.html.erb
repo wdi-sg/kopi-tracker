@@ -1,22 +1,21 @@
 <% if @user %>
-  <h2>hello<%= @user.email %></h2>
+  <h1>Welcome, <%= @user.email %>!</h1>
 <% end %>
-<h2>Kopi Menu</h2>
-<table>
-  <tr>
-    <th>Kopi</th>
-    <th>Roast Type</th>
-    <th>Origin</th>
-  </tr>
-  <% @kopis.each do |k| %>
+<div class="container float-right">
+  <h2>Kopi Menu</h2>
+  <table class='table'>
     <tr>
-      <td><%= k.name %></td>
-      <td><%= k.roast %></td>
-      <td><%= k.origin.location %></td>
+      <th>Kopi</th>
+      <th>Roast Type</th>
+      <th>Origin</th>
     </tr>
-  <% end %>
-</table>
-<%= link_to 'New kopi', new_kopi_path %>
-<%= link_to 'Register', new_user_registration_path %>
-<%= link_to 'Login', user_session_path %>
-<%= link_to 'Logout', destroy_user_session_url, method: :delete %>
+    <% @kopis.each do |k| %>
+      <tr>
+        <td><%= k.name %></td>
+        <td><%= k.roast %></td>
+        <td><%= k.origin.location %></td>
+        <%-# <td><%= link_to 'View', kopi_path(@kopis), method: :get%>
+      </tr>
+    <% end %>
+  </table>
+</div>
