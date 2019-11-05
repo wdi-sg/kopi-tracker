@@ -1,3 +1,17 @@
 <h1>Orders</h1>
 
+<ul class="list-group">
+
+<% @orders.each do |order|%>
+    <li class="list-group-item"><a href="orders/<%= order.id%>">Order <%= order.id%></a> 
+    <p><%= order.weight%>lb</p>
+    <p>Price: $<%= order.weight * order.kopi.price %> </p>
+    </li>
+<%end%>
+
+
+</ul>
+
+
+
 <%= link_to 'Add an Order', new_order_path %>
