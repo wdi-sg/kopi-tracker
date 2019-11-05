@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_085128) do
+ActiveRecord::Schema.define(version: 2019_11_05_064301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.text "roast"
     t.bigint "origin_id"
+    t.bigint "roast_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
   create_table "origins", force: :cascade do |t|
@@ -27,4 +28,9 @@ ActiveRecord::Schema.define(version: 2019_11_04_085128) do
     t.string "phone"
   end
 
+  create_table "roasts", force: :cascade do |t|
+    t.string "name"
+  end
+
+  add_foreign_key "kopis", "roasts"
 end

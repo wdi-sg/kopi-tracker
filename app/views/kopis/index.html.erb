@@ -7,17 +7,17 @@
     <th>Origin</th>
     <th></th>
   </tr>
+  <%= link_to 'Roasts', roasts_path %>&nbsp&nbsp
   <%= link_to 'Origins', origins_path %>&nbsp&nbsp
 	<% if @origin_id.nil? %>
 		<%= link_to 'New Kopi', new_kopi_path %>
 	<% else %>
 		<%= link_to 'New Origin Kopi', new_origin_kopi_path %>
 	<% end %>
-
 	<% @kopis.each do |kopi| %>
 	<tr>
 		<td><%= kopi.name %></td>
-		<td><%= kopi.roast %></td>
+		<td><%= kopi.roast.name %></td>
 		<td><%= kopi.origin.location %></td>
 		<td><%= link_to 'Show', kopi_path(kopi) %></td>
     <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>

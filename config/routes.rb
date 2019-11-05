@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :roasts
+
   root 'kopis#index'
   get '/kopis' => 'kopis#index', as: 'kopis'
   get '/kopis/new' => 'kopis#new', as: 'new_kopi'
@@ -20,4 +22,6 @@ Rails.application.routes.draw do
   get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
   get '/origins/:origin_id/kopis/new' => 'kopis#new', as: 'new_origin_kopi'
   post '/origins/:origin_id/kopis' => 'kopis#create'
+
+  get '/roasts/:roast_id/kopis' => 'kopis#index', as: 'roast_kopis'
 end

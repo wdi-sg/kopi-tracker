@@ -7,10 +7,7 @@
     <%= form.text_field :name %>
   </p>
 
-  <p>
-    <%= form.label :roast %><br>
-    <%= form.text_field :roast %>
-  </p>
+	<%= form.collection_select :roast_id, @roasts, :id, :name %>
 
 	<%= form.collection_select :origin_id, @origins, :id, :location %>
 

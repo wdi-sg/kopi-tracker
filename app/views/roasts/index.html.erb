@@ -1,0 +1,24 @@
+<h1>Kopi Roasts</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Kopis</th>
+    <th></th>
+  </tr>
+  <%= link_to 'All Kopis', root_path %>&nbsp&nbsp
+  <%= link_to 'New Roast', new_roast_path %>
+	<% @roasts.each do |roast| %>
+  <tr>
+    <td><%= roast.id %></td>
+    <td><%= roast.name %></td>
+    <td><%= link_to 'Kopis', roast_kopis_path(roast) %></td>
+		<td><%= link_to 'Show', roast_path(roast) %></td>
+    <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
+    <td><%= link_to 'Destroy', roast_path(roast),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	<% end %>
+</table>

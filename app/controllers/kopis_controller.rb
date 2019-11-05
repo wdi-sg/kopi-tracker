@@ -6,6 +6,11 @@ class KopisController < ApplicationController
       # get all the kopis for a specific origin
       @origin_id = params[:origin_id]
       @kopis = Kopi.where(origin_id: params[:origin_id] )
+    # test to see if we are at /roasts/:id/kopis or /kopis
+    elsif params.has_key?(:roast_id)
+      # get all the kopis for a specific roast
+      @roast_id = params[:roast_id]
+      @kopis = Kopi.where(roast_id: params[:roast_id] )
     else
       # get all kopis
       @kopis = Kopi.all
@@ -21,11 +26,13 @@ class KopisController < ApplicationController
       @origin_id = params[:origin_id]
     end
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def edit
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def create
@@ -49,7 +56,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origin_id)
+    params.require(:kopi).permit(:name, :origin_id, :roast_id)
   end
 
 end
