@@ -6,9 +6,13 @@
 <tr>
 <th scope="col">Location</th>
 <th scope="col">Phone</th>
+<% if current_user.try(:admin?) %>
+
 <th scope="col">Show</th>
 <th scope="col">Edit</th>
 <th scope="col">Destroy</th>
+<% end %>
+
 </tr>
 </thead>
 <tbody>
@@ -16,12 +20,14 @@
   <tr>
   <td><%= origin.location %></td>
   <td><%= origin.phone %></td>
+  <% if current_user.try(:admin?) %>
   <td><%= link_to 'Show', origin_path(origin) %></td>
   <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
   <td><%= button_to 'Destroy', origin_path(origin),
   method: :delete,
   data: { confirm: 'Are you sure?' } %></td>
   
+  <% end %>
   </tr>
   <% end %>
 	</tbody>

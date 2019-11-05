@@ -1,5 +1,9 @@
 <h1 class="display-4">List of orders</h1>
-
+<% if user_signed_in? %>
+<%= link_to('New order', new_order_path, {:class => "btn btn-primary btn-lg m-3"} )%>
+<% else %>
+<p class="alert alert-warning">Please sign in before making an order</p>
+<% end %>
 
 <table class="table">
 <thead>
@@ -29,4 +33,4 @@
 	</tbody>
   </table>
   
-  <%= link_to('New order', new_order_path, {:class => "btn btn-primary"} )%>
+ 
