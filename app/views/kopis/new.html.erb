@@ -1,4 +1,4 @@
-<%= form_with scope: :kopi, url: origins_path, local: true do |form|  %>
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form|  %>
 	<%= form.collection_select :origin_id, @origins, :id, :location %>
 	<p>
 		<%= form.label :name %><br>
@@ -15,4 +15,4 @@
 	</p>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', kopis_path %>

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   patch '/origins/:id' => 'origins#update'
   delete '/origins/:id' => 'origins#destroy'
 
-  get '/origins/:id/new' => 'kopis#new', as: 'new_kopi'
+  get '/kopis' => 'kopis#index', as: 'kopis'
+  get '/kopis/new' => 'kopis#new', as: 'new_kopi'
+  post '/kopis' => 'kopis#create'
 end

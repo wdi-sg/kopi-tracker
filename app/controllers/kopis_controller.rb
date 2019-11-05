@@ -1,20 +1,22 @@
 class KopisController < ApplicationController
 
   def index
-    if params.has_key?(:origin_id)
-      # get all the rangers for a specific park
-      @kopis = Kopi.where(origin_id: params[:origin_id] )
-    else
-      # get all rangers
-      @kopis = Kopi.all
-    end
+    @kopis = Kopi.all
   end
 
   def new
     @origins = Origin.all
-
   end
 
+  def create
+    @kopi = Kopi.new(kopi_params)
+    @kopi.save
+    redirect_to kopis_path
+  end
 
+  private
+    def kopi_params
+      params.require(:kopi).permit(:name, :roast, :origin_id)
+    end
 
 end
