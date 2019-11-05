@@ -1,1 +1,9 @@
-<h2><%= @kopi.name%></h2>
+<h1>You have successfully added the kopi below:</h1>
+<ul>
+  <li><%= @kopi.name%></li>
+  <li><%= @kopi.roast%></li>
+  <li><%= @kopi.origin.location%></li>
+</ul>
+<%= link_to('Edit Kopi', edit_kopi_path) %>
+<%= link_to('Delete kopi', kopi_path, method: :delete, data: {confirm: 'Are you sure?'}) %>
+<%= link_to('Home', root_path) %>

@@ -1,7 +1,16 @@
 <h1>Coffepedia</h1>
-<% @kopis.each do |k| %>
-  <p>
-    <%= k.name %>
-    <%= k.roast %>
-  </p>
-<% end %>
+<table>
+  <tr>
+    <th>Kopi</th>
+    <th>Roast Type</th>
+    <th>Origin</th>
+  </tr>
+  <% @kopis.each do |k| %>
+    <tr>
+      <td><%= k.name %></td>
+      <td><%= k.roast %></td>
+      <td><%= k.origin.location %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to('New kopi', new_kopi_path) %>

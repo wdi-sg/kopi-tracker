@@ -11,10 +11,12 @@ class KopisController < ApplicationController
 
   def show
     @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
   end
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @origins = Origin.all
   end
 
   def update
@@ -27,6 +29,10 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
     @kopi.destroy
     redirect_to @kopi
+  end
+
+  def new
+    @origins = Origin.all
   end
 
   private
