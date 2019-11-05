@@ -13,6 +13,9 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Kopi Tracker</a>
+      <% if user_signed_in? %>
+        <a class="navbar-brand" href="#">Welcome <%= current_user.email %></a>
+      <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,6 +36,15 @@
           <li class="nav-item">
             <%= link_to "Add Roast", new_roast_path, :class => "nav-link" %>
           </li>
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to 'log out', destroy_user_session_url, method: :delete, :class => "nav-link" %>
+          </li>
+          <% else %>
+            <li>
+              <%= link_to 'log in', new_user_session_url, :class => "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
