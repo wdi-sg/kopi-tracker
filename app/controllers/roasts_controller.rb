@@ -1,6 +1,7 @@
 class RoastsController < ApplicationController
 
     def index
+        @roasts = Roast.all
     end
 
     def new
@@ -11,10 +12,11 @@ class RoastsController < ApplicationController
         @roast = Roast.new(roast_params)
 
         @roast.save
-        # redirect_to @roasts
+        redirect_to @roast
     end
 
     def show
+        @roast = Roast.find(params[:id])
     end
 
     def edit
