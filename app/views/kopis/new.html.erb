@@ -1,0 +1,18 @@
+<%= form_with scope: :kopi, url: origins_path, local: true do |form|  %>
+	<%= form.collection_select :origin_id, @origins, :id, :location %>
+	<p>
+		<%= form.label :name %><br>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :roast %><br>
+		<%= form.text_field :roast %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
