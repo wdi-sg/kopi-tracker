@@ -1,6 +1,14 @@
 class OrdersController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
-    @orders = Order.all
+    @user = current_user
+    if current_user.admin
+      @orders = Order.all
+    else
+      @orders = @user.order
+    end
   end
 
   def new
@@ -10,8 +18,12 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
-    redirect_to @order
+    @order.user = current_user
+    if @order.save
+      redirect_to @order
+    else
+      render 'new'
+    end
   end
 
   def show
