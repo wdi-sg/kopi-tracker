@@ -1,3 +1,3 @@
-class Kopi < ActiveRecord::Base
+class Kopi < ApplicationRecord
   belongs_to :farm
 end
