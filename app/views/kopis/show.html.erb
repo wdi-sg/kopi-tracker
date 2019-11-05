@@ -2,9 +2,11 @@
 <h1>Roast: <%= @roast[0].roast_type%></h1>
 <h1>Origin: <%= @origin[0].location %></h1>
 <h1>Price : $<%= @kopi.price %> per pound</h1>
-<%= link_to 'Edit', edit_kopi_path(@kopi) %> <br>
+<div class="container">
+</div>
+<%= link_to 'Edit', edit_kopi_path(@kopi),   :class => "btn btn-primary"%> 
 <%= link_to 'Delete', kopi_path(@kopi),
         method: :delete,
-        data: { confirm: 'Are you sure?' } %> <br>
-<%= link_to 'Back To Home', root_path %>
+        data: { confirm: 'Are you sure?' },  :class => "btn btn-danger" %> 
+<%= link_to 'Back To Home', root_path,  :class => "btn btn-secondary" %>
 

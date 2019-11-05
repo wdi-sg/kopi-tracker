@@ -1,7 +1,10 @@
 class OrdersController < ApplicationController
+    before_action :authenticate_user!, :except => [ :show, :index  ]
+
     def index
         @orders = Order.all
         @kopi = Kopi.all
+        @user = current_user
         
     end
 
@@ -11,9 +14,12 @@ class OrdersController < ApplicationController
 
     def create
         @order = Order.new(order_params)
-
-        @order.save
-        redirect_to @order
+        @order.user = current_user
+        if @order.save
+         redirect_to @order
+        else
+        end
+        
     end
 
     def show
@@ -24,6 +30,6 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-    params.require(:order).permit(:weight, :kopi_id)
+    params.require(:order).permit(:weight, :kopi_id, :user_id)
     end
 end

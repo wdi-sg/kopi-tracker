@@ -1,5 +1,5 @@
 <h1>Add A Kopi</h1>
-
+<div class="">
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
   <p>
@@ -10,11 +10,12 @@
    <%= form.collection_select :roast_id, @roasts, :id, :roast_type %> <br> <br>
    <%= form.collection_select :origin_id, @origins, :id, :location %>
  
-<p>
-    <%= form.label :Price %><br>
+<p> <br>
+    <%= form.label :Price %> <br>
     <%= form.text_field :price %>
   </p>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
+</div>

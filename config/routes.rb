@@ -14,5 +14,14 @@ Rails.application.routes.draw do
   get 'orders/new' => 'orders#new', as: 'new_order'
   post 'orders' => 'orders#create'
   get 'orders/:id' => 'orders#show', as: 'order'
+
+  get 'roasts' => 'roasts#index', as: 'roasts'
+  get 'roasts/new' => 'roasts#new', as: 'new_roast'
+  post 'roasts' => 'roasts#create'
+  get 'roasts/:id' => 'roasts#show', as: 'roast'
+  get '/roasts/:id/edit' => 'roasts#edit', as: 'edit_roast'
+  patch '/roasts/:id' => 'roasts#update'
+  delete '/roasts/:id' => 'roasts#destroy'
+
 end
  

@@ -1,23 +1,71 @@
-<h1>Kopi Tracker</h1>
-<h2>All Kopis</h2>
-<% @kopis.each do |kopi|%>
-<li class="list-group-item"><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
-<% end %>
-<br>
+<h1 class="border-bottom">Kopi Tracker</h1>
+<h2 class="mt-4">All Kopis</h2>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Roast</th>
+      <th scope="col">Origin</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @kopis.each do |kopi|%>
+    <tr>
+      <th scope="row"><%= kopi.id%></th>
+      <td><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a></td>
+      <td><%= kopi.roast.roast_type%></td>
+      <td><%= kopi.origin.location%></td>
+    </tr>
+    <% end %>
+   
+  
+  </tbody>
+</table>
 
-<% if user_signed_in? %>
+
+<% if user_signed_in? and !current_user.try(:admin?) %>
 <h2>Your Kopis</h2>
-<% @user.kopi.each do |kopi| %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Roast</th>
+      <th scope="col">Origin</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @user.kopi.each do |kopi| %>
+    <tr>
+      <th scope="row"><%= kopi.id%></th>
+      <td><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a></td>
+      <td><%= kopi.roast.roast_type%></td>
+      <td><%= kopi.origin.location%></td>
+    </tr>
+    <% end %>
+   
+  
+  </tbody>
+</table>
 
-<li class="list-group-item"><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
-<%end%>
 
+
+
+
+<% elsif user_signed_in? and current_user.try(:admin?) %>
+<h2>Admin Section</h2>
 <% end %>
 
+
+
 <br>
-<% if user_signed_in? %>
-<%= link_to 'Add a Kopi', new_kopi_path, class:{color: "white"} %> <br>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% if user_signed_in? and !current_user.try(:admin?)  %>
+<%= link_to 'Add a Kopi', new_kopi_path, :class => "btn btn-primary" %> <br>
+
+<% elsif user_signed_in? and current_user.try(:admin?) %>
+<%= link_to 'See Roasts', roasts_path, class:{color: "white"} %> <br> <br>
+
 
 <%else%>
 <%= link_to 'log in', new_user_session_url %>
