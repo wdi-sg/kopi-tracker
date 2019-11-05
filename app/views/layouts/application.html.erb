@@ -1,15 +1,63 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>KopiTracker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<% if @user %>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>KopiTracker</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+      <%= javascript_include_tag 'application' %>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-md navbar-default bg-dark">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "Kopepedia", root_path %></a>
+            </li>
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "New kopi", new_kopi_path %></a>
+            </li>
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "Logout", destroy_user_session_url, method: :delete %></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class='container'>
+        <%= yield %>
+      </div>
+    </body>
+  </html>
+<% else %>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>KopiTracker</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
+      <%= javascript_include_tag 'application' %>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-md navbar-default bg-dark">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "Kopepedia", root_path %></a>
+            </li>
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "Register", new_user_registration_path %></a>
+            </li>
+            <li class="nav nav-item">
+              <a class="nav-link"><%= link_to "Sign In", user_session_path %></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class='container'>
+        <%= yield %>
+      </div>
+    </body>
+  </html>
+<%end%>
