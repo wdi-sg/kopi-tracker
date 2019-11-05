@@ -13,7 +13,14 @@
     </p>
 
     <p>
-        <%= form.collection_select :origin_id, @origins, :id, :location %>
+        <%= form.label :origin %>
+
+        <% if params[:origin_id].present? %>
+            <%= form.collection_select :origin_id, @origins, :id, :location, :selected => params[:origin_id] %>
+        <% else %>
+            <%= form.collection_select :origin_id, @origins, :id, :location %>
+        <% end %>
+
     </p>
 
     <p>
