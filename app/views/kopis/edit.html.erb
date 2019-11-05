@@ -9,10 +9,11 @@
 
     <p>
         <%= form.label :roast %>
-        <%= form.text_field :roast %>
+        <%= form.collection_select :roast_id, @roasts, :id, :name %>
     </p>
 
     <p>
+        <%= form.label :origin %>
         <%= form.collection_select :origin_id, @origins, :id, :location %>
     </p>
 
