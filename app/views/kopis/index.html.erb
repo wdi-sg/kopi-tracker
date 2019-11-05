@@ -5,6 +5,8 @@
     <th>Name</th>
     <th>Origin</th>
     <th>Roast</th>
+    <th>By</th>
+    <th>Show</th>
   </tr>
 
   <% @kopis.each do |kopi| %>
@@ -12,6 +14,7 @@
       <td><%= kopi.name %></td>
       <td><%= kopi.origin.location %></td>
       <td><%= kopi.roast.name %></td>
+      <td><%= kopi.user.email %></td>
       <td>
       <%= link_to 'Show', kopi_path(kopi) %>
       </td>

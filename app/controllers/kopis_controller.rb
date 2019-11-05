@@ -5,6 +5,7 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all
+    # byebug
   end
 
   def show
