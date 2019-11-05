@@ -1,6 +1,6 @@
 <h1>Add an Origin</h2>
 
-<%= form_for :origin, url: origins_path do |f| %>
+<%= form_with scope: :origin, url: origins_path, local: true do |f| %>
     <p>
     <%= f.label :location %> <br/>
     <%= f.text_field :location %>

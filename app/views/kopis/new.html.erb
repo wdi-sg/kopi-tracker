@@ -6,14 +6,16 @@
     <%= f.text_field :name %>
     </p>
 
+    <%= f.collection_select :roast_id, @roasts, :id, :name %>
+
    <p>
     <%= f.label :roast %><br/>
-    <%= f.text_field :roast %>
+    <%= f.text_field :roast_id %>
     </p>
 
     <p>
     <%= f.label :origin %><br/>
-    <%= f.text_field :origin %>
+    <%= f.text_field :origin_id %>
     </p>
 
     <p>
