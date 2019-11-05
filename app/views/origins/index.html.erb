@@ -1,8 +1,17 @@
+<%= link_to 'Kopi', kopis_path%>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
 <h1>All origins</h1>
 
 <% @origins.each do |o| %>
   <p>
     <%= o.location %>
     <%= o.phone %>
+    <%= link_to 'View', origin_path(o) %>
   </p>
 <% end %>

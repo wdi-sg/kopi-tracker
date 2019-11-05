@@ -1,0 +1,31 @@
+<%= link_to 'Origins', origins_path%>
+<%= link_to 'Kopis', kopis_path%>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+<h1>New Kopi</h1>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :roast %>
+    <%= f.text_field :roast %>
+  </p>
+
+  <p>
+    <%= f.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
