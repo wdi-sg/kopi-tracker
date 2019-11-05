@@ -1,26 +1,30 @@
-<h1>All Kopi Origins</h1>
+<div class="container">
 
-<table>
-  <tr>
-    <th>Location</th>
-    <th>Phone Number</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<h1 class="display-4 text-center">All Kopi Origins</h1>
 
-  <% @origin.each do |x| %>
-    <tr>
-      <td><%= x.location %></td>
-      <td><%= x.phone_number %></td>
-      <td><%= link_to 'Show', origin_path(x) %></td>
-      <td><%= link_to 'Edit', edit_origin_path(x) %></td>
-      <td><%= link_to 'Destroy', origin_path(x),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+	<table class="table">
+		<thead class="thead-dark">
+		  <tr>
+		    <th>Location</th>
+		    <th>Phone Number</th>
+		    <th></th>
+		  </tr>
+	  </thead>
+
+	  <tbody>
+		  <% @origin.each do |x| %>
+		    <tr>
+		      <td><%= x.location %></td>
+		      <td><%= x.phone_number %></td>
+		      <td><%= link_to 'Show', origin_path(x) %> | <%= link_to 'Edit', edit_origin_path(x) %> | <%= link_to 'Delete', origin_path(x),
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %></td>
+		    </tr>
+		  <% end %>
+	  </tbody>
+	</table>
 
 
-<%= link_to 'New origin', new_origin_path %>
+	<%= link_to 'New origin', new_origin_path, {:class => "btn btn-outline-primary"} %>
+
+</div>

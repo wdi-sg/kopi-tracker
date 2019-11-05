@@ -1,17 +1,30 @@
-<h1>Kopi: <%= @kopi.name %></h1>
+<div class="container">
 
-<p>
-  <strong>Roast:</strong>
-  <%= @kopi.roast.name %>
-</p>
+	<h1 class="display-4 text-center">Kopi: <%= @kopi.name %></h1>
 
-<p>
-  <strong>Origin:</strong>
-  <%= @kopi.origin.location %>
-</p>
+		<table class="table">
+			<thead class="thead-dark">
+			  <tr>
+					<th>Origin</th>
+			    <th>Roast</th>
+			    <th></th>
+			  </tr>
+			</thead>
+			<tbody>
+		    <tr>
+		    	<td><%= @kopi.origin.location %></td>
+		      <td><%= @kopi.roast.name %></td>
+		      <td><%= link_to 'Edit', edit_kopi_path(@kopi) %> | <%= link_to 'Destroy', kopi_path(@kopi),
+			        method: :delete,
+			        data: { confirm: 'Are you sure?' } %></td>
+		    </tr>
+	    </tbody>
+		</table>
 
 
 
-<%= link_to 'Back', kopis_path %>
 
-<%= link_to 'Edit', edit_kopi_path(@kopi) %>
+
+	<%= link_to 'Back', kopis_path, {:class => "btn btn-outline-secondary"} %>
+
+</div>

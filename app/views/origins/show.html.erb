@@ -1,13 +1,44 @@
-<h1>Origin: <%= @origin.location %></h1>
+<div class="container">
 
-<p>
-  <strong>Phone Number:</strong>
-  <%= @origin.phone_number %>
-</p>
+	<h1 class="display-4 text-center">Origin: <%= @origin.location %></h1>
+
+	<h4 class="text-center">
+	  <strong>Phone Number:</strong>
+	  <%= @origin.phone_number %>
+	</h4>
+
+
+	<% if @origin.kopi[0] %>
+  	<% @origin.kopi.each do |x| %>
+			<table class="table">
+				<thead class="thead-dark">
+				  <tr>
+				    <th>Name</th>
+				    <th>Roast</th>
+				    <th>Origin</th>
+				    <th></th>
+				  </tr>
+				</thead>
+				<tbody>
+			    <tr>
+			      <td><%= x.name %></td>
+			      <td><%= x.roast.name %></td>
+			      <td><%= x.origin.location %></td>
+			      <td><%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
+			        method: :delete,
+			        data: { confirm: 'Are you sure?' } %></td>
+			    </tr>
+		    </tbody>
+			</table>
+		<% end %>
+	<% elsif %>
+		<p class="lead text-center mb-5 mt-5">No Kopis added for this Origin yet</p>
+	<% end %>
 
 
 
+	<%= link_to 'Back', origins_path , {:class => "btn btn-outline-secondary"}%>
 
-<%= link_to 'Back', origins_path %>
+	<%= link_to 'Edit', edit_origin_path(@origin), {:class => "btn btn-outline-primary"} %>
 
-<%= link_to 'Edit', edit_origin_path(@origin) %>
+</div>
