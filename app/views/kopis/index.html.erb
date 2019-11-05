@@ -1,5 +1,9 @@
 <h1>Kopi Tracker</h1>
-
+<% if user_signed_in? %>
+	<%= link_to 'Log Out', destroy_user_session_url, method: :delete %><br>
+<% else %>
+	<%= link_to 'Log In', new_user_session_url %><br>
+<% end %>
 <table>
   <tr>
     <th>Name</th>
@@ -9,11 +13,15 @@
   </tr>
   <%= link_to 'Roasts', roasts_path %>&nbsp&nbsp
   <%= link_to 'Origins', origins_path %>&nbsp&nbsp
-	<% if @origin_id.nil? %>
-		<%= link_to 'New Kopi', new_kopi_path %>
-	<% else %>
-		<%= link_to 'New Origin Kopi', new_origin_kopi_path %>
+
+  <% if user_signed_in? %>
+		<% if @origin_id.nil? %>
+			<%= link_to 'New Kopi', new_kopi_path %>
+		<% else %>
+			<%= link_to 'New Origin Kopi', new_origin_kopi_path %>
+		<% end %>
 	<% end %>
+
 	<% @kopis.each do |kopi| %>
 	<tr>
 		<td><%= kopi.name %></td>
