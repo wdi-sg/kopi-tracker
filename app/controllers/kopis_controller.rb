@@ -13,6 +13,18 @@ class KopisController < ApplicationController
         redirect_to @kopi
     end
 
+    def new
+        @kopis = Kopi.all
+        @roasts = Roast.all
+        @origins = Origin.all
+
+    end
+    
+    def show
+        @kopi = Kopi.find(params[:id])
+
+    end
+
 
     private 
     def kopi_params
