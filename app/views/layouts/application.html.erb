@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- Latest compiled and minified CSS -->
-    <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -25,9 +25,9 @@
         </li>
         <li class="nav-item">
         <% if user_signed_in? %>
-          <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+          <%= link_to 'log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
           <% else %> 
-          <%= link_to 'log in', new_user_session_url %>
+          <%= link_to 'log in', new_user_session_url,{:class => "nav-link"}  %>
           <% end %>
           </li>
 		    </ul>
