@@ -30,4 +30,10 @@ Rails.application.routes.draw do
   delete '/roasts/:id' => 'roasts#destroy'
 
 
+  get '/orders' => 'orders#index', as: 'orders'
+  get '/orders/new' => 'orders#new', as: 'new_order'
+  post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show' , as: 'order'
+
+
 end

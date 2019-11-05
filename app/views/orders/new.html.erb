@@ -1,0 +1,25 @@
+<div class="container">
+
+	<h1 class="display-4 text-center">New Order</h1>
+
+	<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+		<div class="form-group mt-5" style="width: 50%; margin: 0 auto">
+
+			<p>
+				<%= form.label :kopi %><br>
+		  	<%= form.collection_select :kopi_id, @kopis.order('id'), :id, :name, {promt: "Choose a Kopi" }, {:class => "form-control"} %>
+		  </p>
+
+		  <p>
+		  	<%= form.label :weight %><br>
+				<%= form.number_field :weight, {:class => "form-control"} %>
+			</p>
+
+			<%= link_to 'Back', orders_path, {:class => "btn btn-outline-secondary"} %>
+
+		  <%= form.submit "Submit Order", class: "btn btn-primary" %>
+
+		</div>
+	<% end %>
+
+</div>

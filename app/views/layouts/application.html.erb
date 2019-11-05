@@ -23,7 +23,11 @@
 		      <a class="nav-item nav-link active" href="/kopis">|All Kopis <box-icon name='coffee' class="align-bottom"></box-icon>|</a>
 
 					<% if current_user.try(:admin?) %>
-		      	<a class="nav-item nav-link active align-top" href="/roasts">|All Roasts|</a>
+		      	<a class="nav-item nav-link active" href="/roasts">|All Roasts <box-icon name='flame' type="solid" class="align-bottom"></box-icon>|</a>
+					<% end %>
+
+					<% if user_signed_in? %>
+						<a class="nav-item nav-link active" href="/orders">|Order Kopi <box-icon name='file' class="align-bottom"></box-icon>|</a>
 					<% end %>
 
 					<% if user_signed_in? == false %>

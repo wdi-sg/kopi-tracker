@@ -1,0 +1,27 @@
+<div class="container">
+
+	<h1 class="display-4 text-center">Order: <%= @order.id %></h1>
+
+		<table class="table">
+			<thead class="thead-dark">
+			  <tr>
+					<th>Order #</th>
+			    <th>Kopi</th>
+			    <th>Amount Ordered</th>
+			    <th>Total Price</th>
+			  </tr>
+			</thead>
+			<tbody>
+		    <tr>
+		    	<td><%= @order.id %></td>
+		      <td><%= @order.kopi.name %></td>
+		      <td><%= @order.weight %>kg</td>
+		      <td>$<%= @order.weight * @order.kopi.price %></td>
+		    </tr>
+	    </tbody>
+		</table>
+
+
+	<%= link_to 'Back', orders_path, {:class => "btn btn-outline-secondary"} %>
+
+</div>
