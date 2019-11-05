@@ -4,8 +4,6 @@ class KopisController < ApplicationController
   def index
     @kopis = Kopi.all
     @user = current_user
-    # p "@@@@@@@@@", @user
-    # p "%%%%%%%%%%%%%", current_user.kopi
     if current_user
       @kopis = current_user.kopi
     end
@@ -19,11 +17,13 @@ class KopisController < ApplicationController
   end
 
   def show
-    @kopi = Kopi.find(params[:id])
+    @user = current_user
+    @kopi = Kopi.user.find(params[:id])
     @origins = Origin.all
   end
 
   def edit
+    @user = current_user
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
     @roasts = Roast.all
@@ -36,12 +36,14 @@ class KopisController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @kopi = Kopi.find(params[:id])
     @kopi.destroy
     redirect_to @kopi
   end
 
   def new
+    @user = current_user
     @origins = Origin.all
     @roasts = Roast.all
   end
