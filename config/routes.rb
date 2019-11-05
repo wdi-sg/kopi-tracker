@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'kopis#index'
   get 'kopis' => 'kopis#index', as: 'kopis'
   get 'kopis/new' => 'kopis#new', as: 'new_kopi'

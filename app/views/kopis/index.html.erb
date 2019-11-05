@@ -1,6 +1,26 @@
 <h1>Kopi Tracker</h1>
+<h2>All Kopis</h2>
 <% @kopis.each do |kopi|%>
-<li><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
+<li class="list-group-item"><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
 <% end %>
 <br>
-<%= link_to 'Add a Kopi', new_kopi_path %>
+
+<% if user_signed_in? %>
+<h2>Your Kopis</h2>
+<% @user.kopi.each do |kopi| %>
+
+<li class="list-group-item"><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a> </li>
+<%end%>
+
+<% end %>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'Add a Kopi', new_kopi_path, class:{color: "white"} %> <br>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+<%else%>
+<%= link_to 'log in', new_user_session_url %>
+
+<% end %>
+

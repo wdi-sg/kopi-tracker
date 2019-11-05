@@ -4,8 +4,9 @@
 
 <% @orders.each do |order|%>
     <li class="list-group-item"><a href="orders/<%= order.id%>">Order <%= order.id%></a> 
-    <p><%= order.weight%>lb</p>
-    <p>Price: $<%= order.weight * order.kopi.price %> </p>
+    <p>Order Weight: <%= order.weight%>lb</p>
+    <p>Price per Pound: $<%= order.kopi.price%></p>
+    <p>Total Price: $<%= order.weight * order.kopi.price %> </p>
     </li>
 <%end%>
 
