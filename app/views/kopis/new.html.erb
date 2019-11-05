@@ -1,18 +1,30 @@
-<%= form_with scope: :kopi, url: origins_path, local: true do |form|  %>
-    <%= form.collection_select :origin_id, @origins, :id, :location %>
-    <p>
-        <%= form.label :name %><br>
-        <%= form.text_field :name %>
-    </p>
+<h3>Add Kopi</h3>
 
-    <p>
-        <%= form.label :roast %><br>
-        <%= form.text_field :roast %>
-    </p>
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-    <p>
-        <%= form.submit %>
-    </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_field :roast %>
+  </p>
+
+    <% if @origin_id.nil? %>
+        <%= form.collection_select :origin_id, @origins, :id, :location %>
+    <% else %>
+        <%= form.text_field :origin_id, value: @origin_id, hidden: true %>
+    <% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+    <% if @origin_id.nil? %>
+        <%= link_to 'Back', root_path %>
+    <% else %>
+        <%= link_to 'Back', origin_kopis_path %>
+    <% end %>

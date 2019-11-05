@@ -1,9 +1,24 @@
-<h1>List of Countries</h1>
+<h1>Kopi Origins</h1>
 
-<% @origins.each do |origin| %>
-
-    <p><%= link_to origin.location, origin_path(origin.id) %></p>
-
-<% end %>
-
-<%= link_to 'Create new Country', new_origin_path %>
+<table>
+  <tr>
+    <th>Kopis</th>
+    <th>Location</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+  <%= link_to 'All Kopis', root_path %>&nbsp&nbsp
+  <%= link_to 'New Origin', new_origin_path %>
+    <% @origins.each do |origin| %>
+  <tr>
+    <td><%= link_to 'Kopis', origin_kopis_path(origin) %></td>
+    <td><%= origin.location %></td>
+    <td><%= origin.phone %></td>
+        <td><%= link_to 'Show', origin_path(origin) %></td>
+    <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+    <td><%= link_to 'Destroy', origin_path(origin),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+</table>

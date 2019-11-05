@@ -1,11 +1,14 @@
-<h1><%= @origin.location %></h1>
+<h1>Origin</h1>
 
-<% @kopis.each do |kopi| %>
-    <tr>
-    <td><%= kopi.name %></td>
-    <td><%= kopi.roast %></td>
-    </tr>
-<% end %>
-<br>
-<%= link_to 'New kopi', new_kopi_path%>
-<%= link_to 'Back', origins_path%>
+<p>
+  <strong>Location:</strong>
+  <%= @origin.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @origin.phone %>
+</p>
+
+<%= link_to 'Edit', edit_origin_path(@origin) %>
+<%= link_to 'Back', origins_path %>

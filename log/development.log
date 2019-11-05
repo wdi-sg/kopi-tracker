@@ -29,3 +29,182 @@ Migrating to Kopis (20191105012201)
   ↳ bin/rails:9
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 15:47:45 +0800
+  [1m[35m (116.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sharon13/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (153.7ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Origin (20191105015847)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (793.1ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "location" character varying, "phone" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105015847_origin.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105015847"]]
+  ↳ bin/rails:9
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (58.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 15:54:24 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sharon13/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (7.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:3
+  Rendered origins/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 834ms (Views: 768.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-05 15:54:36 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (392.7ms)
+Completed 200 OK in 458ms (Views: 452.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-05 15:54:46 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Tu8lpPJzEAGVu8MpYM4aFKEp7J4yySKETjgKDD9A4GZSFzuNIEY2F3zHR/2yQsJiOzgiU/6eHp6o7X8WfoxSw==", "origin"=>{"location"=>"Singapore", "phone"=>"+65"}, "commit"=>"Save Origin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:18
+  [1m[36mOrigin Create (2.1ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Singapore"], ["phone", "+65"], ["created_at", "2019-11-05 07:54:47.076942"], ["updated_at", "2019-11-05 07:54:47.076942"]]
+  ↳ app/controllers/origins_controller.rb:18
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:18
+Redirected to http://localhost:3000/
+Completed 302 Found in 154ms (ActiveRecord: 136.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-05 15:54:47 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:3
+  Rendered origins/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 83ms (Views: 70.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/origins/1" for ::1 at 2019-11-05 15:54:48 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:11
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 47.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "kopis" does not exist
+LINE 8:                WHERE a.attrelid = '"kopis"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"kopis"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+  
+app/controllers/origins_controller.rb:12:in `show'
+Started GET "/" for ::1 at 2019-11-05 15:54:54 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:3
+  Rendered origins/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 74ms (Views: 68.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (16.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20191105075713)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (252.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105075713_devise_create_users.rb:5
+  [1m[35m (111.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105075713_devise_create_users.rb:39
+  [1m[35m (61.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105075713_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105075713"]]
+  ↳ bin/rails:9
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-05 16:05:21 +0800
+  
+NoMethodError (undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007f843814ded0>):
+  
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
