@@ -18,6 +18,24 @@ class OriginsController < ApplicationController
         @origin = Origin.find(params[:id])
     end
 
+    def edit
+        @origin = Origin.find(params[:id])
+    end
+
+    def update
+        @origin = Origin.find(params[:id])
+
+        @origin.update(origin_params)
+        redirect_to @origin
+    end
+
+    def destroy
+        @origin = Origin.find(params[:id])
+        @origin.destroy
+
+        redirect_to origins_path
+    end
+
     private
         def origin_params
             params.require(:origin).permit(:location, :phone)

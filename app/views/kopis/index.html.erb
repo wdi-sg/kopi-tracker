@@ -1,30 +1,46 @@
-<h1>List of Kopis</h1>
+<div class="nav">
+    <ul>
+        <li><%= link_to 'Kopi', kopis_path %></li>
+        <li><%= link_to 'Origin', origins_path %></li>
 
-<!--If user is logged in, show create new kopi and logout link. Else, shows only login link.-->
-<% if user_signed_in? %>
-    <%= link_to 'New Kopi', new_kopi_path %>
-    <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
-<% else %>
-    <%= link_to 'Log In', new_user_session_url %>
-<% end %>
+        <!--If user is logged in, show create new kopi and logout link. Else, shows only login link.-->
+        <% if user_signed_in? %>
+            <li><%= link_to 'New Kopi', new_kopi_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_url, method: :delete %></li>
+        <% else %>
+            <li><%= link_to 'Log In', new_user_session_url %></li>
+        <% end %>
+    </ul>
+</div>
 
-<% @kopis.each do |kopi|  %>
+<div class="main">
+    <h1>List of Kopis</h1>
+
     <table>
-        <tr>
-            <td>
-                <a href="/kopis/<%= kopi.id %>" %><%= kopi.name %></a>
-            </td>
-            <td>
-                <%= link_to 'Edit', edit_kopi_path(kopi) %>
-            </td>
-            <td>
-                <%= link_to 'Delete', kopi_path(kopi),
-                    method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
-            </td>
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <% @kopis.each do |kopi|  %>
+                <tr>
+                    <td>
+                        <a href="/kopis/<%= kopi.id %>" %><%= kopi.name %></a>
+                    </td>
+                    <td>
+                        <%= link_to 'Edit', edit_kopi_path(kopi) %>
+                    </td>
+                    <td>
+                        <%= link_to 'Delete', kopi_path(kopi),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+                    </td>
+                </tr>
+            <% end %>
     </table>
-<% end %>
+</div>
+
 
 
 
