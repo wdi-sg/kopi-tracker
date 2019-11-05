@@ -5,7 +5,7 @@
 
 <p>
 	<strong>Roast:</strong>
-	<%= @kopi.roast %>
+	<%= @kopi.roast.name %>
 </p>
 <p>
 	<strong>Origin:</strong>
@@ -13,6 +13,6 @@
 </p>
 
 <p>
-	<%= link_to 'Edit', edit_kopi_path(@kopi) %>
-	<%= link_to 'Back', kopis_path %>
+	<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning"}) %>
+	<%= link_to('Back', kopis_path, {:class => "btn btn-info"})%>
 </p>

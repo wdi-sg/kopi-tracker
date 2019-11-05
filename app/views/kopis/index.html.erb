@@ -2,7 +2,15 @@
 
 <h1>Listing kopis</h1>
 
-<%= link_to 'New kopi', new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New kopi', new_kopi_path %>
+
+  <% else %>
+  <%= link_to 'New kopi', new_kopi_path %>
+  <% end %>
+  
+
+<%= button_to('Logout', destroy_user_session_path, :method => 'delete')%>
 
 <table>
   <tr>
@@ -15,7 +23,7 @@
   <% @kopis.each do |kopi| %>
     <tr>
         <td><%= kopi.name %></td>
-        <td><%= kopi.roast %></td>
+        <td><%= kopi.roast.name %></td>
         <td><%= kopi.origin.location %></td>
         <td><%= link_to 'Show', kopi_path(kopi) %></td>
         <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
