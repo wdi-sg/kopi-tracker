@@ -17,6 +17,7 @@ class KopisController < ApplicationController
   def edit
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def update
@@ -33,6 +34,7 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   private
