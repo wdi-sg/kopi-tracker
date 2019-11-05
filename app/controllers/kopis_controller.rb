@@ -6,15 +6,15 @@ before_action :authenticate_user!, :except => [ :show, :index ]
     if params.has_key?(:origin_id)
       # get all the kopis for a specific origin
       @origin_id = params[:origin_id]
-      @kopis = Kopi.where(origin_id: params[:origin_id] )
+      @kopis = Kopi.where(origin_id: params[:origin_id])
     # test to see if we are at /roasts/:id/kopis or /kopis
     elsif params.has_key?(:roast_id)
       # get all the kopis for a specific roast
       @roast_id = params[:roast_id]
-      @kopis = Kopi.where(roast_id: params[:roast_id] )
+      @kopis = Kopi.where(roast_id: params[:roast_id])
     else
       # get all kopis
-      @kopis = Kopi.all
+      @kopis = Kopi.all.order("name ASC")
     end
   end
 

@@ -1,7 +1,7 @@
 class OriginsController < ApplicationController
 
   def index
-    @origins = Origin.all
+    @origins = Origin.all.order("location ASC")
   end
 
   def show

@@ -21,13 +21,14 @@
 		        <a class="nav-link" href="/">Kopis</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="/roasts">Roast</a>
+		        <a class="nav-link" href="/roasts">Roasts</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="/origins">Origins</a>
 		      </li>
 		    </ul>
 				<% if user_signed_in? %>
+					<span class="text-white"><%= current_user.email %></span>&nbsp&nbsp
 					<%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: "btn btn-outline-success" %><br>
 				<% else %>
 					<%= link_to 'Log In', new_user_session_url, class: "btn btn-outline-success" %><br>
