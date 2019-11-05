@@ -4,10 +4,14 @@ class RoastsController < ApplicationController
     end
 
     def new
+        # Render new roast form
     end
 
     def create
+        @roast = Roast.new(roast_params)
 
+        @roast.save
+        # redirect_to @roasts
     end
 
     def show
@@ -21,4 +25,9 @@ class RoastsController < ApplicationController
 
     def destroy
     end
+
+    private
+        def roast_params
+            params.require(:roast).permit(:name)
+        end
 end
