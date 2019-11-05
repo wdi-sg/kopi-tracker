@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/kopis/:id' => 'kopis#show', as: 'kopi'
     get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
     patch '/kopis/:id' => 'kopis#update'
-
+    delete '/kopis/:id' => 'kopis#destroy'
 
     get '/origins' => 'origins#index', as: 'origins'
     get '/origins/new' => 'origins#new', as: 'new_origin'
