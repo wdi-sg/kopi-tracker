@@ -20,9 +20,14 @@ class RoastsController < ApplicationController
     end
 
     def edit
+        @roast = Roast.find(params[:id])
     end
 
     def update
+        @roast = Roast.find(params[:id])
+
+        @roast.update(roast_params)
+        redirect_to @roast
     end
 
     def destroy
