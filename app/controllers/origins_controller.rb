@@ -4,8 +4,11 @@ class OriginsController < ApplicationController
     end
 
     def new
-
-    end
+        if( params[:roast_id].present? )
+          @roast_id = params[:roast_id]
+        end
+        @roasts = Roast.all
+      end
 
     def show
         @origin = Origin.find(params[:id])
