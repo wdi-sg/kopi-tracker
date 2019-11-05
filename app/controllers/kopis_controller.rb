@@ -26,6 +26,18 @@ class KopisController < ApplicationController
         @kopi = Kopi.find(params[:id])
     end
 
+    def edit
+        @kopi = Kopi.find(params[:id])
+        @origins = Origin.all
+    end
+
+    def update
+        @kopi = Kopi.find(params[:id])
+
+        @kopi.update(kopi_params)
+        redirect_to @kopi
+    end
+
     private
       def kopi_params
         params.require(:kopi).permit(:name, :roast, :origin_id)
