@@ -3,15 +3,12 @@
         <%= form.label :name %><br>
         <%= form.text_field :name %>
     </p>
-    
     <p>
-        <%= form.label :roast %><br>
-        <%= form.text_area :roast %>
-    </p>
-    
     <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    </p>
+    <p>
     <%= form.collection_select :origin_id, @origins, :id, :location %>
-    
+    </p>
     <p>
         <%= form.submit %>
     </p>

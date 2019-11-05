@@ -1,16 +1,14 @@
-<h1>Hello Ruby</h1>
-
 <h1>Listing kopis</h1>
 
 <% if user_signed_in? %>
   <%= link_to 'New kopi', new_kopi_path %>
+  <%= button_to('Logout', destroy_user_session_path, :method => 'delete')%>
 
   <% else %>
   <%= link_to 'New kopi', new_kopi_path %>
   <% end %>
   
 
-<%= button_to('Logout', destroy_user_session_path, :method => 'delete')%>
 
 <table>
   <tr>

@@ -2,15 +2,10 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
 
     def index
-        # test to see if we are at /origins/:id/kopis or /kopis
-        # if params.has_key?(:origin_id)
-        #   # get all the kopis for a specific origin
-        #   @kopis = Kopi.where(origin_id: params[:origin_id] )
-        # else
-          # get all kopis
           @origins = Origin.all
           @kopis = Kopi.all
           @roasts = Roast.all
+          @orders = Order.all
         # end
       end
       
