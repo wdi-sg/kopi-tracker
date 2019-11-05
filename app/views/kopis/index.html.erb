@@ -1,0 +1,19 @@
+<h1>Listing Kopis</h1>
+
+<table>
+  <tr>
+    <th>Kopi Name</th>
+    <th>Roast Type</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.farm.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
