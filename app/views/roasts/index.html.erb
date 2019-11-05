@@ -1,0 +1,45 @@
+<div class="nav">
+    <ul>
+        <li><%= link_to 'Kopi', kopis_path %></li>
+        <li><%= link_to 'Origin', origins_path %></li>
+
+        <!--If user is admin, show create new roast and logout link. Else, shows only login link.-->
+        <% if current_user.try(:admin?) %>
+            <li><%= link_to 'New Roast', new_roast_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_url, method: :delete %></li>
+        <% else %>
+            <li><%= link_to 'Log In', new_user_session_url %></li>
+        <% end %>
+    </ul>
+</div>
+
+<div class="main">
+    <h1>List of Roasts</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <% @roasts.each do |roast| %>
+            <tr>
+                <td>
+                    <a href="/roasts/<%= roast.id %>"><%= roast.name %></a>
+                </td>
+
+                <% if current_user.try(:admin?) %>
+                    <td>
+                        <%= link_to 'Edit', edit_roast_path(roast) %>
+                    </td>
+                    <td>
+                        <%= link_to 'Delete', roast_path(roast),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+                    </td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+</div>
