@@ -31,6 +31,12 @@
 		      </li>
 		    </ul>
 		  </div>
+		  <% if user_signed_in? %>
+		  	<div class="navbar-right mr-2"><%= current_user.email %></div><br/>
+		  	<%= link_to 'log out', destroy_user_session_url, method: :delete, class: "btn btn-primary navbar-right" %>
+		  <% else %>
+		  	<%= link_to 'log in', new_user_session_url, {:class => "btn btn-primary navbar-right"} %>
+		  <% end %>
 		</nav>
 		<div class="container">
     	<%= yield %>

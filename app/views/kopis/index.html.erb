@@ -8,6 +8,7 @@
 			<th scope="col">Roast</th>
 			<th scope="col">Origin</th>
 			<th scope="col">Price per Pound</th>
+			<th scope="col">User</th>
 			<th scope="col">View</th>
 		</tr>
 	</thead>
@@ -19,10 +20,12 @@
 				<td><%= kopi.roast.name %></td>
 				<td><%= kopi.origin.location %></td>
 				<td><%= kopi.price %></td>
+				<td><%= kopi.user.email %></td>
 				<td><%= link_to 'Show', kopi_path(kopi) %></td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
-
-<%= link_to('New kopi', new_kopi_path, {:class => "btn btn-primary btn-lg"}) %>
+<% if user_signed_in? %>
+	<%= link_to('New kopi', new_kopi_path, {:class => "btn btn-primary btn-lg"}) %>
+<% end %>

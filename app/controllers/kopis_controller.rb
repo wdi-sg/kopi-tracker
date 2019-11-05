@@ -1,4 +1,7 @@
 class KopisController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index, :home ]
+
   def home
   end
 
@@ -14,8 +17,12 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
-    @kopi.save
-    redirect_to @kopi
+    @kopi.user = current_user
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -30,6 +37,7 @@ class KopisController < ApplicationController
 
   def update
     @kopi = Kopi.find(params[:id])
+    @kopi.user = current_user
     @kopi.update(kopi_params)
     redirect_to @kopi
   end
