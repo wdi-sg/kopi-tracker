@@ -1,6 +1,6 @@
 class RoastsController < ApplicationController
   def index
-    @roasts = Roast.all
+    @roasts = Roast.all.order("id ASC")
   end
 
   def show

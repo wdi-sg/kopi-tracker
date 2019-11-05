@@ -1,3 +1,5 @@
+<h3>Kopi</h3>
+
 <p>
   <strong>Name:</strong>
   <%= @kopi.name %>
@@ -14,7 +16,7 @@
 </p>
 
 <% if user_signed_in? %>
-	<% if @kopi.user_id == current_user.id %>
+	<% if @kopi.user_id == current_user.id || current_user.admin %>
 		<%= link_to 'Edit', edit_kopi_path(@kopi), class: "btn btn-warning" %>
 	<% end %>
 <% end %>
