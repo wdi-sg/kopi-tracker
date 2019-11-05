@@ -1,15 +1,19 @@
 <h1>Edit Roast</h1>
 
-<%= form_with scope: :roast, model: @roast, local: true do |form| %>
+<% if current_user.try(:admin?) %>
+    <%= form_with scope: :roast, model: @roast, local: true do |form| %>
 
-    <p>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-    </p>
+        <p>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+        </p>
 
-    <p>
-        <%= form.submit %>
-    </p>
+        <p>
+            <%= form.submit %>
+        </p>
+    <% end %>
+<% else %>
+    <h3>You are unauthorized to view this page.</h3>
 <% end %>
 
 <%= link_to 'Back', roasts_path %>
