@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-origin1 = Origin.create(:location => 'Vietnam', :phone => '90191101')
-origin2 = Origin.create(:location => 'Brazil', :phone => '90191102')
-
-kopi1 = Kopi.create(:name => 'Kopi 1', :roast => 'Cinnamon', :origin => origin1)
-kopi2 = Kopi.create(:name => 'Kopi 2', :roast => 'Light', :origin => origin1)
-kopi3 = Kopi.create(:name => 'Kopi 3', :roast => 'Cinnamon', :origin => origin2)
+cinnamon = Roast.create(:name => 'Cinnamon')
+light = Roast.create(:name => 'Light')
+city_medium = Roast.create(:name => 'City/Medium')
+full_city = Roast.create(:name => 'Full City')
+dark = Roast.create(:name => 'Dark')
+french = Roast.create(:name => 'French')
+italian = Roast.create(:name => 'Italian')
