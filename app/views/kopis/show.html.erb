@@ -5,6 +5,7 @@
   <p>This Kopi is from: <%= link_to @kopi.origin.location, origin_path(@kopi.origin) %></p>
   <p>Price per pound: <%= @kopi.price %></p>
 </div>
-
-<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning btn-lg"}) %>
-<%= link_to('Destroy', kopi_path(@kopi), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% if user_signed_in? %>
+	<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning btn-lg"}) %>
+	<%= link_to('Destroy', kopi_path(@kopi), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% end %>

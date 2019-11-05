@@ -11,6 +11,7 @@
   <hr class="my-4">
   <p class="lead">Phone Number: <%= @origin.phone %></p>
 </div>
-
-<%= link_to('Edit', edit_origin_path, {:class => "btn btn-warning btn-lg"}) %>
-<%= link_to('Destroy', origin_path(@origin), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% if user_signed_in? %>
+	<%= link_to('Edit', edit_origin_path, {:class => "btn btn-warning btn-lg"}) %>
+	<%= link_to('Destroy', origin_path(@origin), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% end %>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'kopis#home'
-  get 'roasts/index' => 'roasts#index'
-  get 'roasts/:id' => 'roasts#show', as: 'roast'
+  resources :roasts
   resources :origins
   resources :kopis
   resources :orders

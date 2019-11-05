@@ -20,5 +20,6 @@
 		<% end %>
 	</tbody>
 </table>
-
-<%= link_to('New origin', new_origin_path, {:class => "btn btn-primary btn-lg"}) %>
+<% if user_signed_in? %>
+	<%= link_to('New origin', new_origin_path, {:class => "btn btn-primary btn-lg"}) %>
+<% end %>
