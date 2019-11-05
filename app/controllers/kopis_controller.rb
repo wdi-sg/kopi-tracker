@@ -3,7 +3,7 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :index ]
 
   def index
-    @kopi = Kopi.all
+    @kopi = Kopi.all.order('id')
 
   end
 

@@ -1,7 +1,7 @@
 class OriginsController < ApplicationController
 
   def index
-    @origin = Origin.all
+    @origin = Origin.all.order('id')
   end
 
   def new

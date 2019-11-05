@@ -1,0 +1,31 @@
+<% if current_user.admin? %>
+
+	<div class="container">
+
+		<h1 class="display-4 text-center">New Roast</h1>
+
+		<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+			<div class="form-group mt-5" style="width: 50%; margin: 0 auto">
+
+			  <p>
+			    <%= form.label :name %><br>
+			    <%= form.text_field :name, {:class => "form-control"} %>
+			  </p>
+
+				<%= link_to 'Back', roasts_path, {:class => "btn btn-outline-secondary"} %>
+
+			  <%= form.submit "Save Roast", class: "btn btn-primary" %>
+
+			</div>
+		<% end %>
+
+	</div>
+
+
+<% else %>
+
+	<div class="container">
+		<h1 class="display-4 text-center mt-5">Excuse Me You Don't Belong Here, Siam Siam Siam</h1>
+	</div>
+
+<% end %>

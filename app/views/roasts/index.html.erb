@@ -1,0 +1,40 @@
+<% if current_user.admin? %>
+
+		<div class="container">
+
+			<h1 class="display-4 text-center">All Roasts</h1>
+
+			<table class="table">
+				<thead class="thead-dark">
+				  <tr>
+				    <th class="text-center">Location</th>
+				    <th>Phone Number</th>
+				    <th></th>
+				  </tr>
+			  </thead>
+
+			  <tbody>
+				  <% @roast.each do |x| %>
+				    <tr>
+				      <td class="text-center" style="width: 70%"><%= x.name %></td>
+				      <td><%= link_to 'Show', roast_path(x) %> | <%= link_to 'Edit', edit_roast_path(x) %> | <%= link_to 'Delete', roast_path(x),
+				        method: :delete,
+				        data: { confirm: 'Are you sure?' } %></td>
+				    </tr>
+				  <% end %>
+			  </tbody>
+			</table>
+
+
+			<%= link_to 'New Roasts', new_roast_path, {:class => "btn btn-outline-primary"} %>
+
+		</div>
+
+
+<% else %>
+
+	<div class="container">
+		<h1 class="display-4 text-center mt-5">Excuse Me You Don't Belong Here, Siam Siam Siam</h1>
+	</div>
+
+<% end %>

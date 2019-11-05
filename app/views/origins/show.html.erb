@@ -9,28 +9,27 @@
 
 
 	<% if @origin.kopi[0] %>
-  	<% @origin.kopi.each do |x| %>
-			<table class="table">
-				<thead class="thead-dark">
-				  <tr>
-				    <th>Name</th>
-				    <th>Roast</th>
-				    <th>Origin</th>
-				    <th></th>
-				  </tr>
-				</thead>
-				<tbody>
-			    <tr>
-			      <td><%= x.name %></td>
-			      <td><%= x.roast.name %></td>
-			      <td><%= x.origin.location %></td>
-			      <td><%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
-			        method: :delete,
-			        data: { confirm: 'Are you sure?' } %></td>
-			    </tr>
-		    </tbody>
-			</table>
-		<% end %>
+		<table class="table">
+			<thead class="thead-dark">
+			  <tr>
+			    <th>Name</th>
+			    <th>Roast</th>
+			    <th>Origin</th>
+			    <th></th>
+			  </tr>
+			</thead>
+
+			<% @origin.kopi.each do |x| %>
+		    <tr>
+		      <td><%= x.name %></td>
+		      <td><%= x.roast.name %></td>
+		      <td><%= x.origin.location %></td>
+		      <td style="width: 20%"><%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %></td>
+		    </tr>
+	    <% end %>
+		</table>
 	<% elsif %>
 		<p class="lead text-center mb-5 mt-5">No Kopis added for this Origin yet</p>
 	<% end %>

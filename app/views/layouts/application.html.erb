@@ -13,19 +13,24 @@
 
   <body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <a class="navbar-brand" href="/">KopiTiam <box-icon name='coffee' class="align-baseline"></box-icon></a>
+		  <a class="navbar-brand" href="/">Kopi<span class="text-secondary">Tiam</span></box-icon></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		    <div class="navbar-nav">
-		      <a class="nav-item nav-link active" href="/">All Kopi Origins</a>
-		      <a class="nav-item nav-link active" href="/kopis">All Kopis</a>
+		      <a class="nav-item nav-link active" href="/">|All Kopi Origins <box-icon name='globe' class="align-bottom"></box-icon>|</a>
+		      <a class="nav-item nav-link active" href="/kopis">|All Kopis <box-icon name='coffee' class="align-bottom"></box-icon>|</a>
+
+					<% if current_user.try(:admin?) %>
+		      	<a class="nav-item nav-link active align-top" href="/roasts">|All Roasts|</a>
+					<% end %>
+
 					<% if user_signed_in? == false %>
-					<%= button_to 'Log In', new_user_session_url, {:class => "btn btn-outline-primary btn-block"} %>
+						<%= button_to 'Log In', new_user_session_url, {:class => "btn btn-outline-primary btn-block ml-3"} %>
 					<% end %>
 					<% if user_signed_in? %>
-					<%= button_to 'Log Out', destroy_user_session_url, {method: :delete, :class => "btn btn-outline-dark btn-block"}%>
+						<%= button_to 'Log Out', destroy_user_session_url, {method: :delete, :class => "btn btn-outline-dark btn-block ml-3"}%>
 					<% end %>
 		    </div>
 		  </div>
