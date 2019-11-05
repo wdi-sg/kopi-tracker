@@ -8,10 +8,26 @@
     <%= stylesheet_link_tag    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"%>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>  <body>
-  
-  <div class="container">
-  <div class="starter-template">
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <span class="navbar-brand" href="#">Kopi Tracker</span>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a href="/kopis" class="nav-link">Kopis</a>
+          </li>
+          <li class="nav-item">
+          <a href="/origins" class="nav-link">Origins</a>
+        </li>
+
+		    </ul>
+		  </div>
+		</nav>
+		<div class="container">
 
 
     <%= yield %>
@@ -19,6 +35,6 @@
     
     </div>
 
-    </div>
+
   </body>
 </html>
