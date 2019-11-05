@@ -6,9 +6,9 @@
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
+
   <p>
-    <%= form.label :roast %><br>
-    <%= form.text_field :roast %>
+   <%= form.collection_select :roast_id, @roasts, :id, :name %>
   </p>
 
   <p>

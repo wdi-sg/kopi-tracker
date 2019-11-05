@@ -1,7 +1,11 @@
 <h1>All Kopis in the Kopiverse</h1>
 
+<% if user_signed_in? %>
 <div><%= link_to 'add kopi', new_kopi_path %></div>
 <br/>
+	<% if current_user.admin?%>
+		<div><%= link_to 'add origin', new_origin_path %></div>
+	<%end%>
 <table>
   <tr>
     <th>Name</th>
@@ -16,8 +20,15 @@
        <td><%= kopi.roast.name %></td>
         <td><%= kopi.origin.location%></td>
       <td><%= link_to 'Show', kopi_path(kopi) %></td>
-      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-      <td><%= link_to 'DESTROY', kopi_path(kopi), method: :delete, data:{confirm: 'Delete kopi entry FOREVER?'} %></td>
+      <% if current_user.admin? %>
+	      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+	      <td><%= link_to 'DESTROY', kopi_path(kopi), method: :delete, data:{confirm: 'Delete kopi entry FOREVER?'} %></td>
+	    <%end%>
     </tr>
   <% end %>
 </table>
+ <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+ 	<h1>Log in to add a kopi</h1>
+   <%= link_to 'log in', new_user_session_url %>
+<% end %>
