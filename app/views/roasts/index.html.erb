@@ -1,24 +1,20 @@
-<h1>Listing roasts</h1>
+<h1 class="display-4">Listing roasts</h1>
 
-<%= link_to 'New roast', new_roast_path %>
 
-<table>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col"></th>
+</tr>
+</thead>
+<tbody>
+<% @roasts.each do |roast| %>
   <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th></th>
+  <td><%= roast.name %></td>
+  
   </tr>
-
-  <% @roasts.each do |roast| %>
-    <tr>
-        <td><%= roast.id %></td>
-        <td><%= roast.name %></td>
-        <td><%= link_to 'Show', roast_path(roast) %></td>
-        <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
-        <td><%= link_to 'Destroy', roast_path(roast),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
-
-    </tr>
   <% end %>
-</table>
+  </tobdy>
+  </table>
+  <%= link_to('New roast', new_roast_path, {:class => "btn btn-primary"} )%>

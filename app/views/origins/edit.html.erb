@@ -1,4 +1,4 @@
-<h1>Edit origin</h1>
+<h1 class="display-4">Edit origin</h1>
 
 <%= form_with scope: :origin, model: @origin, local: true do |form| %>
 
@@ -12,9 +12,9 @@
 	<%= form.text_field :phone %>
 </p>
 
-<p>
-	<%= form.submit %>
-</p>
+<div class="form-group">
+<%= form.submit({:class => "btn btn-primary"}) %>
+</div>
 
 <% end %>
 

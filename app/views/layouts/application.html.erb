@@ -30,12 +30,13 @@
 					<%= link_to("Roasts", roasts_path, {:class => "nav-link"})%>
 				</li>
 				<li class="nav-item">
-					<%= link_to("Sign up", new_user_registration_path, {:class => "nav-link"})%>
+				<% if user_signed_in? %>
+				<%= button_to('Logout', destroy_user_session_path, :method => 'delete', :class => "btn nav-link")%>
+				
+				<% else %>
+				<%= link_to("Sign in", new_user_session_path, {:class => "nav-link"})%>
+				<% end %>
 				</li>
-				<li class="nav-item">
-					<%= link_to("Sign in", new_user_session_path, {:class => "nav-link"})%>
-				</li>
-
 
 			</ul>
 		</div>

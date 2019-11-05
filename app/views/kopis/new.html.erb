@@ -1,22 +1,28 @@
+<h1 class="display-4">New Kopi</h1>
+
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    <p>
-        <%= form.label :name %><br>
-        <%= form.text_field :name %>
-    </p>
-    <p>
-    <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    </p>
-    <p>
-    <%= form.collection_select :origin_id, @origins, :id, :location %>
-    </p>
-    <p>
-        <%= form.submit %>
-    </p>
-    <% end %>
-    
-    <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-    ...
-    <% end %>
-    
-    
-    <%= link_to 'Back', kopis_path %>
+
+  <div class="form-group">
+    <%= form.label :name %><br>
+    <%= form.text_field(:name, {:class => "form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :roast_id %><br>
+    <%= form.collection_select(:roast_id, @roasts, :id, :name, {:include_blank => 'Select roast...'}, {:class => "custom-select"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :origin_id %><br>
+    <%= form.collection_select(:origin_id, @origins, :id, :location, {:include_blank => 'Select origin...'}, {:class => "custom-select"}) %>
+  </div>
+  
+	<div class="form-group">
+	<%= form.label :price %><br>
+	<%= form.text_field(:price, {:class =>  "form-control"}) %>
+	</div>
+
+  <div class="form-group">
+    <%= form.submit({:class => "btn btn-primary"}) %>
+  </div>
+<% end %>

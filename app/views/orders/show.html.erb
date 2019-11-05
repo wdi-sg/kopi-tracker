@@ -1,0 +1,27 @@
+<p class = "display-4">
+Order
+</p>
+
+<p>
+	<strong>Kopi:</strong>
+	<%= @order.kopi.name %>
+</p>
+
+<p>
+	<strong>Weight:</strong>
+	<%= @order.weight %>g
+</p>
+<p>
+	<strong>Price per kg:</strong>
+	$ <%= @order.kopi.price %>
+</p>
+<p>
+	<strong>Total price:</strong>
+	$
+	<%= @order.kopi.price * @order.weight/1000 %>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_order_path(@order) %>
+	<%= link_to 'Back', orders_path %>
+</p>

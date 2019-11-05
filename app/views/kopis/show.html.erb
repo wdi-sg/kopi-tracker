@@ -1,5 +1,6 @@
-<p>
-	<strong>Name:</strong>
+
+
+<p class = "display-4">
 	<%= @kopi.name %>
 </p>
 
@@ -11,8 +12,12 @@
 	<strong>Origin:</strong>
 	<%= @kopi.origin.location %>
 </p>
+<p>
+	<strong>Price (/kg):</strong>
+	<%= @kopi.price %>
+</p>
 
 <p>
 	<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning"}) %>
-	<%= link_to('Back', kopis_path, {:class => "btn btn-info"})%>
+	<%= link_to('Back', kopis_path, {:class => "btn btn-primary"})%>
 </p>
