@@ -19,4 +19,8 @@ Rails.application.routes.draw do
     get '/origins/:id/edit' => 'origins#edit', as: 'edit_origin'
     patch '/origins/:id' => 'origins#update'
     delete '/origins/:id' => 'origins#destroy'
+
+    get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
+    get '/origins/:origin_id/kopis/new' => 'kopis#new', as: 'new_origin_kopi'
+    post '/origins/:origin_id/kopis' => 'kopis#create'
 end

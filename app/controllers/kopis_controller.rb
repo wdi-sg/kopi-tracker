@@ -3,7 +3,14 @@ class KopisController < ApplicationController
     before_action :authenticate_user!, :except => [ :show, :index ]
 
     def index
-        @kopis = Kopi.all
+        # test to see if we are at /parks/:id/rangers or /rangers
+        if params.has_key?(:origin_id)
+            # get all the rangers for a specific park
+            @kopis = Kopi.where(origin_id: params[:origin_id] )
+        else
+            # get all kopis
+            @kopis = Kopi.all
+        end
     end
 
     def new
