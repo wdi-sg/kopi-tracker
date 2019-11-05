@@ -61,10 +61,10 @@
 
 <br>
 <% if user_signed_in? and !current_user.try(:admin?)  %>
-<%= link_to 'Add a Kopi', new_kopi_path, :class => "btn btn-primary" %> <br>
+<%= link_to 'Add a Kopi', new_kopi_path, :class => "btn btn-success btn-block" %> <br>
 
 <% elsif user_signed_in? and current_user.try(:admin?) %>
-<%= link_to 'See Roasts', roasts_path, class:{color: "white"} %> <br> <br>
+<%= link_to 'See Roasts', roasts_path, :class => "btn btn-primary btn-block" %> <br> <br>
 
 
 <%else%>
