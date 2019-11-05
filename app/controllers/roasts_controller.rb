@@ -1,6 +1,6 @@
 class RoastsController < ApplicationController
   def index
-    @roasts = roasts.all
+    @roasts = Roast.all
   end
 
   def new

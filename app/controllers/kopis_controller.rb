@@ -1,10 +1,19 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
+
   def index
     @kopis = Kopi.all
+    @user = current_user
+    # p "@@@@@@@@@", @user
+    # p "%%%%%%%%%%%%%", current_user.kopi
+    if current_user
+      @kopis = current_user.kopi
+    end
   end
 
   def create
     @kopi = Kopi.new(kopi_params)
+    @kopi.user = current_user
     @kopi.save
     redirect_to @kopi
   end
