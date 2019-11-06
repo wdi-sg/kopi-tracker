@@ -25,8 +25,15 @@ class OrdersController < ApplicationController
     def show
     @order = Order.find(params[:id])
     @kopi = Kopi.where(id: @order.kopi_id)
+    @user = current_user
     end
 
+    def destroy
+        @order = Order.find(params[:id])
+        @order.destroy
+      
+        redirect_to orders_path
+      end
     private
 
     def order_params

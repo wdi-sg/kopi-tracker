@@ -1,8 +1,12 @@
-<h1>Order </h1>
-
+<h1>Displaying Order for : <%= @user.email%> </h1>
+<br>
 <h2>Name: <%= @kopi[0].name%></h2>
 <h2>Weight: <%= @order.weight%>lb </h2>
 <h2>Price Per Pound: $<%= @kopi[0].price%> </h2>
 <h3>Total Price: $<%= @kopi[0].price * @order.weight%></h3>
+<br>
 
+<%= link_to 'Delete', order_path(@order),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },  :class => "btn btn-danger" %> 
 <%= link_to 'See All Order',orders_path,  :class => "btn btn-primary" %>

@@ -18,7 +18,7 @@
     <% @user.order.each do |order| %>
     <tr>
       <th scope="row"><%= order.id%></th>
-      <td><a href="/kopis/<%= order.id%>"><%= order.kopi.name%></a></td>
+      <td><a href="/orders/<%= order.id%>"><%= order.kopi.name%></a></td>
       <td>$<%= order.kopi.price%></td>
       <td><%= order.weight%>lb</td>
       <td> $<%= order.weight * order.kopi.price %></td>

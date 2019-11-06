@@ -1,5 +1,14 @@
 class RoastsController < ApplicationController
-    before_action :authenticate_user!, :except => [ :show,   ]
+    def authenticate_admin!
+        # check if current user is admin
+        unless current_user.admin
+          # if current_user is not admin redirect to some route
+          redirect_to '/'
+        end
+        # if current_user is admin he will proceed to edit action
+      end
+
+      before_action :authenticate_admin!, only: [:index]
 
 
     def index
