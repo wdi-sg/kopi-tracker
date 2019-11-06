@@ -1,9 +1,10 @@
 class KopisController < ApplicationController
-    before_action :authenticate_user!, :except => [ :show,   ]
+    before_action :authenticate_user!, :except => [ :show, :index   ]
 
     def index
     @kopis = Kopi.all 
     @user = current_user
+    @kopis.sort_by {|kopi| kopi.customers.length}
     end
     def new
         @roasts = Roast.all
@@ -44,6 +45,22 @@ class KopisController < ApplicationController
       
         redirect_to root_path
       end
+
+
+    def sort
+        @kopis = Kopi.all
+        order = params[:order]
+        if order == "desc"
+            @kopis = @kopis.sort_by {|kopi| kopi.customers.length}.reverse
+
+        else
+            @kopis = @kopis.sort_by {|kopi| kopi.customers.length}
+        end
+
+        render :index
+    end
+
+    
 
     private
 

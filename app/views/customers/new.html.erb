@@ -6,8 +6,12 @@
     <%= f.text_field :name %>
   </p>
 
- 
-  <%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %> 
+<%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
+    <label class="checkbox-inline mr-5">
+        <%= cb.check_box %>
+        <%= cb.label %>
+    </label>
+<% end %>
 
 
 <p>

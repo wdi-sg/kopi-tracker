@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'kopis#index'
+  get 'kopis/sort/:order' => 'kopis#sort'
   get 'kopis' => 'kopis#index', as: 'kopis'
   get 'kopis/new' => 'kopis#new', as: 'new_kopi'
   post 'kopis' => 'kopis#create'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
+ 
 
   get 'orders' => 'orders#index', as: 'orders'
   get 'orders/new' => 'orders#new', as: 'new_order'

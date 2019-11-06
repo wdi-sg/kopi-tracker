@@ -1,5 +1,15 @@
 <h1 class="border-bottom">Kopi Tracker</h1>
 <h2 class="mt-4">All Kopis</h2>
+<div class="dropdown mb-5">
+  <button class="btn btn-secondary btn-block dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort By Popularity
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/kopis/sort/desc">Most- Least</a>
+    <a class="dropdown-item" href="/kopis/sort/asc">Least - Most</a>
+    
+  </div>
+</div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -7,6 +17,7 @@
       <th scope="col">Name</th>
       <th scope="col">Roast</th>
       <th scope="col">Origin</th>
+      <th scope="col">Number Of Carriers</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +27,7 @@
       <td><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a></td>
       <td><%= kopi.roast.roast_type%></td>
       <td><%= kopi.origin.location%></td>
+      <td><%= kopi.customers.length%></td>
     </tr>
     <% end %>
    
@@ -24,51 +36,4 @@
 </table>
 
 
-<% if user_signed_in? and !current_user.try(:admin?) %>
-<h2>Your Kopis</h2>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Roast</th>
-      <th scope="col">Origin</th>
-    </tr>
-  </thead>
-  <tbody>
-     <% @user.kopi.each do |kopi| %>
-    <tr>
-      <th scope="row"><%= kopi.id%></th>
-      <td><a href="/kopis/<%= kopi.id%>"><%= kopi.name%></a></td>
-      <td><%= kopi.roast.roast_type%></td>
-      <td><%= kopi.origin.location%></td>
-    </tr>
-    <% end %>
-   
-  
-  </tbody>
-</table>
-
-
-
-
-
-<% elsif user_signed_in? and current_user.try(:admin?) %>
-<h2>Admin Section</h2>
-<% end %>
-
-
-
-<br>
-<% if user_signed_in? and !current_user.try(:admin?)  %>
-<%= link_to 'Add a Kopi', new_kopi_path, :class => "btn btn-success btn-block" %> <br>
-
-<% elsif user_signed_in? and current_user.try(:admin?) %>
-<%= link_to 'See Roasts', roasts_path, :class => "btn btn-primary btn-block" %> <br> <br>
-
-
-<%else%>
-<%= link_to 'log in', new_user_session_url %>
-
-<% end %>
 
