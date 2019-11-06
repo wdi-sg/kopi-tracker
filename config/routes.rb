@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :roasts
+  resources :customers
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :roasts
 
   root 'kopis#index'
   get '/kopis' => 'kopis#index', as: 'kopis'
