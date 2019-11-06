@@ -1,4 +1,4 @@
-<h1>Kopi</h1>
+<h3>Kopi</h3>
 
 <p>
   <strong>Name:</strong>
@@ -7,7 +7,7 @@
 
 <p>
   <strong>Roast:</strong>
-  <%= @kopi.roast %>
+  <%= @kopi.roast.name %>
 </p>
 
 <p>
@@ -15,5 +15,9 @@
   <%= @kopi.origin.location %>
 </p>
 
-<%= link_to 'Edit', edit_kopi_path(@kopi) %>
-<%= link_to 'Back', root_path %>
+<% if user_signed_in? %>
+    <% if @kopi.user_id == current_user.id || current_user.admin %>
+        <%= link_to 'Edit', edit_kopi_path(@kopi), class: "btn btn-warning" %>
+    <% end %>
+<% end %>
+<%= link_to 'Back', root_path, class: "btn btn-dark" %>

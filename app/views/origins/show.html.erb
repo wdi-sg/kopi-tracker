@@ -1,4 +1,4 @@
-<h1>Origin</h1>
+<h3>Origin</h3>
 
 <p>
   <strong>Location:</strong>
@@ -10,5 +10,7 @@
   <%= @origin.phone %>
 </p>
 
-<%= link_to 'Edit', edit_origin_path(@origin) %>
-<%= link_to 'Back', origins_path %>
+<% if current_user.try(:admin?) %>
+    <%= link_to 'Edit', edit_origin_path(@origin), class: "btn btn-warning" %>
+<% end %>
+<%= link_to 'Back', origins_path, class: "btn btn-dark" %>

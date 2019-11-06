@@ -1,0 +1,11 @@
+<h3>Roast</h3>
+
+<p>
+  <strong>Name:</strong>
+  <%= @roast.name %>
+</p>
+
+<% if current_user.try(:admin?) %>
+    <%= link_to 'Edit', edit_roast_path(@roast), class: "btn btn-warning" %>
+<% end %>
+<%= link_to 'Back', roasts_path, class: "btn btn-dark" %>

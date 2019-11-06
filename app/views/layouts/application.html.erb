@@ -4,12 +4,44 @@
     <title>KopiTracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="/">Kopi Tracker</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Kopis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/roasts">Roasts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/origins">Origins</a>
+              </li>
+            </ul>
+                <% if user_signed_in? %>
+                    <span class="text-white"><%= current_user.email %></span>&nbsp&nbsp
+                    <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class: "btn btn-outline-success" %><br>
+                <% else %>
+                    <%= link_to 'Log In', new_user_session_url, class: "btn btn-outline-success" %><br>
+                <% end %>
+          </div>
+        </nav>
+
+        <main role="main">
+        <section class="jumbotron">
+            <div class="container">
+                <%= yield %>
+            </div>
+        </section>
+    </main>
   </body>
 </html>

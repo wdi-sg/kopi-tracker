@@ -7,10 +7,11 @@
     <%= form.text_field :name %>
   </p>
 
-  <p>
-    <%= form.label :roast %><br>
-    <%= form.text_field :roast %>
-  </p>
+    <% if @roast_id.nil? %>
+        <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    <% else %>
+        <%= form.text_field :roast_id, value: @roast_id, hidden: true %>
+    <% end %>
 
     <% if @origin_id.nil? %>
         <%= form.collection_select :origin_id, @origins, :id, :location %>
@@ -24,7 +25,7 @@
 <% end %>
 
     <% if @origin_id.nil? %>
-        <%= link_to 'Back', root_path %>
+        <%= link_to 'Back', root_path, class: "btn btn-dark" %>
     <% else %>
-        <%= link_to 'Back', origin_kopis_path %>
+        <%= link_to 'Back', origin_kopis_path, class: "btn btn-dark" %>
     <% end %>

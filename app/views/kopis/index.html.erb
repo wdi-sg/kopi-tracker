@@ -1,29 +1,39 @@
-<h1>Kopi Tracker</h1>
+<h1>Kopi</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Roast</th>
-    <th>Origin</th>
-    <th></th>
-  </tr>
-  <%= link_to 'Origins', origins_path %>
-    <% if @origin_id.nil? %>
-        <%= link_to 'New Kopi', new_kopi_path %>
-    <% else %>
-        <%= link_to 'New Origin Kopi', new_origin_kopi_path %>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roast</th>
+        <th>Origin</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+  <% if user_signed_in? %>
+        <% if @origin_id.nil? %>
+            <%= link_to 'New Kopi', new_kopi_path, class: "btn btn-info" %>
+        <% else %>
+            <%= link_to 'New Origin Kopi', new_origin_kopi_path, class: "btn btn-info" %>
+        <% end %>
     <% end %>
-
-    <% @kopis.each do |kopi| %>
-    <tr>
-        <td><%= kopi.name %></td>
-        <td><%= kopi.roast %></td>
-        <td><%= kopi.origin.location %></td>
-        <td><%= link_to 'Show', kopi_path(kopi) %></td>
-    <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-    <td><%= link_to 'Destroy', kopi_path(kopi),
-      method: :delete,
-      data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
+    <tbody>
+        <% @kopis.each do |kopi| %>
+        <tr>
+            <td><%= kopi.name %></td>
+            <td><%= kopi.roast.name %></td>
+            <td><%= kopi.origin.location %></td>
+            <td><%= link_to 'Show', kopi_path(kopi), class: "btn btn-success" %></td>
+            <% if user_signed_in? %>
+                <% if kopi.user_id == current_user.id || current_user.admin %>
+                <td><%= link_to 'Edit', edit_kopi_path(kopi), class: "btn btn-warning" %></td>
+                <td><%= link_to 'Destroy', kopi_path(kopi), class: "btn btn-danger",
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
