@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'customers/new' => 'customers#new', as: 'new_customer'
   post 'customers' => 'customers#create'
   get 'customers/:id' => 'customers#show', as: 'customer'
+  get 'customers/sort/:order' => 'customers#sort', as: 'sort_customer'
 
 end
  

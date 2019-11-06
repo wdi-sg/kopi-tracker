@@ -1,9 +1,18 @@
 <h1>Customers</h1>
-
+<div class="dropdown mb-5">
+  <button class="btn btn-secondary btn-block dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort By Kopis Carried
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/customers/sort/desc">Most- Least</a>
+    <a class="dropdown-item" href="/customers/sort/asc">Least - Most</a>
+    
+  </div>
+</div>
 <ul class="list-group">
 <%@customers.each do |customer|%>
 
-<li class="list-group-item"> <a href="/customers/<%=customer.id%>"><%=customer.name%></a>  </li>
+<li class="list-group-item"> <a href="/customers/<%= customer.id%>"><%=customer.name%></a>  </li>
 
 <% end %>
 </ul>

@@ -4,6 +4,8 @@ class CustomersController < ApplicationController
     end
     def index
         @customers = Customer.all
+        puts @customers[1].name
+       
     end
 
     def create
@@ -17,7 +19,18 @@ class CustomersController < ApplicationController
         @customer = Customer.find(params[:id])
     end
 
+    def sort
+        @customers = Customer.all
+        order = params[:order]
+        if order == "desc"
+            @customers = @customers.sort_by {|customer| customer.kopis.length}.reverse
 
+        else
+            @customers = @customers.sort_by {|customer| customer.kopis.length}
+        end
+
+        render :index
+    end
     private
 
     def customer_params
