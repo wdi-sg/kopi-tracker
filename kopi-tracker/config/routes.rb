@@ -19,4 +19,14 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
+    get '/roasts' => 'roasts#index', as: 'roasts'
+
+ get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show' , as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
+
 end
