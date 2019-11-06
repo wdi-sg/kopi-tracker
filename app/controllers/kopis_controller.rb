@@ -2,11 +2,11 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index]
 
   def index
-    if 
-      @kopis = Kopi.where(user_id: current_user.id)
-    else
+    # if (params)
+    #   @kopis = Kopi.where(user_id: current_user.id)
+    # else
       @kopis = Kopi.all
-    end
+    # end
   end
 
   def show
@@ -28,7 +28,7 @@ class KopisController < ApplicationController
   
   private
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :user_id, :origin_id)
+    params.require(:kopi).permit(:name, :roast, :user_id, :origin_id, :customer_ids => [])
   end
   
 end

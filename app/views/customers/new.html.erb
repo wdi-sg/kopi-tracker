@@ -1,0 +1,22 @@
+<h1>New Customer Order</h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

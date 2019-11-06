@@ -7,15 +7,14 @@
   <%= link_to 'log in', new_user_session_url %>
 <% end %>
 
-<h1> <%= @kopi.name %> </h1>
-<%= @kopi.roast %>
+<h1> <%= @customer.name %> </h1>
 <p>
-    <%= @kopi.origin.location %>
-    <%= @kopi.origin.phone %>
-    <%= @kopi.customers.each do |c| %>
-      <%= c.name %>
-      <%= c.quantity %>
+    <%= @customer.quantity %>
+    <%= @customer.kopis.each do |k| %>
+      <%= k.name %>
+      <%= k.roast %>
+      <%= k.origin.location%>
+      <%= k.origin.phone%>
+      <%= link_to 'View', kopi_path(@customer.kopi_id) %>
     <% end %>
-    
-    <%= link_to 'View', origin_path(@kopi.origin_id) %>
 </p>
