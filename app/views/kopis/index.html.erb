@@ -1,0 +1,20 @@
+<% if @user %>
+  <h1>Welcome, <%= @user.email %>!</h1>
+<% end %>
+
+  <h2>Kopi Menu</h2>
+  <table class='table'>
+    <tr>
+      <th>Kopi</th>
+      <th>Roast Type</th>
+      <th>Origin</th>
+    </tr>
+    <% @kopis.each do |coffeebean| %>
+      <tr>
+        <td><%= coffeebean.name %></td>
+        <td><%= coffeebean.roast %></td>
+
+        <td><%= link_to 'Show', kopi_path(coffeebean), method: :get %></td>
+      </tr>
+    <% end %>
+  </table>
