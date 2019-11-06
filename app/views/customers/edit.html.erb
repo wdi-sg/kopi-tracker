@@ -1,19 +1,10 @@
 <h1>Edit customer</h1>
 
 <%= form_with(model: @customer, local: true) do |f| %>
-
   <% if @customer.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@customer.errors.count, "error") %> prohibited
-        this customer from being saved:
-      </h2>
-      <ul>
-        <% @customer.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% @customer.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
   <% end %>
 
   <p>
