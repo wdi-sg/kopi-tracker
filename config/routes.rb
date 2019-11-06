@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # delete '/origins/:id' => 'origins#destroy'
   resources :origins
   resources :kopis
+  resources :orders
 
 
 

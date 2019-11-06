@@ -32,11 +32,16 @@
           <%= link_to 'Customer log in', new_customer_session_url,{:class => "nav-link"}  %>
           <% end %>
           </li>
-		    </ul>
+        </ul>
+        <% if customer_signed_in?%>
+        Welcome back <%= current_customer.email %>
+        <% end %>
+        <% if user_signed_in?%>
+          Welcome back <%= current_user.email %>
+        <% end %> 
 		  </div>
 		</nav>
 		<div class="container">
-
 
     <%= yield %>
 
