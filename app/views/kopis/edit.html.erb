@@ -21,13 +21,10 @@
 				<%= form.collection_select :roast_id, @roasts, :id, :name, {promt: "Choose a Roast Level" }, {:class => "form-control"} %>
 			</p>
 
-
-			<% if current_user.admin? %>
-			  <p>
-			  	<%= form.label :price %><br>
-					<%= form.number_field :price, {:class => "form-control"} %>
-				</p>
-			<% end %>
+		  <p>
+		  	<%= form.label :price %><br>
+				<%= form.number_field :price, {:class => "form-control"} %>
+			</p>
 
 
 			<%= link_to 'Back', kopis_path, {:class => "btn btn-outline-secondary"} %>

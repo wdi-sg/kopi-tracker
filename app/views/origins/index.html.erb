@@ -5,20 +5,28 @@
 	<table class="table">
 		<thead class="thead-dark">
 		  <tr>
-		    <th>Location</th>
+		    <th class="text-center">Location</th>
 		    <th>Phone Number</th>
-		    <th></th>
+	      <% if current_user.try(:admin?) %>
+	    		<th></th>
+		    <% end %>
 		  </tr>
 	  </thead>
+
+
+
+
 
 	  <tbody>
 		  <% @origin.each do |x| %>
 		    <tr>
-		      <td><%= x.location %></td>
-		      <td><%= x.phone_number %></td>
-		      <td style="width: 20%"><%= link_to 'Show', origin_path(x) %> | <%= link_to 'Edit', edit_origin_path(x) %> | <%= link_to 'Delete', origin_path(x),
+		      <td class="text-center"><%= x.location %></td>
+		      <td style="width: 50%"><%= x.phone_number %></td>
+		      <% if current_user.try(:admin?) %>
+		      	<td style="width: 20%"><%= link_to 'Show', origin_path(x) %> | <%= link_to 'Edit', edit_origin_path(x) %> | <%= link_to 'Delete', origin_path(x),
 		        method: :delete,
 		        data: { confirm: 'Are you sure?' } %></td>
+			    <% end %>
 		    </tr>
 		  <% end %>
 	  </tbody>

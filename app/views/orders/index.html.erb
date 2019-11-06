@@ -10,7 +10,9 @@
 		    <th>Amount Ordered</th>
 		    <th>Total Price</th>
 		    <th>User</th>
-		    <th></th>
+	      <% if current_user.try(:admin?) %>
+		    	<th></th>
+		    <% end %>
 		  </tr>
 	  </thead>
 
@@ -21,9 +23,20 @@
 	      <td><%= x.weight %>kg</td>
 	      <td>$<%= x.weight * x.kopi.price%></td>
 	      <td><%= x.user.email %></td>
+	      <% if current_user.try(:admin?) %>
+	      	<td style="width: 20%"><%= link_to 'Show', order_path(x) %> | <%= link_to 'Delete', order_path(x),
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %></td>
+		    <% end %>
 	    </tr>
 	  <% end %>
 	</table>
+
+
+  <% if current_user.try(:admin?) %>
+
+  <% end %>
+
 
 
 	<% if user_signed_in? %>

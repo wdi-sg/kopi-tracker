@@ -1,5 +1,15 @@
 class OriginsController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :index ]
+
+  def authenticate_admin!
+    unless current_user.admin?
+      redirect_to origins_path
+    end
+  end
+
+  before_action :authenticate_admin!, :except => [ :index ]
+
   def index
     @origin = Origin.all.order('id')
   end

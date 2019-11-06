@@ -2,6 +2,16 @@ class OrdersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def authenticate_admin!
+    unless current_user.admin?
+      redirect_to orders_path
+    end
+  end
+
+  before_action :authenticate_admin!, :except => [ :index, :new, :create, :destroy ]
+
+
+
   def index
     @order = Order.all.order('id')
 
@@ -27,6 +37,16 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+
+
+  def destroy
+
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    redirect_to @order
+
   end
 
 
