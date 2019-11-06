@@ -1,5 +1,7 @@
 <h1>Add New Kopi</h1>
-<%= form_with scope: :kopi, url: kopi_path, local: true do |form| %>
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+
     <p>
       <%= form.label :name %><br>
       <%= form.text_field :name %>
@@ -11,17 +13,18 @@
     </p>
 
     <p>
-        <%= form.label :origin %><br>
-        <%= form.text_field :origin %>
+      <%= form.label :origin %><br>
+      <%= form.collection_select :origin_id, @origins, :id, :location %>
     </p>
-  
+
     <p>
       <%= form.submit %>
     </p>
 <% end %>
-
-<%= form_with scope: :kopi, url: kopi_path, local: true do |form| %>
-    ...
-  <% end %>
   
   <%= link_to 'Back', root_path %>
+
+  
+  
+
+  
