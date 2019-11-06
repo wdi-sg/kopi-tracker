@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :customers, path: 'customers'
+  devise_for :users, path: 'users'
+
   root 'origins#index'
   # get '/origins' => 'origins#index', as: 'origins'
   # get '/origins/new' => 'origins#new', as: 'new_origin'
