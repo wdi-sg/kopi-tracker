@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    @kopis = Kopi.all
+    # @kopis = Kopi.all
 
     if @customer.save
       redirect_to @customer
