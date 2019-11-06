@@ -18,6 +18,7 @@ class KopisController < ApplicationController
 
   def show
     @kopi = Kopi.find(params[:id])
+    @customes = Customer.all
     p "@@@@@@", @kopi
     @user = current_user
     @origins = Origin.all

@@ -1,8 +1,8 @@
-<h1>Here is your kopi:</h1>
+<h1>Orders for <%= @kopi.name%>:</h1>
 <ul>
-  <li><%= @kopi.name%></li>
-  <li><%= @kopi.roast%></li>
-  <li><%= @kopi.origin.location%></li>
+  <% @kopi.customer.each do |k| %>
+    <li><%=k.name%></li>
+  <%end%>
 </ul>
 <%= link_to('Edit Kopi', edit_kopi_path) %>
 <%= link_to('Delete kopi', kopi_path, method: :delete, data: {confirm: 'Are you sure?'}) %>
