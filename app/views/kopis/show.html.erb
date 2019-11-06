@@ -2,6 +2,11 @@
 <p><%= @kopi.roast.name %></p>
 <p><%= @kopi.origin.location %></p>
 <p><%= @kopi.origin.phone %></p>
+<ul>
+  <% @kopi.customers.each do |customer| %>
+    <li><%= customer.name %></li>
+  <% end %>
+</ul>
 <hr>
 <%= link_to "Edit", edit_kopi_path(@kopi), :class => "btn btn-default"%>
 <%= link_to "Delete", kopi_path(@kopi),

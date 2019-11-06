@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :origins
   resources :roasts
   resources :kopis
+  resources :customers
 end
