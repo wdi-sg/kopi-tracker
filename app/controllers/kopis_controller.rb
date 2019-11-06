@@ -5,11 +5,13 @@ class KopisController < ApplicationController
   def index
     @kopis = Kopi.all
      @user = current_user
+     @customer = Customer.all
 
   end
 
   def show
   @kopi = Kopi.find(params[:id])
+  @customer = Customer.all
 
   end
 
@@ -44,7 +46,7 @@ class KopisController < ApplicationController
   end
 
   def update
-    @kopi = kopi.find(params[:id])
+    @kopi = Kopi.find(params[:id])
     @kopi.update(kopi_params)
 
     redirect_to @kopi
