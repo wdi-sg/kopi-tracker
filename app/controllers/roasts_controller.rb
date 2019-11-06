@@ -1,4 +1,15 @@
 class RoastsController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
+def authenticate_admin!
+  unless current_user.admin?
+    redirect_to new_user_session_path
+  end
+end
+
+before_action :authenticate_admin!
+
     def index
         @roasts = Roast.all
       end
