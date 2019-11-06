@@ -20,3 +20,13 @@
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', root_path %>
+
+<h3>List of Customers:</h3>
+
+<ul>
+    <% @kopi.customers.each do |customer| %>
+        <li>
+            <a href="/customers/<%= customer.id %>"><%= customer.name %></a>
+        </li>
+    <% end %>
+</ul>
