@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
-
+  resources :customers
 
 end

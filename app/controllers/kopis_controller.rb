@@ -1,6 +1,6 @@
 class KopisController < ApplicationController
 
-    before_action :authenticate_user!, :except => [ :index ]
+    # before_action :authenticate_user!, :except => [ :index ]
 
     def index
         # # test to see if we are at /parks/:id/rangers or /rangers

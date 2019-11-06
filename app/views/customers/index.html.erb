@@ -1,0 +1,7 @@
+<h1>Customers go here</h1>
+
+<%= form_with scope: :customer, url:customers_path, local: true do |form| %>
+
+    <%= form.collection_check_boxes :customer_ids, @customers, :id, :name %>
+
+  <% end %>

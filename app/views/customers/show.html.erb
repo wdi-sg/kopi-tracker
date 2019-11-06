@@ -1,0 +1,16 @@
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+
+<% @customer.kopis.each do |t| %>
+    <p> 
+    <%= t.name%>
+    </p> 
+
+<%end%>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %>
+<%= link_to 'Back', root_path %>
