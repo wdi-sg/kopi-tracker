@@ -23,4 +23,22 @@ Rails.application.routes.draw do
   post '/origins/:origin_id/kopis' => 'kopis#create'
 
 
+
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show' , as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
+
+
+  get '/kopis/:kopi_id/customers' => 'customers#index', as: 'kopi_customers'
+  get '/kopis/:kopi_id/customers/new' => 'customers#create', as: 'new_kopi_customer'
+  post '/kopis/:kopi_id/customers' => 'customers#create'
+
+  get '/customers/:customer_id/kopis' => 'kopis#index', as: 'customer_kopis'
+  get '/customers/:customer_id/kopis/new' => 'kopis#create', as: 'new_customer_kopis'
+  post '/customers/:customer_id/kopis' => 'kopis#create'
+
 end
