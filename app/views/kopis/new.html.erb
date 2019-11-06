@@ -1,8 +1,8 @@
-<h1>Add a new type of Coffee!</h1>
+<h1>Add a Kopi to your basket!</h1>
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
   <p>
-    <%= form.label :Name %><br>
-    <%= form.text_field :name %>
+    <%= form.label :Kopi %><br>
+    <%= form.collection_select :kopi, @kopis, :name, :name %>
   </p>
   <p>
     <%= form.label :Roastedness %><br>

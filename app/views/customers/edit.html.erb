@@ -1,6 +1,11 @@
-<h1>Editing Customer</h1>
-
-<%= render 'form', customer: @customer %>
-
+<h1>Hello <%= @customer.name %>, Add Kopi To Basket</h1>
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+  </p>
+  <%= form.submit %>
+<% end %>
+<%= link_to 'Home', root_path %>
 <%= link_to 'Show', @customer %> |
 <%= link_to 'Back', customers_path %>

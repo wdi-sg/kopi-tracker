@@ -1,5 +1,5 @@
 class KopisController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index]
+  # before_action :authenticate_user!, :except => [:show, :index]
 
   def index
     @kopis = Kopi.all
@@ -28,6 +28,7 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
     @roasts = Roast.all
+    @customers = Customer.all
   end
 
   def update
@@ -44,6 +45,7 @@ class KopisController < ApplicationController
   end
 
   def new
+    @kopis = Kopi.all
     @user = current_user
     @origins = Origin.all
     @roasts = Roast.all
