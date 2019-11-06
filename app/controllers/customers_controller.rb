@@ -1,10 +1,10 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
-
+  # before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_customer!, :except => [ :show, :index ]
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all.order("id ASC")
+    @customers = Customer.all.order("name ASC")
   end
 
   # GET /customers/1
@@ -16,20 +16,20 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     @customer = Customer.new
-    @kopis = Kopi.all
+    @kopis = Kopi.all.order("name ASC")
   end
 
   # GET /customers/1/edit
   def edit
-    @kopis = Kopi.all
+    @customer = Customer.find(params[:id])
+    @kopis = Kopi.all.order("name ASC")
   end
 
   # POST /customers
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-    @kopis = Kopi.all
-    byebug
+    @kopis = Kopi.all.order("name ASC")
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
@@ -44,6 +44,7 @@ class CustomersController < ApplicationController
   # PATCH/PUT /customers/1
   # PATCH/PUT /customers/1.json
   def update
+    @customer = Customer.find(params[:id])
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
@@ -58,6 +59,7 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
+    @customer = Customer.find(params[:id])
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }

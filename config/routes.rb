@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   resources :roasts
   resources :customers
   devise_for :users
@@ -26,4 +27,6 @@ Rails.application.routes.draw do
   post '/origins/:origin_id/kopis' => 'kopis#create'
 
   get '/roasts/:roast_id/kopis' => 'kopis#index', as: 'roast_kopis'
+
+  get '/customers' => "customers#index", :as => :customer_root
 end
