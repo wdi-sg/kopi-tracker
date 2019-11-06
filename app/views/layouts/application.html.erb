@@ -37,12 +37,23 @@
 							<a class="nav-link" href="/orders">Order Kopi <box-icon name='file' class="align-bottom"></box-icon></a>
 						</li>
 					<% end %>
+					<% if customer_signed_in? %>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="/customers">All Customers <box-icon name='user' class="align-bottom"></box-icon></a>
+			      </li>
+					<% end %>
 		    </ul>
+				<% if customer_signed_in? == false %>
+					<%= button_to 'Log In Customer', new_customer_session_url, {:class => "btn btn-outline-primary mr-4 mb-2"} %>
+				<% end %>
+				<% if customer_signed_in? %>
+					<%= button_to 'Log Out Customer', destroy_customer_session_url, {method: :delete, :class => "btn btn-outline-dark mr-4 mb-2"}%>
+				<% end %>
 				<% if user_signed_in? == false %>
-					<%= button_to 'Log In', new_user_session_url, {:class => "btn btn-outline-primary btn-block"} %>
+					<%= button_to 'Log In User', new_user_session_url, {:class => "btn btn-outline-success mb-2"} %>
 				<% end %>
 				<% if user_signed_in? %>
-					<%= button_to 'Log Out', destroy_user_session_url, {method: :delete, :class => "btn btn-outline-dark btn-block"}%>
+					<%= button_to 'Log Out User', destroy_user_session_url, {method: :delete, :class => "btn btn-outline-dark mb-2"}%>
 				<% end %>
 		  </div>
 		</nav>

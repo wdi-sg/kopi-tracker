@@ -1,0 +1,20 @@
+<div class="container">
+
+	<h1 class="display-4 text-center"><%= @customer.email %></h1>
+
+	<h2 class="text-center mt-5">Kopi Ordered:</h2>
+	<div style="width: 50%; margin: 0 auto 5%;" class="list-group text-center">
+	  <% @customer.kopi.each do |x| %>
+	  	<button type="button" class="list-group-item list-group-item-action mt-1 active"><%= x.name %></button>
+	  <% end %>
+	</div>
+
+
+
+	<%= link_to 'Back', customers_path, {:class => "btn btn-outline-secondary"} %>
+	<% if current_customer === @customer %>
+		<%= link_to 'Order Kopi', edit_customer_path(@customer), {:class => "btn btn-outline-primary"} %>
+	<% end %>
+
+
+</div>

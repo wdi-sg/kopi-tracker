@@ -24,6 +24,24 @@
 		</table>
 
 
+	<h1 class="display-4 text-center mt-5">Customers</h1>
+	<div style="width: 50%; margin: 0 auto 5%;" class="list-group text-center">
+
+		<% if @kopi.customer == nil %>
+
+			<p>No orders from any customers yet</p>
+
+		<% else %>
+
+		  <% @kopi.customer.each do |x| %>
+		  	<button type="button" class="list-group-item list-group-item-action mt-1 active"><%= x.email %></button>
+		  <% end %>
+
+		<% end %>
+
+
+	</div>
+
 
 
 
