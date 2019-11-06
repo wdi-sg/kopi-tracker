@@ -15,8 +15,16 @@
 #               { name: 'Dark' },
 #               { name: 'French' }, { name: 'Italian' }])
 
-# Origin.create([{ location: 'Java', phone: '123456789' }])
+Origin.create([{ location: 'Costa Rica', phone: '123456789' }])
+Origin.create([{ location: 'Guatemala', phone: '123456789' }])
+Origin.create([{ location: 'Mexico', phone: '123456789' }])
+Origin.create([{ location: 'Colombia', phone: '123456789' }])
+Origin.create([{ location: 'Kenya', phone: '123456789' }])
+Origin.create([{ location: 'Ethiopia', phone: '123456789' }])
+Origin.create([{ location: 'Brazil', phone: '123456789' }])
+Origin.create([{ location: 'Indonesia', phone: '123456789' }])
+Origin.create([{ location: 'Vietnam', phone: '123456789' }])
 
-dark = Roast.find_by(name: 'Dark')
-java = Origin.find_by(location: 'Java')
-Kopi.create(name: 'Kopi-O', roast: dark, origin: java)
+# dark = Roast.find_by(name: 'Dark')
+# java = Origin.find_by(location: 'Java')
+# Kopi.create(name: 'Kopi-O', roast: dark, origin: java)
