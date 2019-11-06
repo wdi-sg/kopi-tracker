@@ -1,0 +1,25 @@
+<p class="display-4">
+	<%= @customer.name %>
+</p>
+
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">All Kopis</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @customer.kopis.each do |customer| %>
+		<tr>
+			<td><%= customer.name %></td>
+			<% end %>
+		</tr>
+
+	</tbody>
+</table>
+
+<p>
+	<%= link_to('Edit', edit_customer_path, {:class => "btn btn-warning"}) %>
+	<%= link_to('Back', kopis_path, {:class => "btn btn-primary"})%>
+</p>

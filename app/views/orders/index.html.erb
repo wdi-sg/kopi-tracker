@@ -6,31 +6,29 @@
 <% end %>
 
 <table class="table">
-<thead>
-<tr>
-<th scope="col">Order No.</th>
-<th scope="col">Kopi</th>
-<th scope="col">Weight</th>
-<th scope="col">Price/kg</th>
-<th scope="col">Total Price</th>
-<th scope="col">Show</th>
-<th scope="col">Edit</th>
-</tr>
-</thead>
-<tbody>
-<% @orders.each do |order| %>
-  <tr>
-  <td><%= order.id %></td>
-  <td><%= order.kopi.name %></td>
-  <td><%= order.weight %>g</td>
-  <td>$<%= order.kopi.price %></td>
-  <td>$<%= order.kopi.price * order.weight/1000 %></td>
-  <td><%= link_to 'Show', order_path(order) %></td>
-  <td><%= link_to 'Edit', edit_order_path(order) %></td>
-  
-  </tr>
-  <% end %>
+	<thead>
+		<tr>
+			<th scope="col">Order No.</th>
+			<th scope="col">Kopi</th>
+			<th scope="col">Weight</th>
+			<th scope="col">Price/kg</th>
+			<th scope="col">Total Price</th>
+			<th scope="col">Show</th>
+			<th scope="col">Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @orders.each do |order| %>
+		<tr>
+			<td><%= order.id %></td>
+			<td><%= order.kopi.name %></td>
+			<td><%= order.weight %>g</td>
+			<td>$<%= order.kopi.price %></td>
+			<td>$<%= order.kopi.price * order.weight/1000 %></td>
+			<td><%= link_to 'Show', order_path(order) %></td>
+			<td><%= link_to 'Edit', edit_order_path(order) %></td>
+
+		</tr>
+		<% end %>
 	</tbody>
-  </table>
-  
- 
+</table>

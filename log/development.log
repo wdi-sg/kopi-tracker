@@ -10417,3 +10417,1620 @@ Processing by RoastsController#index as HTML
 Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2019-11-06 16:01:39 +0800
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jasminesis/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20191106070704)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (212.3ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106070704_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (204.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106070704"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-06 16:02:24 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jasminesis/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (84.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (1.9ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (1.8ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (166.3ms)
+Completed 200 OK in 1986ms (Views: 1742.1ms | ActiveRecord: 105.3ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-06 16:02:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 40ms (Views: 33.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/origins" for ::1 at 2019-11-06 16:02:33 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:19
+  Rendered origins/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roasts" for ::1 at 2019-11-06 16:02:34 +0800
+Processing by RoastsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `admin?' for nil:NilClass):
+  
+app/controllers/roasts_controller.rb:6:in `authenticate_admin!'
+Started GET "/roasts" for ::1 at 2019-11-06 16:03:21 +0800
+Processing by RoastsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `user_type' for nil:NilClass):
+  
+app/controllers/roasts_controller.rb:6:in `authenticate_admin!'
+Started GET "/roasts" for ::1 at 2019-11-06 16:03:34 +0800
+Processing by RoastsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `admin' for nil:NilClass):
+  
+app/controllers/roasts_controller.rb:6:in `authenticate_admin!'
+Started GET "/roasts" for ::1 at 2019-11-06 16:06:00 +0800
+Processing by RoastsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `admin' for nil:NilClass):
+  
+app/controllers/roasts_controller.rb:7:in `authenticate_admin!'
+Started GET "/users/sign_in" for ::1 at 2019-11-06 16:06:04 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (325.1ms)
+Completed 200 OK in 414ms (Views: 349.5ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-11-06 16:06:11 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ryjfC25uHJ207qIK1FlKixzjOWM/rQJa4sgGAt43miRygs+PGLHg7yapE7HKpDVKBwUcvG5qJiJpZ6FvnGV2KQ==", "user"=>{"email"=>"jasmine@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jasmine@hotmail.com"], ["LIMIT", 1]]
+  ↳ /Users/jasminesis/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 190ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-11-06 16:06:11 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 70ms (Views: 44.5ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/roasts" for ::1 at 2019-11-06 16:06:15 +0800
+Processing by RoastsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:7
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:17
+  Rendered roasts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32ms (Views: 24.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/roasts" for ::1 at 2019-11-06 16:07:03 +0800
+Processing by RoastsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:7
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:17
+  Rendered roasts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/roasts" for ::1 at 2019-11-06 16:07:04 +0800
+Processing by RoastsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:7
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:17
+  Rendered roasts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/roasts" for ::1 at 2019-11-06 16:08:25 +0800
+Processing by RoastsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:7
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:17
+  Rendered roasts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 212ms (Views: 208.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-06 16:12:17 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 84ms (Views: 52.1ms | ActiveRecord: 19.8ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20191106070704)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.5ms)[0m  [1m[35mDROP TABLE "customers"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20191106070704"]]
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20191106081806)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106081806_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106081806"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CustomersKopis (20191106082154)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106082154"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CustomersKopis (20191106082154)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "customers_kopis"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20191106082154"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CustomersKopis (20191106082154)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106082154"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CustomersKopis (20191106082154)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "customers_kopis"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20191106082154"]]
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20191106081806)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "customers"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20191106081806"]]
+  ↳ bin/rails:9
+  [1m[35m (43.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20191106081806)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106081806_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106081806"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CustomersKopis (20191106082154)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  ↳ db/migrate/20191106082154_customers_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106082154"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 08:25:49.448266"], ["updated_at", "2019-11-06 08:25:49.448266"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (2.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKopi::HABTM_Customers Create (1.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 3], ["created_at", "2019-11-06 08:26:30.939245"], ["updated_at", "2019-11-06 08:26:30.939245"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1 LIMIT $2[0m  [["kopi_id", 3], ["LIMIT", 11]]
+Started GET "/kopis" for ::1 at 2019-11-06 16:29:48 +0800
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jasminesis/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (2.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (1.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (1.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (66.8ms)
+Completed 200 OK in 313ms (Views: 217.9ms | ActiveRecord: 32.9ms)
+
+
+Started GET "/kopis/5" for ::1 at 2019-11-06 16:29:49 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  Rendered kopis/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 69ms (Views: 23.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/kopis/5" for ::1 at 2019-11-06 16:30:12 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  Rendered kopis/show.html.erb within layouts/application (152.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 180ms (Views: 175.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/kopis/5" for ::1 at 2019-11-06 16:30:20 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  Rendered kopis/show.html.erb within layouts/application (12.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 40ms (Views: 28.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/kopis/5" for ::1 at 2019-11-06 16:30:25 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  Rendered kopis/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kopis/5" for ::1 at 2019-11-06 16:31:37 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 5]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (62.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 91ms (Views: 84.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:31:42 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (7.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:32:12 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 34ms (Views: 27.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:32:39 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 35ms (Views: 29.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:32:43 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 39ms (Views: 33.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:33:05 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 112ms (Views: 106.1ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1 LIMIT $2[0m  [["kopi_id", 3], ["LIMIT", 11]]
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:36:49 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 120ms (Views: 115.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:37:39 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:37:53 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kopis/3" for ::1 at 2019-11-06 16:38:07 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 71ms (Views: 25.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-06 16:46:30 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (3.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (1.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (1.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 259ms (Views: 145.6ms | ActiveRecord: 54.6ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-06 16:46:33 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <p class="display-4">
+    2: 	<%= @customer.name %>
+    3: </p>
+    4: 
+    5: </p>
+  
+app/views/customers/show.html.erb:2:in `_app_views_customers_show_html_erb__3800647407525893494_70290456020120'
+Started GET "/customers/1" for ::1 at 2019-11-06 16:47:10 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (82.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 87.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `kopis' for nil:NilClass):
+    4: 
+    5: </p>
+    6: <strong>Kopis</strong>
+    7: <% @customers.kopis.each do |customer| %>
+    8: <%= customer.name %>
+    9: <% end %>
+   10: </p>
+  
+app/views/customers/show.html.erb:7:in `_app_views_customers_show_html_erb__3800647407525893494_70290516301560'
+Started GET "/customers/1" for ::1 at 2019-11-06 16:47:53 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `kopis' for nil:NilClass):
+    4: 
+    5: </p>
+    6: <strong>Kopis</strong>
+    7: <% @customers.kopis.each do |customer| %>
+    8: <%= customer.name %>
+    9: <% end %>
+   10: </p>
+  
+app/views/customers/show.html.erb:7:in `_app_views_customers_show_html_erb__3800647407525893494_70290456795680'
+Started GET "/customers/1" for ::1 at 2019-11-06 16:48:39 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `kopis' for nil:NilClass):
+    4: 
+    5: </p>
+    6: <strong>Kopis</strong>
+    7: <% @customers.kopis.each do |customer| %>
+    8: <%= customer.name %>
+    9: <% end %>
+   10: </p>
+  
+app/views/customers/show.html.erb:7:in `_app_views_customers_show_html_erb__3800647407525893494_70290448612160'
+Started GET "/customers/1" for ::1 at 2019-11-06 16:49:00 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (44.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:7
+  Rendered customers/show.html.erb within layouts/application (72.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 121ms (Views: 62.5ms | ActiveRecord: 55.3ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-06 16:50:54 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-06 16:50:59 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-06 16:51:30 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 69ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-06 16:54:15 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 120ms (Views: 73.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/customers/edit" for ::1 at 2019-11-06 16:54:18 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=edit):
+  
+app/controllers/customers_controller.rb:12:in `show'
+Started GET "/customers/1" for ::1 at 2019-11-06 16:54:22 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:12
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:54:26 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 72ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:55:46 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (85.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 133ms (Views: 112.4ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:55:59 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:07 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Kopis):
+     8: </div>
+     9: 
+    10: <div class="form-group">
+    11: 	<%= form.label Kopis %><br>
+    12: 	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    13: </div>
+    14: 
+  
+app/views/customers/new.html.erb:11:in `block in _app_views_customers_new_html_erb___722828750114082975_70290467611960'
+app/views/customers/new.html.erb:3:in `_app_views_customers_new_html_erb___722828750114082975_70290467611960'
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:15 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:30 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (1.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 123ms (Views: 119.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:31 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:36 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     9: 
+    10: <div class="form-group">
+    11: 	<%= form.label :kopi %><br>
+    12: 	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    13: </div>
+    14: 
+    15: 
+  
+app/views/customers/new.html.erb:12:in `block in _app_views_customers_new_html_erb___722828750114082975_70290457038520'
+app/views/customers/new.html.erb:3:in `_app_views_customers_new_html_erb___722828750114082975_70290457038520'
+Started GET "/customers/new" for ::1 at 2019-11-06 16:56:47 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (17.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 63ms (Views: 43.5ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-06 16:58:16 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (18.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 64ms (Views: 43.1ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 16:58:35 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AcxV5/2z05zFjp8ykoUpfilgfr/Jpj0XZ0odYK5Ex8Q8TMDzgRFtdm6h4+iXs1Ss2jCKiOlWxUVlJu3bki1SAg==", "customer"=>{"name"=>"Ruby Loo", "kopi_ids"=>["", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (1.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ruby Loo"], ["created_at", "2019-11-06 08:58:35.576500"], ["updated_at", "2019-11-06 08:58:35.576500"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 2], ["kopi_id", 4], ["created_at", "2019-11-06 08:58:35.579758"], ["updated_at", "2019-11-06 08:58:35.579758"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to 
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 41.1ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/customers_controller.rb:12:in `create'
+Started POST "/customers" for ::1 at 2019-11-06 16:59:02 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AcxV5/2z05zFjp8ykoUpfilgfr/Jpj0XZ0odYK5Ex8Q8TMDzgRFtdm6h4+iXs1Ss2jCKiOlWxUVlJu3bki1SAg==", "customer"=>{"name"=>"Ruby Loo", "kopi_ids"=>["", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Ruby Loo"], ["created_at", "2019-11-06 08:59:02.238566"], ["updated_at", "2019-11-06 08:59:02.238566"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 3], ["kopi_id", 4], ["created_at", "2019-11-06 08:59:02.240367"], ["updated_at", "2019-11-06 08:59:02.240367"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (41.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/3
+Completed 302 Found in 150ms (ActiveRecord: 76.4ms)
+
+
+Started GET "/customers/3" for ::1 at 2019-11-06 16:59:02 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:19
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/customers/" for ::1 at 2019-11-06 17:00:52 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-06 17:00:56 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/kopis/4" for ::1 at 2019-11-06 17:01:13 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 4]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 37ms (Views: 31.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-06 17:02:28 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:23
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:24
+  Rendered kopis/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/kopis/4" for ::1 at 2019-11-06 17:02:29 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:16
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:18
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:7
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 4]]
+  ↳ app/views/kopis/show.html.erb:19
+  Rendered kopis/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/customers/" for ::1 at 2019-11-06 17:04:46 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 76ms (Views: 67.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-06 17:04:48 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (32.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 127ms (Views: 59.4ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/customers/1/edit" for ::1 at 2019-11-06 17:04:51 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:04:53 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PINXZp3G4sL/QXbNDczFrv4F/jlWdomIcGxJNpr9lBMBA8Jy4WRcKFRuChcI+rh8DVUKDnaGcdpyALmNppQB1Q==", "customer"=>{"name"=>"Lionel", "kopi_ids"=>["", "3", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 3], ["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 09:04:53.886634"], ["updated_at", "2019-11-06 09:04:53.886634"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 4], ["kopi_id", 3], ["created_at", "2019-11-06 09:04:53.888566"], ["updated_at", "2019-11-06 09:04:53.888566"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 4], ["kopi_id", 4], ["created_at", "2019-11-06 09:04:53.890037"], ["updated_at", "2019-11-06 09:04:53.890037"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/4
+Completed 302 Found in 109ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/customers/4" for ::1 at 2019-11-06 17:04:53 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 4]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/1/edit" for ::1 at 2019-11-06 17:05:34 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/customers/1/" for ::1 at 2019-11-06 17:05:36 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (220.1ms)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<#<Class:0x00007fdb8ce2efe0>:0x00007fdb9269a7d8>
+Did you mean?  @customer):
+    18: 
+    19: 	</tbody>
+    20: </table>
+    21: <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+  
+app/views/customers/show.html.erb:21:in `_app_views_customers_show_html_erb__3800647407525893494_70290515482760'
+Started GET "/customers/1/" for ::1 at 2019-11-06 17:06:11 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/1/edit" for ::1 at 2019-11-06 17:06:13 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:06:15 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4y+qrPzi/SvoH2lK0LRF5X4vgx921DJVdpFmtWGiVpjerz+4gEBDwUMwFZDVgjg3jX93KFYkygd0/ZYOXcvDXg==", "customer"=>{"name"=>"Lionel", "kopi_ids"=>["", "5", "3"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 3]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 09:06:15.838908"], ["updated_at", "2019-11-06 09:06:15.838908"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 5], ["kopi_id", 5], ["created_at", "2019-11-06 09:06:15.840241"], ["updated_at", "2019-11-06 09:06:15.840241"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.2ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 5], ["kopi_id", 3], ["created_at", "2019-11-06 09:06:15.841442"], ["updated_at", "2019-11-06 09:06:15.841442"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/5
+Completed 302 Found in 59ms (ActiveRecord: 42.7ms)
+
+
+Started GET "/customers/5" for ::1 at 2019-11-06 17:06:15 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 5]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/5/edit" for ::1 at 2019-11-06 17:06:17 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 5]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:06:20 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZ3ShoADXaplYSDF085SCH44hfVpV23Mez8WPjapqCcIHUeS/KHjQM5OXB/W+C/ajWhxwkmnlZ55U+aFCsA94Q==", "customer"=>{"name"=>"Lionel", "kopi_ids"=>["", "5", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 09:06:20.120763"], ["updated_at", "2019-11-06 09:06:20.120763"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 6], ["kopi_id", 5], ["created_at", "2019-11-06 09:06:20.122343"], ["updated_at", "2019-11-06 09:06:20.122343"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 6], ["kopi_id", 4], ["created_at", "2019-11-06 09:06:20.123328"], ["updated_at", "2019-11-06 09:06:20.123328"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 61ms (ActiveRecord: 43.5ms)
+
+
+Started GET "/customers/6" for ::1 at 2019-11-06 17:06:20 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/6/edit" for ::1 at 2019-11-06 17:06:21 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 6]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:06:23 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mv2wcYbwjWGsOuvHJ3y5f28ehRER3dkp6FTh+9ANw5CnfSVl+lIziwcVlx0iSsStnE5xJjEtIXvqOBFA7GRWVg==", "customer"=>{"name"=>"Lionel", "kopi_ids"=>["", "5", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 09:06:23.171736"], ["updated_at", "2019-11-06 09:06:23.171736"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 7], ["kopi_id", 5], ["created_at", "2019-11-06 09:06:23.172886"], ["updated_at", "2019-11-06 09:06:23.172886"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 7], ["kopi_id", 4], ["created_at", "2019-11-06 09:06:23.173881"], ["updated_at", "2019-11-06 09:06:23.173881"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/7
+Completed 302 Found in 25ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-06 17:06:23 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-06 17:06:46 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers/7/edit" for ::1 at 2019-11-06 17:06:47 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:16
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:12
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/edit.html.erb:12
+  Rendered customers/edit.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:06:49 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqsITshb3B888pK5VYvDQDSW2geC0pZYOjA7TSwnbNIvK51atPli9Zfd7mNQvb6Sx8YuMKIibgo4XMv2EE75FA==", "customer"=>{"name"=>"Lionel", "kopi_ids"=>["", "5", "4"]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 4]]
+  ↳ app/controllers/customers_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer Create (1.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lionel"], ["created_at", "2019-11-06 09:06:49.170648"], ["updated_at", "2019-11-06 09:06:49.170648"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.4ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 8], ["kopi_id", 5], ["created_at", "2019-11-06 09:06:49.174775"], ["updated_at", "2019-11-06 09:06:49.174775"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 8], ["kopi_id", 4], ["created_at", "2019-11-06 09:06:49.176238"], ["updated_at", "2019-11-06 09:06:49.176238"]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:11
+Redirected to http://localhost:3000/customers/8
+Completed 302 Found in 59ms (ActiveRecord: 44.7ms)
+
+
+Started GET "/customers/8" for ::1 at 2019-11-06 17:06:49 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/views/customers/show.html.erb:13
+  Rendered customers/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:38
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 1.1ms)
+
+

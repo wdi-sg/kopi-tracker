@@ -2,36 +2,36 @@
 
 
 <table class="table">
-<thead>
-<tr>
-<th scope="col">Name</th>
-<th scope="col">Roast</th>
-<th scope="col">Origin</th>
-<th scope="col">Price</th>
-<% if current_user.try(:admin?) %>
-<th scope="col">Show</th>
-<th scope="col">Edit</th>
-<th scope="col">Destroy</th>
-<% end %>
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Roast</th>
+			<th scope="col">Origin</th>
+			<th scope="col">Price</th>
+			<% if current_user.try(:admin?) %>
+			<th scope="col">Show</th>
+			<th scope="col">Edit</th>
+			<th scope="col">Destroy</th>
+			<% end %>
 
-</tr>
-</thead>
-<tbody>
-<% @kopis.each do |kopi| %>
-  <tr>
-  <td><%= kopi.name %></td>
-  <td><%= kopi.roast.name %></td>
-  <td><%= kopi.origin.location %></td>
-  <td>$<%= kopi.price %> / kg</td>
-  <% if current_user.try(:admin?) %>
-  <td><%= link_to 'Show', kopi_path(kopi) %></td>
-  <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-  <td><%= button_to('Destroy', kopi_path(kopi),
+		</tr>
+	</thead>
+	<tbody>
+		<% @kopis.each do |kopi| %>
+		<tr>
+			<td><%= kopi.name %></td>
+			<td><%= kopi.roast.name %></td>
+			<td><%= kopi.origin.location %></td>
+			<td>$<%= kopi.price %> / kg</td>
+			<% if current_user.try(:admin?) %>
+			<td><%= link_to 'Show', kopi_path(kopi) %></td>
+			<td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+			<td><%= button_to('Destroy', kopi_path(kopi),
   method: :delete, :class => "nav-link btn")%></td>
-  <% end %>
-  </tr>
-  <% end %>
+			<% end %>
+		</tr>
+		<% end %>
 	</tbody>
-  </table>
-  
-  <%= link_to('New kopi', new_kopi_path, {:class => "btn btn-primary"}) %>
+</table>
+
+<%= link_to('New kopi', new_kopi_path, {:class => "btn btn-primary"}) %>

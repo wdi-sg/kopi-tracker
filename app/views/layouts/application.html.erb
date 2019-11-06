@@ -30,17 +30,17 @@
 					<%= link_to("Roasts", roasts_path, {:class => "nav-link"})%>
 				</li>
 
-					<li class="nav-item">
-						<%= link_to("Orders", orders_path, {:class => "nav-link"})%>
-					</li>
+				<li class="nav-item">
+					<%= link_to("Orders", orders_path, {:class => "nav-link"})%>
+				</li>
 
 				<li class="nav-item">
-				<% if user_signed_in? %>
-				<%= button_to('Logout', destroy_user_session_path, :method => 'delete', :class => "btn nav-link")%>
-				
-				<% else %>
-				<%= link_to("Sign in", new_user_session_path, {:class => "nav-link"})%>
-				<% end %>
+					<% if user_signed_in? %>
+					<%= button_to('Logout', destroy_user_session_path, :method => 'delete', :class => "btn nav-link")%>
+
+					<% else %>
+					<%= link_to("Sign in", new_user_session_path, {:class => "nav-link"})%>
+					<% end %>
 				</li>
 
 			</ul>

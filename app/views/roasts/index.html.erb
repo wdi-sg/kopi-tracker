@@ -2,31 +2,31 @@
 
 
 <table class="table">
-<thead>
-<tr>
-<th scope="col">Name</th>
-<% if current_user.try(:admin?) %>
-<th scope="col">Show</th>
-<th scope="col">Edit</th>
-<th scope="col">Destroy</th>
-<% end %>
-</tr>
-</thead>
-<tbody>
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<% if current_user.try(:admin?) %>
+			<th scope="col">Show</th>
+			<th scope="col">Edit</th>
+			<th scope="col">Destroy</th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
 
-<% @roasts.each do |roast| %>
-  <tr>
-  <td><%= roast.name %></td>
-  <% if current_user.try(:admin?) %>
-  <td><%= link_to 'Show', roast_path(roast) %></td>
-  <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
-  <td><%= button_to('Destroy', roast_path(roast),
+		<% @roasts.each do |roast| %>
+		<tr>
+			<td><%= roast.name %></td>
+			<% if current_user.try(:admin?) %>
+			<td><%= link_to 'Show', roast_path(roast) %></td>
+			<td><%= link_to 'Edit', edit_roast_path(roast) %></td>
+			<td><%= button_to('Destroy', roast_path(roast),
   method: :delete, :class => "btn")%>
-  </td>
-  
-  <% end %>
-  </tr>
-  <% end %>
-  </tobdy>
-  </table>
-  <%= link_to('New roast', new_roast_path, {:class => "btn btn-primary"} )%>
+			</td>
+
+			<% end %>
+		</tr>
+		<% end %>
+		</tobdy>
+</table>
+<%= link_to('New roast', new_roast_path, {:class => "btn btn-primary"} )%>

@@ -1,6 +1,4 @@
-
-
-<p class = "display-4">
+<p class="display-4">
 	<%= @kopi.name %>
 </p>
 
@@ -16,6 +14,15 @@
 	<strong>Price (/kg):</strong>
 	<%= @kopi.price %>
 </p>
+<p>
+	<strong>Customers:</strong>
+	<% @kopi.customers.each do |customer| %>
+	<%= customer.name %>
+	<% end %>
+</p>
+
+
+
 
 <p>
 	<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning"}) %>
