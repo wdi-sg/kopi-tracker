@@ -26,7 +26,7 @@
 			<td><%= kopi.origin.location %></td>
 			<td><%= link_to 'Show', kopi_path(kopi), class: "btn btn-success" %></td>
 			<% if user_signed_in? %>
-				<% if kopi.user_id == current_user.id || current_user.admin %>
+				<% if current_user.admin %>
 			    <td><%= link_to 'Edit', edit_kopi_path(kopi), class: "btn btn-warning" %></td>
 			    <td><%= link_to 'Destroy', kopi_path(kopi), class: "btn btn-danger",
 			      method: :delete,

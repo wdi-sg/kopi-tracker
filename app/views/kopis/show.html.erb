@@ -15,8 +15,17 @@
   <%= @kopi.origin.location %>
 </p>
 
+<p>
+  <strong>Stocked By:</strong>
+  	<ul>
+  <% @kopi.customers.each do |customer| %>
+  	<li><%= customer.name %></li>
+  <% end %>
+  	</ul>
+</p>
+
 <% if user_signed_in? %>
-	<% if @kopi.user_id == current_user.id || current_user.admin %>
+	<% if current_user.admin %>
 		<%= link_to 'Edit', edit_kopi_path(@kopi), class: "btn btn-warning" %>
 	<% end %>
 <% end %>
