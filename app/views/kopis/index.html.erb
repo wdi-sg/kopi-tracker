@@ -1,0 +1,13 @@
+
+
+<h1>All kopis</h1>
+
+<% @kopis.each do |kopi| %>
+
+	<p><%= kopi.name %></p>
+
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to 'Create new Kopi', new_kopi_path %>
+<% end %>

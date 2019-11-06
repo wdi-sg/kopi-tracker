@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KopiTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  	<nav class="navbar bg-light navbar-expand">
+  			<div class="navbar-nav collapse navbar-collapse">
+
+
+					<div class="nav nav-item nav-link"><%= link_to 'See all kopi', kopis_path %></div>
+					<div class="nav nav-item nav-link"><%= link_to 'See all origin', origins_path %></div>
+				</div>
+				<% if user_signed_in? %>
+						<button class="btn btn-outline-danger"><%= link_to 'log out', destroy_user_session_url, method: :delete %></button>
+					<% else %>
+						<button class="btn btn-outline-success"><%= link_to 'log in', new_user_session_url %></button>
+					<% end %>
+		</nav>
+		<div class="container my-4">
+    	<%= yield %>
+    </div>
+  </body>
+</html>

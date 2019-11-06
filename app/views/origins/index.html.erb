@@ -1,0 +1,12 @@
+
+
+<h1>List of Countries</h1>
+
+<% @origins.each do |origin| %>
+
+	<p><%= link_to origin.location, origin_path(origin.id) %></p>
+
+<% end %>
+<% if user_signed_in? %>
+	<%= link_to 'Create new Country', new_origin_path %>
+<% end %>
