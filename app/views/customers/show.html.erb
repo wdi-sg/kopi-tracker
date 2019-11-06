@@ -4,6 +4,8 @@
 
 <ul>
     <% @customer.kopis.each do |kopi| %>
-        <li><%= kopi.name %></li>
+        <li>
+            <a href="/kopis/<%= kopi.id %>"><%= kopi.name %></a>
+        </li>
     <% end %>
 </ul>
