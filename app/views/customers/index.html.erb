@@ -1,0 +1,46 @@
+<h1 class="display-4">Index of Customers</h1>
+
+<div class="accordion" id="accordion">
+	<% @customers.each do |customer| %>
+	  <div class="card">
+	    <div class="card-header" id="headingOne">
+	      <h2 class="mb-0">
+	        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+	          <%= customer.name %>
+	        </button>
+	      </h2>
+	    </div>
+
+    	<div id="collapseOne" class="collapse show" data-parent="#accordion">
+      	<div class="card-body">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Name</th>
+								<th scope="col">Roast</th>
+								<th scope="col">Origin</th>
+								<th scope="col">Price per Pound</th>
+								<th scope="col">View</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% customer.kopis.each do |kopi| %>
+								<tr>
+									<th scope="row"><%= kopi.id %></th>
+									<td><%= kopi.name %></td>
+									<td><%= kopi.roast.name %></td>
+									<td><%= kopi.origin.location %></td>
+									<td><%= kopi.price %></td>
+									<td><%= link_to 'Show', kopi_path(kopi) %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+    	</div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to('New customer', new_customer_path, {:class => "btn btn-primary btn-lg"}) %>
