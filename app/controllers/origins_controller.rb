@@ -1,6 +1,6 @@
 class OriginsController < ApplicationController
     def index
-        @origins = Origin.all
+        @origin = Origin.all
     end
 
     def show

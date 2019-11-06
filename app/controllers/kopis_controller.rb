@@ -1,10 +1,11 @@
 class KopisController < ApplicationController
+    before_action :authenticate_user!
     def index
-        @kopis = Kopi.all
+        @kopi = Kopi.all
     end
 
     def show
-
+        @kopi = Kopi.find(params[:id])
     end
   
     def new
@@ -17,7 +18,7 @@ class KopisController < ApplicationController
   
     def create
         @kopi = Kopi.new(kopi_params)
-
+        @kopi.user = current_user
         @kopi.save
         redirect_to @kopi
     end
@@ -31,7 +32,7 @@ class KopisController < ApplicationController
 private
 
     def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origins_id)
+    params.require(:kopi).permit(:name, :roast, :origin_id)
     end
 
 end
