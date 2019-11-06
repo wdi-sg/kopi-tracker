@@ -1,3 +1,3 @@
 class Origin < ActiveRecord::Base
-  has_many :kopis
+  has_many :kopi
 end

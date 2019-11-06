@@ -1,36 +1,39 @@
 class KopisController < ApplicationController
+
   def index
-  end
 
-  def show
-     @kopi = kopi.find(params[:id])
+    if params.has_key?(:origin_id)
 
-    if params[:origin_id].to_i != @kopi.origin.id
-  end
+      @kopis = Kopi.where(origin_id: params[:origin_id] )
+    else
+
+      @kopis = Kopi.all
+    end
+end
 
   def new
-    @origin = Origin.new(origin_params)
-  end
-
-  def edit
+    @origins = Origin.all
   end
 
   def create
-    @kopi = kopi.new(kopi_params)
+    @kopi = Kopi.new(kopi_params)
 
     @kopi.save
     redirect_to @kopi
   end
 
-  def update
-  end
+  def show
 
-  def destroy
+    @kopi = Kopi.find(params[:id])
+
+    if params[:origin_id].to_i != @kopi.origin.id
+      # do something
+    end
   end
 
   private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin_id)
+    params.require(:kopi).permit(:name, :roastedness, :origin_id)
   end
 end
