@@ -1,4 +1,4 @@
-<%= link_to 'See all origin', origins_path %>
+
 
 <h1>All kopis</h1>
 
@@ -8,4 +8,6 @@
 
 <% end %>
 
-<%= link_to 'Create new Kopi', new_kopi_path %>
+<% if user_signed_in? %>
+	<%= link_to 'Create new Kopi', new_kopi_path %>
+<% end %>
