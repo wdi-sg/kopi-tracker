@@ -3,7 +3,9 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all
+
     @origins = Origin.all
+
     @user = current_user
 
     # if current_user
@@ -35,15 +37,31 @@ class KopisController < ApplicationController
   end
 
   def edit
+    @user = current_user
 
+    @kopi = Kopi.find(params[:id])
+
+    @origins = Origin.all
+
+    @roasts = Roast.all
   end
 
   def update
+    @kopi = Kopi.find(params[:id])
 
+    @kopi.update(kopi_params)
+
+    redirect_to @kopi
   end
 
   def destroy
-  
+    @user = current_user
+
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.destroy
+
+    redirect_to @kopi
   end
 
   def new
