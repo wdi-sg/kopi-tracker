@@ -24,10 +24,12 @@
           <a href="/origins" class="nav-link">Origins</a>
         </li>
         <li class="nav-item">
-        <% if user_signed_in? %>
+        <% if user_signed_in? || customer_signed_in?%>
           <%= link_to 'log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
           <% else %> 
-          <%= link_to 'log in', new_user_session_url,{:class => "nav-link"}  %>
+          <%= link_to 'User log in', new_user_session_url,{:class => "nav-link"}  %>
+          </li><li class="nav-item">
+          <%= link_to 'Customer log in', new_customer_session_url,{:class => "nav-link"}  %>
           <% end %>
           </li>
 		    </ul>
