@@ -10,9 +10,7 @@
 		    <th>Roast</th>
 		    <th>Origin</th>
 		    <th>Price / KG</th>
-				<% if user_signed_in? %>
-					<th></th>
-				<% end %>
+				<th></th>
 		  </tr>
 	  </thead>
 
@@ -22,12 +20,15 @@
 	      <td><%= x.roast.name %></td>
 	      <td><%= x.origin.location %></td>
 	      <td class="text-center" style="width: 10%">$<%= x.price %></td>
-				<% if user_signed_in? %>
-					<td style="width: 20%"><%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
-	        method: :delete,
-	        data: { confirm: 'Are you sure?' } %></td>
-				<% end %>
-
+				<td style="width: 20%" class="text-center">
+					<% if user_signed_in? %>
+						<%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %>
+					<% else %>
+						<%= link_to 'Show', kopi_path(x) %>
+					<% end %>
+	      </td>
 	    </tr>
 	  <% end %>
 	</table>
