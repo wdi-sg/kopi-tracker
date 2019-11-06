@@ -1,0 +1,18 @@
+<h1>Edit your kopi</h1>
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :Roastedness %><br>
+    <%= form.collection_select :roast, @roasts, :name, :name %>
+  </p>
+  <p>
+    <%= form.label :location %><br>
+    <%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+  <%= form.submit %>
+</p>
+<% end %>
+<%= link_to 'Home', root_path %>
