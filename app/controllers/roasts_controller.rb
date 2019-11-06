@@ -2,6 +2,16 @@ class RoastsController < ApplicationController
 
   before_action :authenticate_user!
 
+  def authenticate_admin!
+    unless current_user.admin?
+      redirect_to kopis_path
+    end
+  end
+
+  before_action :authenticate_admin!
+
+
+
   def index
     @roast = Roast.all.order('id')
   end
