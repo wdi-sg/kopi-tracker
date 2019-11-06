@@ -7,5 +7,14 @@
   <%= @customer.name %>
 </p>
 
+<p>
+  <strong>Kopis:</strong>
+  	<ul>
+  <% @customer.kopis.each do |kopi| %>
+  	<li><%= kopi.name %></li>
+  <% end %>
+  	</ul>
+</p>
+
 <%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-warning" %>
 <%= link_to 'Back', customers_path, class: "btn btn-dark" %>
