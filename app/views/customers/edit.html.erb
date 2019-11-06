@@ -1,6 +1,16 @@
-<h1>Editing Customer</h1>
+<h1>Edit Customer</h1>
 
-<%= render 'form', customer: @customer %>
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @customer, class: "btn btn-success" %>
+<%= link_to 'Back', customers_path, class: "btn btn-dark" %>

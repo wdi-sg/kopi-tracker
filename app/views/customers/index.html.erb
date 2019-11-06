@@ -2,9 +2,10 @@
 
 <h1>Customers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
+	    <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +13,10 @@
   <tbody>
     <% @customers.each do |customer| %>
       <tr>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    	<td><%= customer.name %></td>
+        <td><%= link_to 'Show', customer, class: "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', customer, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, class: "btn btn-info" %>

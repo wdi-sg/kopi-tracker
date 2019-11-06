@@ -1,4 +1,11 @@
+<h3>Customer</h3>
+
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-warning" %>
+<%= link_to 'Back', customers_path, class: "btn btn-dark" %>
