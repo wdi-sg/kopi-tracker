@@ -1,0 +1,17 @@
+<h1 class="mb-4">Add a Customer</h1>
+<%= form_with scope: :customer, url: customers_path, local: true do |f| %>
+
+<p>
+    <%= f.label :Customer_Name %>
+    <%= f.text_field :name %>
+  </p>
+
+ 
+  <%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %> 
+
+
+<p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>
