@@ -7151,3 +7151,536 @@ Processing by OrdersController#index as HTML
 Completed 200 OK in 62ms (Views: 54.9ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/orders" for ::1 at 2019-11-06 16:48:34 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:5
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  Rendered orders/index.html.erb within layouts/application (11.8ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 63ms (Views: 57.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 16:50:13 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:5
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCACHE Customer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:9
+  Rendered orders/index.html.erb within layouts/application (12.5ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 16:54:05 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:12
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:12
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:12
+  Rendered orders/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 58ms (Views: 53.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 16:56:51 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered orders/index.html.erb within layouts/application (320.9ms)
+Completed 500 Internal Server Error in 334ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `order' for #<#<Class:0x00007fffdcd01270>:0x00007f6cc4353058>
+Did you mean?  @order):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.where(order.customer.id =- current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052562509640'
+Started GET "/orders" for ::1 at 2019-11-06 16:56:59 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered orders/index.html.erb within layouts/application (304.9ms)
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `order' for #<#<Class:0x00007fffdcd01270>:0x00007f6cd095c1f0>
+Did you mean?  @order):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.where(order.customer.id == current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052666339300'
+Started GET "/orders" for ::1 at 2019-11-06 16:57:19 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.1ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered orders/index.html.erb within layouts/application (305.9ms)
+Completed 500 Internal Server Error in 333ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `order' for #<#<Class:0x00007fffdcd01270>:0x00007f6cd09aeb30>
+Did you mean?  @order):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.where(order.customer_id == current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052666506040'
+Started GET "/orders" for ::1 at 2019-11-06 16:59:41 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  Rendered orders/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Unsupported argument type: 1 (Integer)):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.find_by(current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052643307460'
+Started GET "/orders" for ::1 at 2019-11-06 17:00:19 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  Rendered orders/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Unsupported argument type: 1 (Integer)):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.find_by(cutomer_id=current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052641406440'
+Started GET "/orders" for ::1 at 2019-11-06 17:00:33 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  Rendered orders/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column orders.cutomer_id does not exist
+LINE 1: SELECT  "orders".* FROM "orders" WHERE "orders"."cutomer_id"...
+                                               ^
+HINT:  Perhaps you meant to reference the column "orders.customer_id".
+: SELECT  "orders".* FROM "orders" WHERE "orders"."cutomer_id" = $1 LIMIT $2):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.find_by(cutomer_id:current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052667057140'
+Started GET "/orders" for ::1 at 2019-11-06 17:00:56 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  Rendered orders/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 17:00:56 +0800
+  
+ActionView::Template::Error (undefined method `each' for #<Order:0x00007f6cc43d8c58>):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.find_by(customer_id:current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052562895700'
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (2.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  Rendered orders/index.html.erb within layouts/application (22.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Order:0x00007f6ce8174240>):
+     5: 
+     6: <% if customer_signed_in?%>
+     7: 
+     8:     <% @order.find_by(customer_id:current_customer.id).each do |order| %>
+     9:         <h3>Orders: <%= order.id %></h3>
+    10:         Kopi: <%= order.kopi.name %> 
+    11:         Customer: <%= order.customer.email %> 
+  
+app/views/orders/index.html.erb:8:in `_app_views_orders_index_html_erb___2841775726418818647_70052667094700'
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 1], ["LIMIT", 11]]
+Started GET "/orders" for ::1 at 2019-11-06 17:06:30 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (5.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (5.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mKopi Load (6.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:10
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:10
+  [1m[36mCACHE Customer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:10
+  [1m[36mCACHE Customer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  Rendered orders/index.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 219ms (Views: 180.2ms | ActiveRecord: 24.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-11-06 17:06:43 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q2rocatxaCEnvuqSoK7Jc2Ssfj+AL+yNf7bKdOF9S+8UmG8V5OiUmJpTpHCjlnkR+tnh04e+D8HtXoAH1wS9uA=="}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-06 17:06:43 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (6.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:5
+  Rendered origins/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 89ms (Views: 66.9ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/customers/sign_in" for ::1 at 2019-11-06 17:06:46 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 66ms (Views: 55.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/customers/sign_up" for ::1 at 2019-11-06 17:06:48 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-06 17:06:55 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hnLkFTsh9P11diIF6kgp39pA3fpSiFeX60TNRNGTaahwKEb9ZzyOMY1vUqwSGyRTvZ7nBIKGRTc7Sfw1IDC7QA==", "customer"=>{"email"=>"customer2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "customer2@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "customer2@gmail.com"], ["encrypted_password", "$2a$11$TyljmBeePenFCiidf/zrDuz/NkYkRbfB6z8D7rBE3YxLAD/LAoh/a"], ["created_at", "2019-11-06 09:06:55.721299"], ["updated_at", "2019-11-06 09:06:55.721299"]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 133ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-11-06 17:06:55 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:5
+  Rendered origins/index.html.erb within layouts/application (7.5ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 17:06:58 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = $1[0m  [["customer_id", 2]]
+  ↳ app/views/orders/index.html.erb:8
+  Rendered orders/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 57ms (Views: 50.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2019-11-06 17:06:59 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:5
+  Rendered orders/new.html.erb within layouts/application (10.1ms)
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 61ms (Views: 54.8ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/orders" for ::1 at 2019-11-06 17:07:01 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OYa+OKoQS+t+9b58kJEcQN9ouyasXqkt6yyQ7hFfbdHP3BzQ9g0xJ4bsztVowhHMuLaB2HxQu407IaGf4Py/OQ==", "order"=>{"kopi_id"=>"2"}, "commit"=>"Save Order"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("kopi_id", "customer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["kopi_id", 2], ["customer_id", 2], ["created_at", "2019-11-06 09:07:01.560123"], ["updated_at", "2019-11-06 09:07:01.560123"]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:18
+Redirected to http://localhost:3000/orders/4
+Completed 302 Found in 31ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/orders/4" for ::1 at 2019-11-06 17:07:01 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:3
+  Rendered orders/show.html.erb within layouts/application (2.2ms)
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 50ms (Views: 43.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/orders" for ::1 at 2019-11-06 17:07:06 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OYa+OKoQS+t+9b58kJEcQN9ouyasXqkt6yyQ7hFfbdHP3BzQ9g0xJ4bsztVowhHMuLaB2HxQu407IaGf4Py/OQ==", "order"=>{"kopi_id"=>"3"}, "commit"=>"Save Order"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[36mOrder Create (0.5ms)[0m  [1m[32mINSERT INTO "orders" ("kopi_id", "customer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["kopi_id", 3], ["customer_id", 2], ["created_at", "2019-11-06 09:07:06.121020"], ["updated_at", "2019-11-06 09:07:06.121020"]]
+  ↳ app/controllers/orders_controller.rb:18
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:18
+Redirected to http://localhost:3000/orders/5
+Completed 302 Found in 30ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/orders/5" for ::1 at 2019-11-06 17:07:06 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:23
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:3
+  Rendered orders/show.html.erb within layouts/application (1.6ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-06 17:07:09 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:6
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."customer_id" = $1[0m  [["customer_id", 2]]
+  ↳ app/views/orders/index.html.erb:8
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:10
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:10
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  Rendered orders/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 60ms (Views: 54.5ms | ActiveRecord: 2.0ms)
+
+

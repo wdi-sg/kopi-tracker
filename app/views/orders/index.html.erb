@@ -2,13 +2,18 @@
 All Orders
 </h1>
 
-<% @order.each do |order| %>
 
-    <h3>Orders: <%= order.id %></h3>
-    Kopi: <%= order.kopi.name %> 
-    Customer: <%= order.customer.email %> 
+<% if customer_signed_in?%>
 
-</h3>
+    <% @order.where(:customer_id =>current_customer.id).each do |order| %>
+        <h3>Orders: <%= order.id %></h3>
+        Kopi: <%= order.kopi.name %> 
+        Customer: <%= order.customer.email %> 
+
+        </h3>
+    <% end %>
+    <%else%>
+
         <% end %>
 <br/>
 <br/>
