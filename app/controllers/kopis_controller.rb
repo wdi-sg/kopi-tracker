@@ -1,6 +1,10 @@
 class KopisController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @kopis = Kopi.all
+     @user = current_user
 
   end
 
@@ -19,14 +23,24 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
     @roasts = Roast.all
     @origins = Origin.all
+    p @origins
 
   end
 
   def create
     # render plain: params[:article].inspect
     @kopi = Kopi.new(kopi_params)
-    @kopi.save
+    @kopi.user_id = current_user.id
+
+    if @kopi.save
     redirect_to @kopi
+
+  else
+    puts "FAILLLLL"
+
+    render 'new'
+  end      # render plain: params[:kopi].inspect
+
   end
 
   def update
@@ -46,6 +60,6 @@ class KopisController < ApplicationController
 
   private
     def kopi_params
-    params.require(:kopi).permit(:name, :origin_id, :roast_id)
+    params.require(:kopi).permit(:name, :origin_id, :roast_id, :user_id)
   end
 end

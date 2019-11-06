@@ -1,6 +1,10 @@
-<h1>All Kopis</h1>
 
-<table>
+
+
+
+<h3>All Kopis</h3>
+
+<table class= "table">
   <tr>
     <th>Name</th>
     <th>Roast</th>
@@ -8,19 +12,53 @@
     <th></th>
   </tr>
 
-  <% @kopi.each do |post| %>
+ <% @kopis.each do |kopi| %>
     <tr>
-      <td><%= post.name %></td>
-      <td><%= post.roast.name %></td>
-      <td><%= post.origin.location %></td>
-      <td><%= link_to 'Show', kopi_path(post) %></td>
-      <td><%= link_to 'Edit', edit_kopi_path(post) %></td>
-      <td><%= link_to 'Destroy', kopi_path(post),
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.origin.location %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
         method: :delete,
         data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
+<% end %>
 </table>
+</br>
+<% if user_signed_in? %>
+
+<h3> User's Kopi </h3>
+
+<table class = "table">
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @user.kopi.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.origin.location %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 
 
-<%= link_to 'New kopi', new_kopi_path %>
+
+  <% end %>
+
+<% end %>
+
+  </table>
+<%= link_to 'New Kopi', new_kopi_path %>
+
+<%= link_to 'Log In', new_user_session_url %>
+
+<%= link_to 'Log Out', destroy_user_session_url, method: :delete %>
