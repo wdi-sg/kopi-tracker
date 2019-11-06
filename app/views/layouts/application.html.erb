@@ -24,6 +24,9 @@
           <a href="/origins" class="nav-link">Origins</a>
         </li>
         <li class="nav-item">
+        <a href="/orders" class="nav-link">Orders</a>
+      </li>
+        <li class="nav-item">
         <% if user_signed_in? || customer_signed_in?%>
           <%= link_to 'log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
           <% else %> 

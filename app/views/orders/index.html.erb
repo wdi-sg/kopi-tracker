@@ -2,6 +2,14 @@
 All Orders
 </h1>
 
+<% @order.each do |order| %>
 
+    <h3>Orders: <%= order.id %></h3>
+    Kopi: <%= order.kopi.name %> 
+    Customer: <%= order.customer.email %> 
 
+</h3>
+        <% end %>
+<br/>
+<br/>
     <a href ="/orders/new" >Create New Order</a>

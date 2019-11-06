@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
     def index
         @order = Order.all
+        @kopis = Kopi.all
 
     end
 
