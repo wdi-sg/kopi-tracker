@@ -1,0 +1,27 @@
+<div class="jumbotron">
+<h1>This Kopi</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.origin.location %>
+</p>
+
+<p>
+	<strong>Customers:</strong>
+	<ol>
+	<%@kopi.customers.each do |c|%>
+	<li><%=c.name%></li>
+	<%end%>
+</ol>
+</p>
+</div>
+<%= link_to 'Back', '/kopis' %>

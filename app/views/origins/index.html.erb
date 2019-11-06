@@ -1,0 +1,26 @@
+<div class = "jumbotron">
+	<h1>All Origins in the Originiverse</h1>
+
+	<% if current_user.admin?%>
+		<div><%= link_to 'add origin', new_origin_path %></div>
+	<%end%>
+
+	<table class="table">
+	  <tr>
+	  	<th>Number</th>
+	    <th>Location</th>
+	    <th>Phone</th>
+
+	  </tr>
+
+	  <% @origins.each do |o| %>
+	    <tr>
+	    	 <td><%= o.id %></td>
+	      <td><%= o.location %></td>
+	      <td><%= o.phone %></td>
+
+	    </tr>
+	  <% end %>
+	</table>
+
+</div>

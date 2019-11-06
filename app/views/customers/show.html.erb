@@ -1,0 +1,30 @@
+
+<div class = "jumbotron">
+<p>
+  <strong>Customer:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Kopis:</strong>
+  <table class="table">
+  	<tr>
+  		<th>Name</th>
+  		<th>Roast</th>
+  		<th>Origin</th>
+  	</tr>
+
+  <% @customer.kopis.each do |k|%>
+  <tr>
+  	<td><%=k.name%></td>
+  	<td><%=k.roast.name%></td>
+  	<td><%=k.origin.location%></td>
+  </tr>
+  <%end%>
+ </table>
+</p>
+
+<p>
+<%= link_to 'Back', root_path %>
+</p>
+</div>
