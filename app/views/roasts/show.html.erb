@@ -1,0 +1,10 @@
+<p>
+  <strong>Name:</strong>
+  <%= @roast.name %>
+</p>
+
+<% if current_user.try(:admin?) %>
+<%= link_to 'Edit', edit_roast_path(@roast) %> |
+<% end %>
+
+<%= link_to 'Back', roasts_path %>
