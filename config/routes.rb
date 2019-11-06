@@ -25,4 +25,6 @@ Rails.application.routes.draw do
     post '/origins/:origin_id/kopis' => 'kopis#create'
 
     resources :roasts
+
+    resources :customers
 end
