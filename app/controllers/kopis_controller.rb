@@ -17,8 +17,9 @@ class KopisController < ApplicationController
   end
 
   def show
+    @kopi = Kopi.find(params[:id])
+    p "@@@@@@", @kopi
     @user = current_user
-    @kopi = Kopi.user.find(params[:id])
     @origins = Origin.all
   end
 
