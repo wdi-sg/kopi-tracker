@@ -1,11 +1,26 @@
-<h1>
-All Kopis
-</h1>
 
-<% @kopis.each do |kopi| %>
+    <h3>All Kopis</h3>
 
-<h3>Name: <%= kopi.name %> Roast: <%= kopi.roast.name %> Origin: <%= kopi.origin.location %></h3>
+<table class= "table">
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
 
-    <% end %>
+ <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.origin.location %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+</table>
 
-    <a href ="/kopis/new" >Create New kopi</a>
+<%= link_to 'New Kopi', new_kopi_path %>
