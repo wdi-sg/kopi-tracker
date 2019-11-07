@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
   #end
 
   def new
+    @customers = Customer.all
     @kopis = Kopi.all
   end
 
@@ -12,6 +13,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     @customer.save
+    #render plain: params[:customer].inspect
      redirect_to @customer
   end
 

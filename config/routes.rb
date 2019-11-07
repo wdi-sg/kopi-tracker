@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   patch '/farms/:id' => 'farms#update'
   delete '/farms/:id' => 'farms#destroy'
 
-  get '/customers' => 'customers#index', as: 'customers'
+  #get '/customers' => 'customers#index', as: 'customers'
   get '/customers/new' => 'customers#new', as: 'new_customer'
   post '/customers' => 'customers#create'
   get '/customers/:id' => 'customers#show' , as: 'customer'

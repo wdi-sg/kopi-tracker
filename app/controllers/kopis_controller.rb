@@ -15,8 +15,16 @@ class KopisController < ApplicationController
     @kopi = Kopi.new(kopi_params)
     #render plain: params.inspect
     @kopi.user = current_user
+
     @kopi.save
-     redirect_to @kopi
+
+    if @kopi.save
+      redirect_to @kopi
+    else
+       @farms = Farm.all
+       @roasts = Roast.all
+      render 'new'
+     end
   end
 
   def show
