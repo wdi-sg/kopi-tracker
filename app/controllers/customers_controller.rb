@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   def index
     @customers = Customer.all
+    @kopis = Kopi.all
   end
 
   def new
@@ -9,15 +10,13 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to @customer, notice: "Customer was successfully created." }
-        format.json { render :show, status: :created, location: @customer }
-      else
-        format.html { render :new }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
+    if @customer.save
+      @kopis = Kopi.all
+      render "show"
+    else
+      @customers = Customer.all
+      @kopis = Kopi.all
+      render "new"
     end
   end
 
