@@ -43,8 +43,16 @@ before_action :authenticate_user!, :except => [ :show, :index ]
   def create
     @kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
-    @kopi.save
-    redirect_to @kopi
+    if @kopi.save
+      redirect_to @kopi
+    else
+      if( params[:origin_id].present? )
+        @origin_id = params[:origin_id]
+      end
+      @origins = Origin.all
+      @roasts = Roast.all
+      render :new
+    end
   end
 
   def update

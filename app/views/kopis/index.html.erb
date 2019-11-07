@@ -1,4 +1,13 @@
 <h1>Kopi</h1>
+
+<% if user_signed_in? %>
+	<% if @origin_id.nil? %>
+		<%= link_to 'New Kopi', new_kopi_path, class: "btn btn-info" %>
+	<% else %>
+		<%= link_to 'New Origin Kopi', new_origin_kopi_path, class: "btn btn-info" %>
+	<% end %>
+<% end %>
+
 <form action="/">
 	<select name="sort_by" id="sort_by">
     <option value="desc">Most Popular</option>
@@ -18,13 +27,7 @@
 	    <th></th>
 	  </tr>
 	</thead>
-  <% if user_signed_in? %>
-		<% if @origin_id.nil? %>
-			<%= link_to 'New Kopi', new_kopi_path, class: "btn btn-info" %>
-		<% else %>
-			<%= link_to 'New Origin Kopi', new_origin_kopi_path, class: "btn btn-info" %>
-		<% end %>
-	<% end %>
+
 	<tbody>
 		<% @kopis.each do |kopi| %>
 		<tr>

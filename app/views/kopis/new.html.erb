@@ -1,5 +1,9 @@
 <h3>Add Kopi</h3>
 
+<p class="error">
+  <%= show_errors(@kopi, :name) %>
+</p>
+
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
   <p>
