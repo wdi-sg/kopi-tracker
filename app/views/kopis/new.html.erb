@@ -5,6 +5,9 @@
     <%= f.label :name %> <br/>
     <%= f.text_field :name %>
     </p>
+    <p class="error alert-danger">
+    <%= show_errors(@kopi, :name) %>
+  </p>
 
     <%= f.collection_select :roast_id, @roasts, :id, :name %>
 <br/>

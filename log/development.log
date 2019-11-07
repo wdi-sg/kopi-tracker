@@ -8493,3 +8493,390 @@ Processing by OrdersController#new as HTML
 Completed 200 OK in 80ms (Views: 62.6ms | ActiveRecord: 8.1ms)
 
 
+Started GET "/orders" for ::1 at 2019-11-07 14:56:00 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mKopi Load (1.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (41.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 81ms (Views: 61.4ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 14:56:02 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (1.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:5
+  Rendered origins/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 60ms (Views: 47.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 14:58:37 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:5
+  [1m[36mRoast Load (8.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  Rendered kopis/index.html.erb within layouts/application (28.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 72ms (Views: 48.2ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 14:58:39 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:9
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 70ms (Views: 35.1ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/kopis" for ::1 at 2019-11-07 15:01:43 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2h57JF5ju4hgOsX40cLZdWHiDUZZaGjJs4B2Mh11/+Bxp16dULGB5kOt4AA3mK0KSUsSut28EsonKHKtmTNOw==", "kopi"=>{"name"=>"Kopi Tanjong", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 15.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     8:     <p class="error">
+     9:     <%= show_errors(@kopi, :name) %>
+    10:   </p>
+    11:     <%= f.collection_select :roast_id, @roasts, :id, :name %>
+    12: <br/>
+    13:     <%= f.collection_select :origin_id, @origins, :id, :location %>
+    14: 
+  
+app/views/kopis/new.html.erb:11:in `block in _app_views_kopis_new_html_erb__2463737569591816962_69896368615740'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb__2463737569591816962_69896368615740'
+app/controllers/kopis_controller.rb:17:in `create'
+Started POST "/kopis" for ::1 at 2019-11-07 15:03:00 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u2h57JF5ju4hgOsX40cLZdWHiDUZZaGjJs4B2Mh11/+Bxp16dULGB5kOt4AA3mK0KSUsSut28EsonKHKtmTNOw==", "kopi"=>{"name"=>"Kopi Tanjong", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     9:     <%= show_errors(@kopi, :name) %>
+    10:   </p>
+    11:   
+    12:     <%= f.collection_select :roast_id, @roasts, :id, :name %>
+    13: <br/>
+    14:     <%= f.collection_select :origin_id, @origins, :id, :location %>
+    15: 
+  
+app/views/kopis/new.html.erb:12:in `block in _app_views_kopis_new_html_erb__2463737569591816962_69896331531900'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb__2463737569591816962_69896331531900'
+app/controllers/kopis_controller.rb:17:in `create'
+Started GET "/kopis/new" for ::1 at 2019-11-07 15:03:02 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:12
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:14
+  Rendered kopis/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 73ms (Views: 45.4ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/kopis" for ::1 at 2019-11-07 15:03:09 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLU5jD7aanXi8YEC49qPcPCD6wgxl4C+f/wwo8ETAEC+G90a2uEinFp/3ZUAQ+ahDCFPd8OE0VZxrpCxvwIahA==", "kopi"=>{"name"=>"Kopi Tanjong", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 13.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     9:     <%= show_errors(@kopi, :name) %>
+    10:   </p>
+    11:   
+    12:     <%= f.collection_select :roast_id, @roasts, :id, :name %>
+    13: <br/>
+    14:     <%= f.collection_select :origin_id, @origins, :id, :location %>
+    15: 
+  
+app/views/kopis/new.html.erb:12:in `block in _app_views_kopis_new_html_erb__2463737569591816962_69896368534760'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb__2463737569591816962_69896368534760'
+app/controllers/kopis_controller.rb:17:in `create'
+Started POST "/kopis" for ::1 at 2019-11-07 15:04:07 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLU5jD7aanXi8YEC49qPcPCD6wgxl4C+f/wwo8ETAEC+G90a2uEinFp/3ZUAQ+ahDCFPd8OE0VZxrpCxvwIahA==", "kopi"=>{"name"=>"Kopi Tanjong", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 13.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     9:     <%= show_errors(@kopi, :name) %>
+    10:   </p>
+    11:   
+    12:     <%= f.collection_select :roast_id, @roasts, :id, :name %>
+    13: <br/>
+    14:     <%= f.collection_select :origin_id, @origins, :id, :location %>
+    15: 
+  
+app/views/kopis/new.html.erb:12:in `block in _app_views_kopis_new_html_erb__2463737569591816962_69896366980680'
+app/views/kopis/new.html.erb:3:in `_app_views_kopis_new_html_erb__2463737569591816962_69896366980680'
+app/controllers/kopis_controller.rb:17:in `create'
+Started POST "/kopis" for ::1 at 2019-11-07 15:04:39 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hLU5jD7aanXi8YEC49qPcPCD6wgxl4C+f/wwo8ETAEC+G90a2uEinFp/3ZUAQ+ahDCFPd8OE0VZxrpCxvwIahA==", "kopi"=>{"name"=>"Kopi Tanjong", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:12
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:14
+  Rendered kopis/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 86ms (Views: 36.4ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/kopis" for ::1 at 2019-11-07 15:04:45 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gXfDXo945NVY0XEPOG28nszjUqX9vPhtspkF+eDA9B272SfIa0OsPOBfLZjb9NVPMEH22g+vqYW8y6XrntHu2Q==", "kopi"=>{"name"=>"Kopi Tanjong Place", "roast_id"=>"1", "origin_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "kopis" WHERE "kopis"."name" = $1 LIMIT $2[0m  [["name", "Kopi Tanjong Place"], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[36mKopi Create (11.1ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kopi Tanjong Place"], ["roast_id", 1], ["origin_id", 1], ["created_at", "2019-11-07 07:04:45.203728"], ["updated_at", "2019-11-07 07:04:45.203728"], ["user_id", 1]]
+  ↳ app/controllers/kopis_controller.rb:14
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:14
+Redirected to http://localhost:3000/kopis/4
+Completed 302 Found in 30ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/kopis/4" for ::1 at 2019-11-07 15:04:45 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:4
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/show.html.erb:6
+  Rendered kopis/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 54ms (Views: 45.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 15:04:48 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:5
+  Rendered origins/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 15:04:52 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:5
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:7
+  Rendered kopis/index.html.erb within layouts/application (35.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 86ms (Views: 59.2ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/orders" for ::1 at 2019-11-07 15:09:47 +0800
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/orders/index.html.erb:15
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:17
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:18
+  Rendered orders/index.html.erb within layouts/application (34.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 92ms (Views: 72.5ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 15:09:48 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (1.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:5
+  Rendered origins/index.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:30
+Completed 200 OK in 110ms (Views: 93.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 15:09:50 +0800
+Processing by OriginsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 92ms (Views: 67.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/origins" for ::1 at 2019-11-07 15:09:54 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DmCf8//vsLpefdGcPNRdGSswaK0p5ALdtxGnFjrcbnM0zntlG9T4U+bzjQvfTTTI15LM0tv3UzW5QwcERM10tw==", "origin"=>{"location"=>"c", "phone"=>"a"}, "commit"=>"Save Origin"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/david/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/origins_controller.rb:22
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 1.0ms)
+
+
