@@ -1,0 +1,18 @@
+<h2>Editing Customer</h2>
+
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @customer %> |
+<%= link_to 'Back', customers_path %>

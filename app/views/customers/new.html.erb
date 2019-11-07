@@ -1,0 +1,26 @@
+
+<h1> Create New Customers </h1>
+
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
+    <label class="checkbox-inline mr-4">
+        <%= cb.check_box %>
+        <%= cb.label %>
+    </label>
+<% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', customers_path %>
