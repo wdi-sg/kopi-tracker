@@ -1,5 +1,7 @@
 <%= link_to 'Origins', origins_path%>
 <%= link_to 'Kopis', kopis_path%>
+<%= link_to 'Customers', customers_path%>
+<%= link_to 'New Customer', new_customer_path %>
 <% if user_signed_in? %>
   <%= link_to 'New Kopi', new_kopi_path %>
   <%= link_to 'log out', destroy_user_session_url, method: :delete %>
@@ -12,9 +14,11 @@
 <p>
     <%= @kopi.origin.location %>
     <%= @kopi.origin.phone %>
-    <%= @kopi.customers.each do |c| %>
-      <%= c.name %>
-      <%= c.quantity %>
+    <% @kopi.customers.each do |c| %>
+      <p>
+        <%= c.name %>
+        <%= c.quantity %>
+      </p>
     <% end %>
     
     <%= link_to 'View', origin_path(@kopi.origin_id) %>
