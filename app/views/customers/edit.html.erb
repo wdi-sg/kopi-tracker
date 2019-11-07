@@ -8,8 +8,10 @@
 			<%= form_with scope: :customer, model: @customer, local: true do |form| %>
 				<div class="form-group mt-5" style="width: 50%; margin: 0 auto">
 
-						<p>Kopis:</p>
-						<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+						<p class="form-check-label">Kopis:</p>
+						<div class="form-check">
+							<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name, {:class => "form-check-input"} %>
+						</div>
 
 
 					<%= link_to 'Back', customers_path, {:class => "btn btn-outline-secondary"} %>
