@@ -13,8 +13,10 @@
       <td><%= kopi.name %></td>
       <td><%= kopi.roast.name %></td>
       <td><%= kopi.origin.location %></td>
+      <% if user_signed_in?%>
       <td><%= link_to 'Show', kopi_path(kopi) %></td>
       <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <% end %>
       <% if user_signed_in? && current_user.admin?%>
       <td><%= link_to 'Destroy', kopi_path(kopi),
         method: :delete,

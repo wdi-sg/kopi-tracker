@@ -9,8 +9,10 @@
  <% @customers.each do |customer| %>
     <tr>
       <td><%= customer.name %></td>
+      <% if user_signed_in?%>
       <td><%= link_to 'Show', customer_path(customer) %></td>
       <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+      <% end %>
       <% if user_signed_in? && current_user.admin?%>
       <td>
       <%= link_to 'Destroy', customer_path(customer),
