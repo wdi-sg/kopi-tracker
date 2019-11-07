@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'kopis#index'
   resources :kopis
   resources :origins
+  resources :orders
+  resources :customers
 
   get '/origins/:origins_id/kopis' => 'kopis#index', as: 'origin_kopis'
   get '/origins/:origins_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'

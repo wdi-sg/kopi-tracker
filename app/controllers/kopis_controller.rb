@@ -12,7 +12,10 @@ class KopisController < ApplicationController
 end
 
   def new
+    @kopis =Kopi.new
+    @kopis = Kopi.all
     @origins = Origin.all
+    @customers = Customer.all
   end
 
   def create
