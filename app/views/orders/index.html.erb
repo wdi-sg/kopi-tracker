@@ -1,0 +1,25 @@
+<h1>
+All Orders
+</h1>
+
+
+<% if customer_signed_in?%>
+
+        <% @order.where(:customer_id =>current_customer.id).each do |order| %>
+            <h3>Orders: <%= order.id %></h3>
+            Kopi: <%= order.kopi.name %> 
+            Customer: <%= order.customer.email %> 
+            </h3>
+        <% end %>
+    <% else %>
+        <% @order.each do |order| %>
+            <h3>Orders: <%= order.id %></h3>
+            Kopi: <%= order.kopi.name %> 
+            Customer: <%= order.customer.email %> 
+            </h3>
+        <% end %>
+<% end %>
+
+<br/>
+<br/>
+    <a href ="/orders/new" >Create New Order</a>
