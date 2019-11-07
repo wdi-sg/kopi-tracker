@@ -21,13 +21,21 @@ class KopisController < ApplicationController
   
     def edit
         @kopi = Kopi.find(params[:id])
+        @origins = Origin.all
     end
   
     def create
         @kopi = Kopi.new(kopi_params)
-
-        @kopi.save
-        redirect_to @kopi
+        @kopi.user = current_user
+        puts kopi_params
+        
+        if 
+            @kopi.save
+            redirect_to @kopi
+        else
+            @origins = Origin.all
+            render 'new'
+        end
     end
   
     def update
@@ -44,8 +52,9 @@ class KopisController < ApplicationController
         redirect_to root_path
     end
 
+    # Jasmine: I changed the origin to origin_id which allowed the new kopi to save
     private
     def kopi_params
-        params.require(:kopi).permit(:name, :roast, :origin)
+        params.require(:kopi).permit(:name, :roast, :origin_id)
     end
 end

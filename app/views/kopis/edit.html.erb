@@ -2,24 +2,24 @@
 
 <%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
 
-    <p>
-        <%= form.label :name %><br>
-        <%= form.text_field :name %>
-    </p>
+<p>
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+</p>
 
-    <p>
-        <%= form.label :roast %><br>
-        <%= form.text_field :roast %>
-    </p>
+<p>
+	<%= form.label :roast %><br>
+	<%= form.text_field :roast %>
+</p>
 
-    <p>
-        <%= form.label :origin %><br>
-        <%= form.text_field :origin %>
-    </p>
+<div>
+	<%= form.label :origin_id %><br>
+	<%= form.collection_select(:origin_id, @origins, :id, :location, {:include_blank => 'Select origin...'}, {:class => "custom-select"}) %>
+</div>
 
-    <p>
-        <%= form.submit %>
-    </p>
+<p>
+	<%= form.submit %>
+</p>
 
 <% end %>
 
