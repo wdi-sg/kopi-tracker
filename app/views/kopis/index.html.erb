@@ -1,0 +1,21 @@
+<% if @user %>
+  <h1>Welcome, <%= @user.email %>!</h1>
+<% end %>
+<div class="container float-right">
+  <h2>Kopi Menu</h2>
+  <table class='table'>
+    <tr>
+      <th>Kopi</th>
+      <th>Roast Type</th>
+      <th>Origin</th>
+    </tr>
+    <% @kopis.each do |k| %>
+      <tr>
+        <td><%= k.name %></td>
+        <td><%= k.roast %></td>
+        <td><%= k.origin.location %></td>
+        <td><%= link_to 'Show', kopi_path(k), method: :get %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
