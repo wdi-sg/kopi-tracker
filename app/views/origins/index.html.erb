@@ -1,0 +1,27 @@
+<%= link_to 'New origin', new_origin_path %>
+
+<h1>Listing origins</h1>
+
+<table>
+  <tr>
+    <th>location</th>
+    <th>phone_number</th>
+    <th></th>
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+      <td><%= origin.location %></td>
+      <td><%= origin.phone_number %></td>
+      <td><%= link_to 'Show', origin_path(origin) %></td>
+      <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+      <td><%= link_to 'Destroy', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'log in', new_user_session_url %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
