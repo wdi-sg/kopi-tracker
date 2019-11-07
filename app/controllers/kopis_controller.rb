@@ -1,6 +1,6 @@
 class KopisController < ApplicationController
 
-    # before_action :authenticate_user!, :except => [ :index ]
+    before_action :authenticate_user!, :except => [ :index ]
 
     def index
         # # test to see if we are at /parks/:id/rangers or /rangers
@@ -17,10 +17,13 @@ class KopisController < ApplicationController
 
     def new
       @origins = Origin.all
+
+      @roasts = Roast.all
     end
 
     def edit
         @kopi = Kopi.find(params[:id])
+        @roasts = Roast.all
     end
   
     def create
@@ -32,19 +35,14 @@ class KopisController < ApplicationController
     #   render plain: params[:kopi].inspect
       redirect_to @kopi
       else
-        reder 'new'
+        render 'new'
     end
 end
 
   
     def show
-      # deal with the case that we are trying to get a ranger for a park that doesn't exist
-  
       @kopi = Kopi.find(params[:id])
-  
-      if params[:origin_id].to_i != @kopi.origin.id
-        # do something
-      end
+
     end
 
     def update
@@ -65,6 +63,6 @@ end
   private
   
     def kopi_params
-      params.require(:kopi).permit(:name, :origin_id, :roast)
+      params.require(:kopi).permit(:name, :origin_id, :roast_id)
     end
   end
