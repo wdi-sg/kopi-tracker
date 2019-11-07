@@ -3195,3 +3195,2045 @@ Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.0ms)
   ↳ db/seeds.rb:23
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:23
+Started GET "/" for ::1 at 2019-11-07 16:10:29 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 60ms (Views: 49.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:12:12 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:12:13 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 16:12:17 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jupw89jKQTOENhjqDyCxgv3w0nc6rfM8egOKwOolM5OBF4SQE9OckX6ebbdbKPbaIPMFWBgru0QzArCFlh92WA==", "customer"=>{"name"=>"Daniel"}, "commit"=>"Save Customer"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[36mCustomer Create (40.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 08:12:17.049390"], ["updated_at", "2019-11-07 08:12:17.049390"]]
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:9
+Redirected to http://localhost:3000/customers/1
+Completed 302 Found in 69ms (ActiveRecord: 49.8ms)
+
+
+Started GET "/customers/1" for ::1 at 2019-11-07 16:12:17 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 16:12:18 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:19:13 +0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Daniel/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 329ms (Views: 300.5ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:19:16 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:19:24 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:19:29 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 77ms (Views: 42.8ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:22:57 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:25:29 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:25:51 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 47ms (Views: 28.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:25:53 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:26:42 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:26:44 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 71ms (Views: 38.9ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:29:25 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 16:29:47 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:30:06 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (2.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (4.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 50ms (Views: 37.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/kopis" for ::1 at 2019-11-07 16:30:17 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HXLwwovcjB7mxfb8qobp7ZEcOds6ms+cVOUo7G8Swk8SjwShQMVRvBxtg6H+jq61TB/u9Bgch+Qd5BKpEyiHhA==", "kopi"=>{"origin_id"=>"4", "customer_id"=>"1", "name"=>"Cocaine Coffee", "kopi_id"=>"2"}, "commit"=>"Save Kopi"}
+Unpermitted parameters: :customer_id, :kopi_id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:24
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:24
+  [1m[36mKopi Create (0.8ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cocaine Coffee"], ["origin_id", 4], ["created_at", "2019-11-07 08:30:17.105795"], ["updated_at", "2019-11-07 08:30:17.105795"]]
+  ↳ app/controllers/kopis_controller.rb:24
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:24
+Redirected to http://localhost:3000/kopis/9
+Completed 302 Found in 69ms (ActiveRecord: 42.4ms)
+
+
+Started GET "/kopis/9" for ::1 at 2019-11-07 16:30:17 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:30
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 16:30:18 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 16:30:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:30:39 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:30:44 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:30:58 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 16:32:11 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 47ms (Views: 30.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:32:12 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:21:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:35:08 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:21:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:35:27 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customers):
+  
+app/controllers/customers_controller.rb:21:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:35:41 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:21:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:36:02 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:21:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:37:45 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:26:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/" for ::1 at 2019-11-07 16:37:48 +0800
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-07 16:37:51 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 71ms (Views: 45.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:37:52 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:26:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/" for ::1 at 2019-11-07 16:39:22 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:39:41 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:26:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:40:03 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:26:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:40:35 +0800
+Processing by CustomersController#new as HTML
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:26:in `customer_params'
+app/controllers/customers_controller.rb:3:in `new'
+Started GET "/customers/new" for ::1 at 2019-11-07 16:41:16 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:41:48 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:42:00 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 45ms (Views: 36.6ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 16:47:01 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aHWiTYpQfnNYawZwgzg2UqwRt1K53EGnAlCDB9cMj9xniFYuQUmj0aLDcy3XMHEKcRJgfZtaCd9LUblCqzbKFw==", "customer"=>{"kopi_id"=>"4", "name"=>"Daniella"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[36mCustomer Create (1.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniella"], ["created_at", "2019-11-07 08:47:01.995766"], ["updated_at", "2019-11-07 08:47:01.995766"]]
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:9
+Redirected to http://localhost:3000/customers/2
+Completed 302 Found in 50ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/customers/2" for ::1 at 2019-11-07 16:47:02 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:47:12 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:49:13 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 53ms (Views: 40.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:49:15 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 16:49:23 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x38USwTMAfVGWC1V+lX3/yuLfiJSo4ruyWAjBL8BvYPIguAoz9XcV7zwWAiuXbCn9oipDXAlwpaAYRlBwzv4SA==", "customer"=>{"kopi_id"=>"6", "name"=>"Daniel"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 08:49:23.943287"], ["updated_at", "2019-11-07 08:49:23.943287"]]
+  ↳ app/controllers/customers_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:9
+Redirected to http://localhost:3000/customers/3
+Completed 302 Found in 29ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/customers/3" for ::1 at 2019-11-07 16:49:23 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 17.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 16:53:24 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 49ms (Views: 37.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 16:53:26 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 59ms (Views: 35.9ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 16:53:28 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:53:30 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 16:53:35 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yvgWuNH4pJFBDUog2HiqYFZ+QaHwaCZ2VJ0X+5NU2lHFBeLbGuF5M7ulP32McO04i32WjtLubg4dnC2+726fmg==", "customer"=>{"kopi_id"=>"6", "name"=>"Daniel"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (2.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 08:53:35.455983"], ["updated_at", "2019-11-07 08:53:35.455983"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/4
+Completed 302 Found in 56ms (ActiveRecord: 45.2ms)
+
+
+Started GET "/customers/4" for ::1 at 2019-11-07 16:53:35 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 16:54:40 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 16:54:42 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 16:54:44 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 16:54:51 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SrWIekS/ec5BvvT4nszmKFWF2R2iZIzKYwBfXPqmsJVFSHwZj6akbLsWgaXKxKFwiIYOMoDixLIqAWUZhpz1Xg==", "customer"=>{"kopi_id"=>"6", "name"=>"Renny"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (1.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Renny"], ["created_at", "2019-11-07 08:54:52.021278"], ["updated_at", "2019-11-07 08:54:52.021278"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/5
+Completed 302 Found in 14ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/customers/5" for ::1 at 2019-11-07 16:54:52 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 08:57:35.294586"], ["updated_at", "2019-11-07 08:57:35.294586"]]
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 3], ["LIMIT", 11]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1 LIMIT $2[0m  [["kopi_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer::HABTM_Kopi Create (41.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 3], ["kopi_id", 2], ["created_at", "2019-11-07 09:01:21.403395"], ["updated_at", "2019-11-07 09:01:21.403395"]]
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 3], ["LIMIT", 11]]
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 3], ["LIMIT", 11]]
+Started GET "/customers/new" for ::1 at 2019-11-07 17:04:07 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Unknown key: :object. Valid keys are: :includes, :eager_load, :preload, :select, :group, :order, :joins, :left_outer_joins, :references, :extending, :unscope, :limit, :offset, :lock, :readonly, :reordering, :reverse_order, :distinct, :create_with, :skip_query_cache, :where, :having, :from):
+    1: <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+    2:   <p>
+    3:     <%= form.check_box :kopi_id, @kopis, :id, :name %>
+    4:   </p>
+    5:   <p>
+    6:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:3:in `block in _app_views_customers_new_html_erb__4550737257140164063_70115909404120'
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb__4550737257140164063_70115909404120'
+Started GET "/customers/new" for ::1 at 2019-11-07 17:05:10 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (2.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 156ms (Views: 141.1ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 17:05:17 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QhdAjhXsBGiszT9NcfF8Y66tc6E8cx4oQfSfYrJG12pN6rTt3vXZylZlShAl+Ts7c66kjh71VlAI9aUnznySoQ==", "customer"=>{"kopi_is"=>["", "6", "7"], "name"=>"Daniel"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_is
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (41.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 09:05:17.606769"], ["updated_at", "2019-11-07 09:05:17.606769"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/7
+Completed 302 Found in 75ms (ActiveRecord: 50.5ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-07 17:05:17 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-07 17:16:38 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (1.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (86.5ms)
+Completed 200 OK in 149ms (Views: 133.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-07 17:16:59 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 112ms (Views: 71.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-07 17:17:01 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 17:17:03 +0800
+Processing by CustomersController#index as HTML
+Completed 406 Not Acceptable in 234ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CustomersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/new" for ::1 at 2019-11-07 17:17:09 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 42ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 17:17:15 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3xG6Yoom3C3+lEazI/lUwHXgSmZgHHa1F5p4DSik7hQgbKKQTFG0k1SJEeYh6IL3NRWBrsGOaKdX1OlSJjWcw==", "customer"=>{"kopi_is"=>["", "4", "6", "8"], "name"=>"Daniel"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_is
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (2.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 09:17:15.710322"], ["updated_at", "2019-11-07 09:17:15.710322"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/8
+Completed 302 Found in 18ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/customers/8" for ::1 at 2019-11-07 17:17:15 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/8" for ::1 at 2019-11-07 17:18:20 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 56ms (Views: 31.4ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/customers/8" for ::1 at 2019-11-07 17:18:38 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `kopis' for #<Customer:0x00007f8a44778168>
+Did you mean?  kopi
+               kopi=):
+    3: <br/>
+    4: <h2><b>Kopi's ordered:</b></h2>
+    5: <ul>
+    6:   <% @customer.kopis.each do |k| %>
+    7:     <li><%=k.name%></li>
+    8:   <%end%>
+    9: </ul>
+  
+app/views/customers/show.html.erb:6:in `_app_views_customers_show_html_erb__3586138335645207935_70115875654620'
+Started GET "/customers/8" for ::1 at 2019-11-07 17:18:53 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 17:19:38 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 44ms (Views: 29.4ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 17:19:44 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"12h6nVt757PkilX1LRJTrWBNCvxj16XvS4EoYbM2PvbYlY7+kGI6ER4iIKh5GhT1vU7d00FR7ZcCgBIkzwx7PQ==", "customer"=>{"kopi_is"=>["", "3", "5", "7"], "name"=>"GOOG"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_is
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "GOOG"], ["created_at", "2019-11-07 09:19:44.375436"], ["updated_at", "2019-11-07 09:19:44.375436"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/9
+Completed 302 Found in 62ms (ActiveRecord: 47.7ms)
+
+
+Started GET "/customers/9" for ::1 at 2019-11-07 17:19:44 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 9]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 17:20:41 +0800
+Processing by CustomersController#index as HTML
+Completed 406 Not Acceptable in 245ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CustomersController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-07 17:20:44 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 17:20:46 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 17:22:09 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    1: <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+    2:   <p>
+    3:     <%= form.collection_check_boxes :kopi_is, @kopis, :id, :name %>
+    4:   </p>
+    5:   <p>
+    6:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:3:in `block in _app_views_customers_new_html_erb__4550737257140164063_70115869441840'
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb__4550737257140164063_70115869441840'
+Started GET "/customers/new" for ::1 at 2019-11-07 17:22:14 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 47ms (Views: 31.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 17:24:37 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 17:24:46 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MpomE66CcdwLNjQisVBkj/5MGsWENvQE6s9hjixa8rg9Z9JwZZusfvGeQX/lWCPXI0/N6qawvHyjzlvLUGC3cw==", "customer"=>{"kopi_is"=>["", "4", "6"], "name"=>"HELPER"}, "commit"=>"Save Customer"}
+Unpermitted parameter: :kopi_is
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "HELPER"], ["created_at", "2019-11-07 09:24:46.050474"], ["updated_at", "2019-11-07 09:24:46.050474"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (41.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/10
+Completed 302 Found in 82ms (ActiveRecord: 51.4ms)
+
+
+Started GET "/customers/10" for ::1 at 2019-11-07 17:24:46 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 10]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/10" for ::1 at 2019-11-07 17:26:22 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 10]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 64ms (Views: 41.7ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 17:26:24 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 60ms (Views: 53.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 17:26:29 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DCznf4/DpntDRRpctBpfoO4vwE6VtD1rchH8db9QgkQD0RMcRNp72bntbwHgEhj4MywXYbcydRM7EMYww2rHjw==", "customer"=>{"kopi_ids"=>["", "4", "6", "7"], "name"=>"Gringo"}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (5.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 4], ["id", 6], ["id", 7]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mOrigin Load (0.9ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gringo"], ["created_at", "2019-11-07 09:26:29.909698"], ["updated_at", "2019-11-07 09:26:29.909698"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer::HABTM_Kopi Create (0.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 11], ["kopi_id", 4], ["created_at", "2019-11-07 09:26:29.911433"], ["updated_at", "2019-11-07 09:26:29.911433"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer::HABTM_Kopi Create (0.4ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 11], ["kopi_id", 6], ["created_at", "2019-11-07 09:26:29.913630"], ["updated_at", "2019-11-07 09:26:29.913630"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer::HABTM_Kopi Create (0.4ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 11], ["kopi_id", 7], ["created_at", "2019-11-07 09:26:29.915341"], ["updated_at", "2019-11-07 09:26:29.915341"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/11
+Completed 302 Found in 65ms (ActiveRecord: 21.9ms)
+
+
+Started GET "/customers/11" for ::1 at 2019-11-07 17:26:29 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 11]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:42:24 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (2.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 110ms (Views: 96.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:43:20 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 67ms (Views: 62.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:44:41 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 58ms (Views: 52.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:44:47 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:44:54 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:45:00 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 84ms (Views: 80.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:45:02 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:45:03 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:46:53 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+    1: <h1>Here are the Kopi customers</h1>
+    2: <% @customers.each do |c| %>
+    3:   <p><%= c.name %></p>
+    4:   <p><%= link_to 'See order', customer_path, method: :get  %>
+    5:   <% end %>
+    6:   <%= link_to 'Create Kopi~', new_kopi_path %>
+    7:   <br>
+  
+app/views/customers/index.html.erb:4:in `block in _app_views_customers_index_html_erb__3816247069778293164_70115936934160'
+app/views/customers/index.html.erb:2:in `_app_views_customers_index_html_erb__3816247069778293164_70115936934160'
+Started GET "/customers" for ::1 at 2019-11-07 23:47:05 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/3" for ::1 at 2019-11-07 23:47:07 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"3"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 45ms (Views: 33.1ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/customers/8" for ::1 at 2019-11-07 23:47:11 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"8"}
+  [1m[36mCustomer Load (2.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 29.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/customers/7" for ::1 at 2019-11-07 23:47:13 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"7"}
+  [1m[36mCustomer Load (2.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 34ms (Views: 27.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/customers/7/edit" for ::1 at 2019-11-07 23:47:15 +0800
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/5" for ::1 at 2019-11-07 23:47:18 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"5"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 5]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/4" for ::1 at 2019-11-07 23:47:20 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"4"}
+  [1m[36mCustomer Load (3.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 4]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/customers/10" for ::1 at 2019-11-07 23:47:22 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"10"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 10]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 26.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers/9" for ::1 at 2019-11-07 23:47:24 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"+cA1f+G28L2yNY+drtoD8fEWNt2ge3+ZNsZ/8HoxJ5P2PcEcKq8tH0id+sD60kSpLBXh8oL9N+F/x0W1BgtiWA==", "id"=>"9"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 9]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:47:35 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:47:36 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:48:10 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 48ms (Views: 27.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:50:14 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/customers/4" for ::1 at 2019-11-07 23:50:17 +0800
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers" for ::1 at 2019-11-07 23:50:44 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 51ms (Views: 41.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:50:58 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers/3" for ::1 at 2019-11-07 23:51:02 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"8KdegNTz8RCSh84kSy8uwedyosQduNs9JQD6wUtfYw//WqrjH+ossmgvu3kfJ2mZOnF16z8+k0VsAcCEN2UmxA==", "id"=>"3"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 58ms (Views: 48.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/customers/4" for ::1 at 2019-11-07 23:51:05 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"8KdegNTz8RCSh84kSy8uwedyosQduNs9JQD6wUtfYw//WqrjH+ossmgvu3kfJ2mZOnF16z8+k0VsAcCEN2UmxA==", "id"=>"4"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 4]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 31.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/customers/3" for ::1 at 2019-11-07 23:51:07 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"8KdegNTz8RCSh84kSy8uwedyosQduNs9JQD6wUtfYw//WqrjH+ossmgvu3kfJ2mZOnF16z8+k0VsAcCEN2UmxA==", "id"=>"3"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 32ms (Views: 24.7ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/customers/4" for ::1 at 2019-11-07 23:51:09 +0800
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for CustomersController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-07 23:52:57 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 51ms (Views: 35.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:53:00 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 42ms (Views: 31.1ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/customers/3" for ::1 at 2019-11-07 23:53:02 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sTg4jjJkz7qup586lSfiUoG8+/+5gnqScbwrawMpQvu+xczt+X0SGFQP6mfBL6UKXL8s0JsEMuo4vREufxMHMA==", "id"=>"3"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/customers_controller.rb:29:in `destroy'
+Started GET "/customers" for ::1 at 2019-11-07 23:53:35 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 37ms (Views: 25.8ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/customers/5" for ::1 at 2019-11-07 23:53:36 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vGTqpbLoNTOxgvRDYHJt53//bMy5ixVfzlrzZNBQMBmzmR7GefHokUsqgR40eiq/ovy745sNXSeHW8khrGp10g==", "id"=>"5"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/customers_controller.rb:29:in `destroy'
+Started GET "/customers" for ::1 at 2019-11-07 23:54:41 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 42ms (Views: 28.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:43 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:43 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/customers/3" for ::1 at 2019-11-07 23:54:44 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LDnXe/aGVwgs8jwqwnwzFCOzOj9NAuyPuiI3Vfz7XH0jxCMYPZ+KqtZaSXeWdHRM/rDtEG+EpPfzIw0QgMEZtg==", "id"=>"3"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.4ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 62ms (ActiveRecord: 45.1ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:44 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:46 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers/4" for ::1 at 2019-11-07 23:54:48 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"8Lnk2O7vhcYPp8tb0KquMc3V/o1CIX6szwTZ8/Fu5bz/RBC7JfZYZPUPvgaEoulpENYpomCnNtSGBeO2jVSgdw==", "id"=>"4"}
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 4]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 39ms (Views: 24.8ms | ActiveRecord: 8.6ms)
+
+
+Started DELETE "/customers/4" for ::1 at 2019-11-07 23:54:50 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8Lnk2O7vhcYPp8tb0KquMc3V/o1CIX6szwTZ8/Fu5bz/RBC7JfZYZPUPvgaEoulpENYpomCnNtSGBeO2jVSgdw==", "id"=>"4"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (1.5ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.9ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 12ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:50 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/customers/5" for ::1 at 2019-11-07 23:54:50 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Hd6t6Xr7kqtYUvUJKgt5LJ6YXDCZuuhfj/ue2q78RegSI1mKseJPCaL6gFR+Az50Q5uLH7s8oCfG+qSf0sYAIw==", "id"=>"5"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.8ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 13ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:50 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/customers/6" for ::1 at 2019-11-07 23:54:51 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z8VsTBRuTbgovzuIlBAHTvFfQgMmJdVhx8pJVNvNpYzAOJgv33eQGtIXTtXAGEAWLFyVLASjnRmOy3MRp/fgRw==", "id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (1.1ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (1.1ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 12ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:51 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/customers/7" for ::1 at 2019-11-07 23:54:51 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ejx8/BN67rJN18Wm2EPUFWH0rF8F9C1wczhNjpxKJe0dwYif2GMzELd/sPuMS5NNvPd7cCdyZQg6OXfL4HBgJg==", "id"=>"7"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (5.2ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 15ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:51 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/customers/8" for ::1 at 2019-11-07 23:54:52 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"keMAGGHNf13TdpeOqS7ekvTdBBn6pihflZhXBakJwUCeHvR7qtSi/yne4tP9JpnKKd7TNtggYCfcmW1A1TOEiw==", "id"=>"8"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 8]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (4.5ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 13ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:52 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/customers/9" for ::1 at 2019-11-07 23:54:52 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JQf07CuVvwGOrOvIky7hsMe1dk+l6Azm8HoWBGCJo7Aq+gCP4Ixio3QEnpXHJqboGrahYIduRJ65eyxBHLPmew==", "id"=>"9"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.4ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 9]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.4ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:52 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/customers/10" for ::1 at 2019-11-07 23:54:53 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AC4ITwzCGnKMYCZwR/fzoqg+gAg/v8mhjvinV7qMIakP0/wsx9vH0HbIUy0T/7T6dT1XJx05gdnH+Z0SxrZkYg==", "id"=>"10"}
+  [1m[36mCustomer Load (1.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.7ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 10]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.4ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 14ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:53 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/customers/11" for ::1 at 2019-11-07 23:54:53 +0800
+Processing by CustomersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nOjLPbCJld51PujAYkwABfzQu6BbQX1KZYGFCOBuP8CTFT9ee5BIfI+WnZ02REddIdNsj3nHNTIsgL9NnFR6Cw==", "id"=>"11"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer::HABTM_Kopi Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 11]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[36mCustomer Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/customers_controller.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:30
+Redirected to http://localhost:3000/customers
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:54:53 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 23:54:55 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/new.html.erb:11
+  Rendered kopis/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 68ms (Views: 38.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-07 23:54:59 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:1
+  Rendered kopis/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-07 23:55:02 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:3
+  Rendered customers/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/customers" for ::1 at 2019-11-07 23:55:08 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zY4C3HW0HaYmVPehmvNWOJD4KC7D3PqTA7ii4GRfjBbCc/a/vq3ABNz8gvzO+xFgTfv/AeFasutKuZilGGXJ3Q==", "customer"=>{"kopi_ids"=>["", "5", "7"], "name"=>"Daniel"}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (3.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 7]]
+  ↳ app/controllers/customers_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer Create (2.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daniel"], ["created_at", "2019-11-07 15:55:08.211604"], ["updated_at", "2019-11-07 15:55:08.211604"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer::HABTM_Kopi Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 12], ["kopi_id", 5], ["created_at", "2019-11-07 15:55:08.217039"], ["updated_at", "2019-11-07 15:55:08.217039"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[36mCustomer::HABTM_Kopi Create (0.4ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 12], ["kopi_id", 7], ["created_at", "2019-11-07 15:55:08.218826"], ["updated_at", "2019-11-07 15:55:08.218826"]]
+  ↳ app/controllers/customers_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:14
+Redirected to http://localhost:3000/customers/12
+Completed 302 Found in 44ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/customers/12" for ::1 at 2019-11-07 23:55:08 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 12]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers" for ::1 at 2019-11-07 23:55:09 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/12" for ::1 at 2019-11-07 23:55:11 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"authenticity_token"=>"X6EAe+E5SVrekYzfktOmQatxftBt1WG+o0FBuWH1aBNQXPQYKiCU+CQ5+YLG2+EZdnKp/09TKcbqQHv8Hc8t2A==", "id"=>"12"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:25
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 12]]
+  ↳ app/views/customers/show.html.erb:6
+  Rendered customers/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 36ms (Views: 29.6ms | ActiveRecord: 1.5ms)
+
+

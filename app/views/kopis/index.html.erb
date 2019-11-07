@@ -1,16 +1,13 @@
 <% @kopis.each do |kopi| %>
-<p><%= kopi.name %></p>
+  <p><%= kopi.name %></p>
 <% end %>
-
-
-<% if user_signed_in? %>
 <%= link_to 'Create Kopi~', new_kopi_path %>
-<% end -%>
 <br>
 <br>
-<% if user_signed_in? %>
 <%= link_to 'Create Origin', new_origin_path %>
-<% end -%>
 <br>
 <br>
 <%= link_to 'Be a Customer Today', new_customer_path %>
+<br/>
+<br/>
+<%= link_to 'All Customers', customers_path%>
