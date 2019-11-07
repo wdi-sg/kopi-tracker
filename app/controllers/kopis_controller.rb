@@ -14,7 +14,11 @@ before_action :authenticate_user!, :except => [ :show, :index ]
       @kopis = Kopi.where(roast_id: params[:roast_id])
     else
       # get all kopis
-      @kopis = Kopi.all.order("name ASC")
+      if (params[:sort_by] == "desc")
+        @kopis = Kopi.all.sort_by {|kopi| kopi.customers.length}.reverse
+      else
+        @kopis = Kopi.all.order('name ASC')
+      end
     end
   end
 

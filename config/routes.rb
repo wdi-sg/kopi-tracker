@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get '/roasts/:roast_id/kopis' => 'kopis#index', as: 'roast_kopis'
 
   get '/customers' => "customers#index", :as => :customer_root
+  get '/customers/:sort_by' => 'customers#index'
 end
