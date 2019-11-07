@@ -35,9 +35,9 @@ class OriginsController < ApplicationController
 
 
 private
-
+    # SL: Updated phone number to phone
   def origin_params
-    params.require(:origin).permit(:location, :phone_number)
+    params.require(:origin).permit(:location, :phone)
   end
 
 end
