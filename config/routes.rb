@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
- 
+
 
   get 'orders' => 'orders#index', as: 'orders'
   get 'orders/new' => 'orders#new', as: 'new_order'
@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   get 'customers/new' => 'customers#new', as: 'new_customer'
   post 'customers' => 'customers#create'
   get 'customers/:id' => 'customers#show', as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
   get 'customers/sort/:order' => 'customers#sort', as: 'sort_customer'
 
 end
- 
