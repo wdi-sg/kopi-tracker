@@ -15,8 +15,8 @@ class OrdersController < ApplicationController
     def create
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
-        @order.save
-        redirect_to @order
+            redirect_to @order
+
     end
 
     def show

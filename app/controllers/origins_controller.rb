@@ -19,8 +19,12 @@ class OriginsController < ApplicationController
 
     def create
         @origin = Origin.new(origin_params)
-        @origin.save
-        redirect_to @origin
+        if @origin.save
+            redirect_to @origin
+        else 
+            render 'new'  
+         end
+
     end
 
     private 
