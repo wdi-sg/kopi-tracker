@@ -1,0 +1,14 @@
+<h1>Here are the Kopi customers</h1>
+<% @customers.each do |c| %>
+  <table>
+    <tr>
+      <th><%= c.name %></th>
+      <th><%= link_to 'See order', customer_path(c), method: :get  %></th>
+      <th><%= link_to 'Delete customer', customer_path(c), method: :delete %></th>
+    </tr>
+  </table>
+<% end %>
+<%= link_to 'Create Kopi~', new_kopi_path %>
+<br>
+<br>
+<%= link_to 'home', root_path %>
