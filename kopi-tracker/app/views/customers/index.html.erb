@@ -1,31 +1,22 @@
 <h1>Customers</h1>
+<% @customers.each do |customer| %>
+   <%= customer.name %>
+		 <table >
+        <tr>
+					<th >Name</th>
+					<th >Roast</th>
+					<th >Origin</th>
+					<th>Show</th>
+			  </tr>
+       <% customer.kopis.each do |kopi| %>
+				 <tr>
+						<td><%= kopi.name %></td>
+						<td><%= kopi.roast.name %></td>
+						<td><%= kopi.origin.location %></td>
+						<td><%= link_to 'Show', kopi_path(kopi) %></td>
+         </tr>
+		   <% end %>
+      </table>
+  <% end %>
 
-
-	<% @customers.each do |customer| %>
-	   <%= customer.name %>
-					<table >
-						<thead>
-							<tr>
-								<th >Name</th>
-								<th >Roast</th>
-								<th >Origin</th>
-								<th>Show</th>
-							</tr>
-						</thead>
-						<tbody>
-							<% customer.kopis.each do |kopi| %>
-								<tr>
-
-									<td><%= kopi.name %></td>
-									<td><%= kopi.roast.name %></td>
-									<td><%= kopi.origin.location %></td>
-									<td><%= link_to 'Show', kopi_path(kopi) %></td>
-
-								</tr>
-							<% end %>
-						</tbody>
-					</table>
-
-<% end %>
-
-<%= link_to('New customer', new_customer_path, {:class => "btn btn-primary btn-lg"}) %>
+<%= link_to('New customer', new_customer_path) %>

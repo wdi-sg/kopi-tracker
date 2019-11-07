@@ -2,14 +2,13 @@
 
 <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
 	<%= form.label :name %><br>
-	<%= form.text_field(:name, {:class => "form-control"}) %>
+	<%= form.text_field :name %>
+	<p>Kopi</p>
+	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
+			<%= cb.check_box %>
+			<%= cb.label %>
+	<% end %>
 
-<p>Kopi</p>
-<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
-	<%= cb.check_box %>
-	<%= cb.label %>
-<% end %>
-
-<%= form.submit %>
+	<%= form.submit %>
 
 <% end %>

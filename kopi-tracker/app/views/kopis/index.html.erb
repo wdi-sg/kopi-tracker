@@ -12,14 +12,15 @@
 
 	</tr>
 
-	<% @kopi.each do |x| %>
+	<% @kopi.each do |kopi| %>
 		<tr>
-			<td><%= x.name %></td>
-			<td><%= x.roast_id %></td>
-			<td><%= x.origin_id%></td>
-			<td><%= link_to 'Show', kopi_path(x) %></td>
-			<td><%= link_to 'Edit', edit_kopi_path(x) %></td>
-			<td><%= link_to 'Destroy', kopi_path(x),
+			<td><%= kopi.name %></td>
+			<td><%= kopi.roast.name%></td>
+			<%-#can't change this to kopi.origin.location-%>
+			<td><%= kopi.origin_id%></td>
+			<td><%= link_to 'Show', kopi_path(kopi) %></td>
+			<td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+			<td><%= link_to 'Destroy', kopi_path(kopi),
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
 		</tr>

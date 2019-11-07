@@ -4,6 +4,7 @@ class KopisController < ApplicationController
 
   def index
     @kopi = Kopi.all
+
   end
 
   def new
