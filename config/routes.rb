@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #garrick was here
   resources :customers
   devise_for :users
   resources :kopis
