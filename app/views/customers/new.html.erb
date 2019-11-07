@@ -1,11 +1,8 @@
 <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
 
-<p class="error">
-  <%= show_errors(@customer, :name) %>
-</p>
-
-<p class="error">
+<p class="error alert alert-danger">
   <%= show_errors(@customer, :kopi_ids) %>
+  <%= show_errors(@customer, :name) %>
 </p>
 
 

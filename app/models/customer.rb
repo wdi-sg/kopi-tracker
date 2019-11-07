@@ -8,7 +8,7 @@ class Customer < ActiveRecord::Base
 
   def has_one_kopi_at_least
     if kopi_ids.empty?
-      errors.add(:kopi_ids, "need one  at least")
+      errors.add(:kopi_ids, "You need to add at least one kopi!")
     end
   end
 end

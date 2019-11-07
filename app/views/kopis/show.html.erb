@@ -1,3 +1,11 @@
 <h1><%= @kopi.name %></h1>
+<h3>Roast:<%=@kopi.roastedness%></h3>
+<h3>Origin:<%=@kopi.origin.location%></h3>
+<ol>Customers:
+	<%@kopi.customers.each do |c|%>
+	<li><%=c.name%></li>
+	<%end%>
+
+</ol>
 
 <%= link_to 'Back', kopis_path %>
