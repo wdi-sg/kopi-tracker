@@ -1,50 +1,48 @@
-<div class="nav">
-    <ul>
-        <li><%= link_to 'Kopi', kopis_path %></li>
-        <li><%= link_to 'Origin', origins_path %></li>
-        <li><%= link_to 'Roast', roasts_path %></li>
+<% if user_signed_in? %>
+    <% if params[:origin_id].present? %>
 
-        <!--If user is logged in, show create new kopi and logout link. Else, shows only login link.-->
-        <% if user_signed_in? %>
-            <li><%= link_to 'New Kopi', new_kopi_path %></li>
-            <li><%= link_to 'Logout', destroy_user_session_url, method: :delete %></li>
-        <% else %>
-            <li><%= link_to 'Log In', new_user_session_url %></li>
-        <% end %>
-    </ul>
-</div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Kopi Index</li>
+            <li class="breadcrumb-item"><%= link_to 'New Kopi', new_origin_kopi_path %></li>
+          </ol>
+        </nav>
 
-<div class="main">
-    <h1>List of Kopis</h1>
-
-    <table>
-            <tr>
-                <th>Name</th>
-                <th></th>
-                <th></th>
-            </tr>
-
-            <% @kopis.each do |kopi|  %>
-                <tr>
-                    <td>
-                        <a href="/kopis/<%= kopi.id %>" %><%= kopi.name %></a>
-                    </td>
-                    <td>
-                        <%= link_to 'Edit', edit_kopi_path(kopi) %>
-                    </td>
-                    <td>
-                        <%= link_to 'Delete', kopi_path(kopi),
-                            method: :delete,
-                            data: { confirm: 'Are you sure?' } %>
-                    </td>
-                </tr>
-            <% end %>
-    </table>
-</div>
-
-<% if params[:origin_id].present? %>
-    <%= link_to 'New Kopi', new_origin_kopi_path %>
+    <% else %>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Kopi Index</li>
+            <li class="breadcrumb-item"><%= link_to 'New Kopi', new_kopi_path %></li>
+          </ol>
+        </nav>
+    <% end %>
 <% end %>
 
+<h1>List of Kopis</h1>
 
-
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @kopis.each do |kopi|  %>
+            <tr>
+                <td>
+                    <a href="/kopis/<%= kopi.id %>" %><%= kopi.name %></a>
+                </td>
+                <td>
+                    <%= link_to 'Edit', edit_kopi_path(kopi) %>
+                </td>
+                <td>
+                    <%= link_to 'Delete', kopi_path(kopi),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,31 +1,55 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'Kopi Index', root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">New Kopi</li>
+  </ol>
+</nav>
+
 <h1>New Kopi</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form>
+                <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :name %>
+                        </div>
+                        <div class="col-6">
+                            <%= form.text_field :name %>
+                        </div>
+                    </div>
 
-    <p>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-    </p>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :roast %>
+                        </div>
+                        <div class="col-6">
+                            <%= form.collection_select :roast_id, @roasts, :id, :name %>
+                        </div>
+                    </div>
 
-    <p>
-        <%= form.label :roast %>
-        <%= form.collection_select :roast_id, @roasts, :id, :name %>
-    </p>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :origin %>
+                        </div>
+                        <div class="col-6">
+                            <% if params[:origin_id].present? %>
+                                <%= form.collection_select :origin_id, @origins, :id, :location, :selected => params[:origin_id] %>
+                            <% else %>
+                                <%= form.collection_select :origin_id, @origins, :id, :location %>
+                            <% end %>
+                        </div>
+                    </div>
 
-    <p>
-        <%= form.label :origin %>
-
-        <% if params[:origin_id].present? %>
-            <%= form.collection_select :origin_id, @origins, :id, :location, :selected => params[:origin_id] %>
-        <% else %>
-            <%= form.collection_select :origin_id, @origins, :id, :location %>
-        <% end %>
-
-    </p>
-
-    <p>
-        <%= form.submit %>
-    </p>
-<% end %>
-
-<%= link_to 'Back', root_path %>
+                    <div class="row form-group justify-content-end">
+                        <div class="col-2">
+                            <%= form.submit :Submit, class: 'btn btn-primary' %>
+                        </div>
+                    </div>
+                <% end %>
+            </form>
+        </div>
+    </div>
+</div>
