@@ -1,6 +1,11 @@
 <h3>Add Origin</h3>
 
 <%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+  <% if @origin.errors.any? %>
+    <% @origin.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
 
   <p>
     <%= form.label :location %><br>

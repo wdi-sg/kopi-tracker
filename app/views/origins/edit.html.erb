@@ -1,6 +1,11 @@
 <h3>Edit Origin</h3>
 
 <%= form_with scope: :origin, model: @origin, local: true do |form| %>
+  <% if @origin.errors.any? %>
+    <% @origin.errors.full_messages.each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+  <% end %>
 
   <p>
     <%= form.label :location %><br>

@@ -5,6 +5,7 @@ class OriginsController < ApplicationController
   end
 
   def new
+    @origin = Origin.new
   end
 
   def edit
@@ -13,14 +14,20 @@ class OriginsController < ApplicationController
 
 def create
     @origin = Origin.new(origin_params)
-    @origin.save
-    redirect_to @origin
+    if @origin.save
+      redirect_to @origin
+    else
+      render "new"
+    end
   end
 
   def update
     @origin = Origin.find(params[:id])
-    @origin.update(origin_params)
-    redirect_to @origin
+    if @origin.update(origin_params)
+      redirect_to @origin
+    else
+      render "edit"
+    end
   end
 
   def destroy

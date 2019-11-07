@@ -2,6 +2,11 @@
 <h3>Edit Kopi</h3>
 
 <%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+  <% if @kopi.errors.any? %>
+    <% @kopi.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
 
   <p>
     <%= form.label :name %><br>

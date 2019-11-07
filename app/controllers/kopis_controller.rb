@@ -17,7 +17,7 @@ before_action :authenticate_user!, :except => [ :show, :index ]
       # get all kopis
       @kopis = Kopi.all.order("name ASC")
     end
-end
+  end
 
   def show
     @kopi = Kopi.find(params[:id])
@@ -29,10 +29,10 @@ end
     end
     @origins = Origin.all
     @roasts = Roast.all
+    @kopi = Kopi.new
   end
-end
 
-def edit
+  def edit
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
     @roasts = Roast.all
@@ -41,14 +41,20 @@ def edit
   def create
     @kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
-    @kopi.save
-    redirect_to @kopi
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render "new"
+    end
   end
 
   def update
     @kopi = Kopi.find(params[:id])
-    @kopi.update(kopi_params)
-    redirect_to @kopi
+    if @kopi.update(kopi_params)
+      redirect_to @kopi
+    else
+      render "edit"
+    end
   end
 
   def destroy

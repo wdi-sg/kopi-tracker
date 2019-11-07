@@ -1,6 +1,11 @@
 <h3>Add Kopi</h3>
 
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <% if @kopi.errors.any? %>
+    <% @kopi.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
 
   <p>
     <%= form.label :name %><br>
