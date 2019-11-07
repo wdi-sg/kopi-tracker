@@ -1,2 +1,29 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<h1 class="display-4">Listing customers</h1>
+
+
+<%= link_to('New customer', new_customer_path, :class => "btn btn-primary m-3") %>
+
+<table class="table">
+	<tr>
+		<th>Customer email</th>
+		<th>Kopi quantity
+
+			<%= link_to '&uarr;'.html_safe, customers_path(:sort_param => "kopis.count", :sort_order => "ASC") %>
+			<%= link_to '&darr;'.html_safe, customers_path(:sort_param => "kopis.count", :sort_order => "DESC") %>
+		</th>
+		<th></th>
+	</tr>
+
+	<% @customers.each do |customer| %>
+	<tr>
+		<td><%= customer.email %></td>
+		<td><%= customer.kopis.length %></td>
+		<td><%= link_to 'Show', customer_path(customer) %></td>
+		<td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+		<td><%= link_to 'Destroy', customer_path(customer),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+
+	</tr>
+	<% end %>
+</table>

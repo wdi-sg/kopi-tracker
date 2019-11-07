@@ -6,6 +6,7 @@ class KopisController < ApplicationController
           @kopis = Kopi.all
           @roasts = Roast.all
           @orders = Order.all
+          byebug
         # end
       end
       
@@ -40,10 +41,12 @@ class KopisController < ApplicationController
         if @kopi.save
           redirect_to @kopi
         else
+          # render plain: "Failed"
+          @roasts = Roast.all
+          @origins = Origin.all
           render 'new'
         end
       end
-
 
       def update
         @kopi = Kopi.find(params[:id])

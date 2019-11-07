@@ -6,6 +6,10 @@
 	<%= form.label :name %><br>
 	<%= form.text_field(:name, {:class => "form-control"}) %>
 </div>
+<p>
+	<% if show_errors(@kopi, :name) %>
+	Name <%= show_errors(@kopi, :name) %> <% end %>
+</p>
 
 <div class="form-group">
 	<%= form.label :roast_id %><br>

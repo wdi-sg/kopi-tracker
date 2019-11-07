@@ -1,6 +1,18 @@
 class CustomersController < ApplicationController
   def index
-  end
+
+    # sort for customers by array.sort_by for @customers
+    # look at Nat's!!!
+
+    if params[:sort_parm] && params[:sort_order]
+      @customers = Customer.order("#{params[:sort_param]} #{params[:sort_order]}")
+
+      @kopis = @customer.kopis.find_by_sql("SELECT customer_id, COUNT(kopi_id) FROM customers_kopis GROUP BY customer_id; ")
+
+    else 
+      @customers = Customer.all
+    end 
+end
 
   def new
     @kopis = Kopi.all
