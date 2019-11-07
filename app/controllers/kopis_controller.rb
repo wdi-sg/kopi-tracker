@@ -6,7 +6,6 @@ class KopisController < ApplicationController
           @kopis = Kopi.all
           @roasts = Roast.all
           @orders = Order.all
-          byebug
         # end
       end
       
