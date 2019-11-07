@@ -13,9 +13,10 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
-
+    #render plain: params.inspect
+    @kopi.user = current_user
     @kopi.save
-    redirect_to @kopi
+     redirect_to @kopi
   end
 
   def show
@@ -31,6 +32,6 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :farm_id)
+    params.require(:kopi).permit(:name, :roast_id, :farm_id, :user_id)
   end
 end
