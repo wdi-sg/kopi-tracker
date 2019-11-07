@@ -13,9 +13,11 @@
 			<td><%= post.phone_number %></td>
 			<td><%= link_to 'Show', origin_path(post) %></td>
 			<td><%= link_to 'Edit', edit_origin_path(post) %></td>
+			<% if user_signed_in? && current_user.admin?%>
 			<td><%= link_to 'Destroy', origin_path(post),
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
 		</tr>
 	<% end %>
 </table>
