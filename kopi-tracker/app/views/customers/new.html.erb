@@ -3,6 +3,9 @@
 <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
 	<%= form.label :name %><br>
 	<%= form.text_field :name %>
+
+  <%= show_errors(@customer, :kopi_ids) %>
+
 	<p>Kopi</p>
 	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
 			<%= cb.check_box %>
