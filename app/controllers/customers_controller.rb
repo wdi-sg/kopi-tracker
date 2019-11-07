@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
 
   def new
     @kopis = Kopi.all
+    @customer = Customer.new
   end
 
   def create
