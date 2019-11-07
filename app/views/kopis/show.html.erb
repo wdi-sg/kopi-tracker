@@ -4,6 +4,12 @@
   <hr class="my-4">
   <p>This Kopi is from: <%= link_to @kopi.origin.location, origin_path(@kopi.origin) %></p>
   <p>Price per pound: <%= @kopi.price %></p>
+  <p>Customers who carry <%= @kopi.name %>.</p>
+  <ul>
+  	<% @kopi.customers.each do |customer| %>
+  		<li><%= customer.name %></li>
+  	<% end %>
+  </ul>
 </div>
 <% if user_signed_in? %>
 	<%= link_to('Edit', edit_kopi_path, {:class => "btn btn-warning btn-lg"}) %>
