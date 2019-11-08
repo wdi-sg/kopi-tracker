@@ -1,0 +1,28 @@
+<table class = "table">
+	<tr>
+		<th>Kopi</th>
+		<th>Roast</th>
+		<th>Origin</th>
+	</tr>
+ <% @kopis.each do |kopi|%>
+ <tr>
+ 	<td><a><%=kopi.name%></a></td>
+	<td><%=kopi.roastedness%></td>
+	<td><%=kopi.origin.location%></td>
+	 <td><%= link_to 'Show', kopi_path(kopi) %></td>
+</tr>
+<%end%>
+</table>
+
+
+<% if user_signed_in? %>
+<%= link_to 'Create Kopi~', new_kopi_path %>
+<% end -%>
+<br>
+<br>
+<% if user_signed_in? %>
+<%= link_to 'Create Origin', new_origin_path %>
+<% end -%>
+<br>
+<br>
+<%= link_to 'Be a Customer Today', new_customer_path %>

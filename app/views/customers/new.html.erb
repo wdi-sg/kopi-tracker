@@ -1,0 +1,37 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+<p class="error alert alert-danger">
+  <%= show_errors(@customer, :kopi_ids) %>
+  <%= show_errors(@customer, :name) %>
+</p>
+
+
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+<table class = "table">
+	<tr>
+		<th>Kopi</th>
+		<th>Roast</th>
+		<th>Origin</th>
+	</tr>
+ <% @kopis.each do |kopi|%>
+ <tr>
+ 	<td>
+  <input type="checkbox" value = "<%=kopi.id%>" name = "customer[kopi_ids][]"><%=kopi.name%>
+	</td>
+	<td><%=kopi.roastedness%></td>
+	<td><%=kopi.origin.location%></td>
+</tr>
+<%end%>
+</table>
+
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= @customer.name %></h1>
+
+<h2>Kopis</h2>
+<ol>
+	<%@customer.kopis.each do |k|%>
+	<li><%=k.name%></li>
+	<%end%>
+</ol>
+
+
+<%= link_to 'Back', kopis_path %>
