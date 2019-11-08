@@ -1,0 +1,38 @@
+<div class="container">
+
+	<h1 class="display-4 text-center">All Kopi Origins</h1>
+
+	<table class="table">
+		<thead class="thead-dark">
+		  <tr>
+		    <th class="text-center">Location</th>
+		    <th>Phone Number</th>
+	      <% if current_user.try(:admin?) %>
+	    		<th></th>
+		    <% end %>
+		  </tr>
+	  </thead>
+
+
+
+
+
+	  <tbody>
+		  <% @origin.each do |x| %>
+		    <tr>
+		      <td class="text-center"><%= x.location %></td>
+		      <td style="width: 50%"><%= x.phone_number %></td>
+		      <% if current_user.try(:admin?) %>
+		      	<td style="width: 20%"><%= link_to 'Show', origin_path(x) %> | <%= link_to 'Edit', edit_origin_path(x) %> | <%= link_to 'Delete', origin_path(x),
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %></td>
+			    <% end %>
+		    </tr>
+		  <% end %>
+	  </tbody>
+	</table>
+
+
+	<%= link_to 'New origin', new_origin_path, {:class => "btn btn-outline-primary"} %>
+
+</div>

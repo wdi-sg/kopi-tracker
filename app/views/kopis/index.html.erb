@@ -1,0 +1,41 @@
+<div class="container">
+
+
+	<h1 class="display-4 text-center">All Coffees</h1>
+
+	<table class="table">
+		<thead class="thead-dark">
+		  <tr>
+		    <th>Name</th>
+		    <th>Roast</th>
+		    <th>Origin</th>
+		    <th>Price / KG</th>
+				<th></th>
+		  </tr>
+	  </thead>
+
+	  <% @kopi.each do |x| %>
+	    <tr>
+	      <td><%= x.name %></td>
+	      <td><%= x.roast.name %></td>
+	      <td><%= x.origin.location %></td>
+	      <td class="text-center" style="width: 10%">$<%= x.price %></td>
+				<td style="width: 20%" class="text-center">
+					<% if user_signed_in? %>
+						<%= link_to 'Show', kopi_path(x) %> | <%= link_to 'Edit', edit_kopi_path(x) %> | <%= link_to 'Destroy', kopi_path(x),
+		        method: :delete,
+		        data: { confirm: 'Are you sure?' } %>
+					<% else %>
+						<%= link_to 'Show', kopi_path(x) %>
+					<% end %>
+	      </td>
+	    </tr>
+	  <% end %>
+	</table>
+
+
+	<% if user_signed_in? %>
+	<%= link_to 'New Kopi', new_kopi_path, {:class => "btn btn-outline-primary"} %>
+	<% end %>
+
+</div>

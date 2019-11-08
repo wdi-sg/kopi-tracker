@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>KopiTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body class="bg-light">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-5">
+		  <a class="navbar-brand" href="/">Kopi<span class="text-secondary">Tiam</span></box-icon></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li>
+		      	<a class="nav-item nav-link active" href="/">All Kopi Origins<box-icon name='globe' class="align-bottom"></box-icon></a>
+		      </li>
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/kopis">All Kopis <box-icon name='coffee' class="align-bottom"></box-icon></a>
+		      </li>
+		      <% if current_user.try(:admin?) %>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="/roasts">All Roasts <box-icon name='flame' type="solid" class="align-bottom"></box-icon></a>
+			      </li>
+			    <% end %>
+					<% if user_signed_in? %>
+						<li class="nav-item active">
+							<a class="nav-link" href="/orders">Order Kopi <box-icon name='file' class="align-bottom"></box-icon></a>
+						</li>
+					<% end %>
+					<% if customer_signed_in? %>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="/customers">All Customers <box-icon name='user' class="align-bottom"></box-icon></a>
+			      </li>
+					<% end %>
+		    </ul>
+		    <span class="text-light mr-5">Logged-in as <span class="text-warning"><%= current_user.email %></span></span>
+				<% if customer_signed_in? == false %>
+					<%= button_to 'Log In Customer', new_customer_session_url, {:class => "btn btn-outline-primary mr-4 mb-2"} %>
+				<% end %>
+				<% if customer_signed_in? %>
+					<%= button_to 'Log Out Customer', destroy_customer_session_url, {method: :delete, :class => "btn btn-outline-dark mr-4 mb-2"}%>
+				<% end %>
+				<% if user_signed_in? == false %>
+					<%= button_to 'Log In User', new_user_session_url, {:class => "btn btn-outline-success mb-2"} %>
+				<% end %>
+				<% if user_signed_in? %>
+					<%= button_to 'Log Out User', destroy_user_session_url, {method: :delete, :class => "btn btn-outline-dark mb-2"}%>
+				<% end %>
+		  </div>
+		</nav>
+
+			<% bg_pic = ["https://images.unsplash.com/photo-1532360434733-5692eda564a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1496805863924-2c01ab9d0a89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1440492248262-6895f9da82fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80","https://images.unsplash.com/photo-1455108673268-21134024830d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80","https://images.unsplash.com/photo-1532529202439-0312ecbf3ae9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1488153074946-0d3b1bcd029c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1504887383785-1e5af315d285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1058&q=80","https://images.unsplash.com/photo-1514163161321-f4f7c2a90296?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1513530176992-0cf39c4cbed4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80","https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"] %>
+			<div class="row w-100 ml-0" style="background: url(<%= bg_pic[rand(9)] %>) no-repeat center center fixed; background-size: cover;">
+				<div class="col-8 mt-5">
+					<div>
+						<%= yield %>
+					</div>
+				</div>
+
+				<div style="background-color: rgba(255,255,255,.6);" class="col-4 d-flex align-items-end flex-column justify-content-center">
+					<h1 class="display-1 my-5">.Kopis</h1>
+					<h1 class="display-1 my-5">.Origins</h1>
+					<h1 class="display-1 my-5">.Roasts</h1>
+					<h1 class="display-1 my-5">.Orders</h1>
+				</div>
+			</div>
+
+
+
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+  </body>
+</html>

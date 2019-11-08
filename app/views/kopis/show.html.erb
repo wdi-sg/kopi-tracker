@@ -1,0 +1,54 @@
+<div class="container">
+
+	<h1 class="display-4 text-center"><%= @kopi.name %></h1>
+
+		<table class="table">
+			<thead class="thead-dark">
+			  <tr>
+					<th>Origin</th>
+			    <th>Roast</th>
+			    <th>Price</th>
+					<% if user_signed_in? %>
+			    	<th></th>
+					<% end %>
+			  </tr>
+			</thead>
+			<tbody>
+		    <tr>
+		    	<td><%= @kopi.origin.location %></td>
+		      <td><%= @kopi.roast.name %></td>
+		      <td style="width: 10%">$<%= @kopi.price %></td>
+					<% if user_signed_in? %>
+		      	<td style="width: 20%"><%= link_to 'Edit', edit_kopi_path(@kopi) %> | <%= link_to 'Destroy', kopi_path(@kopi),
+			        method: :delete,
+			        data: { confirm: 'Are you sure?' } %></td>
+					<% end %>
+		    </tr>
+	    </tbody>
+		</table>
+
+
+	<h1 class="display-4 text-center mt-5">Customers</h1>
+	<div style="width: 50%; margin: 0 auto 5%;" class="list-group text-center">
+
+		<% if @kopi.customer == nil %>
+
+			<p>No orders from any customers yet</p>
+
+		<% else %>
+
+		  <% @kopi.customer.each do |x| %>
+		  	<button type="button" class="list-group-item list-group-item-action mt-1 active"><%= x.email %></button>
+		  <% end %>
+
+		<% end %>
+
+
+	</div>
+
+
+
+
+	<%= link_to 'Back', kopis_path, {:class => "btn btn-outline-secondary"} %>
+
+</div>

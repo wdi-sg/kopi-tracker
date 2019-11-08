@@ -1,0 +1,38 @@
+<div class="container">
+
+	<h1 class="display-4 text-center">Edit Kopi: <%= @kopi.name %></h1>
+
+	<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+		<div class="form-group mt-5" style="width: 50%; margin: 0 auto">
+
+			<p>
+				<%= form.label :origin %><br>
+		  	<%= form.collection_select :origin_id, @origins, :id, :location, {promt: "Choose a Origin" }, {:class => "form-control"} %>
+		  </p>
+
+
+		  <p>
+		    <%= form.label :name %><br>
+		    <%= form.text_field :name, {:class => "form-control"} %>
+		  </p>
+
+		  <p>
+		  	<%= form.label :roast %><br>
+				<%= form.collection_select :roast_id, @roasts, :id, :name, {promt: "Choose a Roast Level" }, {:class => "form-control"} %>
+			</p>
+
+		  <p>
+		  	<%= form.label :price %><br>
+				<%= form.number_field :price, {:class => "form-control"} %>
+			</p>
+
+
+			<%= link_to 'Back', kopis_path, {:class => "btn btn-outline-secondary"} %>
+
+		    <%= form.submit "Update Kopi", class: "btn btn-primary" %>
+
+
+		</div>
+	<% end %>
+
+</div>

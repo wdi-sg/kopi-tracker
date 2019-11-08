@@ -1,0 +1,21 @@
+<div class="container">
+
+	<h1 class="display-4 text-center">All Customers</h1>
+
+	<table class="table">
+		<thead class="thead-dark">
+		  <tr>
+		  	<th class="text-center">Customer</th>
+		    <th></th>
+		  </tr>
+	  </thead>
+
+	  <% @customer.each do |x| %>
+	    <tr>
+	      <td class="text-center"><%= x.email %></td>
+	      <td style="width: 20%"><%= link_to 'Show', customer_path(x) %></td>
+	    </tr>
+	  <% end %>
+	</table>
+
+</div>

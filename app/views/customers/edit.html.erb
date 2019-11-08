@@ -1,0 +1,32 @@
+<% if current_customer === @customer %>
+
+
+		<div class="container">
+
+			<h1 class="display-4 text-center">Order Kopi: <%= @customer.email %></h1>
+
+			<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+				<div class="form-group mt-5" style="width: 50%; margin: 0 auto">
+
+						<p class="form-check-label">Kopis:</p>
+						<div class="form-check">
+							<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name, {:class => "form-check-input"} %>
+						</div>
+
+
+					<%= link_to 'Back', customers_path, {:class => "btn btn-outline-secondary"} %>
+
+				  <%= form.submit "Order Kopi", class: "btn btn-primary" %>
+
+
+				</div>
+			<% end %>
+
+		</div>
+
+
+<% else %>
+
+	<h1 class="text-center mt-5">Error 401: Unauthorized Customer</h1>
+
+<% end %>
