@@ -1,0 +1,18 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <div><%= form.collection_select :origin_id, @origins, :id, :location %></div>
+   <div><%= form.collection_select :roast_id, @roasts, :id, :name %></div>
+
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+ <div class="form-check"> <%= form.collection_check_boxes :customer_ids, @customers, :id, :name %></div>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

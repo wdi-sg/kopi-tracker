@@ -1,0 +1,36 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+
+  <!--     <div class="form-check"> <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %></div> -->
+
+<table class = "table">
+	<tr>
+		<th>Name</th>
+		<th>Roast</th>
+		<th>Origin</th>
+	</tr>
+ <% @kopis.each do |kopi|%>
+ <tr>
+ 	<td>
+  <input type="checkbox" value = "<%=kopi.id%>" name = "customer[kopi_ids][]"><%=kopi.name%>
+	</td>
+	<td><%=kopi.roast.name%></td>
+	<td><%=kopi.origin.location%></td>
+</tr>
+<%end%>
+</table>
+
+
+
+
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

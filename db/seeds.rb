@@ -1,0 +1,26 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+# jamaican = Origin.create(:location=>"Jamaica", :phone=> "41258108")
+
+# ethiopian = Origin.create(:location=>"Ethiopia", :phone=> "35235235")
+# singapore = Origin.create(:location=>"Singapore", :phone=> "36936999")
+# america = Origin.create(:location=>"America", :phone=> "15975346")
+# arabia = Origin.create(:location=>"Arabia", :phone=> "98765432")
+# antartica = Origin.create(:location=>"Antartica", :phone=> "99988846")
+# greece = Origin.create(:location=>"Greece", :phone=> "98653214")
+# china = Origin.create(:location=>"China", :phone=> "14647945")
+
+
+
+# cinnamon = Roast.create(:name=>"Cinnamon")
+# light = Roast.create(:name=>"Light")
+# medium = Roast.create(:name=>"City/Medium")
+# full_city = Roast.create(:name=>"Full City")
+# dark = Roast.create(:name=>"Dark")
+# french = Roast.create(:name=>"French")
+# italian = Roast.create(:name=>"Italian")
