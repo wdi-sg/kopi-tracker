@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @customers = Customer.all
@@ -23,6 +23,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     @customer.save
+    redirect_to @customer
 
   end
 

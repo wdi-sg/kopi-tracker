@@ -6,7 +6,7 @@ class KopisController < ApplicationController
 
     @origins = Origin.all
 
-    @user = current_user
+    # @user = current_user
 
     # if current_user
     #   @kopis = current_user.kopi
@@ -17,7 +17,7 @@ class KopisController < ApplicationController
   def create
     @kopi = Kopi.new(kopi_params)
 
-    @kopi.user = current_user
+    # @kopi.user = current_user
 
     @kopi.save
 
@@ -31,7 +31,7 @@ class KopisController < ApplicationController
   def show
     @kopi = Kopi.find(params[:id])
     # @kopi = Kopi.find_by(roast:"italian").Kopis
-    @user = current_user
+    # @user = current_user
 
     @origins = Origin.all
   end
@@ -55,7 +55,7 @@ class KopisController < ApplicationController
   end
 
   def destroy
-    @user = current_user
+    # @user = current_user
 
     @kopi = Kopi.find(params[:id])
 
@@ -65,7 +65,7 @@ class KopisController < ApplicationController
   end
 
   def new
-    @user = current_user
+    # @user = current_user
 
     @kopis = Kopi.all
 
