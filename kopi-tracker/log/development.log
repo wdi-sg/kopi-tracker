@@ -7559,3 +7559,644 @@ Processing by CustomersController#index as HTML
 Completed 200 OK in 115ms (Views: 106.6ms | ActiveRecord: 8.2ms | Allocations: 27975)
 
 
+Started GET "/" for ::1 at 2019-11-07 17:00:28 +0800
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "kopi_tracker_development" does not exist
+):
+  
+activerecord (6.0.0) lib/active_record/connection_adapters/postgresql_adapter.rb:50:in `rescue in postgresql_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/postgresql_adapter.rb:33:in `postgresql_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:879:in `new_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:923:in `checkout_new_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:902:in `try_to_checkout_new_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:863:in `acquire_connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:587:in `checkout'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:431:in `connection'
+activerecord (6.0.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1111:in `retrieve_connection'
+activerecord (6.0.0) lib/active_record/connection_handling.rb:231:in `retrieve_connection'
+activerecord (6.0.0) lib/active_record/connection_handling.rb:199:in `connection'
+activerecord (6.0.0) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (424.5ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (420.1ms)[0m  [1m[35mCREATE DATABASE "kopi_tracker_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Kopis (20191104135154)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "roast_id" bigint, "origin_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_roast_id" ON "kopis"  ("roast_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_origin_id" ON "kopis"  ("origin_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191104135154"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20191105104357)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105104357"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserToKopis (20191105104814)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "kopis" ADD "user_id" bigint[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_user_id" ON "kopis"  ("user_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "kopis" ADD CONSTRAINT "fk_rails_7d7df93f94"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105104814"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Customers (20191106115002)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106115002"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CustomersKopis (20191106122836)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106122836"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Origins (20191107033039)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "origins" ("id" bigserial primary key, "location" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107033039"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to Roasts (20191107033154)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107033154"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-07 09:01:04.882594"], ["updated_at", "2019-11-07 09:01:04.882594"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-11-07 17:01:19 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1639)
+Completed 200 OK in 1092ms (Views: 1084.8ms | ActiveRecord: 2.4ms | Allocations: 1536929)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 17:01:32 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 6976)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 11466)
+
+
+Started POST "/origins" for ::1 at 2019-11-07 17:01:49 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"authenticity_token"=>"CjGqzKpMjxppVelmtT7XK1vaSfAGQvcU/MdslLSqaU4UIsI6XxnADpJazEGq7m13IhcJVlFUiGhPExIGTnELUg==", "origin"=>{"location"=>"Test Location 1", "phone_number"=>"90191107"}, "commit"=>"Save Origin"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 4.2ms | Allocations: 4256)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_number' for Origin.):
+  
+app/controllers/origins_controller.rb:11:in `create'
+Started GET "/" for ::1 at 2019-11-07 17:10:52 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 930)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 6510)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-07 17:10:54 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 848)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 5185)
+
+
+Started POST "/origins" for ::1 at 2019-11-07 17:11:01 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"authenticity_token"=>"FWIyxZd3m1HCc1YGMGImF0lZjkrMG3Dp1VU8v7WpyE8LcVozYiLURTl8cyEvspxLMJTO7JsND5VmgUItT3KqUw==", "origin"=>{"location"=>"Test Location 1", "phone_number"=>"90191107"}, "commit"=>"Save Origin"}
+[31mUnpermitted parameter: :phone_number[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[36mOrigin Create (1.1ms)[0m  [1m[32mINSERT INTO "origins" ("location", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["location", "Test Location 1"], ["created_at", "2019-11-07 09:11:01.490367"], ["updated_at", "2019-11-07 09:11:01.490367"]]
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+Redirected to http://localhost:3000/origins/1
+Completed 302 Found in 21ms (ActiveRecord: 10.8ms | Allocations: 6126)
+
+
+Started GET "/origins/1" for ::1 at 2019-11-07 17:11:01 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2033)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 3782)
+
+
+  
+ActionView::Template::Error (undefined method `phone_number' for #<Origin:0x00007fed96bb5a68>):
+    2: 
+    3: <p>
+    4:   <strong>Phone Number:</strong>
+    5:   <%= @origin.phone_number %>
+    6: </p>
+    7: 
+    8: <%= link_to 'Back', origins_path %>
+  
+app/views/origins/show.html.erb:5
+Started GET "/origins/1" for ::1 at 2019-11-07 17:14:39 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1976)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 7.0ms | Allocations: 7949)
+
+
+  
+ActionView::Template::Error (undefined method `phone_number' for #<Origin:0x00007fed98ab2e98>):
+    2: 
+    3: <p>
+    4:   <strong>Phone Number:</strong>
+    5:   <%= @origin.phone_number %>
+    6: </p>
+    7: 
+    8: <%= link_to 'Back', origins_path %>
+  
+app/views/origins/show.html.erb:5
+Started GET "/origins/new" for ::1 at 2019-11-07 17:14:44 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1057)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 5717)
+
+
+Started POST "/origins" for ::1 at 2019-11-07 17:14:50 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"authenticity_token"=>"+x8is0ogcqHTLJUvFRGv7Ty+iyxQ59tLXx2e2VjPeXnlDEpFv3U9tSgjsAgKwRWxRXPLigfxpDfsyeBLohQbZQ==", "origin"=>{"location"=>"Test Location 1", "phone"=>"90191103"}, "commit"=>"Save Origin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[36mOrigin Create (0.6ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Test Location 1"], ["phone", "90191103"], ["created_at", "2019-11-07 09:14:50.123845"], ["updated_at", "2019-11-07 09:14:50.123845"]]
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+Redirected to http://localhost:3000/origins/2
+Completed 302 Found in 13ms (ActiveRecord: 7.1ms | Allocations: 2891)
+
+
+Started GET "/origins/2" for ::1 at 2019-11-07 17:14:50 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1836)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 2681)
+
+
+  
+ActionView::Template::Error (undefined method `phone_number' for #<Origin:0x00007fed98fece18>):
+    2: 
+    3: <p>
+    4:   <strong>Phone Number:</strong>
+    5:   <%= @origin.phone_number %>
+    6: </p>
+    7: 
+    8: <%= link_to 'Back', origins_path %>
+  
+app/views/origins/show.html.erb:5
+Started GET "/origins/2" for ::1 at 2019-11-07 17:15:11 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 235)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 6447)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 17:15:13 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1122)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 5898)
+
+
+Started DELETE "/origins/1" for ::1 at 2019-11-07 17:15:17 +0800
+Processing by OriginsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7wneROSEhkaP1D5QnUO2TWeAhS/sl+/b25HvChRQ943xGrayEdHJUnTbG3eCkwwRHk3FibuBkKdoRZGY7ouVkQ==", "id"=>"1"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:31:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:32:in `destroy'
+  [1m[36mOrigin Destroy (0.4ms)[0m  [1m[31mDELETE FROM "origins" WHERE "origins"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/origins_controller.rb:32:in `destroy'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:32:in `destroy'
+Redirected to http://localhost:3000/origins
+Completed 302 Found in 11ms (ActiveRecord: 6.8ms | Allocations: 2754)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 17:15:17 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 764)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 5393)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 17:15:19 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 764)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 5390)
+
+
+Started GET "/origins/2/edit" for ::1 at 2019-11-07 17:18:11 +0800
+Processing by OriginsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:21:in `edit'
+  Rendering origins/edit.html.erb within layouts/application
+  Rendered origins/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1544)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 6567)
+
+
+Started GET "/origins/2/edit" for ::1 at 2019-11-07 17:18:32 +0800
+Processing by OriginsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:21:in `edit'
+  Rendering origins/edit.html.erb within layouts/application
+  Rendered origins/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1364)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 7275)
+
+
+Started GET "/origins/2/edit" for ::1 at 2019-11-07 17:18:39 +0800
+Processing by OriginsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:21:in `edit'
+  Rendering origins/edit.html.erb within layouts/application
+  Rendered origins/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1375)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 7298)
+
+
+Started PATCH "/origins/2" for ::1 at 2019-11-07 17:19:11 +0800
+Processing by OriginsController#update as HTML
+  Parameters: {"authenticity_token"=>"IZ+uA1vWwHK7QnVpWd5toLP1chgYJbWJX8teSN1M9Xg/jMb1roOPZkBNUE5GDtf8yjgyvk8zyvXsHyDaJ5eXZA==", "origin"=>{"location"=>"Test Location 1", "phone"=>"90191103"}, "commit"=>"Update Origin", "id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:25:in `update'
+Redirected to http://localhost:3000/origins/2
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1291)
+
+
+Started GET "/origins/2" for ::1 at 2019-11-07 17:19:11 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 233)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5548)
+
+
+Started GET "/origins" for ::1 at 2019-11-07 17:19:13 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1008)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 5779)
+
+
+Started GET "/kopis" for ::1 at 2019-11-07 17:19:34 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:15
+  Rendered kopis/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1866)
+Completed 200 OK in 30ms (Views: 16.2ms | ActiveRecord: 4.4ms | Allocations: 10595)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 19:01:09 +0800
+Processing by KopisController#new as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 6931)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-07 19:01:09 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 654)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3019)
+Completed 200 OK in 33ms (Views: 14.1ms | ActiveRecord: 10.5ms | Allocations: 15190)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-11-07 19:01:14 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 220)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1941)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 7495)
+
+
+Started POST "/users" for ::1 at 2019-11-07 19:01:24 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"FDtPfkkBxEKAMktyi0cl5smca8mK3//fu3nVvPO7/7wKKCeIvFSLVns9blWUl5+6sFErb93JgKMIrasuCWCdoA==", "user"=>{"email"=>"sltan@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sltan@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "sltan@email.com"], ["encrypted_password", "$2a$11$t2C.xMlfrSkM5d/RaxQ1a.FIJb81wlNo8VzoHAbQECZsh5s9tfrS."], ["created_at", "2019-11-07 11:01:24.661975"], ["updated_at", "2019-11-07 11:01:24.661975"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/kopis/new
+Completed 302 Found in 131ms (ActiveRecord: 2.8ms | Allocations: 9701)
+
+
+Started GET "/kopis/new" for ::1 at 2019-11-07 19:01:24 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:12
+  Rendered kopis/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2585)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 2.7ms | Allocations: 9735)
+
+
+Started GET "/" for ::1 at 2019-11-08 09:25:06 +0800
+  [1m[35m (27.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (25.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 5053)
+Completed 200 OK in 1138ms (Views: 1093.3ms | ActiveRecord: 35.9ms | Allocations: 1531492)
+
+
+Started GET "/" for ::1 at 2019-11-08 09:26:37 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1022)
+  [1m[36mUser Load (25.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:29
+Completed 200 OK in 70ms (Views: 30.8ms | ActiveRecord: 38.1ms | Allocations: 18640)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-11-08 09:26:42 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RJccBk99g5f0oD2PcNbAW0DX8ImpiKX1GUtF6BdBMktahHTwuijMgw+vGKhvBnoHORqwL/6e2omqnzt67ZpQVw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms | Allocations: 4864)
+
+
+Started GET "/" for ::1 at 2019-11-08 09:26:42 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 767)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 5552)
+
+
+Started GET "/" for ::1 at 2019-11-08 09:27:41 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1017)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 6968)
+
+
+Started GET "/origins" for ::1 at 2019-11-08 09:27:44 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 767)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 5528)
+
+
+Started GET "/roasts" for ::1 at 2019-11-08 09:27:46 +0800
+Processing by RoastsController#index as HTML
+  Rendering roasts/index.html.erb within layouts/application
+  [1m[36mRoast Load (2.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/roasts/index.html.erb:12
+  Rendered roasts/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1028)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 4.2ms | Allocations: 7214)
+
+
+Started GET "/customers" for ::1 at 2019-11-08 09:27:47 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:2
+  Rendered customers/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1214)
+Completed 200 OK in 21ms (Views: 9.8ms | ActiveRecord: 4.4ms | Allocations: 9705)
+
+
+Started GET "/customers/new" for ::1 at 2019-11-08 09:27:49 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (19.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:10
+  Rendered customers/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 3867)
+Completed 200 OK in 48ms (Views: 16.2ms | ActiveRecord: 24.2ms | Allocations: 13486)
+
+
+Started POST "/customers" for ::1 at 2019-11-08 09:27:56 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"9G5CpBxZlYrwngf8rIUgE0KtAyqpQmOc1U+thpx4Mo3+8WNj4OvIoOeR1eeLHiP8mUrIQUSyHify3U6leH40fA==", "customer"=>{"name"=>"Test Customer", "kopi_ids"=>[""]}, "commit"=>"Save Customer"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE 1=0[0m
+  ↳ app/controllers/customers_controller.rb:13:in `create'
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1824)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.0ms | Allocations: 9049)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     7:   <%= show_errors(@customer, :kopi_ids) %>
+     8: 
+     9: 	<p>Kopi</p>
+    10: 	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
+    11: 			<%= cb.check_box %>
+    12: 			<%= cb.label %>
+    13: 	<% end %>
+  
+app/views/customers/new.html.erb:10
+app/views/customers/new.html.erb:3
+app/controllers/customers_controller.rb:17:in `create'
+Started GET "/" for ::1 at 2019-11-08 09:28:04 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 788)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 5599)
+
+
+Started GET "/origins/new" for ::1 at 2019-11-08 09:28:06 +0800
+Processing by OriginsController#new as HTML
+  Rendering origins/new.html.erb within layouts/application
+  Rendered origins/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1109)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 5699)
+
+
+Started POST "/origins" for ::1 at 2019-11-08 09:28:17 +0800
+Processing by OriginsController#create as HTML
+  Parameters: {"authenticity_token"=>"106/7Q8nvd5LiB4GN4So4TAcm6/zmc1Q0VKEuEn7nyDd0Z4q85Xg9FyHzB0QH6sO6/tQxB5psOv2wGebrf2Z0Q==", "origin"=>{"location"=>"Test Origin Location 2", "phone"=>"987654321"}, "commit"=>"Save Origin"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[36mOrigin Create (19.8ms)[0m  [1m[32mINSERT INTO "origins" ("location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location", "Test Origin Location 2"], ["phone", "987654321"], ["created_at", "2019-11-08 01:28:17.834562"], ["updated_at", "2019-11-08 01:28:17.834562"]]
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:12:in `create'
+Redirected to http://localhost:3000/origins/3
+Completed 302 Found in 26ms (ActiveRecord: 20.5ms | Allocations: 2987)
+
+
+Started GET "/origins/3" for ::1 at 2019-11-08 09:28:17 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 238)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 5811)
+
+
+Started GET "/origins" for ::1 at 2019-11-08 09:28:19 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 880)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 5639)
+
+
+Started GET "/origins/2/edit" for ::1 at 2019-11-08 09:28:21 +0800
+Processing by OriginsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:21:in `edit'
+  Rendering origins/edit.html.erb within layouts/application
+  Rendered origins/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1457)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 6602)
+
+
+Started PATCH "/origins/2" for ::1 at 2019-11-08 09:28:23 +0800
+Processing by OriginsController#update as HTML
+  Parameters: {"authenticity_token"=>"mLXr/ApJTCQzIo6AV5GXiGkrPsR0v7+awiLLWcJ9SF6SKso79vsRDiQtXJtwCpRnssz1r5lPwiHlsCh6JntOrw==", "origin"=>{"location"=>"Test Location 1", "phone"=>"90191103"}, "commit"=>"Update Origin", "id"=>"2"}
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:25:in `update'
+Redirected to http://localhost:3000/origins/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1296)
+
+
+Started GET "/origins/2" for ::1 at 2019-11-08 09:28:23 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 81)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 5390)
+
+
+Started GET "/origins/2/edit" for ::1 at 2019-11-08 09:28:25 +0800
+Processing by OriginsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:21:in `edit'
+  Rendering origins/edit.html.erb within layouts/application
+  Rendered origins/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1111)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 6115)
+
+
+Started PATCH "/origins/2" for ::1 at 2019-11-08 09:28:30 +0800
+Processing by OriginsController#update as HTML
+  Parameters: {"authenticity_token"=>"4dKBvafakcxp2WPeCpBtxp4+lXy6jo1umjFaz0iif6frTaB6W2jM5n7WscUtC24pRdleF1d+8NW9o7nsrKR5Vg==", "origin"=>{"location"=>"Test Location 11", "phone"=>"901911031"}, "commit"=>"Update Origin", "id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:25:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/origins_controller.rb:26:in `update'
+  [1m[36mOrigin Update (6.7ms)[0m  [1m[33mUPDATE "origins" SET "location" = $1, "phone" = $2, "updated_at" = $3 WHERE "origins"."id" = $4[0m  [["location", "Test Location 11"], ["phone", "901911031"], ["updated_at", "2019-11-08 01:28:30.311418"], ["id", 2]]
+  ↳ app/controllers/origins_controller.rb:26:in `update'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/origins_controller.rb:26:in `update'
+Redirected to http://localhost:3000/origins/2
+Completed 302 Found in 20ms (ActiveRecord: 13.2ms | Allocations: 3360)
+
+
+Started GET "/origins/2" for ::1 at 2019-11-08 09:28:30 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:17:in `show'
+  Rendering origins/show.html.erb within layouts/application
+  Rendered origins/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 80)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 5383)
+
+
+Started GET "/origins" for ::1 at 2019-11-08 09:28:32 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:11
+  Rendered origins/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 879)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 5641)
+
+
