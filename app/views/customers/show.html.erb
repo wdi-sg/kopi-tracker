@@ -1,0 +1,30 @@
+<h2>Customer: <%= @customer.name %></h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+  <table class= "table">
+
+  	 <th>Coffee Name</th>
+  	 <th>Roast</th>
+  	 <th>Origin</th>
+   	 <th></th>
+
+<% @customer.kopis.each do |x|%>
+<tr>
+  	<td><%=x.name%></td>
+  	<td><%=x.roast.name%></td>
+  	<td><%=x.origin.location%></td>
+</tr>
+  <% end %>
+
+</table>
+
+
+
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

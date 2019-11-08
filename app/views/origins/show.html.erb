@@ -1,0 +1,11 @@
+<h2>Origin: <%= @origin.location %></h2>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @origin.phone_number %>
+</p>
+
+<%= link_to 'Back', origins_path %>
+<% if user_signed_in?%>
+<%= link_to 'Edit', edit_origin_path(@origin) %>
+<% end %>

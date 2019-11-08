@@ -1,0 +1,69 @@
+<h3>All Kopis</h3>
+
+<table class= "table">
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+ <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.origin.location %></td>
+      <% if user_signed_in?%>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <% end %>
+      <% if user_signed_in? && current_user.admin?%>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+    </tr>
+<% end %>
+</table>
+</br>
+<% if user_signed_in? %>
+
+<h3> User's Kopi </h3>
+
+<table class = "table">
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @user.kopi.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.origin.location %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <% if user_signed_in? && current_user.admin?%>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+    </tr>
+
+
+
+  <% end %>
+
+<% end %>
+
+  </table>
+  <% if user_signed_in?%>
+<%= link_to 'New Kopi', new_kopi_path %>
+
+<%= link_to 'New Origin', new_origin_path %>
+
+<%= link_to 'New Customer', new_customer_path %>
+
+<% end %>
