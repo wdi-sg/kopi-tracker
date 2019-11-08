@@ -1,0 +1,20 @@
+<p>
+  <strong>Kopi Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast Type:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.farm.name %>
+</p>
+<h4 class= "border-top pt-5">Customers Who Carry <%=@kopi.name%> </h4>
+<% @kopi.customers.each do |customer|%>
+<li class="list-group-item"> <%=customer.name%> </li>
+<% end %>
+
+<%= link_to 'Back', root_path, :class => "btn btn-secondary mt-3" %>

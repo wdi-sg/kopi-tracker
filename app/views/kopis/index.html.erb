@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path, :class => "btn btn-primary mt-5" %>
+
+<% end %>
+
+
+
+<h1>Listing Kopis</h1>
+
+<table class="table">
+  <tr>
+    <th>Kopi Name</th>
+    <th>Roast Type</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td> <a href="/kopis/<%=kopi.id%>"><%= kopi.name %></a> </td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= kopi.farm.name %></td>
+      
+    </tr>
+  <% end %>
+</table>

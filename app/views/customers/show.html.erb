@@ -1,0 +1,13 @@
+<p>
+  <strong>Customer Name:</strong>
+  <%= @customer.name %>
+</p>
+
+  <strong>Kopis:</strong>
+  <table class="table">
+	  <% @customer.kopis.each do |kopi| %>
+	  	<tr>
+			  <td><%= kopi.name %></td>
+			 </tr>
+		<% end %>
+	</table>

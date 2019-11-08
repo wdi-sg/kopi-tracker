@@ -1,0 +1,14 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  <h3>Create New Customer</h3>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </div>
+
+  <p>Select Your Kopis:</p>
+  <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
