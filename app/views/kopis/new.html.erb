@@ -1,0 +1,18 @@
+<h1>Add a Kopi to cart!</h1>
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <p>
+    <%= form.label :Kopi %><br>
+    <%= form.collection_select :kopi, @kopis, :name, :name %>
+  </p>
+  <p>
+    <%= form.label :"Roast Level" %><br>
+    <%= form.collection_select :roast, @roasts, :name, :name %>
+  </p>
+  <p>
+    <%= form.label :Origin %><br>
+    <%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+ 
+  <%= form.submit %>
+</p>
+<% end %>
