@@ -1,0 +1,19 @@
+<h1>Add an Name, Roast and Sourced Location to a Kopi</h2>
+
+<%= form_for :kopi, url: kopis_path do |f| %>
+    <p>
+    <%= f.label :name %> <br/>
+    <%= f.text_field :name %>
+    </p>
+    <p class="error alert-danger">
+    <%= show_errors(@kopi, :name) %>
+  </p>
+
+    <%= f.collection_select :roast_id, @roasts, :id, :name %>
+<br/>
+    <%= f.collection_select :origin_id, @origins, :id, :location %>
+
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>

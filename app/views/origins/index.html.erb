@@ -1,0 +1,27 @@
+
+<!--  -->
+
+    <h1>All Kopi Origins</h1>
+
+<table class="table">
+	<tr>
+		<th>Location</th>
+		<th>Phone Number</th>
+		<th></th>
+	</tr>
+
+	<% @origin.each do |post| %>
+		<tr>
+			<td><%= post.location %></td>
+			<td><%= post.phone %></td>
+			<td><%= link_to 'Show', origin_path(post) %></td>
+			<td><%= link_to 'Edit', edit_origin_path(post) %></td>
+			<td><%= link_to 'Destroy', origin_path(post),
+				method: :delete,
+				data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+
+
+<%= link_to 'New Origin', new_origin_path %>
