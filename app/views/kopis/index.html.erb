@@ -9,17 +9,19 @@
   <%= link_to 'log in', new_user_session_url %>
 <% end %>
 
-<h1>Kopi</h1>
+<div class="container">
+  <h1>Kopi</h1>
 
-<% @kopis.each do |k| %>
-  <p>
-  <%= k.name %> 
-  <%= k.roast %>
-  <%= k.origin.location %>
-  <%= k.origin.phone %>
-  <%= link_to 'view', kopi_path(k) %>
-  </p>
-<% end %>
+  <% @kopis.each do |k| %>
+    <p>
+    <%= k.name %> 
+    <%= k.roast %>
+    <%= k.origin.location %>
+    <%= k.origin.phone %>
+    <%= link_to 'view', kopi_path(k) %>
+    </p>
+  <% end %>
+</div>
 
 
 
