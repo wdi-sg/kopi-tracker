@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get "/orders" => "orders#index", as:"all_orders"
   get "/orders/:id" => "orders#show"
+
+  get "/reports" => "reports#index"
 end
