@@ -4,7 +4,7 @@ class KopisController < ApplicationController
     roast_param = params[:roast]
     @roasts = Roast.all
     roast = Roast.where(name: [roast_param])
-    if roast == nil
+    if roast_param == nil || roast_param == ""
       @kopis = Kopi.all
     else
       @kopis = Kopi.all.where(roast: roast)
