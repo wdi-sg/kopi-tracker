@@ -1,7 +1,13 @@
 class KopisController < ApplicationController
 
   def index
-    @kopis = Kopi.all
+    roast_param = params[:roast]
+    roast = Roast.where(name: [roast_param])
+    if roast == nil
+      @kopis = Kopi.all
+    else
+      @kopis = Kopi.all.where(roast: roast)
+    end
   end
 
   def show
