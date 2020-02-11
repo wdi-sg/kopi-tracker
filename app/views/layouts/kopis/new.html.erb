@@ -1,0 +1,23 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <%= form.collection_select :origin_id, @origins, :id, :location %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_field :roast %>
+  </p>
+
+  <p>
+    <%= form.label :origin_id %><br>
+    <%= form.text_field :origin_id %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
