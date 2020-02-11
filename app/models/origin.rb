@@ -1,3 +1,3 @@
 class Origin < ApplicationRecord
-  has_many: kopi
+  has_many :kopi
 end

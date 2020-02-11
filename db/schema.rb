@@ -10,30 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_091028) do
+ActiveRecord::Schema.define(version: 2020_02_11_094314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kopi", force: :cascade do |t|
+  create_table "kopis", force: :cascade do |t|
     t.string "name"
+    t.bigint "roast_id"
     t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "roast_id"
-    t.index ["origin_id"], name: "index_kopi_on_origin_id"
-    t.index ["roast_id"], name: "index_kopi_on_roast_id"
+    t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
-  create_table "origin", force: :cascade do |t|
+  create_table "origins", force: :cascade do |t|
     t.string "location"
     t.string "phone"
-  end
-
-  create_table "roast", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roasts", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

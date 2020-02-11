@@ -13,7 +13,7 @@ Roast.create(name: 'Full City')
 Roast.create(name: 'Dark')
 Roast.create(name: 'French')
 Roast.create(name: 'Italian')
-# 
-# Origin.create(phone: '12345678', location: 'Malaysia')
-#
-# Kopi.create(name: 'Orh Gao Dark Coffee' , origin_id: 1, roast_id: 5)
+
+Origin.create(phone: '12345678', location: 'Malaysia')
+
+Kopi.create(name: 'Orh Gao Dark Coffee' , origin_id: 1, roast_id: 5)
