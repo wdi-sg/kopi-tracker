@@ -1,0 +1,18 @@
+<p>
+  <strong>Customer's name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Customer's phone number:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+	<strong>List of coffee in stock for this person: </strong>
+	<ul>
+  <% @customer.cups.each do |cup| %>
+  	<li><%= cup.name %></li>
+  <% end %>
+</ul>
+ </p>
