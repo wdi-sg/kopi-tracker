@@ -4,7 +4,8 @@ class Kopis < ActiveRecord::Migration[5.2]
           k.string :name
           k.text :roast
           k.references :origin
+          k.references :roast
           k.timestamps
-      end
+        end
   end
 end

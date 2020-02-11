@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+cinnamon = Roast.create(
+  :name => 'Cinnamon'
+)
+
+light = Roast.create(
+  :name => 'Lighy'
+)
+
+city_medium = Roast.create(
+  :name => 'City/Medium'
+)
+full_city = Roast.create(
+  :name => 'Full city'
+)
+
+dark = Roast.create(
+  :name => 'Dark'
+)
+
+french = Roast.create(
+  :name => 'French'
+)
+italian = Roast.create(
+  :name => 'Italian'
+)

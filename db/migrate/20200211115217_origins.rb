@@ -4,6 +4,6 @@ class Origins < ActiveRecord::Migration[5.2]
       o.string :location
       o.text :phone
       o.timestamps
-end
+      end
   end
 end

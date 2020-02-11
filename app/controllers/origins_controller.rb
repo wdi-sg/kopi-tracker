@@ -1,0 +1,2 @@
+class OrginsController < ApplicationController
+end
