@@ -5,5 +5,6 @@ class Kopi < ActiveRecord::Migration[5.2]
       t.string :roast
       t.references :origin
       t.timestamps
+    end
   end
 end

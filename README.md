@@ -27,7 +27,7 @@ A roast will have many kopis.
 Using your models will look something like this:
 
 ```
-# get all kopis that are dark roast
+# get all kopis that are Italian roast
 Roast.find_by(name: "Italian").kopis
 ```
 
