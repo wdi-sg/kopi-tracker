@@ -1,8 +1,8 @@
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-<%= form.collection_select :roast_id, @roasts, :id, :name %>
+<%= form.collection_select :roast_id, @roasts, :id, :name, {prompt: "select a roast"}, {class: 'browser-default'} %>
 
-<%= form.collection_select :origin_id, @origins, :id, :location %>
+<%= form.collection_select :origin_id, @origins, :id, :location, {prompt: "select a country of origin"}, {class: 'browser-default'} %>
 
 <p>
   <%= form.label :name %><br/>
