@@ -1,0 +1,42 @@
+<% if @x %>
+
+	<%= form_with scope: :kopis ,url: kopis_path, local: true do |form| %>
+	  
+	  <p>
+	    <%= form.label :name %><br>
+	    <%= form.text_field :name %>
+	  </p>
+	  <%= form.hidden_field :origin_id, :value => @x %>
+	  
+
+	  
+	  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+	  
+
+	  <p>
+	    <%= form.submit %>
+	  </p>
+	<% end %>
+
+<% else %>
+
+	<%= form_with scope: :kopis, url: kopis_path, local: true do |form| %>
+	  <p>
+	    <%= form.label :name %><br>
+	    <%= form.text_field :name %>
+	  </p>
+	  
+	 
+
+	 
+
+	  <%= form.collection_select :origin_id, @origins, :id, :location %>
+	  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+	  
+
+	  <p>
+	    <%= form.submit %>
+	  </p>
+	<% end %>
+
+<% end %>
