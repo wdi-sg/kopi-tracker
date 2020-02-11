@@ -1,0 +1,30 @@
+ <% if @parks %>
+
+		<%= form_with scope: :ranger, url: rangers_path, local: true do |form| %>
+		 	<%= form.collection_select :park_id, @parks, :id, :name %>
+
+		  <p>
+		    <%= form.label :name %><br>
+		    <%= form.text_area :name %>
+		  </p>
+
+		  <p>
+		    <%= form.submit %>
+		  </p>
+		<% end %>
+ <% else %>
+
+		<%= form_with scope: :ranger, url:  "/parks/" + @park.id.to_s + "/rangers/new", local: true do |form| %>
+
+		  <p>
+		    <%= form.label :name %><br>
+		    <%= form.text_area :name %>
+		  </p>
+
+		  <p>
+		    <%= form.submit %>
+		  </p>
+		<% end %>
+
+
+ <% end %>

@@ -1,0 +1,20 @@
+<h1> <%=@origins.location %> </h1>
+
+<h2> Kopis </h2>
+<% @origins.kopi.each do |coffee| %>
+	<p><a href = ""><%= coffee.name %></a></p>
+	<% end %>
+
+<h1> new Kopi </h1>
+
+		<%= form_with scope: :kopis, url:  "/origins/" + @origins.id.to_s + "/kopis", local: true do |form| %>
+
+		  <p>
+		    <%= form.label :name %><br>
+		    <%= form.text_area :name %>
+		  </p>
+
+		  <p>
+		    <%= form.submit %>
+		  </p>
+		<% end %>
