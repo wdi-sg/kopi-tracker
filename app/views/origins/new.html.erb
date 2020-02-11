@@ -1,0 +1,14 @@
+<h1>New origin</h1>
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+  <p>
+    <%= form.label :phone_number %><br>
+    <%= form.text_area :phone_number %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
