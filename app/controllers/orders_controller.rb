@@ -6,7 +6,14 @@ class OrdersController < ApplicationController
       end
     
       def show
+
+        if params.has_key?(:id)
+
         @order = Order.find(params[:id])
+
+        else 
+        @order =  Order.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
+        end
       end
     
       def create
