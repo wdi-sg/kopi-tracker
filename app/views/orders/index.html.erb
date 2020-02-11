@@ -1,0 +1,9 @@
+
+<% @orders.each do |order| 
+
+    price = order.weight.to_f * order.kopi.pound_price.to_f
+    
+%>
+    <h1>Full price: $<%= price %> for order #<%= order.id %></h1>
+
+<% end %>
