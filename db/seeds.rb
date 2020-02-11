@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Roast.create(name: "Cinnamon")
+Roast.create(name: "Light")
+Roast.create(name: "City/Medium")
+Roast.create(name: "Full City")
+Roast.create(name: "Dark")
+Roast.create(name: "French")
+Roast.create(name: "Italian")
+
+Origin.create(location: "Italy", phone: "1234567")
+
+Kopi.create(name:"Latte", roast_id: 1, origin_id: 2)
