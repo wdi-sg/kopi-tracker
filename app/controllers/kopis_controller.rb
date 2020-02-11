@@ -2,6 +2,7 @@ class KopisController < ApplicationController
 
   def index
     roast_param = params[:roast]
+    @roasts = Roast.all
     roast = Roast.where(name: [roast_param])
     if roast == nil
       @kopis = Kopi.all

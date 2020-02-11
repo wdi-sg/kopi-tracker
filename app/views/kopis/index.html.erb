@@ -1,5 +1,10 @@
 <h1>Hello Kopi</h1>
 
+<h5>Filter Coffee?</h5>
+<%= form_tag({}, {:method => :get}) do %>
+<%= select_tag :roast, options_for_select(@roasts.collect { |r| r.name}), include_blank: true, :onchange => "this.form.submit();" %>
+<% end %>
+
 <h2>List of Kopis</h2>
 <ul>
 <% @kopis.each do |kopi| %>
