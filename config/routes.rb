@@ -6,4 +6,10 @@ Rails.application.routes.draw do
 
   get "/origins/:id/kopis/new" => "origins#new_kopi"
   post "/origins/:id/kopis/" => "origins#create_kopi", as: "new_kopi"
+
+  get "/roasts/" => "roasts#index"
+  get "/roasts/:id" => "roasts#show"
+
+  get "/orders" => "orders#index", as:"all_orders"
+  get "/orders/:id" => "orders#show"
 end
