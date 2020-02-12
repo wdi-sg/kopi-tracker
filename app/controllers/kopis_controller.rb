@@ -1,5 +1,7 @@
 class KopisController < ApplicationController
   def index
+      @kopis = Kopi.all
+
   end
 
   def show
@@ -7,6 +9,7 @@ class KopisController < ApplicationController
   end
 
   def new
+      @roasts = Roast.all
   end
 
   def edit
