@@ -1,10 +1,5 @@
-<% @orders.each do |order| %>
-  <p><a href="/orders/<%= order.id %>">Order <%= order.id %></a></p>
-<% end %>
-<%= link_to "Report for orders made today", reports_path %>
-
-<%= @orders[0].kopi.inspect %>
-
+<% total = 0 %>
+<div class="container">
 <table class="table">
   <thead>
     <tr>
@@ -12,26 +7,26 @@
       <th scope="col">Name</th>
       <th scope="col">Origin</th>
       <th scope="col">Roast</th>
+      <th scope="col">Price</th>
+      <th scope="col">Weight in pounds</th>
+      <th scope="col">Cost</th>
     </tr>
   </thead>
+<% @orders.each do |order| %>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row"><%= order.id %></th>
+      <td><%= order.kopi.name %></td>
+      <td><%= order.kopi.origin.location %></td>
+      <td><%= order.kopi.roast.name %></td>
+      <td><%= order.kopi.price %></td>
+      <td><%= order.weight %></td>
+      <td><strong><%= order.kopi.price * order.weight %></strong></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
+  <% total += order.kopi.price * order.weight %>
+<% end %>
+</tbody>
 </table>
+<div>
+
+Total: <strong><%= total %></strong>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "origins#index"
   get "/origins" => "origins#show_all", as: "origins"
-  get "/origins/new" => "origins#new"
+  get "/origins/new" => "origins#new", as: "new_origin"
   get "/origins/:id" => "origins#show", as: "origin"
   post "/origins" => "origins#create"
 
