@@ -24,18 +24,32 @@ class KopisController < ApplicationController
   def edit
   end
 
-  # POST 
+  # POST
   def create
-    @kopi = Kopi.new(kopi_params)
+    if current_user.try(:admin?)
+      @kopi = Kopi.new(kopi_params)
 
-    @kopi.save
-    redirect_to @kopi
+      @kopi.save
+      redirect_to @kopi
+    else
+      redirect_to index
+    end
   end
 
   def update
+    if current_user.try(:admin?)
+      #update kopi
+    else
+      #reject
+    end
   end
 
   def destroy
+    if current_user.try(:admin?)
+      # delete kopi
+    else
+      # reject
+    end
   end
 
 private
