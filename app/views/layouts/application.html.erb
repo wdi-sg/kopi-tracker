@@ -15,6 +15,22 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo left">Kopi Trackr</a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="/kopis/">Kopis</a></li>
+          <li><a href="/origins/">Origins</a></li>
+          <li><a href="/orders/">Orders</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'log out', destroy_user_session_url, method: :delete, class: "waves-effect waves-light btn" %></li>
+          <% else %>
+            <li><%= link_to 'Log In / Register', new_user_session_url, class: "waves-effect waves-light btn" %></li>
+
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
     <%= yield %>
     </div>

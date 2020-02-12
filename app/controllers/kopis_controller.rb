@@ -1,5 +1,5 @@
 class KopisController < ApplicationController
-  # before_action :authenticate_user!, :except => [ :show, :index ]
+  before_action :authenticate_user!, :except => [ :show, :index ]
   def index
     roast_param = params[:roast]
     @roasts = Roast.all
@@ -15,6 +15,7 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
   end
 
+  # Display the page to make a new coffee. GET /kopi/new
   def new
     @roasts = Roast.all
     @origins = Origin.all
@@ -23,6 +24,7 @@ class KopisController < ApplicationController
   def edit
   end
 
+  # POST 
   def create
     @kopi = Kopi.new(kopi_params)
 
