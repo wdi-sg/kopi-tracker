@@ -1,0 +1,14 @@
+<h1>Origins</h1>
+<table>
+<% @origin.each do |origin| %>
+	<tr><td><%= origin.location %></td>
+		<td><%=link_to "Edit", edit_origin_path(origin.id)%></td>
+	</tr>
+<% end %>
+<tr>
+	<td></td>
+	<td></td>
+	<td><%=link_to "Add", new_origin_path%></td>
+	<td><%= link_to 'logout', destroy_user_session_url, method: :delete %></td>
+</tr>
+</table>
