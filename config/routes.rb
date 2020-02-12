@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # post "/origins/:id/kopis/" => "origins#create_kopi", as: "new_kopi"
 
   get "/roasts" => "roasts#index", as: "roasts"
+  get "/roasts/new" => "roasts#new", as: "new_roast"
+  post "/roasts/" => "roasts#create", as: "create_roast"
   get "/roasts/:id" => "roasts#show"
   get "/roasts/:id/edit" => "roasts#edit", as: "edit_roast"
   patch "/roasts/:id" => "roasts#update", as: "roast"

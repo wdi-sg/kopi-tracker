@@ -1,0 +1,10 @@
+<h1>New roast</h1>
+<%= form_with scope: :roast, url: create_roast_path, local: true do |form| %>
+  <p>
+    <%= form.label :roast_name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
