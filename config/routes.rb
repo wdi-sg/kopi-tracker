@@ -8,4 +8,13 @@ Rails.application.routes.draw do
   get '/kopis/new' => 'kopis#new', as: 'kopi_new'
   post '/kopis' => 'kopis#create'
 
+  get '/roasts' => 'roasts#index'
+  get '/roasts/new' => 'roasts#new', as: 'roast_new'
+  post '/roasts' => 'roasts#create'
+  
+  get '/roasts/:id' => 'roasts#show', as: 'roast'
+  get '/roasts/:id/edit' => 'roasts#edit', as: 'edit_roast'
+  patch '/roasts/:id' => 'roasts#update'
+  delete '/roasts/:id' => 'roasts#destroy'
+
 end

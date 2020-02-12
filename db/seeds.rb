@@ -18,13 +18,15 @@ dark = Roast.create(name: "Dark")
 french = Roast.create(name: "French")
 italian = Roast.create(name: "Italian")
 
-banana = Kopi.create(name: "Banana Roast", roast: cinnamon, origin: singapore, pound_price: "3")
-papaya = Kopi.create(name: "Papaya Roast", roast: light, origin: malaysia, pound_price: "2")
-yeah = Kopi.create(name: "yeyeyeye Coffee", roast: medium, origin: malaysia, pound_price: "4")
-wow = Kopi.create(name: "Wow Kopi", roast: full, origin: indonesia, pound_price: "2.5")
-stuff = Kopi.create(name: "Kopi stuff'd", roast: dark, origin: indonesia, pound_price: "3.5")
-foo = Kopi.create(name: "Foo Cof", roast: french, origin: singapore, pound_price: "6")
-bar = Kopi.create(name: "Coffee Bar", roast: italian, origin: indonesia, pound_price: "7")
+userOne = User.where('id = 1')[0]
+
+banana = Kopi.create(name: "Banana Roast", roast: cinnamon, origin: singapore, pound_price: "3" user: userOne)
+papaya = Kopi.create(name: "Papaya Roast", roast: light, origin: malaysia, pound_price: "2" user: userOne)
+yeah = Kopi.create(name: "yeyeyeye Coffee", roast: medium, origin: malaysia, pound_price: "4" user: userOne)
+wow = Kopi.create(name: "Wow Kopi", roast: full, origin: indonesia, pound_price: "2.5" user: userOne)
+stuff = Kopi.create(name: "Kopi stuff'd", roast: dark, origin: indonesia, pound_price: "3.5" user: userOne)
+foo = Kopi.create(name: "Foo Cof", roast: french, origin: singapore, pound_price: "6" user: userOne)
+bar = Kopi.create(name: "Coffee Bar", roast: italian, origin: indonesia, pound_price: "7" user: userOne)
 
 Order.create(weight: "5", kopi: banana)
 Order.create(weight: "2", kopi: papaya)

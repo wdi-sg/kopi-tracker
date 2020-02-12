@@ -1,0 +1,7 @@
+<h1>#<%= @roast.id %>: <%= @roast.name %></h1>
+<%= link_to 'Edit', edit_roast_path(@roast) %>
+<%= link_to 'Delete', roast_path(@roast),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', roasts_path %>

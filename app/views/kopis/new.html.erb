@@ -4,7 +4,9 @@
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
+
   <%= form.collection_select(:origin_id, Origin.all, :id, :location, prompt: "select origin") %>
+  
   <%= form.collection_select(:roast_id, Roast.all, :id, :name, prompt: "select roast") %>
 
   <p>

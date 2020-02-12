@@ -18,9 +18,7 @@ class KopisController < ApplicationController
 
     @kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
-
     @kopi.save
-
     
     redirect_to '/kopis/new'
   end

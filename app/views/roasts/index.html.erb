@@ -1,0 +1,11 @@
+<h1>Coffee Roasts</h1> <h1><%= link_to 'New Roast', roast_new_path %></h1>
+
+<% @roasts.each do |roast| %>
+    <h1>#<%= roast.id %>: <%= roast.name %></h1>
+<%= link_to 'Show', roast_path(roast) %>
+    <%= link_to 'Edit', edit_roast_path(roast) %>
+    <%= link_to 'Delete', roast_path(roast),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+<% end %>
+
