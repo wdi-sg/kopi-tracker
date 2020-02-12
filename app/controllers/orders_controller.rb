@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 private
 
   def order_params
-    params.require(:order).permit(:kopi_id, :weight, :user_id)
+    params.require(:order).permit(:kopi_id, :weight)
   end
 
 end
