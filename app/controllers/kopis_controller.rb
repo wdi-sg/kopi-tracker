@@ -1,5 +1,6 @@
 class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     roast_param = params[:roast]
     @roasts = Roast.all
@@ -28,7 +29,6 @@ class KopisController < ApplicationController
   def create
     if current_user.try(:admin?)
       @kopi = Kopi.new(kopi_params)
-
       @kopi.save
       redirect_to @kopi
     else

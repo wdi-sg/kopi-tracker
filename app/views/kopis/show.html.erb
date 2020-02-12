@@ -2,3 +2,5 @@
 <h4>From: <%= @kopi.origin.location %></h4>
 <h4>Roast: <%= @kopi.roast.name %></h4>
 <h4>Price: $<%= @kopi.price_per_kg %></h4>
+
+<%= link_to 'Order Kopi', new_order_path(kopi: @kopi.id), class: 'waves-effect waves-light btn' %>

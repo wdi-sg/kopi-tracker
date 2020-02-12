@@ -1,6 +1,8 @@
+<h2>New Order</h2>
+
 <%= form_with scope: :order, url: orders_path, local: true do |form| %>
 
-<%= form.collection_select :kopi_id, @kopis, :id, :name_and_price, {class: 'browser-default'}, {class: 'browser-default'}%>
+<%= form.collection_select :kopi_id, @kopis, :id, :name_and_price, {selected: params[:kopi]}, {class: 'browser-default'}%>
 
 <p
   <%= form.label :weight %><br/>
@@ -8,7 +10,7 @@
 </p>
 
 <p>
-    <%= form.submit %>
+    <%= form.submit class: 'waves-effect waves-light btn' %>
 </p>
 
 <% end %>
