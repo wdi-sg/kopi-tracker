@@ -1,3 +1,3 @@
-class Roasts < ActiveRecord::Base
-    has_many :kopis
+class Roast < ApplicationRecord
+    has_many :kopi
 end

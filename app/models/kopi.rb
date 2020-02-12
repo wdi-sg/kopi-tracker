@@ -1,3 +1,4 @@
-class Kopis < ActiveRecord::Base
-    belongs_to :origins
+class Kopi < ApplicationRecord
+    belongs_to :origin
+    belongs_to :roast
 end
