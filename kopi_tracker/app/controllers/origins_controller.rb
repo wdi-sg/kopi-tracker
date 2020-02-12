@@ -1,0 +1,3 @@
+class OriginsController < ApplicationController
+
+end

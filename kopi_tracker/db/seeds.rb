@@ -9,10 +9,6 @@
 vietnam = Origin.create(location: "vietnam", phone:"4545678")
 germany = Origin.create(location: "germany", phone:"22235467")
 
-# Kopi.create(name: "japanese", roast: "light", origin: japan)
-# Kopi.create(name: "tokyo", roast: "light", origin: japan)
-# Kopi.create(name: "osaka", roast: "light", origin: japan)
-
 cinnamon = Roast.new(name:"cinammon")
 light = Roast.new(name:"light")
 medium = Roast.new(name:"medium")
