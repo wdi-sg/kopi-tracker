@@ -1,21 +1,29 @@
 class KopisController < ApplicationController
 before_action :authenticate_user!, :except => [ :show, :index ]
   def index
-    @kopi = Kopi.all
+    id = current_user.id
+    @kopi = Kopi.where(user_id: id)
   end
   def show
     @kopi = Kopi.find(params[:id])
   end
 
   def new
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   def edit
      @kopi = Kopi.find(params[:id])
+     @roasts = Roast.all
+     @origins = Origin.all
   end
 
   def create
-
+    @kopi = Kopi.new(kopi_params)
+    @kopi.user_id = current_user.id
+    @kopi.save
+    redirect_to @kopi
   end
 
   def update
@@ -28,6 +36,6 @@ before_action :authenticate_user!, :except => [ :show, :index ]
   end
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :orgin_id,:roast_id)
+      params.require(:kopi).permit(:name, :origin_id,:roast_id,:user_id)
     end
 end

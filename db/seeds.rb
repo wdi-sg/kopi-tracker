@@ -5,30 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+roast1 = Roast.create(:name => 'Cinnamon')
+roast2 = Roast.create(:name => 'Lighy')
+roast3 = Roast.create(:name => 'City/Medium')
+roast4 = Roast.create(:name => 'Full city')
+roast5 = Roast.create(:name => 'Dark')
+roast6 = Roast.create(:name => 'French')
+roast7 = Roast.create(:name => 'Italian')
+#
+origin1 = Origin.create(:location => 'London', :phone => '+44 20 7946 0620')
+light = Origin.create(:location => 'Thailand', :phone => '+66-655-5829-10')
 
 
-cinnamon = Roast.create(
-  :name => 'Cinnamon'
-)
+city_medium = Origin.create(:location => 'Hungary', :phone => '+36 55 423 480')
+full_city = Origin.create(:location => 'Colombia', :phone => '+57-351-5557-864')
 
-light = Roast.create(
-  :name => 'Lighy'
-)
+dark = Origin.create(:location => 'Canada', :phone => '+1-613-555-0106')
 
-city_medium = Roast.create(
-  :name => 'City/Medium'
-)
-full_city = Roast.create(
-  :name => 'Full city'
-)
-
-dark = Roast.create(
-  :name => 'Dark'
-)
-
-french = Roast.create(
-  :name => 'French'
-)
-italian = Roast.create(
-  :name => 'Italian'
-)
+french = Origin.create(:location => 'Vietnam', :phone => '+84-355-5758-44')
+italian = Origin.create(:location => 'Japan', :phone => '+81-905-5584-464')

@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'kopis#index'
   get '/kopis' => 'kopis#index', as: 'kopis'
+  get '/kopis/new' => 'kopis#new' , as: 'new_kopi'
   get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
   get '/kopis/:id' => 'kopis#show', as: 'kopi'
   post '/kopis' => 'kopis#create'
   patch '/kopis/:id' => 'kopis#update'
-  get '/kopis/new' => 'kopis#new' , as: 'new_kopi'
   delete '/kopis/:id' => 'kopi#destroy'
 
   # get '/origins' => 'origins#index', as: 'origins'

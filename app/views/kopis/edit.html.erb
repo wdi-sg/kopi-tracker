@@ -6,17 +6,14 @@
     <%= form.label :name %><br>
     <%= form.text_field :name%><br>
   </p>
-
   <p>
-    <%= form.label :roast_id %><br>
-    <%= form.text_field :roast_id %><br>
-  </p>
-
-  <p>
-    <%= form.label :origin_id %><br>
-    <%= form.text_field :origin_id %><br>
-  </p>
-
+   <%= form.label :roast_id %><br>
+<%= form.collection_select :roast_id, @roasts, :id, :name %>
+</p>
+<p>
+   <%= form.label :origin_id %><br>
+<%= form.collection_select :origin_id, @origins, :id, :location %>
+</p>
   <p>
     <%= form.submit %>
   </p>

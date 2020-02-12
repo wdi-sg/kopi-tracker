@@ -1,9 +1,18 @@
-<h3>Kopi</h3>
+<h1>List of Kopi</h1>
 <table>
+	<tr>
+		<th><h2>Kopi</h2></th>
+		<tr>
 		<% @kopi.each do |kopi| %>
 		<tr>
 <td><%= kopi.name%></td><td><%= link_to "Edit", edit_kopi_path(kopi.id) %></td>
 </tr>
 <% end %>
+<tr>
+	<td></td>
+	<td>
+</td>
+<td><%=link_to "Add", new_kopi_path%></td>
+</tr>
+
 </table>
-<%=link_to "Add", new_kopi_path%>
