@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_140248) do
+ActiveRecord::Schema.define(version: 2020_02_12_064523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.string "roast"
     t.bigint "origin_id"
     t.bigint "roast_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_140248) do
     t.string "phone"
   end
 
-  create_table "roast", force: :cascade do |t|
+  create_table "roasts", force: :cascade do |t|
     t.string "name"
   end
 
