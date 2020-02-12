@@ -1,21 +1,31 @@
+<h3>Create a new Kopi</h3>
+
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
 
-<%= form.collection_select :roast_id, @roasts, :id, :name, {prompt: "select a roast"}, {class: 'browser-default'} %>
+<div class="row">
+  <%= form.collection_select :roast_id, @roasts, :id, :name, {prompt: "select a roast"}, {class: 'browser-default'} %>
+</div>
 
-<%= form.collection_select :origin_id, @origins, :id, :location, {prompt: "select a country of origin"}, {class: 'browser-default'} %>
+<div class="row">
+  <%= form.collection_select :origin_id, @origins, :id, :location, {prompt: "select a country of origin"}, {class: 'browser-default'} %>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.text_field :name %>
+    <%= form.label :name %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.label :price_per_kg %><br/>
+    <%= form.number_field(:price_per_kg, in: 0.5..100.0, step: 0.5) %>
+  </div>
+</div>
 
 <p>
-  <%= form.label :name %><br/>
-  <%= form.text_area :name %>
-</p>
-
-<p>
-  <%= form.label :price_per_kg %><br/>
-  <%= form.number_field(:price_per_kg, in: 0.5..100.0, step: 0.5) %>
-</p>
-
-<p>
-    <%= form.submit %>
+    <%= form.submit class: 'waves-effect waves-light btn' %>
 </p>
 
 <% end %>

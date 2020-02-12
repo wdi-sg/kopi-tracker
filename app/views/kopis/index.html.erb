@@ -12,5 +12,11 @@
 <h2>List of Kopis</h2>
 <ul>
 <% @kopis.each do |kopi| %>
-  <li><%= kopi.name %> - $<%= kopi.price_per_kg %> per kg</li>
+  <li><a href=<%= kopi.id %>><%= kopi.name %></a> - $<%= kopi.price_per_kg %> per kg</li>
+<% end %>
+
+<hr/>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path, class: 'waves-effect waves-light btn'%>
 <% end %>
