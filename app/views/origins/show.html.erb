@@ -1,6 +1,5 @@
 <h1>Brews from <%= @origin.location %></h1>
 <% @kopis.each do |kopi| %>
-<p>Kopi name: <%= kopi.name %></p>
-<p>Kopi roast: <%= kopi.roast.name %></p>
+  <p>Kopi name: <%= kopi.name %> <strong><%= kopi.roast.name %> </strong></p>
 <% end %>
 <%= link_to "Home", root_path %>
