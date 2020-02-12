@@ -10,16 +10,18 @@ class KopisController < ApplicationController
 
   def new
       @roasts = Roast.all
+      @origins = Origin.all
+
   end
 
   def edit
   end
 
   def create
-     @kopi = Kopi.new(kopis_params)
+     @kopi = Kopi.new(kopi_params)
 
-    @kopi.save
-    redirect_to @kopi
+     @kopi.save
+     redirect_to @kopi
   end
 
   def update
@@ -31,7 +33,7 @@ class KopisController < ApplicationController
   private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origin)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id)
   end
 
 end
