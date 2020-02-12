@@ -1,0 +1,14 @@
+<h1>Coffee Order Form</h1>
+
+<%= form_with scope: :orders, url: orders_path, local: true do |form| %>
+  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+	<p>
+		<%= form.label :weight, 'How much of this coffee do you want to buy?'%><br>
+		<%= form.text_field :weight %>
+	</p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,9 +1,25 @@
+<h1> All of the Coffees </h1>
+
+<% if user_signed_in? %>
+	<% if current_user.admin %>
+		<%= link_to 'Create new coffee', new_kopi_path %>
+	<% else %>
+		<h1>You are signed in, but not an admin!</h1>
+	<% end %>
+<% end %>
+
+<% if@origin %>
+	<p><%= @origin.location.capitalize() %></p>
+<% else %>
+	<p>All Coffees</p>
+<% end %>
+
 <table>
-<% @kopis.each do |kopi|  %>
+<% @kopis.each do |kopi| %>
 <tr>
-	<td><%= kopi.name %></td>
-	<td><%= kopi.roast.name %></td>
-	<td><%= kopi.origin.location %></td>
+	<td><%= kopi.name.capitalize() %></td>
+	<td><%= kopi.roast.name.capitalize() %></td>
+	<td><%= kopi.origin.location.capitalize() %></td>
 </tr>
 <% end %>
 </table>

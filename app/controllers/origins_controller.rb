@@ -1,4 +1,5 @@
 class OriginsController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
   def index
   end
 
@@ -19,3 +20,4 @@ class OriginsController < ApplicationController
 
   def destroy
   end
+end

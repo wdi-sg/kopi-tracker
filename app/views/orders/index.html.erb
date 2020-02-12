@@ -1,0 +1,24 @@
+<h1>All Orders</h1>
+
+	<%= collection_select(:params_id, :kopi_id, @kopis, :id , :name, { :include_blank => "Please select a source..."}, {:onchange => "var id = $('select#params_id_kopi_id option:selected').val();console.log(id); window.location.replace('/orders?filter='+id)"} ) 	%>
+
+
+
+	<br></br>
+	<br></br>
+	<br></br>
+
+	<table style="border: 1px solid black">
+		<tr>
+			<th>Kopi name</th>
+			<th>Weight</th>
+			<th>Total Price</th>
+		</tr>
+		<% @orders.each do |order|%>
+			<tr style="border: 1px solid black">
+				<td style="border: 1px solid black"><%= order.kopi.name %></td>
+				<td style="border: 1px solid black"><%= order.weight %> kg</td>
+				<td style="border: 1px solid black"><%= order.total_price%> dollars</td>
+			</tr>
+		<% end %>
+	</table>
