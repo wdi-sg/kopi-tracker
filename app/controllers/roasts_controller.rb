@@ -1,13 +1,17 @@
 class RoastsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :check_admin
   # , :except => [ :show, :index ]
 
-  def index
-    if current_user.admin?
-      @roasts = Roast.all.order("created_at ASC")
+  def check_admin
+    if authenticate_user! && current_user.admin
+      return true
     else
       redirect_to "/kopis/new"
     end
+  end
+
+  def index
+      @roasts = Roast.all.order("created_at ASC")
   end
 
   def new
@@ -21,7 +25,7 @@ class RoastsController < ApplicationController
     puts roast_params
     @roast = Roast.new(roast_params)
     @roast.save
-    redirect_to '/roasts'
+    redirect_to "/roasts"
   end
 
   def update
@@ -38,7 +42,7 @@ class RoastsController < ApplicationController
     @roast = Roast.find(params[:id])
     @roast.destroy
 
-    redirect_to '/roasts'
+    redirect_to "/roasts"
   end
 
   private
