@@ -23,6 +23,9 @@ class KopisController < ApplicationController
   end
 
   def edit
+    @kopi = Kopi.find(params[:id])
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   # POST
@@ -39,8 +42,12 @@ class KopisController < ApplicationController
   def update
     if current_user.try(:admin?)
       #update kopi
+      @kopi = Kopi.find(params[:id])
+      @kopi.update(kopi_params)
+      redirect_to @kopi
     else
       #reject
+      redirect_to '/'
     end
   end
 
