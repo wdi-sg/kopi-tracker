@@ -1,12 +1,9 @@
 class ReportsController < ApplicationController
   def index
-    puts "***********************************"
     @orders = Order.where(created_at: Date.today.all_day)
     total = 0
     @orders.each do |order|
-      puts "ALSDKNALSDNKSADLAKSDASASDKASDANSLK"
       total += (order.weight * order.kopi.price)
-      puts "ALSDKNALSDNKSADLAKSDASASDKASDANSLK"
     end
     @total = total
   end

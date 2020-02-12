@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get "/roasts/:id" => "roasts#show"
 
   get "/orders" => "orders#index", as:"all_orders"
+  get "/orders/new" => "orders#new"
+  post "/orders" => "orders#create"
   get "/orders/:id" => "orders#show"
 
-  get "/reports" => "reports#index"
+  get "/reports" => "reports#index", as: "reports"
 end

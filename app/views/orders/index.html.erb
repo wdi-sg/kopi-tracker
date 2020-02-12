@@ -1,4 +1,5 @@
 <h1>All Orders</h1>
 <% @orders.each do |order| %>
-<p><a href="/orders/<%= order.id %>">Order</a></p>
+  <p><a href="/orders/<%= order.id %>">Order</a></p>
 <% end %>
+<%= link_to "Report for orders made today", reports_path %>
