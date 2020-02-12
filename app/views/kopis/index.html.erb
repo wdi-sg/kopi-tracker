@@ -1,0 +1,9 @@
+<h3>Kopi</h3>
+<table>
+		<% @kopi.each do |kopi| %>
+		<tr>
+<td><%= kopi.name%></td><td><%= link_to "Edit", edit_kopi_path(kopi.id) %></td>
+</tr>
+<% end %>
+</table>
+<%=link_to "Add", new_kopi_path%>

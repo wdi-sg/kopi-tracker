@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   def index
     @kopi = Kopi.all
-
   end
   def show
     roast_name = params[:name]
