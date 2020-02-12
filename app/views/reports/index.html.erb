@@ -1,5 +1,7 @@
-<h1>ALL ORDERS FOR TODAY CONSOLIDATED</h1>
 <% @orders.each do |order| %>
-  <p>Order <%= order.id %> for <%= order.kopi.name %>: $<%= order.weight * order.kopi.price %></p>
+  <p>Order <%= order.id %></p>
+  <p>
+    <%= order.kopi.name %>
+    <strong>$<%= order.weight * order.kopi.price %></strong></p>
 <% end %>
-Day total: $<%= @total %>
+Total: <strong>$<%= @total %></strong>

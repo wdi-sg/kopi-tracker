@@ -1,14 +1,1 @@
-<h1>KOPI TRACKER</h1>
-<% if user_signed_in? %>
-  <% @origins.each do |origin| %>
-    <p><a href="origins/<%= origin.id %>"><%= origin.location %></p>
-    </a>
-  <% end %>
-  <p><%= link_to "Make new coffee", new_kopi_path %></p>
-  <p><%= link_to "Make new order", new_order_path %></p>
-  <p><%= link_to "See all orders", all_orders_path %></p>
-  <p> <%= link_to 'Log out', destroy_user_session_url, method: :delete %></p>
-  <% end %>
-<% else if !user_signed_in? %>
-  <%= link_to "Sign up", "/users/sign_up"%>
-<% end %>
+<img src="http://currys.cdn.dixons.com/css/themes/buying_guide/coffee_buying_guide/img/wk25-coffee-header.jpg">

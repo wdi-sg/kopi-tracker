@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
-<h1>New order</h1>
 <%= form_with scope: :order, url: orders_path, local: true do |form| %>
+
   <p>
+  <%= form.label :brew %>
+  <br>
     <%= form.collection_select :kopi_id, @kopis, :id, :name %>
   </p>
   <p>

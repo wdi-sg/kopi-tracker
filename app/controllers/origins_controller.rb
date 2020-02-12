@@ -5,6 +5,10 @@ class OriginsController < ApplicationController
     @origins = Origin.all
   end
 
+  def show_all
+    @origins = Origin.all
+  end
+
   def new
   end
 
