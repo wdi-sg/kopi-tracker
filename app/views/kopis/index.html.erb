@@ -1,0 +1,17 @@
+<p>Kopis</p>
+
+
+<ul>
+<% @kopis.each do |kopi| %>
+  <li><%= kopi.name %></li>
+<% end %>
+</ul>
+
+
+<%= link_to 'log in', new_user_session_url %>
+
+<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+<% end %>
