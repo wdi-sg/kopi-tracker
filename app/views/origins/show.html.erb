@@ -15,5 +15,6 @@
 </table>
 
 <%= link_to 'Back', origins_path %>
-
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_origin_path(@origin) %>
+<% end %>

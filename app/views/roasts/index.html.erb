@@ -3,24 +3,25 @@
 <table>
 	<tr>
 		<th>Name</th>
-		<th></th>
-
 	</tr>
 
 	<% @roast.each do |roast| %>
 		<tr>
 			<td><%= roast.name %></td>
+			
 			<td><%= link_to 'Show', roast_path(roast) %></td>
+			<% if current_user.admin? %>
 			<td><%= link_to 'Edit', edit__path(roast) %></td>
 			<td><%= link_to 'Destroy', roast_path(roast),
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
+				<%= link_to 'New Roast', new_roast_path %>
+				<% end %>
 		</tr>
-		<% if user_signed_in? %>
-<%= link_to 'New Roast', new_roast_path %>
-<% end %>
+		
+
+
 	<% end %>
 </table>
 
 
-<%= link_to 'New roast', new_roast_path %> 

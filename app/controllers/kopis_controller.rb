@@ -1,9 +1,10 @@
 class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show]
+  
   def index
-    @kopi = Kopi.all
-    if user_signed_in? 
-      user_session[:kopi_cart] = "Awake"
+    @kopis = Kopi.all
+    @roasts = Roasts.all
+   
     end
   end
 
@@ -12,14 +13,12 @@ class KopisController < ApplicationController
   end
 
   def create
-    @kopi = Kopi.new(song_params)
-
-    @kopi.user = current_user
-  
-    if @kopi.save
+    if current_user.try(:staff?)
+      @kopi = Kopi.new(kopi_params)
+      @kopi.save
       redirect_to @kopi
     else
-      render 'new'
+      redirect_to index
     end
   end
 
@@ -30,25 +29,34 @@ class KopisController < ApplicationController
   def edit
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def update
-    @kopi = Kopi.find(params[:id])
-    @kopi.update(kopi_params)
-    redirect_to @kopi
+    if current_user.try(:admin?)
+      @kopi = Kopi.find(params[:id])
+      @kopi.update(kopi_params)
+      redirect_to @kopi
+    else
+      redirect_to '/'
+    end
   end
 
   def destroy
+    if current_user.try(:admin?)
     @kopi = Kopi.find(params[:id])
     @kopi.destroy
     redirect_to @kopi
+  else
+    redirect_to '/'
+  end
   end
 
 
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin_id)
+    params.require(:kopi).permit(:name, :origin_id, :roast_id)
   end
 
 end 

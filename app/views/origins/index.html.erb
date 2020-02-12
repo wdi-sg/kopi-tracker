@@ -13,13 +13,15 @@
 			<td><%= origin.location %></td>
 			<td><%= origin.phone %></td>
 			<td><%= link_to 'Show', origin_path(origin) %></td>
+			<% if current_user.admin? %>
+			<%= link_to 'New origin', new_origin_path %>
 			<td><%= link_to 'Edit', edit_origin_path(origin) %></td>
 			<td><%= link_to 'Destroy', origin_path(origin),
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
 		</tr>
 	<% end %>
 </table>
 
 
-<%= link_to 'New origin', new_origin_path %>

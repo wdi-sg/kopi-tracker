@@ -1,60 +1,39 @@
 class RoastsController < ApplicationController
-    before_action :authenticate_user!, :except => [ :show]
-    def index
-      @roast = Roast.all
-    end
-  
-    def new
-        if current_user.admin? 
-            user_session[:kopi_cart] = "ExtraAwake"
-      @roasts = Roast.all
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @roasts }
+  before_action :check_if_admin
+
+  def index
+    @roasts = Roast.all
+  end
+
+  def show
+    @roast = Roast.find(params[:id])
+    @kopis = Kopi.all.where(roast: @roast)
+  end
+
+  def update
+    @roast = Roast.find(params[:id])
+
+    @roast.update(roast_params)
+    redirect_to @roast
+  end
+
+  def edit
+    @roast = Roast.find(params[:id])
+  end
+
+private
+
+  def roast_params
+    params.require(:roast).permit(:name)
+  end
+
+  def check_if_admin
+    if :authenticate_user!
+      if current_user.try(:admin?)
+        return true
       end
     end
-  
-    def create
-        if current_user.admin? 
-      @roast = Roast.new(roast_params)
-      @roast.save
-      redirect_to @roast
-      end
-    end
-  
-    def show
-      @roast = Roast.find(params[:id])
-      
-    end
-  
-    def edit
-        if current_user.admin? 
-      @roast = Roast.find(params[:id])
-      @roast = Roast.all
-        end
-    end
-  
-    def update
-        if current_user.admin? 
-      @roast = Roast.find(params[:id])
-      @roast.update(roast_params)
-      redirect_to @roast
-        end
-    end
-  
-    def destroy
-        if current_user.admin? 
-      @roast = Roast.find(params[:id])
-      @roast.destroy
-      redirect_to @roast
-        end
-    end
-  
-  
-  private
-  
-    def roast_params
-      params.require(:roast).permit(:name, :roast_id)
-    end
+    redirect_to '/'
+  end
   
   end 

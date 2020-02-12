@@ -4,7 +4,6 @@
     <th>Name</th>
     <th>Roast</th>
     <th>Origin</th>
-    <th></th>
   </tr>
 
 
@@ -15,8 +14,10 @@
   </tr>
 
 </table>
-
 <%= link_to 'Back', kopis_path %>
-
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% end %>
+
+
+
