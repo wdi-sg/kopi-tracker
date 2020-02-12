@@ -1,5 +1,5 @@
 class OriginsController < ApplicationController
-  before_action :check_if_staff
+  before_action :check_if_staff, :except => [ :show, :index ]
   def index
     @origins = Origin.all
   end

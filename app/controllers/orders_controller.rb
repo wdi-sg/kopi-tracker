@@ -1,12 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
-  
+
   def index
     @orders = Order.all
   end
 
   def show
     @order = Order.find(params[:id])
+    @user = @order.user
   end
 
   def new
@@ -32,7 +33,7 @@ class OrdersController < ApplicationController
 private
 
   def order_params
-    params.require(:order).permit(:kopi_id, :weight)
+    params.require(:order).permit(:kopi_id, :weight, :user_id)
   end
 
 end

@@ -4,7 +4,8 @@
 
 <%= form.collection_select :kopi_id, @kopis, :id, :name_and_price, {selected: params[:kopi]}, {class: 'browser-default'}%>
 
-<p
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+<p>
   <%= form.label :weight %><br/>
   <%= form.number_field(:weight, in: 0.5..1000.0, step: 0.5) %>
 </p>
