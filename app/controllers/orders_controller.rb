@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
+
   def index
-    @orders = Order.all
+    @user = current_user
+    @orders = current_user.order
   end
 
   def new
@@ -9,6 +12,10 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.user = current_user
+    puts "***************************************"
+    puts @order.inspect
+    puts "***************************************"
     @order.save
     redirect_to all_orders_path
   end

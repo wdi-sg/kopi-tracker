@@ -12,9 +12,7 @@ class KopisController < ApplicationController
   def create
     @kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
-    puts "**************************************"
     puts @kopi.inspect
-    puts "**************************************"
     puts @kopi.user
     @kopi.save
     redirect_to "/origins/" + @kopi.origin.id.to_s

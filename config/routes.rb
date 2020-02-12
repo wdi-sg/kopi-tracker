@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
   get "/roasts/" => "roasts#index"
   get "/roasts/:id" => "roasts#show"
+  get "/roasts/:id/edit" => "roasts#edit"
+  patch "/roasts/:id" => "roasts#update", as: "roast"
 
   get "/orders" => "orders#index", as:"all_orders"
-  get "/orders/new" => "orders#new"
+  get "/orders/new" => "orders#new", as:"new_order"
   post "/orders" => "orders#create"
   get "/orders/:id" => "orders#show"
 

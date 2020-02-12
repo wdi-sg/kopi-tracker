@@ -1,4 +1,6 @@
 class RoastsController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
+  
   def index
     @roasts = Roast.all
   end
@@ -13,9 +15,24 @@ class RoastsController < ApplicationController
     @roast = Roast.find(params[:id])
   end
 
-  private
-
-  def roast_params
-    params.require(:roast).permit(:name)
+  def edit
+    if current_user.is_admin
+    @roast = Roast.find(params[:id])
+    puts @roast.inspect
+    else 
+      redirect_to root_path
+    end
   end
+
+  def update
+    @roast = Roast.find(params[:id])
+    @roast.update(roast_params)
+    redirect_to root_path
+  end
+end
+
+private
+
+def roast_params
+  params.require(:roast).permit(:name)
 end

@@ -1,13 +1,15 @@
+<% if user_signed_in? %>
+<h1>New order</h1>
 <%= form_with scope: :order, url: orders_path, local: true do |form| %>
-
-  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
-
+  <p>
+    <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+  </p>
   <p>
     <%= form.label :weight %><br>
-    <%= form.text_area :weight %>
+    <%= form.number_field :weight %>
   </p>
-
   <p>
     <%= form.submit %>
   </p>
+<% end %>
 <% end %>
