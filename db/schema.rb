@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_140331) do
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.text "roast"
+    t.text "roast_id"
     t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
