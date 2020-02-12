@@ -1,1 +1,21 @@
-<h1>helloooooo</h1>
+<h1>All Origins</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Number</th>
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+      <td><%= origin.location %></td>
+      <td><%= origin.number %></td>
+      <td><%= link_to 'Show', origin_path(origin) %></td>
+      <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+      <td><%= link_to 'Destroy', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+

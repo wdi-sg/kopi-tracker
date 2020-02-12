@@ -1,29 +1,48 @@
 class KopisController < ApplicationController
 
-    def new
-      @origins = Origin.all
-    end
+  def index
+    @kopis = Kopi.all 
+  end
   
-    def create
-      @kopis = Kopi.new(kopi_params)
+
+  def create
+    @kopis = Kopi.new(kopi_params)
+    @kopi.save
+    redirect_to @kopi
+  end
+
+
+  def new
+    @kopis = Kopi.all
+  end
   
-      @kopi.save
-      redirect_to @kopi
-    end
+
+  def show
+    @kopi = Kopi.find(params[:id])
+  end
+
+
+  def edit
+    @kopi = Kopi.find(params[:id])
+  end
+
+
+  def update
+    @kopi = Kopi.find(params[:id])
+    @kopi.update(kopi_params)
+    redirect_to @kopi
+  end
   
-    def show
-      # deal with the case that we are trying to get a ranger for a park that doesn't exist
-  
-      @kopi = Kopi.find(params[:id])
-  
-      if params[:origin_id].to_i != @kopi.origin.id
-        # do something
-      end
-    end
+
+  def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+    redirect_to root_path
+  end
   
   private 
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin_id)
+      params.require(:kopi).permit(:name, :origin_id, :roast_id)
     end
     
   end
