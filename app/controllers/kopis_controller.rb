@@ -6,7 +6,6 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
-    @roasts = Roast.all
   end
 
   def create
@@ -22,7 +21,6 @@ class KopisController < ApplicationController
   def edit
     @kopi = Kopi.find(params[:id])
     @origins = Origin.all
-    @roasts = Roast.all
   end
 
   def update
@@ -41,7 +39,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :origin_id)
+    params.require(:kopi).permit(:name, :origin_id)
   end
 
 end 
