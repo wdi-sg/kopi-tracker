@@ -6,6 +6,6 @@
 <% if user_signed_in? %>
   <%= link_to 'Order Kopi', new_order_path(kopi: @kopi.id), class: 'waves-effect waves-light btn' %>
 <% end %>
-<% if current_user.try(:admin?) %>
+<% if current_user.try(:staff?) %>
   <%= link_to 'Edit Kopi', edit_kopi_path, class: 'waves-effect waves-light btn' %>
 <% end %>

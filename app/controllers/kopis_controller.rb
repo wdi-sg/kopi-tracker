@@ -30,7 +30,7 @@ class KopisController < ApplicationController
 
   # POST
   def create
-    if current_user.try(:admin?)
+    if current_user.try(:staff?)
       @kopi = Kopi.new(kopi_params)
       @kopi.save
       redirect_to @kopi
@@ -40,7 +40,7 @@ class KopisController < ApplicationController
   end
 
   def update
-    if current_user.try(:admin?)
+    if current_user.try(:staff?)
       #update kopi
       @kopi = Kopi.find(params[:id])
       @kopi.update(kopi_params)
@@ -60,6 +60,17 @@ class KopisController < ApplicationController
   end
 
 private
+
+  def check_if_staff
+    if :authenticate_user!
+      if current_user.try(:staff?)
+        return true
+      elsif current_user.try(:admin?)
+        return true
+      end
+    end
+    redirect_to '/'
+  end
 
   def kopi_params
     params.require(:kopi).permit(:name, :origin_id, :roast_id, :price_per_kg)
