@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'origins#index'
   get '/origins' => 'origins#index', as: 'origins'
   get '/origins/new' => 'origins#new', as: 'new_origin'
@@ -29,8 +30,6 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
 
   delete '/kopis/:id' => 'kopis#destroy'
-
-  get '/roasts' => 'roasts#index', as: 'roasts'
   
 end
 
