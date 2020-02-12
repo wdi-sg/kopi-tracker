@@ -1,4 +1,4 @@
-<h1>Here are the Kopis</h1>
+<h1>Here are our Kopis</h1>
 <table>
   <tr>
     <th>Name</th>
@@ -6,6 +6,9 @@
 <% @kopis.each do |kopi| %>
   <tr>
     <td><%= kopi.name %></td>
+    <td><%= link_to 'Show', kopi_path(kopi) %></td>
   </tr>
   <% end %>
 </table>
+
+<%= link_to 'Add New Kopi', new_kopi_path %>

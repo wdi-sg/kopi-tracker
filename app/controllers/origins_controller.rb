@@ -6,6 +6,8 @@ class OriginsController < ApplicationController
 
   def show
      @origin = Origin.find(params[:id])
+     @kopi = Kopi.all
+
   end
 
   def new
