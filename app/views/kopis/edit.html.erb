@@ -7,10 +7,7 @@
     <%= form.text_field :name %>
   </p>
 
-	 <p>
-    <%= form.label :roast %><br>
-    <%= form.text_field :roast %>
-  </p>
+	 <%= form.collection_select :roast_id, @roasts, :id, :name %>
 
   <%= form.collection_select :origin_id, @origins, :id, :location %>
 
@@ -20,3 +17,4 @@
 <% end %>
 
 <%= link_to 'Back', kopis_path %> 
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>

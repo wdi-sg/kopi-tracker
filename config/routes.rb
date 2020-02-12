@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'origins#index'
   get '/origins' => 'origins#index', as: 'origins'
@@ -22,4 +23,13 @@ Rails.application.routes.draw do
   get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
   get '/origins/:origin_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'
   post '/origins/:origin_id/kopis' => 'kopis#create'
+
+  get '/roasts' => 'roasts#index', as: 'roasts'
+  get '/roasts/new' => 'roasts#new', as: 'new_roast'
+  post '/roasts' => 'roasts#create'
+  get '/roasts/:id' => 'roasts#show' , as: 'roast'
+  get '/roasts/:id/edit' => 'roasts#edit', as: 'edit_roast'
+  patch '/roasts/:id' => 'roasts#update'
+  delete '/roasts/:id' => 'roasts#destroy'
+
 end

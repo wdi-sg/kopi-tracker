@@ -1,7 +1,10 @@
 class KopisController < ApplicationController
-
+  before_action :authenticate_user!, :except => [ :show]
   def index
     @kopi = Kopi.all
+    if user_signed_in? 
+      user_session[:kopi_cart] = "Awake"
+    end
   end
 
   def new
@@ -9,9 +12,15 @@ class KopisController < ApplicationController
   end
 
   def create
-    @kopi = Kopi.new(kopi_params)
-    @kopi.save
-    redirect_to @kopi
+    @kopi = Kopi.new(song_params)
+
+    @kopi.user = current_user
+  
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
   def show

@@ -12,7 +12,7 @@
 	<% @kopi.each do |kopi| %>
 		<tr>
 			<td><%= kopi.name %></td>
-			<td><%= kopi.roast_id%></td>
+			<td><%= kopi.roast_id.name%></td>
 			<td><%= kopi.origin.location %></td>
 			<td><%= link_to 'Show', kopi_path(kopi) %></td>
 			<td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
@@ -20,8 +20,12 @@
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
 		</tr>
+		<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path %>
+<% end %>
 	<% end %>
 </table>
 
 
 <%= link_to 'New kopi', new_kopi_path %> 
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>

@@ -1,0 +1,16 @@
+<h1>Add New Roast</h1>
+
+<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', roasts_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
