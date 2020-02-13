@@ -21,4 +21,10 @@ Rails.application.routes.draw do
 
     post '/roasts' => 'roasts#create'
 
+    #customer stuff
+
+    get '/customers/:id' => 'customers#show', as: 'customer'
+
+    get '/customers' => 'customers#index', as: 'customers'
+
 end

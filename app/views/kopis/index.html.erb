@@ -19,8 +19,12 @@
 <ul>
     <% @kopis.each do |kopi| %>
     <li><%= kopi.name %></li>
-    <small><%= kopi.roast.roastedness %><small>
-    <small><%= kopi.farm.name %><small>
+    <p><%= kopi.roast.roastedness %><p>
+    <p><%= kopi.farm.name %><p>
+        <strong>Customers</strong>
+        <% kopi.customers.each do |customer| %>
+            <p><%= customer.email %></p>
+        <% end %>
     <% end %>
 </ul>
 
