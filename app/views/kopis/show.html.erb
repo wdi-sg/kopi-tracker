@@ -4,6 +4,7 @@
     <th>Name</th>
     <th>Roast</th>
     <th>Origin</th>
+    <th>Customer Name</th>
   </tr>
 
 
@@ -11,6 +12,11 @@
      <td><%= @kopi.name %></td>
      <td><%= @kopi.roast_id %></td>
      <td><%= @kopi.origin.location %></td>
+     
+ <% @kopi.customers.each do |customer| %>
+<td><%= customer.name %></td>
+<% end %>
+
   </tr>
 
 </table>

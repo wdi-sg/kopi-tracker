@@ -55,8 +55,8 @@ class KopisController < ApplicationController
 
 private
 
-  def kopi_params
-    params.require(:kopi).permit(:name, :origin_id, :roast_id)
-  end
+def kopi_params
+  params.require(:kopi).permit(:name, :roast, :origin, :customer_ids => [])
+end
 
 end 

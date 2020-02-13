@@ -1,0 +1,21 @@
+<h1> Customer Name </h1>
+<h2><%=@customer.name %></h2>
+<table>
+  <tr>
+      <th>Kopi Name</th>
+	  <th>Roast</th>
+	  <th>Origin</th>
+  </tr>
+  <tr>
+  
+  <% @customer.kopis.each do |kopi| %>
+<td><%= kopi.name %></td>
+<td><%= kopi.roast_id %></td>
+<td><%= kopi.origin.location %></td>
+		<tr>
+		
+    
+<%end%>
+  </tr>
+
+</table>
