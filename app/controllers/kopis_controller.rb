@@ -8,14 +8,22 @@ class KopisController < ApplicationController
   
 
   def create
-    @kopis = Kopi.new(kopi_params)
-    @kopi.save
-    redirect_to @kopi
+    @kopi = Kopi.new(kopi_params)
+  
+    @kopi.user = current_user
+  
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
 
   def new
     @kopis = Kopi.all
+    @roasts = Roast.all
+    @origins = Origin.all
   end
   
 
