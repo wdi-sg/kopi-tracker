@@ -3,9 +3,9 @@
 <h3>List of Roasts</h3>
 
 <ul>
-<% @roasts.each do |roast| %>
-  <li><%= link_to roast.name, roast_path(roast.id) %></li>
-<% end %>
+  <% @roasts.each do |roast| %>
+    <li><%= link_to roast.name, roast_path(roast.id) %></li>
+  <% end %>
 </ul>
 
 <%= link_to 'New Roast', new_roast_path, class: 'waves-effect waves-light btn'%>

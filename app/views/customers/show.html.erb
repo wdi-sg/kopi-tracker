@@ -1,2 +1,7 @@
-<h1>Customers#show</h1>
-<p>Find me in app/views/customers/show.html.erb</p>
+<h2>Customer <%= @customer.name %></h2>
+<h3>Kopis this customer stocks:</h3>
+<ul>
+  <% @customer.kopis.each do |kopi| %>
+  <li><%= link_to kopi.name, kopi_path(kopi) %></li>
+  <% end %>
+</ul>
