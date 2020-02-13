@@ -26,13 +26,29 @@ def create
   redirect_to @kopi
 end
 
+
+
   def edit
   end
 
+
   def update
+    if current_user.try(:admin)
+  @kopi = Kopi.find(params[:id])
+  @kopi.update(kopi_params)
+  redirect_to @kopi
+else
+
+end
+
   end
 
   def destroy
+    if current_user.try(:admin)
+  @kopi = Kopi.find(params[:id])
+  @kopi.destroy
+  redirect_to @kopi
+
   end
 
   private
