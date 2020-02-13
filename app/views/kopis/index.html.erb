@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+	<%= current_user.email %>
+<% end %>
+
+<p>kopis</p>
+<ul>
+<% @kopis.each do |kopi| %>
+  <li><%= kopi.name %> - <%= kopi.origin.location %> - <% kopi.roast %></li>
+<% end %>
+</ul>
