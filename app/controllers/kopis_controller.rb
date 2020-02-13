@@ -48,7 +48,7 @@ end
   @kopi = Kopi.find(params[:id])
   @kopi.destroy
   redirect_to @kopi
-
+end
   end
 
   private
