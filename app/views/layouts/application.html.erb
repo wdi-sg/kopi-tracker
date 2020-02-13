@@ -38,47 +38,53 @@
               <%= link_to "Orders", orders_path,  {:class => "nav-link"} %>
             </li>
           </ul>
-          <% elsif customer_signed_in? %>
+        <% elsif customer_signed_in? %>
           <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="/">Kopi Tracker</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= link_to "Kopis", kopis_path,  {:class => "nav-link"} %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Change my Kopis", "/kopis/new",  {:class => "nav-link"} %>
-            </li>
-            <% if customer_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Asc", "/customers?sort=asc",  {:class => "nav-link"} %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Desc", "/customers?sort=desc",  {:class => "nav-link"} %>
-            </li>
-            <% end %>
-          </ul>
-        <% else %>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
             <a class="navbar-brand" href="/">Kopi Tracker</a>
-          <% end %>
-          <% if user_signed_in? || customer_signed_in? %>
-            <form class="form-inline my-2 my-lg-0">
-              <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
-            </form>
-          <% else %>
-            <form class="form-inline my-2 my-lg-0">
-              <%= link_to "User login", "/users/sign_in", {:class => "mr-2"}%>
-              <%= link_to "Customer login", "/customers/sign_in"%>
-            </form>
-          <% end %>
-        </div>
-      </nav>
-      <div class="container-fluid">
-        <%= yield %>
-      </div>
-    </body>
-  </html>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <%= link_to "Kopis", kopis_path,  {:class => "nav-link"} %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Change my Kopis", "/kopis/new",  {:class => "nav-link"} %>
+                </li>
+                <% if customer_signed_in? %>
+                  <li class="nav-item">
+                    <%= link_to "Noob drinkers", "/customers?sort=asc",  {:class => "nav-link"} %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Caffeine addicts", "/customers?sort=desc",  {:class => "nav-link"} %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Lesser known kopi", "/kopis?sort=asc",  {:class => "nav-link"} %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "Popular kopi", "/kopis?sort=desc",  {:class => "nav-link"} %>
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+                <a class="navbar-brand" href="/">Kopi Tracker</a>
+              <% end %>
+              <% if user_signed_in? || customer_signed_in? %>
+                <form class="form-inline my-2 my-lg-0">
+                  <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+                </form>
+              <% else %>
+                <form class="form-inline my-2 my-lg-0">
+                  <%= link_to "User login", "/users/sign_in", {:class => "mr-2"}%>
+                  <%= link_to "Customer login", "/customers/sign_in"%>
+                </form>
+              <% end %>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+        </body>
+      </html>

@@ -1,3 +1,4 @@
 <% @kopis.each do |kopi| %>
-<p><%= link_to kopi.name , "/kopis/" + kopi.id.to_s %> </p>
+  <p><%= link_to kopi.name , "/kopis/" + kopi.id.to_s %> </p>
+  <p>Owned by: <strong><%= kopi.customers.length %></strong> </p>
 <% end %>

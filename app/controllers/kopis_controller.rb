@@ -8,10 +8,14 @@ class KopisController < ApplicationController
   before_action :check_login, :except => [:show, :index]
 
   def index
-    @kopis = Kopi.all
-
-    puts "*************************"
-    puts current_customer
+    sort_by = params[:sort]
+    if sort_by == "asc"
+      @kopis = Kopi.joins(:customers).group(:id).order("count(customers.id) asc")
+    elsif sort_by == "desc"
+      @kopis = Kopi.joins(:customers).group(:id).order("count(customers.id) desc")
+    else
+      @kopis = Kopi.all
+    end
   end
 
   def new
