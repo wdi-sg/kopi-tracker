@@ -1,11 +1,10 @@
-<p>Add New Kopi</p>
+<h1>Edit Kopi</h1>
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
 
 <%= form.collection_select :roast_id, @roasts, :id, :name %>
 <p></p>
 <%= form.collection_select :origin_id, @origins, :id, :location %>
-
 
   <p>
     <%= form.label :name %><br>

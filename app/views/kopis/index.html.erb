@@ -5,6 +5,25 @@
 <% end %>
 </ul>
 
+<h1>Listing Kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast_id %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+
+
 	<% if user_signed_in? %>
 		<%= link_to 'New Kopi', new_kopi_path %>
 		<%= link_to 'log out', destroy_user_session_url, method: :delete %>

@@ -15,5 +15,9 @@
 # Roast.create(name: "Italian")
 
 # Origin.create(location: "Italy", phone: "1234567")
+Origin.create(location: "Malaysia", phone: "+6031234567")
+Origin.create(location: "Singapore", phone: "+651234567")
+Origin.create(location: "Indonesia", phone: "+621234567")
 
-Kopi.create(name:"Latte", roast_id: 1, origin_id: 1)
+
+# Kopi.create(name:"Latte", roast_id: 1, origin_id: 1)
