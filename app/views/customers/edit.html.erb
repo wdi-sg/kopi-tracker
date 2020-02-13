@@ -1,2 +1,18 @@
-<h1>Customers#edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<h3>Edit Customer</h3>
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.text_field :name %>
+    <%= form.label :name %>
+  </div>
+</div>
+
+<p>
+    <%= form.submit class: 'waves-effect waves-light btn' %>
+</p>
+
+<% end %>
