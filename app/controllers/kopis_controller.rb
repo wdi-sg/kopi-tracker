@@ -19,6 +19,7 @@ class KopisController < ApplicationController
   end
 
   def show
+    @kopi = Kopi.find(params[:id])
   end
 
   private

@@ -24,5 +24,8 @@ Rails.application.routes.draw do
   get "/reports" => "reports#index", as: "reports"
 
   get "/kopis/new" => "kopis#new", as: "new_kopi"
+  get "/kopis/:id" => "kopis#show"
   post "/kopis" => "kopis#create"
+
+  get "/customers/:id" => "customers#show"
 end
