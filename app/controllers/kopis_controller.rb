@@ -3,10 +3,10 @@ class KopisController < ApplicationController
   
   def index
     @kopis = Kopi.all
-    @roasts = Roasts.all
+    @roasts = Roast.all
    
     end
-  end
+  
 
   def new
     @origins = Origin.all

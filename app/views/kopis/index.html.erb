@@ -9,24 +9,27 @@
 
 	</tr>
 
-	<% @kopi.each do |kopi| %>
+	<% @kopis.each do |kopi| %>
 		<tr>
 			<td><%= kopi.name %></td>
-			<td><%= kopi.roast_id.name%></td>
+			<td><%= kopi.roast_id%></td>
 			<td><%= kopi.origin.location %></td>
-			<%= link_to 'Show', kopi_path(kopi) %>
-				<%= link_to 'New Kopi', new_kopi_path %>
+
+			<td><%= link_to 'Show', kopi_path(kopi) %></td>
+				
 				<% if current_user.admin? %>
-				<%= link_to 'Edit', edit_kopi_path(kopi) %>
-				<%= link_to 'Destroy', kopi_path(kopi),
+				<td><%= link_to 'Edit', edit_kopi_path(kopi) %>
+				<td><%= link_to 'Destroy', kopi_path(kopi),
 				method: :delete,
 				data: { confirm: 'Are you sure?' } %></td>
 				<% end %>
+
 		</tr>
-	
+
 
 	<% end %>
 </table>
+	<%= link_to 'New Kopi', new_kopi_path %>
 
 
 <%= link_to 'log out', destroy_user_session_url, method: :delete %>

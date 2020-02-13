@@ -18,10 +18,10 @@
 # Origin.create(phone: '123456789', location: 'Colombia')
 # Origin.create(phone: '123456780', location: 'Puerto Rico')
 
-Kopi.create(name: 'kopi1' , origin_id: 1, roast_id: 5)
-Kopi.create(name: 'kopi2', origin_id: 2, roast_id: 6)
-Kopi.create(name: 'kopi3', origin_id: 3, roast_id: 2)
-Kopi.create(name: 'kopi4', origin_id: 2, roast_id: 4)
-Kopi.create(name: 'kopi5', origin_id: 3, roast_id: 7)
-Kopi.create(name: 'kopi6', origin_id: 4, roast_id: 3)
+Kopi.create(name: 'kopi1' , origin_id: 1, roast_id: 5, user_id:1)
+Kopi.create(name: 'kopi2', origin_id: 2, roast_id: 6, user_id:1)
+Kopi.create(name: 'kopi3', origin_id: 3, roast_id: 2, user_id:1)
+Kopi.create(name: 'kopi4', origin_id: 2, roast_id: 4, user_id:1)
+Kopi.create(name: 'kopi5', origin_id: 3, roast_id: 7, user_id:1)
+Kopi.create(name: 'kopi6', origin_id: 4, roast_id: 3, user_id:1)
 
