@@ -5,3 +5,7 @@
     <li><%= link_to kopi.name, kopi_path(kopi) %></li>
   <% end %>
 </ul>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Edit CUstomer', edit_customer_path, class: 'waves-effect waves-light btn' %>
+<% end %>
