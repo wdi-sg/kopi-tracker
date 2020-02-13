@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
-    before_action :authenticate_user!, :except => [ :show]
+    before_action :authenticate_customer!
+    # , :except => [ :show]
   
   
     def index
