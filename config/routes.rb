@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   get '/customers/:id' => 'customers#show', as: 'customer'
   get '/customers' => 'customers#index'  
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
 
 end

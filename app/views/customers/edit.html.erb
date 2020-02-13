@@ -1,0 +1,15 @@
+<h1>Choose Kopis</h1>
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+    <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', customer_path %>
+
+<h3><%= link_to 'log out', destroy_user_session_url, method: :delete %><h3>

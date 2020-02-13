@@ -24,10 +24,15 @@ class CustomersController < ApplicationController
   
     def update
       @customer = Customer.find(params[:id])
+      @customer.update(customer_params)
+
+      redirect_to customer_path
+      
     end
   
     def edit
       @customer = Customer.find(params[:id])
+      @kopis = Kopi.all()
     end
   
     def destroy
@@ -37,7 +42,7 @@ class CustomersController < ApplicationController
     private
   
     def customer_params
-      params.require(:kopi).permit(:name, :roast_id,  :pound_price, :origin_id)
+      params.require(:customer).permit(:kopi_ids => [])
     end
   end
   

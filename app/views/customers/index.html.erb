@@ -2,7 +2,8 @@
 <h1>Customers</h1>
 <ul>
 <% @customers.each do |customer| %>
-    <li><%= customer.email %></li>
+    <li><%= customer.email %> <%= link_to 'Show', customer_path(customer) %></li>
+
 <% end %>
 </ul>
 

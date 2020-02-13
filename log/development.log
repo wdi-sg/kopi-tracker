@@ -7945,3 +7945,1067 @@ Processing by CustomersController#index as HTML
 Completed 200 OK in 39ms (Views: 29.6ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:29:04 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 234ms (Views: 187.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:32:32 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 1], ["LIMIT", 11]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendered customers/edit.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 7.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_model' for #<Kopi::ActiveRecord_Associations_CollectionProxy:0x00007fee043c5b50>
+Did you mean?  to_xml):
+    1: <h1>Choose Kopis</h1>
+    2: 
+    3: <%= form_with scope: :customer, model: @customer.kopis, local: true do |form| %>
+    4: 
+    5: <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    6: 
+  
+app/views/customers/edit.html.erb:3:in `_app_views_customers_edit_html_erb__4053275052535229246_70330124718660'
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:33:00 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2: 
+    3: <%= form_with scope: :customer, model: @customer, local: true do |form| %>
+    4: 
+    5: <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    6: 
+    7: <% end %>
+    8: 
+  
+app/views/customers/edit.html.erb:5:in `block in _app_views_customers_edit_html_erb__4053275052535229246_70330156648560'
+app/views/customers/edit.html.erb:3:in `_app_views_customers_edit_html_erb__4053275052535229246_70330156648560'
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:34:46 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2: 
+    3: <%= form_with scope: :customer, model: @customer, local: true do |form| %>
+    4: 
+    5: <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    6: 
+    7: <% end %>
+    8: 
+  
+app/views/customers/edit.html.erb:5:in `block in _app_views_customers_edit_html_erb__4053275052535229246_70330127857780'
+app/views/customers/edit.html.erb:3:in `_app_views_customers_edit_html_erb__4053275052535229246_70330127857780'
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:35:52 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/edit.html.erb within layouts/application
+  Rendered customers/edit.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     7:     <%= form.text_field :email %>
+     8:   </p>
+     9: 
+    10: <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    11: 
+    12: <% end %>
+    13: 
+  
+app/views/customers/edit.html.erb:10:in `block in _app_views_customers_edit_html_erb__4053275052535229246_70330198199520'
+app/views/customers/edit.html.erb:3:in `_app_views_customers_edit_html_erb__4053275052535229246_70330198199520'
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:36:32 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:10
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:10
+  Rendered customers/edit.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 103ms (Views: 80.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:37:31 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:10
+  Rendered customers/edit.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 64ms (Views: 40.3ms | ActiveRecord: 5.9ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:37:43 +0800
+  
+ActionController::RoutingError (No route matches [PATCH] "/customers/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:38:54 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 43ms (Views: 29.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:38:57 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:10
+  Rendered customers/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 43ms (Views: 36.7ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:39:00 +0800
+  
+ActionController::RoutingError (No route matches [PATCH] "/customers/1"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:39:43 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5nO6ruRHo9lmVKMe50OpwAIMhGSc9GnSQPBQ/25j/7J1v5+7s13CVLyqxL2dreaed8R5oz2YenXZ1/fIE+3mEw==", "customer"=>{"email"=>"rob@rob.com", "kopi_ids"=>["", "1", "2", "3", "4"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+Completed 400 Bad Request in 12ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: kopi):
+  
+app/controllers/customers_controller.rb:44:in `customer_params'
+app/controllers/customers_controller.rb:28:in `update'
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:40:44 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 64ms (Views: 40.5ms | ActiveRecord: 6.2ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:40:46 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SD698yNJg2ofYB5tdcYZdPDdqdSSu+UnXRtAKkQWiwTb8pjmdFPi58Weec4PKFYqhRVUEzPX9oDEPOcdOZiSpQ==", "customer"=>{"kopi_ids"=>["", "1", "2", "3"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+Unpermitted parameter: :kopi_ids
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 280ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:41:05 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 65ms (Views: 40.9ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:41:08 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gIuINceHmftRrlnzzD5TXVx9MWiugwq+DPQjuCcip+sTR60gkJ34dotQPlC20BwDKbXMrw/vGRmV04SPWqy+Sg==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+Unpermitted parameter: :kopi_ids
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 331ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:41:11 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 45ms (Views: 31.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:41:38 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 64ms (Views: 37.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:41:41 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 47ms (Views: 37.6ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:41:50 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I3IJvxmwxHXpBe7hHfbibnUF9Q4Xr7iILw1QQjIBT+OwviyqTqql+DP7iUJnGK0wAM0IybbDqy+2Kvd1T49WQg==", "customer"=>{"kopi_ids"=>["", "1", "3", "4", "5"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+Unpermitted parameter: :kopi_ids
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 293ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:41:56 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 56ms (Views: 39.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/1edit" for 127.0.0.1 at 2020-02-13 16:42:40 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1edit"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 55ms (Views: 31.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:42:44 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 49ms (Views: 42.5ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:42:48 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+J5YSTf+PHpVRPdmLrjJ1z4+VDFG//6F8Qm5JCAXs/BrUn1cYORd94+6kMVUVoaJS/ap9ueT7SJoLh4TXZmqUQ==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+Unpermitted parameter: :kopi_ids
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 254ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:43:57 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 76ms (Views: 40.8ms | ActiveRecord: 6.3ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:44:00 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wkHTZVCLPHpw1u38A08jtjJbGRvS0l6aNOikz8ZWfwJRjfZwB5Fd96ooil95oWzoR5Pk3HO+TT2tzwP4u9hmow==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 298ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:45:19 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 56ms (Views: 36.9ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:45:22 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4aZf6zcjHAjmRwzkq9abLyCsdsaU/YIdpL7kT/0RTUhyanr+YDl9hTy5a0fRONRxVWSLATWRkbo9mUN4gJ9U6Q==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4", "5"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 2], ["created_at", "2020-02-13 08:45:22.921193"], ["updated_at", "2020-02-13 08:45:22.921193"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.2ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 4], ["created_at", "2020-02-13 08:45:22.923511"], ["updated_at", "2020-02-13 08:45:22.923511"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 5], ["created_at", "2020-02-13 08:45:22.930492"], ["updated_at", "2020-02-13 08:45:22.930492"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 333ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:45:31 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 56ms (Views: 48.8ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:45:37 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ODysEzYdaCI6MldQ17z5fsmXASkfnhryOH1xNk5xKfSr8IkGYQcJr+DMMPOtUrYgvF/87r7yCVWhWtYBM/8wVQ==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7], ["id", 8], ["id", 9], ["id", 10]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 6], ["created_at", "2020-02-13 08:45:37.903637"], ["updated_at", "2020-02-13 08:45:37.903637"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 7], ["created_at", "2020-02-13 08:45:37.908239"], ["updated_at", "2020-02-13 08:45:37.908239"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 8], ["created_at", "2020-02-13 08:45:37.913660"], ["updated_at", "2020-02-13 08:45:37.913660"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 9], ["created_at", "2020-02-13 08:45:37.922106"], ["updated_at", "2020-02-13 08:45:37.922106"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 10], ["created_at", "2020-02-13 08:45:37.925434"], ["updated_at", "2020-02-13 08:45:37.925434"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 331ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:45:55 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 49ms (Views: 37.2ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:46:07 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KlUrVLL3RFnu733f7x2Kjvvn7nbrjIqv0pEQ4Gt4fwu5mQ5B5e0l1DQRGnyV88XQji8TsUrgmQhLtrfXFvZmqg==", "customer"=>{"kopi_ids"=>[""]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE 1=0[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Destroy (0.9ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1 AND "customers_kopis"."kopi_id" IN ($2, $3, $4, $5, $6, $7, $8, $9, $10, $11)[0m  [["customer_id", 1], ["kopi_id", 1], ["kopi_id", 3], ["kopi_id", 2], ["kopi_id", 4], ["kopi_id", 5], ["kopi_id", 6], ["kopi_id", 7], ["kopi_id", 8], ["kopi_id", 9], ["kopi_id", 10]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 290ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:46:14 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:33
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:46:20 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v63wzutcW3G7iN8IEzgHcBMCi0T1BlYtytetQP2JVtQsYdXbvEY6/GF2uKtp1kguZsp2g1RqRYpT8Ap3gAdPdQ==", "customer"=>{"kopi_ids"=>["", "1", "2", "3", "4", "5"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 1], ["created_at", "2020-02-13 08:46:20.907734"], ["updated_at", "2020-02-13 08:46:20.907734"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 2], ["created_at", "2020-02-13 08:46:20.912033"], ["updated_at", "2020-02-13 08:46:20.912033"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 3], ["created_at", "2020-02-13 08:46:20.916052"], ["updated_at", "2020-02-13 08:46:20.916052"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.2ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 4], ["created_at", "2020-02-13 08:46:20.918607"], ["updated_at", "2020-02-13 08:46:20.918607"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 5], ["created_at", "2020-02-13 08:46:20.922633"], ["updated_at", "2020-02-13 08:46:20.922633"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+No template found for CustomersController#update, rendering head :no_content
+Completed 204 No Content in 334ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:50:51 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 72ms (Views: 47.9ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:50:56 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uTmBytoWQvroAY+5c27v6sxHXnO33colfsEKU8Bljpcq9aTfjQwjdzL/6BoJgKC0uY+jtBax2YLn5q1kveuXNg==", "customer"=>{"kopi_ids"=>["", "1", "3"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 3]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Destroy (0.6ms)[0m  [1m[31mDELETE FROM "customers_kopis" WHERE "customers_kopis"."customer_id" = $1 AND "customers_kopis"."kopi_id" IN ($2, $3, $4)[0m  [["customer_id", 1], ["kopi_id", 2], ["kopi_id", 4], ["kopi_id", 5]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+Redirected to http://127.0.0.1:3000/customers/1
+Completed 302 Found in 40ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:50:56 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 29.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:51:00 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 45ms (Views: 34.4ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/customers/1" for 127.0.0.1 at 2020-02-13 16:51:03 +0800
+Processing by CustomersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0J4QhP/xN3U5Nh8d5JzsskKPtiTn0bTT4FEwTJ9HL4Ujl1XROWlUA4av98NfDzsvMLDHzLzVXTWpuP2T/MFHw==", "customer"=>{"kopi_ids"=>["", "1", "2", "3"]}, "commit"=>"Update Customer", "id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[36mCustomer::HABTM_Kopis Create (0.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 2], ["created_at", "2020-02-13 08:51:03.239460"], ["updated_at", "2020-02-13 08:51:03.239460"]]
+  ↳ app/controllers/customers_controller.rb:27
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:27
+Redirected to http://127.0.0.1:3000/customers/1
+Completed 302 Found in 41ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:51:03 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 54ms (Views: 42.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:52:15 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 51ms (Views: 43.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:52:17 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 57ms (Views: 45.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:53:57 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 48ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:54:00 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:54:05 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 47ms (Views: 36.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:54:09 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 35ms (Views: 30.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:56:13 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2020-02-13 16:56:15 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 32.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:56:24 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 28.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:56:25 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:56:25 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/" for 127.0.0.1 at 2020-02-13 16:56:45 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 39ms (Views: 31.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2020-02-13 16:56:46 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2020-02-13 16:56:56 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 50ms (Views: 35.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/3/edit" for 127.0.0.1 at 2020-02-13 16:56:58 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:57:18 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 36ms (Views: 28.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:57:19 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 43ms (Views: 35.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:57:21 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 49ms (Views: 32.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/1/edit" for 127.0.0.1 at 2020-02-13 16:57:22 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:57:23 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 42ms (Views: 29.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2020-02-13 16:58:16 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 41ms (Views: 34.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2020-02-13 16:58:17 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2020-02-13 16:58:20 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 45ms (Views: 30.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/3/edit" for 127.0.0.1 at 2020-02-13 16:58:23 +0800
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/edit.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "kopis"."id" FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/edit.html.erb:5
+  Rendered customers/edit.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 44ms (Views: 36.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2020-02-13 16:58:25 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:4
+  Rendered customers/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 40ms (Views: 32.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2020-02-13 16:58:26 +0800
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/flashrob/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:4
+  Rendered customers/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
