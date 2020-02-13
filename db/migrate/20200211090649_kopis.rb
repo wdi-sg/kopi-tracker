@@ -3,7 +3,7 @@ class Kopis < ActiveRecord::Migration[5.2]
         create_table :kopis do |t|
         t.string :name
         t.references :roast
-        t.references :origin
+        t.references :farm
         t.timestamps
         end
     end

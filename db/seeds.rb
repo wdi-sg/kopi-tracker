@@ -7,16 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-cin = Roast.create( :roastedness => "Cinnamon" )
+cin = Roast.create( :roastedness => "Cinnamon", :user_id => 1 )
 
-light = Roast.create( :roastedness => "Light" )
+light = Roast.create( :roastedness => "Light", :user_id => 1 )
 
-med = Roast.create( :roastedness => "Medium" )
+med = Roast.create( :roastedness => "Medium", :user_id => 1 )
 
-full = Roast.create( :roastedness => "Full" )
+full = Roast.create( :roastedness => "Full", :user_id => 1 )
 
-dark = Roast.create( :roastedness => "Dark" )
+dark = Roast.create( :roastedness => "Dark", :user_id => 1 )
 
-french = Roast.create( :roastedness => "French" )
+french = Roast.create( :roastedness => "French", :user_id => 1 )
 
-ital = Roast.create( :roastedness => "Italian" )
+ital = Roast.create( :roastedness => "Italian", :user_id => 1 )
