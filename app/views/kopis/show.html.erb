@@ -10,6 +10,10 @@
   <% end %>
 </ul>
 
+<% if customer_signed_in? %>
+  <p>Customer can buy this Kopi</p>
+<% end %>
+
 <% if user_signed_in? %>
   <%= link_to 'Order Kopi', new_order_path(kopi: @kopi.id), class: 'waves-effect waves-light btn' %>
 <% end %>
