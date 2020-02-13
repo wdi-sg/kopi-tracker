@@ -21,3 +21,10 @@ Origin.create(:location => 'Italy', :phone => '1234567')
 
 
 Kopi.create(:name => 'Apple', :roast_id => '1', :origin_id => '1')
+
+
+
+Customer.create(:name => 'Haruki')
+Customer.create(:name => 'Poopsie')
+Customer.create(:name => 'Johnny')
+Customer.create(:name => 'Bathsheba')
