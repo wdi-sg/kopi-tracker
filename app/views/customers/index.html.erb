@@ -1,0 +1,11 @@
+
+<h1>Customers</h1>
+<ul>
+<% @customers.each do |customer| %>
+    <li><%= customer.email %></li>
+<% end %>
+</ul>
+
+<p><%= link_to 'Order by amount of kopis ascending', '/customers?sort=ASC' %></p>
+<p><%= link_to 'Order by amount of kopis descending', '/customers?sort=DESC' %></p>
+<p><%= link_to 'All Customers', '/customers' %></p>

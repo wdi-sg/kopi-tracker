@@ -4,7 +4,13 @@ class CustomersController < ApplicationController
   
   
     def index
-      @customer = Customer.scoped
+        if params[:sort] == 'DESC'
+            @customers = Customer.joins(:kopis).group("customers.id").order("count(customers.id) DESC")
+        elsif params[:sort] == 'ASC'
+            @customers = Customer.joins(:kopis).group("customers.id").order("count(customers.id) ASC") 
+        else
+            @customers = Customer.all()
+        end
     end
   
     def show

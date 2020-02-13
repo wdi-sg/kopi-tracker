@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   patch '/roasts/:id' => 'roasts#update'
   delete '/roasts/:id' => 'roasts#destroy'
 
-  get '/customers/:id' => 'customers#show', as: 'customer'  
+  get '/customers/:id' => 'customers#show', as: 'customer'
+  get '/customers' => 'customers#index'  
 
 end
