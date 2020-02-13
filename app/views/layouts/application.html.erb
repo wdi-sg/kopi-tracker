@@ -50,8 +50,16 @@
               <%= link_to "Kopis", kopis_path,  {:class => "nav-link"} %>
             </li>
             <li class="nav-item">
-              <%= link_to "Add Kopi", "/kopis/new",  {:class => "nav-link"} %>
+              <%= link_to "Change my Kopis", "/kopis/new",  {:class => "nav-link"} %>
             </li>
+            <% if customer_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Asc", "/customers?sort=asc",  {:class => "nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Desc", "/customers?sort=desc",  {:class => "nav-link"} %>
+            </li>
+            <% end %>
           </ul>
         <% else %>
           <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">

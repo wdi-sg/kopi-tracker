@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   post "/kopis" => "kopis#create"
 
   get "/customers/:id" => "customers#show", as: "customer"
+  get "/customers/" => "customers#index"
 end
