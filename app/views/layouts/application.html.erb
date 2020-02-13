@@ -73,6 +73,11 @@
               <% end %>
               <% if user_signed_in? || customer_signed_in? %>
                 <form class="form-inline my-2 my-lg-0">
+                  <% if user_signed_in? %>
+                    <span class="mr-2"><%= current_user.email %></span>
+                  <% else %>
+                    <span class="mr-2"><%= current_customer.email %></span>
+                  <% end %>
                   <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
                 </form>
               <% else %>

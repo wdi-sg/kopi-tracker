@@ -10,9 +10,9 @@ class KopisController < ApplicationController
   def index
     sort_by = params[:sort]
     if sort_by == "asc"
-      @kopis = Kopi.joins(:customers).group(:id).order("count(customers.id) asc")
+      @kopis = Kopi.left_joins(:customers).group(:id).order("count(customers.id) asc").limit(10)
     elsif sort_by == "desc"
-      @kopis = Kopi.joins(:customers).group(:id).order("count(customers.id) desc")
+      @kopis = Kopi.left_joins(:customers).group(:id).order("count(customers.id) desc").limit(10)
     else
       @kopis = Kopi.all
     end
