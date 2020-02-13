@@ -6,13 +6,19 @@
 		<% @kopi.each do |kopi| %>
 		<tr>
 <td><%= kopi.name%></td><td><%= link_to "Edit", edit_kopi_path(kopi.id) %></td>
+<td><%= link_to "Delete", kopi_path(kopi.id),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }%></td>
 </tr>
 <% end %>
 <tr>
 	<td></td>
 	<td>
 </td>
-<td><%=link_to "Add", new_kopi_path%></td>
-</tr>
 
+<td><%=link_to "Add", new_kopi_path%></td>
+<td><%= link_to 'logout', destroy_user_session_url, method: :delete %></td>
+</tr>
 </table>
+<span><%= link_to 'Origins', origins_path%></span><span>
+| </span><span><%= link_to 'Roast', roasts_path%></span>

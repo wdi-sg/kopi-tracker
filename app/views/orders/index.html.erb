@@ -1,7 +1,4 @@
-<h3>Order:</h3>
-<% @kopi.each do |kopi| %>
-	<p><%= kopi.name %></p>
-	<% kopi.order.each do |order| %>
-		<p><%= order.id %></p>
-	<% end %>
+ <h1>Orders</h1>
+<% @order.each do |order| %>
+	<%=link_to order.id, orders_path%>
 <% end %>

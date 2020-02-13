@@ -1,4 +1,20 @@
-<h3>Roast:</h3>
-<% @roast.each do |roast| %>
-<p><%= link_to roast.name, roast_path(roast.name) %></p>
+<h1>List of roast</h1>
+<table>
+	<tr>
+		<th><h2>Types</h2></th>
+		<tr>
+		<% @roast.each do |roast| %>
+		<tr>
+<td><%= roast.name%></td><td><%= link_to "Edit", edit_roast_path(roast.id) %></td>
+</tr>
 <% end %>
+<tr>
+	<td></td>
+	<td>
+</td>
+<td><%=link_to "Add", new_roast_path%></td>
+<td><%= link_to 'logout', destroy_user_session_url, method: :delete %></td>
+</tr>
+</table>
+<span><%= link_to 'Kopi', kopis_path%></span><span>
+| </span><span><%= link_to 'Origin', origins_path%></span>
