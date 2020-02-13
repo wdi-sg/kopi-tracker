@@ -9,52 +9,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-  <% if user_signed_in? %>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-      <a class="navbar-brand" href="/">Kopi Tracker</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= link_to "Add origin", new_origin_path,  {:class => "nav-link"} %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Add coffee", new_kopi_path,  {:class => "nav-link"} %>
-          </li>
-          <% if current_user.is_admin %>
-          <li class="nav-item">
-            <%= link_to "Add roast", new_roast_path,  {:class => "nav-link"} %>
-          </li>
-          <% end %>
-          <li class="nav-item">
-            <%= link_to "New order", new_order_path,  {:class => "nav-link"} %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Origins", origins_path,  {:class => "nav-link"} %>
-          </li>
-           <li class="nav-item">
-            <%= link_to "Orders", orders_path,  {:class => "nav-link"} %>
-          </li>
-        </ul>
-        <% else %>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <a class="navbar-brand" href="/">Kopi Tracker</a>
-        <% end %>
-        <% if user_signed_in? %>
-          <form class="form-inline my-2 my-lg-0">
-            <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
-          </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to "Add origin", new_origin_path,  {:class => "nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Add coffee", new_kopi_path,  {:class => "nav-link"} %>
+            </li>
+            <% if current_user.is_admin %>
+              <li class="nav-item">
+                <%= link_to "Add roast", new_roast_path,  {:class => "nav-link"} %>
+              </li>
+            <% end %>
+            <li class="nav-item">
+              <%= link_to "New order", new_order_path,  {:class => "nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Origins", origins_path,  {:class => "nav-link"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Orders", orders_path,  {:class => "nav-link"} %>
+            </li>
+          </ul>
         <% else %>
-          <form class="form-inline my-2 my-lg-0">
-            <%= link_to "Log in", "/users/sign_in"%>
-          </form>
-        <% end %>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+            <a class="navbar-brand" href="/">Kopi Tracker</a>
+          <% end %>
+          <% if user_signed_in? %>
+            <form class="form-inline my-2 my-lg-0">
+              <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+            </form>
+          <% else %>
+            <form class="form-inline my-2 my-lg-0">
+              <%= link_to "Log in", "/users/sign_in"%>
+            </form>
+          <% end %>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <%= yield %>
       </div>
-    </nav>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>

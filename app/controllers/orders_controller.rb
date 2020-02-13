@@ -2,8 +2,12 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
 
   def index
+    if user_signed_in?
     @user = current_user
     @orders = current_user.order
+    else
+      redirect_to root_path
+    end
   end
 
   def new
