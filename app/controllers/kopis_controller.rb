@@ -1,6 +1,5 @@
 class KopisController < ApplicationController
-  before_action :authenticate_user!
-  # , :except => [ :show, :index ]
+  before_action :authenticate_user!, :except => [ :show]
 
   def index
     @kopi = Kopi.scoped
@@ -12,6 +11,7 @@ class KopisController < ApplicationController
 
   def show
     @kopi = Kopi.find(params[:id])
+    @customers = @kopi.customers
   end
 
   def create

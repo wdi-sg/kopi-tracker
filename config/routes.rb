@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/kopis/new' => 'kopis#new', as: 'kopi_new'
   post '/kopis' => 'kopis#create'
+  get '/kopis/:id' => 'kopis#show', as: 'kopi'
 
   get '/roasts' => 'roasts#index'
   get '/roasts/new' => 'roasts#new', as: 'roast_new'
@@ -18,5 +19,7 @@ Rails.application.routes.draw do
   get '/roasts/:id/edit' => 'roasts#edit', as: 'edit_roast'
   patch '/roasts/:id' => 'roasts#update'
   delete '/roasts/:id' => 'roasts#destroy'
+
+  get '/customers/:id' => 'customers#show', as: 'customer'  
 
 end
