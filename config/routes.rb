@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   devise_for :users
   root "origins#index"
   get "/origins" => "origins#show_all", as: "origins"
@@ -23,9 +24,10 @@ Rails.application.routes.draw do
 
   get "/reports" => "reports#index", as: "reports"
 
+  get "/kopis" => "kopis#index"
   get "/kopis/new" => "kopis#new", as: "new_kopi"
   get "/kopis/:id" => "kopis#show"
   post "/kopis" => "kopis#create"
 
-  get "/customers/:id" => "customers#show"
+  get "/customers/:id" => "customers#show", as: "customer"
 end
