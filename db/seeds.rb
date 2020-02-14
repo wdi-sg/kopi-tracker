@@ -24,9 +24,14 @@
 
 # kopis
 # arabica = Kopi.create(name: "arabica" , roast: cinnamon, origin_id: 2 , roast_id: 1)
-java = Kopi.create(name: "java" , origin_id: 2, roast_id: 2)
-robusta = Kopi.create(name: "robusta" , origin_id: 1, roast_id: 3)
-liberica = Kopi.create(name: "liberica" , origin_id: 4, roast_id: 4)
-espresso = Kopi.create(name: "abc" , origin_id: 3, roast_id: 5)
-defg = Kopi.create(name: "defg" , origin_id: 4, roast_id: 6)
-hij = Kopi.create(name: "hij" , origin_id: 5, roast_id: 7)
+# java = Kopi.create(name: "java" , origin_id: 2, roast_id: 2)
+# robusta = Kopi.create(name: "robusta" , origin_id: 1, roast_id: 3)
+# liberica = Kopi.create(name: "liberica" , origin_id: 4, roast_id: 4)
+# espresso = Kopi.create(name: "abc" , origin_id: 3, roast_id: 5)
+# defg = Kopi.create(name: "defg" , origin_id: 4, roast_id: 6)
+# hij = Kopi.create(name: "hij" , origin_id: 5, roast_id: 7)
+
+# orders
+kopi_id = 2
+roast_id = 3
+weight_in_lbs = 5

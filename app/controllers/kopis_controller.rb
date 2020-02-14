@@ -17,6 +17,7 @@ end
   end
 
   def new
+     @kopis = Kopi.all
       @roasts = Roast.all
       @origins = Origin.all
 
@@ -26,10 +27,14 @@ end
   end
 
   def create
-     @kopi = Kopi.new(kopi_params)
+    if current_user
+      @kopi = Kopi.new(kopi_params)
+      @kopi.user = current_user
 
-     @kopi.save
-     redirect_to @kopi
+      puts @kopi.user
+      @kopi.save
+      redirect_to "/origins/" + @kopi.origin.id.to_s
+    end
   end
 
   def update
@@ -41,7 +46,7 @@ end
   private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast_id, :origin_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id, :price_per_lbs)
   end
 
 end
