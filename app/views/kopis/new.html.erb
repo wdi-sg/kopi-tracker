@@ -1,0 +1,29 @@
+<h1>Add a Kopi</h1>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <p>
+
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.collection_select(:roast_id, @roasts , :id, :name) %>
+  </p>
+
+  <p>
+    <%= form.label :origin %><br>
+    <%= form.collection_select(:origin_id, @origins, :id, :location) %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', kopis_path %>
+
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>

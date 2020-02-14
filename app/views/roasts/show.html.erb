@@ -1,0 +1,17 @@
+<h3>Roast:</h3>
+<p>
+<%= @roast.name %>
+</p>
+
+<h3>Kopis:</h3>
+<p>
+<%roastName = @roast.name%>
+<%= Kopi.where(Roast.find_by(name: roastName))%>
+</p>
+
+
+<td><%= link_to 'Back', roasts_path %></td>
+
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>

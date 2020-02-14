@@ -1,0 +1,17 @@
+<h1><%= @kopi.name %></h1>
+
+<p>Roast:
+<%=@kopi.roast.name%>
+</p>
+
+<p>Origin:
+<%= @kopi.origin.location%>
+<p>
+<%=link_to 'Show Details', origin_path %>
+</p>
+
+<%= link_to 'Back to Kopis', kopis_path %>
+
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>

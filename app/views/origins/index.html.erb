@@ -1,0 +1,17 @@
+<h1>Our Kopi Origins</h1>
+<table>
+  <tr>
+    <th>Locations</th>
+
+  </tr>
+<% @origins.each do |origin| %>
+  <tr>
+    <td><%= origin.location %></td>
+    <td><%= link_to 'Show', origin_path(origin) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>

@@ -1,0 +1,20 @@
+<h1>Orders</h1>
+ <table>
+  <thead>
+    <tr>
+      <th>Kopi</th>
+      <th>Roast</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+    <% @orders.each do |order| %>
+      <td><%= order.kopi.name %></td>
+      <td><%= order.kopi.roast.name %></td>
+      <td><%= order.weight %></td>
+    <%end%>
+    </tr>
+  </table>
+  <p><strong> Price </strong></p>
