@@ -1,8 +1,10 @@
-<p>
-  <strong>Kopi:</strong>
-  <%= @kopi.name %>
-</p>
+<h2><%= @kopi.name %></h2>
+<h4>From: <%= @kopi.origin.location %></h4>
+<h4>Roast: <%= @kopi.roast.name %></h4>
 
-<%= link_to("Kopis", root_path, {:class => "nav-link"})%>
-
-<!-- TO DO SHOW, HOW TO SHOW ROAST NAME AND LOCATION TOO? -->
+<h4>Customers selling this Kopi:</h4>
+<ul>
+  <% @kopi.customers.each do |customer| %>
+    <li><%= link_to customer.name, customer_path(customer.id)%></li>
+  <% end %>
+</ul>

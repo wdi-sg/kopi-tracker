@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -18,5 +19,13 @@ Rails.application.routes.draw do
   get '/origins/:id/edit' => 'origins#edit', as: 'edit_origin'
   patch '/origins/:id' => 'origins#update'
   delete '/origins/:id' => 'origins#destroy'
+
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show' , as: 'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+  delete '/customers/:id' => 'customers#destroy'
 
 end
