@@ -55,5 +55,4 @@ end
     def kopi_params
       params.require(:kopi).permit(:name, :roast_id, :origin_id)
     end
-
 end

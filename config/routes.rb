@@ -4,7 +4,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :kopis
 
-  root to: 'kopis#index'
+  root 'kopis#index'
+
+
+  get "/kopis/:id" => "kopis#show"
+  post "/kopis" => "kopis#create"
+
+  get "/customers/:id" => "customers#show"
+
+
+
+
 
   # get '/kopis' => 'kopis#index', as: 'kopis'
   # get '/kopis/new' => 'kopis#new', as: 'new_kopi'
