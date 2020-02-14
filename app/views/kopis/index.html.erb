@@ -1,0 +1,35 @@
+<h1>Hello WOlrd</h1>
+
+
+<% if user_signed_in? %>
+<h1>HELLO</h1>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+<% if customer_signed_in? %>
+<%= link_to 'log out', destroy_customer_session_url, method: :delete %>
+<% else %>
+<%= link_to 'log in', new_customer_session_url %>
+<% end %>
+
+<h1>Kopi</h1>
+
+<ul>
+    <% @kopis.each do |kopi| %>
+    <li><%= kopi.name %></li>
+    <p><%= kopi.roast.roastedness %><p>
+    <p><%= kopi.farm.name %><p>
+        <strong>Customers</strong>
+        <% kopi.customers.each do |customer| %>
+            <p><%= customer.email %></p>
+        <% end %>
+    <% end %>
+</ul>
+
+
+
+
+
+
