@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @origin.location %></h1>
+  <div class="list-group">
+	  <span href="#" class="list-group-item list-group-item-action active">
+	    List of Kopis from this origin:
+	  </span>
+	  <% @origin.kopi.each do |kopi| %>
+	  	<%= link_to(kopi.name, kopi_path(kopi), {:class => "list-group-item list-group-item-action"}) %>
+	  <% end %>
+	</div>
+  <hr class="my-4">
+  <p class="lead">Phone Number: <%= @origin.phone %></p>
+</div>
+<% if user_signed_in? %>
+	<%= link_to('Edit', edit_origin_path, {:class => "btn btn-warning btn-lg"}) %>
+	<%= link_to('Destroy', origin_path(@origin), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% end %>

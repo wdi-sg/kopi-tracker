@@ -1,0 +1,25 @@
+<h1 class="display-4">New Customer</h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+  <div class="form-group">
+    <%= form.label :name %><br>
+    <%= form.text_field(:name, {:class => "form-control"}) %>
+  </div>
+
+  <div class="form-check">
+    <p class="lead">Kopi</p><br>
+    <div class="checkbox">
+	    <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name do |cb| %>
+		    <label class="checkbox-inline mr-5">
+			   	<%= cb.check_box %>
+			   	<%= cb.label %>
+		  	</label>
+		  <% end %>
+		</div>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit({:class => "btn btn-primary"}) %>
+  </div>
+<% end %>
