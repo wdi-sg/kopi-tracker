@@ -1,0 +1,37 @@
+<h1>All Kopis</h1>
+<%= form_tag(kopis_path, method: "get") do %>
+        <%= select_tag(:sort, options_for_select(["Sort By Popularity",['Asc','asc'],['Desc','desc']]), :onchange=>'this.form.submit();',class:"form-control" ) %>
+    <%end%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Origin</th>
+    <th>Roast</th>
+    <th>Price per Pound</th>
+    <th>Customers Stocking</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+        <td><%= kopi.name %></td>
+        <td><%= kopi.origin.location %></td>
+        <td><%= kopi.roast.name %></td>
+        <td><%= kopi.price_per_pound %></td>
+        <td style="text-align: center;"><%= kopi.customers.length %></td>
+        <td><%= link_to 'Show', kopi_path(kopi) %></td>
+        <td><%= link_to 'Edit', edit_kopi_path(kopi) %>
+        <td><%= link_to 'Destroy', kopi_path(kopi),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<% if user_signed_in? %>
+<%= link_to 'New kopi', new_kopi_path %><br/><br/>
+<% end %>
+
+<%= link_to 'To Origins', origins_path %><br/>
+<%= link_to 'To Roasts', roasts_path %><br/>
+<%= link_to 'To Orders', orders_path %><br/>
+<%= link_to 'To Customers', customers_path %><br/>

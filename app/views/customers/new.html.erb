@@ -1,0 +1,28 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@customer.errors.count, "error") %> prohibited
+        this customer from being saved:
+      </h2>
+      <ul>
+        <% @customer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', customers_path %>

@@ -1,0 +1,22 @@
+<p>
+  <strong>Location:</strong>
+  <%= @origin.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @origin.phone %>
+</p>
+
+<p>Related Kopis</p>
+<ul>
+    <%@origin.kopi.each do |kopi|%>
+        <li><%= link_to kopi.name, kopi %></li>
+
+    <%end%>
+</ul>
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_origin_path(@origin) %> |
+<% end %>
+
+<%= link_to 'Back', origins_path %>

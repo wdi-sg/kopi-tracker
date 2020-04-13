@@ -1,0 +1,40 @@
+<h1>All Orders</h1>
+
+
+    <%if @order == nil &&user_signed_in? ==false%>
+        <p>This page is only for users</p>
+    <%else%>
+    <table>
+  <tr>
+    <th>Order Number</th>
+    <th>Kopi</th>
+    <th>Weight</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+      <% @orders.each do |order| %>
+        <tr>
+            <td><%= order.id %></td>
+            <td><%= order.kopi.name %></td>
+            <td><%= order.weight %></td>
+
+            <%price = BigDecimal.new(order.kopi.price_per_pound) * BigDecimal.new(order.weight)%>
+
+            <td><%= price %></td>
+            <td><%= link_to 'Show', order_path(order) %></td>
+            <td><%= link_to 'Edit', edit_order_path(order) %>
+            <td><%= link_to 'Destroy', order_path(order),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        </table>
+
+      <% end %>
+    <% end %>
+
+<% if user_signed_in? %>
+    <%= link_to 'New order', new_order_path %><br/><br/>
+<% end %>
+<%= link_to 'To Origins', origins_path %><br/>
+<%= link_to 'To Kopis', kopis_path %><br/>
+<%= link_to 'To Reports', report_path %><br/>

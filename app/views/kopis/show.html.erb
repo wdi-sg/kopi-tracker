@@ -1,0 +1,32 @@
+<p>
+  <strong>Location:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.origin.location %>
+</p>
+
+<p>
+  <strong>Price per Pound:</strong>
+  <%= @kopi.price_per_pound %>
+</p>
+
+<p><strong>Customers stocking this:</strong></p>
+<ul>
+    <% @kopi.customers.each do |customer|%>
+        <li><%=customer.name%></li>
+    <%end%>
+</ul>
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_kopi_path(@kopi) %><br/>
+<% end %>
+
+<%= link_to 'Back to Kopis Index', kopis_path %><br/>
+<%= link_to 'Back to Origins Index', origins_path %>
