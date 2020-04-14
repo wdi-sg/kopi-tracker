@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KopiTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  	<% if user_signed_in? %>
+  	<p>Welcome <%= current_user.email %></p>
+		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+		<% else%>
+			<h1>YOU'RE NOT LOGGED IN</h1>
+			<%= link_to 'log in', new_user_session_url %>
+			<%= link_to 'sign up', new_user_registration_url %>
+
+		<% end %>
+    <%= yield %>
+  </body>
+</html>

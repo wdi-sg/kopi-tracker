@@ -1,0 +1,20 @@
+<h2>All Customers</h2>
+
+<%= form_tag(customers_path, method: "get") do %>
+        <%= select_tag(:sort, options_for_select(["Sort By Number of Kopis",['Ascending','asc'],['Descending','desc']]), :onchange=>'this.form.submit();',class:"form-control" ) %>
+    <%end%>
+
+<% @customers.each do |customer| %>
+   <div>
+     <p><%= customer.name %> <%= link_to 'Show', customer_path(customer) %> </p>
+
+     <ul>
+     <% customer.kopis.each do |kopi| %>
+       <li>
+         <%=kopi.name %> <%= link_to 'Show', kopi_path(kopi) %>
+       </li>
+     <% end %>
+     </ul>
+
+   </div>
+ <% end %>
