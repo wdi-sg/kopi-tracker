@@ -1,0 +1,22 @@
+<html>
+<% if user_signed_in? %>
+<h3><%= current_user.email %></h3>
+<%= link_to 'New Farm', new_farm_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'Kopis', kopis_path %>
+<% else %>
+<h1>You're not logged in</h1>
+<%= link_to 'log in', new_user_session_url %>
+<%= link_to 'Kopis', kopis_path %>
+<% end %>
+
+<% @farms.each do |place| %>
+    <p>
+        <h3>Location: <%= place.location %></h3>
+        <ul>
+        <li><h4>This farm's contact is <%= place.phone_number %></h4>
+        </ul>
+    </p>
+    <br/>
+<%end %>
+</html>

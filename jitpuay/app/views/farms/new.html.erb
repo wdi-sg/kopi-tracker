@@ -1,0 +1,16 @@
+<%= form_with scope: :farm, url: farms_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+
+  <p>
+    <%= form.label :phone_number %><br>
+    <%= form.text_area :phone_number %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
