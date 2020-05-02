@@ -1,0 +1,16 @@
+<h3>Origin</h3>
+
+<p>
+  <strong>Location:</strong>
+  <%= @origin.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @origin.phone %>
+</p>
+
+<% if current_user.try(:admin?) %>
+    <%= link_to 'Edit', edit_origin_path(@origin), class: "btn btn-warning" %>
+<% end %>
+<%= link_to 'Back', origins_path, class: "btn btn-dark" %>

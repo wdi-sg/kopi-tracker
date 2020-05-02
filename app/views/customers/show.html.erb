@@ -1,0 +1,24 @@
+<h3>Customer</h3>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Kopis:</strong>
+    <ul>
+  <% @customer.kopis.each do |kopi| %>
+    <li><%= kopi.name %></li>
+  <% end %>
+    </ul>
+</p>
+
+<% if customer_signed_in? %>
+    <% if current_customer.id == @customer.id %>
+        <%= link_to 'Edit', edit_customer_path(@customer), class: "btn btn-warning" %>
+    <% end %>
+<% end %>
+<%= link_to 'Back', customers_path, class: "btn btn-dark" %>
