@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stockists</h1>
+<% if customer_signed_in? %>
+	<span>Signed In As: <%= current_customer.email %></span>&nbsp&nbsp
+	<%= link_to 'Log Out', destroy_customer_session_url, method: :delete, class: "btn btn-outline-success" %>
+<% else %>
+	<%= link_to 'Stockist Log In', new_customer_session_url, class: "btn btn-outline-success" %>
+	<%= link_to 'New Stockist', new_customer_registration_path, class: "btn btn-primary" %>
+<% end %><br><br>
+<form action="/customers">
+	<select name="sort_by" id="sort_by">
+    <option value="desc">Top Stockists</option>
+    <option value="asc">Alphabetical</option>
+  </select>
+  <button type="submit">Sort</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+	    <th>Name</th>
+	    <th>Stocklist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+	    	<td><%= customer.name %></td>
+	    	<td><%= customer.kopis.length %></td>
+        <td><%= link_to 'Show', customer, class: "btn btn-success" %></td>
+				<% if customer_signed_in? %>
+					<% if current_customer.id == customer.id %>
+			      <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-warning" %></td>
+			      <td><%= link_to 'Destroy', customer, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			    <% end %>
+			  <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

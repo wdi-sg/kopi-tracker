@@ -1,0 +1,18 @@
+<h1>Edit Stockist</h1>
+
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @customer, class: "btn btn-success" %>
+<%= link_to 'Back', customers_path, class: "btn btn-dark" %>
