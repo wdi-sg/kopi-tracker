@@ -1,0 +1,31 @@
+<h1>All Orders listings</h1>
+
+<table>
+	<tr>
+		<th>Order Id</th>
+		<th>Kopi Order</th>
+		<th>Weight</th>
+		<th>Sale</th>
+	</tr>
+
+	<% @orders.each do |order| %>
+		<tr>
+			<td><%= order.id %></td>
+			<td><%= order.kopi.name %></td>
+			<td><%= order.weight %></td>
+			<td><%= order.sale %></td>
+			<td><%= link_to 'Show', order_path(order) %></td>
+			<td><%= link_to 'Edit', edit_order_path(order) %></td>
+			<td><%= link_to "Delete", @order, :confirm => "Are you sure?", :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+
+<% if user_signed_in? %>
+<% if @user.role == "customer" %>
+<%= link_to 'New Order', new_order_path %>
+<% end %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'log in', new_user_session_url %>
+<% end %>

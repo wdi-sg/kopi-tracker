@@ -1,0 +1,23 @@
+<h1>Show Kopi Page</h1>
+
+<p><strong>Kopi Name</strong></p>
+<p><%= @kopi.name %></p>
+
+<p><strong>Kopi Price Per Pound</strong></p>
+<p><%= @kopi.pricePerPound %></p>
+
+<p><strong>Kopi Farm</strong></p>
+<p><%= @kopi.farm.name %></p>
+
+<p><strong>Kopi Roast</strong></p>
+<p><%= @kopi.roast.name %></p>
+
+<p><strong>Customers</strong></p>
+<ul>
+	<% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Kopi Index', root_path %>
+<%= link_to "Delete", @kopi, :confirm => "Are you sure?", :method => :delete %>
