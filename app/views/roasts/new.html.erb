@@ -1,0 +1,18 @@
+<h1>New Roast Form</h1>
+
+<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, size: "30" %>
+  </p>
+
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<h2><%= link_to 'BACK TO MAIN', root_path %></h2>

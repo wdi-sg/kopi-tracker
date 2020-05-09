@@ -1,0 +1,17 @@
+<h2>NEW ORDER FORM</h2>
+
+<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+
+<p>
+    <%= form.label :weight %>(in pounds)<br>
+    <%= form.text_area :weight %>
+</p>
+
+    <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+
+
+<p>
+    <%= form.submit %>
+</p>
+<% end %>

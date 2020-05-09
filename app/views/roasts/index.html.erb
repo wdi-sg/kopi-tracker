@@ -1,0 +1,9 @@
+<h3>Welcome to Roast Page &nbsp <%= link_to 'NEW ROAST', new_roast_path %></h3>
+
+<h4>Name</h4>
+<% @roasts.each do |roast| %>
+<p><%= roast.name %> <small><%= link_to 'Edit', edit_roast_path(roast) %></small>
+<small><%= link_to 'Delete', roast_path(roast),
+method: :delete,
+data: { confirm: 'Are you sure?' } %></small></p>
+<% end %>

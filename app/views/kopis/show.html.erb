@@ -1,0 +1,11 @@
+<h2>Kopis Show Time!</h2>
+
+<h3>Kopi Name: <%= @kopiName %></h3>
+
+<p> List of Customers Carrying </p>
+<ul>
+<% @stocks.each do |stock| %>
+
+<li><%=stock.customer.name %></li>
+<% end %>
+</ul>

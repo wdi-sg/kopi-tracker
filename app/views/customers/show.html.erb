@@ -1,0 +1,16 @@
+<h2>Show <%= @customerName %> Stocks</h2>
+
+<h4>List of Stocks Carrying</h4>
+<table>
+    <tr>
+        <th>Kopi Name</th>
+        <th>Quantity</th>
+    </tr>
+<% @stocks.each do |stock|%>
+    <tr>
+        <td><%= @kopis.find(stock[0]).name %></td>
+        <td><%= stock[1] %></td>
+    </tr>
+<% end %>
+
+</table>
