@@ -1,0 +1,12 @@
+<h1>Origin Show Page</h1>
+
+<h3><%= @origin.location %></h3>
+<p>Phone Number: <%= @origin.phone %></p>
+<p>Kopi from this origin</p>
+<div>
+  <% @origin.kopi.each do |kopi|  %>
+    <p>Name: <%= kopi.name %></p>
+    <p>Roast: <%= kopi.roast %></p>
+  <% end %>
+
+</div>

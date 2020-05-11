@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# costarica = Origin.new(location: "Costa Rica", phone: "12345678")
+# kopi = Kopi.new(name: "green bean", roast: "Italian", origin: costarica)
