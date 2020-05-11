@@ -4,6 +4,7 @@ class KopisController < ApplicationController
 
   def show
     @kopi = Kopi.find(params[:id])
+    @origin = Origin.find(@kopi.origin_id)
   end
 
   def new
