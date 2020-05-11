@@ -1,0 +1,30 @@
+<h1>Hello Report</h1>
+
+  <h1>Total sales : <%= @sale %></h1>
+  <h1>Number of Sales: $<%= @totalEarning %></h1>
+  <table>
+<% @combines.each do |combine| %>
+		<tr>
+			<td>Name of product</td>
+      <td><%= combine.name %></td>
+    </tr>
+    <tr>
+    	<td>Price per pound</td>
+      <td>$<%= combine.price %></td>
+    </tr>
+
+       <tr>
+    	<td>Price per pound</td>
+<td><%= combine.pound %></td>
+    </tr>
+
+           <tr>
+    	<td>Total</td>
+<td>$<%= combine.pound * combine.price %></td>
+    </tr>
+    <tr></tr>
+
+
+  <% end %>
+
+  </table>
