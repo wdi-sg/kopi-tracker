@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :roasts
   resources :orders
   resources :kopis
   resources :origins
