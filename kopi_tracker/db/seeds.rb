@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+cinnamon = Roast.create(kind: 'Cinnamon')
+light = Roast.create(kind: "Light")
+medium = Roast.create(kind: "Medium")
+full_city = Roast.create(kind: "Full City")
+dark = Roast.create(kind: "Dark")
+french = Roast.create(kind: "French")
+italian = Roast.create(kind: "Italian")
+
+brazil = Origin.create(location: "Brazil", phone_num: 123)
+vietnam = Origin.create(location:  "Vietnam", phone_num: 456)
+colombia = Origin.create(location: "Colombia", phone_num: 789)
+switzerland = Origin.create(location: "Switzerland", phone_num: 010)
