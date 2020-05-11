@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_132319) do
+ActiveRecord::Schema.define(version: 2020_05_11_154206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.integer "roast"
+    t.integer "roast_id"
     t.bigint "origin_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2020_05_11_132319) do
   create_table "origins", force: :cascade do |t|
     t.string "location"
     t.integer "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "roasts", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

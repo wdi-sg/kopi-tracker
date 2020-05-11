@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :roasts
   root 'kopis#index'
   resources :origins
   resources :kopis

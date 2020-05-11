@@ -1,6 +1,7 @@
 class KopisController < ApplicationController
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
   before_action :set_origin, only: [:show, :edit, :update, :destroy]
+  before_action :set_roast, only: [:show, :edit, :update, :destroy]
 
   # GET /kopis
   # GET /kopis.json
@@ -9,6 +10,10 @@ class KopisController < ApplicationController
     @origins = {}
     Origin.all.each do |origin|
       @origins[origin.id] = origin.location
+    end
+    @roasts = {}
+    Roast.all.each do |roast|
+      @roasts[roast.id] = roast.name
     end
   end
 
@@ -21,6 +26,7 @@ class KopisController < ApplicationController
   def new
     @kopi = Kopi.new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   # GET /kopis/1/edit
@@ -76,8 +82,12 @@ class KopisController < ApplicationController
     def set_origin
       @origin = Origin.find_by(id: @kopi.origin_id)
     end
+
+    def set_roast
+      @roast = Roast.find_by(id: @kopi.roast_id)
+    end
     # Only allow a list of trusted parameters through.
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id)
     end
 end

@@ -16,7 +16,7 @@
     <% @kopis.each do |kopi| %>
       <tr>
         <td><%= kopi.name %></td>
-        <td><%= kopi.roast %></td>
+        <td><%= @roasts[kopi.roast_id] %></td>
         <td><%= @origins[kopi.origin_id] %></td>
         <td><%= link_to 'Show', kopi %></td>
         <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>

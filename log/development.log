@@ -2109,3 +2109,227 @@ Processing by KopisController#index as HTML
 Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 1.7ms | Allocations: 7654)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Changeroast (20200511153237)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "kopis" ALTER COLUMN "roast" TYPE references[0m
+  [1m[35m (24.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Changeroast (20200511153237)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.8ms)[0m  [1m[35mALTER TABLE "kopis" RENAME COLUMN "roast" TO "roast_id"[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "roast" ("id" bigserial primary key, "name" character varying, "level" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511153237"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (27.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Renameroasts (20200511154206)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mALTER TABLE "roast" RENAME TO "roasts"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER INDEX "roast_pkey" RENAME TO "roasts_pkey"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "public"."roast_id_seq" RENAME TO "roasts_id_seq"[0m
+  [1m[36mprimary::SchemaMigration Create (24.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511154206"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (27.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (27.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRoasts (20200511154442)
+  [1m[35m (19.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying, "level" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (1.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cinnamon"], ["level", 1], ["created_at", "2020-05-11 15:52:31.168030"], ["updated_at", "2020-05-11 15:52:31.168030"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (25.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Light"], ["level", 2], ["created_at", "2020-05-11 15:52:31.174163"], ["updated_at", "2020-05-11 15:52:31.174163"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "City"], ["level", 3], ["created_at", "2020-05-11 15:52:31.205994"], ["updated_at", "2020-05-11 15:52:31.205994"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Full City"], ["level", 4], ["created_at", "2020-05-11 15:52:31.211456"], ["updated_at", "2020-05-11 15:52:31.211456"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dark"], ["level", 5], ["created_at", "2020-05-11 15:52:31.216468"], ["updated_at", "2020-05-11 15:52:31.216468"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.4ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "French"], ["level", 6], ["created_at", "2020-05-11 15:52:31.220995"], ["updated_at", "2020-05-11 15:52:31.220995"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoast Create (0.8ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "level", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Italian"], ["level", 7], ["created_at", "2020-05-11 15:52:31.225426"], ["updated_at", "2020-05-11 15:52:31.225426"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoast Load (1.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."name" = $1 LIMIT $2[0m  [["name", "Italian"], ["LIMIT", 1]]
+Started GET "/kopis" for ::1 at 2020-05-11 23:59:21 +0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  [1m[36mOrigin Load (8.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/controllers/kopis_controller.rb:10:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (10.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mRoast Load (20.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  Rendered kopis/index.html.erb within layouts/application (Duration: 124.0ms | Allocations: 18636)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 259ms (Views: 142.7ms | ActiveRecord: 87.5ms | Allocations: 50847)
+
+
+Started GET "/kopis" for ::1 at 2020-05-11 23:59:48 +0800
+Processing by KopisController#index as HTML
+  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/controllers/kopis_controller.rb:10:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1837)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 48.8ms | ActiveRecord: 1.5ms | Allocations: 7625)
+
+
+Started GET "/kopis" for ::1 at 2020-05-12 00:01:05 +0800
+Processing by KopisController#index as HTML
+  [1m[36mOrigin Load (1.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/controllers/kopis_controller.rb:10:in `index'
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/controllers/kopis_controller.rb:14:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 6161)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 29.7ms | ActiveRecord: 74.6ms | Allocations: 22249)
+
+
+Started GET "/kopis/3" for ::1 at 2020-05-12 00:01:12 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_kopi'
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_origin'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 494)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 31.1ms | ActiveRecord: 1.1ms | Allocations: 6271)
+
+
+Started GET "/kopis/3" for ::1 at 2020-05-12 00:03:22 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:78:in `set_kopi'
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:82:in `set_origin'
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:86:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 505)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 165ms (Views: 27.1ms | ActiveRecord: 82.7ms | Allocations: 21615)
+
+
+Started GET "/kopis" for ::1 at 2020-05-12 00:03:29 +0800
+Processing by KopisController#index as HTML
+  [1m[36mOrigin Load (0.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/controllers/kopis_controller.rb:11:in `index'
+  [1m[36mRoast Load (5.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/controllers/kopis_controller.rb:15:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (27.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (Duration: 36.5ms | Allocations: 1877)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 26.4ms | ActiveRecord: 33.9ms | Allocations: 7582)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 00:03:30 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (17.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:25
+  Rendered kopis/_form.html.erb (Duration: 47.3ms | Allocations: 5364)
+  Rendered kopis/new.html.erb within layouts/application (Duration: 49.4ms | Allocations: 5736)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 49.6ms | ActiveRecord: 17.1ms | Allocations: 10002)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 00:04:49 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mRoast Load (17.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/_form.html.erb:20
+  [1m[36mOrigin Load (19.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/_form.html.erb:24
+  Rendered kopis/_form.html.erb (Duration: 103.2ms | Allocations: 10111)
+  Rendered kopis/new.html.erb within layouts/application (Duration: 106.3ms | Allocations: 10478)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 202ms (Views: 78.2ms | ActiveRecord: 96.3ms | Allocations: 22374)
+
+
+Started POST "/kopis" for ::1 at 2020-05-12 00:04:56 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"authenticity_token"=>"3w3AsUmW1Xp6tSL9XOpIvEl3Zcz7GdT7ogCqfzton9yUjXxUTVDUTmRMt4HB3pmXfxDPNGAuJOoVwTSIwDEy4w==", "kopi"=>{"name"=>"balbalbal", "roast_id"=>"4", "origin_id"=>"1"}, "commit"=>"Create Kopi"}
+  [1m[35m (20.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:42:in `block in create'
+  [1m[36mOrigin Load (4.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:42:in `block in create'
+  [1m[36mRoast Load (7.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:42:in `block in create'
+  [1m[36mKopi Create (40.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast_id", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "balbalbal"], ["roast_id", 4], ["origin_id", 1], ["created_at", "2020-05-11 16:04:56.545567"], ["updated_at", "2020-05-11 16:04:56.545567"]]
+  ↳ app/controllers/kopis_controller.rb:42:in `block in create'
+  [1m[35m (46.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:42:in `block in create'
+Redirected to http://localhost:3000/kopis/9
+Completed 302 Found in 143ms (ActiveRecord: 119.2ms | Allocations: 6978)
+
+
+Started GET "/kopis/9" for ::1 at 2020-05-12 00:04:56 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mKopi Load (26.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:79:in `set_kopi'
+  [1m[36mOrigin Load (3.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:83:in `set_origin'
+  [1m[36mRoast Load (9.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:87:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 509)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 21.9ms | ActiveRecord: 39.4ms | Allocations: 6985)
+
+
+Started GET "/kopis" for ::1 at 2020-05-12 00:04:58 +0800
+Processing by KopisController#index as HTML
+  [1m[36mOrigin Load (1.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/controllers/kopis_controller.rb:11:in `index'
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/controllers/kopis_controller.rb:15:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (28.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  Rendered kopis/index.html.erb within layouts/application (Duration: 39.0ms | Allocations: 1959)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 57.0ms | ActiveRecord: 30.5ms | Allocations: 7665)
+
+
