@@ -1,0 +1,2 @@
+class KopisController < ApplicationController
+end
