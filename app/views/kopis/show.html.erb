@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @kopi.name %></h2>
+<h5>
+  Roast: Level <%= @kopi.roast.level %>: <%= @kopi.roast.name %>
+</h5>
+<h5>
+  Origin: <%= @kopi.origin.location %>
+</h5>
+
 <%= link_to 'Edit', edit_kopi_path(@kopi) %> |
 <%= link_to 'Back', kopis_path %>
