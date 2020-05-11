@@ -1,0 +1,29 @@
+<h1>All Our Kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price Per Pound</th>
+    <th>Origin</th>
+    <th>Roasts</th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.pricePerPound %></td>
+      <td><%= kopi.origin.name %></td>
+      <td><%= kopi.roast.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <td><%= link_to "Delete", @order, :confirm => "Are you sure?", :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if user_signed_in? %>
+<%= link_to 'New Order', new_order_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% end %>
+
+<%= link_to 'log in', new_user_session_url %>
