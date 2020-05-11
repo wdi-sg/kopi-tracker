@@ -1,0 +1,23 @@
+<p><%= link_to 'New Coffee', new_kopi_path %></p>
+<p><%= link_to 'New Farm', new_origin_path %></p>
+<p><%= link_to 'Home Page', root_path %></p>
+
+<h2> List of Farms </h2>
+<table>
+  <tr>
+    <th>Farm's location</th>
+    <th>Farm's phone number</th>
+  </tr>
+
+  <% @origins.each do |a| %>
+    <tr>
+      <td><%= a.location %></td>
+      <td><%= a.phone %></td>
+      <td><%= link_to 'Show', origin_path(a) %></td>
+      <td><%= link_to 'Edit', edit_origin_path(a) %></td>
+      <td><%= link_to 'Destroy', origin_path(a),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

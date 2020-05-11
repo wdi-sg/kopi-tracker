@@ -4,6 +4,7 @@ class OriginsController < ApplicationController
   end
 
   def index
+    @origins = Origin.all
   end
 
   def create
@@ -14,6 +15,22 @@ class OriginsController < ApplicationController
 
   def show
     @origins = Origin.find(params[:id])
+  end
+
+  def edit
+    @origins = Origin.find(params[:id])
+  end
+
+  def update
+    @origins = Origin.find(params[:id])
+    @origins.update(origin_params)
+    redirect_to @origins
+  end
+
+  def destroy
+    @origins = Origin.find(params[:id])
+    @origins.destroy
+    redirect_to @origins
   end
 
 end
