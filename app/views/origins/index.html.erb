@@ -1,0 +1,16 @@
+<h1>HELLLO ORIGINS</h1>
+<%= link_to 'List your farm', new_origin_path %>
+<%= link_to 'Find kopi a farm', new_kopi_path %>
+<%= link_to 'List of Kopis', kopis_path %>
+
+
+<% @origins.each do |origin| %>
+<div style="border: 1px solid black">
+<p style="font-weight: bold; font-size: 20px">Location:</p> <%= origin.location %>
+<p style="font-weight: bold; font-size: 20px">Phone Number: </p><%= origin.phone_no %>
+<p><%= link_to 'Edit', edit_origin_path(origin) %></p>
+<p><%= link_to 'Delete', origin_path(origin), method: :delete %></p>
+
+
+<% end %>
+<div>

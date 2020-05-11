@@ -1,0 +1,18 @@
+<h1>Edit Origin</h1>
+
+<%= form_with scope: :origin, model: @origin, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+  </p>
+
+  <p>
+    <%= form.label :phone_no %><br>
+    <%= form.text_area :phone_no %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
