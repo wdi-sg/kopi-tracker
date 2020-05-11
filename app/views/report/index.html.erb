@@ -1,4 +1,31 @@
 <div class="total-sales">
-		Total Sales today: $
+		<h3>Total Sales today: </h3>
+		$
 		<%= @total_sales %>
+		<div class="sales-by-kopi">
+				<h3>Sales By Kopi</h3>
+				<% @total_sales_by_kopi.each do |kopi| %>
+				<p>
+						Name:
+						<%= kopi[:name]%>
+				</p>
+				<p>
+						Sold: $
+						<%= kopi[:total_sales]%>
+				</p>
+				<% end %>
+		</div>
+		<div class="sales-by-origin">
+				<h3>Sales By Origin</h3>
+				<% @total_sales_by_origin.each do |origin| %>
+				<p>
+						Location:
+						<%= origin[:location]%>
+				</p>
+				<p>
+						Sold: $
+						<%= origin[:total_sales]%>
+				</p>
+				<% end %>
+		</div>
 </div>
