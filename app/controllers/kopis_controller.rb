@@ -1,10 +1,12 @@
-class KopiController < ApplicationController
+class KopisController < ApplicationController
   def index
       
   end
 
 
   def show
+      @kopi = Kopi.find(params[:id])
+      @kopi_farm = KopiFarm.find(@kopi.origin_id)
   end
 
   def new
