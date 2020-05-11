@@ -5,6 +5,7 @@ class RoastsController < ApplicationController
 
   def show
     @roast = Roast.find(params[:id])
+    @kopis = Kopi.where(roast_id: params[:id])
   end
 
   private
