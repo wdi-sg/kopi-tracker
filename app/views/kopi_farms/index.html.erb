@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="jumbotron">
+<h1>Welcome to Kopi Tracker.</h1>
+
+
+<h2>Kopi Farms</h2>
+
+<table class="table">
+	<tr>
+            <th scope="col">#</th>
+
+		<th scope="col">Location</th>
+		<th scope="col">Phone Number</th>
+            <th scope="col">View</th>
+	</tr>
+	<% @kopi_farms.each do |farm| %>
+		<tr>
+                        <td> <%= farm.id%> </td>
+
+            <td> <%= farm.location%> </td>
+            <td> <%= farm.phone_num%> </td>
+            <td> <%= link_to 'View Farm', farm_path(farm) %> </td>
+		</tr>
+      <% end %>      
+</table>
+
+</div>
