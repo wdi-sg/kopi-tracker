@@ -1,0 +1,10 @@
+<h2>List of Origins</h2>
+<ul>
+<% @origins.each do |origin| %>
+  <li><%= origin.location %> - <%= origin.phone %></li>
+<% end %>
+</ul>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Origin', new_origin_path, class: 'waves-effect waves-light btn'%>
+<% end %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KopiTracker</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo left">Kopi Trackr</a>
+        <ul id="nav-mobile" class="right">
+          <li><%= link_to "Kopis", kopis_path %></li>
+          <li><%= link_to "Origins", origins_path %></li>
+          <li><%= link_to "Orders", orders_path %></li>
+          <li><%= link_to "Customers", customers_path %></li>
+          <% if current_user.try(:admin?) %>
+            <li><%= link_to "Roasts", roasts_path %></li>
+          <% end %>
+          <% if user_signed_in? %>
+            <li><%= link_to 'log out', destroy_user_session_url, method: :delete, class: "waves-effect waves-light btn" %></li>
+          <% else %>
+            <li><%= link_to 'Log In / Register', new_user_session_url, class: "waves-effect waves-light btn" %></li>
+
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+    <%= yield %>
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

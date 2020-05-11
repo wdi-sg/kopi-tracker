@@ -1,0 +1,11 @@
+<h3>Orders</h3>
+<ul>
+<% @orders.each do |order| %>
+
+  <li><%= link_to 'Order ID ' + order.id.to_s, order_path(order.id) %> <%= order.weight %>kg of <%= order.kopi.name %> for total: $<%= order.weight * order.kopi.price_per_kg%></li>
+<% end %>
+</ul>
+
+<% if user_signed_in? %>
+  <%= link_to 'Order Kopi', new_order_path, class: 'waves-effect waves-light btn' %>
+<% end %>

@@ -1,0 +1,22 @@
+<h2>New Origin</h2>
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.text_field :location %>
+    <%= form.label :location %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.text_field :phone %>
+    <%= form.label :phone %>
+  </div>
+</div>
+
+<p>
+  <%= form.submit class: 'waves-effect waves-light btn'%>
+</p>
+
+<% end %>

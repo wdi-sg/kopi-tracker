@@ -1,0 +1,17 @@
+<h3>Edit Roast</h3>
+<h5>Super secret admin thing</h5>
+
+<%= form_with scope: :roast, model: @roast, local: true do |form| %>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= form.text_field :name %>
+    <%= form.label :name %>
+  </div>
+</div>
+
+<p>
+    <%= form.submit class: 'waves-effect waves-light btn' %>
+</p>
+
+<% end %>

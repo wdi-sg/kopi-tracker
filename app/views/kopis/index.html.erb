@@ -1,0 +1,25 @@
+<h2>Hello Kopi</h2>
+
+<h5>Filter Coffee?</h5>
+<div class="row">
+  <div class="input-field col s12">
+    <%= form_tag({}, {:method => :get}) do %>
+    <%= select_tag :roast, options_for_select(@roasts.collect { |r| r.name}, params[:roast]), include_blank: true, :onchange => "this.form.submit();", class: 'browser-default' %>
+    <% end %>
+  </div>
+</div>
+
+<h2>List of Kopis</h2>
+<ul>
+<% @kopis.each do |kopi| %>
+  <li><%= link_to kopi.name, kopi_path(kopi.id) %> - $<%= kopi.price_per_kg %> per kg</li>
+<% end %>
+
+</ul>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Kopi', new_kopi_path, class: 'waves-effect waves-light btn'%>
+<% end %>
+
+<p>
+  <%= link_to 'Log In / Register', new_customer_session_url, class: "waves-effect waves-light btn" %>

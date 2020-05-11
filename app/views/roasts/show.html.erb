@@ -1,0 +1,9 @@
+<h2><%= @roast.name %></h2>
+<h3>Coffees with this roast:</h3>
+<ul>
+  <% @kopis.each do |kopi| %>
+  <li><%= link_to kopi.name, kopi_path(kopi) %></li>
+  <% end %>
+</ul>
+<%= link_to 'Edit', edit_roast_path(@roast.id), class:'waves-effect waves-light btn' %>
+<%= link_to 'Roasts', roasts_path, class:'waves-effect waves-light btn' %>
