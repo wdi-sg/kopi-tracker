@@ -1,0 +1,28 @@
+<h1>Edit Kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :origin_id %><br>
+    <%= form.text_field :origin_id %>
+  </p>
+
+  <p>
+    <%= form.label :roast_id %><br>
+    <%= form.text_field :roast_id %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>
+<%= link_to 'log in', new_user_session_url %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>

@@ -1,0 +1,8 @@
+<h1>Origin: <%= @origin.location %></h1>
+
+<h3>kopis:</h3>
+<% @origin.kopi.each do |kopi| %>
+<p><%= kopi.name %></p>
+<p><%= kopi.roast.name %></p>
+<%= link_to 'Edit', edit_origin_path(@origin) %>
+<% end %>
