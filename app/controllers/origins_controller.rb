@@ -11,8 +11,7 @@ class OriginsController < ApplicationController
 
   def create
     @origin = Origin.new(origin_params)
-    puts "===================================="
-    puts @origin
+
     @origin.save
     redirect_to @origin
   end

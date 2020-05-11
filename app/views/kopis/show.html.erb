@@ -1,0 +1,22 @@
+<div class="container single-container">
+	<div class="row">
+		<div class="col-md">
+			<p class="name">
+				<strong><%= @kopi.name %></strong>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md">
+			<p class="roast">
+				<%= @kopi.roast %>
+			</p>
+		</div>
+	</div>
+
+	<div class="row">
+			<%= link_to 'edit', edit_kopi_path(@kopi), class:"btn btn-secondary" %>
+			<%= link_to 'delete', kopi_path(@kopi), data: {:confirm => "Are you sure?"}, :method => :delete, class:"btn btn-danger" %>
+		</div>
+	</div>
+</div>
