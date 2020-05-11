@@ -1,0 +1,20 @@
+<p>
+  <strong>Place:</strong>
+  <%= @farm.location %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @farm.phone %>
+</p>
+<p>
+	<strong>Kopi Produced</strong>
+</p>
+<ol>
+  <% @kopis.each do |kopi| %>
+
+      <li><%= kopi.name %></li>
+      <p><%= link_to 'Show', kopi_path(kopi) %></p>
+  <% end %>
+ </ol>
+<%= link_to 'Back', root_path %>

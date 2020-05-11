@@ -1,0 +1,30 @@
+<h1>Kopi Data</h1>
+
+
+<h2>Farms</h2>
+  <% @farms.each do |farm| %>
+
+      <p><%= farm.location %></p>
+      <p><%= link_to 'Show', farm_path(farm) %></p>
+  <% end %>
+
+
+<h2>Kopi</h2>
+  <% @kopis.each do |kopi| %>
+
+      <p><%= kopi.name %></p>
+      <p><%= link_to 'Show', kopi_path(kopi) %></p>
+  <% end %>
+
+
+
+
+
+
+
+<p>
+  <%= link_to 'New farm', new_farm_path %>
+</p>
+<p>
+  <%= link_to 'New kopi', new_kopi_path %>
+</p>
