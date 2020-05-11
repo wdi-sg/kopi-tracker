@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'report/index'
+  get '/report', to: 'report#index'
   resources :roasts
   resources :orders
   resources :kopis

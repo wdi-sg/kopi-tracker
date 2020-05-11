@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_110506) do
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.bigint "origin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

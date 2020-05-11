@@ -27,24 +27,24 @@ roasts_list = [
   "Italian"
 ]
 
-roasts_list.each do |name|
-  Roast.create(name: name)
+roasts_list.each do |roastname|
+  Roast.create(name: roastname)
 end
 
 kopis_list = [
- ["Starfvcks Basic Blend", "1", 3.2],
- ["KNNBCCBTL", "2", 4],
- ["Starfvcks Rich Kids Blend", "3", 4.1],
- ["PSCafe Rips You Off Blend", "4", 4.3],
- ["Hipsters Only Blend", "5", 5.25],
- ["Decaffeinated Because You Like The Taste Blend", "6", 2.35],
- ["Arabica That Sounds Racist Blend", "7", 1.25],
- ["Weak Blend For Americans", "2", 0.25],
- ["Taste Like Farts Blend", "1", 0.05]
+ ["Starfvcks Basic Blend", 1, 1, 3.2],
+ ["KNNBCCBTL", 2, 2, 4],
+ ["Starfvcks Rich Kids Blend", 3, 3, 4.1],
+ ["PSCafe Rips You Off Blend", 4, 4, 4.3],
+ ["Hipsters Only Blend", 5, 2, 5.25],
+ ["Decaffeinated Because You Like The Taste Blend", 6, 1, 2.35],
+ ["Arabica That Sounds Racist Blend", 7, 3, 1.25],
+ ["Weak Blend For Americans", 2, 4, 0.25],
+ ["Taste Like Farts Blend", 1, 4, 0.05]
 ]
 
-kopis_list.each do |name, roast_id, origin_id, price_per_pound|
-  Kopi.create(name: name, roast_id: roast_id, origin_id: origin_id, price_per_pound: price_per_pound)
+kopis_list.each do |kopiname, roast_id, origin_id, price_per_pound|
+  Kopi.create(name: kopiname, roast_id: roast_id, origin_id: origin_id, price_per_pound: price_per_pound)
 end
 
 orders_list = [
