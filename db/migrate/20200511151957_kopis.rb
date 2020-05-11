@@ -4,6 +4,7 @@ class Kopis < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :roast_id
       t.integer :origin_id
+      t.decimal :price
     end
   end
 end

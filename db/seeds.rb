@@ -42,9 +42,21 @@ mexico = Origin.create(location: "Mexico" , phone: '1238')
 
 
 
-Kopi.create(name: 'Arabica',roast: italian, origin: africa)
-Kopi.create(name: 'Robusta',roast: light, origin: vietnam )
-Kopi.create(name: 'Sulawesi',roast: dark, origin: sumatra )
-Kopi.create(name: 'Benguet',roast: italian, origin: phillipines )
-Kopi.create(name: 'Santos',roast: french, origin: s_america )
-Kopi.create(name: 'Caliente',roast: cinnamon, origin: mexico )
+arabica = Kopi.create(name: 'Arabica',roast: italian, origin: africa, price: 2.1)
+
+robusta = Kopi.create(name: 'Robusta',roast: light, origin: vietnam , price: 2.2)
+
+sulawesi = Kopi.create(name: 'Sulawesi',roast: dark, origin: sumatra , price: 2.3)
+
+benguet = Kopi.create(name: 'Benguet',roast: italian, origin: phillipines , price: 2.4)
+
+santos = Kopi.create(name: 'Santos',roast: french, origin: s_america , price: 2.5)
+
+caliente = Kopi.create(name: 'Caliente',roast: cinnamon, origin: mexico , price: 2.6)
+
+Order.create(kopi: arabica, weight: 5.0)
+Order.create(kopi: robusta, weight: 6.0)
+Order.create(kopi: sulawesi, weight: 7.0)
+Order.create(kopi: benguet, weight: 8.0)
+Order.create(kopi: santos, weight: 9.0)
+Order.create(kopi: caliente, weight: 10.0)
