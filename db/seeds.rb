@@ -18,13 +18,13 @@ origins_list.each do |location, phone|
 end
 
 roasts_list = [
-  ["Cinnamon"],
-  ["Light"],
-  ["City/Medium"],
-  ["Full City"],
-  ["Dark"],
-  ["French"],
-  ["Italian"]
+  "Cinnamon",
+  "Light",
+  "City/Medium",
+  "Full City",
+  "Dark",
+  "French",
+  "Italian"
 ]
 
 roasts_list.each do |name|
