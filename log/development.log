@@ -2299,3 +2299,327 @@ Processing by OriginsController#show as HTML
 Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/origins/1" for ::1 at 2020-05-12 00:04:08 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 1]]
+  ↳ app/views/origins/show.html.erb:14
+  Rendered origins/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 00:04:12 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:12
+  Rendered origins/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/origins/2" for ::1 at 2020-05-12 00:04:13 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 2]]
+  ↳ app/views/origins/show.html.erb:14
+  Rendered origins/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/2" for ::1 at 2020-05-12 00:04:15 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:34
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:36
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 00:04:23 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:12
+  Rendered origins/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/origins/1" for ::1 at 2020-05-12 00:04:24 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 1]]
+  ↳ app/views/origins/show.html.erb:14
+  Rendered origins/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/origins/" for ::1 at 2020-05-12 00:05:16 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:12
+  Rendered origins/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/origins/" for ::1 at 2020-05-12 00:06:12 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.1ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendered origins/index.html.erb within layouts/application (236.1ms)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_origin' for #<#<Class:0x00007f9b51f28430>:0x00007f9b50c171e8>
+Did you mean?  new_origin_url):
+    1: <h1>Origin Index Page</h1>
+    2: 
+    3: <%= link_to 'New', origin_path(new_origin) %>
+    4: 
+    5: <br/>
+    6: 
+  
+app/views/origins/index.html.erb:3:in `_app_views_origins_index_html_erb___1518465256369997957_70152525768140'
+Started GET "/origins/" for ::1 at 2020-05-12 00:06:31 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendered origins/index.html.erb within layouts/application (230.8ms)
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_origin' for #<#<Class:0x00007f9b51f28430>:0x00007f9b50bee900>
+Did you mean?  new_origin_url):
+    1: <h1>Origin Index Page</h1>
+    2: 
+    3: <%= link_to 'New', origins_path(new_origin) %>
+    4: 
+    5: <br/>
+    6: 
+  
+app/views/origins/index.html.erb:3:in `_app_views_origins_index_html_erb___1518465256369997957_70152525684780'
+Started GET "/origins/" for ::1 at 2020-05-12 00:08:05 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendered origins/index.html.erb within layouts/application (154.3ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new' for #<#<Class:0x00007f9b51f28430>:0x00007f9b579b19b0>
+Did you mean?  next):
+    1: <h1>Origin Index Page</h1>
+    2: 
+    3: <%= link_to 'New', origin_path(new) %>
+    4: 
+    5: <br/>
+    6: 
+  
+app/views/origins/index.html.erb:3:in `_app_views_origins_index_html_erb___1518465256369997957_70152583221620'
+Started GET "/origins/" for ::1 at 2020-05-12 00:09:46 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:14
+  Rendered origins/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/origins/" for ::1 at 2020-05-12 00:10:07 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:15
+  Rendered origins/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/origins/" for ::1 at 2020-05-12 00:10:51 +0800
+Processing by OriginsController#index as HTML
+  Rendering origins/index.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/origins/index.html.erb:15
+  Rendered origins/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/origins/1" for ::1 at 2020-05-12 00:10:58 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 1]]
+  ↳ app/views/origins/show.html.erb:14
+  Rendered origins/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/origins/1" for ::1 at 2020-05-12 00:11:22 +0800
+Processing by OriginsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/origins_controller.rb:18
+  Rendering origins/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."origin_id" = $1[0m  [["origin_id", 1]]
+  ↳ app/views/origins/show.html.erb:19
+  Rendered origins/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 00:11:32 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:6
+  Rendered kopis/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-12 00:12:10 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hY/BDFwxbD1NLXUu+r2kqJD+dZMdLBnbOs3zWFWAu33v02oeHmgn+aACd9AbT+HJs+GtO1R0S0EL4w0ZKHFHcA==", "kopi"=>{"origin_id"=>"4", "name"=>"kof", "roast"=>"French"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:21
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:21
+  [1m[36mKopi Create (0.3ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "origin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "kof"], ["roast", "French"], ["origin_id", 4], ["created_at", "2020-05-11 16:12:10.791567"], ["updated_at", "2020-05-11 16:12:10.791567"]]
+  ↳ app/controllers/kopis_controller.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:21
+Redirected to http://localhost:3000/kopis/4
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/kopis/4" for ::1 at 2020-05-12 00:12:10 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:34
+  [1m[36mOrigin Load (0.2ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:36
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/kopis/4" for ::1 at 2020-05-12 00:12:20 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:34
+  [1m[36mOrigin Load (0.1ms)[0m  [1m[34mSELECT  "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:36
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.3ms)
+
+
