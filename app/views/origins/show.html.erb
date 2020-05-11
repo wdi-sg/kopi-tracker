@@ -3,10 +3,22 @@
 <h3><%= @origin.location %></h3>
 <p>Phone Number: <%= @origin.phone %></p>
 <p>Kopi from this origin</p>
+<br>
 <div>
-  <% @origin.kopi.each do |kopi|  %>
-    <p>Name: <%= kopi.name %></p>
-    <p>Roast: <%= kopi.roast %></p>
-  <% end %>
+  <table>
 
+    <tr>
+      <th style="text-align: left">Kopi</th>
+      <th style="text-align: left">Roast</th>
+    </tr>
+  <% @origin.kopi.each do |kopi|  %>
+    <tr>
+      <td style="width: 100px"><%= kopi.name %></td>
+      <td style="width: 100px" ><%= kopi.roast %></td>
+      <td style="width: 100px"><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+
+
+  <% end %>
+  </table>
 </div>

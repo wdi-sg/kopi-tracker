@@ -1,1 +1,20 @@
 <h1>Kopi Index Page</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th style="text-align: left">Coffee</th>
+    <th style="text-align: left">Roast</th>
+    <th style="text-align: left">Origin</th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td style="width: 100px"><%= kopi.name %></td>
+      <td style="width: 100px"><%= kopi.roast %></td>
+      <td style="width: 100px"><%= kopi.origin.location %></td>
+      <td style="width: 100px"><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>

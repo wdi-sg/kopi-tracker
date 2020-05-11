@@ -1,4 +1,8 @@
 class OriginsController < ApplicationController
+  def index
+      @origins = Origin.all
+      @kopis = Kopi.all
+  end
 
   def new
   end

@@ -1,1 +1,19 @@
 <h1>Origin Index Page</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th style="text-align: left">Location</th>
+    <th style="text-align: left">Phone</th>
+    <!-- <th style="text-align: left">Kopi</th> -->
+  </tr>
+
+  <% @origins.each do |origin| %>
+    <tr>
+      <td style="width: 100px"><%= origin.location %></td>
+      <td style="width: 100px"><%= origin.phone %></td>
+      <td style="width: 100px"><%= link_to 'Show', origin_path(origin) %></td>
+    </tr>
+  <% end %>
+</table>
