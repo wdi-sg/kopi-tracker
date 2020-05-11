@@ -1,0 +1,22 @@
+<div class="container single-container">
+	<div class="row">
+		<div class="col-md">
+			<p class="name">
+				<strong>ORDER ID: <%= @order.id %></strong>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md">
+			<p class="roast">
+				WEIGHT: <%= @order.weight %>
+			</p>
+		</div>
+	</div>
+
+	<div class="row">
+			<%= link_to 'edit', edit_order_path(@order), class:"btn btn-secondary" %>
+			<%= link_to 'delete', order_path(@order), data: {:confirm => "Are you sure?"}, :method => :delete, class:"btn btn-danger" %>
+		</div>
+	</div>
+</div>

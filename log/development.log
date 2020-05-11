@@ -3629,3 +3629,139 @@ FOREIGN KEY ("kopi_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/kopis/1" for ::1 at 2020-05-11 23:16:51 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:6:in `show'
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:7:in `show'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 21.3ms | ActiveRecord: 6.7ms | Allocations: 18372)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 23:32:05 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:15
+  Rendered kopis/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 6105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 58.7ms | ActiveRecord: 4.2ms | Allocations: 27512)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-11 23:37:10 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 72)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 5753)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-11 23:37:28 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2064)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3356)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    2: <%= form_with scope: :order, url: orders_path, local: true do |form| %>
+    3: 	<div class="form-group">
+    4: 		<%= form.label :kopi %><br>
+    5: 		<%= form.collection_select :kopi_id, @kopis, :id, :name, class: "form-control" %>
+    6: 	</div>
+    7: 
+    8: 	<div class="form-group">
+  
+app/views/orders/new.html.erb:5
+app/views/orders/new.html.erb:2
+Started GET "/orders/new" for ::1 at 2020-05-11 23:41:07 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:5
+  Rendered orders/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 5174)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 3.4ms | Allocations: 10060)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-11 23:44:49 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:5
+  Rendered orders/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 3281)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.3ms | Allocations: 7640)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-11 23:45:34 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:5
+  Rendered orders/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1424)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms | Allocations: 5864)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-11 23:49:50 +0800
+  
+SyntaxError (/home/bobby/floobits/floobits_demo/modules/kopi-tracker/app/controllers/orders_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/orders_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/orders_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/orders_controller.rb:32: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/orders/new" for ::1 at 2020-05-11 23:51:53 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:5
+  Rendered orders/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 4965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 3.6ms | Allocations: 10325)
+
+
+Started POST "/orders" for ::1 at 2020-05-11 23:52:01 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"authenticity_token"=>"laHjh/Ld11K4R9w/lenr1tUHeamPzIaXoWSN2kX+sjiW8otIRz5ugmREDPgYlBPe1xkxThrEnJxDAcE+UHknWQ==", "order"=>{"kopi_id"=>"1", "weight"=>"23"}, "submit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:16:in `create'
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:16:in `create'
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("weight", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["weight", 23], ["kopi_id", 1], ["created_at", "2020-05-11 15:52:01.564248"], ["updated_at", "2020-05-11 15:52:01.564248"]]
+  ↳ app/controllers/orders_controller.rb:16:in `create'
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:16:in `create'
+Redirected to http://localhost:3000/orders/1
+Completed 302 Found in 41ms (ActiveRecord: 22.1ms | Allocations: 9526)
+
+
+Started GET "/orders/1" for ::1 at 2020-05-11 23:52:01 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6:in `show'
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 291)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 4653)
+
+
+Started GET "/orders/1" for ::1 at 2020-05-11 23:55:16 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:6:in `show'
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.2ms | Allocations: 5266)
+
+
