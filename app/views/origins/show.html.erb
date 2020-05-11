@@ -1,0 +1,21 @@
+<div class="container single-container">
+	<div class="row">
+		<div class="col-md">
+			<p class="name">
+				<strong><%= @origin.location %></strong>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md">
+			<p class="phone">
+				<%= @origin.phone %>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+			<%= link_to 'edit', edit_origin_path(@origin), class:"btn btn-secondary" %>
+			<%= link_to 'delete', origin_path(@origin), data: {:confirm => "Are you sure?"}, :method => :delete, class:"btn btn-danger" %>
+		</div>
+	</div>
+</div>
