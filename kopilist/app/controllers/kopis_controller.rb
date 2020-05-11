@@ -42,7 +42,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id)
+    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price)
   end
 
 end

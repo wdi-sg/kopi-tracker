@@ -24,6 +24,14 @@
   <% end %>
 
 
+  <h2>Order</h2>
+  <% @orders.each do |order| %>
+
+      <p>Order: <%= order.id %></p>
+      <p><%= link_to 'Show', order_path(order) %></p>
+  <% end %>
+
+
 
 
 
@@ -32,4 +40,7 @@
 </p>
 <p>
   <%= link_to 'New kopi', new_kopi_path %>
+</p>
+<p>
+  <%= link_to 'New order', new_order_path %>
 </p>
