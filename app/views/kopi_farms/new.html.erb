@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="jumbotron">
+
+<%= form_with scope: :kopi_farm, url: kopi_farms_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location, :required => true %>
+  </p>
+
+  <p>
+    <%= label_tag(:phone_num, "Phone Number") %><br>
+    <%= form.text_area :phone_num, :required => true%>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br/><%= link_to 'Back to Home', root_path, :class => "btn btn-primary" %>
+</div>

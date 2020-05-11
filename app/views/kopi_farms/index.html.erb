@@ -3,6 +3,7 @@
 <div class="jumbotron">
 <h1>Welcome to Kopi Tracker.</h1>
 
+<%= link_to 'New Farm', new_kopi_farm_path, :class => 'btn btn-success mb-3'%>
 
 <h2>Kopi Farms</h2>
 
@@ -13,6 +14,10 @@
 		<th scope="col">Location</th>
 		<th scope="col">Phone Number</th>
             <th scope="col">View</th>
+                        <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+
+
 	</tr>
 	<% @kopi_farms.each do |farm| %>
 		<tr>
@@ -20,8 +25,11 @@
 
             <td> <%= farm.location%> </td>
             <td> <%= farm.phone_num%> </td>
-            <td> <%= link_to 'View Farm', farm_path(farm) %> </td>
-		</tr>
+            <td> <%= link_to 'View', kopi_farm_path(farm) %> </td>
+	      <td> <%= link_to 'Edit', edit_kopi_farm_path(farm) %> </td>
+            <td> <%= link_to 'Delete', kopi_farm_path(farm), method: :destroy, data: {confirm: 'Sure you wanna delete?'} %> </td>
+
+            </tr>
       <% end %>      
 </table>
 

@@ -3,8 +3,8 @@
 <div class="jumbotron">
 <h3> <%= @kopi_farm.location %></h3>
 <p> Contact: <%= @kopi_farm.phone_num %></p>
-<%= link_to "Previous", farm_path(@kopi_farm.id-1), :class => "btn btn-outline-dark" if @kopi_farm.id!=1 %>
-<%= link_to "Next", farm_path(@kopi_farm.id+1), :class => "btn btn-outline-dark" if @kopi_farm.id!=KopiFarm.count %>
+<%= link_to "Previous", kopi_farm_path(@kopi_farm.id-1), :class => "btn btn-outline-dark" if @kopi_farm.id!=1 %>
+<%= link_to "Next", kopi_farm_path(@kopi_farm.id+1), :class => "btn btn-outline-dark" if @kopi_farm.id!=KopiFarm.count %>
 
 <table class="table">
 	<tr>
@@ -20,7 +20,7 @@
       <% end %>  
       <tr>
 </table>
-
-<%= link_to "Back to All Farms", root_path %>
+<%= link_to "Edit", edit_kopi_farm_path(@kopi_farm), :class => 'btn btn-warning' %>
+<%= link_to "Back to All Farms", root_path,  :class => 'btn btn-info' %>
 
 </div>
