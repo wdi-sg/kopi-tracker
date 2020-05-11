@@ -4,6 +4,8 @@ class KopisController < ApplicationController
     end
   
     def new
+        @farms = Farm.all
+        @roasts = Roast.all
     end
   
     def edit
@@ -18,6 +20,8 @@ class KopisController < ApplicationController
   
     def show
       @kopi = Kopi.find(params[:id])
+      @farm = Farm.find(@kopi.farm_id)
+      @roast = Roast.find(@kopi.roast_id)
     end
   
     def update
