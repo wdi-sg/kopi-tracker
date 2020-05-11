@@ -15,10 +15,15 @@ class KopisController < ApplicationController
   # GET /kopis/new
   def new
     @kopi = Kopi.new
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   # GET /kopis/1/edit
   def edit
+    @kopi = set_kopi
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   # POST /kopis
@@ -69,6 +74,6 @@ class KopisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def kopi_params
-      params.fetch(:kopi, {})
+      params.require(:kopi).permit(:name, :roast_id, :origin_id)
     end
 end
