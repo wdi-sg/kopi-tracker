@@ -1,0 +1,23 @@
+<h1>Edit article</h1>
+
+<%= form_with scope: :kopi, model: @kopis, local: true do |form| %>
+
+ <p>
+		Select your roast type:<br>
+  <%= form.collection_select :roast_id, @roasts, :id, :name %>
+	</p>
+	<p>
+		Select your origin type:<br>
+  <%= form.collection_select :origin_id, @origins, :id, :location %>
+	</p>
+  <p>
+  	Name of your kopi:<br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', root_path %>

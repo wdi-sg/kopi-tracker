@@ -17,6 +17,11 @@
       <td><%= a.roast.name %></td>
       <td><%= a.origin.location %></td>
       <td><%= a.origin.phone %></td>
+      <td><%= link_to 'Show', kopi_path(a) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(a) %></td>
+      <td><%= link_to 'Destroy', kopi_path(a),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
