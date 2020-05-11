@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
+
+
+  get '/roasts/:id' => 'roasts#show' , as: 'roast'
 end

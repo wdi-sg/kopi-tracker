@@ -2,6 +2,7 @@ class FarmsController < ApplicationController
   def index
     @farms = Farm.all
     @kopis = Kopi.all
+    @roasts = Roast.all
     puts @farms
     puts @kopis
   end

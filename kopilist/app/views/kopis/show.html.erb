@@ -3,10 +3,7 @@
   <%= @kopi.name %>
 </p>
 
-<p>
-  <strong>Roast:</strong>
-  <%= @kopi.roast %>
-</p>
+
 
 <p>
   <strong>Country of Origin:</strong>
@@ -16,5 +13,10 @@
 <p>
 	<strong>Farm producing:</strong>
 	<%= @farm.location %>
+</p>
+
+	<strong>Roast:</strong>
+	<%= @roast.roast_name %>
+	<p><%= link_to 'Show', roast_path(@roast) %></p>
 </p>
 <%= link_to 'Back', root_path %>

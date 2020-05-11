@@ -11,10 +11,16 @@ class KopisController < ApplicationController
       # do something
       @farm = Farm.find(@kopi.farm.id)
     end
+
+    if params[:roast_id].to_i != @kopi.roast.id
+      # do something
+      @roast = Roast.find(@kopi.roast.id)
+    end
   end
 
   def new
     @farms = Farm.all
+    @roasts = Roast.all
   end
 
   def edit
@@ -36,7 +42,7 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origin, :farm_id)
+    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id)
   end
 
 end
