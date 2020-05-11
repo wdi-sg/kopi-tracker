@@ -4,6 +4,11 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @kopi = Kopi.find(@order.kopi_id)
+    puts "====================="
+    puts @kopi.price_per_pound
+    puts @order.weight
+    @cost = @kopi.price_per_pound * @order.weight
   end
 
   def new

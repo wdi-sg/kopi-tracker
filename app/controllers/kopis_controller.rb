@@ -25,10 +25,14 @@ class KopisController < ApplicationController
   end
 
   def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+
+    redirect_to root_path
   end
 
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin_id)
+      params.require(:kopi).permit(:name, :roast, :origin_id, :price_per_pound)
     end
 end
