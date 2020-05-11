@@ -306,3 +306,1037 @@ Processing by FarmsController#index as HTML
 Completed 200 OK in 229ms (Views: 218.1ms | ActiveRecord: 6.3ms)
 
 
+Started GET "/farms/new" for ::1 at 2020-05-11 18:29:12 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:29:33 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OjJfaV/QZhQDyaE7cDQkpMZiluGDaRqKuynL/NuhjP8IqDXuAsmBqFLA7dQ5UDkAag9cXPVRPOYOfONSbsYfw==", "farm"=>{"name"=>"Brook Haven Ranch ", "location"=>"YCK", "phone"=>"23423"}, "commit"=>"Save Farm"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.5ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brook Haven Ranch "], ["location", "YCK"], ["phone", 23423], ["created_at", "2020-05-11 10:29:33.244922"], ["updated_at", "2020-05-11 10:29:33.244922"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/3
+Completed 302 Found in 8ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/farms/3" for ::1 at 2020-05-11 18:29:33 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 3]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:29:35 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 3]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:29:37 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:29:52 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/F+sfKXATnrqOINr+TBnDgZWzEhfOFrXqq+AupbvneXolcXWuLQp5Bt8plhEFfd4lOd7Yqrguk4YetQYLDoDqQ==", "farm"=>{"name"=>"Riverlands Ranch", "location"=>"River", "phone"=>"325235"}, "commit"=>"Save Farm"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.5ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Riverlands Ranch"], ["location", "River"], ["phone", 325235], ["created_at", "2020-05-11 10:29:52.176679"], ["updated_at", "2020-05-11 10:29:52.176679"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/4
+Completed 302 Found in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/farms/4" for ::1 at 2020-05-11 18:29:52 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:29:55 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 3]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:29:56 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:30:10 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"83XFXuMD4c056wlzNxM1krXOO85RciXAN00iMnvkfUHnv6z0/neGU8ivLECKNqXkJ3+M5KSqxVmFmHaQwTHjDQ==", "farm"=>{"name"=>"Wild Turkey Farm", "location"=>"Australia", "phone"=>"3413513"}, "commit"=>"Save Farm"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.5ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wild Turkey Farm"], ["location", "Australia"], ["phone", 3413513], ["created_at", "2020-05-11 10:30:10.967925"], ["updated_at", "2020-05-11 10:30:10.967925"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/5
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/farms/5" for ::1 at 2020-05-11 18:30:11 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:30:13 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 3]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (3.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:30:15 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:30:30 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqZrw9D6pHsmQdWDlO0doex/iU8fTyzZ2Cm+8138iA0ebAJpzY7D5dcF8LApyI3Xfs4+ZeqXzEBq/OpR5ykWQQ==", "farm"=>{"name"=>"Fox Runs Home", "location"=>"Changi", "phone"=>"2454235"}, "commit"=>"Save Farm"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.4ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fox Runs Home"], ["location", "Changi"], ["phone", 2454235], ["created_at", "2020-05-11 10:30:30.256642"], ["updated_at", "2020-05-11 10:30:30.256642"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/6
+Completed 302 Found in 7ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/farms/6" for ::1 at 2020-05-11 18:30:30 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:30:33 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 3]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/farms/3" for ::1 at 2020-05-11 18:30:42 +0800
+Processing by FarmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"86avHUqQnrw5xgR9k0VPkZXPHDwiZ8f9Uwu3kYVjKUnnbMa3V+T5IsiCIU4uYN/nB36rFte/J2Th3uMzP7a3BQ==", "id"=>"3"}
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:30
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:31
+  [1m[36mFarm Destroy (0.7ms)[0m  [1m[31mDELETE FROM "farms" WHERE "farms"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/farms_controller.rb:31
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:31
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms (ActiveRecord: 30.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:30:42 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:30:46 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:30:58 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2C54diPwMnkRpIsXGPsvkFzJNoD8Wa2/RhGE6p8/Ot7M5BHcPoRV5+DgriSl3r/mzniBqgmBTSb0xNBIJeqkkg==", "farm"=>{"name"=>"Rum and Monkey ", "location"=>"NZ2", "phone"=>"5346346"}, "commit"=>"Save Farm"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.4ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rum and Monkey "], ["location", "NZ2"], ["phone", 5346346], ["created_at", "2020-05-11 10:30:58.082266"], ["updated_at", "2020-05-11 10:30:58.082266"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/7
+Completed 302 Found in 15ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/farms/7" for ::1 at 2020-05-11 18:30:58 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 7]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:31:00 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 7]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/farms/7" for ::1 at 2020-05-11 18:31:19 +0800
+Processing by FarmsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CBJY8psnHludt3pb/YTBiPvud/6yUBRXaGHw1OnFQWsc2DFYhlN5xWzzX2hAoVH+aV/A1EeI9M7atKR2UxDfJw==", "id"=>"7"}
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:31
+  [1m[36mFarm Destroy (0.3ms)[0m  [1m[31mDELETE FROM "farms" WHERE "farms"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/farms_controller.rb:31
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:31
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 28.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:31:19 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:31:21 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:31:30 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n1qzc9GYuBhinkGL8IHGGCa6xGH81bxX+ZckhHJLbxqLkNrZzOzfhpPaZLhNpFZutAtzSwkNXM5LQnAmyJ7xVg==", "farm"=>{"name"=>"Rum and Monkey ", "location"=>"NZL", "phone"=>"3463463"}, "commit"=>"Save Farm"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.5ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rum and Monkey "], ["location", "NZL"], ["phone", 3463463], ["created_at", "2020-05-11 10:31:30.846843"], ["updated_at", "2020-05-11 10:31:30.846843"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/8
+Completed 302 Found in 13ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/farms/8" for ::1 at 2020-05-11 18:31:30 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 8]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:31:33 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (3.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 8]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 32ms (Views: 24.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-11 18:33:46 +0800
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:33:56 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lry+t5JVJ10WShdv5MbYOp6wJD5ijzK9joBKlfpHIXCCdtcdjyFAw+cOMlxZ40hMDAGTFJdX0iQ8VR43QJK/PA==", "farm"=>{"name"=>"Atlantis", "location"=>"Lost", "phone"=>"1451512"}, "commit"=>"Save Farm"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.7ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Atlantis"], ["location", "Lost"], ["phone", 1451512], ["created_at", "2020-05-11 10:33:56.193893"], ["updated_at", "2020-05-11 10:33:56.193893"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/9
+Completed 302 Found in 6ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/farms/9" for ::1 at 2020-05-11 18:33:56 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 9]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-11 18:33:59 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 8]]
+  ↳ app/views/farms/index.html.erb:17
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 9]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:38:42 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4:     <%= form.label :name %><br>
+    5:     <%= form.text_field :name %>
+    6:   </p>
+    7:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    8:   <%= form.collection_select :farm_id, @farms, :id, :name %>
+    9:   <p>
+   10:     <%= form.submit %>
+  
+app/views/kopis/new.html.erb:7:in `block in _app_views_kopis_new_html_erb___1893442343548588157_70290911147120'
+app/views/kopis/new.html.erb:2:in `_app_views_kopis_new_html_erb___1893442343548588157_70290911147120'
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:39:11 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4:     <%= form.label :name %><br>
+    5:     <%= form.text_field :name %>
+    6:   </p>
+    7:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    8:   <%= form.collection_select :farm_id, @farms, :id, :name %>
+    9:   <p>
+   10:     <%= form.submit %>
+  
+app/views/kopis/new.html.erb:7:in `block in _app_views_kopis_new_html_erb___1893442343548588157_70290797705860'
+app/views/kopis/new.html.erb:2:in `_app_views_kopis_new_html_erb___1893442343548588157_70290797705860'
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:40:39 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4:     <%= form.label :name %><br>
+    5:     <%= form.text_field :name %>
+    6:   </p>
+    7:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    8:   <%= form.collection_select :farm_id, @farms, :id, :name %>
+    9:   <p>
+   10:     <%= form.submit %>
+  
+app/views/kopis/new.html.erb:7:in `block in _app_views_kopis_new_html_erb___1893442343548588157_47287113190340'
+app/views/kopis/new.html.erb:2:in `_app_views_kopis_new_html_erb___1893442343548588157_47287113190340'
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:43:16 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     5:     <%= form.text_field :name %>
+     6:   </p>
+     7:   
+     8:   <%= form.collection_select :farm_id, @farms, :id, :name %>
+     9:   <%= form.collection_select :roast_id, @roasts, :id, :name %>
+    10:   <p>
+    11:     <%= form.submit %>
+  
+app/views/kopis/new.html.erb:8:in `block in _app_views_kopis_new_html_erb___1893442343548588157_70290865965640'
+app/views/kopis/new.html.erb:2:in `_app_views_kopis_new_html_erb___1893442343548588157_70290865965640'
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:49:03 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (1.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:9
+  Rendered kopis/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 43ms (Views: 23.6ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:49:56 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:50:13 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 18:56:57 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 70ms (Views: 28.8ms | ActiveRecord: 38.0ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-11 18:57:04 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"scG9zS5kAc5GGg7AqoGH4+GBv3kr8RS+32CcMvy3HK+lC9RnMxBmULdeK/MXpBeVczAIU94p9CdttciQRmKC4w==", "kopi"=>{"name"=>"Frap", "farm_id"=>"1", "roast_id"=>"1"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mKopi Create (0.6ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "farm_id", "roast_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Frap"], ["farm_id", 1], ["roast_id", 1], ["created_at", "2020-05-11 10:57:04.207537"], ["updated_at", "2020-05-11 10:57:04.207537"]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:17
+Redirected to http://localhost:3000/kopis/1
+Completed 302 Found in 33ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/kopis/1" for ::1 at 2020-05-11 18:57:04 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:22
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:23
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:24
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms" for ::1 at 2020-05-11 18:57:19 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"kopis"}, missing required keys: [:id]):
+    15:       <td><%= farm.phone %></td>
+    16:       <td>
+    17:         <% farm.kopi.each do |kopi|%>
+    18:           <%= link_to kopi.name, kopi_path %>&nbsp;
+    19:         <% end %>
+    20:       </td>
+    21:       <td>
+  
+app/views/farms/index.html.erb:18:in `block (2 levels) in _app_views_farms_index_html_erb___645634476925006422_70290867540000'
+app/views/farms/index.html.erb:17:in `block in _app_views_farms_index_html_erb___645634476925006422_70290867540000'
+app/views/farms/index.html.erb:11:in `_app_views_farms_index_html_erb___645634476925006422_70290867540000'
+Started GET "/farms" for ::1 at 2020-05-11 19:03:24 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:17
+  Rendered farms/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Kopi:0x00007fdbc1dc3b98>):
+    15:       <td><%= farm.phone %></td>
+    16:       <td>
+    17:         <% @kopis = Kopi.find(farm.id) %>
+    18:         <% @kopis.each do |kopi| %>
+    19:           <%= link_to kopi.name, kopi_path %>&nbsp;
+    20:         <% end %>
+    21:       </td>
+  
+app/views/farms/index.html.erb:18:in `block in _app_views_farms_index_html_erb___645634476925006422_70290914397200'
+app/views/farms/index.html.erb:11:in `_app_views_farms_index_html_erb___645634476925006422_70290914397200'
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/farms" for ::1 at 2020-05-11 19:06:45 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:18
+  Rendered farms/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Kopi:0x00007fdbb41ea540>):
+    15:       <td><%= farm.phone %></td>
+    16:       <td>
+    17:         <%# <% @kopis = Kopi.find(farm.id) %> %>
+    18:         <% Kopi.find(farm.id).each do |kopi| %>
+    19:           <%= link_to kopi.name, kopi_path %>&nbsp;
+    20:         <% end %>
+    21:       </td>
+  
+app/views/farms/index.html.erb:18:in `block in _app_views_farms_index_html_erb___645634476925006422_70290867161780'
+app/views/farms/index.html.erb:11:in `_app_views_farms_index_html_erb___645634476925006422_70290867161780'
+Started GET "/farms" for ::1 at 2020-05-11 19:12:13 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:18
+  Rendered farms/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"kopis"}, missing required keys: [:id]):
+    16:       <td>
+    17:         <% @kopis = Kopi.where(farm_id: farm.id) %>
+    18:         <% @kopis.each do |kopi| %>
+    19:           <%= link_to kopi.name, kopi_path %>&nbsp;
+    20:         <% end %>
+    21:       </td>
+    22:       <td>
+  
+app/views/farms/index.html.erb:19:in `block (2 levels) in _app_views_farms_index_html_erb___645634476925006422_70290910775960'
+app/views/farms/index.html.erb:18:in `block in _app_views_farms_index_html_erb___645634476925006422_70290910775960'
+app/views/farms/index.html.erb:11:in `_app_views_farms_index_html_erb___645634476925006422_70290910775960'
+Started GET "/farms" for ::1 at 2020-05-11 19:12:53 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 8]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 9]]
+  ↳ app/views/farms/index.html.erb:18
+  Rendered farms/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 20:38:57 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 20:39:00 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-11 20:39:25 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A8UnJCXThLrvVl4zxgvwtja5Z7x4USXwk8oh9yOhHwEXD06OOKfjJB4SewB7LmDApAjQlo2JxWkhH3VVmXSBTQ==", "kopi"=>{"name"=>"Cuddlepots", "farm_id"=>"5", "roast_id"=>"5"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mKopi Create (0.4ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "farm_id", "roast_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cuddlepots"], ["farm_id", 5], ["roast_id", 5], ["created_at", "2020-05-11 12:39:25.055127"], ["updated_at", "2020-05-11 12:39:25.055127"]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:17
+Redirected to http://localhost:3000/kopis/2
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/kopis/2" for ::1 at 2020-05-11 20:39:25 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:22
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:23
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:24
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 20:39:41 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-11 20:39:52 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lMEMB6Pts73B1Sv2EqZLjyc9YGVsAbW95UXu2Pa05nKAC2WtvpnUIzCRDsWvg9v5tYzXT5nZVSRXkLp6TGF4Pg==", "kopi"=>{"name"=>"Java", "farm_id"=>"5", "roast_id"=>"7"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mKopi Create (0.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "farm_id", "roast_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Java"], ["farm_id", 5], ["roast_id", 7], ["created_at", "2020-05-11 12:39:52.028952"], ["updated_at", "2020-05-11 12:39:52.028952"]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:17
+Redirected to http://localhost:3000/kopis/3
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/kopis/3" for ::1 at 2020-05-11 20:39:52 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:22
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:23
+  [1m[36mRoast Load (0.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:24
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/kopis" for ::1 at 2020-05-11 20:39:57 +0800
+Processing by KopisController#index as HTML
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (KopisController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.4.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/farms" for ::1 at 2020-05-11 20:40:04 +0800
+Processing by FarmsController#index as HTML
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/farms/index.html.erb:11
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 2]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 4]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 5]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 6]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 8]]
+  ↳ app/views/farms/index.html.erb:18
+  [1m[36mKopi Load (0.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 9]]
+  ↳ app/views/farms/index.html.erb:18
+  Rendered farms/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/kopis" for ::1 at 2020-05-11 20:47:50 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  Rendered kopis/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"farms"}, missing required keys: [:id]):
+    12:       <td><%= kopi.name %></td>
+    13:       <td>
+    14:         <% @farm = Farm.find(kopi.farm_id) %>
+    15:         <%= link_to @farm.name, farm_path %>&nbsp;
+    16:       </td>
+    17:       <td>
+    18:         <% @roast = Roast.find(kopi.roast_id) %>
+  
+app/views/kopis/index.html.erb:15:in `block in _app_views_kopis_index_html_erb___1901998061487219280_70290910938140'
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb___1901998061487219280_70290910938140'
+Started GET "/kopis" for ::1 at 2020-05-11 20:48:17 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  Rendered kopis/index.html.erb within layouts/application (151.9ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `roast_path' for #<#<Class:0x00007fdbc1d54130>:0x00007fdbb409b248>
+Did you mean?  roasts_path
+               root_path):
+    16:       </td>
+    17:       <td>
+    18:         <% @roast = Roast.find(kopi.roast_id) %>
+    19:         <%= link_to @roast.name, roast_path(@roast) %>&nbsp;
+    20:       </td>
+    21:       <td>
+    22:         <%= link_to 'Show', kopi_path(kopi) %>&nbsp;
+  
+app/views/kopis/index.html.erb:19:in `block in _app_views_kopis_index_html_erb___1901998061487219280_70290797551020'
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb___1901998061487219280_70290797551020'
+Started GET "/kopis" for ::1 at 2020-05-11 20:49:35 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  Rendered kopis/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 92ms (Views: 75.3ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-11 20:49:53 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:8
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:10
+  Rendered kopis/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-11 20:50:10 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/86NwF62tCV/8Y2MAGhZ1RpEERi8D9y9FU8hUOwMmfDrBORqQ8LTu461qL+9TcmjiPWmMknXPCSnmnXyVtkHvA==", "kopi"=>{"name"=>"Blacky", "farm_id"=>"2", "roast_id"=>"2"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[36mKopi Create (1.3ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "farm_id", "roast_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Blacky"], ["farm_id", 2], ["roast_id", 2], ["created_at", "2020-05-11 12:50:10.154448"], ["updated_at", "2020-05-11 12:50:10.154448"]]
+  ↳ app/controllers/kopis_controller.rb:17
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:17
+Redirected to http://localhost:3000/kopis/4
+Completed 302 Found in 18ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/kopis/4" for ::1 at 2020-05-11 20:50:10 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:22
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:23
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:24
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/kopis" for ::1 at 2020-05-11 20:50:12 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (1.8ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:14
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:18
+  Rendered kopis/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 30ms (Views: 23.4ms | ActiveRecord: 5.2ms)
+
+

@@ -1,0 +1,30 @@
+<%= link_to 'New Kopi', new_kopi_path %>
+<h1>All Kopis</h1>
+<table width=100% style="text-align:center">
+  <tr>
+    <th>Name</th>
+    <th>Origin Farm</th>
+    <th>Roast</th>
+    <th>Options</th>
+  </tr>
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td>
+        <% @farm = Farm.find(kopi.farm_id) %>
+        <%= link_to @farm.name, farm_path(@farm) %>&nbsp;
+      </td>
+      <td>
+        <% @roast = Roast.find(kopi.roast_id) %>
+        <%= link_to @roast.name, roast_path(@roast) %>&nbsp;
+      </td>
+      <td>
+        <%= link_to 'Show', kopi_path(kopi) %>&nbsp;
+        <%= link_to 'Edit', edit_kopi_path(kopi) %>&nbsp;
+        <%= link_to 'Destroy', kopi_path(kopi),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

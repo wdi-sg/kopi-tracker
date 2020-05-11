@@ -14,8 +14,9 @@
       <td><%= farm.location %></td>
       <td><%= farm.phone %></td>
       <td>
-        <% farm.kopi.each do |kopi|%>
-          <%= link_to kopi.name, kopi_path %>&nbsp;
+        <% @kopis = Kopi.where(farm_id: farm.id) %>
+        <% @kopis.each do |kopi| %>
+          <%= link_to kopi.name, kopi_path(kopi) %>&nbsp;
         <% end %>
       </td>
       <td>
