@@ -1,0 +1,133 @@
+  [1m[35m (565.4ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (292.6ms)[0m  [1m[35mCREATE DATABASE "kopi-tracker_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Kopis (20200511092950)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "kopis" ("id" bigserial primary key, "name" character varying, "farm_id" bigint, "roast_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200511092950_kopis.rb:3
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_farm_id" ON "kopis"  ("farm_id")[0m
+  ↳ db/migrate/20200511092950_kopis.rb:3
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX  "index_kopis_on_roast_id" ON "kopis"  ("roast_id")[0m
+  ↳ db/migrate/20200511092950_kopis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511092950"]]
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to Farms (20200511093000)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "farms" ("id" bigserial primary key, "name" character varying, "location" text, "phone" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200511093000_farms.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511093000"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to Roasts (20200511093008)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "roasts" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200511093008_roasts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200511093008"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-11 09:43:50.010259"], ["updated_at", "2020-05-11 09:43:50.010259"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRoast Create (0.9ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cinnamon"], ["created_at", "2020-05-11 09:44:00.877866"], ["updated_at", "2020-05-11 09:44:00.877866"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Light"], ["created_at", "2020-05-11 09:44:00.882538"], ["updated_at", "2020-05-11 09:44:00.882538"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mRoast Create (3.0ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "City/ Medium"], ["created_at", "2020-05-11 09:44:00.887960"], ["updated_at", "2020-05-11 09:44:00.887960"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mRoast Create (2.9ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Full City"], ["created_at", "2020-05-11 09:44:00.896212"], ["updated_at", "2020-05-11 09:44:00.896212"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoast Create (0.2ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dark"], ["created_at", "2020-05-11 09:44:00.902692"], ["updated_at", "2020-05-11 09:44:00.902692"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "French"], ["created_at", "2020-05-11 09:44:00.906375"], ["updated_at", "2020-05-11 09:44:00.906375"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mRoast Create (0.3ms)[0m  [1m[32mINSERT INTO "roasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italian"], ["created_at", "2020-05-11 09:44:00.910473"], ["updated_at", "2020-05-11 09:44:00.910473"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+Started GET "/farms/new" for ::1 at 2020-05-11 18:05:19 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wickker/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by FarmsController#new as HTML
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 459ms (Views: 458.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/farms" for ::1 at 2020-05-11 18:05:57 +0800
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BF6NlK9VNAC3uYBm3KVnCgxR5pQ7q/YCBO4196A/UwAQlOQ+siFTnkb9pVVhgPd8nuBRvs5zFpu2O2FVGurNTA==", "farm"=>{"name"=>"MacDonald's", "location"=>"Your Heart", "phone"=>"1284781"}, "commit"=>"Save Farm"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[36mFarm Create (0.6ms)[0m  [1m[32mINSERT INTO "farms" ("name", "location", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "MacDonald's"], ["location", "Your Heart"], ["phone", 1284781], ["created_at", "2020-05-11 10:05:57.869815"], ["updated_at", "2020-05-11 10:05:57.869815"]]
+  ↳ app/controllers/farms_controller.rb:15
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/farms_controller.rb:15
+Redirected to http://localhost:3000/farms/1
+Completed 302 Found in 33ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/farms/1" for ::1 at 2020-05-11 18:05:57 +0800
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/farms_controller.rb:20
+  Rendering farms/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."farm_id" = $1[0m  [["farm_id", 1]]
+  ↳ app/views/farms/show.html.erb:14
+  Rendered farms/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 2.3ms)
+
+
