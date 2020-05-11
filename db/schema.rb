@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_143804) do
+ActiveRecord::Schema.define(version: 2020_05_11_150842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_143804) do
     t.bigint "origin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price_per_pound"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
   end
 
