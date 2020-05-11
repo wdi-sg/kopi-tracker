@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_105859) do
+ActiveRecord::Schema.define(version: 2020_05_11_110506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
-    t.string "roast"
     t.bigint "origin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "price_per_pound", precision: 10, scale: 2
+    t.bigint "roast_id", null: false
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -47,5 +48,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_105859) do
   end
 
   add_foreign_key "kopis", "origins"
+  add_foreign_key "kopis", "roasts"
   add_foreign_key "orders", "kopis"
 end
