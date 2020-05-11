@@ -11,6 +11,25 @@ class ReportsController < ApplicationController
     @kopis = Kopi.where(id: @orders.ids)
     puts @kopis
 
+       puts request.query_parameters
+    sequence = request.query_parameters['sequence']
+    type = request.query_parameters['type']
+    case type
+    when "date"
+      puts("I am date")
+      @combines = @combines.order(:created_at)
+      if sequence == "desc"
+        @combines = @combines.reverse
+      end
+
+    when "kopi"
+      puts("I am kopi")
+      @combines = @combines.order(:name)
+      if sequence == "desc"
+        @combines = @combines.reverse
+      end
+    end
+
   end
 
   def show

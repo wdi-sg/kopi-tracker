@@ -5362,3 +5362,2117 @@ Processing by ReportsController#index as HTML
 Completed 200 OK in 79ms (Views: 41.8ms | ActiveRecord: 24.9ms)
 
 
+Started GET "/reports" for ::1 at 2020-05-12 03:14:46 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (13.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 70ms (Views: 41.4ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:14:48 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 25.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/reports?order=desc&type=date" for ::1 at 2020-05-12 03:14:50 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"desc", "type"=>"date"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (12.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 23.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/reports?order=desc&type=date" for ::1 at 2020-05-12 03:15:03 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"desc", "type"=>"date"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 61ms (Views: 40.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:15:07 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 34.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:15:48 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (16.7ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 105ms (Views: 70.8ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:19:07 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 110ms (Views: 45.1ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:19:10 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.5ms)[0m  [1m[34mSELECT  * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 5.6ms)
+
+
+  
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Order Load (0.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `order' for #<ReportsController:0x00007ffe6bb44878>
+Did you mean?  @orders):
+  
+app/controllers/reports_controller.rb:20:in `index'
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:19:36 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.4ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 109ms (Views: 62.2ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:19:39 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 58ms (Views: 38.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/reports?order=desc&type=date" for ::1 at 2020-05-12 03:19:42 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"desc", "type"=>"date"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (11.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 75ms (Views: 42.5ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:19:43 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 64ms (Views: 41.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/reports?order=desc&type=date" for ::1 at 2020-05-12 03:19:45 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"desc", "type"=>"date"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (16.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (11.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 113ms (Views: 63.1ms | ActiveRecord: 32.2ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:19:46 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (12.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 58ms (Views: 29.5ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:19:51 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (6.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (8.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 103ms (Views: 43.2ms | ActiveRecord: 35.6ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:19:58 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 80ms (Views: 62.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/reports?order=desc&type=date" for ::1 at 2020-05-12 03:20:00 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"desc", "type"=>"date"}
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (3.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (1.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (10.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 59ms (Views: 29.5ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:20:01 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (7.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 58ms (Views: 29.8ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:20:42 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (7.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 65ms (Views: 38.3ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/reports?order=asc&type=date" for ::1 at 2020-05-12 03:21:07 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"order"=>"asc", "type"=>"date"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (13.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (12.4ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 106ms (Views: 35.0ms | ActiveRecord: 40.8ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:21:09 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (2.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (14.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (16.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:21
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 90ms (Views: 28.7ms | ActiveRecord: 41.8ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:21:10 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (7.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 56ms (Views: 30.9ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:22:29 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 83ms (Views: 30.6ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:22:36 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 70ms (Views: 50.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:38 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (2.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 73ms (Views: 24.7ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:22:41 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 28.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:22:42 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 49ms (Views: 30.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:22:43 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (13.5ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 55ms (Views: 26.9ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:22:43 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 51ms (Views: 35.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:44 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 45ms (Views: 25.5ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:44 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (13.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 56ms (Views: 25.1ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:44 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (12.5ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 27.0ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:45 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (13.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 25.5ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:22:45 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 55ms (Views: 34.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:23:00 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 118ms (Views: 36.8ms | ActiveRecord: 52.7ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:23:01 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (5.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 55ms (Views: 32.0ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:23:02 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:21
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 30.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:23:05 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (14.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 79ms (Views: 41.7ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:23:07 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 38.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:23:07 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 28.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:23:33 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (14.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 68ms (Views: 36.4ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:23:34 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (8.1ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 98ms (Views: 34.9ms | ActiveRecord: 44.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-12 03:23:40 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:3
+  Rendered orders/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 44.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/orders" for ::1 at 2020-05-12 03:23:46 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SdvmOoxhH3PsFrp8AQiO7choAtWUxw+GWvICD4yjoNxG+Ec8EZgcBe5gCuLEiup46+4Wlw9XaiXLvbRzGUXY/A==", "order"=>{"kopi_id"=>"14", "pound"=>"3000"}, "commit"=>"Save Order"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mOrder Create (1.0ms)[0m  [1m[32mINSERT INTO "orders" ("pound", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pound", "3000.0"], ["kopi_id", 14], ["created_at", "2020-05-11 19:23:46.159899"], ["updated_at", "2020-05-11 19:23:46.159899"]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Redirected to http://localhost:3000/orders/3
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/orders/3" for ::1 at 2020-05-12 03:23:46 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 33.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:23:49 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 42ms (Views: 30.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:23:55 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (13.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (5.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 79ms (Views: 35.3ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:24:01 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (2.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (12.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 31.0ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:04 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 30.0ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:11 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 24.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:38 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (13.4ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 59ms (Views: 30.2ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:39 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (13.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 56ms (Views: 25.4ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:39 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 59ms (Views: 31.0ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:40 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (12.3ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 28.3ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:40 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 48ms (Views: 30.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:24:41 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (8.6ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 54ms (Views: 28.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:24:42 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:21
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 48ms (Views: 27.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:24:43 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 58ms (Views: 28.3ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:24:44 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.7ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:21
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 31.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:46 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (8.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 55ms (Views: 28.9ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:24:47 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:27
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 48ms (Views: 28.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:56 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 51ms (Views: 32.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:24:57 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (4.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 54ms (Views: 32.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:27:17 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 187ms (Views: 80.7ms | ActiveRecord: 67.0ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:27:24 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 46.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:27:27 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (13.5ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 59ms (Views: 28.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:27:33 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 49ms (Views: 31.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:27:42 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:29
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 51ms (Views: 31.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:27:51 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (12.5ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 59ms (Views: 29.2ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:27:52 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:22
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 46ms (Views: 27.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:27:54 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (4.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 51ms (Views: 27.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:27:55 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 43ms (Views: 33.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:28:27 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (7.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 47ms (Views: 30.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:28:29 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 28.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:28:35 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:29
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 64ms (Views: 32.3ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:28:41 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 47ms (Views: 30.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:28:45 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (11.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 55ms (Views: 32.9ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 03:28:50 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (3.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  Rendered kopis/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 43ms (Views: 33.9ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-12 03:29:06 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Wx+Sr9y1tG4N0oxpmcmx47gt+EyLdr8Bz0er7PuNxT2T99MIovVp7pB+q9j5UJSrWajo6m9v1+WcqjTJghPNA==", "kopi"=>{"farm_id"=>"2", "roast_id"=>"1", "name"=>"Alpha", "origin"=>"Alp", "price"=>"1.30"}, "commit"=>"Save Kopi"}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (3.1ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "origin", "farm_id", "created_at", "updated_at", "roast_id", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Alpha"], ["origin", "Alp"], ["farm_id", 2], ["created_at", "2020-05-11 19:29:06.731887"], ["updated_at", "2020-05-11 19:29:06.731887"], ["roast_id", 1], ["price", "1.3"]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:32
+Redirected to http://localhost:3000/kopis/17
+Completed 302 Found in 23ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/kopis/17" for ::1 at 2020-05-12 03:29:06 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:8
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:12
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:15
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 23.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:29:09 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 41ms (Views: 31.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 03:29:15 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  Rendered kopis/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-12 03:29:23 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pPI/hWNz2CY/7x4jFdVzhl/Ei8Y2c6dZp0Bw4URH0J6r0Z6D/orbUD2Zrr3QVxcTfEKfhK3jwvo2D8ad0aGovg==", "kopi"=>{"farm_id"=>"2", "roast_id"=>"1", "name"=>"Beta", "origin"=>"Beta", "price"=>"1.20"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (2.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "origin", "farm_id", "created_at", "updated_at", "roast_id", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Beta"], ["origin", "Beta"], ["farm_id", 2], ["created_at", "2020-05-11 19:29:23.620729"], ["updated_at", "2020-05-11 19:29:23.620729"], ["roast_id", 1], ["price", "1.2"]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:32
+Redirected to http://localhost:3000/kopis/18
+Completed 302 Found in 22ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/kopis/18" for ::1 at 2020-05-12 03:29:23 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:8
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:12
+  [1m[36mRoast Load (9.1ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:15
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 22.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:29:25 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (10.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 52ms (Views: 32.7ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 03:29:27 +0800
+Processing by KopisController#new as HTML
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (4.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  Rendered kopis/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 46ms (Views: 35.7ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/kopis" for ::1 at 2020-05-12 03:29:39 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/8A33dP5Y8+FwnC7ivfadyHdrW2myEblKhXqCcwkADTw45bbTgBguYe0wCVPdb7iAlu5Lz1YI0a7Wlx1WcJ4FA==", "kopi"=>{"farm_id"=>"2", "roast_id"=>"1", "name"=>"Charlie", "origin"=>"Charlie", "price"=>"2.30"}, "commit"=>"Save Kopi"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mRoast Load (2.2ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[36mKopi Create (0.8ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "origin", "farm_id", "created_at", "updated_at", "roast_id", "price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Charlie"], ["origin", "Charlie"], ["farm_id", 2], ["created_at", "2020-05-11 19:29:39.372195"], ["updated_at", "2020-05-11 19:29:39.372195"], ["roast_id", 1], ["price", "2.3"]]
+  ↳ app/controllers/kopis_controller.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:32
+Redirected to http://localhost:3000/kopis/19
+Completed 302 Found in 23ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/kopis/19" for ::1 at 2020-05-12 03:29:39 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:8
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10
+  [1m[36mCACHE Farm Load (0.0ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:12
+  [1m[36mRoast Load (10.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:15
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:17
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 21.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:29:41 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 41ms (Views: 31.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-12 03:29:47 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:3
+  Rendered orders/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 31.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/orders" for ::1 at 2020-05-12 03:29:54 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AXmq2AQ079ff3OjX8GyGlICaW/dkwuiXnPDt7+GVwagOWgvemc3sod2qWEk17uIBoxxPtf9SjTQNv1uTdHO5iA==", "order"=>{"kopi_id"=>"17", "pound"=>"21"}, "commit"=>"Save Order"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mKopi Load (5.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("pound", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pound", "21.0"], ["kopi_id", 17], ["created_at", "2020-05-11 19:29:54.089630"], ["updated_at", "2020-05-11 19:29:54.089630"]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Redirected to http://localhost:3000/orders/4
+Completed 302 Found in 22ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/orders/4" for ::1 at 2020-05-12 03:29:54 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 22.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:29:55 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (2.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 48ms (Views: 32.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-12 03:29:58 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (6.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:3
+  Rendered orders/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 59ms (Views: 46.9ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/orders" for ::1 at 2020-05-12 03:30:01 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t71BtJJOEekN2T4Ksa2lQ5ugNgTdfnmqYEthSdD84pu4nuCyD7cSnw+vjpR0L8HWuCYiRkbuHAnxBNc1RRqauw==", "order"=>{"kopi_id"=>"17", "pound"=>"21"}, "commit"=>"Save Order"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mKopi Load (3.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mOrder Create (8.8ms)[0m  [1m[32mINSERT INTO "orders" ("pound", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pound", "21.0"], ["kopi_id", 17], ["created_at", "2020-05-11 19:30:01.948365"], ["updated_at", "2020-05-11 19:30:01.948365"]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Redirected to http://localhost:3000/orders/5
+Completed 302 Found in 21ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/orders/5" for ::1 at 2020-05-12 03:30:01 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 22.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:30:03 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 39ms (Views: 29.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-12 03:30:05 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:3
+  Rendered orders/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 32.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/orders" for ::1 at 2020-05-12 03:30:09 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GLK7WmO/RgozZnTb8nHHSKJeaU98psWd73z7sabHISQXkRpc/kZFfDEQxEU386Pdgdh9Dec2oD5+M03NMyFZBA==", "order"=>{"kopi_id"=>"18", "pound"=>"23"}, "commit"=>"Save Order"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mOrder Create (0.9ms)[0m  [1m[32mINSERT INTO "orders" ("pound", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pound", "23.0"], ["kopi_id", 18], ["created_at", "2020-05-11 19:30:09.169783"], ["updated_at", "2020-05-11 19:30:09.169783"]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Redirected to http://localhost:3000/orders/6
+Completed 302 Found in 22ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/orders/6" for ::1 at 2020-05-12 03:30:09 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:30:10 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 29.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-05-12 03:30:12 +0800
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/orders/new.html.erb:3
+  Rendered orders/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 38ms (Views: 31.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/orders" for ::1 at 2020-05-12 03:30:16 +0800
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QL9N0rIY/I4PZOm3hze2+BGotAvfAMReKhTsbqX5cYdPnOzUL+H/+A0SWSlCtdJtMi6gSUSQof27W1oSMB8Jpw==", "order"=>{"kopi_id"=>"19", "pound"=>"234"}, "commit"=>"Save Order"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("pound", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pound", "234.0"], ["kopi_id", 19], ["created_at", "2020-05-11 19:30:16.914401"], ["updated_at", "2020-05-11 19:30:16.914401"]]
+  ↳ app/controllers/orders_controller.rb:29
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:29
+Redirected to http://localhost:3000/orders/7
+Completed 302 Found in 26ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/orders/7" for ::1 at 2020-05-12 03:30:16 +0800
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:9
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:11
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 22.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:30:18 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 41ms (Views: 30.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/reports" for ::1 at 2020-05-12 03:30:21 +0800
+Processing by ReportsController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 55ms (Views: 23.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/reports?sequence=asc&type=date" for ::1 at 2020-05-12 03:30:23 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"date"}
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (10.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.2ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 55ms (Views: 26.1ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/reports?sequence=desc&type=date" for ::1 at 2020-05-12 03:30:29 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"date"}
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."created_at" ASC[0m
+  ↳ app/controllers/reports_controller.rb:22
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 62ms (Views: 39.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/reports?sequence=asc&type=kopi" for ::1 at 2020-05-12 03:30:35 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"asc", "type"=>"kopi"}
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:12
+  Rendering reports/index.html.erb within layouts/application
+  [1m[36mKopi Load (3.5ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/views/reports/index.html.erb:6
+  Rendered reports/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 50ms (Views: 27.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/reports?sequence=desc&type=kopi" for ::1 at 2020-05-12 03:30:40 +0800
+Processing by ReportsController#index as HTML
+  Parameters: {"sequence"=>"desc", "type"=>"kopi"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("kopis"."price") FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:5
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:6
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id"[0m
+  ↳ app/controllers/reports_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:10
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "orders"."id" FROM "orders"[0m
+  ↳ app/controllers/reports_controller.rb:11
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4, $5, $6, $7)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ app/controllers/reports_controller.rb:12
+  [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT * FROM "kopis" INNER JOIN "orders" ON "orders"."kopi_id" = "kopis"."id" ORDER BY "kopis"."name" ASC[0m
+  ↳ app/controllers/reports_controller.rb:29
+  Rendering reports/index.html.erb within layouts/application
+  Rendered reports/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 29.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 03:30:44 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (1.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:20
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:28
+  Rendered farms/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 29.5ms | ActiveRecord: 2.9ms)
+
+
