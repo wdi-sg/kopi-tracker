@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_150842) do
+ActiveRecord::Schema.define(version: 2020_05_11_151529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2020_05_11_150842) do
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "weight"
+    t.bigint "kopi_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["kopi_id"], name: "index_orders_on_kopi_id"
+  end
+
   create_table "origins", force: :cascade do |t|
     t.string "location"
     t.string "phone"
@@ -33,4 +41,5 @@ ActiveRecord::Schema.define(version: 2020_05_11_150842) do
   end
 
   add_foreign_key "kopis", "origins"
+  add_foreign_key "orders", "kopis"
 end
