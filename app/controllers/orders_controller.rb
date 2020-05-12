@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :set_user
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :check_user
 
   # GET /orders
   # GET /orders.json
@@ -70,5 +72,15 @@ class OrdersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def order_params
       params.require(:order).permit(:weight, :kopi_id)
+    end
+
+    def set_user
+      @user = current_user
+    end
+
+    def check_user
+      if !current_user
+        redirect_to root_path
+      end
     end
 end

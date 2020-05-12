@@ -1,4 +1,6 @@
 class RoastsController < ApplicationController
+  before_action :set_user
+  before_action :check_user, only: [:edit, :update, :destroy]
   before_action :set_roast, only: [:show, :edit, :update, :destroy]
 
   # GET /roasts
@@ -70,5 +72,15 @@ class RoastsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def roast_params
       params.require(:roast).permit(:name)
+    end
+
+    def set_user
+      @user = current_user
+    end
+
+    def check_user
+      if !current_user
+        redirect_to roasts_path
+      end
     end
 end

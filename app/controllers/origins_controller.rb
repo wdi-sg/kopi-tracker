@@ -1,4 +1,6 @@
 class OriginsController < ApplicationController
+  before_action :set_user
+  before_action :check_user, only: [:edit, :update, :destroy]
   before_action :set_origin, only: [:show, :edit, :update, :destroy]
 
   # GET /origins
@@ -70,5 +72,15 @@ class OriginsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def origin_params
       params.require(:origin).permit(:location, :phone)
+    end
+
+    def set_user
+      @user = current_user
+    end
+
+    def check_user
+      if !current_user
+        redirect_to origins_path
+      end
     end
 end
