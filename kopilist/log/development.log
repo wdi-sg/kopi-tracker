@@ -8959,3 +8959,1243 @@ Processing by FarmsController#index as HTML
 Completed 200 OK in 80ms (Views: 58.6ms | ActiveRecord: 9.3ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2285820718584499425)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddAdminToUsers (20200512073007)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (33.0ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  ↳ db/migrate/20200512073007_add_admin_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200512073007"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2285820718584499425)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-05-12 15:43:38 +0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (1.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (1.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:30
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:38
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:47
+  Rendered farms/index.html.erb within layouts/application (138.2ms)
+Completed 200 OK in 613ms (Views: 410.9ms | ActiveRecord: 147.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:43:58 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (25.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (17.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:30
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:38
+  Rendered farms/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 104ms (Views: 48.8ms | ActiveRecord: 44.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 15:44:03 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 94ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 15:44:07 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QutX71uLrrCaxLrbAuNdVuZpTtSnWdj32ExrJoiTic5GvGwKHXNbxOpQxL1bJm5l/ylFadJV037S1HKnK4DBSg==", "user"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 210ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:44:08 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (26.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (14.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:30
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:38
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:47
+  Rendered farms/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 102ms (Views: 47.7ms | ActiveRecord: 43.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:46:56 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (18.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:30
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:38
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:47
+  Rendered farms/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 85ms (Views: 58.9ms | ActiveRecord: 20.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:48:13 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:33
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:41
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:50
+  Rendered farms/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 61ms (Views: 50.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:48:23 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (24.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (13.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:33
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:41
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:50
+  Rendered farms/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 96ms (Views: 48.8ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:50:43 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:15
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:38
+  [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:46
+  Rendered farms/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 76ms (Views: 53.3ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:51:13 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (23.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:16
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:39
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:47
+  Rendered farms/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 80ms (Views: 47.9ms | ActiveRecord: 26.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 15:51:15 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tLQHBDlTX58cDfhuTVfuasnWC/2+TUqwdc4ZDK+YIT+2wne+Wd3P1ZgebBJfOMSYoGnT53jY3V28bHIWw9wkCg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (16.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:51:15 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (14.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:39
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:47
+  Rendered farms/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 86ms (Views: 63.8ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:52:24 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (1.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (8.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:43
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:51
+  Rendered farms/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 76ms (Views: 53.1ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:53:18 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (6.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:47
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:55
+  Rendered farms/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 73ms (Views: 49.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:55:30 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:48
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:56
+  Rendered farms/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 84ms (Views: 72.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:56:45 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (22.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:53
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:61
+  Rendered farms/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 67ms (Views: 36.7ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:57:11 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (17.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:54
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:62
+  Rendered farms/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 68ms (Views: 40.9ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 15:57:15 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 15:57:16 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qkeCJDSOyXB7LGTVeRhahWYrEtwHDRU4wMq+EHdJ3LWmLOTgebPCzzqlqDSzSqVBHxHsdmLaFGNB5Bhs2XNMZQ==", "user"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 171ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:57:16 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:54
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:62
+  Rendered farms/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 79ms (Views: 50.3ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:57:47 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:54
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:62
+  Rendered farms/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 81ms (Views: 69.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 15:58:02 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:54
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:62
+  Rendered farms/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 63ms (Views: 41.0ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:00:10 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (16.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 70ms (Views: 44.2ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:04:46 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:7
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:8
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (22.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (18.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (156.1ms)
+Completed 200 OK in 361ms (Views: 121.5ms | ActiveRecord: 186.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:07:04 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (22.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (16.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (27.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (114.3ms)
+Completed 200 OK in 270ms (Views: 105.0ms | ActiveRecord: 115.8ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:07:16 +0800
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (24.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 78ms (Views: 37.7ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:07:30 +0800
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 83ms (Views: 27.2ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:07:31 +0800
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 53ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:08:44 +0800
+Processing by FarmsController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 16:08:44 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 16:08:47 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/VGeRqmYvsWBEep7GVvgLOAMOugx+bzTkT2XEjD/gyVHfiVH5rkaflFiK0vtIUvWm7R5QG45ywqrdXLQS62kbw==", "user"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (29.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/farms/new
+Completed 302 Found in 209ms (ActiveRecord: 29.3ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:08:47 +0800
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:08:54 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (16.0ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (1.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 176ms (Views: 51.2ms | ActiveRecord: 70.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:09:01 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (20.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 70ms (Views: 40.8ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/farms/new" for ::1 at 2020-05-12 16:09:44 +0800
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 34.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:09:47 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (1.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 73ms (Views: 50.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 16:09:49 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mFarm Load (15.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/views/kopis/new.html.erb:3
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/kopis/new.html.erb:5
+  Rendered kopis/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 118ms (Views: 73.2ms | ActiveRecord: 36.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:09:51 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 66ms (Views: 44.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:18:08 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (2.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (23.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (11.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 265ms (Views: 93.7ms | ActiveRecord: 115.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:18:54 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (2.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 87ms (Views: 56.6ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/roasts/1" for ::1 at 2020-05-12 16:18:57 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 1]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 63ms (Views: 36.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/roasts/new" for ::1 at 2020-05-12 16:20:43 +0800
+Processing by RoastsController#new as HTML
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 101ms (Views: 47.0ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/roasts/new" for ::1 at 2020-05-12 16:21:28 +0800
+Processing by RoastsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 66ms (Views: 55.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/roasts/new" for ::1 at 2020-05-12 16:21:56 +0800
+Processing by RoastsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering roasts/new.html.erb within layouts/application
+  Rendered roasts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 29.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/roasts" for ::1 at 2020-05-12 16:22:03 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1jUxVRZrwD5wUcgwUxz+8kiqZF0ODSdvmH7o/8+TxkwX+MFGl/VjDcEOUgyaODAP/RZXmfCsuW3jlO6Ro6SDdg==", "roast"=>{"roast_name"=>"To be deleted"}, "commit"=>"Save Roast"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (24.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[36mRoast Create (5.1ms)[0m  [1m[32mINSERT INTO "roasts" ("roast_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["roast_name", "To be deleted"], ["created_at", "2020-05-12 08:22:03.203730"], ["updated_at", "2020-05-12 08:22:03.203730"]]
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:19
+Redirected to http://localhost:3000/roasts/8
+Completed 302 Found in 45ms (ActiveRecord: 36.5ms)
+
+
+Started GET "/roasts/8" for ::1 at 2020-05-12 16:22:03 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (10.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 8]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 47ms (Views: 29.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:22:05 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (18.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 84ms (Views: 54.3ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:23:06 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 78ms (Views: 63.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/roasts/8" for ::1 at 2020-05-12 16:23:08 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (25.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 8]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 68ms (Views: 34.9ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/roasts/8/edit" for ::1 at 2020-05-12 16:23:16 +0800
+Processing by RoastsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:13
+  Rendering roasts/edit.html.erb within layouts/application
+  Rendered roasts/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/roasts" for ::1 at 2020-05-12 16:23:19 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vn30vLvydpP+c7V4eS0aw6yIxnRZy23P68A/1+m2021/sASvOmzVoE8sL0SwCdQ+GTT1sKdq882QKjm5hYGWVw==", "roast"=>{"roast_name"=>"To be deleted2"}, "commit"=>"Save Roast"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (25.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[36mRoast Create (1.2ms)[0m  [1m[32mINSERT INTO "roasts" ("roast_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["roast_name", "To be deleted2"], ["created_at", "2020-05-12 08:23:19.056148"], ["updated_at", "2020-05-12 08:23:19.056148"]]
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:19
+Redirected to http://localhost:3000/roasts/9
+Completed 302 Found in 37ms (ActiveRecord: 27.7ms)
+
+
+Started GET "/roasts/9" for ::1 at 2020-05-12 16:23:19 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (16.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 9]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 58ms (Views: 35.6ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:23:20 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (26.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (24.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (2.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 107ms (Views: 46.0ms | ActiveRecord: 53.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:24:34 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (22.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 69ms (Views: 38.1ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/roasts/9" for ::1 at 2020-05-12 16:24:45 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (10.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 9]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 62ms (Views: 42.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/roasts/9/edit" for ::1 at 2020-05-12 16:24:47 +0800
+Processing by RoastsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:13
+  Rendering roasts/edit.html.erb within layouts/application
+  Rendered roasts/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 37.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/roasts" for ::1 at 2020-05-12 16:24:51 +0800
+Processing by RoastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8EplgC7UuWtz6P03vrU4l/6cGXrS9ADg4GBMbLGIKPgxh5WTr0oaWMK3Zwt3kfZqSyAqvixVnuKbikoC3b9twg==", "roast"=>{"roast_name"=>"To be deleted3"}, "commit"=>"Save Roast"}
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[36mRoast Create (0.5ms)[0m  [1m[32mINSERT INTO "roasts" ("roast_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["roast_name", "To be deleted3"], ["created_at", "2020-05-12 08:24:51.059846"], ["updated_at", "2020-05-12 08:24:51.059846"]]
+  ↳ app/controllers/roasts_controller.rb:19
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:19
+Redirected to http://localhost:3000/roasts/10
+Completed 302 Found in 31ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/roasts/10" for ::1 at 2020-05-12 16:24:51 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (15.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 10]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 59ms (Views: 36.9ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:24:53 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 73ms (Views: 41.3ms | ActiveRecord: 26.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:26:21 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 80ms (Views: 47.6ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/roasts/8" for ::1 at 2020-05-12 16:26:26 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRoast Load (1.0ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (9.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 8]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 54ms (Views: 36.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/roasts/8/edit" for ::1 at 2020-05-12 16:26:27 +0800
+Processing by RoastsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (24.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:13
+  Rendering roasts/edit.html.erb within layouts/application
+  Rendered roasts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 70ms (Views: 38.1ms | ActiveRecord: 25.1ms)
+
+
+Started PATCH "/roasts/8" for ::1 at 2020-05-12 16:26:31 +0800
+Processing by RoastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1iU5B3w8XLfVEmy1nwbMN+D0xmfg7nC2LKO+bEzcmvoX6MkU/aL/hGRN9olWIgLKVUj1ox5P7rRXSbgCIOvfwA==", "roast"=>{"roast_name"=>"To be deleted sure"}, "commit"=>"Update Roast", "id"=>"8"}
+  [1m[36mUser Load (25.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:27
+  [1m[36mRoast Update (0.7ms)[0m  [1m[33mUPDATE "roasts" SET "roast_name" = $1, "updated_at" = $2 WHERE "roasts"."id" = $3[0m  [["roast_name", "To be deleted sure"], ["updated_at", "2020-05-12 08:26:31.064134"], ["id", 8]]
+  ↳ app/controllers/roasts_controller.rb:27
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:27
+Redirected to http://localhost:3000/roasts/8
+Completed 302 Found in 42ms (ActiveRecord: 27.9ms)
+
+
+Started GET "/roasts/8" for ::1 at 2020-05-12 16:26:31 +0800
+Processing by RoastsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:5
+  Rendering roasts/show.html.erb within layouts/application
+  [1m[36mKopi Load (7.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."roast_id" = $1[0m  [["roast_id", 8]]
+  ↳ app/views/roasts/show.html.erb:10
+  Rendered roasts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 46ms (Views: 33.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:26:33 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (22.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:64
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:72
+  Rendered farms/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 80ms (Views: 47.3ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:28:57 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (23.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (1.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:81
+  Rendered farms/index.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 80ms (Views: 47.1ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:29:24 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.7ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (1.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:83
+  Rendered farms/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 72ms (Views: 48.8ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:30:27 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:93
+  Rendered farms/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 82ms (Views: 67.7ms | ActiveRecord: 4.3ms)
+
+
+Started DELETE "/roasts/8" for ::1 at 2020-05-12 16:30:37 +0800
+Processing by RoastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FuToJ4+7vwfe8Av6Yttk/3TNqSCNgB2MTN7NhpFVyrbXKRg0DiUcNG+vkcar/6oCwXGa5HMhg443NMvo/WKPjA==", "id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT  "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/roasts_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/roasts_controller.rb:33
+  [1m[36mRoast Destroy (1.6ms)[0m  [1m[31mDELETE FROM "roasts" WHERE "roasts"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/roasts_controller.rb:33
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/roasts_controller.rb:33
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:30:37 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (1.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:93
+  Rendered farms/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 87ms (Views: 62.1ms | ActiveRecord: 15.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 16:30:50 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gl2vE1PcO5WpCNxMP2rJ+sC50Sc9swfTYwpXbo1JvSjbkF8A0kKYphhXRnD2TgcHdQXi48MSmdEY4FEA4X74Eg=="}
+  [1m[36mUser Load (22.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:30:50 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (14.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:93
+  Rendered farms/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 64ms (Views: 41.6ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 16:30:51 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (8.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-05-12 16:30:55 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-12 16:31:15 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pvG6gwylQcKGZgnnL7Hgqm9Ex5HShrCQz8FctBsUVRCl3lx8v0CSvCC52i1Uu+79YBc93PXmfBfe0Xnj3fUIOw==", "user"=>{"email"=>"admin1@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin1@mail.com"], ["encrypted_password", "$2a$11$FVuHn8Vdlt.Re4e1HTMu.e0DhC4dlsTV5DXlTVmGwRILBMUzYSQ4y"], ["created_at", "2020-05-12 08:31:15.238347"], ["updated_at", "2020-05-12 08:31:15.238347"]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 174ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:31:15 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.6ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:93
+  Rendered farms/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 75ms (Views: 49.6ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:36:09 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 88ms (Views: 66.5ms | ActiveRecord: 10.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 16:36:14 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"F4Jk4YW2GjkEiTvXU5Oqp7f2gVcuPIHPuUe1YD0Et6oUrYIeNlPJR6JW6B0omaTwuKV7GglcTUioV5A3++XqgQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:36:14 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (25.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (21.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 97ms (Views: 39.1ms | ActiveRecord: 48.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 16:36:15 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 16:36:19 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1AKnXJPIXEsS3YaG5Px3v9h6kpkHevKfa8ywhqwWQZjWTwWi1coPj8Mx3CmC8oZqBeVXOSFhyXp6wTcW89uA/g==", "user"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 177ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:36:19 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (21.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (2.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 82ms (Views: 50.5ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:36:57 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (1.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 67ms (Views: 44.5ms | ActiveRecord: 14.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 16:37:01 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dfDb+3O7eEtPlZj5XY5tXbwXm+gzwb0W1NLtOy/lJdXnoiK7sWAvVN1pqaQHGw8n2yOM46LlUvlgZcbb2Pb5WQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:37:01 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.8ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 58ms (Views: 45.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 16:37:03 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 16:37:06 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZTVoUV0jh1W+Bu8UGEUhULCfTkbHwUZdboxjmATZyzqx2LDqcAWBsfdjlhekRM1xrob9DfCEf2pjzKqgq7bvuA==", "user"=>{"email"=>"admin1@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (24.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin1@mail.com"], ["LIMIT", 1]]
+  ↳ /Users/kenneththesheep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 229ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-12 16:37:07 +0800
+Processing by FarmsController#index as HTML
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms"[0m
+  ↳ app/controllers/farms_controller.rb:9
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/controllers/farms_controller.rb:10
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/farms/index.html.erb:24
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts"[0m
+  ↳ app/views/farms/index.html.erb:69
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/farms/index.html.erb:95
+  Rendered farms/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 69ms (Views: 43.9ms | ActiveRecord: 17.3ms)
+
+

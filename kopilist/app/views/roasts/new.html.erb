@@ -1,0 +1,14 @@
+<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :roast_name %><br>
+    <%= form.text_area :roast_name %>
+
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', root_path %>

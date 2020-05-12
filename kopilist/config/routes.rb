@@ -20,8 +20,12 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
-
+  get '/roasts/new' => 'roasts#new', as: 'new_roast'
+  post '/roasts' => 'roasts#create'
   get '/roasts/:id' => 'roasts#show' , as: 'roast'
+  get '/roasts/:id/edit' => 'roasts#edit', as: 'edit_roast'
+  patch '/roasts/:id' => 'roasts#update'
+  delete '/roasts/:id' => 'roasts#destroy'
 
 
     get '/orders/new' => 'orders#new', as: 'new_order'
