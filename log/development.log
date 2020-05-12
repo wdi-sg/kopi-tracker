@@ -6147,3 +6147,119 @@ Processing by KopisController#index as HTML
 Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.0ms | Allocations: 5513)
 
 
+Started GET "/" for ::1 at 2020-05-12 17:22:00 +0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 11680)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 32.8ms | ActiveRecord: 9.2ms | Allocations: 20744)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 17:22:04 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hHY9lru6NRZ9PuvuJrcYGD3LGGLHMJN0EOrBm8+L3NZVeeUjE9GLT+4bN7QwI59XiqKB4PC7yTR3MeE++0Sb+g=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.7ms | Allocations: 4588)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:04 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 893)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 4354)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 17:22:10 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AgriNO+bD4ATZqp1bqdZLvTY9CUUEL9Kh90q2W+iN3dP4ScDzy0LrIPRknCwdkOWBQ0l44+og9jrEDUrJ917MQ=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 433)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:10 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 876)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 4349)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:16 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 877)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 4354)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:17 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 867)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.9ms | Allocations: 4334)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 17:22:21 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 598)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2970)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 9437)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 17:22:35 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"VPNhKv9gevnW2BxdtaLUYEos4rEp56POZxZvuGpQevmu+3f+YQHc3/H/daudjhQaeZWddBdkb1dt09+hNjcUjQ==", "user"=>{"email"=>"bobby@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bobby@email.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 141ms (ActiveRecord: 0.3ms | Allocations: 4705)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:35 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1693)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.6ms | Allocations: 5176)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 17:22:38 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iPYdyBHCXwgAv2c1CKhmMlxDBN7OezW704c5afJ6LcBTn2mvkEXklUtFBsU3as0wdVc38r8sU4dnuToYQYq3iQ=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 2157)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:22:38 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms | Allocations: 4342)
+
+
