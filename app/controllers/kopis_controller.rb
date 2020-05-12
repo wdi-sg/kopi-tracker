@@ -1,13 +1,5 @@
 class KopisController < ApplicationController
 
-    def index
-      if params.has_key?(:origin_id)
-        @kopis = Kopi.where(origin_id: params[:origin_id])
-      else
-      @kopis = Kopi.all
-    end
-    end
-
     def show
 
       @kopi = Kopi.find(params[:id])
@@ -24,14 +16,15 @@ class KopisController < ApplicationController
 
     def create
       @kopi = Kopi.new(kopi_params)
+      @kopi.user = current_user
       @kopi.save
-      redirect_to origins_path
+      redirect_to kopis_path
     end
 
     def update
       @kopi = Kopi.find(params[:id])
       @kopi.update(kopi_params)
-      redirect_to @kopi
+      redirect_to origins_path
 
     end
 

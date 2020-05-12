@@ -1,16 +1,48 @@
 <h1>HELLLO ORIGINS</h1>
+
+
+<% if user_signed_in? %>
 <%= link_to 'Add a farm', new_origin_path %>
 <%= link_to 'Find kopi a farm', new_kopi_path %>
-<%= link_to 'List of Kopis', kopis_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
 
+<%= link_to 'Sign In', new_user_session_path %>
+<%= link_to 'Sign Up', new_user_registration_path %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+<div style="border: 1px solid black; margin-bottom: 20px">
+
+<% @kopis.each do |kopi| %>
+<p style="font-weight: bold; font-size: 20px">Kopi Name:</p>
+<%= kopi.name %>
+<p style="font-weight: bold; font-size: 20px">Kopi Roast: </p><%= kopi.roast %>
+<p><%= link_to 'Show', kopi_path(kopi) %></p>
+<p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
+<p><%= link_to 'Delete', kopi_path(kopi), method: :delete, data:{ confirm: 'Are you sure?'} %></p>
+
+<% end %>
+</div>
+
+
+<div style="border: 1px solid black">
 
 <% @origins.each do |origin| %>
-<div style="border: 1px solid black">
+
+
 <p style="font-weight: bold; font-size: 20px">Location:</p> <%= origin.location %>
 <p style="font-weight: bold; font-size: 20px">Phone Number: </p><%= origin.phone_no %>
 <p><%= link_to 'Edit', edit_origin_path(origin) %></p>
 <p><%= link_to 'Delete', origin_path(origin), method: :delete %></p>
-
-
 <% end %>
+
 <div>

@@ -1,8 +1,11 @@
 class OriginsController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
 def index
+
   @origins = Origin.all
+  @kopis = Kopi.all
 end
 
 def new

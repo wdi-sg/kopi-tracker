@@ -10,8 +10,6 @@
 <p style="font-weight: bold; font-size: 20px">Kopi Roast: </p><%= kopi.roast %>
 <p style="font-weight: bold; font-size: 20px">Kopi Farm: </p><%= kopi.origin.location %>
 <p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
-<p><%= link_to 'Delete', kopis_path(kopi), method: :delete %></p>
-
-
+<p><%= link_to 'Delete', kopis_path(kopi), method: :delete, data:{ confirm: 'Are you sure?'} %></p>
 <% end %>
 <div>

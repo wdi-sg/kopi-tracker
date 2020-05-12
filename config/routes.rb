@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
 root 'origins#index'
 get '/origins' => 'origins#index'
 get '/origins/new' => 'origins#new', as: 'new_origin'
@@ -16,7 +17,7 @@ get '/kopis/:id' => 'kopis#show', as: 'kopi'
 post '/kopis' => 'kopis#create'
 get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
 patch '/kopis/:id' => 'kopis#update'
-delete '/kopis/:id' => 'kopis#destroy'
+delete '/kopis/:id/' => 'kopis#destroy'
 
 
 
