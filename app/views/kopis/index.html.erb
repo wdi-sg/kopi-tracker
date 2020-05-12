@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<h1>Hello!</h1>
+
+<% if user_signed_in? %>
+<p>Kopis</p>
+<ul>
+<% @kopis.each do |kopi|%>
+  <li><%= kopi.name %></li><br>
+  <%= link_to 'Destroy',
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %><
+<% end %>
+</ul>
+
+<% if user_signed_in? %>
+<%= link_to 'Add a New Kopi', new_kopi_path %>
+
+
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+<% end %>
+
+<% else %>
+<div class ='container-fluid'>
+<p>Please click here to log in again: </p>
+<%= link_to 'log in', new_user_session_url, :class => "btn btn-primary btn-sm" %>
+</div>
+<% end %>
