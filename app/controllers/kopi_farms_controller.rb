@@ -1,4 +1,7 @@
 class KopiFarmsController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
+  
   def index
       @kopi_farms = KopiFarm.order(id: :asc)
   end

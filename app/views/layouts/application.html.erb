@@ -4,12 +4,42 @@
     <title>KopiTracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li><%= link_to 'All Kopis', all_kopis_path, :class => 'nav-link'%></li>
+    <li><%= link_to 'All Farms', all_kopi_farms_path, :class => 'nav-link'%></li>
+
+<% if !user_signed_in? %>
+<li><%= link_to 'Login', new_user_session_path, :class => 'nav-link'%></li>
+<li><%= link_to 'Register', new_user_registration_path, :class => 'nav-link'%></li>
+<% else %>
+<li><%= link_to 'New Farm', new_kopi_farm_path, :class => 'nav-link'%></li>
+<li><%= link_to 'New Kopi', new_kopi_path, :class => 'nav-link'%></li>
+
+<% if current_user.admin? %>
+<li><%= link_to 'New Roast', new_roast_path, :class => 'nav-link'%></li>
+
+<% end %>
+<li><%= link_to 'Logout', destroy_user_session_url,  method: :delete, :class => 'nav-link text-danger' %></li>
+
+<%end%>
+</ul>
+</div>
+<% if user_signed_in? %>
+Logged in as <%= current_user.email %>
+<% end%>
+</nav>
+  <div class="jumbotron">
+
     <%= yield %>
+    </div>
   </body>
 </html>
