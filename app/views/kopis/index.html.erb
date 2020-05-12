@@ -1,0 +1,28 @@
+<h1>KOPI TRACKER</h1>
+<% if user_signed_in? %>
+	<%= link_to "New Kopi", new_kopi_path, class: "btn btn-info" %>
+<% else %>
+	<%= link_to "Sign In", new_user_session_url, class: "btn btn-info" %>
+<% end %>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th scope="col">#</th>
+	    <th scope="col">Name</th>
+	    <th scope="col">Roast</th>
+	    <th scope="col">Price Per Pound ($)</th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @kopis.each_with_index do |kopi, index| %>
+    <tr>
+      <th scope="row"><%= index %></th>
+      <td><%= link_to kopi.name, kopi %></td>
+      <td><%= kopi.roast %></td>
+      <td><%= kopi.price_per_pound %></td>
+    </tr>
+		<p>  </p>
+	<% end %>
+	</tbody>
+</table>
