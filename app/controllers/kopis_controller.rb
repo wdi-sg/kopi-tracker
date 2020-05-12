@@ -1,4 +1,5 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
     # test to see if we are at /parks/:id/rangers or /rangers
@@ -17,7 +18,7 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
-    # @kopi.inspect
+    @kopi.user = current_user
     result = @kopi.save
 
     if result == true
@@ -38,9 +39,29 @@ class KopisController < ApplicationController
     end
   end
 
+  def edit
+    @origins = Origin.all
+    @kopi = Kopi.find(params[:id])
+    @kopi.user = current_user
+  end
+
+  def update
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.update(kopi_params)
+    redirect_to @kopi
+  end
+
+  def destroy
+    @kopi = Kopi.find(params[:id])
+    @kopi.destroy
+
+    redirect_to kopis_path
+  end
+
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origin_id)
+    params.require(:kopi).permit(:name, :roast, :origin_id, :user_id)
   end
 end

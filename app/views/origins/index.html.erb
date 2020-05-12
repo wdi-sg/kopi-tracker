@@ -1,4 +1,4 @@
-<h1>Origin Index Page</h1>
+<h1>Origin Index</h1>
 
 <% if user_signed_in? %>
   <p><%= link_to 'Add new Origin', new_origin_path %></p>
@@ -15,14 +15,25 @@
   <tr>
     <th style="text-align: left">Location</th>
     <th style="text-align: left">Phone</th>
-    <!-- <th style="text-align: left">Kopi</th> -->
   </tr>
 
   <% @origins.each do |origin| %>
     <tr>
-      <td style="width: 100px"><%= origin.location %></td>
+      <td style="width: 150px"><%= origin.location %></td>
       <td style="width: 100px"><%= origin.phone %></td>
-      <td style="width: 100px"><%= link_to 'Show', origin_path(origin) %></td>
+      <td style="width: 50px"><%= link_to 'Show', origin_path(origin) %></td>
+      <% if user_signed_in? %>
+        <td style="width: 50px"><%= link_to 'Edit', edit_origin_path(origin) %></td>
+        <td style="width: 50px"><%= link_to 'Delete', origin_path(origin),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
+
+<br>
+<br>
+<div>
+  <%= link_to 'Go to Kopi Index', kopis_path %>
+</div>

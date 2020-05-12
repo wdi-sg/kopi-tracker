@@ -1,6 +1,11 @@
-<h1>Kopi Index Page</h1>
+<h1>Kopi Index</h1>
 
-<%= link_to 'Add new Kopi', new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Add new Kopi', new_kopi_path %>
+  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
 
 <br/>
 <br>
@@ -16,8 +21,21 @@
     <tr>
       <td style="width: 100px"><%= kopi.name %></td>
       <td style="width: 100px"><%= kopi.roast %></td>
-      <td style="width: 100px"><%= kopi.origin.location %></td>
-      <td style="width: 100px"><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td style="width: 150px"><%= kopi.origin.location %></td>
+      <td style="width: 50px"><%= link_to 'Show', kopi_path(kopi) %></td>
+      <% if user_signed_in? %>
+        <td  style="width: 50px"><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+        <td style="width: 50px"><%= link_to 'Delete', kopi_path(kopi),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+
     </tr>
   <% end %>
 </table>
+
+<br>
+<br>
+<div>
+  <%= link_to 'Back to Origin Index', root_path %>
+</div>

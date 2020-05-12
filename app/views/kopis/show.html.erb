@@ -1,6 +1,19 @@
-<h1>Kopi Show Page</h1>
+<h1>Kopi Show</h1>
 <br/>
 <h3><%= @kopi.name %></h3>
 
 <p>Roast:   <%= @kopi.roast %></p>
 <p>Origin:  <%= @kopi.origin.location %></p>
+
+<% if user_signed_in? %>
+  <td style="width: 50px"><%= link_to 'Edit', edit_kopi_path(@kopi) %></td>
+  <td style="width: 50px"><%= link_to 'Delete', kopi_path(@kopi),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+
+<br>
+<br>
+<div>
+  <%= link_to 'Back to Origin Index', root_path %>
+</div>

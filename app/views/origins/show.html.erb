@@ -1,29 +1,50 @@
-<h1>Origin Show Page</h1>
+<h1>Origin Show</h1>
 
-<%= link_to 'Add new Kopi', new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Add new Kopi', new_kopi_path %>
+  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
 
-<br/>
 <br>
 
 <h3><%= @origin.location %></h3>
 <p>Phone Number: <%= @origin.phone %></p>
-<p>Kopi from this origin</p>
+<% if user_signed_in? %>
+  <span style="width: 50px"><%= link_to 'Edit', edit_origin_path(@origin) %></span>
+  <span style="width: 50px"><%= link_to 'Delete', origin_path(@origin),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></span>
+<% end %>
+
 <br>
+<br>
+<br>
+<h3>Kopi List from this place</h3>
 <div>
   <table>
-
     <tr>
-      <th style="text-align: left">Kopi</th>
-      <th style="text-align: left">Roast</th>
+      <th style="text-align: left; width:100px">Kopi</th>
+      <th style="text-align: left; width:100px">Roast</th>
     </tr>
   <% @origin.kopi.each do |kopi|  %>
     <tr>
       <td style="width: 100px"><%= kopi.name %></td>
       <td style="width: 100px" ><%= kopi.roast %></td>
-      <td style="width: 100px"><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td style="width: 50px"><%= link_to 'Show', kopi_path(kopi) %></td>
+      <% if user_signed_in? %>
+        <td  style="width: 50px"><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+        <td style="width: 50px"><%= link_to 'Delete', kopi_path(kopi),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
-
-
   <% end %>
   </table>
+</div>
+<br>
+<br>
+<div>
+  <%= link_to 'Back to Origin Index', root_path %>
 </div>
