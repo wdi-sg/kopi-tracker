@@ -6273,3 +6273,262 @@ Migrating to AddAdminToUsers (20200512092459)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for ::1 at 2020-05-12 17:30:53 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 4717)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 26.0ms | ActiveRecord: 27.4ms | Allocations: 18394)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-12 17:31:01 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"nLujUmyYYGQvj9HncLQ7QbRyFOZhPJNy8ofIQb5s79I4mGaMxI+XwdO76xeYCr34WO0qkDHuhs1wZpmDJuF1Tw==", "user"=>{"email"=>"bobby@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bobby@email.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 143ms (ActiveRecord: 1.0ms | Allocations: 5256)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:31:01 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 6437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 21.7ms | ActiveRecord: 5.8ms | Allocations: 11978)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:31:03 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:15
+  Rendered kopis/new.html.erb within layouts/application (Duration: 21.9ms | Allocations: 4566)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 24.9ms | ActiveRecord: 4.2ms | Allocations: 10303)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:32:23 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered kopis/new.html.erb within layouts/application (Duration: 176.9ms | Allocations: 77740)
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 1.1ms | Allocations: 80494)
+
+
+  
+ActionView::Template::Error (undefined method `user_admin?' for #<#<Class:0x00007fc4f4144180>:0x00007fc4f4130ab8>
+Did you mean?  user_signed_in?):
+     5: 		<%= form.text_field :name, class: "form-control" %>
+     6: 	</div>
+     7: 
+     8: 	<% if user_admin? %>
+     9: 		<div class="form-group">
+    10: 			<%= form.label :roast %><br>
+    11: 			<%= form.text_field :roast, class: "form-control" %>
+  
+app/views/kopis/new.html.erb:8
+app/views/kopis/new.html.erb:2
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:33:01 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:17
+  Rendered kopis/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1668)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.7ms | Allocations: 7676)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:34:56 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:17
+  Rendered kopis/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.6ms | Allocations: 7581)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:35:56 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "admin" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["admin", true], ["updated_at", "2020-05-12 09:35:56.849495"], ["id", 1]]
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 34.5ms | Allocations: 4379)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 19.1ms | ActiveRecord: 24.0ms | Allocations: 10324)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:46:41 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 13.3ms | ActiveRecord: 0.9ms | Allocations: 15258)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:46:46 +0800
+Processing by KopisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:6:in `index'
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 5100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 10520)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-12 17:46:48 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j7IaciLQx92DdFJv7ZHYmhc0leJ8/TJ1If1UPsd0yeM2EKtDan1hSwVKWpFgdoXXaZilfUYgDYB9wPU5E6Tozg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 2599)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:46:48 +0800
+Processing by KopisController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1202)
+
+
+  
+NoMethodError (undefined method `update_attribute' for nil:NilClass):
+  
+app/controllers/kopis_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-05-12 17:46:54 +0800
+Processing by KopisController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1193)
+
+
+  
+NoMethodError (undefined method `update_attribute' for nil:NilClass):
+  
+app/controllers/kopis_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-05-12 17:47:29 +0800
+  
+SyntaxError (/home/bobby/floobits/floobits_demo/modules/kopi-tracker/app/controllers/kopis_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/kopis_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/kopis_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/kopis_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for ::1 at 2020-05-12 17:47:42 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5143)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 6.6ms | Allocations: 9701)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-12 17:48:09 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 537)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 10.6ms | ActiveRecord: 2.9ms | Allocations: 11419)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-05-12 17:48:11 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 199)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1793)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 6108)
+
+
+Started POST "/users" for ::1 at 2020-05-12 17:48:54 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"LLfWFQ/8Bzu+10y96LF6qxkowOBFDC/jZ8XWcaskiFzsh1r3pAQPEhvUdZLYwZP7OJkx1Ej1/xN6g74eVwrrDA==", "user"=>{"email"=>"sam@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sam@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "sam@email.com"], ["encrypted_password", "$2a$11$p2OZ6uYc35QWfPaKN5s8G.r.GrBgmprOdCHcBGL4ym0N8bcWY6N9e"], ["created_at", "2020-05-12 09:48:54.662368"], ["updated_at", "2020-05-12 09:48:54.662368"]]
+  [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 35.6ms | Allocations: 13543)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:48:54 +0800
+  
+SyntaxError (/home/bobby/floobits/floobits_demo/modules/kopi-tracker/app/controllers/kopis_controller.rb:42: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/kopis_controller.rb:42: syntax error, unexpected `end', expecting end-of-input
+app/controllers/kopis_controller.rb:42: syntax error, unexpected `end', expecting end-of-input
+app/controllers/kopis_controller.rb:42: syntax error, unexpected `end', expecting end-of-input
+Started POST "/users" for ::1 at 2020-05-12 17:49:06 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Lz2gSiWzG7UH1kCjn1FPMf39/P3ZuzQATor8o9s+Ibn5FE05DCACqCUDORJmnRHLPuc5VfNtlkYESkwuprM3NQ==", "user"=>{"email"=>"sam@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 3.3ms | Allocations: 6794)
+
+
+Started GET "/" for ::1 at 2020-05-12 17:49:07 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 6170)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 20.6ms | ActiveRecord: 3.2ms | Allocations: 11485)
+
+
+Started GET "/kopis/5" for ::1 at 2020-05-12 17:49:10 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:9:in `show'
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10:in `show'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 9.0ms | ActiveRecord: 4.7ms | Allocations: 8473)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-12 17:49:14 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "admin" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["admin", true], ["updated_at", "2020-05-12 09:49:14.438071"], ["id", 2]]
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[35m (20.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/kopis/new.html.erb:1
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 34.4ms | Allocations: 4240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 19.2ms | ActiveRecord: 22.3ms | Allocations: 9287)
+
+
