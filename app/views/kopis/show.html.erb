@@ -5,7 +5,7 @@
 
 <p>
   <strong>Roast:</strong>
-  <%= @kopi.roast_id %>
+  <%= @origin.roast_id %>
 </p>
 
 <p>
@@ -16,3 +16,7 @@
 <%= link_to 'Back', root_path %>
 
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
+
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+<%= link_to 'log in', new_user_session_url %>
