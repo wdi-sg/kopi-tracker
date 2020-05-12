@@ -1,3 +1,3 @@
-class Origin < ActiveRecord::Base
-  has_many :kopi
+class Origin < ApplicationRecord
+  # AR classes are singular and capitalized by convention
 end

@@ -17,3 +17,6 @@ cinnamon = Roast.create(name: "Cinnamon")
  french = Roast.create(name: "French")
 
  italian = Roast.create(name: "Italian")
+
+ city_medium = Origin.create(:location => 'Germany', :phone => '+4759345')
+ full_city = Origin.create(:location => 'Indonesia', :phone => '+2035134')
