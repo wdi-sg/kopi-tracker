@@ -1,4 +1,6 @@
 <h2>Kopis</h2>
+<br>
+<%= link_to 'New Kopi', new_kopi_path, :class => "btn btn-primary" %>
 
 <table class="table">
   <thead>
@@ -6,16 +8,20 @@
       <th scope="col">Name</th>
       <th scope="col">Roast</th>
       <th scope="col">Origin</th>
-      <th scope="col">Price</th>
+      <th scope="col">Price/pound</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
   	<% @kopis.each do |kopi| %>
 	    <tr>
-	      <td><%= kopi.name %></td>
+	      <td><%= link_to kopi.name, kopi_path(kopi) %></td>
 	      <td><%= kopi.roast.kind %></td>
 	      <td><%= kopi.origin.location %></td>
-	      <td><%= kopi.price %></td>
+	      <td>$<%= kopi.price %></td>
+	      <td><%= link_to 'Edit', edit_kopi_path(kopi), :class => "btn btn-warning" %></td>
+	      <td><%= link_to 'Delete', kopi_path(kopi), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
 	    </tr>
 	   <% end %>
   </tbody>

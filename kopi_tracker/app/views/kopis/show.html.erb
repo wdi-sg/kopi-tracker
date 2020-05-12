@@ -1,2 +1,10 @@
-<h1>Kopis#show</h1>
-<p>Find me in app/views/kopis/show.html.erb</p>
+<h2><%= @kopi.name %></h2>
+<p>Roast: <strong><%= @kopi.roast.kind %></strong></p>
+<p>Origin: <strong><%= @kopi.origin.location %></strong></p>
+<p>Price: <strong>$<%= @kopi.price %></strong></p>
+<br>
+<p>
+	<%= link_to 'Back', kopis_path, :class => "btn btn-primary" %>
+	<%= link_to 'Edit', edit_kopi_path(@kopi), :class => "btn btn-warning" %>
+	<%= link_to 'Delete', kopi_path(@kopi), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+</p>
