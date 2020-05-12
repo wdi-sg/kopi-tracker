@@ -14,11 +14,15 @@
       <td><%= farm.location %></td>
       <td><%= farm.phone %></td>
       <td><%= link_to 'Show', farm_path(farm) %></td>
+      <% if user_signed_in? %>
       <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
       <td><%= button_to 'Destroy', farm,
         method: :delete,
         data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
     </tr>
   <% end %>
 </table>
+<% if user_signed_in? %>
 <%= link_to 'New Farm', new_farm_path %>
+<% end %>

@@ -8,6 +8,8 @@
 <p>
   Roast Type: <%= @roast.name %>
 </p>
-<%= link_to 'Back To Kopis Index', kopis_path %>;
+<%= link_to 'Back To Kopis Index', kopis_path %>
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
+<% end %>
 </p> 

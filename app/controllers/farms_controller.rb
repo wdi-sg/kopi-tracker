@@ -1,4 +1,5 @@
 class FarmsController < ApplicationController
+    before_action :authenticate_user!, :except => [ :show, :index ]
     def index
         @farms = Farm.all
     end

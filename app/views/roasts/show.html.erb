@@ -1,0 +1,15 @@
+<h1>Show Roast</h1>
+
+<table>
+  <p> Roast: <%= @roast.name %></p>
+  <tr>
+    <th>Kopis</th>
+  </tr>
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Back To Roast Index', roasts_path %>;
