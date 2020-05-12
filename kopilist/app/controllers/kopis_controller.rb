@@ -24,6 +24,9 @@ class KopisController < ApplicationController
   end
 
   def edit
+     @farms = Farm.all
+    @roasts = Roast.all
+    @kopi = Kopi.find(params[:id])
   end
 
   def create
@@ -34,9 +37,19 @@ class KopisController < ApplicationController
   end
 
   def update
+
+          @kopi = Kopi.find(params[:id])
+
+  @kopi.update(kopi_params)
+  redirect_to @kopi
   end
 
   def destroy
+
+          @kopi = Kopi.find(params[:id])
+  @kopi.destroy
+
+  redirect_to root_path
   end
 
 private

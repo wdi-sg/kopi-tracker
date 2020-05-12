@@ -6,6 +6,10 @@
 
       <p><%= farm.location %></p>
       <p><%= link_to 'Show', farm_path(farm) %></p>
+      <p><%= link_to 'Edit', edit_farm_path(farm) %></p>
+      <p><td><%= link_to 'Destroy', farm_path(farm),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td></p>
   <% end %>
 
 
@@ -14,6 +18,10 @@
 
       <p><%= kopi.name %></p>
       <p><%= link_to 'Show', kopi_path(kopi) %></p>
+            <p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
+      <p><td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td></p>
   <% end %>
 
 <h2>Roast</h2>
