@@ -5,6 +5,8 @@ class KopisController < ApplicationController
   # GET /kopis.json
   def index
     @kopis = Kopi.all
+
+    user = current_user
   end
 
   # GET /kopis/1
@@ -14,6 +16,9 @@ class KopisController < ApplicationController
 
   # GET /kopis/new
   def new
+    if !current_user
+    redirect_to kopis_path
+    end
     @kopi = Kopi.new
   end
 
