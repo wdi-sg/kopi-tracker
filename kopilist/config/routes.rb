@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'farms#index'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   delete '/farms/:id' => 'farms#destroy'
 
 
-  get '/kopis' => 'kopis#index', as: 'kopis'
+  #get '/kopis' => 'kopis#index', as: 'kopis'
   get '/kopis/new' => 'kopis#new', as: 'new_kopi'
   post '/kopis' => 'kopis#create'
   get '/kopis/:id' => 'kopis#show' , as: 'kopi'

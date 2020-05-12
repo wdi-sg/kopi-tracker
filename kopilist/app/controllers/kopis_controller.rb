@@ -1,7 +1,7 @@
 class KopisController < ApplicationController
   def index
   end
-
+before_action :authenticate_user!, :except => [ :show, :index ]
   def show
         # deal with the case that we are trying to get a ranger for a park that doesn't exist
 
