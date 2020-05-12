@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+<%= link_to 'New Kopi', new_kopi_path %>
+<% end %>
+
+<h1>Listing Kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roastedness</th>
+    <th>Origin</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast %></td>
+      <td><%= kopi.origin.location %></td>
+
+<!--       SHOW ONE origin -->
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+
+      <!-- EDIT one kopi -->
+      <td><%= link_to 'Edit', edit_origin_path(kopi) %></td>
+
+      <!-- DELETE an kopi -->
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New kopi', new_kopi_path %>
+

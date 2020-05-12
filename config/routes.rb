@@ -1,14 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'farms#index'
-  get '/farms' => 'farms#index', as: 'farms'
-  get '/farms/new' => 'farms#new', as: 'new_farm'
-  post '/farms' => 'farms#create'
-  get '/farms/:id' => 'farms#show' , as: 'farm'
-  get '/farms/:id/edit' => 'farms#edit', as: 'edit_farm'
-  patch '/farms/:id' => 'farms#update'
-  delete '/farms/:id' => 'farms#destroy'
+  #index
+  root 'origins#index'
+
+  #index
+  get '/origins' => 'origins#index', as: 'origins'
+
+  #create new origin
+  get '/origins/new' => 'origins#new', as: 'new_origin'
+  post '/origins' => 'origins#create'
+
+  #show one origin
+  get '/origins/:id' => 'origins#show' , as: 'origin'
+
+  #update origin
+  get '/origins/:id/edit' => 'origins#edit', as: 'edit_origin'
+  patch '/origins/:id' => 'origins#update'
+
+  #delete origin
+  delete '/origins/:id' => 'origins#destroy'
 
 
   get '/kopis' => 'kopis#index', as: 'kopis'
@@ -20,7 +32,7 @@ Rails.application.routes.draw do
   delete '/kopis/:id' => 'kopis#destroy'
 
 
-  get '/farms/:farm_id/kopis' => 'kopis#index', as: 'farm_kopis'
-  get '/farms/:farm_id/kopis/new' => 'kopis#create', as: 'new_farm_kopi'
-  post '/farms/:farm_id/kopis' => 'kopis#create'
+  get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
+  get '/origins/:origin_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'
+  post '/origins/:origin_id/kopis' => 'kopis#create'
 end
