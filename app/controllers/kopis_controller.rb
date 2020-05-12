@@ -1,11 +1,13 @@
 class KopisController < ApplicationController
-
+before_action :authenticate_user!, :except => [ :show, :index ]
   def new
     @farms = Farm.all
   end
 
   def create
     @kopi = Kopi.new(kopi_params)
+
+    @kopi.user = current_user
 
     @kopi.save
     redirect_to @kopi
@@ -18,13 +20,18 @@ class KopisController < ApplicationController
 
     if params[:farm_id].to_i != @kopi.farm.id
       # do something
-      there is no such farm
+    
     end
   end
+  
+  def index
+        @kopis = Kopi.all
+  end
+
 
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :farm_id)
+    params.require(:kopi).permit(:name, :roast, :farm_id, :user_id)
   end
 end
