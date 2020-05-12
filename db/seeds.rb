@@ -14,12 +14,12 @@
 #       }])
 # end
 
-50.times do
+40.times do
       Kopi.create([{
             name: Faker::Coffee.blend_name,
-            roastedness: rand(1..7),
+            roast: Roast.find(rand(1..7)),
             # Two periods is a range including second number.
             # Three periods (...) is a range exluding second number.
-            origin_id: rand(1..25)
+            kopi_farm: KopiFarm.find(rand(1..25))
       }])
 end

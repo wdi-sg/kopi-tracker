@@ -6,7 +6,7 @@ class KopiFarmsController < ApplicationController
 
   def show
       @kopi_farm = KopiFarm.find(params[:id])
-      @kopis = Kopi.where(origin_id: @kopi_farm.id)
+      @kopis = Kopi.where(kopi_farm: @kopi_farm)
   end
 
   def new

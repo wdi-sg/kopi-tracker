@@ -15,12 +15,12 @@
       <% @kopis.each do |kopi| %>
       <tr>
             <td> <%= link_to kopi.name, kopi_path %> </td>
-            <td> <%= kopi.roastedness %> </td>
+            <td> <%= kopi.roast.name %> </td>
       </tr>
       <% end %>  
       <tr>
 </table>
-<%= link_to "Edit", edit_kopi_farm_path(@kopi_farm), :class => 'btn btn-warning' %>
-<%= link_to "Back to All Farms", root_path,  :class => 'btn btn-info' %>
+<%= link_to "Edit", edit_kopi_farm_path(@kopi_farm), :class => 'btn mb-3 btn-warning' %>
+<br/><%= link_to "Back to All Farms", root_path,  :class => 'btn btn-info' %>
 
 </div>
