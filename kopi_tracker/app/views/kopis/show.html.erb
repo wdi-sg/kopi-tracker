@@ -1,3 +1,4 @@
+<br>
 <h2><%= @kopi.name %></h2>
 <p>Roast: <strong><%= @kopi.roast.kind %></strong></p>
 <p>Origin: <strong><%= @kopi.origin.location %></strong></p>
@@ -5,9 +6,9 @@
 <br>
 
 <p>
-	<%= link_to 'Back', kopis_path, :class => "btn btn-primary" %>
 	<% if user_signed_in? %>
 		<%= link_to 'Edit', edit_kopi_path(@kopi), :class => "btn btn-warning" %>
 		<%= link_to 'Delete', kopi_path(@kopi), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 	<% end %>
+	<%= link_to 'Back', kopis_path, :class => "btn btn-secondary" %>
 </p>
