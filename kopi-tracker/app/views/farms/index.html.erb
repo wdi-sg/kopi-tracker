@@ -11,6 +11,14 @@
   <%= link_to "Login", new_user_session_path %>
 <% end %>
 
+<% flash.each do |type, msg| %>
+  <div>
+  <br/>
+    <%= msg %>
+  <br/><br/>
+  </div>
+<% end %>
+
 <div>
   <%= link_to 'All Kopis', kopis_path %>
 </div>
