@@ -1,7 +1,9 @@
+<% @ishidden = "hidden" %>
 <% if user_signed_in? && current_user.admin? %>
   <%= link_to 'New Roast', new_roast_path %>&nbsp;
   <%= link_to 'New Farm', new_farm_path %>&nbsp;
   <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+  <% @ishidden = "" %>
 <% end %>
 <% if user_signed_in? && !current_user.admin? %>
   <%= link_to 'New Farm', new_farm_path %>&nbsp;
@@ -29,7 +31,7 @@
     <th>Location</th>
     <th>Phone Number</th>
     <th>Kopis</th>
-    <th>Created By</th>
+    <th <%= @ishidden %>>Created By</th>
     <th>Options</th>
   </tr>
   <% @farms.each do |farm| %>
@@ -43,7 +45,7 @@
           <%= link_to kopi.name, kopi_path(kopi) %>&nbsp;
         <% end %>
       </td>
-      <td>
+      <td <%= @ishidden %>>
         <% if farm.user_id.is_a? Integer %>
           <% @user = User.find(farm.user_id) %>
           <%= @user.email %>
