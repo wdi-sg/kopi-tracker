@@ -13,6 +13,12 @@ def new
 
   def show
     @origin = Origin.find(params[:id])
+    @kopi = Kopi.where(origin_id: @origin.id)
+
+      puts '*************'
+      puts
+      puts '*************'
+
   end
 
   def edit

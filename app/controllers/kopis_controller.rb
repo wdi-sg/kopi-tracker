@@ -1,8 +1,15 @@
 class KopisController < ApplicationController
 
+ before_action :authenticate_user!, :except => [ :show, :index ]
     def show
 
       @kopi = Kopi.find(params[:id])
+
+
+    if params[:id].to_i != @kopi.origin.id
+      @origin = Origin.find(@kopi.origin_id)
+    end
+
 
     end
 
@@ -16,9 +23,9 @@ class KopisController < ApplicationController
 
     def create
       @kopi = Kopi.new(kopi_params)
-      @kopi.user = current_user
+      @kopi.user_id = current_user
       @kopi.save
-      redirect_to kopis_path
+      redirect_to origins_path
     end
 
     def update
@@ -31,7 +38,7 @@ class KopisController < ApplicationController
     def destroy
       @kopi = Kopi.find(params[:id])
       @kopi.destroy
-      redirect_to @kopi
+      redirect_to origins_path
 
     end
 
