@@ -2,6 +2,7 @@ class KopisController < ApplicationController
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
   before_action :set_origin, only: [:show, :edit, :update, :destroy]
   before_action :set_roast, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [ :show, :index ]
 
   # GET /kopis
   # GET /kopis.json

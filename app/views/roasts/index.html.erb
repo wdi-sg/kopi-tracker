@@ -16,9 +16,11 @@
       <tr>
         <td><%= roast.name %></td>
         <td><%= roast.level %></td>
-        <td><%= link_to 'Show', roast %></td>
-        <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
-        <td><%= link_to 'Destroy', roast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? and current_user.admin?%>
+          <td><%= link_to 'Show', roast %></td>
+          <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
+          <td><%= link_to 'Destroy', roast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

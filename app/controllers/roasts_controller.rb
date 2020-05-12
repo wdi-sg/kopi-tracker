@@ -1,5 +1,7 @@
 class RoastsController < ApplicationController
   before_action :set_roast, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [ :show, :index ]
+  before_action :check_admin, :except => [ :show, :index ]
 
   # GET /roasts
   # GET /roasts.json
@@ -70,5 +72,11 @@ class RoastsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def roast_params
       params.require(:roast).permit(:name, :level)
+    end
+
+    def check_admin
+      if current_user.admin? == false
+        redirect_to new_user_session_path
+      end
     end
 end
