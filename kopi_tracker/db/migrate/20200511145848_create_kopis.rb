@@ -4,6 +4,7 @@ class CreateKopis < ActiveRecord::Migration[5.2]
       t.string :name
       t.references :roast
       t.references :origin
+      t.integer :price
       t.timestamps
     end
   end

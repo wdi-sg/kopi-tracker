@@ -18,3 +18,7 @@ brazil = Origin.create(location: "Brazil", phone_num: 123)
 vietnam = Origin.create(location:  "Vietnam", phone_num: 456)
 colombia = Origin.create(location: "Colombia", phone_num: 789)
 switzerland = Origin.create(location: "Switzerland", phone_num: 010)
+
+first_order = Order.create(weight: 4)
+second_order = Order.create(weight: 5)
+third_order = Order.create(weight: 10)
