@@ -1,4 +1,7 @@
 class OriginsController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
       @origins = Origin.all
       @kopis = Kopi.all
@@ -9,9 +12,13 @@ class OriginsController < ApplicationController
 
   def create
     @origin = Origin.new(origin_params)
+    @origin.user = current_user
 
-    @origin.save
-    redirect_to @origin
+    if @origin.save
+      redirect_to @origin
+    else
+      render 'new'
+    end
   end
 
   def show
