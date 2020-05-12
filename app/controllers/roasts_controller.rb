@@ -1,7 +1,7 @@
 class RoastsController < ApplicationController
 before_action :authenticate_user!, :except => [ :show, :index ]
  
-     def index
+      def index
   end
 
 
@@ -9,6 +9,9 @@ before_action :authenticate_user!, :except => [ :show, :index ]
   end
 
   def new
+      if !current_user.admin?
+            render html: 'You must be an admin to view this page.'
+      end
   end
 
   def edit
@@ -16,6 +19,9 @@ before_action :authenticate_user!, :except => [ :show, :index ]
   end
 
   def create
+         if !current_user.admin?
+            render html: 'You must be an admin to view this page.<'
+         end
       @roast = Roast.new(roast_params)
       @roast.save
       redirect_to new_kopi_path
