@@ -1,0 +1,13 @@
+<h1>Origin Index</h1>
+
+<h3> 
+    <%= link_to 'New Originnnnn', new_origin_path %>
+</h3>
+<ul>
+<% @origins.each do |origin| %>
+    <li><%= origin.location %><br>
+    Phone:
+    <%= origin.phone %><br>
+    <%= link_to 'Show', origin_path(origin) %><br><br></li>
+<% end %>
+</ul>
