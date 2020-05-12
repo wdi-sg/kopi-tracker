@@ -1,0 +1,29 @@
+<h1>List of Orders</h1>
+
+<table>
+<tr>
+    <th>Order ID&emsp;</th>
+    <th>Kopi Name&emsp;</th>
+    <th>Price per pound&emsp;</th>
+    <th>Weight&emsp;</th>
+    <th>Cost&emsp;</th>
+
+    <th></th>
+  </tr>
+ <%total = 0%> 
+<% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %>. &nbsp;</td>
+      <td><%= number_to_currency(order.kopi.price) %>&nbsp;</td>
+      <td><%= link_to order.kopi.name, kopi_path(order.kopi) %></td>
+      <td><%= order.weight %> pounds&nbsp;</td>
+      <td><%= number_to_currency(cost = order.kopi.price * order.weight) %></td>
+      <% total = total + cost%>
+      <td>&emsp;<%= link_to 'View Order', order_path(order) %></td>
+
+    </tr>
+  <% end %>
+  
+  </table>
+  <p>Total Cost: <%= number_to_currency(total)%></p>
+<%= link_to 'Kopi List', kopis_path %>

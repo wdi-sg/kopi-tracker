@@ -1,0 +1,28 @@
+<p>
+  <strong>Order ID:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Kopi Name:</strong>
+  <%= @order.kopi.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @order.weight %> pounds
+</p>
+
+<p>
+  <strong>Price per Pound:</strong>
+<%= number_to_currency(@order.kopi.price) %></p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= number_to_currency(cost = @order.kopi.price * @order.weight) %>
+</p>
+
+
+
+<%= link_to 'Back to Order List', orders_path %>
+
