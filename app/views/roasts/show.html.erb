@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @roast.name %>
+<p id="notice">
+		<%= notice %>
 </p>
-
-<%= link_to 'Edit', edit_roast_path(@roast) %> |
+<p>
+		<strong>Name:</strong>
+		<%= @roast.name %>
+</p>
+<% if @user %>
+<%= link_to 'Edit', edit_roast_path(@roast) if @user.admin %> |
 <%= link_to 'Back', roasts_path %>
+<% end %>

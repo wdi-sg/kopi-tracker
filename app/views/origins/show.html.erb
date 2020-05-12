@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @origin.location %>
+<p id="notice">
+		<%= notice %>
 </p>
-
 <p>
-  <strong>Phone:</strong>
-  <%= @origin.phone %>
+		<strong>Location:</strong>
+		<%= @origin.location %>
 </p>
-
+<p>
+		<strong>Phone:</strong>
+		<%= @origin.phone %>
+</p>
+<% if @user %>
 <%= link_to 'Edit', edit_origin_path(@origin) %> |
 <%= link_to 'Back', origins_path %>
+<% end %>

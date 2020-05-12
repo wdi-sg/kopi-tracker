@@ -27,12 +27,14 @@
 						<td>
 								<%= link_to 'Show', kopi %>
 						</td>
+						<%if @user.admin%>
 						<td>
 								<%= link_to 'Edit', edit_kopi_path(kopi) %>
 						</td>
 						<td>
 								<%= link_to 'Destroy', kopi, method: :delete, data: { confirm: 'Are you sure?' }%>
 						</td>
+						<% end %>
 						<% end %>
 				</tr>
 				<% end %>

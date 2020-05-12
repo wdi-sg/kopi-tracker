@@ -1,6 +1,6 @@
 class OriginsController < ApplicationController
   before_action :set_user
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :check_user, only: [:new, :edit, :update, :destroy]
   before_action :set_origin, only: [:show, :edit, :update, :destroy]
 
   # GET /origins

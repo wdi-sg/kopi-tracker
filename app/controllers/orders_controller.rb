@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_user
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :check_user
+  before_action :check_admin, only: [:edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
@@ -81,6 +82,12 @@ class OrdersController < ApplicationController
     def check_user
       if !current_user
         redirect_to root_path
+      end
+    end
+
+    def check_admin
+      if !current_user.try(:admin?)
+        redirect_to orders_path
       end
     end
 end

@@ -1,7 +1,8 @@
 class KopisController < ApplicationController
   before_action :set_user
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :check_user, only: [:new, :edit, :update, :destroy]
+  before_action :check_admin, only: [:edit, :update, :destroy]
 
   # GET /kopis
   # GET /kopis.json
@@ -83,6 +84,12 @@ class KopisController < ApplicationController
 
     def check_user
       if !current_user
+        redirect_to kopis_path
+      end
+    end
+
+    def check_admin
+      if !current_user.try(:admin?)
         redirect_to kopis_path
       end
     end

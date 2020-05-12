@@ -1,7 +1,8 @@
 class RoastsController < ApplicationController
   before_action :set_user
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :check_user, only: [:new, :edit, :update, :destroy]
   before_action :set_roast, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /roasts
   # GET /roasts.json
@@ -80,6 +81,12 @@ class RoastsController < ApplicationController
 
     def check_user
       if !current_user
+        redirect_to roasts_path
+      end
+    end
+
+    def check_admin
+      if !current_user.try(:admin?)
         redirect_to roasts_path
       end
     end
