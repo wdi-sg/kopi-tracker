@@ -27,11 +27,21 @@ Rails.application.routes.draw do
   patch '/roasts/:id' => 'roasts#update'
   delete '/roasts/:id' => 'roasts#destroy'
 
-
+  get '/orders' => 'orders#index', as: 'orders'
     get '/orders/new' => 'orders#new', as: 'new_order'
   post '/orders' => 'orders#create'
   get '/orders/:id' => 'orders#show' , as: 'order'
+    get '/orders/:id/edit' => 'orders#edit', as: 'edit_order'
+  patch '/orders/:id' => 'orders#update'
+  delete '/orders/:id' => 'orders#destroy'
 
 
   get '/reports' => 'reports#index', as: 'reports'
+
+  get '/rights' => 'rights#index', as: 'rights'
+
+  get '/rights/:id' => 'rights#show' , as: 'right'
+
+  get '/rights/:id/edit' => 'rights#edit', as: 'edit_right'
+  post '/rights/:id/edit' => 'rights#update'
 end

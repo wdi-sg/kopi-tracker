@@ -1,4 +1,6 @@
-<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+<h1>Edit order</h1>
+
+<%= form_with scope: :order, model: @order, local: true do |form| %>
 
   <%= form.collection_select :kopi_id, @kopis, :id, :name %>
 
@@ -9,13 +11,10 @@
     <%= form.text_area :pound %>
   </p>
 
-
-
-
-
   <p>
     <%= form.submit %>
   </p>
+
 <% end %>
 
 <%= link_to 'Back', root_path %>

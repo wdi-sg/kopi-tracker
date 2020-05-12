@@ -1,0 +1,18 @@
+<h1>Edit rights</h1>
+
+<%= form_with scope: :user, model: @right, local: true do |form| %>
+
+  <p>User: <%= @user.email %></p>
+
+<p>
+
+    Click to toggle admin rights
+</p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

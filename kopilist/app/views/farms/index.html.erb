@@ -1,6 +1,73 @@
-<%= link_to 'log in', new_user_session_url %>
-<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<div class = "row mt-5 mb-5">
+	<div class = "col-4 pt-2 pb-2 text-center border">
+		<%= link_to 'log in', new_user_session_url %>
+	</div>
+
+	<div class = "col-4 pt-2 pb-2 text-center border">
+		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+	</div>
+
+       <% if user_signed_in? %>
+       <% if current_user.admin? %>
+      <div class = "col-4 pt-2 pb-2 text-center border">
+      <p>Admin tool<%= link_to 'Admin', rights_path %></p>
+      </div>
+
+        <% end %>
+        <% end %>
+
+
+</div>
+
+
+
+
+
 <div class="row">
+<% if user_signed_in? %>
+	<div class="col-2 border pt-2	text-center">
+<p>
+  <%= link_to 'New farm', new_farm_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+<p>
+  <%= link_to 'New kopi', new_kopi_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'New order', new_order_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'View order', orders_path %>
+</p>
+</div>
+
+<% if current_user.admin? %>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'New roast', new_roast_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+
+<p>
+  <%= link_to 'Report', reports_path %>
+</p>
+</div>
+<% end %>
+<% end %>
+</div>
+
+
+
+
+
+
+<div class="row mt-3">
 	<div class="col-12 border	text-center">
 			<h1>Kopi Data</h1>
 	</div>
@@ -89,31 +156,4 @@
 
     </div>
   <% end %>
-
-
-  <h2>Order</h2>
-  <% @orders.each do |order| %>
-
-      <p>Order: <%= order.id %></p>
-      <p><%= link_to 'Show', order_path(order) %></p>
-  <% end %>
-
-
-
-
-<% if user_signed_in? %>
-<p>
-  <%= link_to 'New farm', new_farm_path %>
-</p>
-<p>
-  <%= link_to 'New kopi', new_kopi_path %>
-</p>
-<% if current_user.admin? %>
-<p>
-  <%= link_to 'New order', new_order_path %>
-</p>
-<% end %>
-<% end %>
-<p>
-  <%= link_to 'Report', reports_path %>
-</p>
+  <div class="row mb-5"></div>

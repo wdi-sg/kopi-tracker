@@ -1,0 +1,30 @@
+<h1>Heelo orders page</h1>
+
+<div class="row">
+	<div class="col-12 border	text-center">
+			<h2>Your Orders</h2>
+	</div>
+</div>
+
+
+  <% @orders.each do |order| %>
+<div class="row">
+  <div class="col-3 border pt-1">
+      <p>Order <%= order.id %></p>
+  </div>
+  <div class="col-3 border pt-1">
+      <p><%= link_to 'Show', order_path(order) %></p>
+</div>
+
+      <% if user_signed_in? %>
+   <div class="col-3 border pt-1">
+      <p><%= link_to 'Edit', edit_order_path(order) %></p>
+     </div>
+  <div class="col-3 border pt-1">
+      <p><%= link_to 'Destroy', order_path(order),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+      </div>
+        <% end %>
+        </div>
+  <% end %>

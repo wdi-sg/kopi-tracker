@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def index
-  end
+    @orders = Order.where(user_id: current_user.id)
+ end
 
   def show
         # deal with the case that we are trying to get a ranger for a park that doesn't exist
@@ -21,19 +22,29 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @kopis = Kopi.all
+    @order = Order.find(params[:id])
   end
 
   def create
     @order = Order.new(order_params)
-
+    @order.user = current_user
     @order.save
     redirect_to @order
   end
 
   def update
+          @order = Order.find(params[:id])
+
+  @order.update(order_params)
+  redirect_to @order
   end
 
   def destroy
+         @order = Order.find(params[:id])
+  @order.destroy
+
+  redirect_to orders_path
   end
 
 private

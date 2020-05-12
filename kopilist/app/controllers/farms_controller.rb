@@ -5,9 +5,11 @@ class FarmsController < ApplicationController
     @farms = Farm.all
     @kopis = Kopi.all
     @roasts = Roast.all
-    @orders = Order.all
+
     puts @farms
     puts @kopis
+    puts "$21231313131232132323123131323132131312"
+
   end
 
   def show

@@ -1,8 +1,7 @@
 class KopisController < ApplicationController
 
   before_action :authenticate_user!, :except => [ :show, :index ]
-  def index
-  end
+
 
   def show
         # deal with the case that we are trying to get a ranger for a park that doesn't exist
@@ -33,7 +32,7 @@ class KopisController < ApplicationController
 
   def create
     @kopi = Kopi.new(kopi_params)
-
+    @kopi.user = current_user
     @kopi.save
     redirect_to @kopi
   end
@@ -41,7 +40,7 @@ class KopisController < ApplicationController
   def update
 
           @kopi = Kopi.find(params[:id])
-
+puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
   @kopi.update(kopi_params)
   redirect_to @kopi
   end
