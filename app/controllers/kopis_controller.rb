@@ -1,5 +1,8 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
+  # uncomment below to break before every method call
+  #before_action :byebug
 
   # GET /kopis
   # GET /kopis.json

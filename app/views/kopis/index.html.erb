@@ -2,7 +2,10 @@
 
 <h1>Kopis</h1>
 
-<table>
+<%# this is a ruby comment %>
+<!-- html comment -->
+
+<table class=''>
   <thead>
     <tr>
       <th colspan="4">Coffees</th>
@@ -12,7 +15,7 @@
   <tbody>
     <% @kopis.each do |kopi| %>
       <tr>
-        <td><%= kopi.name %></td>
+        <td class=''><%= kopi.name %></td>
         <td><%= link_to 'Show', kopi %></td>
         <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
         <td><%= link_to 'Destroy', kopi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,4 +26,9 @@
 
 <br>
 
-<%= link_to 'New Kopi', new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>
+  <%= link_to 'Log Out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'Sign in to add a Kopi', new_user_session_url %>
+<% end %>
