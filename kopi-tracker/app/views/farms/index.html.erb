@@ -1,9 +1,16 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Roast', new_roast_path %>&nbsp;
   <%= link_to 'New Farm', new_farm_path %>&nbsp;
-  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
-<%else%>
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+<% end %>
+<% if user_signed_in? && !current_user.admin? %>
+  <%= link_to 'New Farm', new_farm_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+<% end %>
+<% if !user_signed_in? %>
   <%= link_to "Login", new_user_session_path %>
 <% end %>
+
 <div>
   <%= link_to 'All Kopis', kopis_path %>
 </div>
