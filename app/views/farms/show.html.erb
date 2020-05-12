@@ -1,0 +1,22 @@
+<h1>Show Farm</h1>
+<p>
+  Name: <%= @farm.name %>
+</p>
+<p>
+  Location: <%= @farm.location %>
+</p>
+<p>
+  Phone Number: <%= @farm.phone %>
+</p>
+<p>
+  Kopis:<br/>
+  <ul>
+  <% @farm.kopi.each do |kopi| %>
+    <li><%= link_to kopi.name, kopi_path %></li>
+  <% end %>
+  </ul>
+</p>
+<p>
+<%= link_to 'Back To Farms Index', root_path %>&nbsp;
+<%= link_to 'Edit', edit_farm_path(@farm) %>
+</p> 
