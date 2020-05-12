@@ -1,6 +1,19 @@
+<br>
+<header>
+	<% if user_signed_in? %>
+		<p>Welcome <strong><%= current_user.email %></strong>!
+			<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+		</p>
+	<% else %>
+		<p>Existing user? <%= link_to 'Log in', new_user_session_url %></p>
+	<% end %>
+</header>
+
 <h2>Kopis</h2>
 <br>
-<%= link_to 'New Kopi', new_kopi_path, :class => "btn btn-primary" %>
+<% if user_signed_in? %>
+	<%= link_to 'New Kopi', new_kopi_path, :class => "btn btn-primary" %>
+<% end %>
 
 <table class="table">
   <thead>
