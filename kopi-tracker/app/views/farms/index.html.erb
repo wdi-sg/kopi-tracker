@@ -1,4 +1,12 @@
-<%= link_to 'New Farm', new_farm_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Farm', new_farm_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
+<%else%>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+<div>
+  <%= link_to 'All Kopis', kopis_path %>
+</div>
 <h1>All Farms</h1>
 <table width=100% style="text-align:center">
   <tr>
@@ -6,6 +14,7 @@
     <th>Location</th>
     <th>Phone Number</th>
     <th>Kopis</th>
+    <th>Created By</th>
     <th>Options</th>
   </tr>
   <% @farms.each do |farm| %>
@@ -20,8 +29,14 @@
         <% end %>
       </td>
       <td>
+        <% if farm.user_id.is_a? Integer %>
+          <% @user = User.find(farm.user_id) %>
+          <%= @user.email %>
+        <% end %>
+      </td>
+      <td>
         <%= link_to 'Show', farm_path(farm) %>&nbsp;
-        <%= link_to 'Edit', edit_farm_path(farm) %>&nbsp;
+        <%# <%= link_to 'Edit', edit_farm_path(farm) %>
         <%= link_to 'Destroy', farm_path(farm),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
