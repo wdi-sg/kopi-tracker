@@ -1,12 +1,12 @@
 class KopisController < ApplicationController
+  before_action :set_user
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /kopis
   # GET /kopis.json
   def index
     @kopis = Kopi.all
-
-    user = current_user
   end
 
   # GET /kopis/1
@@ -75,5 +75,15 @@ class KopisController < ApplicationController
     # Only allow a list of trusted parameters through.
     def kopi_params
       params.require(:kopi).permit(:name, :roast, :origin_id)
+    end
+
+    def set_user
+      @user = current_user
+    end
+
+    def check_user
+      if !current_user
+        redirect_to kopis_path
+      end
     end
 end
