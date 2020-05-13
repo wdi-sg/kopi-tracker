@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   devise_for :users
   get '/report', to: 'report#index'
   resources :roasts
