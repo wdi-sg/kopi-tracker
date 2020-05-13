@@ -13,6 +13,8 @@ class KopisController < ApplicationController
   # GET /kopis/1
   # GET /kopis/1.json
   def show
+    @kopi = set_kopi
+    @customers = @kopi.customers
   end
 
   # GET /kopis/new
@@ -20,6 +22,7 @@ class KopisController < ApplicationController
     @kopi = Kopi.new
     @roasts = Roast.all
     @origins = Origin.all
+    @customers = Customer.all
   end
 
   # GET /kopis/1/edit
@@ -27,6 +30,7 @@ class KopisController < ApplicationController
     @kopi = set_kopi
     @roasts = Roast.all
     @origins = Origin.all
+    @customers = Customer.all
   end
 
   # POST /kopis
@@ -45,8 +49,7 @@ class KopisController < ApplicationController
     end
   end
 
-  # PATCH/PUT /kopis/1
-  # PATCH/PUT /kopis/1.json
+  # PATCH/PUT /kopis/1 # PATCH/PUT /kopis/1.json
   def update
     respond_to do |format|
       if @kopi.update(kopi_params)
@@ -77,6 +80,6 @@ class KopisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id, :customer_ids => [])
     end
 end

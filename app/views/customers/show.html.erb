@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2> <%= @customer.name %> </h2>
+
+<ul>Kopis carried:
+  <% @kopis.each do |kopi| %>
+    <li><%= kopi.name %> (<%= kopi.roast.name %> roast)</li>
+  <% end %>
+</ul>
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

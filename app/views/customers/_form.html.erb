@@ -1,0 +1,25 @@
+<%= form_with(model: customer, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br />
+
+  <%= form.label :kopis_carried %>
+  <%= select_tag 'customer[kopi_ids]',
+   options_from_collection_for_select(@kopis, :id, :name),
+  multiple: true %>
+
+  <% if customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

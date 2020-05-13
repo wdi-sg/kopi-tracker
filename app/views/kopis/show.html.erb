@@ -8,5 +8,13 @@
   Origin: <%= @kopi.origin.location %>
 </h5>
 
+<h4>Carried by:</h4>
+<ul>
+  <% @customers.each do |customer| %>
+    <li><%= customer.name %></li>
+  <% end %>
+
+</ul>
+
 <%= link_to 'Edit', edit_kopi_path(@kopi) %> |
 <%= link_to 'Back', kopis_path %>

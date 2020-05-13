@@ -6,6 +6,11 @@
   <%= form.label :origin_id %><br />
   <%= form.collection_select :origin_id, @origins, :id, :location %><br />
 
+  <%= form.label :carried_by %>
+  <%= select_tag 'kopi[customer_ids]',
+   options_from_collection_for_select(@customers, :id, :name),
+  multiple: true %>
+
   <% if kopi.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(kopi.errors.count, "error") %> prohibited this kopi from being saved:</h2>
