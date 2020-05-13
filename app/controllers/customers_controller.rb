@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
   # GET /customers/1
   def show
     @customer = current_customer
+    @kopis = @customer.kopis
   end
 
   def edit

@@ -5,5 +5,14 @@
 		<strong>Name:</strong>
 		<%= @customer.email %>
 </p>
-</p>
+<div class="customer-kopis__container">
+		<h3 class="customer-kopis__list-header">Kopis</h3>
+		<ul class="customer-kopis__list">
+				<% @kopis.each do |kopi|%>
+				<li class="customer-kopis__list-item">
+						<%= kopi.name%>
+				</li>
+				<%end%>
+		</ul>
+</div>
 <%= link_to 'Back to Home', root_path %>
