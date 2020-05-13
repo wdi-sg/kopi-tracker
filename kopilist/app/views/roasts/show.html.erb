@@ -1,0 +1,18 @@
+<p>
+  <strong>Roast:</strong>
+  <%= @roast.roast_name %>
+</p>
+
+
+	<strong>Kopi with the roast <%= @roast.roast_name %> </strong>
+</p>
+<ol>
+  <% @kopis.each do |kopi| %>
+
+      <li><%= kopi.name %></li>
+      <p><%= link_to 'Show', kopi_path(kopi) %></p>
+  <% end %>
+ </ol>
+
+ <%= link_to 'Edit', edit_roast_path(@roast) %>
+<%= link_to 'Back', root_path %>

@@ -1,0 +1,9 @@
+<h1>Customer: <%= @customer.customerName %></h1>
+
+<% puts @customer.kopis.inspect %>
+<h2>Kopis: </h2>
+<% @customer.kopis.each do |kopi| %>
+	<p>Kopi name: <%= kopi.name %></p>
+<% end %>
+<p><%= link_to 'Edit', edit_customer_path(@customer) %></p>
+<%= link_to 'Back', customers_path %>

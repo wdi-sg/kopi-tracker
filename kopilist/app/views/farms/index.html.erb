@@ -1,0 +1,166 @@
+<div class = "row mt-5 mb-5">
+	<div class = "col-3 pt-2 pb-2 text-center border">
+		<%= link_to 'log in', new_user_session_url %>
+	</div>
+
+	<div class = "col-3 pt-2 pb-2 text-center border">
+		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+	</div>
+      <div class = "col-3 pt-2 pb-2 text-center border">
+      <p><%= link_to 'Customer Management', customers_path %></p>
+      </div>
+       <% if user_signed_in? %>
+       <% if current_user.admin? %>
+
+
+      <div class = "col-3 pt-2 pb-2 text-center border">
+      <p>Admin tool<%= link_to 'Admin', rights_path %></p>
+      </div>
+
+        <% end %>
+        <% end %>
+
+
+</div>
+
+
+
+
+
+<div class="row">
+<% if user_signed_in? %>
+	<div class="col-2 border pt-2	text-center">
+<p>
+  <%= link_to 'New farm', new_farm_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+<p>
+  <%= link_to 'New kopi', new_kopi_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'New order', new_order_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'View order', orders_path %>
+</p>
+</div>
+
+<% if current_user.admin? %>
+<div class="col-2 border pt-2	text-center">
+  <p>
+  <%= link_to 'New roast', new_roast_path %>
+</p>
+</div>
+<div class="col-2 border pt-2	text-center">
+
+<p>
+  <%= link_to 'Report', reports_path %>
+</p>
+</div>
+<% end %>
+<% end %>
+</div>
+
+
+
+
+
+
+<div class="row mt-3">
+	<div class="col-12 border	text-center">
+			<h1>Kopi Data </h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-12 border	text-center">
+			<h2>Farms</h2>
+	</div>
+</div>
+
+  <% @farms.each do |farm| %>
+<div class="row">
+  <div class="col-3 border pt-1">
+      <p><%= farm.location %></p>
+  </div>
+  <div class="col-3 border pt-1">
+      <p><%= link_to 'Show', farm_path(farm) %></p>
+</div>
+
+      <% if user_signed_in? %>
+   <div class="col-3 border pt-1">
+      <p><%= link_to 'Edit', edit_farm_path(farm) %></p>
+     </div>
+  <div class="col-3 border pt-1">
+      <p><%= link_to 'Destroy', farm_path(farm),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+      </div>
+        <% end %>
+        </div>
+  <% end %>
+
+<div class="row">
+	<div class="col-12 border	text-center">
+<h2>Kopi </h2>
+<p><%= link_to '(Least to Most Popular)', root_path(type: "customerCount", sequence: "asc") %>     <%= link_to '(Most to Least Popular)', root_path(type: "customerCount", sequence: "desc") %></p>
+	</div>
+</div>
+  <% @kopis.each do |kopi| %>
+<div class="row">
+  <div class="col-3 border pt-1">
+      <p><%= kopi.name %></p>
+    </div>
+     <div class="col-3 border pt-1">
+      <p><%= link_to 'Show', kopi_path(kopi) %></p>
+    </div>
+      <% if user_signed_in? %>
+      <div class="col-3 border pt-1">
+      <p><%= link_to 'Edit', edit_kopi_path(kopi) %></p>
+      </div>
+       <div class="col-3 border pt-1">
+      <p><td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td></p>
+        </div>
+        <% end %>
+      </div>
+  <% end %>
+
+
+<div class="row">
+	<div class="col-12 border	text-center">
+<h2>Roast</h2>
+	</div>
+</div>
+  <% @roasts.each do |roast| %>
+<div class="row">
+  <div class="col-3 border pt-1">
+      <p><%= roast.roast_name %></p>
+    </div>
+     <div class="col-3 border pt-1">
+      <p><%= link_to 'Show', roast_path(roast) %></p>
+      </div>
+       <% if user_signed_in? %>
+       <% if current_user.admin? %>
+      <div class="col-3 border pt-1">
+      <p><%= link_to 'Edit', edit_roast_path(roast) %></p>
+      </div>
+       <div class="col-3 border pt-1">
+      <p><td><%= link_to 'Destroy', roast_path(roast),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td></p>
+        </div>
+        <% end %>
+        <% end %>
+
+    </div>
+  <% end %>
+  <div class="row mb-5"></div>
+
+  <%= link_to 'log out', destroy_customer_session_url, method: :delete %>

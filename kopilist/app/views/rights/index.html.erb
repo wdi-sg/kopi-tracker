@@ -1,0 +1,26 @@
+<h1>Users</h1>
+
+
+<div class="row">
+	<div class="col-12 border   text-center">
+			<h2>Users</h2>
+	</div>
+</div>
+
+  <% @users.each do |user| %>
+<div class="row">
+  <div class="col-3 border pt-1">
+	  <p><%= user.email %></p>
+  </div>
+ <div class="col-3 border pt-1">
+      <p><%= link_to 'Show', right_path(user) %></p>
+</div>
+
+      <% if user_signed_in? %>
+   <div class="col-3 border pt-1">
+      <p><%= link_to 'Edit', edit_right_path(user) %></p>
+     </div>
+
+        <% end %>
+		</div>
+  <% end %>

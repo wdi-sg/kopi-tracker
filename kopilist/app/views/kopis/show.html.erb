@@ -1,0 +1,32 @@
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+
+
+<p>
+  <strong>Country of Origin:</strong>
+  <%= @kopi.origin %>
+</p>
+
+<p>
+	<strong>Farm producing:</strong>
+	<%= @farm.location %>
+</p>
+
+	<strong>Roast:</strong>
+	<%= @roast.roast_name %>
+	<p><%= link_to 'Show', roast_path(@roast) %></p>
+</p>
+
+<p>Price per pound: $<%= @kopi.price %></p>
+
+<p>Shops selling</p>
+<% @kopi.customers.each do |customer| %>
+	<p><%= customer.customerName %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_kopi_path(@kopi) %>
+
+<%= link_to 'Back', root_path %>
