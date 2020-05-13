@@ -1,10 +1,19 @@
-<%= link_to 'New Kopi', new_kopi_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
+<%else%>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+<div>
+<%= link_to 'All Farms', farms_path %>
+</div>
 <h1>All Kopis</h1>
 <table>
   <tr>
     <th>Name</th>
     <th>Origin Farm</th>
     <th>Roast</th>
+    <th>Created By</th>
     <th>Options</th>
   </tr>
   <% @kopis.each do |kopi| %>
@@ -17,6 +26,12 @@
       <td>
         <% @roast = Roast.find(kopi.roast_id) %>
         <%= link_to @roast.name, roast_path(@roast) %>&nbsp;
+      </td>
+      <td>
+        <% if kopi.user_id.is_a? Integer %>
+        <% @user = User.find(kopi.user_id) %>
+        <%= @user.email %>
+        <% end %>
       </td>
       <td>
         <%= link_to 'Show', kopi_path(kopi) %>&nbsp;

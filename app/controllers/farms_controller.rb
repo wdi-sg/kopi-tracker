@@ -1,4 +1,7 @@
 class FarmsController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @farms = Farm.all
   end
@@ -12,6 +15,7 @@ class FarmsController < ApplicationController
 
   def create
     @farm = Farm.new(farm_params)
+    @farm.user = current_user
     @farm.save
     redirect_to @farm
   end
