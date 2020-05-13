@@ -3,6 +3,7 @@ class KopisController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
+    @customers = Customer.all
     @kopis = Kopi.all
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +20,7 @@ class KopisController < ApplicationController
   end
 
   def new
+    @customers = Customer.all
     @kopi = Kopi.new
   end
 
@@ -57,6 +59,6 @@ class KopisController < ApplicationController
 
 private
   def kopi_params
-      params.require(:kopi).permit(:name, :roast)
+      params.require(:kopi).permit(:name, :roast, :customer_ids => [])
   end
 end

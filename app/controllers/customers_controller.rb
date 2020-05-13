@@ -1,7 +1,8 @@
 class CustomersController < ApplicationController
 
   def new
-    @kopi = Kopi.all
+    @kopis = Kopi.all
+    @customers = Customer.all
   end
 
   def create

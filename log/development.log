@@ -1933,3 +1933,153 @@ Migrating to CustomersKopis (20200513162507)
   [1m[36mCustomer::HABTM_Kopi Create (1.3ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("kopi_id", "customer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["kopi_id", 3], ["customer_id", 1], ["created_at", "2020-05-13 16:31:22.295775"], ["updated_at", "2020-05-13 16:31:22.295775"]]
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mKopi Load (1.3ms)[0m  [1m[34mSELECT  "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1 LIMIT $2[0m  [["customer_id", 1], ["LIMIT", 11]]
+Started GET "/kopis/new" for ::1 at 2020-05-14 00:46:02 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lekhweemeng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lekhweemeng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering kopis/new.html.erb within layouts/application
+  Rendered kopis/new.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 14.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    12:   </p>
+    13: 
+    14:   <p>
+    15:   	<%= form.collection_check_boxes :customer_ids, @customers, :id, :name %>
+    16:   </p>
+    17: 
+    18:   <p>
+  
+app/views/kopis/new.html.erb:15:in `block in _app_views_kopis_new_html_erb__1184696058101403580_70352518719960'
+app/views/kopis/new.html.erb:1:in `_app_views_kopis_new_html_erb__1184696058101403580_70352518719960'
+Started GET "/kopis/new" for ::1 at 2020-05-14 00:47:02 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/lekhweemeng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/kopis/new.html.erb:15
+  Rendered kopis/new.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 300ms (Views: 264.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-14 00:49:21 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     6:   </p>
+     7: 
+     8: 	<p>
+     9: 		<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    10: 	</p>
+    11: 
+    12:   <p>
+  
+app/views/customers/new.html.erb:9:in `block in _app_views_customers_new_html_erb___4266794015054520891_70352565254800'
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352565254800'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:50:23 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= form_with scope: :customer, models:@customer, url: '/customers/' + @customer.id.to_s, local: true do |form| %>
+    2: 
+    3:   <p>
+    4:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352510713280'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:50:37 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= form_with scope: :customers, models:@customer, url: '/customers/' + @customer.id.to_s, local: true do |form| %>
+    2: 
+    3:   <p>
+    4:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352525238300'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:50:45 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= form_with scope: :customer, models:@customers, url: '/customers/' + @customer.id.to_s, local: true do |form| %>
+    2: 
+    3:   <p>
+    4:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352571875440'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:50:54 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <%= form_with scope: :customer, models:@customers, url: '/customers/' + @customers.id.to_s, local: true do |form| %>
+    2: 
+    3:   <p>
+    4:     <%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352510202280'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:51:12 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     6:   </p>
+     7: 
+     8: 	<p>
+     9: 		<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    10: 	</p>
+    11: 
+    12:   <p>
+  
+app/views/customers/new.html.erb:9:in `block in _app_views_customers_new_html_erb___4266794015054520891_70352579743420'
+app/views/customers/new.html.erb:1:in `_app_views_customers_new_html_erb___4266794015054520891_70352579743420'
+Started GET "/customers/new" for ::1 at 2020-05-14 00:51:50 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:9
+  Rendered customers/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 37ms (Views: 22.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-14 00:52:39 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:13
+  Rendered customers/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 37ms (Views: 24.0ms | ActiveRecord: 4.7ms)
+
+
