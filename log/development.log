@@ -7021,3 +7021,448 @@ Processing by CustomersController#new as HTML
 Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 6242)
 
 
+Started GET "/customers/new" for ::1 at 2020-05-13 17:20:40 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 32.4ms | Allocations: 9039)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 43.1ms | ActiveRecord: 6.3ms | Allocations: 18660)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:27:23 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 5782)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 26.2ms | ActiveRecord: 0.6ms | Allocations: 14692)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:27:32 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"/p0cuz9V4ATW7uF03R54Xlcl1JDH7Yj/AGoO2ckPgD2WxSoCzn3cN5kULC6jaoS21vvSThraO2jtEKWVicoEYg==", "customer"=>{"name"=>"claire", "kopi_ids"=>["", "6", "7"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (2.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "claire"], ["created_at", "2020-05-13 09:27:32.043819"], ["updated_at", "2020-05-13 09:27:32.043819"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (39.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/customers/3
+Completed 302 Found in 62ms (ActiveRecord: 47.2ms | Allocations: 5325)
+
+
+Started GET "/customers/3" for ::1 at 2020-05-13 17:27:32 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1887)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms | Allocations: 3500)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started GET "/customers/3" for ::1 at 2020-05-13 17:28:53 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1350)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.4ms | Allocations: 6455)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started GET "/customers/new" for ::1 at 2020-05-13 17:28:57 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 5661)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 17.6ms | ActiveRecord: 5.6ms | Allocations: 11441)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:29:02 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"locScuLKObq/E0oZKkWoDqa8ffRRFh1V9X++WofgJ6z+3yTLE+IFifDph0NUMVTmJ2J7KowhrsIYBRUWxyWj8w==", "customer"=>{"name"=>"bella", "kopi_ids"=>["", "5", "6"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "bella"], ["created_at", "2020-05-13 09:29:02.026426"], ["updated_at", "2020-05-13 09:29:02.026426"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (52.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/customers/4
+Completed 302 Found in 62ms (ActiveRecord: 53.2ms | Allocations: 3042)
+
+
+Started GET "/customers/4" for ::1 at 2020-05-13 17:29:02 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1393)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 2438)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started GET "/customers/4" for ::1 at 2020-05-13 17:30:28 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1345)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.5ms | Allocations: 6342)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started GET "/customers/new" for ::1 at 2020-05-13 17:30:31 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 20.1ms | Allocations: 5658)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 20.5ms | ActiveRecord: 5.1ms | Allocations: 11404)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:30:35 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"bVx3O8Yqgs8JrDYujnyMvX9gp3ARd2u3bNNmeAM0V9gFBEGCNwK+/EZW+3TwCHBV/r6hrsxA2CCBqc00Q/HThw==", "customer"=>{"name"=>"nick", "kopi_ids"=>[""]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "nick"], ["created_at", "2020-05-13 09:30:35.327026"], ["updated_at", "2020-05-13 09:30:35.327026"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/customers/5
+Completed 302 Found in 45ms (ActiveRecord: 35.7ms | Allocations: 3036)
+
+
+Started GET "/customers/5" for ::1 at 2020-05-13 17:30:35 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1393)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 2464)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started POST "/customers" for ::1 at 2020-05-13 17:30:45 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"bVx3O8Yqgs8JrDYujnyMvX9gp3ARd2u3bNNmeAM0V9gFBEGCNwK+/EZW+3TwCHBV/r6hrsxA2CCBqc00Q/HThw==", "customer"=>{"name"=>"nicko", "kopi_ids"=>["", "7", "8"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "nicko"], ["created_at", "2020-05-13 09:30:45.505978"], ["updated_at", "2020-05-13 09:30:45.505978"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (48.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 55ms (ActiveRecord: 48.9ms | Allocations: 2880)
+
+
+Started GET "/customers/6" for ::1 at 2020-05-13 17:30:45 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7:in `show'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1396)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2455)
+
+
+  
+ActionView::Template::Error (undefined method `each_with_index' for nil:NilClass):
+    10: 	  </tr>
+    11: 	</thead>
+    12: 	<tbody>
+    13: 	<% @kopis.each_with_index do |kopi, index| %>
+    14:     <tr>
+    15:       <th scope="row"><%= index %></th>
+    16:       <td><%= link_to kopi.name, kopi %></td>
+  
+app/views/customers/show.html.erb:13
+Started GET "/customers/new" for ::1 at 2020-05-13 17:40:38 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 5630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 20.0ms | ActiveRecord: 0.6ms | Allocations: 13028)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:40:45 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"M1oK36oMKBAntO4HTJ6bVXvGKniw28xiNApNRk4bICRbAjxmWyQUI2hOI10y6me9+hgspm3sf/XZcOYKDt6kew==", "customer"=>{"name"=>"raka", "kopi_ids"=>["", "5", "6"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "raka"], ["created_at", "2020-05-13 09:40:45.066672"], ["updated_at", "2020-05-13 09:40:45.066672"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+Completed 404 Not Found in 51ms (ActiveRecord: 36.9ms | Allocations: 6223)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Kopi with 'id'={"name"=>"raka"}):
+  
+app/controllers/customers_controller.rb:20:in `create'
+Started POST "/customers" for ::1 at 2020-05-13 17:42:46 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"M1oK36oMKBAntO4HTJ6bVXvGKniw28xiNApNRk4bICRbAjxmWyQUI2hOI10y6me9+hgspm3sf/XZcOYKDt6kew==", "customer"=>{"name"=>"rokok", "kopi_ids"=>["", "6", "7"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rokok"], ["created_at", "2020-05-13 09:42:46.136039"], ["updated_at", "2020-05-13 09:42:46.136039"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (52.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+Completed 404 Not Found in 96ms (ActiveRecord: 65.1ms | Allocations: 10507)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Kopi with 'id'={"kopi_ids"=>["", "6", "7"]}):
+  
+app/controllers/customers_controller.rb:20:in `create'
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 5], ["id", 6]]
+Started GET "/customers/new" for ::1 at 2020-05-13 17:44:41 +0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 9037)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 34.3ms | ActiveRecord: 5.8ms | Allocations: 21775)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:44:47 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"wzNM0TH5a5qPitSEonef1N0yWMgNKyvxYjNkpnHjW+Wra3powNFXqcBwGd7cA2M8XOxeFtAcmGaPSc/qMSbfug==", "customer"=>{"name"=>"mola", "kopi_ids"=>["", "5", "6"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "mola"], ["created_at", "2020-05-13 09:44:47.715516"], ["updated_at", "2020-05-13 09:44:47.715516"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (34.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :name[0m
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 40.3ms | Allocations: 6234)
+
+
+  
+NoMethodError (undefined method `kopi_ids' for #<ActionController::Parameters:0x000055573db02a18>):
+  
+app/controllers/customers_controller.rb:20:in `create'
+Started POST "/customers" for ::1 at 2020-05-13 17:45:23 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"wzNM0TH5a5qPitSEonef1N0yWMgNKyvxYjNkpnHjW+Wra3powNFXqcBwGd7cA2M8XOxeFtAcmGaPSc/qMSbfug==", "customer"=>{"name"=>"sdfad", "kopi_ids"=>["", "5", "6", "7"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sdfad"], ["created_at", "2020-05-13 09:45:23.952754"], ["updated_at", "2020-05-13 09:45:23.952754"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (67.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :name[0m
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:20:in `create'
+Completed 404 Not Found in 104ms (ActiveRecord: 78.2ms | Allocations: 10951)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Kopi with 'id'={"kopi_ids"=>["", "5", "6", "7"]}):
+  
+app/controllers/customers_controller.rb:20:in `create'
+Started POST "/customers" for ::1 at 2020-05-13 17:47:17 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"wzNM0TH5a5qPitSEonef1N0yWMgNKyvxYjNkpnHjW+Wra3powNFXqcBwGd7cA2M8XOxeFtAcmGaPSc/qMSbfug==", "customer"=>{"name"=>"sdfaddsfad", "kopi_ids"=>["", "5", "6", "7"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+[31mUnpermitted parameter: :name[0m
+[31mUnpermitted parameter: :name[0m
+[31mUnpermitted parameter: :name[0m
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3, $4)[0m  [["id", nil], ["id", 5], ["id", 6], ["id", 7]]
+  ↳ (byebug):1:in `create'
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sdfaddsfad"], ["created_at", "2020-05-13 09:50:26.769976"], ["updated_at", "2020-05-13 09:50:26.769976"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:19:in `create'
+Completed 404 Not Found in 189654ms (ActiveRecord: 29.4ms | Allocations: 85548)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Kopi with 'id'={"kopi_ids"=>["", "5", "6", "7"]}):
+  
+app/controllers/customers_controller.rb:19:in `create'
+Started GET "/customers/new" for ::1 at 2020-05-13 17:50:33 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 19.4ms | Allocations: 9037)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 26.5ms | ActiveRecord: 4.9ms | Allocations: 21757)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:50:39 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"3cxvWa4OiWdzwnYY4TY+wWrrVBn5j2Agm0H02PvISiC1lFngXya1VDw4u0KfQsIp6zVSxyS407d2O1+Uuw3Ofw==", "customer"=>{"name"=>"rajamama", "kopi_ids"=>["", "6", "7"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rajamama"], ["created_at", "2020-05-13 09:50:45.495643"], ["updated_at", "2020-05-13 09:50:45.495643"]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", nil], ["id", 6], ["id", 7]]
+  ↳ app/controllers/customers_controller.rb:19:in `create'
+Completed 404 Not Found in 6247ms (ActiveRecord: 13.0ms | Allocations: 54735)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Kopis with 'id': (, 6, 7) (found 2 results, but was looking for 3).):
+  
+app/controllers/customers_controller.rb:19:in `create'
+Started GET "/customersew" for ::1 at 2020-05-13 17:55:09 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/customersew"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/customers/new" for ::1 at 2020-05-13 17:55:13 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 5750)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 38.0ms | ActiveRecord: 5.5ms | Allocations: 13258)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 17:55:20 +0800
+Processing by CustomersController#create as HTML
+  Parameters: {"authenticity_token"=>"1Pb4eLGt3nzQf52OVG5gkkLdCTD/g7cMaIRk39Yf0228rs7BQIXiT5+FUNQqGpx6wwMP7iK0BJuF/s+TltpXMg==", "customer"=>{"name"=>"wakanada", "kopi_ids"=>["", "5", "6"]}, "commit"=>"Add Customer"}
+[31mUnpermitted parameter: :kopi_ids[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/customers_controller.rb:17:in `create'
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "wakanada"], ["created_at", "2020-05-13 09:55:20.464191"], ["updated_at", "2020-05-13 09:55:20.464191"]]
+  ↳ app/controllers/customers_controller.rb:17:in `create'
+  [1m[35m (77.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/customers_controller.rb:17:in `create'
+[31mUnpermitted parameter: :name[0m
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", nil], ["id", 5], ["id", 6]]
+  ↳ app/controllers/customers_controller.rb:18:in `create'
+Completed 404 Not Found in 111ms (ActiveRecord: 81.9ms | Allocations: 6263)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Kopis with 'id': (, 5, 6) (found 2 results, but was looking for 3).):
+  
+app/controllers/customers_controller.rb:18:in `create'
