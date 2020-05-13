@@ -13,5 +13,15 @@
 		<strong>Origin:</strong>
 		<%= @kopi.origin_id %>
 </p>
+<%if @customers%>
+<div class="kopis-customers__container">
+		<h3 class="kopis-customers__header">Customers</h3>
+		<ul class="kopis-customers__list">
+				<%@customers.each do |customer|%>
+				<%=customer.email.split("@")[0].capitalize%>
+				<%end%>
+		</ul>
+</div>
+<%end%>
 <%= link_to 'Edit', edit_kopi_path(@kopi) if @user.admin%> |
 <%= link_to 'Back', kopis_path %>

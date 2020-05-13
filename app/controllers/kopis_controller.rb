@@ -13,6 +13,7 @@ class KopisController < ApplicationController
   # GET /kopis/1
   # GET /kopis/1.json
   def show
+    @customers = Kopi.find(params[:id]).customers
   end
 
   # GET /kopis/new
