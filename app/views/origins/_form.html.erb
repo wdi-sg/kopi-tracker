@@ -1,0 +1,27 @@
+<%= form_with(model: origin, local: true) do |form| %>
+  <% if origin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(origin.errors.count, "error") %> prohibited this origin from being saved:</h2>
+
+      <ul>
+        <% origin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
