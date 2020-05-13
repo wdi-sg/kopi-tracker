@@ -12,12 +12,17 @@
 
 
 <div class="row">
-	<div class= "col-6 border text-center">
+	<div class= "col-4 border text-center">
 
-		<%= link_to 'New customer', new_customer_path %>
+		<%= link_to 'log in', new_customer_session_url %>
 
 	</div>
-		<div class= "col-6 border text-center">
+		<div class= "col-4 border text-center">
+
+		<%= link_to 'log out', destroy_customer_session_url, method: :delete %>
+
+	</div>
+		<div class= "col-4 border text-center">
 
 		<%= link_to 'Return to Home', root_path %>
 

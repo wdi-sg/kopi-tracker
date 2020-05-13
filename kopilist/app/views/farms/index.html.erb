@@ -6,12 +6,12 @@
 	<div class = "col-3 pt-2 pb-2 text-center border">
 		<%= link_to 'log out', destroy_user_session_url, method: :delete %>
 	</div>
-
-       <% if user_signed_in? %>
-       <% if current_user.admin? %>
       <div class = "col-3 pt-2 pb-2 text-center border">
       <p><%= link_to 'Customer Management', customers_path %></p>
       </div>
+       <% if user_signed_in? %>
+       <% if current_user.admin? %>
+
 
       <div class = "col-3 pt-2 pb-2 text-center border">
       <p>Admin tool<%= link_to 'Admin', rights_path %></p>
@@ -161,3 +161,5 @@
     </div>
   <% end %>
   <div class="row mb-5"></div>
+
+  <%= link_to 'log out', destroy_customer_session_url, method: :delete %>
