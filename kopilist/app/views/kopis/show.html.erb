@@ -22,6 +22,10 @@
 
 <p>Price per pound: $<%= @kopi.price %></p>
 
+<p>Shops selling</p>
+<% @kopi.customers.each do |customer| %>
+	<p><%= customer.customerName %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
 
