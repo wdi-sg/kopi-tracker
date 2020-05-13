@@ -56,7 +56,7 @@ puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price)
+    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price, :customers_ids => [])
   end
 
 end

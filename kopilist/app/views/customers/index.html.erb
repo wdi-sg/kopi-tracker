@@ -1,0 +1,22 @@
+<div class="row">
+	<div class= "col-12 border text-center mt-5">
+
+		<h1>Hello</h1>
+
+	</div>
+
+</div>
+
+
+<% @customers.each do |customer| %>
+	<div class="row border">
+		<div class = "col-5 my-auto">
+	<p>Customer Name: <%= customer.customerName %></p>
+		</div>
+		<div class = "col-7 ">
+	<% customer.kopis.each do |kopi| %>
+	<p>Kopi name: <%= kopi.name %></p>
+<% end %>
+</div>
+	</div>
+<% end %>
