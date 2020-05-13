@@ -1,0 +1,18 @@
+<h1>Show Customer</h1>
+<p>
+  Name: <%= @customer.name %>
+</p>
+
+<p>
+  Selected Kopis:<br/>
+  <ul>
+    <% @customer.kopis.each do |kopi| %>
+      <li><%= link_to kopi.name, kopi_path %></li>
+    <% end %>
+  </ul>
+</p>
+<p>
+  <%= link_to 'Back To Kopis Index', kopis_path %>&nbsp;
+  <%= link_to 'Back To Farms Index', farms_path %>&nbsp;
+  <%= link_to 'Edit', edit_customer_path(@customer) %>
+</p>

@@ -1,0 +1,40 @@
+<div>
+  <%= link_to 'Kopis Index', kopis_path %>
+  <%= link_to 'Farms Index', farms_path %>
+  <%= link_to 'Add New Customer', new_customer_path %>
+</div>
+<h1>All Customers</h1>
+
+<div>
+  <%= link_to 'Sort By No. of Kopis ASC', customers_path(order: "asc") %>&nbsp;
+  <%= link_to 'Sort By No. of Kopis DESC', customers_path(order: "desc") %><br/><br/>
+</div>
+
+<table width=100% style="text-align:center">
+  <tr>
+    <th>Name</th>
+    <th>Kopis Stocked</th>
+    <th>No. Of Kopis Stocked</th>
+    <th>Options</th>
+  </tr>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td>
+        <% customer.kopis.each do |kopi| %>
+          <%= link_to kopi.name, kopi_path(kopi) %>&nbsp;
+        <% end %>
+      </td>
+      <td>
+        <%= customer.kopis.length %>
+      </td>
+      <td>
+        <%= link_to 'Show', customer_path(customer) %>&nbsp;
+        <%= link_to 'Edit', edit_customer_path(customer) %>&nbsp;
+        <%= link_to 'Destroy', customer_path(customer),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,63 @@
+<% @ishidden = "hidden" %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Roast', new_roast_path %>&nbsp;
+  <%= link_to 'New Farm', new_farm_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+  <% @ishidden = "" %>
+<% end %>
+<% if user_signed_in? && !current_user.admin? %>
+  <%= link_to 'New Farm', new_farm_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+<% end %>
+<% if !user_signed_in? %>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+
+<% flash.each do |type, msg| %>
+  <div>
+  <br/>
+    <%= msg %>
+  <br/><br/>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to 'All Kopis', kopis_path %>
+</div>
+<h1>All Farms</h1>
+<table width=100% style="text-align:center">
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Phone Number</th>
+    <th>Kopis</th>
+    <th <%= @ishidden %>>Created By</th>
+    <th>Options</th>
+  </tr>
+  <% @farms.each do |farm| %>
+    <tr>
+      <td><%= farm.name %></td>
+      <td><%= farm.location %></td>
+      <td><%= farm.phone %></td>
+      <td>
+        <% @kopis = Kopi.where(farm_id: farm.id) %>
+        <% @kopis.each do |kopi| %>
+          <%= link_to kopi.name, kopi_path(kopi) %>&nbsp;
+        <% end %>
+      </td>
+      <td <%= @ishidden %>>
+        <% if farm.user_id.is_a? Integer %>
+          <% @user = User.find(farm.user_id) %>
+          <%= @user.email %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to 'Show', farm_path(farm) %>&nbsp;
+        <%# <%= link_to 'Edit', edit_farm_path(farm) %>
+        <%= link_to 'Destroy', farm_path(farm),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

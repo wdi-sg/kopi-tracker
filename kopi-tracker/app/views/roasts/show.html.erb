@@ -1,0 +1,14 @@
+<h1>Show Roast</h1>
+<p>
+  Name: <%= @roast.name %>
+</p>
+<p>
+  Kopis:
+  <% @kopis.each do |kopi|%>
+  <%= link_to kopi.name, kopi_path(kopi) %>&nbsp;
+  <% end %>
+</p>
+<p>
+<%= link_to 'Back To Kopis Index', kopis_path %>&nbsp;
+<%= link_to 'Back To Farms Index', farms_path %>
+</p>

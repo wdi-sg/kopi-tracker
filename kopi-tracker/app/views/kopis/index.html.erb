@@ -1,0 +1,59 @@
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Roast', new_roast_path %>&nbsp;
+  <%= link_to 'New Kopi', new_kopi_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+<% end %>
+<% if user_signed_in? && !current_user.admin? %>
+  <%= link_to 'New Kopi', new_kopi_path %>&nbsp;
+  <%= link_to 'Logout', destroy_user_session_url, method: :delete %>&nbsp;
+<% end %>
+<% if !user_signed_in? %>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+<div>
+  <%= link_to 'All Farms', farms_path %> &nbsp;
+  <%= link_to 'Add New Customer', new_customer_path %>&nbsp;
+  <%= link_to 'All Customers', customers_path %>
+</div>
+<h1>All Kopis</h1>
+<table width=100% style="text-align:center">
+  <tr>
+    <th>Name</th>
+    <th>Origin Farm</th>
+    <th>Roast</th>
+    <th>Created By</th>
+    <th>Customers Who Stock</th>
+    <th>Options</th>
+  </tr>
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td>
+        <% @farm = Farm.find(kopi.farm_id) %>
+        <%= link_to @farm.name, farm_path(@farm) %>&nbsp;
+      </td>
+      <td>
+        <% @roast = Roast.find(kopi.roast_id) %>
+        <%= link_to @roast.name, roast_path(@roast) %>&nbsp;
+      </td>
+      <td>
+        <% if kopi.user_id.is_a? Integer %>
+          <% @user = User.find(kopi.user_id) %>
+          <%= @user.email %>
+        <% end %>
+      </td>
+      <td>
+        <% kopi.customers.each do |customer| %>
+          <%= link_to customer.name, customer_path(customer) %>&nbsp;
+        <% end %>
+      </td>
+      <td>
+        <%= link_to 'Show', kopi_path(kopi) %>&nbsp;
+        <%# <%= link_to 'Edit', edit_kopi_path(kopi) %>
+        <%= link_to 'Destroy', kopi_path(kopi),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
