@@ -19,4 +19,10 @@ Rails.application.routes.draw do
   get '/roasts' => 'roasts#index', as: 'roasts'
   get '/roasts/:id' => 'roasts#show', as: 'roast'
 
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  get '/customers/:id'=> 'customers#show' , as: 'customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
 end

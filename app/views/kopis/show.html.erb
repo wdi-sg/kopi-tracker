@@ -8,6 +8,13 @@
 <p>
   Roast Type: <%= @roast.name %>
 </p>
+<p>
+  <strong>Customers:</strong>
+  <ul>
+  <% @kopi.customers.each do |customer| %>
+    <li><%= link_to customer.name, customer_path %></li>
+  <% end %>
+  </ul>
 <%= link_to 'Back To Kopis Index', kopis_path %>
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>

@@ -19,6 +19,7 @@ class KopisController < ApplicationController
       @kopi = Kopi.find(params[:id])
       @farm = Farm.find(@kopi.farm_id)
       @roast = Roast.find(@kopi.roast_id)
+      @customer = Customer.find(@kopi.customer_id)
     end
 
     def destroy
@@ -30,6 +31,6 @@ class KopisController < ApplicationController
     private
   
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :farm_id)
+      params.require(:kopi).permit(:name, :roast_id, :farm_id, :customer_ids => [])
     end
   end
