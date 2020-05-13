@@ -1,0 +1,12 @@
+<%= form_with scope: :customer, model: @customers, local: true do |form| %>
+  <p>
+  	Customer's name:<br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
