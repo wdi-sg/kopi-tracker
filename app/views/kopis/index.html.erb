@@ -1,0 +1,24 @@
+
+ <table>
+ 	<tr>
+ 		<th><h2>Kopi</h2></th>
+ 	</tr>
+ 	<tr>
+ 		<% @kopi.each do |kopi| %>
+ 	</tr>
+ 		<td><%= kopi.name%></td>
+ 	</tr>
+ 	<% end %>
+
+ 	<tr>
+ 		<% if user_signed_in? %>
+			<td><%=link_to "Add", new_kopi_path%></td>
+			<td><%= link_to 'log out', destroy_user_session_url, method: :delete %></td>
+
+			<%else%>
+		 <td><%=link_to "Sign in", new_user_session_url%></td>
+		 <%end%>
+
+ 	</tr>
+
+</table>

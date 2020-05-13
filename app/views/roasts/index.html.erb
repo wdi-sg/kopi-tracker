@@ -1,0 +1,13 @@
+<h1>Listing Roasts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @roast.each do |roast| %>
+    <tr>
+      <td><%= roast.name, roast_path(roast.name) %></td>
+    </tr>
+  <% end %>
+</table>

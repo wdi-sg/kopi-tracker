@@ -1,0 +1,15 @@
+<h1>Listing Orders</h1>
+<% if user_signed_in? %>
+<h1>user signed in</h1>
+<% end %>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @kopi.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+    </tr>
+  <% end %>
+</table>
