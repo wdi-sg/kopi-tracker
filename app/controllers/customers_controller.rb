@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @kopis = Customer.find(params[:id]).kopis
   end
 
   def new
@@ -15,8 +16,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     @customer.save
-    @kopi = Kopi.find(kopi_params[:kopi_ids])
-    @kopi.customers << @customer
+
     redirect_to @customer
   end
 
@@ -35,10 +35,6 @@ class CustomersController < ApplicationController
 
   private
     def customer_params
-      params.require(:customer).permit(:name)
-    end
-
-    def kopi_params
-      params.require(:customer).permit(:kopi_ids => [])
+      params.require(:customer).permit(:name, :kopi_ids => [])
     end
 end
