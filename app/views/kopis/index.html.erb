@@ -1,0 +1,26 @@
+
+<% if user_signed_in? %>
+<%= link_to 'New kopi', new_song_kopi %>
+<% end %>
+<%= link_to 'New kopi', new_kopi_path %>
+<h1>Hello All The Coffee Lover!</h1>
+
+
+<h1>Listing kopis</h1>
+
+<table>
+  <tr>
+    <th>Coffee</th>
+    <th>Roast</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.title %></td>
+      <td><%= kopi.text %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+       <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>

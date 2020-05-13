@@ -1,0 +1,21 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+    <p>
+      <%= form.label :title , 'Coffee Selection' %><br>
+      <%= form.text_field :title %>
+    </p>
+  
+    <p>
+      <%= form.label :text  , 'Roast'%><br>
+      <%= form.text_area :text %>
+    </p>
+  
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+  <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+    ...
+  <% end %>
+  
+  <%= link_to 'Back', root_path %>
