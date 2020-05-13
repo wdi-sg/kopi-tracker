@@ -13,4 +13,14 @@
   <%= @kopi.roast.name %>
 </p>
 
+<p>
+  <strong>Customers:</strong>
+  <ol>
+  <% @kopi.customer.each do |customer| %>
+  <li>
+  <%= link_to customer.name, customer_path(customer) %></li>
+  <% end %>
+  </ol>
+</p>
+
 <%= link_to 'Back to Kopi List', kopis_path %>

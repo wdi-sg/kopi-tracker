@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :kopis
   resources :origins
+  resources :customers
+
 
 end
