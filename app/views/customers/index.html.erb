@@ -1,0 +1,41 @@
+<h1>Customers Index</h1>
+
+<% if user_signed_in? %>
+  <p><%= link_to 'Add new Customer', new_customer_path %></p>
+  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <th style="text-align: left">Id</th>
+    <th style="text-align: left">Customer name</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td style="width: 30px"><%= customer.id %></td>
+      <td style="width: 200px"><%= customer.name %></td>
+      <td style="width: 50px"><%= link_to 'Show', customer_path(customer) %></td>
+      <% if user_signed_in? %>
+        <td style="width: 50px"><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td style="width: 50px"><%= link_to 'Delete', customer_path(customer),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<br>
+<div>
+  <p><%= link_to 'Go to Kopi Index', kopis_path %></p>
+  <p><%= link_to 'Go to Roast Index', roasts_path %></p>
+  <p><%= link_to 'Go to Origin Index', root_path %></p>
+</div>
