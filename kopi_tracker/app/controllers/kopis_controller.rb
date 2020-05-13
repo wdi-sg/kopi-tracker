@@ -9,8 +9,14 @@ class KopisController < ApplicationController
   end
 
   def create
-    @kopi = Kopi.create(kopi_params)
-    redirect_to @kopi
+    @kopi = Kopi.new(kopi_params)
+    @kopi.user = current_user
+
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
   def show
