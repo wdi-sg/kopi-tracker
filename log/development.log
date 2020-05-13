@@ -3943,3 +3943,383 @@ Processing by CustomersController#show as HTML
 Completed 200 OK in 57ms (Views: 40.1ms | ActiveRecord: 14.4ms | Allocations: 6200)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152249)
+  [1m[35m (22.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152725)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "email" character varying DEFAULT ''[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "encrypted_password" character varying DEFAULT ''[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "customers" ADD "remember_created_at" timestamp[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_customers_on_email" ON "customers"  ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152725)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "customers" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "customers" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (22.9ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "customers" ADD "remember_created_at" timestamp[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_customers_on_email" ON "customers"  ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (27.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152725)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152725)
+  [1m[35m (24.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "customers" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "customers" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "remember_created_at" timestamp[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_customers_on_email" ON "customers"  ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToCustomers (20200513152725)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "customers" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "customers" ADD "reset_password_sent_at" timestamp[0m
+  [1m[35m (25.2ms)[0m  [1m[35mALTER TABLE "customers" ADD "remember_created_at" timestamp[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE  INDEX  "index_customers_on_email" ON "customers"  ("email")[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_customers_on_reset_password_token" ON "customers"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513152725"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/customers" for ::1 at 2020-05-13 23:40:50 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (17.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:14
+  Rendered customers/index.html.erb within layouts/application (Duration: 168.9ms | Allocations: 9541)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 297ms (Views: 145.6ms | ActiveRecord: 98.9ms | Allocations: 20097)
+
+
+Started GET "/sign_in/customers" for ::1 at 2020-05-13 23:41:02 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in/customers"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/customers/sign_in" for ::1 at 2020-05-13 23:41:16 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 657)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 54.2ms | Allocations: 5618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 83.1ms | ActiveRecord: 0.0ms | Allocations: 12012)
+
+
+Started GET "/customers/sign_up" for ::1 at 2020-05-13 23:41:22 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 9.7ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 129)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 40.9ms | Allocations: 1967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 127.4ms | ActiveRecord: 0.0ms | Allocations: 7377)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 23:41:44 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"xCF5nyOU1kb3GmXJGeApsgBZgdn4qiLmWVGVFtI2TeWwLzM8Gzf+djgh450UgcxvdPrvAJ7HUEHH/xrZxQUuCw==", "customer"=>{"email"=>"customerThom@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (15.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "customerthom@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (2.3ms)[0m  [1m[32mINSERT INTO "customers" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-05-13 15:41:44.677460"], ["updated_at", "2020-05-13 15:41:44.677460"], ["email", "customerthom@gmail.com"], ["encrypted_password", "$2a$11$45zteCmdzTbZjlLg9b.HC.Z7zPdQ.WLwtnG.8T4zf0EI5IBQ8L76q"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 236ms (ActiveRecord: 19.7ms | Allocations: 10865)
+
+
+Started GET "/" for ::1 at 2020-05-13 23:41:44 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (1.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (13.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (1.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (1.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 312.1ms | Allocations: 36792)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 370ms (Views: 223.5ms | ActiveRecord: 124.3ms | Allocations: 44256)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-13 23:41:59 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8zLb+oLN1PckjP3l3atCszvEkLNrBxwGQaoi49M8/umHPJFZum78x+u3e7HQyqduT2f+ag1qbqHfBK0sxA+dBw=="}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 ORDER BY "customers"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 46ms (ActiveRecord: 4.4ms | Allocations: 9103)
+
+
+Started GET "/" for ::1 at 2020-05-13 23:41:59 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (34.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (35.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (4.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (23.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 143.0ms | Allocations: 10417)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 169ms (Views: 65.7ms | ActiveRecord: 100.3ms | Allocations: 14733)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-13 23:42:01 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 212)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1363)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.0ms | Allocations: 6163)
+
+
+Started GET "/customers/sign_in" for ::1 at 2020-05-13 23:42:27 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 5896)
+
+
+Started GET "/" for ::1 at 2020-05-13 23:42:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (16.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (21.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (46.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (1.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (5.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (21.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 156.3ms | Allocations: 10401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 193ms (Views: 77.5ms | ActiveRecord: 114.1ms | Allocations: 14713)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-13 23:43:26 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.0ms | Allocations: 5849)
+
+
+Started GET "/customers/sign_in" for ::1 at 2020-05-13 23:43:31 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 5842)
+
+
+Started GET "/customers/sign_up" for ::1 at 2020-05-13 23:44:22 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1147)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 5797)
+
+
+Started POST "/customers" for ::1 at 2020-05-13 23:44:31 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"lFWqBbybk2Eh4txMco0mhm73w1H3IhbVWGPMUAk8ep/pgkty7k/ATzh2lB5p1t3KCrM+oq9BhnTIxscXwuWOmw==", "customer"=>{"email"=>"a@s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (10.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "customers" WHERE "customers"."email" = $1 LIMIT $2[0m  [["email", "a@s"], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-05-13 15:44:31.974824"], ["updated_at", "2020-05-13 15:44:31.974824"], ["email", "a@s"], ["encrypted_password", "$2a$11$UB4l92o10Q4dbKfiscSlM.318zHR/NnT76x8CpFLlWGYVTcEhArQi"]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 185ms (ActiveRecord: 20.1ms | Allocations: 7258)
+
+
+Started GET "/" for ::1 at 2020-05-13 23:44:32 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (2.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (1.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (1.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (3.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (24.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (3.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 113.3ms | Allocations: 10510)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 100.2ms | ActiveRecord: 38.3ms | Allocations: 14824)
+
+
+Started GET "/kopis/3" for ::1 at 2020-05-13 23:44:48 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (10.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:17
+  Rendered kopis/show.html.erb within layouts/application (Duration: 49.8ms | Allocations: 4535)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 27.7ms | ActiveRecord: 45.7ms | Allocations: 18859)
+
+
+Started GET "/kopis/3/edit" for ::1 at 2020-05-13 23:44:59 +0800
+Processing by KopisController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (1.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (5.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (42.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+Completed 401 Unauthorized in 58ms (ActiveRecord: 49.6ms | Allocations: 2114)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-13 23:44:59 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 45.6ms | ActiveRecord: 0.0ms | Allocations: 5888)
+
+
