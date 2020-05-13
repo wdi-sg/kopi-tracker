@@ -19,8 +19,5 @@ Rails.application.routes.draw do
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
 
-  get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
-  get '/origins/:origin_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'
-  post '/parks/:park_id/rangers' => 'rangers#create'
-
+  resources :customers
 end

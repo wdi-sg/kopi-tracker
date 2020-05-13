@@ -12,3 +12,15 @@
   <strong>Origin:</strong>
   <%= @kopi.origin.location %>
 </p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Owned by:</strong>
+  <% @kopi.customers.all.each do |customer|  %>
+  	<div><%= customer.name %></div>
+  <% end %>
+</p>
