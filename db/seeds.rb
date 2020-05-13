@@ -14,12 +14,28 @@
 #       }])
 # end
 
-40.times do
-      Kopi.create([{
-            name: Faker::Coffee.blend_name,
-            roast: Roast.find(rand(1..7)),
-            # Two periods is a range including second number.
-            # Three periods (...) is a range exluding second number.
-            kopi_farm: KopiFarm.find(rand(1..25))
-      }])
+#
+# 40.times do
+#       Kopi.create([{
+#             name: Faker::Coffee.blend_name,
+#             roast: Roast.find(rand(1..7)),
+#             kopi_farm: KopiFarm.find(rand(1..25))
+#       }])
+# end
+
+# Create 10 customers
+# 10.times do
+#       Customer.create([{
+#             name: Faker::Name.name
+#       }])
+# end
+
+
+# For each customer, add 3 - 7 random kopis.
+Customer.all.each do |c|
+      rand(3..7).times do
+            this_kopi = Kopi.find(rand(1..Kopi.count))
+            c.kopis << this_kopi
+            p "added #{this_kopi.id} || #{this_kopi.name} to #{c.id} || #{c.name}"
+      end
 end

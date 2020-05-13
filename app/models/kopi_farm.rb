@@ -1,3 +1,3 @@
 class KopiFarm < ActiveRecord::Base
-      has_many :kopi
+      has_many :kopis
 end
