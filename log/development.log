@@ -6532,3 +6532,492 @@ Processing by KopisController#new as HTML
 Completed 200 OK in 46ms (Views: 19.2ms | ActiveRecord: 22.3ms | Allocations: 9287)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (20.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCustomers (20200513084116)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (344.0ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513084116"]]
+  [1m[35m (58.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (53.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CustomersKopis (20200513084242)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (81.3ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (73.6ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  [1m[35m (56.9ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513084242"]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-05-13 16:53:08 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 57.5ms | Allocations: 6104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 369ms (Views: 246.9ms | ActiveRecord: 6.7ms | Allocations: 15075)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-13 16:53:55 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 15.4ms | Allocations: 598)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 266.1ms | Allocations: 4576)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 310ms (Views: 275.3ms | ActiveRecord: 4.1ms | Allocations: 14483)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-13 16:54:01 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WjAMBFod2TItGseRhNa5T+qhUVzm1biERUW3Ut34X+BvnKmtUoHb3fjsOIYdh7eVw0/UwpCojphhbVNtjVFNPw==", "user"=>{"email"=>"bobby@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (37.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bobby@email.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 259ms (ActiveRecord: 37.8ms | Allocations: 5249)
+
+
+Started GET "/" for ::1 at 2020-05-13 16:54:01 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1703)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 5212)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-13 16:54:02 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (27.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 95.7ms | Allocations: 4963)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 72.4ms | ActiveRecord: 33.5ms | Allocations: 10756)
+
+
+Started POST "/kopis" for ::1 at 2020-05-13 16:54:49 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"authenticity_token"=>"mQStfVgDTMNPhY2s3mo+hHYFeZIBbdIB175qHRcs34RFTuKzYoPlWISA3RCjxYJKOxFbpkMUK7MvxJpo/o8x7w==", "kopi"=>{"name"=>"indomee", "roast"=>"smoky", "origin_id"=>"9", "price_per_pound"=>"2"}, "commit"=>"Confirm Changes"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mKopi Create (21.4ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "origin_id", "created_at", "updated_at", "price_per_pound", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "indomee"], ["roast", "smoky"], ["origin_id", 9], ["created_at", "2020-05-13 08:54:49.323816"], ["updated_at", "2020-05-13 08:54:49.323816"], ["price_per_pound", 2.0], ["user_id", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+Redirected to http://localhost:3000/kopis/6
+Completed 302 Found in 239ms (ActiveRecord: 37.3ms | Allocations: 9367)
+
+
+Started GET "/kopis/6" for ::1 at 2020-05-13 16:54:49 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mKopi Load (0.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:9:in `show'
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10:in `show'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.8ms | Allocations: 5347)
+
+
+Started GET "/kopis/" for ::1 at 2020-05-13 16:54:57 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1742)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.8ms | Allocations: 5285)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-13 16:55:00 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1625)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 6578)
+
+
+Started POST "/kopis" for ::1 at 2020-05-13 16:55:41 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"authenticity_token"=>"i0gdDzPeT7yKuvv3eZCm/w4EpWyU2sWBHQ7ZusMGyWFXAlLBCV7mJ0G/q0sEPxoxQxCHWNajPDPldCnPKqUnCg==", "kopi"=>{"name"=>"robusta", "roast"=>"braziliano", "origin_id"=>"10", "price_per_pound"=>"6"}, "commit"=>"Confirm Changes"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mKopi Create (0.5ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "origin_id", "created_at", "updated_at", "price_per_pound", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "robusta"], ["roast", "braziliano"], ["origin_id", 10], ["created_at", "2020-05-13 08:55:41.805741"], ["updated_at", "2020-05-13 08:55:41.805741"], ["price_per_pound", 6.0], ["user_id", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[35m (32.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+Redirected to http://localhost:3000/kopis/7
+Completed 302 Found in 45ms (ActiveRecord: 33.7ms | Allocations: 5651)
+
+
+Started GET "/kopis/7" for ::1 at 2020-05-13 16:55:41 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:9:in `show'
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10:in `show'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 1.0ms | Allocations: 4746)
+
+
+Started GET "/kopis/" for ::1 at 2020-05-13 16:55:46 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.6ms | Allocations: 5296)
+
+
+Started GET "/kopis/new" for ::1 at 2020-05-13 16:55:53 +0800
+Processing by KopisController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering kopis/new.html.erb within layouts/application
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins"[0m
+  ↳ app/views/kopis/new.html.erb:18
+  Rendered kopis/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1623)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 0.7ms | Allocations: 6595)
+
+
+Started POST "/kopis" for ::1 at 2020-05-13 16:56:04 +0800
+Processing by KopisController#create as HTML
+  Parameters: {"authenticity_token"=>"UJZPjp28rtfotkb3C+Z3w9OsiX4kw5JnmiI8jIiCTw+M3ABApzwHTCOzFkt2ScsNnrirSma6a9ViWMz5YSGhZA==", "kopi"=>{"name"=>"vietcong", "roast"=>"funky", "origin_id"=>"8", "price_per_pound"=>"3"}, "commit"=>"Confirm Changes"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mOrigin Load (0.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[36mKopi Create (0.7ms)[0m  [1m[32mINSERT INTO "kopis" ("name", "roast", "origin_id", "created_at", "updated_at", "price_per_pound", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "vietcong"], ["roast", "funky"], ["origin_id", 8], ["created_at", "2020-05-13 08:56:04.207386"], ["updated_at", "2020-05-13 08:56:04.207386"], ["price_per_pound", 3.0], ["user_id", 1]]
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+  [1m[35m (34.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kopis_controller.rb:20:in `create'
+Redirected to http://localhost:3000/kopis/8
+Completed 302 Found in 50ms (ActiveRecord: 36.9ms | Allocations: 5666)
+
+
+Started GET "/kopis/8" for ::1 at 2020-05-13 16:56:04 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:9:in `show'
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:10:in `show'
+  Rendering kopis/show.html.erb within layouts/application
+  Rendered kopis/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 1.5ms | Allocations: 4758)
+
+
+Started GET "/kopis/" for ::1 at 2020-05-13 16:56:07 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:2
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:19:in `each_with_index'
+  Rendered kopis/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1841)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.7ms | Allocations: 5370)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "adam"], ["created_at", "2020-05-13 08:57:46.221370"], ["updated_at", "2020-05-13 08:57:46.221370"]]
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ben"], ["created_at", "2020-05-13 08:58:07.559857"], ["updated_at", "2020-05-13 08:58:07.559857"]]
+  [1m[35m (46.4ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/bobby/.rbenv/versions/2.7.1/bin/rake:23)
+Started GET "/customers/new" for ::1 at 2020-05-13 17:09:33 +0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered customers/new.html.erb within layouts/application (Duration: 304.8ms | Allocations: 151595)
+Completed 500 Internal Server Error in 312ms (ActiveRecord: 5.4ms | Allocations: 153851)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x000055d02ce28b08>:0x000055d02ce26c18>):
+    1: 
+    2: <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+    3: 
+    4: 	<%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    5: 
+    6: 	<div class="form-group">
+    7: 		<%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:4
+app/views/customers/new.html.erb:2
+Started GET "/customers/new" for ::1 at 2020-05-13 17:10:00 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Kopi Load (0.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered customers/new.html.erb within layouts/application (Duration: 340.2ms | Allocations: 169360)
+Completed 500 Internal Server Error in 345ms (ActiveRecord: 8.7ms | Allocations: 171617)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x000055d02ce2b9c0>:0x000055d02ce28388>):
+    1: 
+    2: <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+    3: 
+    4: 	<%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+    5: 
+    6: 	<div class="form-group">
+    7: 		<%= form.label :name %><br>
+  
+app/views/customers/new.html.erb:4
+app/views/customers/new.html.erb:2
+Started GET "/customers/new" for ::1 at 2020-05-13 17:11:11 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:4
+  Rendered customers/new.html.erb within layouts/application (Duration: 42.7ms | Allocations: 6283)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 329ms (Views: 327.3ms | ActiveRecord: 0.4ms | Allocations: 28162)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:12:54 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:4
+  Rendered customers/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1664)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 1.1ms | Allocations: 6255)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:15:09 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:4
+  Rendered customers/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1663)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms | Allocations: 6262)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:15:54 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1103)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2463)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+	<%= form.collection_check_boxes :kopi_ids, @kopis, :class => "form-check", :id, :name %>
+
+	<div class="form-group">
+		<%= form.label :name %><br>
+		<%= form.text_field :name, class: "form-control" %>
+	</div>
+
+	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+<% end %>
+):
+1:    
+2:    <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+3:    
+4:    	<%= form.collection_check_boxes :kopi_ids, @kopis, :class => "form-check", :id, :name %>
+5:    
+6:    	<div class="form-group">
+7:    		<%= form.label :name %><br>
+8:    		<%= form.text_field :name, class: "form-control" %>
+9:    	</div>
+10:    
+11:    	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+12:    <% end %>
+  
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+Started GET "/customers/new" for ::1 at 2020-05-13 17:16:10 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1100)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2460)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+	<%= form.collection_check_boxes :kopi_ids, :class => "form-check", @kopis, :id, :name %>
+
+	<div class="form-group">
+		<%= form.label :name %><br>
+		<%= form.text_field :name, class: "form-control" %>
+	</div>
+
+	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+<% end %>
+):
+1:    
+2:    <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+3:    
+4:    	<%= form.collection_check_boxes :kopi_ids, :class => "form-check", @kopis, :id, :name %>
+5:    
+6:    	<div class="form-group">
+7:    		<%= form.label :name %><br>
+8:    		<%= form.text_field :name, class: "form-control" %>
+9:    	</div>
+10:    
+11:    	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+12:    <% end %>
+  
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+app/views/customers/new.html.erb:4: syntax error, unexpected ',', expecting =>
+Started GET "/customers/new" for ::1 at 2020-05-13 17:16:25 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (1.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:4
+  Rendered customers/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1653)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 1.6ms | Allocations: 6262)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:16:32 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered customers/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1103)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2445)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name, :class = "form-check" %>
+
+	<div class="form-group">
+		<%= form.label :name %><br>
+		<%= form.text_field :name, class: "form-control" %>
+	</div>
+
+	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+<% end %>
+):
+1:    
+2:    <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+3:    
+4:    	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name, :class = "form-check" %>
+5:    
+6:    	<div class="form-group">
+7:    		<%= form.label :name %><br>
+8:    		<%= form.text_field :name, class: "form-control" %>
+9:    	</div>
+10:    
+11:    	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+12:    <% end %>
+  
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+app/views/customers/new.html.erb:4: syntax error, unexpected '=', expecting ')'
+Started GET "/customers/new" for ::1 at 2020-05-13 17:16:38 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:4
+  Rendered customers/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.4ms | Allocations: 6248)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:17:06 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (2.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:6
+  Rendered customers/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 2.0ms | Allocations: 6234)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:17:20 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:11
+  Rendered customers/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1653)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.7ms | Allocations: 6230)
+
+
+Started GET "/customers/new" for ::1 at 2020-05-13 17:17:55 +0800
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/customers/new.html.erb:12
+  Rendered customers/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1657)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 6242)
+
+

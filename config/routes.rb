@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :origins
 
   resources :orders
+
+  resources :customers
 end
