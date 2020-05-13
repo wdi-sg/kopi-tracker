@@ -1,22 +1,52 @@
+
+
+
 <div class="row">
 	<div class= "col-12 border text-center mt-5">
 
-		<h1>Hello</h1>
+		<h1>Hello Customer page</h1>
 
 	</div>
 
 </div>
 
 
+<div class="row">
+	<div class= "col-6 border text-center">
+
+		<%= link_to 'New customer', new_customer_path %>
+
+	</div>
+		<div class= "col-6 border text-center">
+
+		<%= link_to 'Return to Home', root_path %>
+
+	</div>
+
+</div>
+
 <% @customers.each do |customer| %>
 	<div class="row border">
-		<div class = "col-5 my-auto">
+		<div class = "col-3 my-auto">
 	<p>Customer Name: <%= customer.customerName %></p>
 		</div>
-		<div class = "col-7 ">
+		<div class = "col-3 pt-3 pb-3">
 	<% customer.kopis.each do |kopi| %>
 	<p>Kopi name: <%= kopi.name %></p>
 <% end %>
 </div>
+  <div class="col-2 pt-1 my-auto">
+      <p><%= link_to 'Show', customer_path(customer) %></p>
+	</div>
+
+	  <div class="col-2 pt-1 my-auto">
+      <p><%= link_to 'Edit', edit_customer_path(customer) %></p>
+	</div>
+
+	  <div class="col-2 pt-1 my-auto">
+      <p><%= link_to 'Destroy', customer_path(customer),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+	</div>
 	</div>
 <% end %>

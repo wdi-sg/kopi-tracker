@@ -40,6 +40,10 @@ Rails.application.routes.draw do
   get '/customers/new' => 'customers#new', as: 'new_customer'
   post '/customers' => 'customers#create'
   get '/customers/:id' => 'customers#show' , as:  'customer'
+  get '/customers/:id/edit' => 'customers#edit', as: 'edit_customer'
+  patch '/customers/:id' => 'customers#update'
+    delete '/customers/:id' => 'customers#destroy'
+
 
   get '/reports' => 'reports#index', as: 'reports'
 

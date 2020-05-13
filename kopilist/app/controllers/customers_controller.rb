@@ -17,7 +17,8 @@ class CustomersController < ApplicationController
   end
 
   def edit
-
+        @kopis = Kopi.all
+        @customer = Customer.find(params[:id])
   end
 
   def create
@@ -29,12 +30,18 @@ class CustomersController < ApplicationController
   end
 
   def update
-
+  @customer = Customer.find(params[:id])
+puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
+  @customer.update(customer_params)
+  redirect_to @customer
 
   end
 
   def destroy
+  @customer = Customer.find(params[:id])
+  @customer.destroy
 
+  redirect_to customers_path
 
   end
 

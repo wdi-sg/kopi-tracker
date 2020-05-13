@@ -22,11 +22,13 @@ class KopisController < ApplicationController
   def new
     @farms = Farm.all
     @roasts = Roast.all
+    @customers = Customer.all
   end
 
   def edit
      @farms = Farm.all
     @roasts = Roast.all
+    @customers = Customer.all
     @kopi = Kopi.find(params[:id])
   end
 
@@ -56,7 +58,7 @@ puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price, :customers_ids => [])
+    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price, :customer_ids => [])
   end
 
 end
