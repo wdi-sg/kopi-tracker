@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+
+<h1>Order Number: <%= @order.id %></h1>
+
+<p>Kopi Ordered: <%= @order.kopi.name %></p>
+
+<p>Kopi Origin: <%= @order.kopi.origin.name %></p>
+
+<p>Price Per Pound: <%= @order.kopi.price_per_pound %> cents</p>
+
+<p>Weight Ordered (Pounds): <%= @order.weight %></p>
+
+<p>Total Order Price: $<%= (@order.weight * @order.kopi.price_per_pound / 100) %></p>
+
+<% if current_user.admin? %>
+<p>Customer id: <%= @order.user_id %></p>
+
+<p>Customer Email: <%= @order.user.email %></p>
+<% end %>
+
+<p>Order Date: <%= @order.created_at %></p>
+
+
+<%= link_to 'home', root_path %>
+<%= link_to 'Back to Orders', orders_path %>
+<% end %>

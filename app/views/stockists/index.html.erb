@@ -1,0 +1,14 @@
+<% if params.has_key?(:kopi_id) %>
+	<h1>Kopi: <%= @kopi.name %></h1>
+<% else %>
+	<h2>Our Stockists</h2>
+<%end%>
+
+
+<h3>List of Stockists</h3>
+
+<ul>
+	<% @stockists.each do |stockist| %>
+		<li><%= stockist.name %></li>
+	<% end %>
+</ul>

@@ -1,0 +1,22 @@
+<h1>New Order</h1>
+
+
+<%= form_with scope: :order, url: orders_path, local: true do |form| %>
+
+
+  <%= form.label :kopi %><br>
+  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+  <p>
+    <%= form.label :weight_in_pounds %><br>
+    <%= form.number_field :weight, step: 0.01 %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>
