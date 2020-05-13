@@ -5,6 +5,7 @@ class OriginsController < ApplicationController
   def index
       @origins = Origin.all
       @kopis = Kopi.all
+      @roasts = Roast.all
   end
 
   def new

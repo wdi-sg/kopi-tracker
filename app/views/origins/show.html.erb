@@ -31,7 +31,7 @@
   <% @origin.kopi.each do |kopi|  %>
     <tr>
       <td style="width: 100px"><%= kopi.name %></td>
-      <td style="width: 100px" ><%= kopi.roast %></td>
+      <td style="width: 100px" ><%= kopi.roast.roast %></td>
       <td style="width: 50px"><%= link_to 'Show', kopi_path(kopi) %></td>
       <% if user_signed_in? %>
         <td  style="width: 50px"><%= link_to 'Edit', edit_kopi_path(kopi) %></td>

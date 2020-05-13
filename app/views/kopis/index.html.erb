@@ -20,7 +20,7 @@
   <% @kopis.each do |kopi| %>
     <tr>
       <td style="width: 100px"><%= kopi.name %></td>
-      <td style="width: 100px"><%= kopi.roast %></td>
+      <td style="width: 100px"><%= kopi.roast.roast %></td>
       <td style="width: 150px"><%= kopi.origin.location %></td>
       <td style="width: 50px"><%= link_to 'Show', kopi_path(kopi) %></td>
       <% if user_signed_in? %>

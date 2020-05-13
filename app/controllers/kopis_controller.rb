@@ -14,6 +14,7 @@ class KopisController < ApplicationController
 
   def new
     @origins = Origin.all
+    @roasts = Roast.all
   end
 
   def create
@@ -22,7 +23,6 @@ class KopisController < ApplicationController
     result = @kopi.save
 
     if result == true
-
       redirect_to @kopi
     else
       render plain: @kopi.errors.inspect
@@ -30,17 +30,15 @@ class KopisController < ApplicationController
   end
 
   def show
-    # deal with the case that we are trying to get a ranger for a park that doesn't exist
-
     @kopi = Kopi.find(params[:id])
-
-    if params[:origin_id].to_i != @kopi.origin.id
-      # do something
-    end
+    # if params[:origin_id] != @kopi.origin.id
+    #   render plain: @kopi.errors.inspect
+    # end
   end
 
   def edit
     @origins = Origin.all
+    @roasts = Roast.all
     @kopi = Kopi.find(params[:id])
     @kopi.user = current_user
   end
@@ -62,6 +60,6 @@ class KopisController < ApplicationController
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :origin_id, :user_id)
+    params.require(:kopi).permit(:name, :roast_id, :origin_id, :user_id)
   end
 end
