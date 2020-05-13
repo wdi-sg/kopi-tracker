@@ -1,0 +1,29 @@
+<h1>Kopi list</h1>
+
+<table>
+  <tr>
+    <th>Kopi</th>
+    <th>Roast</th>
+    <th></th>
+  </tr>
+  <% if user_signed_in? %>
+  	<%= link_to 'New', new_kopi_path %>
+  	<br />
+  	<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+  <% end %>
+
+  <% if user_signed_in? == false %>
+  	<%= link_to 'log in', new_user_session_url %>
+  <% end %>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Destroy', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
