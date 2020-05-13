@@ -1,0 +1,36 @@
+<br>
+<header>
+	<% if user_signed_in? %>
+		<p>Welcome <strong><%= current_user.email %></strong>!
+			<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+		</p>
+	<% else %>
+		<p>Existing user? <%= link_to 'Log in', new_user_session_url %></p>
+	<% end %>
+</header>
+
+<h2>Orders</h2>
+<br>
+<% if user_signed_in? %>
+	<%= link_to 'New Orders', new_order_path, :class => "btn btn-primary" %>
+<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Roast</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Price/pound</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+	  	<% @orders.each do |order| %>
+	  		<td><%= order.kopi %></td>
+	  	<% end %>
+	  </tr>
+  </tbody>

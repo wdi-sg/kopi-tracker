@@ -29,9 +29,13 @@ class KopisController < ApplicationController
 
   def update
     @kopi = Kopi.find(params[:id])
-    @kopi.update(kopi_params)
+    update_happened = @kopi.update(kopi_params)
 
-    redirect_to @kopi
+    if update_happened
+      redirect_to @kopi
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -43,6 +47,6 @@ class KopisController < ApplicationController
 
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :origin_id, :price)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id, :price, :customer_ids => [])
     end
 end

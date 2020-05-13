@@ -1,10 +1,33 @@
 <br>
 <h2><%= @kopi.name %></h2>
-<p>Roast: <strong><%= @kopi.roast.kind %></strong></p>
-<p>Origin: <strong><%= @kopi.origin.location %></strong></p>
-<p>Price: <strong>$<%= @kopi.price %></strong></p>
-<br>
 
+<table class="table">
+	<thead>
+    <tr>
+      <th scope="col">Kopi</th>
+      <th scope="col">Roast</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Price/pound</th>
+      <th scope="col">Customers</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<tr>
+    	<td><%= @kopi.name %></td>
+    	<td><%= @kopi.roast.kind %></td>
+    	<td><%= @kopi.origin.location %></td>
+    	<td>$<%= @kopi.price %></td>
+    	<td>
+    		<ul>
+	    		<% @kopi.customers.each do |customer| %>
+	    			<li><%= customer.name %></li>
+	    		<% end %>
+	    	</ul>
+    	</td>
+  	</tr>
+  </tbody>
+</table>
+<br>
 <p>
 	<% if user_signed_in? %>
 		<%= link_to 'Edit', edit_kopi_path(@kopi), :class => "btn btn-warning" %>
