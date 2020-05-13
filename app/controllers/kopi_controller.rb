@@ -1,9 +1,11 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [ :show, :index ]
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
 
   # GET /kopis
   # GET /kopis.json
   def index
+
     @kopis = Kopi.all
   end
 

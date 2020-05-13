@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Kopi Tracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,25 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <% if !user_signed_in? %>
+<li><%= link_to 'Login', new_user_session_path, :class => 'nav-link'%></li>
+<li><%= link_to 'Register', new_user_registration_path, :class => 'nav-link'%></li>
+<% else %>
+<li><%= link_to 'New Farm', new_kopi_farm_path, :class => 'nav-link'%></li>
+<li><%= link_to 'New Kopi', new_kopi_path, :class => 'nav-link'%></li>
+
+<% if current_user.admin? %>
+<li><%= link_to 'New Roast', new_roast_path, :class => 'nav-link'%></li>
+
+<% end %>
+<li><%= link_to 'Logout', destroy_user_session_url,  method: :delete, :class => 'nav-link text-danger' %></li>
+
+<%end%>
+</ul>
+</div>
+<% if user_signed_in? %>
+Logged in as <%= current_user.email %>
+<% end%>
   </body>
 </html>
