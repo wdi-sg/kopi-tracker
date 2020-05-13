@@ -8,6 +8,14 @@
 <p>
   Roast Type: <%= link_to @roast.name, roast_path(@roast) %>
 </p>
+<p>
+  Customers Who Stock: 
+  <ul>
+    <% @kopi.customers.each do |customer|%>
+      <li><%= link_to customer.name, customer_path %></li>
+    <% end %>
+  </ul>
+</p>
 <%= link_to 'Back To Kopis Index', kopis_path %>&nbsp;
 <%= link_to 'Edit', edit_kopi_path(@kopi) %>
 </p>
