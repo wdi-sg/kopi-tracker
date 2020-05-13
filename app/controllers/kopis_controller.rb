@@ -1,5 +1,7 @@
 class KopisController < ApplicationController
 
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def new
   end
 
@@ -14,6 +16,13 @@ class KopisController < ApplicationController
     @kopi = Kopi.find(params[:id])
   end
 
+  def destroy
+  @kopi = Kopi.find(params[:id])
+  @kopi.destroy
+
+  redirect_to root_path
+  end
+  
 private
 
   def kopi_params
