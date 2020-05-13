@@ -11,9 +11,24 @@
 </p>
 
 <p>
+  <strong>Customers:</strong>
+  <table>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+<p>
   <strong>Origin:</strong>
   <%= @origin.location %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_kopi_path(@kopi) %> |
 <%= link_to 'Back', kopis_path %>

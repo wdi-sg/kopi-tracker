@@ -3448,3 +3448,498 @@ Processing by KopisController#index as HTML
 Completed 200 OK in 280ms (Views: 93.3ms | ActiveRecord: 175.7ms | Allocations: 15997)
 
 
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Customer (20200513123623)
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Customer (20200513123623)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Customer (20200513123623)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Customer (20200513123623)
+  [1m[35m (20.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(310550223193708785)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to Customer (20200513123623)
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (179.6ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513123623"]]
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CustomersKopis (20200513124604)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "customers_kopis" ("id" bigserial primary key, "customer_id" bigint, "kopi_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_customer_id" ON "customers_kopis"  ("customer_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_customers_kopis_on_kopi_id" ON "customers_kopis"  ("kopi_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513124604"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (24.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(310550223193708785)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mKopi Load (3.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mKopi Load (0.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (6.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Andre3k"], ["created_at", "2020-05-13 14:30:26.132320"], ["updated_at", "2020-05-13 14:30:26.132320"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "BigBoiiii"], ["created_at", "2020-05-13 14:30:33.228977"], ["updated_at", "2020-05-13 14:30:33.228977"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "John Legend"], ["created_at", "2020-05-13 14:30:40.914407"], ["updated_at", "2020-05-13 14:30:40.914407"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (2.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" ORDER BY "kopis"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mKopi::HABTM_Customers Create (2.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 1], ["kopi_id", 1], ["created_at", "2020-05-13 14:31:11.843018"], ["updated_at", "2020-05-13 14:31:11.843018"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCustomer Load (4.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1 LIMIT $2[0m  [["kopi_id", 1], ["LIMIT", 11]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 3], ["id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Load (2.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoast Load (3.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrigin Load (0.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dr Dre"], ["created_at", "2020-05-13 14:31:43.645033"], ["updated_at", "2020-05-13 14:31:43.645033"]]
+  [1m[36mCustomer::HABTM_Kopis Create (0.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 4], ["kopi_id", 3], ["created_at", "2020-05-13 14:31:43.647628"], ["updated_at", "2020-05-13 14:31:43.647628"]]
+  [1m[36mCustomer::HABTM_Kopis Create (0.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 4], ["kopi_id", 5], ["created_at", "2020-05-13 14:31:43.649705"], ["updated_at", "2020-05-13 14:31:43.649705"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (0.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 6]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 5]]
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 4]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 3], ["id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Load (1.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoast Load (2.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrigin Load (6.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoast Load (1.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Create (2.1ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dr Dre"], ["created_at", "2020-05-13 14:33:06.849344"], ["updated_at", "2020-05-13 14:33:06.849344"]]
+  [1m[36mCustomer::HABTM_Kopis Create (1.0ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 5], ["kopi_id", 3], ["created_at", "2020-05-13 14:33:06.853781"], ["updated_at", "2020-05-13 14:33:06.853781"]]
+  [1m[36mCustomer::HABTM_Kopis Create (2.5ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 5], ["kopi_id", 5], ["created_at", "2020-05-13 14:33:06.859559"], ["updated_at", "2020-05-13 14:33:06.859559"]]
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 3], ["id", 5]]
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Load (3.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoast Load (1.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrigin Load (1.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCustomer Create (2.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kay Dre"], ["created_at", "2020-05-13 14:33:22.235875"], ["updated_at", "2020-05-13 14:33:22.235875"]]
+  [1m[36mCustomer::HABTM_Kopis Create (0.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 6], ["kopi_id", 3], ["created_at", "2020-05-13 14:33:22.243228"], ["updated_at", "2020-05-13 14:33:22.243228"]]
+  [1m[36mCustomer::HABTM_Kopis Create (1.6ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 6], ["kopi_id", 5], ["created_at", "2020-05-13 14:33:22.246560"], ["updated_at", "2020-05-13 14:33:22.246560"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mKopi Load (0.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" IN ($1, $2)[0m  [["id", 7], ["id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrigin Load (1.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Aay Dre"], ["created_at", "2020-05-13 14:33:49.926538"], ["updated_at", "2020-05-13 14:33:49.926538"]]
+  [1m[36mCustomer::HABTM_Kopis Create (0.7ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 7], ["kopi_id", 7], ["created_at", "2020-05-13 14:33:49.930005"], ["updated_at", "2020-05-13 14:33:49.930005"]]
+  [1m[36mCustomer::HABTM_Kopis Create (0.8ms)[0m  [1m[32mINSERT INTO "customers_kopis" ("customer_id", "kopi_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["customer_id", 7], ["kopi_id", 9], ["created_at", "2020-05-13 14:33:49.932775"], ["updated_at", "2020-05-13 14:33:49.932775"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-05-13 22:40:23 +0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (12.2ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (20.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (9.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (28.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.1ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (42.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (6.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 393.8ms | Allocations: 30001)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 486ms (Views: 176.5ms | ActiveRecord: 280.7ms | Allocations: 44068)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-13 22:40:28 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.0ms | Allocations: 656)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 33.2ms | Allocations: 5916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 59.9ms | ActiveRecord: 50.5ms | Allocations: 18870)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-13 22:40:35 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WqLMjuuqOPBTebptCHlxkkd+YliaK28JxK1CfVv9oP+eDSFCXn1nLf3+DLHD1347RqA5UXMjV8LlqSCL3w2zlg==", "user"=>{"email"=>"123@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "123@email.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 198ms (ActiveRecord: 9.6ms | Allocations: 3671)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"WqLMjuuqOPBTebptCHlxkkd+YliaK28JxK1CfVv9oP+eDSFCXn1nLf3+DLHD1347RqA5UXMjV8LlqSCL3w2zlg==", "user"=>{"email"=>"123@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 5711)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-13 22:40:38 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"k6JkTtCtOYjR9uSYSP36Ux1jA7Od6SkagVup3Gkuv/lXDYmCZXpmVX9xUkSDU/X6HL1YunThEdGgX8sq7d6skA==", "user"=>{"email"=>"123@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "123@email.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 4.0ms | Allocations: 4649)
+
+
+Started GET "/" for ::1 at 2020-05-13 22:40:38 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (1.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (32.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (23.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (4.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (28.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 141.9ms | Allocations: 11883)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 66.9ms | ActiveRecord: 95.0ms | Allocations: 16119)
+
+
+Started GET "/kopis/1" for ::1 at 2020-05-13 22:40:45 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKopi Load (1.1ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (4.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (0.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 1]]
+  ↳ app/views/kopis/show.html.erb:16
+  Rendered kopis/show.html.erb within layouts/application (Duration: 77.4ms | Allocations: 7292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 31.0ms | ActiveRecord: 62.3ms | Allocations: 19285)
+
+
+Started GET "/kopis" for ::1 at 2020-05-13 22:40:48 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (2.5ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (1.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (31.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (6.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (51.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (24.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (5.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (30.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 200.9ms | Allocations: 11821)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 221ms (Views: 66.5ms | ActiveRecord: 153.0ms | Allocations: 16059)
+
+
+Started GET "/kopis/3" for ::1 at 2020-05-13 22:40:49 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKopi Load (2.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mCustomer Load (31.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 3]]
+  ↳ app/views/kopis/show.html.erb:16
+  Rendered kopis/show.html.erb within layouts/application (Duration: 37.8ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 32.9ms | ActiveRecord: 34.7ms | Allocations: 7341)
+
+
+Started GET "/kopis" for ::1 at 2020-05-13 22:40:51 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (42.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (2.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.5ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (27.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (10.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (26.9ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (5.9ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 173.0ms | Allocations: 11804)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 199ms (Views: 80.1ms | ActiveRecord: 118.6ms | Allocations: 16031)
+
+
+Started GET "/kopis/9" for ::1 at 2020-05-13 22:40:52 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mKopi Load (0.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (0.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (0.3ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mCustomer Load (23.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 9]]
+  ↳ app/views/kopis/show.html.erb:16
+  Rendered kopis/show.html.erb within layouts/application (Duration: 29.2ms | Allocations: 1255)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 37.6ms | ActiveRecord: 24.2ms | Allocations: 7315)
+
+
+Started GET "/kopis" for ::1 at 2020-05-13 22:40:54 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (27.3ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (39.1ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.4ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (9.4ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (36.3ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.8ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (18.2ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (45.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 230.6ms | Allocations: 11809)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 261ms (Views: 82.8ms | ActiveRecord: 177.6ms | Allocations: 16037)
+
+
+Started GET "/kopis/6" for ::1 at 2020-05-13 22:40:55 +0800
+Processing by KopisController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mKopi Load (0.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" WHERE "kopis"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:73:in `set_kopi'
+  [1m[36mOrigin Load (0.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:77:in `set_origin'
+  [1m[36mRoast Load (6.2ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kopis_controller.rb:81:in `set_roast'
+  Rendering kopis/show.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" INNER JOIN "customers_kopis" ON "customers"."id" = "customers_kopis"."customer_id" WHERE "customers_kopis"."kopi_id" = $1[0m  [["kopi_id", 6]]
+  ↳ app/views/kopis/show.html.erb:16
+  Rendered kopis/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 50.1ms | ActiveRecord: 8.7ms | Allocations: 7314)
+
+
+Started GET "/kopis" for ::1 at 2020-05-13 22:40:57 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (22.9ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:16
+  [1m[36mRoast Load (2.6ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (6.8ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:21
+  [1m[36mRoast Load (25.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (0.7ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (29.7ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mCACHE Roast Load (0.0ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mOrigin Load (38.6ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  [1m[36mRoast Load (0.5ms)[0m  [1m[34mSELECT "roasts".* FROM "roasts" WHERE "roasts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:19
+  [1m[36mCACHE Origin Load (0.0ms)[0m  [1m[34mSELECT "origins".* FROM "origins" WHERE "origins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/kopis/index.html.erb:20
+  Rendered kopis/index.html.erb within layouts/application (Duration: 181.9ms | Allocations: 11810)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 77.5ms | ActiveRecord: 130.5ms | Allocations: 16039)
+
+
+Started GET "/customers" for ::1 at 2020-05-13 22:50:25 +0800
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (16.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:14
+  Rendered customers/index.html.erb within layouts/application (Duration: 62.3ms | Allocations: 5663)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 201ms (Views: 137.5ms | ActiveRecord: 34.8ms | Allocations: 36529)
+
+
+Started GET "/customers/1" for ::1 at 2020-05-13 22:50:28 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:67:in `set_customer'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 20.0ms | ActiveRecord: 7.9ms | Allocations: 6283)
+
+
+Started GET "/customers/4" for ::1 at 2020-05-13 22:50:31 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:67:in `set_customer'
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.6ms | Allocations: 5203)
+
+
+Started GET "/customers" for ::1 at 2020-05-13 22:55:07 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (2.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:14
+  Rendered customers/index.html.erb within layouts/application (Duration: 81.7ms | Allocations: 5020)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 83.5ms | ActiveRecord: 45.6ms | Allocations: 12195)
+
+
+Started GET "/customers/2" for ::1 at 2020-05-13 22:55:08 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (7.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:68:in `set_customer'
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (5.6ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 2]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (Duration: 96.5ms | Allocations: 5742)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 177ms (Views: 65.7ms | ActiveRecord: 60.2ms | Allocations: 17888)
+
+
+Started GET "/customers/1" for ::1 at 2020-05-13 22:55:11 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (4.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:68:in `set_customer'
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (38.7ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (Duration: 56.8ms | Allocations: 5934)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 40.3ms | ActiveRecord: 43.4ms | Allocations: 10865)
+
+
+Started GET "/customers/7" for ::1 at 2020-05-13 22:55:14 +0800
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCustomer Load (5.7ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:68:in `set_customer'
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mKopi Load (8.8ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis" INNER JOIN "customers_kopis" ON "kopis"."id" = "customers_kopis"."kopi_id" WHERE "customers_kopis"."customer_id" = $1[0m  [["customer_id", 7]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1270)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 40.1ms | ActiveRecord: 14.4ms | Allocations: 6200)
+
+

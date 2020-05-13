@@ -8,19 +8,12 @@ class KopisController < ApplicationController
   # GET /kopis.json
   def index
     @kopis = Kopi.all
-    @origins = {}
-    Origin.all.each do |origin|
-      @origins[origin.id] = origin.location
-    end
-    @roasts = {}
-    Roast.all.each do |roast|
-      @roasts[roast.id] = roast.name
-    end
   end
 
   # GET /kopis/1
   # GET /kopis/1.json
   def show
+    @customers = @kopi.customers
   end
 
   # GET /kopis/new
