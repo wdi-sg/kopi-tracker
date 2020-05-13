@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_103914) do
+ActiveRecord::Schema.define(version: 2020_05_13_133924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers_kopis", force: :cascade do |t|
+    t.bigint "customer_id"
+    t.bigint "kopi_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_customers_kopis_on_customer_id"
+    t.index ["kopi_id"], name: "index_customers_kopis_on_kopi_id"
+  end
 
   create_table "kopis", force: :cascade do |t|
     t.string "name"
@@ -22,13 +37,21 @@ ActiveRecord::Schema.define(version: 2020_05_12_103914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "roast_id"
     t.index ["origin_id"], name: "index_kopis_on_origin_id"
+    t.index ["roast_id"], name: "index_kopis_on_roast_id"
     t.index ["user_id"], name: "index_kopis_on_user_id"
   end
 
   create_table "origins", force: :cascade do |t|
     t.string "location"
     t.integer "phone_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roasts", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,5 +68,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_103914) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "kopis", "roasts"
   add_foreign_key "kopis", "users"
 end

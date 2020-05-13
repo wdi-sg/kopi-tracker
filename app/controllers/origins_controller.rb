@@ -6,14 +6,17 @@ def index
 
   @origins = Origin.all
   @kopis = Kopi.all
+  @roasts = Roast.all
 end
 
 def new
   end
 
   def show
+    @roasts = Roast.all
     @origin = Origin.find(params[:id])
     @kopi = Kopi.where(origin_id: @origin.id)
+
 
       puts '*************'
       puts
