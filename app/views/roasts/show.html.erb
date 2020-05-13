@@ -1,2 +1,32 @@
-<h1>Roasts#show</h1>
-<p>Find me in app/views/roasts/show.html.erb</p>
+<h1>Roasts Show</h1>
+
+<% if user_signed_in? %>
+  <%= link_to 'Add new Roast', new_roast_path %>
+  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+<br>
+
+<table>
+  <tr>
+    <td> <%= @roast.id %></td>
+    <td><%= @roast.roast %></td>
+  </tr>
+</table>
+<br>
+
+<% if user_signed_in? %>
+  <span style="width: 50px"><%= link_to 'Edit', edit_roast_path(@roast) %></span>
+  <span style="width: 50px"><%= link_to 'Delete', roast_path(@roast),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></span>
+<% end %>
+<br>
+<br>
+<br>
+
+<div>
+  <%= link_to 'Back to Origin Index', root_path %>
+</div>

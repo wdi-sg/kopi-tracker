@@ -1,2 +1,23 @@
-<h1>Roasts#edit</h1>
-<p>Find me in app/views/roasts/edit.html.erb</p>
+<h1>Roasts Edit</h1>
+
+<%= form_with scope: :roast, model: @roast, local: true do |form| %>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_field :roast %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<br>
+<br>
+<div>
+  <%= link_to 'Back to Roast Index', roasts_path %>
+</div>
+<div>
+  <%= link_to 'Back to Origin Index', root_path %>
+</div>

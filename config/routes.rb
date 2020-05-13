@@ -23,8 +23,4 @@ Rails.application.routes.draw do
 
   resources :roasts
 
-  get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
-  get '/origins/:origin_id/kopis/new' => 'kopis#create', as: 'new_origin_kopi'
-  post '/origins/:origin_id/kopis' => 'kopis#create'
-
 end

@@ -1,2 +1,40 @@
-<h1>Roasts#index</h1>
-<p>Find me in app/views/roasts/index.html.erb</p>
+<h1>Roasts Index</h1>
+
+<% if user_signed_in? %>
+  <p><%= link_to 'Add new Roast', new_roast_path %></p>
+  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <th style="text-align: left">Id</th>
+    <th style="text-align: left">Roast</th>
+  </tr>
+
+  <% @roasts.each do |roast| %>
+    <tr>
+      <td style="width: 30px"><%= roast.id %></td>
+      <td style="width: 100px"><%= roast.roast %></td>
+      <td style="width: 50px"><%= link_to 'Show', roast_path(roast) %></td>
+      <% if user_signed_in? %>
+        <td style="width: 50px"><%= link_to 'Edit', edit_roast_path(roast) %></td>
+        <td style="width: 50px"><%= link_to 'Delete', roast_path(roast),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<br>
+<div>
+  <p><%= link_to 'Go to Kopi Index', kopis_path %></p>
+  <p><%= link_to 'Go to Origin Index', root_path %></p>
+</div>

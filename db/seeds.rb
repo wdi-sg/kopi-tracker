@@ -11,8 +11,8 @@
 # costarica = Origin.new(location: "Costa Rica", phone: "12345678")
 # costarica.save
 
-# cinnamon = Roast.new(roast: "Cinnamon")
-# cinnamon.save
+cinnamon = Roast.new(roast: "Cinnamon")
+cinnamon.save
 
 light = Roast.new(roast: "Light")
 light.save
