@@ -1,0 +1,16 @@
+<%= link_to 'New customer', new_customer_path %>
+
+<h1>Customer list</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+
+    </tr>
+  <% end %>
+</table>
