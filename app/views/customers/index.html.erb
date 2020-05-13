@@ -1,0 +1,13 @@
+<%= render partial: "layouts/sort_form", locals: {form_url: @form_url} %>
+<div class="customers__list">
+		<h3 class="customers__header">Customers</h3>
+		<%@customers.each do |customer|%>
+		<h4 class="customers__name">
+				<%=customer.email.split("@")[0].capitalize%>
+		</h4>
+		<h4 class="customers__kopis-number">
+				<%=customer.kopis.length%> Kopis
+		</h4>
+		<%end%>
+</div>
+<%= link_to "Customer sign out", destroy_customer_session_path, :method => :delete %>

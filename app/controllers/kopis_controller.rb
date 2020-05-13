@@ -7,6 +7,7 @@ class KopisController < ApplicationController
   # GET /kopis
   # GET /kopis.json
   def index
+
     @kopis = Kopi.all
   end
 

@@ -1,5 +1,17 @@
 class CustomersController < ApplicationController
 
+  def index
+    @customers = Customer.all
+    @form_url = '/customers'
+
+    if params[:sort_by_number] == 'ascending'
+      @customers = Customer.left_joins(:kopis).group(:id).order('COUNT(kopis.id)')
+    elsif params[:sort_by_number] == 'descending'
+      @customers = Customer.left_joins(:kopis).group(:id).order('COUNT(kopis.id) DESC')
+    else
+      @customers = Customer.all
+    end
+  end
   # GET /customers/1
   def show
     @customer = current_customer

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :kopis
   resources :origins
 
+  get '/customers/' => 'customers#index'
   get '/customers/:id' => 'customers#show' , as: 'customer'
   get '/customers/:id/edit' => 'customers#edit'
   patch '/customers/:id' => 'customers#update', as: 'edit_customer'
