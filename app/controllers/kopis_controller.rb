@@ -1,7 +1,7 @@
 class KopisController < ApplicationController
-  before_action :set_user
+  before_action :set_user_or_customer
   before_action :set_kopi, only: [:show, :edit, :update, :destroy]
-  before_action :check_user, only: [:new, :edit, :update, :destroy]
+  before_action :check_user_or_customer, only: [:new, :edit, :update, :destroy]
   before_action :check_admin, only: [:edit, :update, :destroy]
 
   # GET /kopis
@@ -78,12 +78,16 @@ class KopisController < ApplicationController
       params.require(:kopi).permit(:name, :roast, :origin_id)
     end
 
-    def set_user
-      @user = current_user
+    def set_user_or_customer
+      if current_user
+        @user = current_user
+      elsif current_customer
+        @customer = current_customer
+      end
     end
 
-    def check_user
-      if !current_user
+    def check_user_or_customer
+      if !current_user || current_customer
         redirect_to kopis_path
       end
     end

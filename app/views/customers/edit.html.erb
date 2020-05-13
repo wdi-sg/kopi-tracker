@@ -1,0 +1,9 @@
+<h3 class="customer-header">
+		<%= @customer.email.split('@')[0].capitalize%>
+</h3>
+<%= form_with scope: :customer, url: edit_customer_path,  method: "patch", local: true do |form| %>
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+<p>
+		<%= form.submit %>
+</p>
+<% end %>
