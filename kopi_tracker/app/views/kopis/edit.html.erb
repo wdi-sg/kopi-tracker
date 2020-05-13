@@ -20,6 +20,11 @@
     <%= form.label :price %><br>
     <%= form.text_field :price %>
   </p>
+
+  <p>
+  	<%= form.collection_check_boxes :customer_ids, @kopi.customers, :id, :name  %>
+  </p>
+
 	<br>
   <p>
     <%= form.submit :class => "btn btn-primary" %>
