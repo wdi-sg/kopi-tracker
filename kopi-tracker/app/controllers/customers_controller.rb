@@ -1,7 +1,16 @@
 class CustomersController < ApplicationController
   
   def index
+    order = request.query_parameters[:order]
+    puts order
     @customers = Customer.all
+    if order == "asc"
+      @customers = @customers.sort_by{ |customer| customer.kopis.length }
+    elsif order == "desc"
+      @customers = @customers.sort_by{ |customer| -customer.kopis.length }
+    else 
+      @customers
+    end
   end
 
   def new
