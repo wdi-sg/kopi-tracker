@@ -1,15 +1,18 @@
 <%= form_with scope: :kopi, url: kopis_path, local: true do |f| %>
-	<p>Location:</p>
-	<%= f.collection_select :origin_id, @origins, :id, :location %>
-	<p>
+	<h3>Add New Kopi</h3>
+	<div class="form-group">
 		<%= f.label :name %><br>
 		<%= f.text_field :name %>
-	</p>
-	<p>
+	</div>
+	<div class="form-group">
 		<%= f.label :roast %><br>
-		<%= f.text_field :roast %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+		<%= f.collection_select :roast_id, @roasts, :id, :name %>
+	</div>
+	<div class="form-group">
+		<%= f.label :origin %><br>
+		<%= f.collection_select :origin_id, @origins, :id, :location %>
+	</div>
+	<%= f.submit class: "btn btn-primary" %>
 <% end %>
+<br>
+<%= link_to 'Back to Homepage', root_path %>

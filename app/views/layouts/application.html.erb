@@ -5,11 +5,34 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <!-- nav -->
+    <div class="container col-sm text-center heading">
+    <h2>
+        <a href="<%= origins_path %>">Origins</a>
+        <a href="<%= kopis_path %>">Coffees</a>
+        <a href="#">Roasts</a>
+    </h2>
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
+    <% else %>
+      <%= link_to 'log in', new_user_session_url %>
+    <% end %>
+    </div>
+    
+    <!-- error alerts -->
+    <p class="notice text-center"><%= notice %></p>
+    <p class="notice text-center"><%= alert %></p>
+    <!-- div container -->
+    <div class="container col-sm">
+      <%= yield %>
+    </div>
+    
   </body>
 </html>

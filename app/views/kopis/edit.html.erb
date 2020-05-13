@@ -1,2 +1,22 @@
-<h1>Kopis#edit</h1>
-<p>Find me in app/views/kopis/edit.html.erb</p>
+	<%= form_with model: @kopi, local: true do |f| %>
+	<div class="form-group">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div>
+	<div class="form-group">
+		<%= fields_for :roast, @kopi.roast do |f| %>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+		<% end %>
+	</div>
+	<div class="form-group">
+		<%= fields_for :origin, @kopi.origin do |f| %>
+		<%= f.label :location %><br>
+		<%= f.text_field :location %>
+		<% end %>
+	</div>
+	<%= f.submit class: "btn btn-primary" %>
+	<% end %>
+	<br>
+	<%= link_to 'Back to Homepage', root_path %>		
+

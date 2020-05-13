@@ -1,16 +1,30 @@
-<h1>List of origins</h1>
-	<table>
+
+	<h2 class="text-center">Kopi Origins</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Location</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+		<tbody>
 		<% @origins.each do |origin| %>
-		<tr>
-			<th>Location</th>
-			<th>Phone</th>
-		</tr>
-		<tr>
-			<td><%= origin.location %></td>
-			<td><%= origin.phone %></td>
-		  <td><%= link_to 'Show', origin_path(origin)%></td>
-			<td><%= link_to 'Delete', origin_path(origin), method: :delete%></td>
-		</tr>
+			<tr>
+				<td><%= origin.location %></td>
+				<td><%= origin.phone %></td>
+			  <td><%= link_to 'Details', origin_path(origin) %></td>
+			  <% if user_signed_in? %>
+			  	<td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+					<td><%= link_to 'Delete', origin_path(origin), method: :delete %></td>
+				<% end %>
+			</tr>
 		<% end %>
+		</tbody>
 	</table><br>
-	<%= link_to 'Create Origin', new_origin_path %>
+<div class="text-center">
+	<% if user_signed_in? %>
+		<%= link_to 'Enter New Origin', new_origin_path, class: "btn btn-primary" %>
+		<br>
+	<% end %>
+	<%= link_to 'Back to Homepage', root_path %>
+</div>

@@ -1,4 +1,5 @@
 class KopisController < ApplicationController
+  before_action :authenticate_user!, :except => [:index, :show]
 
 	def index
 		if params.has_key?(:origin_id)
@@ -9,14 +10,28 @@ class KopisController < ApplicationController
 	end
 
   def new
-  	@origins = Origin.all
+    if params.has_key?(:origin_id)
+      @origins = Origin.where(id: params[:origin_id])
+    else
+      @origins = Origin.all
+    end
+    @roasts = Roast.all
   end
 
   def create
-  	@kopi = Kopi.new(kopi_params)
+    #user session will be saved to retain info when user relogs
+    #e.g. tracking user added kopis
+    #user_session['created_kopis_id'].append(@kopi.id)
+    byebug
 
-  	@kopi.save
-  	redirect_to @kopi
+  	@kopi = Kopi.new(kopi_params)
+    @kopi.user = current_user
+  	
+    if @kopi.save
+      redirect_to @kopi
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -26,13 +41,26 @@ class KopisController < ApplicationController
   	# end
   end
 
+  def edit
+    @kopi = Kopi.find(params[:id])
+  end
+
+  def update
+    @kopi = Kopi.find(params[:id])
+
+    @kopi.update(kopi_params)
+    redirect_to @kopi
+  end
+
   def destroy
+  	@origin = Kopi.find(params[:id]).origin
+
   	Kopi.find(params[:id]).destroy
-  	redirect_to root_path
+    redirect_to root_path
   end
   	
   private
   def kopi_params
-  	params.require(:kopi).permit(:name, :roast, :origin_id)
+  	params.require(:kopi).permit(:name, :roast_id, :origin_id)
   end
 end
