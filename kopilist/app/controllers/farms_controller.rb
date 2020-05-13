@@ -11,6 +11,20 @@ class FarmsController < ApplicationController
     puts @farms
     puts @kopis
     puts "$21231313131232132323123131323132131312"
+    sequence = request.query_parameters['sequence']
+    type = request.query_parameters['type']
+
+    case type
+    when "customerCount"
+      puts("I am customer")
+      @kopis = @kopis.order("customercount")
+      if sequence == "desc"
+        @kopis = @kopis.reverse
+      end
+
+
+    end
+
 
   end
 

@@ -44,6 +44,7 @@ class KopisController < ApplicationController
           @kopi = Kopi.find(params[:id])
 puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
   @kopi.update(kopi_params)
+  @kopi.update(customercount: kopi_params[:customer_ids].length-1)
   redirect_to @kopi
   end
 
@@ -58,7 +59,7 @@ puts "fjdlkjfldasjfkldasjflkadsjlfkdjasklfjwelqk;asdjfg;lkdsj"
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :price, :customer_ids => [])
+    params.require(:kopi).permit(:name, :origin, :farm_id, :roast_id, :customercount, :price, :customer_ids => [])
   end
 
 end

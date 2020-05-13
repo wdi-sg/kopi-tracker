@@ -30,10 +30,27 @@
 
 </div>
 
-<% @customers.each do |customer| %>
+
+<div class="row">
+	<div class= "col-6 border text-center">
+
+		  <%= link_to 'Sort By Kopi held Ascending', customers_path(type: "kopiCount", sequence: "asc") %>
+
+	</div>
+		<div class= "col-6 border text-center">
+		  <%= link_to 'Sort By Kopi held Descending', customers_path(type: "kopiCount", sequence: "desc") %>
+
+	</div>
+
+
+</div>
+
+
+<% @customers.each_with_index do |customer, index| %>
 	<div class="row border">
 		<div class = "col-3 my-auto">
 	<p>Customer Name: <%= customer.customerName %></p>
+
 		</div>
 		<div class = "col-3 pt-3 pb-3">
 	<% customer.kopis.each do |kopi| %>
@@ -43,7 +60,7 @@
   <div class="col-2 pt-1 my-auto">
       <p><%= link_to 'Show', customer_path(customer) %></p>
 	</div>
-
+ <% if customer_signed_in? %>
 	  <div class="col-2 pt-1 my-auto">
       <p><%= link_to 'Edit', edit_customer_path(customer) %></p>
 	</div>
@@ -53,5 +70,6 @@
         method: :delete,
         data: { confirm: 'Are you sure?' } %></p>
 	</div>
+	<% end %>
 	</div>
 <% end %>
