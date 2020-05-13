@@ -10,6 +10,7 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    @kopis = Kopi.all
   end
 
   def create
