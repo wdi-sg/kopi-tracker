@@ -1,0 +1,14 @@
+<h1>Add customer</h1>
+ <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  <p>
+     <%= form.label :name %><br>
+     <%= form.text_field :name %>
+   </p>
+  <p>
+ <h3>Kopis</h3>
+ <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+ <%end%>
+ </p>
+ <p>
+ <%= link_to "Back", customers_path %>
+ </p>
