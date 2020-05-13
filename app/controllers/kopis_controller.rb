@@ -12,11 +12,14 @@ class KopisController < ApplicationController
   end
 
   def new
-    @roast = Roast.all
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @roasts = Roast.all
+    @origins = Origin.all
   end
 
 

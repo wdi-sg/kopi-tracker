@@ -1,6 +1,7 @@
 class OriginsController < ApplicationController
 
   def new
+
   end
 
   def create
