@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kopi Tracker</title>
+</head>
+<body>
+	<h1>Welcome to Kopi Tracker</h1>
+
+	<div>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Roast</th>
+				<th>Origin</th>
+				<th></th>
+			</tr>
+
+			<% @kopis.each do |kopi| %>
+			<tr>
+				<td><%= kopi.name %></td>
+				<td><%= kopi.roast %></td>
+				<td><%= kopi.origin_id %></td>
+				<td><%= link_to 'Show', kopi_path(kopi) %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</body>
+</html>
