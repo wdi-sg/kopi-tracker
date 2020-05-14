@@ -12,12 +12,18 @@ class KopisController < ApplicationController
 # I want to redirect to the home page after sending post request
 # where is kopi_params coming from?
   def create
+
+    # this use a new method to create an entry into the Kopi model class and assigns that to @kopi
     @kopi = Kopi.new(kopi_params)
 
+    # this saves the entry to the database
     @kopi.save
 
     # how does this redirect work?
-    redirect_to @kopi
+    #redirect_to @kopi
+
+    # redirects to the index route specified as kopis
+    redirect_to :kopis
   end
 
   def show
