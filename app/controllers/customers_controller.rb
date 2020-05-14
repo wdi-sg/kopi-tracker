@@ -11,14 +11,20 @@ def new
   def show
     @customer = Customer.find(params[:id])
     @kopi = Customer.find(@customer.id).kopis
-
-
   end
 
 def create
   @customer = Customer.new(customer_params)
-  @customer.save
-  redirect_to customers_path
+
+  if @customer.save
+    redirect_to customers_path
+  else
+    @kopis = Kopi.all
+
+    render plain: errors.messages.inspect
+  end
+
+
 end
 
 private

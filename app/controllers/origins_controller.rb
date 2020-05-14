@@ -6,7 +6,7 @@ def index
 
   @origins = Origin.all
   @kopis = Kopi.all
-  @roasts = Roast.all
+
 end
 
 def new
@@ -18,9 +18,7 @@ def new
     @kopi = Kopi.where(origin_id: @origin.id)
 
 
-      puts '*************'
-      puts
-      puts '*************'
+
 
   end
 

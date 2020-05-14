@@ -2,5 +2,8 @@
 
 <% @customers.each do |customer| %>
 <p>Customer Name: <%= customer.name %></p>
+<p><%= link_to 'Show', customer_path(customer) %></p>
 
 <% end %>
+
+<%= link_to 'Farms', origins_path %>

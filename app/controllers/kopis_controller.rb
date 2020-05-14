@@ -2,15 +2,9 @@ class KopisController < ApplicationController
 
  before_action :authenticate_user!, :except => [ :show, :index ]
     def show
-
       @kopi = Kopi.find(params[:id])
-
-
-    if params[:id].to_i != @kopi.origin.id
+      @roasts = Roast.find(@kopi.roast_id)
       @origin = Origin.find(@kopi.origin_id)
-    end
-
-
     end
 
     def edit
@@ -47,7 +41,7 @@ class KopisController < ApplicationController
     private
 
     def kopi_params
-      params.require(:kopi).permit(:name, :roast, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id)
     end
 
 end
