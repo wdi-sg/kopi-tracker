@@ -1,8 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_customer!, :except => [:index]
-
-  def index
-  end
+  before_action :authenticate_customer!
 
   def show
     @customer = Customer.find(params[:id])
@@ -18,7 +15,7 @@ class CustomersController < ApplicationController
     @customer = current_customer
 
     @customer.update(customer_params)
-    byebug
+    redirect_to customer_path
   end
 
   def destroy
