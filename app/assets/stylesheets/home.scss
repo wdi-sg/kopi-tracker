@@ -5,17 +5,81 @@
 
 * {
 		font-family: $sans-serif-default;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
 }
 
-body {
-		width: 100%;
+@mixin flex-container($direction: column,
+$justify: space-around,
+$align: center) {
 		display: flex;
 
 		flex: {
-				direction: column;
+				direction: $direction;
 		}
 
-		justify-content: space-around;
-		align-items: center;
-		min-height: 50vh
+		justify-content: $justify;
+		align-items: $align;
+}
+
+.header {
+		width: 100%;
+		text-align: center;
+}
+
+body {
+		@include flex-container();
+
+		width: 100%;
+		min-height: 100vh;
+		background-color: map-get($colors, khaki);
+}
+
+main {
+		@include flex-container();
+		width: 100%;
+		height: 100%;
+}
+
+.banner-primary {
+		@include flex-container(column, center, center);
+		background-color: map-get($colors, red);
+		width: 100%;
+		height: 30vh;
+}
+
+.banner-primary__header {
+		@extend .header;
+		font-family: $sans-serif-default;
+		letter-spacing: 0.2rem;
+		font-size: map-get($font-size, extra-large);
+		color: map-get($colors, grey);
+}
+
+.banner-secondary {
+		@include flex-container(row, center, center);
+		width: 100%;
+		height: 10vh;
+		background-color: map-get($colors, grey);
+		color: map-get($colors, khaki);
+}
+
+.banner-secondary__header {
+		@extend .header;
+		font-family: $sans-serif-default;
+		letter-spacing: 0.1rem;
+}
+
+.banner-about {
+		@include flex-container();
+		width: 100%;
+		height: 60vh;
+}
+
+.banner-about__img {
+		width: auto;
+		height: 80%;
+		object-fit: contain;
+		background: transparent;
 }
