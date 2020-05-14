@@ -13,24 +13,37 @@
 <br>
 <% if user_signed_in? %>
 	<%= link_to 'New Orders', new_order_path, :class => "btn btn-primary" %>
+	<%= link_to 'Kopis', kopis_path, :class => "btn btn-info" %>
+	<%= link_to 'Customers', customers_path, :class => "btn btn-success" %>
 <% end %>
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+    	<th scope="col">Order</th>
+      <th scope="col">Kopi</th>
       <th scope="col">Roast</th>
       <th scope="col">Origin</th>
-      <th scope="col">Price/pound</th>
+      <th scope="col">Price/ lb</th>
       <th scope="col">Weight</th>
+      <th scope="col">Cost</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-  	<tr>
-	  	<% @orders.each do |order| %>
-	  		<td><%= order.kopi %></td>
-	  	<% end %>
-	  </tr>
+	  <% @orders.each do |order| %>
+	  	<% cost = order.kopi.price.to_i * order.weight.to_i %>
+	  	<tr>
+	  		<td><%= order.id %></td>
+	  		<td><%= order.kopi.name %></td>
+	  		<td><%= order.kopi.roast.kind %></td>
+	  		<td><%= order.kopi.origin.location %></td>
+	  		<td>$<%= order.kopi.price %></td>
+	  		<td><%= order.weight %> lb</td>
+	  		<td>$<%= cost %></td>
+	  		<td><%= link_to 'Edit', edit_order_path(order), :class => "btn btn-warning" %></td>
+	  		<td><%= link_to 'Delete', order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+	  	</tr>
+	  <% end %>
   </tbody>

@@ -27,6 +27,6 @@ americano = Kopi.create!(name:"Americano", roast_id: 7, origin_id: 2, price: 5, 
 lungo = Kopi.create!(name:"Lungo", roast_id: 6, origin_id: 3, price: 12, user_id: 1)
 macchiato = Kopi.create!(name:"Macchiato", roast_id: 4, origin_id: 1, price: 15, user_id: 1)
 
-first_order = Order.create!(weight: 4)
-second_order = Order.create!(weight: 5)
-third_order = Order.create!(weight: 10)
+first_order = Order.create!(weight: 4, kopi_id: 1)
+second_order = Order.create!(weight: 5, kopi_id: 2)
+third_order = Order.create!(weight: 10, kopi_id: 3)
