@@ -1,0 +1,15 @@
+<h1>Farm</h1>
+
+<p>Location: <%= @origin.location %></p>
+<p>Phone Number: <%= @origin.phone_no %></p>
+<p>Kopi Association:</p>
+<ul>
+	<% @kopi.each do |k| %>
+
+		<li><%= k.name %></li>
+
+	<% end %>
+</ul>
+
+
+<%= link_to 'Home', origins_path %>
