@@ -1,0 +1,33 @@
+
+<h2>Kopis</h2>
+<form action="/kopis" method="get">
+<button class="btn btn-sm btn-dark inline float-right mr-2">Go!</button>
+<select class="float-right" name="sort">
+      <%= options_for_select([["Popularity (ascending)", "pop_asc"], ["Popularity (desc)", "pop_desc"]])%>
+</select>
+</form>
+
+<table class="table">
+	<tr>
+            <th scope="col">#</th>
+
+		<th scope="col">Name</th>
+		<th scope="col">Roast Level</th>
+            		<th scope="col">Location</th>
+
+                        <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+
+
+	</tr>
+	<% @kopis.each do |kopi| %>
+		<tr>
+                        <td> <%= kopi.id%> </td>
+
+            <td> <%= link_to kopi.name, kopi_path(kopi) %> </td>
+            <td> <%= kopi.roast.name %> </td>
+            <td> <%= link_to kopi.kopi_farm.location, kopi_farm_path(kopi.kopi_farm) %> </td>
+
+            </tr>
+      <% end %>      
+</table>

@@ -1,0 +1,19 @@
+
+<h3>Add Your Kopi Farm.</h3>
+<%= form_with scope: :kopi_farm, url: kopi_farms_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location, :required => true %>
+  </p>
+
+  <p>
+    <%= label_tag(:phone_num, "Phone Number") %><br>
+    <%= form.text_area :phone_num, :required => true%>
+  </p>
+  <p>
+    <%= form.submit 'Add Farm!', :class => 'btn btn-success' %>
+  </p>
+<% end %>
+
+<br/><%= link_to 'Back to All Farms', all_kopi_farms_path, :class => "btn btn-primary" %>

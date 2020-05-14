@@ -1,0 +1,19 @@
+
+<%= form_with scope: :kopi_farm, model: @kopi_farm, local: true do |form| %>
+
+  <p>
+    <%= form.label :location %><br> 
+    <%= form.text_field :location, :required => true %>
+  </p>
+
+  <p>
+    <%= label_tag(:phone_num, "Phone Number") %><br>
+    <%= form.text_area :phone_num, :required => true%>
+  </p>
+  <p>
+    <%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+  </p>
+<% end %>
+<br/><%= link_to 'Cancel', kopi_farm_path(@kopi_farm), :class => "mb-3 btn btn-outline-danger" %>
+
+<br/><%= link_to 'Back to All Farms', all_kopi_farms_path, :class => "btn btn-primary" %>

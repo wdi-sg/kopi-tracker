@@ -1,0 +1,27 @@
+
+<h2>Customers</h2>
+
+<form action="/customers" method="get">
+
+      <button class="btn btn-sm btn-dark inline float-right mr-2">Go!</button>
+            <select class="float-right" name="sort">
+                  <%= options_for_select([["Stock (ascending)", "stock_asc"], ["Stock (desc)", "stock_desc"]])%>
+            </select>
+      </form>
+
+
+<table class="table">
+	<tr>
+            <th scope="col"> "#" </th>
+		<th scope="col">Name</th>
+
+	</tr>
+	<% @customers.each do |c| %>
+		<tr>
+                        <td> <%= c.id %> </td>
+
+            <td> <%= link_to c.name, customer_path(c) %> </td>
+
+            </tr>
+      <% end %>      
+</table>

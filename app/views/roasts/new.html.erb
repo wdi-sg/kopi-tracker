@@ -1,0 +1,14 @@
+
+<h3>Add Your Roast.</h3>
+<%= form_with scope: :roast, url: roasts_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :required => true %>
+  </p>
+
+  <p>
+    <%= form.submit 'Add Roast!', :class => 'btn btn-success' %>
+  </p>
+<% end %>
+

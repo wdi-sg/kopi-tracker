@@ -1,0 +1,25 @@
+<h2>Kopi Farms</h2>
+
+<table class="table">
+	<tr>
+            <th scope="col">#</th>
+
+		<th scope="col">Location</th>
+		<th scope="col">Phone Number</th>
+                        <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+
+
+	</tr>
+	<% @kopi_farms.each do |farm| %>
+		<tr>
+                        <td> <%= farm.id%> </td>
+
+            <td> <%= link_to farm.location, kopi_farm_path(farm) %> </td>
+            <td> <%= farm.phone_num%> </td>
+	      <td> <%= link_to 'Edit', edit_kopi_farm_path(farm) %> </td>
+            <td> <%= link_to 'Delete', kopi_farm_path(farm), method: :destroy, data: {confirm: 'Sure you wanna delete?'} %> </td>
+
+            </tr>
+      <% end %>      
+</table>

@@ -1,0 +1,21 @@
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :required => true %>
+  </p>
+  <p>
+<%= select("kopi", "kopi_farm_id", KopiFarm.all.collect {|farm| [ farm.location, farm.id ] })
+%>
+  </p>
+  <p>
+<%= select("kopi", "roast_id", Roast.all.collect {|roast| [ roast.name, roast.id ] }) %>
+
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br/><%= link_to 'Back to Kopis', all_kopis_path, :class => "btn btn-primary" %>

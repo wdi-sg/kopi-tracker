@@ -1,0 +1,34 @@
+
+<%= link_to "Previous", kopi_path(@kopi.id-1), :class => "btn btn-dark my-3" if @kopi.id!=1 %>
+<%= link_to "Next", kopi_path(@kopi.id+1), :class => "btn btn-dark my-3" if @kopi.id!=Kopi.count %>
+
+
+
+<h3>Kopi Name: <%= @kopi.name %> </h3>
+<p>Roast Level: <%= @kopi.roast.name %> </p>
+<p>Origins: <%= link_to @kopi_farm.location, @kopi_farm %> </p>
+
+<h4>Our Suppliers</h4>
+
+      <% if @kopi.customers.length!=0%>
+
+<table class="table">
+	<tr>
+            <th scope="col">#</th>
+		<th scope="col">Name</th>
+
+	</tr>
+	<% @kopi.customers.each_with_index do |customer, i| %>
+		<tr>
+            <td> <%=i+1 %> </td>
+            <td> <%= link_to customer.name, customer_path(customer) %> </td>
+            </tr>
+      <% end %>      
+</table>
+<% else %>
+
+<h5>Sorry, no one carries this kopi yet. </h5>
+
+<% end%>
+
+<br/><%= link_to 'Back to Kopis', all_kopis_path, :class => "btn btn-primary" %>
