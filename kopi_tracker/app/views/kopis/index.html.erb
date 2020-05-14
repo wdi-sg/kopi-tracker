@@ -23,7 +23,9 @@
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="padding:5px">
-    <li><%= link_to "Name (A-Z)", kopis_path(sort_by: "name_asc") %></li>
+  	<li><%= link_to "Popularity (Low - High)", kopis_path(sort_by: "popularity_asc") %></li>
+  	<li><%= link_to "Popularity (High - Low)", kopis_path(sort_by: "popularity_desc") %></li>
+  	<li><%= link_to "Name (A-Z)", kopis_path(sort_by: "name_asc") %></li>
     <li><%= link_to "Name (Z-A)", kopis_path(sort_by: "name_desc") %></li>
     <li><%= link_to "Roast (A-Z)", kopis_path(sort_by: "roast_asc") %></li>
     <li><%= link_to "Roast (Z-A)", kopis_path(sort_by: "roast_desc") %></li>

@@ -6,7 +6,11 @@ class Kopi < ApplicationRecord
   has_and_belongs_to_many :customers
 
   def self.order_list(sort_order)
-    if sort_order == "name_asc"
+    if sort_order == "popularity_asc"
+      Kopi.select("kopis.id, kopis.name, kopis.roast_id, kopis.origin_id, kopis.price, COUNT(customers_kopis.customer_id)").joins(:kopis_customers).group("kopis.id").order(count: :asc)
+    elsif sort_order == "popularity_desc"
+      Kopi.select("kopis.id, kopis.name, kopis.roast_id, kopis.origin_id, kopis.price, COUNT(customers_kopis.customer_id)").joins(:kopis_customers).group("kopis.id").order(count: :desc)
+    elsif sort_order == "name_asc"
       order(name: :asc)
     elsif sort_order == "name_desc"
       order(name: :desc)
