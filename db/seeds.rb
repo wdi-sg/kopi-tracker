@@ -14,21 +14,21 @@
 #       }])
 # end
 
-#
-# 40.times do
-#       Kopi.create([{
-#             name: Faker::Coffee.blend_name,
-#             roast: Roast.find(rand(1..7)),
-#             kopi_farm: KopiFarm.find(rand(1..25))
-#       }])
-# end
 
-# Create 10 customers
-# 10.times do
-#       Customer.create([{
-#             name: Faker::Name.name
-#       }])
-# end
+40.times do
+      Kopi.create([{
+            name: Faker::Coffee.blend_name,
+            roast: Roast.find(rand(1..7)),
+            kopi_farm: KopiFarm.find(rand(1..25)),
+            user: User.first
+      }])
+end
+
+10.times do
+      Customer.create([{
+            name: Faker::Name.name
+      }])
+end
 
 
 # For each customer, add 3 - 7 random kopis.
@@ -39,3 +39,6 @@ Customer.all.each do |c|
             p "added #{this_kopi.id} || #{this_kopi.name} to #{c.id} || #{c.name}"
       end
 end
+
+
+# INSERT INTO roasts(name) VALUES('Cinnamon'), ('Light'), ('City/Medium'), ('Full City'), ('Dark'), ('French'), ('Italian');

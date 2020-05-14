@@ -3,6 +3,12 @@ before_action :authenticate_user!, :except => [ :show, :index ]
  
      def index
       @kopis = Kopi.order(id: :asc)
+      @sort = params[:sort]
+      if @sort=='pop_asc'
+        @kopis = Kopi.left_joins(:customers).group(:id).order('COUNT(customers.id) ASC')
+      elsif @sort=='pop_desc'
+          @kopis = Kopi.left_joins(:customers).group(:id).order('COUNT(customers.id) DESC')
+      end
   end
 
 

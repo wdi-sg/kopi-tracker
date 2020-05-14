@@ -1,0 +1,32 @@
+
+<%= link_to "Previous", customer_path(@customer.id-1), :class => "btn btn-dark my-3" if @customer.id!=1 %>
+<%= link_to "Next", customer_path(@customer.id+1), :class => "btn btn-dark my-3" if @customer.id!=Customer.count %>
+
+
+
+<h3>Customer Name: <%= @customer.name %> </h3>
+
+<h4>Retailer's Stock</h4>
+
+      <% if @customer.kopis.length!=0%>
+
+<table class="table">
+	<tr>
+            <th scope="col">#</th>
+		<th scope="col">Name</th>
+
+	</tr>
+	<% @customer.kopis.each_with_index do |k, i| %>
+		<tr>
+            <td> <%=i+1 %> </td>
+            <td> <%= link_to k.name, kopi_path(k) %> </td>
+            </tr>
+      <% end %>      
+</table>
+<% else %>
+
+<h5>Sorry, no one carries this customer yet. </h5>
+
+<% end%>
+
+<br/><%= link_to 'Back to Customers', customers_root_path, :class => "btn btn-primary" %>

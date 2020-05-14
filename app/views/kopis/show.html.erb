@@ -21,7 +21,7 @@
 	<% @kopi.customers.each_with_index do |customer, i| %>
 		<tr>
             <td> <%=i+1 %> </td>
-            <td> <%= customer.name %> </td>
+            <td> <%= link_to customer.name, customer_path(customer) %> </td>
             </tr>
       <% end %>      
 </table>

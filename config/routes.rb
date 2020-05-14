@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/customers/new' => 'customers#new', as: 'new_customer'
 
+  get '/customers/:id' => 'customers#show', as: 'customer'
+
+post '/customers' => 'customers#create'
+get '/customers' => 'customers#index', as: 'customers_root'
+  
   #############
 
 
