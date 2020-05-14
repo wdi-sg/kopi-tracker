@@ -32,8 +32,10 @@
     </tr>
   </thead>
   <tbody>
+  	<% total_cost = 0 %>
 	  <% @orders.each do |order| %>
 	  	<% cost = order.kopi.price.to_i * order.weight.to_i %>
+	  	<% total_cost += cost.to_i %>
 	  	<tr>
 	  		<td><%= order.id %></td>
 	  		<td><%= order.kopi.name %></td>
@@ -46,4 +48,16 @@
 	  		<td><%= link_to 'Delete', order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
 	  	</tr>
 	  <% end %>
+	  	<tr>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td><h5>Total Cost:</h5</td>
+	  		<td><h5>$<%= total_cost.to_i %></h5></td>
+	  		<td></td>
+	  		<td></td>
+	  	</tr>
   </tbody>
+ </table>
