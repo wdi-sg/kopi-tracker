@@ -1,6 +1,10 @@
 class OriginsController < ApplicationController
 
+  def index
+  end
+
   def new
+    @origin = Origin.all
   end
 
   def create
