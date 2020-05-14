@@ -8,6 +8,16 @@
   <strong>Roast:</strong>
   <%= @kopi.roast %>
 </p>
+
+
+<p>
+  <strong>Customer:</strong>
+  <% @kopi.customers.each do |customer| %>
+ <li> <%= customer.name %></li>
+<% end %>
+</p>  
+
+
 <%= link_to 'Back', root_path %>
 <% if user_signed_in? %>
 <%= link_to 'add new kopi', new_kopi_path %> 

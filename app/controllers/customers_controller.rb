@@ -7,7 +7,7 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
 
-    result = @customer.save ()
+    result = @customer.save
     if result == true
     redirect_to @customer
     else

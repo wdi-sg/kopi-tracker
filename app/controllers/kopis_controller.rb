@@ -18,10 +18,10 @@ before_action :authenticate_user!, :except => [ :show, :index ]
 
     @kopi = Kopi.find(params[:id])
 
-    if params[:farm_id].to_i != @kopi.farm.id
-      # do something
+    # if params[:farm_id].to_i != @kopi.farm.id
+    #   # do something
     
-    end
+    # end
   end
   
   def index
@@ -32,6 +32,6 @@ before_action :authenticate_user!, :except => [ :show, :index ]
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :farm_id, :user_id, :customer_id =>[])
+    params.require(:kopi).permit(:name, :roast, :farm_id, :user_id, :customer_ids =>[])
   end
 end
