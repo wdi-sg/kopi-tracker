@@ -19,4 +19,11 @@ Rails.application.routes.draw do
   get '/kopis/:id/edit' => 'kopis#edit', as: 'edit_kopi'
   patch '/kopis/:id' => 'kopis#update'
   delete '/kopis/:id' => 'kopis#destroy'
+
+  get '/customers' => 'customers#index', as: 'customers'
+  get '/customers/new' => 'customers#new', as: 'new_customer'
+  post '/customers' => 'customers#create'
+  get '/customers/:id' => 'customers#show', as: 'customer'
+
+
 end

@@ -32,6 +32,6 @@ before_action :authenticate_user!, :except => [ :show, :index ]
 private
 
   def kopi_params
-    params.require(:kopi).permit(:name, :roast, :farm_id, :user_id)
+    params.require(:kopi).permit(:name, :roast, :farm_id, :user_id, :customer_id =>[])
   end
 end
