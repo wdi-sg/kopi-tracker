@@ -1,0 +1,76 @@
+<br>
+<header>
+	<% if user_signed_in? %>
+		<p>Welcome <strong><%= current_user.email %></strong>!
+			<%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+		</p>
+	<% else %>
+		<p>Existing user? <%= link_to 'Log in', new_user_session_url %></p>
+	<% end %>
+</header>
+
+<h2>Orders</h2>
+<br>
+<% if user_signed_in? %>
+	<%= link_to 'New Orders', new_order_path, :class => "btn btn-primary" %>
+	<%= link_to 'Kopis', kopis_path, :class => "btn btn-info" %>
+	<%= link_to 'Customers', customers_path, :class => "btn btn-success" %>
+<% end %>
+<br>
+<div class="dropdown row justify-content-end">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort by
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="padding:5px">
+    <li><%= link_to "Kopi (A-Z)", orders_path(sort_by: "kopi_asc") %></li>
+    <li><%= link_to "Kopi (Z-A)", orders_path(sort_by: "kopi_desc") %></li>
+    <li><%= link_to "Cost (Low - High)", orders_path(sort_by: "cost_asc") %></li>
+    <li><%= link_to "Cost (High - Cost)", orders_path(sort_by: "cost_desc") %></li>
+  </ul>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+    	<th scope="col">Order</th>
+      <th scope="col">Kopi</th>
+      <th scope="col">Roast</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Price/ lb</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% total_cost = 0 %>
+	  <% @orders.each do |order| %>
+	  	<% cost = order.kopi.price.to_i * order.weight.to_i %>
+	  	<% total_cost += cost.to_i %>
+	  	<tr>
+	  		<td><%= link_to order.id, order_path(order) %></td>
+	  		<td><%= order.kopi.name %></td>
+	  		<td><%= order.kopi.roast.kind %></td>
+	  		<td><%= order.kopi.origin.location %></td>
+	  		<td>$<%= order.kopi.price %></td>
+	  		<td><%= order.weight %> lb</td>
+	  		<td>$<%= cost %></td>
+	  		<td><%= link_to 'Edit', edit_order_path(order), :class => "btn btn-warning" %></td>
+	  		<td><%= link_to 'Delete', order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+	  	</tr>
+	  <% end %>
+	  	<tr>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td></td>
+	  		<td><h5>Total Cost:</h5></td>
+	  		<td><h5>$<%= total_cost.to_i %></h5></td>
+	  		<td></td>
+	  		<td></td>
+	  	</tr>
+  </tbody>
+ </table>

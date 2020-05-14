@@ -1,0 +1,38 @@
+<br>
+<h2>Customers</h2>
+<br>
+<%= link_to 'New Customer', new_customer_path, :class => "btn btn-primary" %>
+<%= link_to 'Kopis', kopis_path, :class => "btn btn-info" %>
+
+<br>
+<div class="dropdown row justify-content-end">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort by
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="padding:5px">
+  	<li><%= link_to "No. of Kopis (Lowest - Highest)", customers_path(sort_by: "kopi_num_asc") %></li>
+  	<li><%= link_to "No. of Kopis (Highest - Lowest)", customers_path(sort_by: "kopi_num_desc") %></li>
+  </ul>
+</div>
+
+<table class="table">
+	<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">No. of Kopis</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @customers.each do |customer| %>
+	    <tr>
+	      <td><%= link_to customer.name, customer_path(customer) %></td>
+	      <td><%= customer.kopis.count %></td>
+	      <td><%= link_to 'Edit', edit_customer_path(customer), :class => "btn btn-warning" %></td>
+	      <td><%= link_to 'Delete', customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+	    </tr>
+	   <% end %>
+  </tbody>
+</table>

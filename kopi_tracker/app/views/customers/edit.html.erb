@@ -1,0 +1,18 @@
+<br>
+<h2>Edit Customer Details</h2>
+<%= form_with scope: :customer, model: @customer, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+  	Select
+  	<%= form.label :kopis %><br>
+  	<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+  </p>
+  <br>
+  <p>
+  	<%= form.submit :class => "btn btn-primary" %>
+  	<%= link_to 'Back', customers_path, :class => "btn btn-secondary" %>
+  </p>
+<% end %>

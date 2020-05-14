@@ -1,0 +1,34 @@
+<br>
+<h2>Edit Kopi</h2>
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.collection_select :roast_id, Roast.order(:id, :kind),:id,:kind, include_blank: true %>
+  </p>
+
+  <p>
+    <%= form.label :origin %><br>
+    <%= form.collection_select :origin_id, Origin.order(:id, :location),:id,:location, include_blank: true %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %> / lb
+  </p>
+
+  <p>
+  	<%= form.label :customers %><br>
+  	<%= form.collection_check_boxes :customer_ids, @customers, :id, :name  %>
+  </p>
+
+	<br>
+  <p>
+    <%= form.submit :class => "btn btn-primary" %>
+    <%= link_to 'Back', kopi_path(@kopi), :class => "btn btn-secondary" %>
+  </p>
+<% end %>
