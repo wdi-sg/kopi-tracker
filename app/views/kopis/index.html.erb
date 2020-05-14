@@ -1,0 +1,29 @@
+<h1>Listing all kopis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>farm_id</th>
+    <th>created by user</th>
+    <th></th>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+    <tr>
+      <td><%= kopi.name %></td>
+      <td><%= kopi.roast %></td>
+      <td><%= kopi.farm_id %></td>
+      <td><%= kopi.user_id %></td>
+  
+    
+    </tr>
+  <% end %>
+</table>
+<% if user_signed_in? %>
+<%= link_to 'add new kopi', new_kopi_path %> 
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'log in', new_user_session_url %>
+<% end %>
+
