@@ -7,6 +7,9 @@ class OriginsController < ApplicationController
   # GET /origins.json
   def index
     @origins = Origin.all
+
+    @links = [{:name => "Roasts", :path => roasts_path}, {:name => "Kopis", :path => kopis_path}, {:name => "Home", :path => root_path}]
+
   end
 
   # GET /origins/1

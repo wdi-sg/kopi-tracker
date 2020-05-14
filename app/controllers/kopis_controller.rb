@@ -9,6 +9,8 @@ class KopisController < ApplicationController
   def index
 
     @kopis = Kopi.all
+
+    @links = [{:name => "Roasts", :path => roasts_path}, {:name => "Origins", :path => origins_path}, {:name => "Home", :path => root_path}]
   end
 
   # GET /kopis/1

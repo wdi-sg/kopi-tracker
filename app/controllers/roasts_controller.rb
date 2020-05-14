@@ -8,6 +8,8 @@ class RoastsController < ApplicationController
   # GET /roasts.json
   def index
     @roasts = Roast.all
+
+    @links = [{:name => "Origins", :path => origins_path}, {:name => "Kopis", :path => kopis_path}, {:name => "Home", :path => root_path}]
   end
 
   # GET /roasts/1
