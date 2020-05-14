@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/index'
   devise_for :customers
   devise_for :users
+
+  get 'home/index'
+
   get '/report', to: 'report#index'
+
   resources :roasts
   resources :orders
   resources :kopis
@@ -15,5 +18,5 @@ Rails.application.routes.draw do
 
   get '/report', to: 'report#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "report#index"
+  root to: "home#index"
 end
