@@ -7,7 +7,9 @@
 <!-- "do" runs the form -->
 <!-- | form | represents the index value of something...i don't really know. -->
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+<%= form_with scope: :kopi_new, url: kopis_path, local: true do |form| %>
+
+<!--  | name | roast | origin | -->
 
   <p>
     <%= form.label :name %><br>
@@ -15,9 +17,10 @@
   </p>
 
   <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
   </p>
+
 
   <p>
     <%= form.submit %>

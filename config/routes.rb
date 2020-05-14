@@ -5,7 +5,14 @@ Rails.application.routes.draw do
 
 # index page is in the root url
   root 'kopis#index'
-  get '/kopis/', to: 'kopis#show', as: 'kopis' #why plural?
-  get '/kopis/new', to: 'kopis#new', as: 'kopi' #why singular?
+
+  # don't really know what "as:'kopis'" does in here
+  get '/kopis', to: 'kopis#index', as: 'kopis' #why plural?
+  get '/kopis/new', to: 'kopis#new', as: 'kopi_new' #why singular?
+
+  post '/kopis', to: 'kopis#create'
+
+  # I understand that 'kopi_id' will contain the value from controller to display route id
+  get '/kopis/:id', to: 'kopis#show', as: 'kopi_id'
 
 end
