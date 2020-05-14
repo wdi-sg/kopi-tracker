@@ -13,11 +13,13 @@
 
   <body>
     <!-- nav -->
-    <div class="container col-sm text-center heading">
+    <div class="container text-center heading">
     <h2>
         <a href="<%= origins_path %>">Origins</a>
-        <a href="<%= kopis_path %>">Coffees</a>
-        <a href="#">Roasts</a>
+        <span>|</span>
+        <a href="<%= customers_path %>">Customers</a>
+        <span>|</span>
+        <a href="<%= kopis_path %>">Kopis</a>
     </h2>
     <% if user_signed_in? %>
       <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
@@ -25,14 +27,15 @@
       <%= link_to 'log in', new_user_session_url %>
     <% end %>
     </div>
-    
-    <!-- error alerts -->
-    <p class="notice text-center"><%= notice %></p>
-    <p class="notice text-center"><%= alert %></p>
+
     <!-- div container -->
-    <div class="container col-sm">
+    <div class="container text-center">
       <%= yield %>
     </div>
-    
+
+    <!-- error alerts -->
+    <h4 class="notice text-center text-success"><%= notice %></h4>
+    <h4 class="notice text-center text-danger"><%= alert %></h4>
+
   </body>
 </html>

@@ -4,16 +4,10 @@
 		<%= f.text_field :name %>
 	</div>
 	<div class="form-group">
-		<%= fields_for :roast, @kopi.roast do |f| %>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
-		<% end %>
+		<%= f.collection_select :roast_id, Roast.all, :id, :name %>
 	</div>
 	<div class="form-group">
-		<%= fields_for :origin, @kopi.origin do |f| %>
-		<%= f.label :location %><br>
-		<%= f.text_field :location %>
-		<% end %>
+		<%= f.collection_select :origin_id, Origin.all, :id, :location %>
 	</div>
 	<%= f.submit class: "btn btn-primary" %>
 	<% end %>

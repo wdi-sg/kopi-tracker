@@ -22,7 +22,6 @@ class KopisController < ApplicationController
     #user session will be saved to retain info when user relogs
     #e.g. tracking user added kopis
     #user_session['created_kopis_id'].append(@kopi.id)
-    byebug
 
   	@kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
@@ -48,8 +47,12 @@ class KopisController < ApplicationController
   def update
     @kopi = Kopi.find(params[:id])
 
-    @kopi.update(kopi_params)
-    redirect_to @kopi
+    updated = @kopi.update(kopi_params)
+    if updated == true
+      redirect_to @kopi
+    else
+      render 'edit'
+    end
   end
 
   def destroy

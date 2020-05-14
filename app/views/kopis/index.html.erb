@@ -1,10 +1,13 @@
-<h2 class="text-center">All Kopis</h2>
+<h3>All Kopis</h3>
 	<table class="table">
 		<thead>
 		<tr>
 			<th>Name</th>
 			<th>Roast</th>
 			<th>Origin</th>
+			<th></th>
+			<th></th>
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -16,15 +19,13 @@
 		  <td><%= link_to 'Details', kopi_path(kopi)%></td>
 		  <% if user_signed_in? %>
 		  <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-			<td><%= link_to 'Delete', kopi_path(kopi), method: :delete%></td>
+			<td><%= link_to 'Delete', kopi_path(kopi), method: :delete, data: { confirm: 'Confirm Delete?' }%></td>
 			<% end %>
 		</tr>
 		<% end %>
 		</tbody>
 	</table><br>
-	<div class="text-center">
-		<%= link_to 'Add New Kopi', new_kopi_path, class: "btn btn-primary" %>
-	</div>
+	<%= link_to 'Add New Kopi', new_kopi_path, class: "btn btn-primary" %>
 
 <!-- notes -->
 <% if false %>

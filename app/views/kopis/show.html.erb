@@ -1,14 +1,12 @@
-<h3>Kopi Details</h3>	
-	<ul>
-		<li>PICTURE.jpg</li>
-		<li>Kopi Name: <%= @kopi.name %></li>
-		<li>Kopi Roast: <%= @kopi.roast.name %></li>
-		<li>Kopi Origin: <%= @kopi.origin.location %></li>
-	</ul>
-<div class="text-center">	
+	<h3>Kopi Details</h3>	
+	<div>
+		<p>PICTURE.jpg</p>
+		<p>Kopi Name: <%= @kopi.name %></p>
+		<p>Kopi Roast: <%= @kopi.roast.name %></p>
+		<p>Kopi Origin: <%= @kopi.origin.location %></p>
+	</div>
 	<% if user_signed_in? %>
-	<%= link_to 'Delete this Kopi', kopi_path(@kopi), method: :delete, class: "btn btn-primary"%>
+	<%= link_to 'Delete this Kopi', kopi_path(@kopi), method: :delete, data: { confirm: 'Confirm Delete?' }, class: "btn btn-primary"%>
 	<% end %>
 	<br>
 	<p><%= link_to 'Back to All Kopis', root_path %></p>
-</div>
