@@ -1,8 +1,7 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user!, :except => [:index ]
+  before_action :authenticate_customer!, :except => [:index]
 
   def index
-    @customers = Customer.all
   end
 
   def show
@@ -10,22 +9,16 @@ class CustomersController < ApplicationController
     @kopis = Customer.find(params[:id]).kopis
   end
 
-  def new
-    @customers = Customer.all
-    @kopis = Kopi.all
-  end
-
-  def create
-    @customer = Customer.new(customer_params)
-    @customer.save
-
-    redirect_to @customer
-  end
-
   def edit
+    @kopis = Kopi.all
+    @customer = current_customer
   end
 
   def update
+    @customer = current_customer
+
+    @customer.update(customer_params)
+    byebug
   end
 
   def destroy
@@ -37,6 +30,6 @@ class CustomersController < ApplicationController
 
   private
     def customer_params
-      params.require(:customer).permit(:name, :kopi_ids => [])
+      params.require(:customer).permit(:kopi_ids => [])
     end
 end
