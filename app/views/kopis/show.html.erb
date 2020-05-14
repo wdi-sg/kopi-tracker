@@ -11,6 +11,13 @@
           data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
+  <% @kopi.customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+      <td><%= link_to 'Show', customer_path(customer) %></td>
+    </tr>
+  <% end %>
 <br>
 <br>
 <div>

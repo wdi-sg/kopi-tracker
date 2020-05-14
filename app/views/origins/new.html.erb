@@ -2,6 +2,11 @@
 
 <%= form_with scope: :origin, url: origins_path, local: true do |form| %>
 
+  <p class="error">
+    <%= show_errors(@origin, :location) %>
+    <%= show_errors(@origin, :phone) %>
+  </p>
+
   <p>
     <%= form.label :location %><br>
     <%= form.text_field :location %>

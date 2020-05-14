@@ -15,6 +15,7 @@ class KopisController < ApplicationController
   def new
     @origins = Origin.all
     @roasts = Roast.all
+    @customers = Customer.all
   end
 
   def create
@@ -31,6 +32,7 @@ class KopisController < ApplicationController
 
   def show
     @kopi = Kopi.find(params[:id])
+    @customers = Customer.all
     # if params[:origin_id] != @kopi.origin.id
     #   render plain: @kopi.errors.inspect
     # end

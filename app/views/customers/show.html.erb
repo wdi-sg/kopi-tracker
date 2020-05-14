@@ -25,6 +25,14 @@
     <td style="width: 300px"><%= @customer.name %></td>
   </tr>
 </table>
+
+<% @customer.kopis.each do |kopi| %>
+  <tr>
+    <td><%= kopi.id %></td>
+    <td><%= kopi.name %></td>
+    <td><%= link_to 'Show', kopi_path(kopi) %></td>
+  </tr>
+<% end %>
 <br>
 
 <br>

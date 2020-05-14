@@ -5,10 +5,12 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @kopis = Kopi.all
   end
 
   def new
     @customers = Customer.all
+    @kopis = Kopi.all
   end
 
   def edit
@@ -20,9 +22,12 @@ class CustomersController < ApplicationController
     result = @customer.save
 
     if result == true
-      redirect_to @customer
+      # redirect_to @customer
+      redirect '/'
     else
-      render plain: @customer.errors.inspect
+      @customers = Customer.all
+      render 'new'
+      # render plain: @customer.errors.inspect
     end
   end
 

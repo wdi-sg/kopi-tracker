@@ -9,15 +9,18 @@ class OriginsController < ApplicationController
   end
 
   def new
+
   end
 
   def create
     @origin = Origin.new(origin_params)
     @origin.user = current_user
+    @origin.save
 
-    if @origin.save
-      redirect_to @origin
+    if result == true
+      redirect '/'
     else
+      @origins = Origin.all
       render 'new'
     end
   end
