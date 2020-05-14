@@ -1,0 +1,29 @@
+	<h3>Customer Preferences</h3>	
+	<div>
+		<h5>Name: <%= @customer.name %></h5>
+		<h5>Email: <%= @customer.email %></h5>
+		<h5>Phone: <%= @customer.phone %></h5>
+	</div>
+	<br>
+	<table class="table">
+		<thead>
+			<th>Kopi Name</th>
+			<th>Roast</th>
+			<th>Origin</th>
+		</thead>
+		<tbody>
+		<% @kopis.each do |kopi| %>
+		<tr>
+			<td><%= kopi.name %></td>
+			<td><%= kopi.roast.name %></td>
+			<td><%= kopi.origin.location %></td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<%= link_to 'Back', origins_path, class: "btn btn-primary" %>
+	<% if user_signed_in? %>
+	<%= link_to 'Edit Customer Details', edit_customer_path(@customer), class: "btn btn-primary" %>
+	<%= link_to 'Delete this Customer', customer_path(@customer), method: :delete, data: { confirm: 'Confirm Delete?' }, class: "btn btn-danger"%>
+	<% end %>
+

@@ -1,0 +1,49 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |f| %>
+	<h3>Add New Customer</h3>
+	<div class="form-group">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+		<span><%= customer_errors(@customer, :name) %></span>
+	</div>
+	<div class="form-group">
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</div>
+	<div class="form-group">
+		<%= f.label :phone %><br>
+		<%= f.text_field :phone %>
+	</div>
+	<div>
+		<table class="table">
+			<thead>	
+			<tr>
+				<th>Name</th>
+				<th>Roast</th>
+				<th>Origin</th>
+				<th>Select</th>
+			</tr>
+			</thead>	
+			<tbody>
+			<%= f.collection_check_boxes(:kopi_ids, @kopis, :id, :name) do |b| %>
+				<%= b.label do %>
+					<tr>
+						<td><%= b.object.name %></td>
+						<td><%= b.object.roast.name %></td>
+						<td><%= b.object.origin.location %></td>
+						<td><%= b.check_box %></td>
+					</tr>
+				<% end %>
+			<% end %>
+			</tbody>
+		</table>
+	</div>
+	<%= f.submit class: "btn btn-primary" %>
+<% end %>
+<br>
+<%= link_to 'Back to All Customers', customers_path %>
+
+
+<!-- customize check_box_elements -->
+<!-- collection_check_boxes(:post, :author_ids, Author.all, :id, :name_with_initial) do |b|
+  b.label { b.check_box }
+end -->

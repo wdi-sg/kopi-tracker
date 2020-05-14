@@ -1,0 +1,31 @@
+<h3>All Customers</h3>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Customer Details</th>
+
+		</tr>
+		</thead>
+		<tbody>
+		<% @customers.each do |customer| %>	
+		<tr>
+			<td><%= customer.name %></td>
+			<td><%= customer.email %></td>
+			<td><%= customer.phone %></td>
+		  <td><%= link_to 'Kopi Preference', customer_path(customer)%></td>
+		</tr>
+		<% end %>
+		</tbody>
+	</table><br>
+	<% if user_signed_in? %>
+	<%= link_to 'Add New Customer', new_customer_path, class: "btn btn-primary" %>
+	<% end %>
+
+<!-- notes -->
+<% if false %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'log in', new_user_session_url %>
+<% end %>
