@@ -1,0 +1,19 @@
+<h1>Edit Order</h1>
+
+<%= form_with scope: :order, model: @order, local: true do |form| %>
+
+
+  <%= form.collection_select :kopi_id, @kopis, :id, :name %>
+
+	<p>
+		<%= form.label :weight_kg %><br>
+		<%= form.text_field :weight_kg %>
+	</p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

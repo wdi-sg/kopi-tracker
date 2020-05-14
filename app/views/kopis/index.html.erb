@@ -1,0 +1,89 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Kopi</h1>
+    <p class="lead">Get a cuppa</p>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+<ul class="list-unstyled mx-3">
+	<li class="list-inline-item">
+		<%= link_to 'New Kopi', new_kopi_path, class: 'btn btn-primary my-1' %>
+	</li>
+	<li class="list-inline-item">
+		<%= link_to 'New Roast Type', new_roast_path, class: 'btn btn-primary my-1' %>
+	</li>
+	<li class="list-inline-item">
+		<%= link_to 'New Origin', new_origin_path, class: 'btn btn-primary my-1' %>
+	</li>
+	<li>
+		<%= link_to 'View All Orders', orders_path, class: 'btn btn-info my-1 float-right' %>
+	</li>
+		<li>
+		<%= link_to 'New Order', new_order_path, class: 'btn btn-primary my-1' %>
+	</li>
+</ul>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope ="col">S/N</th>
+			<th scope ="col">Name</th>
+			<th scope ="col">Type of Roast</th>
+			<th scope ="col">Place of Origin</th>
+			<th scope ="col">Price Per Kilogram</th>
+			<th scope ="col"></th>
+			<th scope ="col"></th>
+			<th scope ="col"></th>
+		</tr>
+	</thead>
+
+	<tbody class="table-content">
+		<% @kopis.each_with_index do |kopi, index| %>
+			<tr>
+				<td>
+					<%= index + 1 %>
+				</td>
+				<td>
+					<%= kopi.name %>
+				</td>
+				<td>
+					<%= kopi.roast.roast_type %>
+				</td>
+				<td>
+					<%= kopi.origin.location %>
+				</td>
+				<td>
+					<%= kopi.price_per_kilo %>
+				</td>
+				<td>
+					<%= link_to 'Purchase', new_order_path(kopi), class: 'btn btn-primary' %>
+				</td>
+				<td>
+					<%= link_to 'Edit', edit_kopi_path(kopi), class: 'btn btn-success' %>
+				</td>
+				<td>
+					<%= link_to 'show', kopi_path(kopi), class: 'btn btn-info' %>
+				</td>
+				<td>
+					<%= link_to 'Destroy', kopi_path(kopi),class:'btn btn-danger',
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete the kopi?' }  %>
+				</td>
+			</tr>
+		<% end %>
+
+	</tbody>
+</table>
+
+<p>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+</p>
+
+<% else %>
+
+<p>
+<%= link_to 'log in', new_user_session_url %>
+</p>
+<% end %>
+<br/>

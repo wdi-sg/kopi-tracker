@@ -1,0 +1,60 @@
+<h1 class="mx-3">Showing all Orders</h1>
+<ul class="list-unstyled mx-3">
+	<li class="list-inline-item">
+		<%= link_to 'New Order', new_order_path, class: 'btn btn-primary my-1' %>
+	</li>
+</ul>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">S/N</th>
+			<th scope="col">Name</th>
+			<th scope ="col">Weight of Order</th>
+			<th scope ="col">Price Per Kilogram</th>
+			<th scope ="col">Total Price</th>
+			<th scope ="col"></th>
+			<th scope ="col"></th>
+			<th scope ="col"></th>
+		</tr>
+	</thead>
+
+	<tbody class="table-content">
+		<% @orders.each_with_index do |order, index| %>
+			<tr>
+				<td>
+					<%= index + 1 %>
+				</td>
+				<td>
+					<%= order.kopi.name %>
+				</td>
+				<td>
+					<%= order.weight_kg %> Kg
+				</td>
+				<td>
+					SGD$ <%= order.kopi.price_per_kilo %> / Kg
+				</td>
+				<td>
+					<% stuff = order.kopi.price_per_kilo.to_f %>
+					<% another = order.weight_kg.to_f %>
+					<% last = stuff * another%>
+					SGD$ <%= last.round(2) %>
+				</td>
+				<td>
+					<%= link_to 'Edit', edit_order_path(order), class: 'btn btn-success' %>
+				</td>
+				<td>
+					<%= link_to 'View', order_path(order), class: 'btn btn-info' %>
+				</td>
+				<td>
+					<%= link_to 'Destroy', order_path(order),class:'btn btn-danger',
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete the kopi?' }  %>
+				</td>
+			</tr>
+		<% end %>
+
+	</tbody>
+</table>
+
+<br/>
+<%= link_to 'Back', root_path %>

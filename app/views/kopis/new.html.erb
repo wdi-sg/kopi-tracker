@@ -1,0 +1,23 @@
+<div class="stuff">
+<h1>New Kopi</h1>
+
+<p class="error">
+  name <%= show_errors(@kopi, :name) %>
+</p>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+		<%= form.collection_select :roast_id, @roasts, :id, :roast_type %>
+		<%= form.collection_select :origin_id, @origins, :id, :location %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>
+<%= link_to 'Back', root_path %>
