@@ -9,8 +9,19 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
-    @customer.save
-    redirect_to @customer
+    # kopis = Kopi.where(id: customer_params["kopi_ids"] - [""])
+    #   @customer.kopis = kopis
+      # @customer.kopis.save
+      # puts @customer.kopis
+    #   @customer.save
+    # redirect_to @customer
+    if @customer.save
+      redirect_to '/customers'
+    else
+      @customers = Customer.all
+      @kopis = Kopi.all
+      render '/customers/new'
+    end
   end
 
   def show
