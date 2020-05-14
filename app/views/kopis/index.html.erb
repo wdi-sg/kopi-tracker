@@ -21,11 +21,13 @@
 		  <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
 			<td><%= link_to 'Delete', kopi_path(kopi), method: :delete, data: { confirm: 'Confirm Delete?' }%></td>
 			<% end %>
-		</tr>
 		<% end %>
+		</tr>
 		</tbody>
 	</table><br>
+	<% if user_signed_in? %>
 	<%= link_to 'Add New Kopi', new_kopi_path, class: "btn btn-primary" %>
+	<% end %>
 
 <!-- notes -->
 <% if false %>

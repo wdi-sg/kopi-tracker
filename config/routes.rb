@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'kopis#index'
+  root 'customers#index'
 
 
   get '/origins/:origin_id/kopis' => 'kopis#index', as: 'origin_kopis'
