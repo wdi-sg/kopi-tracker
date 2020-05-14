@@ -1,0 +1,27 @@
+<% current_user.update_attribute :admin, true %>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+	<div class="form-group">
+		<%= form.label :name %><br>
+		<%= form.text_field :name, class: "form-control" %>
+	</div>
+
+	<% if current_user.try(:admin?) %>
+		<div class="form-group">
+			<%= form.label :roast %><br>
+			<%= form.text_field :roast, class: "form-control" %>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= form.label :origin %><br>
+		<%= form.collection_select :origin_id, @origins, :id, :location, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :price_per_pound %><br>
+		<%= form.number_field :price_per_pound, class: "form-control", placeholder: "$" %>
+	</div>
+
+	<%= form.submit 'Confirm Changes', :class => "mb-3 btn btn-success" %>
+<% end %>

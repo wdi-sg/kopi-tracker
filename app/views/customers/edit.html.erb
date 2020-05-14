@@ -1,0 +1,11 @@
+
+<h1>Add kopis</h1>
+
+<%= form_with scope: :customer, url: customer_path, method: "patch", local: true do |form| %>
+
+	<div style="clear: right;">
+		<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+	</div>
+
+	<%= form.submit 'Add Customer', :class => "mb-3 btn btn-success" %>
+<% end %>
