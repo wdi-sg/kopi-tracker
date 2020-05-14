@@ -1,8 +1,8 @@
-<h1>Add New Kopi</h1>
+<h1>Edit Kopi</h1>
 
-<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+<%= form_with scope: :kopi, model:@kopi, local: true do |form| %>
   
-   <p>
+  <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %><br>
   </p>
@@ -20,6 +20,10 @@
     <%= form.submit %>
   </p>
 <% end %>
+<br/><br/>
+<%= link_to 'Delete Kopi', kopi_path(@kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
 <br/><br/>
 <%= link_to 'Back to Kopi List', kopis_path %>
 <br/><br/>

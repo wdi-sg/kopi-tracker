@@ -1,10 +1,18 @@
 <h1>List of Kopi</h1>
 
 <table>
+<tr>
+    <th>Kopi Name&emsp;</th>
+  </tr>
 <% @kopis.each do |kopi| %>
     <tr>
       <td><%= kopi.name %></td>
-      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) 
+      %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+      <td><%= link_to 'Delete', kopi_path(kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </table>
@@ -15,8 +23,8 @@
 <br/><br/>
 
 <%= link_to 'Order List', orders_path %>
-
-
+<br/><br/>
+<%= link_to 'Origins List (Farms)', origins_path %>
 <br/><br/>
 <%= link_to 'Home', root_path %>
 

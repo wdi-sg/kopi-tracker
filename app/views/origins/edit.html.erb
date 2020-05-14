@@ -1,0 +1,19 @@
+<h1>Edit Farm (Origin)</h1>
+<%= form_with scope: :origin, model: @origin, local: true do |form| %>
+  
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %><br><br>
+    <%= form.label :phone %><br>
+    <%= form.text_field :phone %><br><br>
+
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<br/><br/>
+<%= link_to 'Back to Farm List (Origins)', origins_path %>
+<br/><br/>
+<%= link_to 'Home', root_path %> 
