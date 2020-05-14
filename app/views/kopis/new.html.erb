@@ -1,0 +1,25 @@
+<!-- i'm not exactly sure what the first line is trying to display-->
+
+<!-- scope: :kopi is referencing the "as: 'kopi'" in line 9 of routes -->
+<!-- can't find kopis_path anywhere but it works when i changed the name to plural even if models didn't exist -->
+
+<!-- Ok, Akira said "local: true" has something to do with localhost or local server? -->
+<!-- "do" runs the form -->
+<!-- | form | represents the index value of something...i don't really know. -->
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
