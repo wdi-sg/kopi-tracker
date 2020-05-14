@@ -25,6 +25,7 @@ class KopisController < ApplicationController
 
   def edit
     @kopi = Kopi.find(params[:id])
+    @customers = Customer.all
   end
 
   def update
