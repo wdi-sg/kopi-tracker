@@ -1,0 +1,24 @@
+<h1>All Customers</h1>
+  <tr>
+    <th>Name</th>
+    <th>Kopis Stocked</th>
+  </tr>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.name %></td>
+      <td>
+        <% customer.kopis.each do |kopi| %>
+          <%= link_to kopi.name, kopi_path(kopi) %>;
+        <% end %>
+      </td>
+      <td>
+        <%= link_to 'Show', customer_path(customer) %>;
+        <%= link_to 'Edit', edit_customer_path(customer) %>;
+        <%= link_to 'Destroy', customer_path(customer),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Add New Customer', new_customer_path %>

@@ -1,0 +1,22 @@
+<h1>Edit Farm</h1>
+<%= form_with scope: :farm, model: @farm, local: true do |form| %>
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Location %><br>
+    <%= form.text_area :location %>
+  </p>
+
+  <p>
+    <%= form.label :Phone%><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', root_path %> 
