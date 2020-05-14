@@ -9,34 +9,32 @@
 
 <br>
 
-<h3>Customers</h3>
+<h3><%= @customer.name %></h3>
+<p>Id:   <%= @customer.id %></p>
 
 <br>
 
+<h3>Kopi Lists</h3>
 <table>
   <tr>
     <th style="text-align: left">Id</th>
-    <th style="text-align: left">Customer Name</th>
+    <th style="text-align: left">Kopi Name</th>
   </tr>
-
-
-  <tr>
-    <td style="width: 50px"> <%= @customer.id %></td>
-    <td style="width: 300px"><%= @customer.name %></td>
-  </tr>
+  <% @customer.kopis.each do |kopi| %>
+    <tr>
+      <td style="width: 50px"><%= kopi.id %></td>
+      <td style="width: 150px"><%= kopi.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
 </table>
 
-<% @customer.kopis.each do |kopi| %>
-  <tr>
-    <td><%= kopi.id %></td>
-    <td><%= kopi.name %></td>
-    <td><%= link_to 'Show', kopi_path(kopi) %></td>
-  </tr>
-<% end %>
 <br>
-
 <br>
-<div>
-  <p><%= link_to 'Back to Origin Index', root_path %></p>
-  <p><%= link_to 'Back to Customer Index', customers_path %></p>
-</div>
+<br>
+<ul>
+  <li><%= link_to 'Origin', root_path %></p>
+  <li><%= link_to 'Kopi', kopis_path %></p>
+  <li><%= link_to 'Roast', roasts_path %></p>
+  <li><%= link_to 'Customer', customers_path %></p>
+</ul>

@@ -11,15 +11,30 @@
           data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
+<br>
+<br>
+<br>
+<h3>Customer Lists</h3>
+<table>
+    <tr>
+      <th style="text-align: left">Id</th>
+      <th style="text-align: left">Customer Name</th>
+    </tr>
+
   <% @kopi.customers.each do |customer| %>
     <tr>
-      <td><%= customer.id %></td>
-      <td><%= customer.name %></td>
+      <td style="width: 50px"><%= customer.id %></td>
+      <td style="width: 150px"><%= customer.name %></td>
       <td><%= link_to 'Show', customer_path(customer) %></td>
     </tr>
   <% end %>
+</table>
 <br>
 <br>
-<div>
-  <%= link_to 'Back to Origin Index', root_path %>
-</div>
+<br>
+<ul>
+  <li><%= link_to 'Origin', root_path %></p>
+  <li><%= link_to 'Kopi', kopis_path %></p>
+  <li><%= link_to 'Roast', roasts_path %></p>
+  <li><%= link_to 'Customer', customers_path %></p>
+</ul>

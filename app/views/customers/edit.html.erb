@@ -1,4 +1,18 @@
 <h1>Customers Edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
 
-<p><%= link_to 'Go to Customer Index', customers_path %></p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :kopi_ids %><br>
+    <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+  <% end %>

@@ -19,6 +19,7 @@ class KopisController < ApplicationController
   end
 
   def create
+    @customers = Customer.all
     @kopi = Kopi.new(kopi_params)
     @kopi.user = current_user
     result = @kopi.save
@@ -41,6 +42,7 @@ class KopisController < ApplicationController
   def edit
     @origins = Origin.all
     @roasts = Roast.all
+    @customers = Customer.all
     @kopi = Kopi.find(params[:id])
     @kopi.user = current_user
   end

@@ -15,19 +15,18 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    @kopis = Kopi.all
   end
 
   def create
+    @kopis = Kopi.all
     @customer = Customer.new(customer_params)
     result = @customer.save
 
     if result == true
-      # redirect_to @customer
-      redirect '/'
+      redirect_to @customer
     else
-      @customers = Customer.all
       render 'new'
-      # render plain: @customer.errors.inspect
     end
   end
 
