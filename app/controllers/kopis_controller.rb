@@ -1,8 +1,5 @@
 class Kopis < ApplicationController
 
-  def index
-  end
-
   def new
     @origin = Origin.all
   end
