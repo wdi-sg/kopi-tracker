@@ -13589,3 +13589,23 @@ Processing by CustomersController#edit as HTML
 Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/customers" for ::1 at 2020-05-14 22:35:35 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rachelik/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:20
+  Rendered customers/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 219ms (Views: 205.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/customers" for ::1 at 2020-05-14 22:35:36 +0800
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/customers/index.html.erb:20
+  Rendered customers/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
