@@ -1,24 +1,29 @@
-<h1>Customers Show</h1>
+<h2>Customer</h2>
+<br>
+
+<h4><%= @customer.name %></h4>
+<div class="content-div">
+  <p>Id: <%= @customer.id %></p>
+</div>
 
 <% if user_signed_in? %>
-  <%= link_to 'Add new customer', new_customer_path %>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
+  <span><%= link_to 'Edit', edit_customer_path(@customer), class:"btn btn-primary" %></span>
+  <span><%= link_to 'Delete', customer_path(@customer),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
 <% end %>
 
 <br>
-
-<h3><%= @customer.name %></h3>
-<p>Id:   <%= @customer.id %></p>
-
+<br>
 <br>
 
-<h3>Kopi Lists</h3>
-<table>
+<h5>Kopi List for this Customer</h5>
+<table class="table table-hover">
+  <thead>
   <tr>
-    <th style="text-align: left">Id</th>
-    <th style="text-align: left">Kopi Name</th>
+    <th scope="col">Id</th>
+    <th scope="col">Kopi Name</th>
+    <th scope="col"></th>
   </tr>
   <% @customer.kopis.each do |kopi| %>
     <tr>
@@ -32,9 +37,3 @@
 <br>
 <br>
 <br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Roast', roasts_path %></p>
-  <li><%= link_to 'Customer', customers_path %></p>
-</ul>

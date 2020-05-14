@@ -1,41 +1,35 @@
-<h1>Customers Index</h1>
+<h2>Customers Index</h2>
+<div class="add-item">
+  <% if user_signed_in? %>
+    <p><%= link_to '+ Add Customer', new_customer_path, class: "btn btn-outline-primary add-item"  %></p>
+  <% end %>
+</div>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'Add new Customer', new_customer_path %></p>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
-
-
-<br/>
-<br/>
-
-<table>
-  <tr>
-    <th style="text-align: left">Id</th>
-    <th style="text-align: left">Customer name</th>
-  </tr>
-
-  <% @customers.each do |customer| %>
+<table class="table table-sm table-hover">
+  <thead>
     <tr>
-      <td style="width: 30px"><%= customer.id %></td>
-      <td style="width: 200px"><%= customer.name %></td>
-      <td style="width: 50px"><%= link_to 'Show', customer_path(customer) %></td>
+      <th scope="col">Id</th>
+      <th scope="col">Customer name</th>
+      <th scope="col"></th>
+    <% if user_signed_in? %>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.name %></td>
+        <td><%= link_to 'Show', customer_path(customer) %></td>
       <% if user_signed_in? %>
-        <td style="width: 50px"><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td style="width: 50px"><%= link_to 'Delete', customer_path(customer),
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Delete', customer_path(customer),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-    </tr>
-  <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br>
-<br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Roast', roasts_path %></p>
-</ul>

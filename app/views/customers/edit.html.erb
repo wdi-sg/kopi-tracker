@@ -1,18 +1,22 @@
-<h1>Customers Edit</h1>
+<h2>Edit Customer</h2>
+<br>
 <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
+  <div>
+    <%= form.label :name, for:"exampleFormControlInput1" %><br>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <br>
 
-  <p>
-    <%= form.label :kopi_ids %><br>
+  <%= form.label :kopi, for:"exampleFormControlInput1" %><br>
+  <div class="format-checkboxes">
     <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
-  </p>
+  </div>
+  <br>
+
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "Update", class: "btn btn-primary"  %>
   </p>
 
   <% end %>

@@ -1,23 +1,13 @@
-<h1>Roasts Edit</h1>
+<h2>Edit Roasts</h2>
+<br>
 
 <%= form_with scope: :roast, model: @roast, local: true do |form| %>
+<div class="form-group">
 
-  <p>
-    <%= form.label :roast %><br>
-    <%= form.text_field :roast %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.label :roast, for:"exampleFormControlInput1" %><br>
+    <%= form.text_field :roast, class: "form-control" %>
+    <br>
+    <%= form.submit "update", class: "btn btn-primary"  %>
+</div>
 
 <% end %>
-
-<br>
-<br>
-<div>
-  <%= link_to 'Back to Roast Index', roasts_path %>
-</div>
-<div>
-  <%= link_to 'Back to Origin Index', root_path %>
-</div>

@@ -1,34 +1,13 @@
-<h1>Roasts Show</h1>
-
-<% if user_signed_in? %>
-  <%= link_to 'Add new Roast', new_roast_path %>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
-
+<h2>Roast</h2>
 <br>
 
-<table>
-  <tr>
-    <td> <%= @roast.id %></td>
-    <td><%= @roast.roast %></td>
-  </tr>
-</table>
-<br>
-
+<h4><%= @roast.roast %></h4>
+<div class="content-div">
+  <p>Id: <%= @roast.id %></p>
+</div>
 <% if user_signed_in? %>
-  <span style="width: 50px"><%= link_to 'Edit', edit_roast_path(@roast) %></span>
-  <span style="width: 50px"><%= link_to 'Delete', roast_path(@roast),
+  <span><%= link_to 'Edit', edit_roast_path(@roast), class:"btn btn-primary" %></span>
+  <span><%= link_to 'Delete', roast_path(@roast),
             method: :delete,
-            data: { confirm: 'Are you sure?' } %></span>
+            data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
 <% end %>
-<br>
-<br>
-<br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Roast', roasts_path %></p>
-  <li><%= link_to 'Customer', customers_path %></p>
-</ul>

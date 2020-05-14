@@ -1,49 +1,41 @@
-<h1>Kopi Show</h1>
-
-<% if user_signed_in? %>
-  <%= link_to 'Add new kopi', new_kopi_path %>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
-
-<br/>
-
-<h3><%= @kopi.name %></h3>
-<p>Roast:   <%= @kopi.roast.roast %></p>
-<p>Origin:  <%= @kopi.origin.location %></p>
-
-<% if user_signed_in? %>
-  <td style="width: 50px"><%= link_to 'Edit', edit_kopi_path(@kopi) %></td>
-  <td style="width: 50px"><%= link_to 'Delete', kopi_path(@kopi),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-
+<h2>Kopi</h2>
 <br>
-<br>
-<br>
-<h3>Customer Lists</h3>
-<table>
-    <tr>
-      <th style="text-align: left">Id</th>
-      <th style="text-align: left">Customer Name</th>
-    </tr>
 
-  <% @kopi.customers.each do |customer| %>
-    <tr>
-      <td style="width: 50px"><%= customer.id %></td>
-      <td style="width: 150px"><%= customer.name %></td>
-      <td><%= link_to 'Show', customer_path(customer) %></td>
-    </tr>
+  <h4><%= @kopi.name %></h4>
+  <div class="content-div">
+    <label>Roast:</label>
+    <p><%= @kopi.roast.roast %></p>
+    <label>Origin:</label>
+    <br>
+    <p><%= @kopi.origin.location%></p>
+  </div>
+
+  <% if user_signed_in? %>
+    <span><%= link_to 'Edit', edit_kopi_path(@kopi), class:"btn btn-primary" %></span>
+    <span><%= link_to 'Delete', kopi_path(@kopi),
+            method: :delete,
+            data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
   <% end %>
+<br>
+<br>
+<br>
+
+<h5>Customer List for this Kopi</h5>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @kopi.customers.each do |customer| %>
+      <tr>
+        <td style="width: 50px"><%= customer.id %></td>
+        <td style="width: 150px"><%= customer.name %></td>
+        <td><%= link_to 'Show', customer_path(customer) %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-<br>
-<br>
-<br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Roast', roasts_path %></p>
-  <li><%= link_to 'Customer', customers_path %></p>
-</ul>

@@ -4,12 +4,71 @@
     <title>KopiTracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <style type="text/css">
+      .container {
+        position: relative;
+        top: 100px;
+      }
+
+      .navbar-brand {
+        font-size: 20px;
+      }
+
+      .add-item {
+        text-align: right;
+        top-margin: 0px;
+        bottom-margin: 5px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      h4 {
+        text-decoration: underline;
+      }
+
+      .content-div p {
+        margin-left: 20px;
+      }
+
+      .format-checkboxes label {
+        display: inline;
+        margin-left: 5px;
+        margin-right: 20px;
+        font-weight: normal;
+      }
+
+    </style>
+
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light justify-content-between">
+      <ul class="nav nav-tabs">
+        <li class="navbar-brand nav-item"> Kopi Tracker </li>
+        <li class="nav-item"><%= link_to 'Origin', root_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'Kopi', kopis_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'Roast', roasts_path, class:"nav-link" %></li>
+        <li class="nav-item"><%= link_to 'Customer', customers_path, class:"nav-link" %></li>
+      </ul>
+      <div class="logging">
+        <% if user_signed_in? %>
+          <a><%= link_to 'log out', destroy_user_session_url, method: :delete, class: "btn btn-outline-primary log-out" %></a>
+        <% else %>
+          <%= link_to 'log in', new_user_session_url, class: "btn btn-outline-primary log-in" %>
+        <% end %>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>

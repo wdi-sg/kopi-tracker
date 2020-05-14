@@ -1,27 +1,33 @@
-<h1>Kopi Edit</h1>
+<h2>Edit Kopi</h2>
+<br>
 
 <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
-  <p>
-    <%= form.label :origin %><br>
+<div class="form-group">
+
+    <%= form.label :origin, for:"exampleFormControlInput1" %><br>
     <%= form.collection_select :origin_id, @origins, :id, :location %>
-  </p>
+    <br>
+    <br>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
+    <%= form.label :name, for:"exampleFormControlInput1" %><br>
+    <%= form.text_field :name, class: "form-control" %>
+    <br>
 
-  <p>
-    <%= form.label :roast_id %><br>
+    <%= form.label :roast_id, for:"exampleFormControlInput1" %><br>
     <%= form.collection_select :roast_id, @roasts, :id, :roast %>
-  </p>
+    <br>
+    <br>
 
-  <p>
-    <%= form.label :customer_ids %><br>
-    <%= form.collection_check_boxes :customer_ids, @customers, :id, :name %>
-  </p>
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.label :customer, for:"exampleFormControlInput1" %><br>
+    <div class="format-checkboxes">
+      <%= form.collection_check_boxes :customer_ids, @customers, :id, :name %>
+    </div>
+
+    <br>
+    <br>
+
+    <%= form.submit "Update", class: "btn btn-primary" %>
+
+</div>
 <% end %>

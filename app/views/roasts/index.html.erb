@@ -1,41 +1,35 @@
-<h1>Roasts Index</h1>
+<h2>Roasts Index</h2>
+<div class="add-item">
+  <% if user_signed_in? %>
+    <p><%= link_to '+ Add Item', new_roast_path, class: "btn btn-outline-primary add-item"  %></p>
+  <% end %>
+</div>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'Add new Roast', new_roast_path %></p>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
-
-
-<br/>
-<br/>
-
-<table>
-  <tr>
-    <th style="text-align: left">Id</th>
-    <th style="text-align: left">Roast</th>
-  </tr>
-
-  <% @roasts.each do |roast| %>
+<table  class="table table-sm table-hover">
+  <thead>
     <tr>
-      <td style="width: 30px"><%= roast.id %></td>
-      <td style="width: 100px"><%= roast.roast %></td>
-      <td style="width: 50px"><%= link_to 'Show', roast_path(roast) %></td>
+        <th scope="col">Id</th>
+        <th scope="col">Roast</th>
+        <th scope="col"></th>
       <% if user_signed_in? %>
-        <td style="width: 50px"><%= link_to 'Edit', edit_roast_path(roast) %></td>
-        <td style="width: 50px"><%= link_to 'Delete', roast_path(roast),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col"></th>
+        <th scope="col"></th>
       <% end %>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>
+    <% @roasts.each do |roast| %>
+      <tr>
+          <td><%= roast.id %></td>
+          <td><%= roast.roast %></td>
+          <td><%= link_to 'Show', roast_path(roast) %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_roast_path(roast) %></td>
+          <td><%= link_to 'Delete', roast_path(roast),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br>
-<br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Customer', customers_path %></p>
-</ul>

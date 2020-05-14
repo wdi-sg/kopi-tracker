@@ -1,54 +1,36 @@
-<h1>Origin Show</h1>
-
-<% if user_signed_in? %>
-  <%= link_to 'Add new Kopi', new_kopi_path %>
-  <p><%= link_to 'log out', destroy_user_session_url, method: :delete %></p>
-<% else %>
-  <%= link_to 'log in', new_user_session_url %>
-<% end %>
-
+<h2>Origin</h2>
 <br>
-
-<h3><%= @origin.location %></h3>
-<p>Phone Number: <%= @origin.phone %></p>
+<h4><%= @origin.location %></h4>
+<label>Phone Number: </label>
+<br>
+<span><%= @origin.phone %></span>
 <% if user_signed_in? %>
-  <span style="width: 50px"><%= link_to 'Edit', edit_origin_path(@origin) %></span>
-  <span style="width: 50px"><%= link_to 'Delete', origin_path(@origin),
+  <span><%= link_to 'Edit', edit_origin_path(@origin), class:"btn btn-primary" %></span>
+  <span><%= link_to 'Delete', origin_path(@origin),
             method: :delete,
-            data: { confirm: 'Are you sure?' } %></span>
+            data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
 <% end %>
-
 <br>
 <br>
 <br>
-<h3>Kopi List from this place</h3>
 <div>
-  <table>
-    <tr>
-      <th style="text-align: left; width:100px">Kopi</th>
-      <th style="text-align: left; width:100px">Roast</th>
-    </tr>
-  <% @origin.kopi.each do |kopi|  %>
-    <tr>
-      <td style="width: 100px"><%= kopi.name %></td>
-      <td style="width: 100px" ><%= kopi.roast.roast %></td>
-      <td style="width: 50px"><%= link_to 'Show', kopi_path(kopi) %></td>
-      <% if user_signed_in? %>
-        <td  style="width: 50px"><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
-        <td style="width: 50px"><%= link_to 'Delete', kopi_path(kopi),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+  <h5>Kopi List for this customer</h5>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Kopi</th>
+        <th scope="col">Roast</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @origin.kopi.each do |kopi|  %>
+        <tr>
+            <td><%= kopi.name %></td>
+            <td><%= kopi.roast.roast %></td>
+            <td><%= link_to 'Show', kopi_path(kopi) %></td>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
+    </tbody>
   </table>
 </div>
-<br>
-<br>
-<br>
-<ul>
-  <li><%= link_to 'Origin', root_path %></p>
-  <li><%= link_to 'Kopi', kopis_path %></p>
-  <li><%= link_to 'Roast', roasts_path %></p>
-  <li><%= link_to 'Customer', customers_path %></p>
-</ul>
