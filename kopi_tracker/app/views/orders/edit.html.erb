@@ -1,1 +1,20 @@
-<h1>Orders#edit</h1>
+<br>
+<h2>Edit Order #<%= @order.id %></h2>
+<br>
+<%= form_with scope: :order, model: @order, local: true do |form| %>
+
+  <p>
+  	Select <%= form.label :kopi %><br>
+    <%= form.collection_select :kopi_id, Kopi.order(:id, :name),:id,:name, include_blank: true %>
+  </p>
+
+  <p>
+  	<%= form.label :weight %><br>
+  	<%= form.text_field :weight %> lb
+  </p>
+  <br>
+  <p>
+  	<%= form.submit :class => "btn btn-primary" %>
+  	<%= link_to 'Back', order_path, :class => "btn btn-secondary" %>
+  </p>
+<% end %>

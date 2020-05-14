@@ -37,7 +37,7 @@
 	  	<% cost = order.kopi.price.to_i * order.weight.to_i %>
 	  	<% total_cost += cost.to_i %>
 	  	<tr>
-	  		<td><%= order.id %></td>
+	  		<td><%= link_to order.id, order_path(order) %></td>
 	  		<td><%= order.kopi.name %></td>
 	  		<td><%= order.kopi.roast.kind %></td>
 	  		<td><%= order.kopi.origin.location %></td>
