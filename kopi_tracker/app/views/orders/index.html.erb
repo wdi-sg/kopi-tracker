@@ -16,6 +16,19 @@
 	<%= link_to 'Kopis', kopis_path, :class => "btn btn-info" %>
 	<%= link_to 'Customers', customers_path, :class => "btn btn-success" %>
 <% end %>
+<br>
+<div class="dropdown row justify-content-end">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort by
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="padding:5px">
+  	<li><%= link_to "Cost (Lowest - Highest)", orders_path(sort_by: "cost_asc") %></li>
+    <li><%= link_to "Cost (Highest - Lowest)", orders_path(sort_by: "cost_desc") %></li>
+    <li><%= link_to "Kopi (A-Z)", orders_path(sort_by: "name_asc") %></li>
+    <li><%= link_to "Kopi (Z-A)", orders_path(sort_by: "name_desc") %></li>
+  </ul>
+</div>
 
 <table class="table">
   <thead>
@@ -54,7 +67,7 @@
 	  		<td></td>
 	  		<td></td>
 	  		<td></td>
-	  		<td><h5>Total Cost:</h5</td>
+	  		<td><h5>Total Cost:</h5></td>
 	  		<td><h5>$<%= total_cost.to_i %></h5></td>
 	  		<td></td>
 	  		<td></td>

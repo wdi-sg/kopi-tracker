@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.all.order_list(params[:sort_by])
   end
 
   def new

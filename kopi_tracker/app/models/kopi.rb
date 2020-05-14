@@ -4,4 +4,18 @@ class Kopi < ApplicationRecord
   belongs_to :user
   has_many :order
   has_and_belongs_to_many :customers
+
+  def self.order_list(sort_order)
+    if sort_order == "name_asc"
+      order(name: :asc)
+    elsif sort_order == "name_desc"
+      order(name: :desc)
+    elsif sort_order == "price_asc"
+      order(price: :asc)
+    elsif sort_order == "price_desc"
+      order(price: :desc)
+    else
+      order(created_at: :asc)
+    end
+  end
 end
