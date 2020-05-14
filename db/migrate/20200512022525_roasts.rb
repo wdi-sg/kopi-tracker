@@ -1,4 +1,4 @@
-class Roast < ActiveRecord::Migration[5.2]
+class Roasts < ActiveRecord::Migration[5.2]
   def change
   	create_table :roast do |t|
   	t.string :name

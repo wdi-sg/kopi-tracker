@@ -250,3 +250,133 @@ ActionView::Template::Error (undefined method `each' for nil:NilClass):
     13:       <td><%= link_to 'Show', kopi_path(kopi) %></td>
   
 app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb__502123234667572338_70269651989320'
+Started GET "/" for ::1 at 2020-05-13 12:14:26 +0800
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ari/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  Rendered kopis/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     7:     <th></th>
+     8:   </tr>
+     9: 
+    10:   <% @kopi.each do |kopi| %>
+    11:     <tr>
+    12:       <td><%= kopi.name %></td>
+    13:       <td><%= link_to 'Show', kopi_path(kopi) %></td>
+  
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb__502123234667572338_70269659572560'
+Started GET "/" for ::1 at 2020-05-13 14:10:02 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  Rendered kopis/index.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     7:     <th></th>
+     8:   </tr>
+     9: 
+    10:   <% @kopi.each do |kopi| %>
+    11:     <tr>
+    12:       <td><%= kopi.name %></td>
+    13:       <td><%= link_to 'Show', kopi_path(kopi) %></td>
+  
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb__502123234667572338_70269656785760'
+Started GET "/" for ::1 at 2020-05-13 14:11:51 +0800
+Processing by KopisController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant KopisController::Song):
+  
+app/controllers/kopis_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-05-13 14:12:12 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (14.4ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  Rendered kopis/index.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 14.4ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "kopis" does not exist
+LINE 1: SELECT "kopis".* FROM "kopis"
+                              ^
+: SELECT "kopis".* FROM "kopis"):
+     7:     <th></th>
+     8:   </tr>
+     9: 
+    10:   <% @kopis.each do |kopi| %>
+    11:     <tr>
+    12:       <td><%= kopi.name %></td>
+    13:       <td><%= link_to 'Show', kopi_path(kopi) %></td>
+  
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb__502123234667572338_70269657259460'
+Started GET "/" for ::1 at 2020-05-13 14:24:57 +0800
+Processing by KopisController#index as HTML
+  Rendering kopis/index.html.erb within layouts/application
+  [1m[36mKopi Load (7.0ms)[0m  [1m[34mSELECT "kopis".* FROM "kopis"[0m
+  ↳ app/views/kopis/index.html.erb:10
+  Rendered kopis/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "kopis" does not exist
+LINE 1: SELECT "kopis".* FROM "kopis"
+                              ^
+: SELECT "kopis".* FROM "kopis"):
+     7:     <th></th>
+     8:   </tr>
+     9: 
+    10:   <% @kopi.each do |kopi| %>
+    11:     <tr>
+    12:       <td><%= kopi.name %></td>
+    13:       <td><%= link_to 'Show', kopi_path(kopi) %></td>
+  
+app/views/kopis/index.html.erb:10:in `_app_views_kopis_index_html_erb__502123234667572338_70269652779220'
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Customers (20200513193137)
+  [1m[35m (11.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200513193137_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200513193137"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (24.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(415529116733845485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
