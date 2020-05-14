@@ -5,7 +5,9 @@
   <%= link_to "Login", new_user_session_path %>
 <% end %>
 <div>
-<%= link_to 'All Farms', farms_path %>
+<%= link_to 'All Farms', farms_path %> &nbsp;
+<%= link_to 'Add New Customer', new_customer_path %>&nbsp;
+<%= link_to 'All Customers', customers_path %>
 </div>
 <h1>All Kopis</h1>
 <table>
@@ -14,6 +16,7 @@
     <th>Origin Farm</th>
     <th>Roast</th>
     <th>Created By</th>
+    <th>Customers</th>
     <th>Options</th>
   </tr>
   <% @kopis.each do |kopi| %>
@@ -31,6 +34,11 @@
         <% if kopi.user_id.is_a? Integer %>
         <% @user = User.find(kopi.user_id) %>
         <%= @user.email %>
+      <% end %>
+    </td>
+    <td>
+      <% kopi.customers.each do |customer| %>
+        <%= link_to customer.name, customer_path(customer) %>&nbsp;
         <% end %>
       </td>
       <td>
