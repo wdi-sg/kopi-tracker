@@ -1,7 +1,7 @@
 
 
 <%= form_with scope: :origin, url: origins_path, local: true do |form| %>
-<form>
+<!-- <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Location</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -13,9 +13,11 @@
 
 
   </div>
-  <button type="submit" class="btn btn-primary"><%= form.submit %></button>
-</form>
-
+  <button type="submit" class="btn btn-primary"></button>
+</form> -->
+<p class="error">
+  <%= show_errors(@origin, :location) %>
+</p>
   <p>
     <%= form.label :location %><br>
     <%= form.text_field :location %>
@@ -25,7 +27,7 @@
     <%= form.label :phone_no %><br>
     <%= form.text_area :phone_no %>
   </p>
-
+<%= form.submit %>
   <p>
 
   </p>

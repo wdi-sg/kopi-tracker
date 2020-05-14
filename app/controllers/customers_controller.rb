@@ -15,7 +15,7 @@ def new
 
 def create
   @customer = Customer.new(customer_params)
-
+  @customer.save
   if @customer.save
     redirect_to customers_path
   else

@@ -29,7 +29,12 @@ def new
   def create
     @origin = Origin.new(origin_params)
     @origin.save
-    redirect_to origins_url
+      if @origin.save
+      redirect_to origins_url
+    else
+      render 'new'
+    end
+
   end
 
   def update
