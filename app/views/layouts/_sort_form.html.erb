@@ -1,0 +1,6 @@
+<div class="sort-form__container">
+		<%= form_with(url: form_url, method: "get", local: true) do |form| %>
+		<%= select_tag(:sort_by_number, options_for_select([['ascending', class: 'ascending-option'], ['descending', class: 'descending-option']]), class: 'some-select')%>
+		<%= form.submit 'SORT'%>
+		<% end %>
+</div>

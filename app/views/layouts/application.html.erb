@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>KopiTracker</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+		<%= stylesheet_link_tag 'application', media: 'all' %>
+		<%= stylesheet_link_tag 'application', "https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700&display=swap" %>
+		<%= stylesheet_link_tag 'application', "https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" %>
+		<%= javascript_pack_tag 'application' %>
+</head>
+
+<body>
+		<%= render partial: "layouts/navbar", locals: {links: @links} %>
+		<%= yield %>
+		<p class="notice">
+				<%= notice %>
+		</p>
+		<p class="alert">
+				<%= alert %>
+		</p>
+</body>
+
+</html>

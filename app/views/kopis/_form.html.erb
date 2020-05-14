@@ -1,0 +1,30 @@
+<%= form_with(model: kopi, local: true) do |form| %>
+<% if kopi.errors.any? %>
+<div id="error_explanation">
+		<h2>
+				<%= pluralize(kopi.errors.count, "error") %> prohibited this kopi from being saved:</h2>
+		<ul>
+				<% kopi.errors.full_messages.each do |message| %>
+				<li>
+						<%= message %>
+				</li>
+				<% end %>
+		</ul>
+</div>
+<% end %>
+<div class="field">
+		<%= form.label :name %>
+		<%= form.text_field :name %>
+</div>
+<div class="field">
+		<%= form.label :roast_id %>
+		<%= form.text_field :roast_id %>
+</div>
+<div class="field">
+		<%= form.label :origin_id %>
+		<%= form.text_field :origin_id %>
+</div>
+<div class="actions">
+		<%= form.submit %>
+</div>
+<% end %>
