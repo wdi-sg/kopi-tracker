@@ -3,6 +3,7 @@ class KopisController < ApplicationController
 
   def index
     @kopis = Kopi.all.order_list(params[:sort_by])
+    @origin = Kopi.joins(:origin)
   end
 
   def new

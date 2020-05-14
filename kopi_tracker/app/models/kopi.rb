@@ -10,6 +10,14 @@ class Kopi < ApplicationRecord
       order(name: :asc)
     elsif sort_order == "name_desc"
       order(name: :desc)
+    elsif sort_order == "roast_asc"
+      Kopi.joins("INNER JOIN roasts ON roasts.id = kopis.roast_id").order(kind: :asc)
+    elsif sort_order == "roast_desc"
+      Kopi.joins("INNER JOIN roasts ON roasts.id = kopis.roast_id").order(kind: :desc)
+    elsif sort_order == "origin_asc"
+      Kopi.joins("INNER JOIN origins ON origins.id = kopis.origin_id").order(location: :asc)
+    elsif sort_order == "origin_desc"
+      Kopi.joins("INNER JOIN origins ON origins.id = kopis.origin_id").order(location: :desc)
     elsif sort_order == "price_asc"
       order(price: :asc)
     elsif sort_order == "price_desc"
