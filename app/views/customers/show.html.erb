@@ -1,0 +1,17 @@
+<p>
+  <strong>Customer:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Kopis:</strong>
+  <ol>
+  <% @customer.kopi.each do |kopi| %>
+  <li>
+  <%= link_to kopi.name, kopi_path(kopi) %>
+  </li>
+  <% end %>
+  </ol>
+</p>
+
+<%= link_to 'Back to Kopi List', kopis_path %>
