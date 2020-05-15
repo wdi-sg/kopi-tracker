@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # I understand that 'kopi_id' will contain the value from controller to display route id
   get '/kopis/:id', to: 'kopis#show', as: 'kopi_id'
 
+
+  get '/origins', to: 'origins#index', as: 'origins'
+  get '/origins/new', to: 'origins#new', as: 'origin_new'
+
+
+
 end

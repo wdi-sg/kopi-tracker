@@ -1,0 +1,23 @@
+<%= form_with scope: :origin_new, url: kopis_path, local: true do |form| %>
+
+<!--  | name | roast | origin | -->
+
+  <p>
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+  </p>
+
+  <p>
+	<%= form.label :roast %><br>
+	<%= form.text_area :roast %>
+  </p>
+
+  <p>
+	<%= form.label :origin %><br>
+	<%= form.text_area :origin %>
+  </p>
+
+  <p>
+	<%= form.submit %>
+  </p>
+<% end %>
