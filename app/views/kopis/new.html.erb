@@ -7,6 +7,8 @@
 <!-- "do" runs the form -->
 <!-- | form | represents the index value of something...i don't really know. -->
 
+<!-- url - where the POST request is going -->
+<!-- kopi_path is defined in the routes-->
 <%= form_with scope: :kopi_new, url: kopis_path, local: true do |form| %>
 
 <!--  | name | roast | origin | -->
@@ -20,11 +22,9 @@
     <%= form.label :roast %><br>
     <%= form.text_area :roast %>
   </p>
+<!-- out of a selection of object, park_id is the field -->
+  <%= form.collection_select :origin_id, @origins, :id, :location %>
 
-  <p>
-    <%= form.label :origin %><br>
-    <%= form.text_area :origin %>
-  </p>
 
   <p>
     <%= form.submit %>

@@ -7,5 +7,8 @@ class Origins < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    # to add a new column in kopis
+    #add_column :kopis, :origins_id, :bigint
+
   end
 end

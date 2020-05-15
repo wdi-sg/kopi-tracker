@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/kopis', to: 'kopis#create'
 
   # I understand that 'kopi_id' will contain the value from controller to display route id
-  get '/kopis/:id', to: 'kopis#show', as: 'kopi_id'
+  get '/kopis/:id', to: 'kopis#show', as: 'kopi'
 
 
   get '/origins', to: 'origins#index', as: 'origins'

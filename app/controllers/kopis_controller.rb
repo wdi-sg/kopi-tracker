@@ -7,6 +7,8 @@ class KopisController < ApplicationController
   end
 
   def new
+    #define origins from the origin model
+    @origins = Origin.all
   end
 
 # I want to redirect to the home page after sending post request
@@ -20,10 +22,10 @@ class KopisController < ApplicationController
     @kopi.save
 
     # how does this redirect work?
-    #redirect_to @kopi
+    redirect_to @kopi
 
     # redirects to the index route specified as kopis
-    redirect_to :kopis
+    #redirect_to :kopis
   end
 
   def show
@@ -35,7 +37,7 @@ private
 
 # /edit I am wrong, :kope_new is referencing kopis/new page and permit values correlates with form.label / form.text_area??
   def kopi_params
-    params.require(:kopi_new).permit(:name, :roast, :origin)
+    params.require(:kopi_new).permit(:name, :roast, :origin_id)
   end
 
 

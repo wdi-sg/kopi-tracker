@@ -15,3 +15,5 @@ class Kopis < ActiveRecord::Migration[5.2]
 
   end
 end
+
+#rails db:reset to drop all tables and create new ones
