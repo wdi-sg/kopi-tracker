@@ -1,0 +1,39 @@
+<% if user_signed_in? %>
+<p><%= link_to 'New Coffee', new_kopi_path %></p>
+<p><%= link_to 'New Farm', new_origin_path %></p>
+<p><%= link_to 'New customer', new_customer_path %></p>
+<p><%= link_to 'List of farms', origins_path %></p>
+
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'log in', new_user_session_url %>
+
+<% end %>
+
+<% if current_user.admin? %>
+  <p> Bam! you're an admin </p>
+<% end %>
+
+<h2> List of Coffees </h2>
+<table>
+  <tr>
+    <th>Coffee's name</th>
+    <th>Roast's type </th>
+    <th>Farm's location</th>
+    <th>Farm's phone number</th>
+  </tr>
+
+  <% @kopis.each do |a| %>
+    <tr>
+      <td><%= a.name %></td>
+      <td><%= a.roast.name %></td>
+      <td><%= a.origin.location %></td>
+      <td><%= a.origin.phone %></td>
+      <td><%= link_to 'Show', kopi_path(a) %></td>
+      <td><%= link_to 'Edit', edit_kopi_path(a) %></td>
+      <td><%= link_to 'Destroy', kopi_path(a),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

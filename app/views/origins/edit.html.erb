@@ -1,0 +1,19 @@
+<h1>Edit article</h1>
+
+<%= form_with scope: :origin, model: @origins, local: true do |form| %>
+  <p>
+  	Farm's location:<br>
+    <%= form.text_area :location %>
+  </p>
+
+  <p>
+  	Farm's phone number:<br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
