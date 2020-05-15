@@ -14,6 +14,7 @@ class KopisController < ApplicationController
   def new
     @roasts = Roast.all
     @origins = Origin.all
+    @customers = Customer.all
   end
 
   def edit
@@ -50,9 +51,12 @@ class KopisController < ApplicationController
     redirect_to root_path
   end
 
+
+
+
   private
     def kopi_params
-      params.require(:kopi).permit(:name, :roast_id, :origin_id)
+      params.require(:kopi).permit(:name, :roast_id, :origin_id, :customer_ids => [])
     end
 
 end

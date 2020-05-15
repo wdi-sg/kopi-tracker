@@ -1,4 +1,5 @@
 <%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
 
   <p>
     <%= form.label :name %><br>
