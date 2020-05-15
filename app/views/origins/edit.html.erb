@@ -1,0 +1,17 @@
+<h2>Edit Origin</h2>
+<br>
+
+<%= form_with scope: :origin, model: @origin, local: true do |form| %>
+<div class="form-group">
+
+    <%= form.label :location, for:"exampleFormControlInput1" %><br>
+    <%= form.text_field :location, class: "form-control" %>
+
+    <%= form.label :phone, for:"exampleFormControlInput1" %><br>
+    <%= form.text_area :phone, class: "form-control" %>
+    <br>
+
+    <%= form.submit "Update", class: "btn btn-primary" %>
+</div>
+
+<% end %>

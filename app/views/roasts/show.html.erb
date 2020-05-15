@@ -1,0 +1,13 @@
+<h2>Roast</h2>
+<br>
+
+<h4><%= @roast.roast %></h4>
+<div class="content-div">
+  <p>Id: <%= @roast.id %></p>
+</div>
+<% if user_signed_in? %>
+  <span><%= link_to 'Edit', edit_roast_path(@roast), class:"btn btn-primary" %></span>
+  <span><%= link_to 'Delete', roast_path(@roast),
+            method: :delete,
+            data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
+<% end %>

@@ -1,0 +1,39 @@
+<h2>Customer</h2>
+<br>
+
+<h4><%= @customer.name %></h4>
+<div class="content-div">
+  <p>Id: <%= @customer.id %></p>
+</div>
+
+<% if user_signed_in? %>
+  <span><%= link_to 'Edit', edit_customer_path(@customer), class:"btn btn-primary" %></span>
+  <span><%= link_to 'Delete', customer_path(@customer),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></span>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<h5>Kopi List for this Customer</h5>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Kopi Name</th>
+    <th scope="col"></th>
+  </tr>
+  <% @customer.kopis.each do |kopi| %>
+    <tr>
+      <td style="width: 50px"><%= kopi.id %></td>
+      <td style="width: 150px"><%= kopi.name %></td>
+      <td><%= link_to 'Show', kopi_path(kopi) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<br>
+<br>
