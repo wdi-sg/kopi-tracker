@@ -1,0 +1,66 @@
+<h1>Order Listing</h1>
+
+<table class="table">
+	<thead>
+	  <tr>
+	  	<th scope="col">Order #</th>
+	    <th scope="col">Ordered Kopi</th>
+	   	<th scope="col">Ordered Kopi Roastedness</th>
+	   	<th scope="col">Ordered Kopi Location</th>
+	   	<th scope="col">Ordered Kopi Price Per Pound</th>
+	    <th scope="col">Ordered Weight</th>
+	    <th scope="col">Payment Amount</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+    <% @orders.each do |order| %>
+      <tr>
+      	<td>
+        	<%= order.id %>
+        </td>
+        <td>
+        	<%= order.kopi.name %>
+        </td>
+
+        <td>
+        	<%= order.kopi.roast.name %>
+        </td>
+
+        <td>
+        	<%= order.kopi.origin.location %>
+        </td>
+
+        <td>
+        	<%= '$' + order.kopi.price_per_pound.to_s %>
+        </td>
+
+        <td>
+        	<%= order.weight.to_s + ' pound' %>
+        </td>
+
+        <td>
+        	<%=  '$' + (order.kopi.price_per_pound * order.weight).to_s %>
+        </td>
+
+    		<td>
+    			<%= link_to 'Show', order_path(order) %>
+    		</td>
+
+    		<td>
+    			<%= link_to 'Edit', edit_order_path(order) %>
+    		</td>
+
+    		<td>
+      			<%= link_to 'Destroy', order_path(order),
+        			method: :delete,
+        			data: { confirm: 'Are you sure you want to delete the Order?' } %>
+    		</td>
+      </tr>
+    <% end %>
+
+	</tbody>
+</table>

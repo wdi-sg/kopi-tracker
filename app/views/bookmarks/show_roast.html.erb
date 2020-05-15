@@ -1,0 +1,25 @@
+<h1>Show Roast Bookmark for <%= current_user.email %></h1>
+
+<strong>Roasts:</strong>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+	  	<th scope="col">S/N</th>
+	    <th scope="col">Name</th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+		<% @user.roasts.each_with_index do |roast, index| %>
+			<tr>
+      	<td>
+        	<%= index + 1 %>
+        </td>
+        <td>
+        	<%= roast.name %>
+        </td>
+      </tr>
+		<% end %>
+	</tbody>
+</table>

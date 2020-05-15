@@ -1,0 +1,52 @@
+<h1>Customer Listing</h1>
+
+<%= link_to 'Sort By # of Kopi (Ascending)', "#{customers_path}?sort=asc", class: 'btn btn-success'  %>
+<%= link_to 'Sort By # of Kopi (Descending)', "#{customers_path}?sort=desc", class: 'btn btn-success'  %>
+
+<br>
+<br>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+	  	<th scope="col">S/N</th>
+	    <th scope="col">Name</th>
+	    <th scope="col"># of Kopi</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+	  </tr>
+	</thead>
+
+	<tbody>
+    <% @customers.each_with_index do |customer, index| %>
+      <tr>
+      	<td>
+        	<%= index + 1 %>
+        </td>
+
+        <td>
+        	<%= customer.name %>
+        </td>
+
+        <td>
+        	<%= customer.kopis.length %>
+        </td>
+
+    		<td>
+    			<%= link_to 'Show', customer_path(customer) %>
+    		</td>
+
+    		<td>
+    			<%= link_to 'Edit', edit_customer_path(customer) %>
+    		</td>
+
+    		<td>
+      			<%= link_to 'Destroy', customer_path(customer),
+        			method: :delete,
+        			data: { confirm: 'Are you sure you want to delete the customer?' } %>
+    		</td>
+      </tr>
+    <% end %>
+	</tbody>
+</table>

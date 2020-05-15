@@ -1,0 +1,27 @@
+<h1>Show Order #: <%= @order.id %></h1>
+
+<p>
+  <strong>Ordered Kopi:</strong>
+  <%= @order.kopi.name %>
+</p>
+
+<p>
+	<strong>Ordered Weight:</strong>
+	<br>
+  <%= @order.weight.to_s + ' pound'%>
+</p>
+
+<p>
+	<strong>Price Per Pound:</strong>
+	<br>
+  <%= '$' + @order.kopi.price_per_pound.to_s %>
+</p>
+
+<p>
+  <strong>Payment Amount:</strong>
+  <br>
+  <%= '$' + (@order.kopi.price_per_pound * @order.weight).to_s %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order), class: 'btn btn-primary' %>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
