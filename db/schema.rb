@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 2020_05_15_003732) do
   create_table "kopis", force: :cascade do |t|
     t.string "name"
     t.string "roast"
+    t.bigint "origin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["origin_id"], name: "index_kopis_on_origin_id"
   end
 
   create_table "origins", force: :cascade do |t|

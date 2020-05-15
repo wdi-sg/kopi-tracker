@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/origins', to: 'origins#index', as: 'origins'
   get '/origins/new', to: 'origins#new', as: 'origin_new'
 
+  post '/origins', to: 'origins#create'
+
 
 
 end
