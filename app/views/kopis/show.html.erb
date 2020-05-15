@@ -1,0 +1,24 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.origin.location %>
+</p>
+
+<%= link_to 'Back', root_path %>
+
+<%= link_to 'Edit', edit_kopi_path(@kopi) %>
+
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+<%= link_to 'log in', new_user_session_url %>
