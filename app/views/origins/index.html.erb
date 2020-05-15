@@ -1,0 +1,29 @@
+<h1>List of Farms (Origins)</h1>
+<table>
+<tr>
+    <th>Location&emsp;</th>
+    <th>Phone Number&emsp;</th>
+  </tr>
+<% @origins.each do |origin| %>
+    <tr>
+      <td><%= origin.location %></td>
+      <td><%= origin.phone %></td>
+      <td><%= link_to 'Edit', edit_origin_path(origin) %></td>
+      <td><%= link_to 'Delete', origin_path(origin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+<br/>
+<% if user_signed_in? %>
+<%= link_to 'Add New Farm', new_origin_path %>
+<% end %>
+<br/><br/>
+
+<%= link_to 'Kopi List', kopis_path %>
+<br><br>
+<%= link_to 'Order List', orders_path %>
+<br><br>
+<%= link_to 'Home', root_path %>
+

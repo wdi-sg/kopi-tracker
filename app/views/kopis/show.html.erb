@@ -1,0 +1,26 @@
+<h1>
+  <strong>Kopi:</strong>
+  <%= @kopi.name %>
+</h1>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.origin.location %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Customers:</strong>
+  <ol>
+  <% @kopi.customer.each do |customer| %>
+  <li>
+  <%= link_to customer.name, customer_path(customer) %></li>
+  <% end %>
+  </ol>
+</p>
+
+<%= link_to 'Back to Kopi List', kopis_path %>

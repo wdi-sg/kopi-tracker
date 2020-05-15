@@ -1,0 +1,19 @@
+<h1>Add New Farm (Origin)</h1>
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+  
+  <p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %><br><br>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br><br>
+
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<br/><br/>
+<%= link_to 'Back to Farm List (Origins)', origins_path %>
+<br/><br/>
+<%= link_to 'Home', root_path %>
