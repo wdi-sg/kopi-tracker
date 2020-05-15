@@ -35,7 +35,7 @@ private
 
 # /edit I am wrong, :kope_new is referencing kopis/new page and permit values correlates with form.label / form.text_area??
   def kopi_params
-    params.require(:kopi_new).permit(:name, :roast)
+    params.require(:kopi_new).permit(:name, :roast, :origin)
   end
 
 
