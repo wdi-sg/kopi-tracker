@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<%= link_to 'Kofi', kopis_path, :class => 'navbar-brand'%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      	<%= link_to 'New kofi', new_kopi_path, :class => 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+      	<%= link_to 'Origins', origins_path, :class => 'nav-link'%>
+      </li>
+      <li class="nav-item active">
+      	<%= link_to 'Roasts', roasts_path, :class => 'nav-link'%>
+      </li>
+      <li class="nav-item active">
+      	<%= link_to 'Orders', orders_path, :class => 'nav-link'%>
+      </li>
+    </ul>
+<%= link_to 'Register', new_customer_registration_path %>
+<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+    <div class="navbar-nav dropdown show">
+    	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true"><%= image_tag "user.svg", :height => "30" %></a>
+    	<div class="dropdown-menu dropdown-menu-right">
+    		<% if user_signed_in? %>
+    			<%= link_to 'Logout', destroy_user_session_path, :class => 'dropdown-item', :method => :delete %>
+    		<% else %>
+    			<%= link_to 'Login as User', new_user_session_path, :class => 'dropdown-item' %>
+    		<% end %>
+
+    		<% if customer_signed_in? %>
+    			<%= link_to 'Logout', destroy_customer_session_path, :class => 'dropdown-item', :method => :delete %>
+
+    		<% else %>
+    			<%= link_to 'Login as Customer', new_customer_session_path, :class => 'dropdown-item' %>
+
+    		<% end %>
+
+				<%= link_to 'Register', new_customer_registration_path, :class => 'dropdown-item' %>
+    	</div>
+    </div>
+
+  </div>
+</nav>

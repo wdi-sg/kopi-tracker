@@ -1,0 +1,52 @@
+<h1>All Orders</h1>
+    <%if @order == nil &&user_signed_in? ==false%>
+        <p>This page is only for users</p>
+    <%else%>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="card w-100 flex-wrap mx-auto">
+
+			<div class="card-body">
+				<div class="card-deck flex-wrap">
+					<% @orders.each do |order| %>
+						<div class="col-lg-4">
+
+							<div class="card border-secondary mb-3 mx-auto" >
+								<div class="card-header">
+									<%= order.kopi.name %>
+									<%= order.id %>
+								</div>
+								<div class="card-body">
+									<% price = BigDecimal.new(order.kopi.price_per_pound) * BigDecimal.new(order.weight)%>
+									<p class="card-text">
+										Price/lbs($): <%= order.kopi.price_per_pound %>
+									</p>
+									<p class="card-text">
+										Orders(lbs): <%= order.weight %>
+									</p>
+									<p class="card-text">
+										Total Price($): <%= price %>
+									</p>
+									<p class="card-text">
+										Ordered By: <%= order.user.email %>
+									</p>
+								</div>
+								<div class="card-footer justify-content-between">
+
+								</div>
+							</div>
+
+						</div>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<%= paginate @orders %>
+	</div>
+</div>
