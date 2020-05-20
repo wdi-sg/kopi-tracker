@@ -1,0 +1,19 @@
+<%= form_with scope: :kopi, url: kopis_path, local: true do |f| %>
+	<h3>Add New Kopi</h3>
+	<div class="form-group">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div>
+	<div class="form-group">
+		<%= f.label :roast %><br>
+		<%= f.collection_select :roast_id, @roasts, :id, :name %>
+	</div>
+	<div class="form-group">
+		<%= f.label :origin %><br>
+		<%= f.collection_select :origin_id, @origins, :id, :location %>
+	</div>
+	<%= link_to 'Back', kopis_path, class: "btn btn-primary" %>
+	<%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+

@@ -1,0 +1,13 @@
+	<%= form_with model: @origin, local: true do |f| %>
+	<div class="form-group">
+		<%= f.label :location %><br>
+		<%= f.text_field :location %>
+	</div>
+	<div class="form-group">
+		<%= f.label :phone %><br>
+		<%= f.text_field :phone %>
+	</div>
+	<%= link_to 'Back', origins_path, class: "btn btn-primary" %>		
+	<%= f.submit class: "btn btn-primary" %>
+	<% end %>
+

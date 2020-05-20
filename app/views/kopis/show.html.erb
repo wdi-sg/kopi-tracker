@@ -1,0 +1,11 @@
+	<h3>Kopi Details</h3>	
+	<div>
+		<p>PICTURE.jpg</p>
+		<p>Kopi Name: <%= @kopi.name %></p>
+		<p>Kopi Roast: <%= @kopi.roast.name %></p>
+		<p>Kopi Origin: <%= @kopi.origin.location %></p>
+	</div>
+	<%= link_to 'Back', kopis_path, class: "btn btn-primary" %>
+	<% if user_signed_in? %>
+	<%= link_to 'Delete this Kopi', kopi_path(@kopi), method: :delete, data: { confirm: 'Confirm Delete?' }, class: "btn btn-primary"%>
+	<% end %>

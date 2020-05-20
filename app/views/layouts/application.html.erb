@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KopiTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" >
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <!-- nav -->
+    <div class="container text-center heading">
+    <h2>
+        <a href="<%= origins_path %>">Origins</a>
+        <span>|</span>
+        <a href="<%= customers_path %>">Customers</a>
+        <span>|</span>
+        <a href="<%= kopis_path %>">Kopis</a>
+    </h2>
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_url, method: :delete %>
+    <% else %>
+      <%= link_to 'log in', new_user_session_url %>
+    <% end %>
+    </div>
+
+    <!-- div container -->
+    <div class="container text-center">
+      <%= yield %>
+    </div>
+
+    <!-- error alerts -->
+    <h4 class="notice text-center text-success"><%= notice %></h4>
+    <h4 class="notice text-center text-danger"><%= alert %></h4>
+
+  </body>
+</html>

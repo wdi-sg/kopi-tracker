@@ -1,0 +1,6 @@
+<h3>Origin: <%= @origin.location %></h3>
+
+<p><%= @origin.location %>.jpg</p>
+<p>Phone: <%= @origin.phone %></p>
+<%= link_to 'Back', origins_path, class: "btn btn-primary"  %>
+<%= link_to "List Kopis Produced from #{@origin.location}", origin_kopis_path(@origin), class: "btn btn-primary"  %>

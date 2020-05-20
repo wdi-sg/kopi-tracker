@@ -1,0 +1,36 @@
+<h3>All Kopis</h3>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Roast</th>
+			<th>Origin</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<% @kopis.each do |kopi| %>	
+		<tr>
+			<td><%= kopi.name %></td>
+			<td><%= kopi.roast.name %></td>
+			<td><%= kopi.origin.location %></td>
+		  <td><%= link_to 'Details', kopi_path(kopi)%></td>
+		  <% if user_signed_in? %>
+		  <td><%= link_to 'Edit', edit_kopi_path(kopi) %></td>
+			<td><%= link_to 'Delete', kopi_path(kopi), method: :delete, data: { confirm: 'Confirm Delete?' }%></td>
+			<% end %>
+		<% end %>
+		</tr>
+		</tbody>
+	</table><br>
+	<% if user_signed_in? %>
+	<%= link_to 'Add New Kopi', new_kopi_path, class: "btn btn-primary" %>
+	<% end %>
+
+<!-- notes -->
+<% if false %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'log in', new_user_session_url %>
+<% end %>
