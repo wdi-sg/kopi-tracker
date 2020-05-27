@@ -1,0 +1,25 @@
+<h1 class=" mt-4 text-center">Listing Origins</h1>
+
+
+<table class="table table-bordered mt-3 container text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @origins.each_with_index do |origin,index| %>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td><%= link_to "#{origin.name}", origin_path(origin) %></td>
+      <td><%= origin.location %></td>
+      <td><%= origin.phone %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

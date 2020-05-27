@@ -1,0 +1,13 @@
+<h1 class="mt-4 text-center"> Kopi #<%= @kopi.id %></h1>
+
+<div class="card mx-auto mt-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @kopi.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @kopi.roastedness.roast %></h6>
+    <p class="card-text">Origin: <%= link_to @kopi.origin.name, origin_path(@kopi.origin) %></p>
+    <p class="card-text">Price per kg: $<%= @kopi.price %></p>
+    <%= link_to 'Edit', edit_kopi_path(@kopi) , :class => "card-link" %> 
+    <%= link_to 'Destroy', kopi_path(@kopi),
+        method: :delete, :class => "card-link"  %>
+  </div>
+</div>

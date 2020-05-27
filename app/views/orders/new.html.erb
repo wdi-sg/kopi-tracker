@@ -1,0 +1,18 @@
+<h1 class="mt-4 text-center">Add Order</h1>
+
+<%= form_with scope: :order, url: orders_path, local: true, :class => "container mt-4" do |form| %>
+
+  <div class="form-check ">
+			<%= form.label "Kopis" %><br>
+			<%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name_with_price, {}, {:class => "form-check-input"} %>
+  </div>
+
+	<div class="form-group">
+    	<%= form.label "Weight in kg" %><br>
+    	<%= form.number_field :weight, {:step =>0.1, :class => "form-control"} %>
+	</div>
+
+
+    <%= form.submit "Add Order", :class => 'btn btn-dark' %>
+
+<% end %>

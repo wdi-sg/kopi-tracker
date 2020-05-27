@@ -1,0 +1,50 @@
+<h1 class=" mt-4 text-center">Listing Orders</h1>
+
+
+<table class="table table-bordered mt-3 container text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Order ID#</th>
+      <th scope="col">Kopi Name</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Current Price per kg</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Total Cost (at Order Date)</th>
+      <th scope="col">Ordered By</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <th scope="row"><%= link_to order.id, order_path(order) %></th>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li><%= link_to kopi.name, kopi_path(kopi) %></li>
+      		<% end %>
+      	</ul>
+      </td>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li><%= link_to kopi.origin.name, origin_path(kopi.origin) %></li>
+      		<% end %>
+      	</ul>
+      </td>
+      <td>
+      	<ul>
+      		<% order.kopi.each do |kopi| %>
+      			<li>$<%= kopi.price %></li>
+      		<% end %>
+      	</ul>
+      </td>
+      <td><%= order.weight %></td>
+      <td>$<%= order.total_price %></td>
+      <td><%= order.user.name %></td>
+      <td><%= link_to 'Edit', edit_order_path(order) %> <%= link_to 'Destroy', order_path(order),
+        method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
