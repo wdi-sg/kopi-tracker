@@ -1,0 +1,32 @@
+<%= link_to 'Origins', origins_path%>
+<%= link_to 'Kopis', kopis_path%>
+<%= link_to 'Customers', customers_path%>
+<%= link_to 'New Customer', new_customer_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+<h1>Kopi</h1>
+
+<% @customers.each do |c| %>
+  <p>
+  <%= c.name%>
+  <%= c.quantity%>
+  <% c.kopis.each do |k|%> 
+    <p>
+      <%= k.name %>
+      <%= k.roast %>
+      <%= k.origin.location %>
+      <%= k.origin.phone %>
+    </p>
+  <% end %>
+  </p>
+<% end %>
+
+
+
+
+

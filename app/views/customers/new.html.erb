@@ -1,0 +1,39 @@
+<%= link_to 'Origins', origins_path%>
+<%= link_to 'Kopis', kopis_path%>
+<%= link_to 'Customers', customers_path%>
+<%= link_to 'New Customer', new_customer_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Kopi', new_kopi_path %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+<% if @customer.errors.any? %>
+  <% @customer.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+  <% end %>
+<% end%>
+
+<h1>New Customer Order</h1>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <%= f.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
