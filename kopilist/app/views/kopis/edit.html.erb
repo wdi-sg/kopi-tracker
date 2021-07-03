@@ -1,0 +1,24 @@
+<h1>Edit kopi</h1>
+
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+<!-- #model is article because you are editing: you are changing a specific article you have input -->
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <%= form.collection_select :roast, @roasts, :id, :name %>
+	<%= form.collection_select :origin, @origins, :id, :location  %>
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

@@ -1,0 +1,46 @@
+<h1>kopi index</h1>
+<%= link_to 'New Kopi', new_kopi_path %>
+<%= link_to 'Orders', orders_path %>
+
+<%= form_tag(root_path, method: "get") do %>
+	<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
+	<%= submit_tag "Sort" %>
+<% end %>
+
+<ul>
+	<%= @kopis.each do |kopi| %>
+		<li>
+			<p>Kopi: <%= kopi.name %></p>
+			<p>Roast: <%= kopi.roast.name %></p>
+			<p>Origin: <%= kopi.origin.location %></p>
+			<p>Price per 100g: $<%= kopi.price %></p>
+		</li>
+		<%= link_to 'Show', kopi_path(kopi) %>
+		<% if user_signed_in? %>
+			<%= link_to 'Edit', edit_kopi_path(kopi) %>
+		<% end %>
+
+	<% end %>
+</ul>
+<% if user_signed_in? %>
+<p>user logged in</p>
+<%= link_to 'user log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<p>user not logged in</p>
+<% end %>
+
+
+<% if customer_signed_in? %>
+<p>customer logged in</p>
+<p><%= @customer.email %></p>
+<%= link_to 'Your stock', customer_path(@customer) %>
+<%= link_to 'Stock up!', new_stock_path %><%= form_tag(sort_customer_path, method: "get") do %>
+<%= select_tag "sort_order", options_for_select(["ASC", "DESC"], "DESC") %>
+	<%= submit_tag "See customers sorted by stock size" %>
+<% end %>
+<%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<p>note to self: /kopi/:id to see who bought that kopi</p>
+<% else %>
+<p>customer not logged in</p>
+<%= link_to 'customer log in', new_customer_session_url %>
+<% end %>

@@ -1,0 +1,46 @@
+<h1>order index</h1>
+
+<% if user_signed_in? %>
+<p>user logged in</p>
+<%= link_to 'New Order', new_order_path %>
+<% else %>
+<p>user not logged in</p>
+<% end %>
+
+<% if customer_signed_in? %>
+<p>customer logged in</p>
+<%= link_to 'New Order', new_order_path %>
+<% else %>
+<p>customer not logged in</p>
+<% end %>
+
+<ul>
+	<%= @orders.each do |order| %>
+		<li>
+			<p>Order Weight: <%= order.weight %>g</p>
+		</li>
+		<li>
+			<p>Kopi Ordered: <%= order.kopi.name %></p>
+		</li>
+		<li>
+			<p>Email of customer: <%= order.user.email %></p>
+		</li>
+		<li>
+			<p>Price: $<%= order.weight * order.kopi.price / 100 %></p>
+		</li>
+		<%= link_to 'Show', order_path(order) %>
+	<% end %>
+</ul>
+
+<%= link_to 'Back', root_path %>
+<% if user_signed_in? %>
+<%= link_to 'user log out', destroy_user_session_url, method: :delete %>
+<% else %>
+<%= link_to 'user sign in', new_user_registration_path %>
+<% end %>
+
+<% if customer_signed_in? %>
+<%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<% else %>
+<%= link_to 'customer sign in', new_customer_registration_path %>
+<% end %>

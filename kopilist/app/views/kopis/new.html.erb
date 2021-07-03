@@ -1,0 +1,35 @@
+<h1>new kopi</h1>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |f| %>
+
+	<%= f.collection_select :roast, @roasts, :id, :name %>
+	<%= f.collection_select :origin, @origins, :id, :location  %>
+
+	<p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+  	<%= f.submit %>
+  </p>
+
+  <!-- <p>
+    <%= f.label :roast %><br>
+    <%= f.text_field :roast %>
+  </p>
+
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_field :origin %>
+  </p> -->
+
+
+
+<% end %>
+<%= link_to 'Back', root_path %>

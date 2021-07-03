@@ -1,0 +1,24 @@
+<p>Customers sorted by number of kopis carried</p>
+
+
+
+
+<ul>
+	<%= @customers.each do |customer| %>
+		<li>
+			<p>Customer email: <%= customer.email %></p>
+			<p>Number of kopis: <%= customer.kopis.length  %></p>
+		</li>
+
+
+	<% end %>
+</ul>
+
+
+<% if customer_signed_in? %>
+	<%= link_to 'New Stock', new_stock_path  %>
+	<%= link_to 'customer log out', destroy_customer_session_url, method: :delete %>
+<% else %>
+	<%= link_to 'customer log in', new_customer_session_url %>
+<% end %>
+<%= link_to 'Back', root_path %>
