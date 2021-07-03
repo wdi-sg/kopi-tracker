@@ -1,0 +1,12 @@
+<div class="pageWrapper">
+	<h2 class="sectionHeader">Coffee Selection</h2>
+	<% @kopis.each do |kopi| %>
+		<div class="postBox">
+			<h3><%= kopi.name.capitalize %></h3>
+			<div class="navButtons">
+				<%= link_to 'View', kopi_path(kopi), :class => 'actionButton' %>
+				<%= link_to 'Edit', edit_kopi_path(kopi), :class => 'actionButton' %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="pageWrapper">
+	<h2 class="sectionHeader">Where Our Coffees Come From</h2>
+	<% @origins.each do |origin| %>
+		<div class="postBox">
+			<h3><%= origin.location %></h3>
+			<div class="navButtons">
+				<%= link_to 'View', origin_path(origin), :class => 'actionButton' %>
+				<%= link_to 'Edit', edit_origin_path(origin), :class => 'actionButton' %>
+			</div>
+		</div>
+	<% end %>
+</div>
