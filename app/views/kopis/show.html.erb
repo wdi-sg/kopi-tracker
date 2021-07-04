@@ -1,0 +1,23 @@
+<h3>Kopi</h3>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @kopi.origin.location %>
+</p>
+
+<% if user_signed_in? %>
+    <% if @kopi.user_id == current_user.id || current_user.admin %>
+        <%= link_to 'Edit', edit_kopi_path(@kopi), class: "btn btn-warning" %>
+    <% end %>
+<% end %>
+<%= link_to 'Back', root_path, class: "btn btn-dark" %>

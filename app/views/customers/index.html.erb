@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+        <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+            <td><%= customer.name %></td>
+        <td><%= link_to 'Show', customer, class: "btn btn-success" %></td>
+                <% if customer_signed_in? %>
+                    <% if current_customer.id == customer.id %>
+                  <td><%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-warning" %></td>
+                  <td><%= link_to 'Destroy', customer, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if customer_signed_in? %>
+    <span>Signed In As: <%= current_customer.email %></span>&nbsp&nbsp
+    <%= link_to 'log out', destroy_customer_session_url, method: :delete, class: "btn btn-outline-success" %>
+<% else %>
+    <%= link_to 'Customer Log In', new_customer_session_url, class: "btn btn-outline-success" %>
+    <%= link_to 'New Customer', new_customer_path, class: "btn btn-info" %>
+<% end %>
