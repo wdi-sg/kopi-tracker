@@ -1,0 +1,14 @@
+<h2>Customer List</h2>
+
+<% @customers.each do |customer| %>
+  <h3>Name: <%= customer.name %></h3>
+  <%= link_to 'Show', customer_path(customer) %>
+  <%= link_to 'Edit', edit_customer_path(customer) %>
+  <%= link_to 'Destroy', customer_path(customer),
+    method: :delete, data: { confirm: 'Are you sure?' } %>
+  <ul>
+    <% customer.kopis.each do |kopi| %>
+      <li><%= kopi.name %></li>
+    <% end %>
+  </ul>
+<% end %>

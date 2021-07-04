@@ -1,0 +1,16 @@
+<h1>Add Roast</h1>
+<%= form_for :roast, url: roasts_path do |f| %>
+  <% if @roast.errors.any? %>
+    <% @roast.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, {:class => "form-control"} %>
+  </p>
+
+  <p>
+  <%= f.submit({:class => "btn btn-primary"}) %>
+  </p>
+<% end %>

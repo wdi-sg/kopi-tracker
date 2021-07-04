@@ -1,0 +1,11 @@
+<div class="card-columns d-inline-block">
+  <% @origins.each do |origin| %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h3 class="card-title"><%= origin.location %></h3>
+        <p class="card-text" style="color: black;"><%= origin.phone %></p>
+        <%= link_to "Read More", origin_path(origin), :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<h1>Add Kopi</h1>
+<%= form_for :kopi, url: kopis_path do |f| %>
+  <% if @kopi.errors.any? %>
+    <% @kopi.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, {:class => "form-control"} %>
+  </p>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.collection_select :origin_id, @origins, :id, :location, {:class => "form-control"} %>
+  </p>
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.collection_select :origin_id, @origins, :id, :phone, {:class => "form-control"} %>
+  </p>
+  <p>
+    <%= f.label :roast %><br>
+    <%= f.collection_select :roast_id, @roasts, :id, :name, {:class => "form-control"} %>
+  </p>
+
+
+  <p>
+  <%= f.submit({:class => "btn btn-primary"}) %>
+  </p>
+<% end %>
