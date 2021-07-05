@@ -1,0 +1,38 @@
+<% if !user_signed_in? && !admin_signed_in?  %>
+<%= link_to ' User log in', new_user_session_url %> 
+<%= link_to ' Admin log in', new_admin_session_url %> 
+<% end %>
+
+
+<% if user_signed_in? || admin_signed_in?%>
+  <%= link_to 'New Kopi', new_kopi_path %> |
+  <% if admin_signed_in? %>
+    <%= link_to 'Roasts', roasts_index_path %> |
+  <% end %>
+
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+
+ <h1>Listing All Kopis</h1>
+
+<table border="1">
+  <tr>
+    <td>Kopi Name</td>
+    <td>Roast</td>
+    <td>Location</td>
+    <td>Contact Number</td>
+    <td>Show</td>
+  </tr>
+
+  <% @kopis.each do |kopi| %>
+  <tr>  
+    <td><%= kopi.name %></td>
+    
+    <td><%= kopi.roast.name %></td>
+    <td><%= kopi.origin.location %></td>
+    <td><%= kopi.origin.phone %></td>
+    <td><%= link_to 'SHOW', kopi_path(kopi) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>
