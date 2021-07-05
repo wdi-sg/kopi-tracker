@@ -1,0 +1,27 @@
+<h1>Listing coffees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Origin</th>
+    <th>Price(/kg)</th>
+    <th></th>
+  </tr>
+
+  <% @coffees.each do |coffee| %>
+    <tr>
+      <td><%= coffee.name %></td>
+      <td><%= coffee.roast %></td>
+      <td><%= coffee.origin.name %></td>
+      <td>$<%= coffee.price %></td>
+      <td><%= link_to 'Show', coffee_path(coffee) %></td>
+      <td><%= link_to 'Edit', edit_coffee_path(coffee) %></td>
+      <td><%= link_to 'Destroy', coffee_path(coffee),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New coffee', new_coffee_path %>

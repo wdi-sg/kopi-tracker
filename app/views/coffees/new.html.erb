@@ -1,0 +1,28 @@
+<%= form_with scope: :coffee, url: coffees_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+  <%= form.collection_select :origin_id, @origins, :id, :name %>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= form_with scope: :coffee, url: coffees_path, local: true do |form| %>
+  ...
+<% end %>
+
+<%= link_to 'Back', root_path %>

@@ -49,3 +49,62 @@ Change `/report` to also display sales by kopi.
 
 #### further
 Change `/report` to also display sales by origin.
+
+
+rails new coffee-tracker -d postgresql
+comment out line-20 in Gemfile
+rails generate migration coffees
+rails generate migration origins
+rails db:create
+rails db:migrate
+touch app/models/coffee.rb
+touch app/models/origin.rb
+rails console
+touch app/controllers/origins_controller.rb
+touch app/controllers/coffees_controller.rb
+rake db:seed
+
+powwow = Origin.new(name: "Pow Wow", location: "Pow Wow Drive", phone: "999")
+powwow.save
+
+puddlemud = Coffee.new(name: "Puddlemud", roast: "Light", origin: powwow)
+puddlemud.save
+
+Models
+- coffee (name, roast, origin)
+- origin (location, phone)
+- roast 
+
+Association
+- Origin has_many Coffee
+- Roast has_many Coffee
+- Coffee belongs_to an Origin and a Roast
+
+Views
+- parks#new
+- parks#show
+
+
+You are expanding the app to track which customers buy wich coffees.
+Create a customer model.
+A customer can stock many coffees.
+A coffee can be carried by many customers.
+
+customer-coffee many-to-many
+#set database
+customer - name
+coffee_customer - references to coffee and customer
+
+For a given coffee (kopi), /kopi/:id display all the customers who carry that coffeee.
+#set controller and view
+
+For a given customer /customer/:id display all the coffees they stock.
+#set controller and view
+
+further
+Sort the customers by the number of coffees they carry, ascending and descending.
+
+Note: The option of ascending and descending sorting should be noted in the query parameter of the request: /kopi/1?sort=asc
+
+further
+Sort the coffees by "popularity"- by the number of shops that carry that coffee.

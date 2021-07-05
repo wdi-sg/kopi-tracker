@@ -1,0 +1,34 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Weight</th>
+    <th>Coffee</th>
+    <th>Price(/kg)</th>
+    <th>Total Cost</th>
+    <th></th>
+  </tr>
+
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.weight %>kg</td>
+      <td><%= order.coffee.name %></td>
+      <td>$<%= order.coffee.price %></td>
+      <td>$<%= order.weight*order.coffee.price %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%
+sum = 0 
+@orders.each do |order|
+  sale = order.weight*order.coffee.price 
+  sum = sum + sale 
+end 
+%>
+
+<h1> Total sales: $<%= sum %> </h1>
+
+<%= link_to 'New order', new_order_path %>

@@ -1,0 +1,19 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+
+  <%= form.collection_check_boxes :coffee_ids, @coffees, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+  ...
+<% end %>
+
+<%= link_to 'Back', root_path %>
