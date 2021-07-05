@@ -1,0 +1,11 @@
+<h1>Customer Name: <%= @customer.name %></h1>
+
+<h3>List of Kopis:</h3>
+
+<ul>
+    <% @customer.kopis.each do |kopi| %>
+        <li>
+            <a href="/kopis/<%= kopi.id %>"><%= kopi.name %></a>
+        </li>
+    <% end %>
+</ul>

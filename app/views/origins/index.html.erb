@@ -1,0 +1,43 @@
+<div class="nav">
+    <ul>
+        <li><%= link_to 'Kopi', kopis_path %></li>
+        <li><%= link_to 'Origin', origins_path %></li>
+        <li><%= link_to 'Roast', roasts_path %></li>
+
+        <!--If user is logged in, show create new origin and logout link. Else, shows only login link.-->
+        <% if user_signed_in? %>
+            <li><%= link_to 'New Origin', new_origin_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_url, method: :delete %></li>
+        <% else %>
+            <li><%= link_to 'Log In', new_user_session_url %></li>
+        <% end %>
+    </ul>
+</div>
+
+<div class="main">
+    <h1>List of Origins</h1>
+
+    <table>
+        <tr>
+            <th>Location</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <% @origins.each do |origin| %>
+            <tr>
+                <td>
+                    <a href="/origins/<%= origin.id %>"><%= origin.location %></a>
+                </td>
+                <td>
+                    <%= link_to 'Edit', edit_origin_path(origin) %>
+                </td>
+                <td>
+                    <%= link_to 'Delete', origin_path(origin),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</div>

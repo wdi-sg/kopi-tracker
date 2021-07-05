@@ -1,0 +1,85 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to 'Kopi Index', root_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Kopi Details</li>
+  </ol>
+</nav>
+
+<h1>Kopi Details</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form>
+                <%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :name %>:
+                        </div>
+                        <div class="col-6">
+                            <%= @kopi.name %>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :roast %>:
+                        </div>
+                        <div class="col-6">
+                            <%= @kopi.roast.name %>
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-4">
+                            <%= form.label :origin %>:
+                        </div>
+                        <div class="col-6">
+                            <%= @kopi.origin.location %>
+                        </div>
+                    </div>
+
+                    <div class="row form-group justify-content-end">
+                        <div class="col-2">
+                            <%= link_to 'Edit', edit_kopi_path(@kopi), class: 'btn btn-outline-primary' %>
+                        </div>
+                        <div class="col-2">
+                            <%= link_to 'Delete', kopi_path(@kopi),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' },
+                                class: 'btn btn-danger' %>
+                        </div>
+                    </div>
+                <% end %>
+            </form>
+        </div>
+    </div>
+</div>
+
+<h4>List of Customers</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @kopi.customers.each do |customer| %>
+            <tr>
+                <td>
+                    <a href="/customers/<%= customer.id %>"><%= customer.name %></a>
+                </td>
+                <td>
+                    <%= link_to 'Edit (Disabled)', edit_customer_path(customer) %>
+                </td>
+                <td>
+                    <%= link_to 'Delete (Disabled)', customer_path(customer),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
