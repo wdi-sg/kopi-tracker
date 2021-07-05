@@ -1,0 +1,35 @@
+<% if user_signed_in? %>
+<h3><%= current_user.email %></h3>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+  <%= link_to 'log in', new_user_session_url %>
+<% end %>
+
+
+
+<h1>Edit kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.collection_radio_buttons :roast_id, @roasts, :id, :name %>
+  </p>
+
+  <p>
+  <%= form.label :origin %><br>
+  <%= form.collection_radio_buttons :origin_id, @origins, :id, :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

@@ -1,0 +1,11 @@
+<h1>Listing customers</h1>
+
+  <% @customers.each do |customer| %>
+
+      <h2>Name: <%= customer.name %></h2>
+      <ul>
+      	<% customer.kopis.each do |kopi| %>
+      		<li><%= kopi.name %></li>
+      	<% end %>
+      </ul>
+  <% end %>
