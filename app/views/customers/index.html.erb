@@ -1,0 +1,34 @@
+<h1>Customer Listing</h1>
+
+<div>
+<form method="GET" action="/customers">
+	<label>Sort By Name</label>
+	<select name="sort">
+		<option value="asc">Ascending</option>
+		<option value="desc">Descending</option>
+	</select>
+
+	<button type="submit">Sort</button>
+</form>
+</div>
+
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th><%= link_to "Name", :sort => "name" %></th>
+	    <th></th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+	  <% @customers.each do |customer| %>
+	    <tr>
+	      <td><%= customer.name %></td>
+	      <td><%= link_to 'Show', customer_path(customer), class:"btn btn-outline-info" %></td>
+	    </tr>
+	  <% end %>
+	</tbody>
+</table>
+
+ <%= link_to 'Back', root_path, class:'btn btn-primary' %>

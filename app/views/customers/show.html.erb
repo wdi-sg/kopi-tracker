@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+	<strong>Kopis:</strong>
+</p>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+	  	<th>No.</th>
+	    <th>Name</th>
+	    <th>Origin</th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+		<% @customer.kopis.each_with_index do |kopi, index| %>
+			<tr>
+      	<td>
+        	<%= index + 1 %>
+        </td>
+        <td>
+        	<%= kopi.name %>
+        </td>
+
+        <td>
+        	<%= kopi.origin.location %>
+        </td>
+      </tr>
+		<% end %>
+	</tbody>
+</table>
+
+ <%= link_to 'Back', root_path, class:'btn btn-primary' %>

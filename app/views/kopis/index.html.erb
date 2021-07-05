@@ -1,0 +1,47 @@
+<h1>Kopi Listing</h1>
+
+<div>
+<%= link_to 'New Kopi', new_kopi_path, class:"btn btn-secondary" %>
+<%= link_to 'New Origin', new_origin_path, class:"btn btn-secondary" %>
+<%= link_to 'View Customers', customers_path, class:"btn btn-primary" %>
+</div>
+
+<div>
+<form method="GET" action="/kopis">
+	<label>Sort By Name</label>
+	<select name="sort">
+		<option value="asc">Ascending</option>
+		<option value="desc">Descending</option>
+	</select>
+
+	<button type="submit">Sort</button>
+</form>
+</div>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th><%= link_to "Name", :sort => "name" %></th>
+	    <th>Roast</th>
+	    <th>Origin</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	</thead>
+
+	<tbody class="table-striped">
+	  <% @kopis.each do |kopi| %>
+	    <tr>
+	      <td><%= kopi.name %></td>
+	      <td><%= kopi.roast.roastedness %></td>
+	      <td><%= kopi.origin.location %></td>
+	      <td><%= link_to 'Show', kopi_path(kopi), class:"btn btn-outline-info" %></td>
+	      <td><%= link_to 'Edit', edit_kopi_path(kopi), class:"btn btn-outline-primary" %></td>
+	      <td><%= link_to 'Destroy', kopi_path(kopi), class:"btn btn-outline-danger",
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %></td>
+	    </tr>
+	  <% end %>
+	</tbody>
+</table>

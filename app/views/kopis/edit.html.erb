@@ -1,0 +1,25 @@
+<h1>Edit Kopi</h1>
+
+<%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+  <p>
+    <%= form.label "Kopi Name:" %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label "Roastedness:" %><br>
+    <%= form.collection_select :roast_id, @roasts, :id, :roastedness %>
+  </p>
+
+  <p>
+    <%= form.label "Origin:" %><br>
+    <%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+
+  <p>
+    <%= form.submit :Submit, class:"btn btn-outline-success" %>
+  </p>
+
+<% end %>
+
+  <%= link_to 'Back', root_path, class:'btn btn-primary' %>
