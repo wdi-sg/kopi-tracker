@@ -1,0 +1,18 @@
+<h1><%= @customer.name %></h1>
+    <tr>
+			<th>Name</th>
+			<th>Roast</th>
+			<th>Origin</th>
+			<th>Show</th>
+		</tr>
+    <br />
+		<% @customer.kopis.each do |kopi| %>
+			<tr>
+				<td><a href="/kopis/<%=kopi.id%>"><%= kopi.name %></a></td>
+				<td><%= kopi.roast.name %></td>
+				<td><%= kopi.origin.location %></td>
+				<td><%= link_to 'Show', kopi_path(kopi) %></td>
+			</tr>
+		<% end %>
+<%= link_to('Edit', edit_customer_path) %>
+<%= link_to('Destroy', customer_path(@customer), method: :delete, data: {confirm: 'Are you sure?'})%>
