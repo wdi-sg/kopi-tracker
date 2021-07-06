@@ -1,0 +1,23 @@
+<p>
+  <strong>Cup ID:</strong>
+  <%= @cup.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cup.name %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @cup.roast %>
+</p>
+
+<p>
+  <strong>Customers:</strong>
+  <% @cup.customers.each do |customer| %>
+  	<%= customer.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', cups_path %>

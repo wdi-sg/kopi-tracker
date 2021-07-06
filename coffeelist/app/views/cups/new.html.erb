@@ -1,0 +1,38 @@
+<%= form_with scope: :cup, url: cups_path, local: true do |form| %>
+
+	<%= form.collection_check_boxes :customer_ids, @customers, :id, :name %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<h1> JUST CREATE A CUP </h1>
+<%= form_with scope: :cup, url: cups_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :roast %><br>
+    <%= form.text_area :roast %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cups_path %>

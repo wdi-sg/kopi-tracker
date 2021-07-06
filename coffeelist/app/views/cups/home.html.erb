@@ -1,0 +1,53 @@
+<h1>Listing all Cups & Customers</h1>
+
+<table>
+  <tr>
+    <th>Cup ID</th>
+    <th>Name</th>
+    <th>Roast</th>
+    <th>Customers</th>
+    <th>Instructions</th>
+  </tr>
+<br>
+
+   <% @cups.each do |cup| %>
+    <tr>
+      <td><%= cup.id %></td>
+      <td><%= cup.name %></td>
+      <td><%= cup.roast %></td>
+      <td><% cup.customers.each do |customer| %>
+      	<%= customer.name %>
+      <% end %></td>
+      <td><%= link_to 'Show', cup_path(cup) %>
+    </tr>
+  <% end %>
+</table>
+<br>
+<table>
+	<tr>
+    <th>Customer ID</th>
+    <th>Name</th>
+    <th>Phone number</th>
+    <th>Cups</th>
+    <th>Instructions</th>
+  </tr>
+
+   <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.phone %></td>
+      <td><% customer.cups.each do |cup| %>
+      	<%= cup.name %>
+      <% end %></td>
+      <td><%= link_to 'Show', customer_path(customer) %>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Route cup', cups_path %>
+<%= link_to 'Route customer', customers_path %>
+<%= link_to 'New cup', new_cup_path %>
+<%= link_to 'New customer', new_customer_path %>
+<%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<%= link_to 'log in', new_user_session_url %>

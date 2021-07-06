@@ -1,0 +1,38 @@
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+	<%= form.collection_check_boxes :cup_ids, @cups, :id, :name %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :phone_number %><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<h1> JUST CREATE A CUSTOMER </h1>
+<%= form_with scope: :customer, url: customers_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :phone_number %><br>
+    <%= form.text_area :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', customers_path %>
