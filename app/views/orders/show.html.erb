@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1 class="display-4">Order Id: <%= @order.id %></h1>
+  <p class="lead">Kopi: <%= link_to @order.kopi.name, kopi_path(@order.kopi) %></p>
+  <hr class="my-4">
+  <p>Kopi price per pound: <%= @order.kopi.price %></p>
+  <p>Weight ordered: <%= @order.weight %></p>
+  <p>Total price: <%= @order.kopi.price * @order.weight %></p>
+</div>
+
+<%= link_to('Edit', edit_order_path, {:class => "btn btn-warning btn-lg"}) %>
+<%= link_to('Destroy', order_path(@order), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>

@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @customer.name %></h1>
+  <hr class="my-4">
+  <div class="container">
+  	<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Name</th>
+					<th scope="col">Roast</th>
+					<th scope="col">Origin</th>
+					<th scope="col">Price per Pound</th>
+					<th scope="col">View</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @customer.kopis.each do |kopi| %>
+					<tr>
+						<th scope="row"><%= kopi.id %></th>
+						<td><%= kopi.name %></td>
+						<td><%= kopi.roast.name %></td>
+						<td><%= kopi.origin.location %></td>
+						<td><%= kopi.price %></td>
+						<td><%= link_to 'Show', kopi_path(kopi) %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+  </div>
+</div>
+
+<%= link_to('Edit', edit_customer_path, {:class => "btn btn-warning btn-lg"}) %>
+<%= link_to('Destroy', customer_path(@customer), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>

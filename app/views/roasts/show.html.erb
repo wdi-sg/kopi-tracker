@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @roast.name %></h1>
+  <div class="list-group">
+	  <span href="#" class="list-group-item list-group-item-action active">
+	    List of Kopis with this roast:
+	  </span>
+	  <% @roast.kopi.each do |kopi| %>
+	  	<%= link_to(kopi.name, kopi_path(kopi), {:class => "list-group-item list-group-item-action"}) %>
+	  <% end %>
+	</div>
+</div>
+<% if current_user.try(:admin?) %>
+	<%= link_to('Edit', edit_roast_path, {:class => "btn btn-warning btn-lg"}) %>
+	<%= link_to('Destroy', roast_path(@roast), method: :delete, :class => "btn btn-danger btn-lg", data: {confirm: 'Are you sure?'})%>
+<% end %>
