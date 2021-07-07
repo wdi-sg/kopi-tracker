@@ -1,0 +1,17 @@
+<h1>this page shows a single kopi!</h1>
+<h2>depending on the id typed in at the end</h2>
+
+<p><%= @kopi.name %></p>
+<p><%=@kopi.origin.location %></p>
+<p><%=@kopi.roast.name %></p>
+
+<h2>add in customers who stock this kopi</h2>
+
+<h3>All customers that have this kopi</h3>
+<ul>
+	<% @kopi.customers.each do |customer| %>
+		<li><%= customer.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Back', root_path %>
