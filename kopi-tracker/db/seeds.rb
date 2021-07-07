@@ -1,0 +1,13 @@
+Roast.create(name: "Cinnamon")
+Roast.create(name: "Light")
+Roast.create(name: "City/Medium")
+Roast.create(name: "Full City")
+Roast.create(name: "Dark")
+Roast.create(name: "French")
+Roast.create(name: "Italian")
+
+Origin.create(location: "Mareep Meadows", phone_number: "6203 1298")
+Origin.create(location: "Pikachu Pines", phone_number: "6323 9876")
+Origin.create(location: "Gardevoir Garden", phone_number: "6334 9093")
+Origin.create(location: "Vileplume Valley", phone_number: "6206 0923")
+Origin.create(location: "Fennekin Farm", phone_number: "6211 9223")
