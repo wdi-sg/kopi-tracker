@@ -1,0 +1,26 @@
+<h1>Edit Koopi</h1>
+
+<%= form_with scope: :koopi, model: @koopi, local: true do |form| %>
+
+  <p>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Origins %><br>
+    <%= form.text_area @koopi.origin.name %>
+  </p>
+
+   <p>
+    <%= form.label :Roastedness %><br>
+    <%= form.text_area @koopi.roast.name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', root_path %>

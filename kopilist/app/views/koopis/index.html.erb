@@ -1,0 +1,26 @@
+<h1>All Koopis</h1>
+
+<% if user_signed_in? %>
+    <%= link_to 'Add a new koopi', new_koopi_path(@koopi) %>
+<% end %>
+<br>
+<br>
+
+ <% @koopis.each do |koopi| %>
+    <h3><%= koopi.id %>. <%= koopi.name %></h3>
+    <p> of origin <%= koopi.origin.location %> with <%= koopi.roast.name %> roastedness </p>
+    <%= link_to 'Show', koopi_path(koopi) %>
+    <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_koopi_path(koopi) %>
+        <%= link_to 'Destroy', koopi_path(koopi),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>
+<br>
+<br>
+<% if user_signed_in? %>
+    <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+    <%= link_to 'log in', new_user_session_url %>
+<% end %>
