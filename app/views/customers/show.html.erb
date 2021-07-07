@@ -1,0 +1,7 @@
+<h2>Customer name: <%= @customer.name %></h2>
+<h3>Has the below stocks:</h3>
+<ul>
+	<% @customer.kopis.each do |kopi| %>
+	<li><%= link_to kopi.name, kopi_path(kopi) %></li>
+	<% end %>
+</ul>
