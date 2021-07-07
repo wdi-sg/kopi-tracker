@@ -1,0 +1,17 @@
+<h1>Name: <%= @kopi.name %></h1>
+<p>Roast: <%= @roast[0].roast_type%></p>
+<p>Origin: <%= @origin[0].location %></p>
+<p>Price : $<%= @kopi.price %> per pound</p>
+
+<h2>Customers who carry <%= @kopi.name %></h2>
+<% @kopi.customers.each do |customer|%>
+<li class="list-group-item"> <a href="/customers/<%=customer.id%>"> <%=customer.name%> </a></li>
+<% end %>
+<div class="container mt-5">
+</div>
+<%= link_to 'Edit', edit_kopi_path(@kopi),   :class => "btn btn-primary"%> 
+<%= link_to 'Delete', kopi_path(@kopi),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },  :class => "btn btn-danger" %> 
+<%= link_to 'Back To Home', root_path,  :class => "btn btn-primary" %>
+

@@ -1,0 +1,42 @@
+<h1>Orders</h1>
+
+
+
+<% if user_signed_in? and !current_user.try(:admin?) %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price Per Pound</th>
+      <th scope="col">Order Weight</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% grandtotal = 0%>
+    <% @user.order.each do |order| %>
+    <tr>
+      <th scope="row"><%= order.id%></th>
+      <td><a href="/orders/<%= order.id%>"><%= order.kopi.name%></a></td>
+      <td>$<%= order.kopi.price%></td>
+      <td><%= order.weight%>lb</td>
+      <td> $<%= order.weight * order.kopi.price %></td>
+    </tr>
+
+    <% grandtotal += (order.weight * order.kopi.price)%>
+  
+    <% end %>
+      
+   
+  </tbody>
+</table>
+
+<h2 class="border-top pt-3">Grand Total: $<%= grandtotal%> </h2>
+<% end %>
+
+
+
+
+
+

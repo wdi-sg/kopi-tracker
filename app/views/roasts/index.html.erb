@@ -1,0 +1,18 @@
+<% if user_signed_in? and current_user.try(:admin?)  %>
+
+<h1>Roasts</h1>
+<%= link_to 'Add a Roast', new_roast_url, :class => "btn btn-success btn-block" %>
+<ul class="mt-2 list-group mt-5">
+<% @roasts.each do |roast|%>
+<li class="list-group-item mt-2"> <a href="/roasts/<%= roast.id%>"><%= roast.roast_type%></a>  </li>
+
+</ul>
+<% end %>
+
+<%= link_to 'Back To Home', root_path , :class => "btn btn-primary mt-4"%>
+<% else %>
+<div class="alert alert-danger" role="alert">
+  You Don't Have Access to this page
+</div>
+<% end %>
+
