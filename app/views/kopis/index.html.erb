@@ -1,0 +1,47 @@
+<h1>List of Kopis</h1>
+
+
+<table>
+  <thead>
+    <tr>
+        <th>Index</th>
+      <th>Name</th>
+      <th>Origin</th>
+      <th>Roast</th>
+    </tr>
+  </thead>
+
+  <tbody>
+<p><%= link_to 'New Kopi', new_kopi_path %></p>
+
+<%= @kopis.each_with_index do |kopi, index| %>
+    <tr>
+        <td>
+          <%= index %>
+      </td>
+      <td>
+          <%= kopi[0] %>
+      </td>
+
+      <td>
+          <%= kopi[1] %>
+      </td>
+
+
+      <td>
+          <%= link_to "Show", kopi_path(kopi[2]) %>
+      </td>
+      <td>
+          <%= link_to "Edit", edit_kopi_path(kopi[2]) %>
+      </td>
+
+      <td>
+          <%= link_to "Destroy", kopi_path(kopi[2]),
+          method: :delete,
+          data: { confirm: "Are you sure you wanna delete the kopi?" } %>
+      </td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>

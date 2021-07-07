@@ -1,0 +1,11 @@
+<%= form_with scope: :roast, model: @roast, local: true do |form| %>
+
+    <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, :input_html => { :value => @roast.name }%>
+  </p>
+
+    <p>
+    <%= form.submit %>
+  </p>
+<% end %>
