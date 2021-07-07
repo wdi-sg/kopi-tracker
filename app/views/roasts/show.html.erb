@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Roasts', roasts_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Add Roast</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2><%= @roast.name %></h2>
+      <table class="table">
+        <thead>
+        <th>Kopi</th>
+        <th>Roast</th>
+        <th>Origin</th>
+        <th>Price per Pound</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <% @kopis.each do |kopi| %>
+          <tr>
+            <td><%= link_to kopi.name, kopi_path(kopi) %></td>
+            <td><%= link_to kopi.roast.name, roast_path(kopi.roast) %></td>
+            <td><%= link_to kopi.origin.name, origin_path(kopi.origin) %></td>
+            <td>$<%= kopi.price %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <% if current_user.admin?  %>
+        <%= link_to "Edit Roast", edit_roast_path, class:"btn btn-primary mb-3" %>
+        <%= link_to "Delete Roast", roast_path(@roast), method: :delete, class:"btn btn-primary mb-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

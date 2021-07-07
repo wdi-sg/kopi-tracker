@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to 'Roasts', roasts_path() %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>Roasts</h2>
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Number of Kopi</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @roasts.each do |roast| %>
+            <tr>
+              <td><%= link_to roast.name, roast_path(roast) %> </td>
+              <td><%= roast.kopi.count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <% if user_signed_in? %>
+        <% if current_user.admin?  %>
+          <%= link_to "Add New Roast", new_roast_path, class:"btn btn-primary mb-3" %>
+        <% end %>
+        <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class:"btn btn-secondary mb-3" %>
+      <% else%>
+        <%= link_to 'Log In', new_user_session_url,class:"btn btn-secondary mb-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

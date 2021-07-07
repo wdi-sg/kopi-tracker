@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Origins', origins_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Add Origin</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Add Origin</h2>
+
+      <%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name of Origin</span>
+          </div>
+          <%= form.text_field :name, class:"form-control" %>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Location</span>
+          </div>
+          <%= form.text_area :location, class:"form-control" %>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Phone</span>
+          </div>
+          <%= form.text_field :phone, class:"form-control" %>
+        </div>
+        <%= form.submit :class=>'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Orders', orders_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to @order.id, order_path(@order) %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <h2><%= @order.id  %></h2>
+
+      <p>Kopi: <%= link_to @order.kopi.name, kopi_path(@order.kopi) %></p>
+      <p>Weight: <%= @order.weight %> lbs</p>
+      <p>Cost: $<%= @order.weight*@order.kopi.price %></p>
+    </div>
+    <div class="col-4">
+      <%= link_to "Edit Order", edit_order_path %>
+      <%= link_to "Delete Order", order_path(@order), method: :delete %><br><br>
+      <%= link_to "Back to Orders", orders_path %>
+    </div>
+  </div>
+</div>

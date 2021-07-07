@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Reports', reports_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to @origin.name, reports_origin_path(@origin) %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Report for <%= @origin.name %></h2>
+
+      <p>Number of orders: <%= @total_orders %></p>
+      <p>Total sales: $<%= @total_sales %></p>
+
+      <h4>Orders</h4>
+      <ul>
+        <% @orders.each do |order| %>
+          <li><%= link_to order.id, order_path(order) %></li>
+        <% end %>
+      </ul>
+
+      <%= link_to 'Back to Reports', reports_path %>
+    </div>
+  </div>
+</div>

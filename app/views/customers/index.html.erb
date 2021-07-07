@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to 'Customers', customers_path %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>Customer</h2>
+
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Number of Kopi</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td><%= link_to customer.name, customer_path(customer) %> </td>
+              <td><%= customer.kopis.count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="col-4">
+      <%= form_tag(customers_path, {method: "get", enforce_utf8: false}) do %>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Sort by</label>
+          </div>
+          <select class="custom-select" name="sortby" onchange="this.form.submit()">
+            <option value="asc">Least number of Kopi</option>
+            <option value="desc">Most number of Kopi</option>
+          </select>
+        </div>
+      <%end%>
+      <% if user_signed_in? %>
+        <%= link_to "Add New Customer", new_customer_path, class:"btn btn-primary mb-3" %>
+        <%= link_to 'Log Out', destroy_user_session_url, method: :delete, class:"btn btn-secondary mb-3" %>
+      <% else%>
+        <%= link_to 'Log In', new_user_session_url,class:"btn btn-secondary mb-3" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Kopis', kopis_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><%= link_to @kopi.name, kopi_path(@kopi) %></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <h2><%= @kopi.name  %></h2>
+      <table class="table">
+        <thead>
+          <th>Origin</th>
+          <th>Roast</th>
+          <th>Origin</th>
+          <th>Price per Pound</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= link_to @kopi.origin.name, origin_path(@kopi.origin) %> </td>
+            <td><%= link_to @kopi.roast.roastedness, roast_path(@kopi.roast) %> </td>
+            <td><%= link_to @kopi.origin.name, origin_path(@kopi.origin) %> </td>
+            <td><%= @kopi.price %> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <%= link_to "Edit Kopi", edit_kopi_path, class:"btn btn-primary mb-3" %>
+      <%= link_to "Delete Kopi", kopi_path(@kopi), method: :delete, class:"btn btn-secondary mb-3" %><br><br>
+    </div>
+  </div>
+</div>

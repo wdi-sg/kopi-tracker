@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Kopis', kopis_path() %></li>
+          <li class="breadcrumb-item " aria-current="page"><%= link_to @kopi.name, kopi_path(@kopi) %></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Edit Kopi</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Edit Kopi</h2>
+
+      <%= form_with scope: :kopi, model: @kopi, local: true do |form| %>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name of Kopi</span>
+          </div>
+          <%= form.text_field :name, class:"form-control" %>
+        </div>
+
+        <%= form.collection_select :roast_id, @roasts, :id, :name, {:prompt => false},{:class=>'custom-select mb-3'} %>
+
+        <%= form.collection_select :origin_id, @origins, :id, :name,{:prompt => false},{:class=>'custom-select mb-3'} %>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Price per pound</span>
+          </div>
+          <%= form.number_field :price, class:"form-control" %>
+        </div>
+        <%= form.submit :class=>'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

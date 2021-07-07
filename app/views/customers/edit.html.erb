@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Customers', customers_path() %></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Edit Customer</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Add Customer</h2>
+
+      <%= form_with scope: :customer, model: @customer, local: true do |form| %>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Name of Customer</span>
+          </div>
+          <%= form.text_field :name, class:"form-control" %>
+        </div>
+
+
+        <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+        <%= form.submit :class=>'btn btn-primary d-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>

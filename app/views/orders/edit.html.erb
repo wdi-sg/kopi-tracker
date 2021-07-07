@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to "Home", kopis_path %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to 'Orders', orders_path() %></li>
+          <li class="breadcrumb-item" aria-current="page"><%= link_to @order.id, order_path(@order) %></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Edit Order</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Edit Order</h2>
+
+      <%= form_with scope: :order, model: @order, local: true do |form| %>
+
+
+        <%= form.collection_select :kopi_id, @kopis, :id, :name, {:prompt => false},{:class=>'custom-select mb-3'} %>
+
+        <p>
+          <%= form.label :weight %>
+          <%= form.number_field :weight,class:"form-control" %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
