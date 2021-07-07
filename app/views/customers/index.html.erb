@@ -1,0 +1,35 @@
+<h1>Customers</h1>
+<div class="dropdown mb-5">
+  <button class="btn btn-secondary btn-block dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort By Kopis Carried
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/customers/sort/desc">Most- Least</a>
+    <a class="dropdown-item" href="/customers/sort/asc">Least - Most</a>
+    
+  </div>
+</div>
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">No. of Kopis</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+     <% @customers.each do |customer|%>
+    <tr>
+      <th scope="row"><%= customer.id%></th>
+      <td><a href="/customers/<%= customer.id%>"><%= customer.name%></a></td>
+      <td><%= customer.kopis.length%></td>
+  
+    </tr>
+    <% end %>
+   
+  
+  </tbody>
+</table>

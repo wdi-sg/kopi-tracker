@@ -1,0 +1,7 @@
+<h1>Roast: <%= @roast.roast_type %> </h1>
+
+<%= link_to 'Edit', edit_roast_path(@roast), :class => "btn btn-primary" %> 
+<%= link_to 'Delete', roast_path(@roast),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %> 
+<%= link_to 'Back To Roasts', roasts_path, :class => "btn btn-secondary" %>
