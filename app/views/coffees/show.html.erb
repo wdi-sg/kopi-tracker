@@ -1,0 +1,11 @@
+<%= @coffee.name %>
+<%= @coffee.roast %>
+<br><br>
+<% if user_signed_in? %>
+    <a class="btn btn-primary text-white" href="#">Bookmark</a>
+    <br>
+    <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+<% else %>
+    <%= link_to 'log in', new_user_session_url %>
+<% end %>
+<%# <a class="btn-primary" href="/#{}">Edit</a> %>

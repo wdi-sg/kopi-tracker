@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CoffeeTracker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+      <div class="container">
+        <a class="navbar-brand" href="/">Tracker App</a>
+      </div>
+      <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/farms/new">New Farm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coffees/new">New Coffee</a>
+        </li>
+      </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

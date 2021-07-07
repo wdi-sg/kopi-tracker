@@ -1,0 +1,24 @@
+
+<table class="table">
+    <tr>
+        <th>Customer</th>
+        <th>Name</th>
+        <th>Coffees</th>
+    </tr>
+    <% @customer.each do |customer| %>
+        <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td>
+                <% customer.coffees.each_with_index do |coffee, index| %>
+                    <% if index == customer.coffees.length - 1 %>
+                        <%= coffee.name %>
+                    <% else %>
+                        <%= coffee.name %>, 
+                    <% end %>
+                <% end %>
+            </td>
+        </tr>
+    <%end %>
+
+</table>

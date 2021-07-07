@@ -1,0 +1,14 @@
+<%= form_with scope: :coffee, model: @coffee, local: true do |form| %>
+
+  <%= form.collection_select :farm_id, @farms, :id, :location %>
+  <%= form.collection_select :roast, @roasts, :id, :name %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_area :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
