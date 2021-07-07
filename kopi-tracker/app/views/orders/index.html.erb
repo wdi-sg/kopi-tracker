@@ -1,0 +1,15 @@
+<h1> All orders </h1>
+<% if user_signed_in? && current_user.admin? %>
+		<% @orders.each do |order| %>
+				<p> Order made under this account: <%= order.customer.email %> </p>
+				<p> Order id: <%= order.id %> </p>
+				<ul>
+					<% order.kopis.each do |kopi| %>
+						<li><%= kopi.name %></li>
+					<% end %>
+				</ul>
+		<% end %>
+<% end %>
+
+
+<%= link_to 'Back', kopis_path %>

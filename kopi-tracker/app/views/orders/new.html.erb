@@ -1,0 +1,22 @@
+<h1> Add new order </h1>
+
+<%= form_with scope: :orders, url: orders_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+	<p>
+    <%= form.hidden_field :customer_id, :value => @id%>
+  </p>
+
+  <%= form.collection_check_boxes :kopi_ids, @kopis, :id, :name %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', kopis_path %>

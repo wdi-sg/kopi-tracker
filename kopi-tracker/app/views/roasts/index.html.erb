@@ -1,0 +1,17 @@
+<h1> All roasts</h1>
+
+<% if user_signed_in? &&  current_user.admin? %>
+		<%= link_to 'Add new roast', new_roast_path %>
+<% end %>
+
+<% @roasts.each do |roast| %>
+
+		<p> Roastedness: <%= roast.roastedness %> </p>
+				<% if user_signed_in? &&  current_user.admin? %>
+							<p> <%= link_to 'Edit roast', edit_roast_path(roast) %> || <%= link_to 'Delete roast', roast_path(roast), method: :delete, data: {confirm: 'Are you sure want to delete this roast?'} %></p>
+				<% end %>
+		<br>
+
+<% end %>
+
+<%= link_to 'Back', kopis_path %>
