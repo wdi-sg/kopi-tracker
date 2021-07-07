@@ -1,0 +1,42 @@
+<div class = 'container'>
+<% if user_signed_in? %>
+<h3>Welcome:<%= current_user.email %></h3>
+<h2><%= @message %></h2>
+ <% else%>
+    
+  <% end %>
+
+<h1>Kopi</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @kopi.name%>
+</p>
+
+
+<p>
+  <strong>Location:</strong>
+  <%= @kopi.farm.location %>
+</p>
+
+<p>
+  <strong>Roast:</strong>
+  <%= @kopi.roast.name %>
+</p>
+
+
+<p>
+  <strong>Price:</strong>
+  <%= @kopi.price %>
+</p>
+
+<p>
+  <strong>Customers:</strong>
+  	<ul>
+  		<% @customers.each do |customer| %>
+ 	
+ 			<li><%= customer.name %></li>
+ 		<% end %>
+ 	</ul>
+</p>
+<%= link_to 'Back', kopis_path %>
+</div>

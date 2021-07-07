@@ -1,0 +1,24 @@
+<h1>All Farm</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Phone number</th>
+    
+    <th></th>
+  </tr>
+
+  <% @farms.each do |farm| %>
+    <tr>
+        <td><%= farm.location %></td>
+        <td><%= farm.phoneNumber %></td>
+        
+        <td><%= link_to 'Show', farm_path(farm) %></td>
+        <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
+        <td><%= link_to 'Destroy', farm_path(farm),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
