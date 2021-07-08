@@ -1,0 +1,28 @@
+
+<p>Our Farms and Partners</p>
+	<div class="container">
+  	<div class="row">
+    	<table class="table table-striped">
+      	<thead>
+        	<tr>
+          	<th scope="col">#</th>
+          	<th scope="col">Name</th>
+          	<th scope="col">Location</th>
+						<th scope="col">Phone Number</th>
+						<th scope="col">Created</th>
+        	</tr>
+      	</thead>
+      <tbody>
+				<% @origins.each do |origin| %>
+  				<tr>
+						<td><%= origin.id %></td>
+          	<td class = "origin-name"><%= origin.name %></td>
+						<td><%= origin.location %></td>
+						<td><%= origin.phone %></td>
+          	<td><%= origin.created_at.strftime('%d.%m.%Y') %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

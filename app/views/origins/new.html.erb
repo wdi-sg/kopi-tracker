@@ -1,0 +1,21 @@
+<%= form_with scope: :origin, url: origins_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :"Origin Name" %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :"Location of Origin"%><br>
+    <%= form.text_area :location %>
+  </p>
+
+	<p>
+    <%= form.label :"Phone number of Origin" %><br>
+    <%= form.text_field :phone %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

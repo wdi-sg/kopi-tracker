@@ -1,0 +1,28 @@
+
+<p>Coffee</p>
+	<div class="container">
+  	<div class="row">
+    	<table class="table table-striped">
+      	<thead>
+        	<tr>
+          	<th scope="col">#</th>
+          	<th scope="col">Name</th>
+          	<th scope="col">Roast</th>
+						<th scope="col">Origin</th>
+						<th scope="col">Created</th>
+        	</tr>
+      	</thead>
+      <tbody>
+				<% @kopis.each do |kopi| %>
+  				<tr>
+						<td><%= kopi.id %></td>
+          	<td class = "kopi-name"><%= kopi.name %></td>
+						<td><%= kopi.roast %></td>
+						<td><%= kopi.origin_id %></td>
+          	<td><%= kopi.created_at.strftime('%d.%m.%Y') %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

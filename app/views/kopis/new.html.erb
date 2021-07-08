@@ -1,0 +1,37 @@
+
+<%# <p class="error">
+  <%= show_errors(@kopi, :name) %>
+<%# </p> %>
+
+<h2>Add new Kopi</h2>
+
+<%= form_with scope: :kopi, url: kopis_path, local: true do |form| %>
+  <p>
+    <%= form.label :name, 'Kopi Name' %><br>
+    <% if params[:kopi] != nil %>
+    	<%= form.text_field :name, :value => params[:kopi][:name]%>
+    <% else %>
+    	<%= form.text_field :name %>
+    <% end %>
+  </p>
+
+  <%# <p>
+    <%= form.label :price_per_pound, 'Price Per Pound' %>
+    <%# <%= form.number_field :price_per_pound %>
+
+
+  <p>
+ 		<%= form.collection_select :roast_id, @roasts, :id, :roastedness %>
+  </p>
+
+  <p>
+  	<%= form.collection_select :origin_id, @origins, :id, :location %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br/>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
