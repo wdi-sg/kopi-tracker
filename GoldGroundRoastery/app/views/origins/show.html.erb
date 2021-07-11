@@ -1,0 +1,16 @@
+<div class="pageWrapper">
+	<h2><%= @origin.location.capitalize %></h2>
+
+	<p>Contact Number: <%= @origin.phone %></p>
+	<br>
+
+	<div class="navButtons">
+		<p>
+			<%= link_to 'Edit', edit_origin_path(@origin), :class => 'actionButton' %>
+			<%= link_to 'Delete', origin_path(@origin),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, :class => 'actionButton' %>
+			<%= link_to 'Back', origins_path, :class => 'actionButton' %>
+		</p>
+	</div>
+</div>
